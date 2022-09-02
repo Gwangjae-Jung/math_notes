@@ -1,0 +1,232 @@
+\section{Compact spaces}
+
+\begin{defi}[Compact space]
+    A topological space $X$ is said to be compact if every covering of $X$ by sets open in $X$ has a finite subcover.
+    If every such covering has a countable subcover, then $X$ is said to be a Lindel\"{o}f space.
+\end{defi}
+\begin{rmk}
+    In fact, we can impose an alternative definition of compactness as follows:
+    \begin{center}
+        The topological space $X$ is said to be compact if for every collection $\mc{C}$ of closed sets in $X$ having the finite intersection property, the intersection of the members of $\mc{C}$ is nonempty. 
+    \end{center}
+\end{rmk}
+\begin{proof}
+    Establish some contrapositions to check the above two statements are equivalent.
+    The proof is left as an exercise.
+\end{proof}
+
+As connectedness, compactness of subspaces can also be argued in larger spaces.
+\begin{thm}[Compactness of subspaces]
+    Let $A$ be a subspace of $X$.
+    Then $A$ is compact if and only if every covering of $A$ by sets open in $X$ has a finite subcover.
+    (This statement is valid if the words 'compact' are replaced by `Lindel\"{o}f.')
+\end{thm}
+\begin{proof}
+    Suppose $A$ is compact, and $\mathcal{A}=\{A_\alpha\}_\alpha$ is a covering of $A$ by sets open in $X$.
+    Then the naturally induced collection $\{A_\alpha\cap A\}$ is a covering of $A$ by sets open in $A$, and we can find a finite subcover.
+    The corresponding finite subcover of $\mathcal{A}$ covers $A$.
+
+    Suppose conversely that every covering of $A$ by sets open in $X$ has a finite subcover, and let $\mathcal{A}=\{A_\alpha\}_\alpha$ be a covering of $A$ by sets in $A$.
+    Since each $A_\alpha$ can be written as $A\cap O_\alpha$ for some subset $O_\alpha$ open in $X$, the collection $\{O_\alpha\}_\alpha$ has a finite subcover.
+    The corresponding finite subcover of $\mathcal{A}$ covers $A$.
+\end{proof}
+
+\begin{thm}
+    Regarding closedness and compactness of subspaces, the following statements holds:
+    \begin{enumerate}
+        \item[(a)] Every closed subspace of a compact space is compact.
+        \item[(b)] Every Hausdorff space is compactly normal, i.e., any two disjoint compact subspaces can be separated by (disjoint) neighborhoods.
+        \item[(c)] Every compact subspace of a Hausdorff space is closed. (Hence, every compact Hausdorff space is normal.)
+    \end{enumerate}
+\end{thm}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+            Let $X$ be a compact space and $Y$ be a closed subspace of $X$.
+            Let $\mc{A}=\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $X$.
+            Because the collection $\mc{A}\cup\{X\setminus Y\}$ is also an open covering of $X$, the collection has a finite subcover.
+            Among them, excluding $X\setminus Y$ gives a finite subcover of $\mc{A}$ which covers $Y$.
+        \item[(b)]
+            We first prove that a Hausdorff space $X$ is compactly regular.
+            Let $p$ be a point of $X$ and $A$ be a compact subspace of $X$ not containing $p$.
+            For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $p$ and $a$, respectively.
+            Since $A$ can be covered by finitely many $V_a$'s, the intersection of the corresponding $U_a$'s is a neighborhood of $p$.
+            Thus, $X$ is compactly regular.
+
+            To show that $X$ is compactly normal, let $A, B$ be disjoint compact subspaces of $X$.
+            For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $a$ and $B$, respectively.
+            Since $A$ can be covered by finitely many $U_a$'s, the union of the corresponding $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $B$, respectively.
+            Therefore, $X$ is compactly normal.
+        \item[(c)]
+            If $A$ is a compact subspace of a Hausdorff space $X$, then it follows from (b) that $X\setminus A$ is open, hence $A$ is closed.
+            In (a), we have shown that a closed subspace of a compact space is compact.
+            Thus, compactness and closedness of a subspace of a compact Hausdorff space coincide.
+            Hence, every compact Hausdorff space is normal.
+    \end{enumerate}
+\end{sol}
+
+\begin{prop}
+    A continuous image of a compact space is compact.
+\end{prop}
+\begin{proof}
+    Because this proposition is easy to prove, the proof will be left as an exercise.
+\end{proof}
+
+\begin{prop}
+    Let $f: X\rightarrow Y$ be a bijective continuous map.
+    If $X$ is compact and $Y$ is Hausdorff, then $f$ is a homeomorphism.
+\end{prop}
+\begin{proof}
+    If $A$ is a closed subspace of $X$, then $A$ is compact, and $f(A)$ is a compact subspace of $Y$, hence $f(A)$ is a closed subspace of $Y$.
+    Therefore, $f$ is a homeomorphism.
+\end{proof}
+
+\begin{thm}\label{products of compact spaces}
+    The product of finitely many compact spaces is compact.
+    (In fact, this theorem extends to arbitrary products of compact spaces, which is called the Tychonoff's theorem.
+    The proof of the Tychonoff's theorem will not be introduced in this note; read your textbook.)
+\end{thm}
+When proving the above theorem, the first version of the tube lemma will be used.
+\begin{lem}\label{tube lemmas}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (The tube lemma)
+            Consider the product space $X\times Y$, where $Y$ is a compact space.
+            If $N$ is an open subspace of $X\times Y$ containing a slice $x_0\times Y$ for some $\{x_0\}\in X$, then $N$ contains a tube $W\times Y$ about $x_0\times Y$, where $W$ is a neighborhood of $x_0$ in $X$.
+        }
+        \item[(b)]
+        {
+            (A generalization of the tube lemma)
+            Let $A$ and $B$ be compact subspaces of $X$ and $Y$, respectively, and let $N$ be an open subspace of $X\times Y$ containing $A\times B$.
+            Then, there are neighborhoods $U$ and $V$ of $A$ in $X$ and $B$ in $Y$, respectively, such that $A\times B\subset U\times V\subset N$.
+            (Our first version comes when $A=\{x_0\}$ and $B=Y$.)
+        }
+    \end{enumerate}
+\end{lem}
+\begin{proof}[Proof of \cref{tube lemmas}]
+    \begin{enumerate}
+        \item[(a)]
+            Since $N$ is open, for each point $(x_0, y)\in\{x_0\}\times Y$, there is a neighborhood $A_y\times B_y$ of the point $(x_0, y)$ contained in $N$, where $A_y$ and $B_y$ are open in $X$ and $Y$, respectively.
+            Because $\{x_0\}\times Y$ is homeomorphic to $Y$, hence $\{x_0\}\times Y$ is also compact.
+            Hence, the slice can be covered by finitely many above basis members.
+            For convinience, write such members as $A_i\times B_i$ for $i=1, \cdots, n$.
+            Write $W=\bigcap_{i=1}^n A_i$, then $\{x_0\}\times Y\subset W\times Y\subset N$.
+        \item[(b)]
+            Since $N$ is open, for each point $(a, t)\in\{a\}\times B$, there is a neighborhood $A_t^a\times B_t^a$ of the point $(a, t)$ contained in $N$, where $A_t^a$ and $B_t^a$ are open in $X$ and $Y$, respectively.
+            Because the slice $\{a\}\times B$ is compact for each $a\in A$, the slice can be covered by finitely many neighborhoods; write it as $A_i^a\times B_i^a$ for $i=1, \cdots, n^a$.
+            Finally, define
+            \begin{align*}
+                U^a:=\bigcap_{i=1}^{n^a}{A_i^a},\quad V^a:=\bigcup_{i=1}^{n^a}{B_i^a}.
+            \end{align*}
+            Then, $U^a\times V^a$ is an open set contained in $N$ containing $\{a\}\times Y$.
+            Since $A$ is compact, finitely many $U^a$'s cover $A$; write them as $U^1, \cdots, U^k$.
+            Finally, define
+            \begin{align*}
+                U:=\bigcup_{i=1}^k U^k,\quad V:=\bigcap_{i=1}^k V^k.
+            \end{align*}
+            Then, $U\times V$ is an open set contained in $N$ containing $A\times B$.
+    \end{enumerate}
+    This completes the proof of tube lemmas.
+\end{proof}
+\begin{proof}[Proof of \cref{products of compact spaces}]
+    Let $X, Y$ be compact spaces, and $\mc{A}$ be an open cover of $X\times Y$.
+    Given $x_0\in X$, because the slice $\{x_0\}\times Y$ is compact, there are finitely many members of $\mc{A}$ covering the slice $\{x_0\}\times Y$, and such members cover a tube $U(x_0)\times Y$ about $\{x_0\}\times Y$.
+    Because finitely many $U(x_0)$'s cover $X$, the compactness of $X\times Y$ is justified.
+    The general result can be obtained with help of mathematical induction.
+\end{proof}
+
+Before introducing some problems, we introduce some properties of compact ordered sets and a relevant theorem.
+\begin{rmk}[Compact ordered sets]
+    Suppose $X$ is an ordered set in the order topology, and assume $X$ is compact.
+    \begin{enumerate}
+        \item[(a)] $X$ has the greatest and the least element; otherwise, one can construct an open cover of $X$ with no finite subcover.
+        \item[(b)] (Extreme value theorem) Let $f: K\rightarrow Y$ be a continuous map, where $K$ is a compact space and $Y$ is an ordered set in the order topology. Then $f$ attains the maximum and the minimum. This is because the subspace $f(K)$ of $Y$ is compact.
+        \item[(c)] If $X$ satisfies the least upper bound property, then every closed interval in $X$ is compact.
+    \end{enumerate}
+\end{rmk}
+
+The first problem deals with the distance between a point and a subspace and neighborhoods of subspaces in a metric space.
+In particular, (c) implies that the original definition of the $\epsilon$-neighborhood of a subspace and our intuition coincide.
+\begin{prob}
+    Let $(X, d)$ be a metric space and $A$ be a nonempty subset of $A$.
+    \begin{enumerate}
+        \item[(a)] Show that $\dist{d}{x}{A}=0$ if and only if $x\in\overline{A}$.
+        \item[(b)] Show that if $A$ is compact, then $\dist{d}{x}{A}=d(x, a)$ for some $a\in A$, whenever $x\in X$.
+        \item[(c)] Define the $\epsilon$-neighborhood of $A$ in $X$ to be the set
+            \begin{align*}
+                U(A, \epsilon):=\{x\in X:\dist{d}{x}{A}<\epsilon\}.
+            \end{align*}
+            Show that $U(A, \epsilon)$ equals the union of the open balls $B_d(a, \epsilon)$ for $a\in A$.
+        \item[(d)] Assume that $A$ is compact, and let $U$ be an open set in $X$ containing $A$.
+            Show that $U$ contains an $\epsilon$-neighborhood of $A$ for some $\epsilon>0$.
+        \item[(e)] Show that the result in (d) need not hold if $A$ is closed but not compact.
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {    
+            (Almost clear)
+            If $x\in\overline{A}$, then whenever $k>0$, there is a point $a\in A$ such that $d(x, a)<k$.
+            Hence, $\dist{d}{x}{A}=0$.
+            Assuming conversely, whenever $k>0$, there is a point $a\in A$ such that $d(x, a)<k$, so $B_d(x, k)$ intersects $A$.
+            Hence, $x\in\overline{A}$.
+        }
+        \item[(b)]
+        {
+            Given a point $x\in X$, define a function $f_x: A\rightarrow[0, \infty)$ by $f_x(a)=d(x, a)$ for $a\in A$.
+            Since $|f_x(a)-f_x(b)|\leq d(a, b)$ whenever $a, b\in A$, $f_x$ is (uniformly) continuous.
+            Because the domain $A$ of $f_x$ is a compact space, $f_x$ attains the minimum.
+            Furthermore, $\dist{d}{x}{A}=\inf\{d(x, a): a\in A\}=\min\{f_x(a): a\in A\}$, so $\dist{d}{x}{A}=d(x, a)$ for some $a\in A$.
+        }
+        \item[(c)]
+        {
+            It is clear that every $\epsilon$-ball with the center in $A$ is contained in the $\epsilon$-neighborhood of $A$, so one inclusion is obvious.
+            Suppose $u\in U(A, \epsilon)$ so that $\dist{d}{u}{A}<\epsilon$.
+            It implies that the $\epsilon$-ball centered at $u$ intersects $A$ at a point $a\in A$, so the $\epsilon$-ball centered at $a$ contains $u$.
+            Therefore, $U(A, \epsilon)$ is contained in the union of the $\epsilon$-balls with centers in $A$.
+        }
+        \item[(d)]
+        {    
+            Let $f: A\rightarrow \bb{R}$ be a function defined by $f(a)=\dist{d}{a}{X\setminus U}$.
+            \begin{itemize}
+                \item
+                {
+                    $f$ is continuous; for $a, b\in A$, we have $f(a)\leq d(a, x)\leq d(a, b)+d(b, x)$ for all $x\in X\setminus U$, so $f(a)\leq d(a, b)+f(b)$, from which, by symmetry, we obtain $|f(a)-f(b)|\leq d(a, b)$.
+                }
+                \item
+                {
+                    $f(a)>0$ for all $a\in A$; otherwise, if $f(p)=0$ for some $p\in A$, then $p\in\ol{X\setminus U}=X\setminus U$, a contradiction.
+                }
+            \end{itemize}
+            Because $A$ is compact, $f$ attains the minimum $\delta>0$.
+            Hence, for example, if $\epsilon=\delta/2$, then $U(A, \epsilon)$ is contained in $U$.
+        }
+        \item[(e)]
+        {
+            The $x$-axis in the $xy$-plane is closed but not compact, and the following open region contains the $x$-axis:
+            \begin{align*}
+                R:=\{(x, y)\in\bb{R}^2: y<e^{-|x|}\}.
+            \end{align*}
+            No neighborhood of the $x$-axis is contained in $R$.
+        }
+    \end{enumerate}
+\end{sol}
+
+\begin{prob}
+    Let $X$ be a compact Hausdorff space.
+    Let $\mc{A}$ be a collection of closed connected subsets of $X$ that is simply ordered by proper inclusion.
+    Then $Y:=\bigcap_{A\in\mc{A}} A$ is connected.
+\end{prob}
+\begin{sol}
+    Suppose $Y$ is not connected, and let $(C, D)$ be a separation of the intersection $Y=\bigcap_{A\in\mc{A}}A$.
+    Because $C$ and $D$ are closed in $Y$ and $Y$ is closed in $X$, $C$ and $D$ are closed in $X$.
+    Since $X$ is normal, there are disjoint neighborhoods $U$ and $V$ of $C$ and $D$, respectively.
+    Suppose $A\setminus (U\sqcup V)$ is empty for some $A\in\mc{A}$.
+    Since $A$ contains $Y$, $A\subset U\sqcup V$, $A$ has a separation $(A\cap U, A\cap V)$, a contradiction.
+    Therefore, $A\setminus(U\sqcup V)$ is nonempty for all $A\in\mc{A}$, and the collection $\mc{C}$ of $A\setminus(U\sqcup V)$ is a simply ordered collection of sets closed in $X$.
+    Therefore, $\mc{C}$ satisfies the finite intersection property, and the intersection of members in $\mc{C}$ is nonempty, because $X$ is compact.
+    Thus, $Y$ is not contained in $U\sqcup V$, a contradiction.
+    Therefore, $Y$ is connected.
+\end{sol}

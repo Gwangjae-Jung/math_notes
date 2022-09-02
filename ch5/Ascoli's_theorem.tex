@@ -1,0 +1,264 @@
+\section{Ascoli's theorem}
+
+Throughout this section, we assume that $X$ is a topological space and $(Y, d)$ is a metric space, unless stated otherwise.
+In this section, we study a generalized Ascoli's theorem, which characterizes the compact subspaces of $C(X, Y)$ in the topology of compact convergence.
+Also, some particular versions of Ascoli's theorem will be introduced.
+
+\subsection{Generalized Ascoli's theorem}
+
+\begin{thm}[Ascoli's theorem]
+    Let $X$ be a topological space and $(Y, d)$ be a metric space.
+    Give $C(X, Y)$ the topology of compact convergence, and let $\mc{F}$ be a subset of $C(X, Y)$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose that $\mc{F}$ is pointwise equicontinuous under $d$ and pointwise relatively compact.
+            Then $\mc{F}$ is contained in a compact subspace of $C(X, Y)$; to say equivalently, $\mc{F}$ is relatively compact.
+        }
+        \item[(b)]
+        {
+            The converse of (a) is valid if $X$ is a locally compact Hausdorff space.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{rmk}
+    For a Hausdorff space $A$, a subspace $B$ of $A$ is contained in a compact subspace of $A$ if and only if $A$ is relatively compact.
+    Since if part is clear, we assume that $B$ is contained in a compact subpsace $K$ of $A$.
+    Note that the closure $\ol{B}$ of $B$ in $X$ is contained in the closure $\ol{K}$ of $K$ in $X$.
+    Since $A$ is a Hausdorff space, every compact subspace of $A$ is closed, so $\ol{K}=K$.
+    Hence, $\ol{A}\subset K$, implying that $\ol{A}$ is a closed subspace of $K$.
+    Therefore, $A$ is relatively compact.
+\end{rmk}
+\begin{proof}[Proof of (a)]
+    Impose $Y^X$ the product topology, which equals to the topology of pointwise convergence.
+    Note that $Y^X$ is a Hausdorff space and that $C(X, Y)$ (which equips to topology of compact convergence) is not a subspace of $Y^X$.
+    And let $\mc{G}$ denote the closure of $\mc{F}$ in $Y^X$. (It will be clear in Step 1 why we consider the closure of $\mc{C}$ in $Y^X$, not in $C(X, Y)$.)
+
+    Our proof then consists of the following four steps:
+    \begin{itemize}
+        \item
+        {
+            Step 1: Showing that $\mc{G}$ is a compact subspace of $Y^X$.
+        }
+        \item
+        {
+            Step 2: Showing that each member of $\mc{G}$ is continuous, and $\mc{G}$ is pointwise equicontinuous under $d$.
+        }
+        \item
+        {
+            Step 3: The topology on $Y^X$ and the topology on $C(X, Y)$ coincide on $\mc{G}$.
+        }
+        \item
+        {
+            Step 4: Concluding the proof of (a).
+        }
+    \end{itemize}
+
+    \noindent(Step 1: Showing that $\mc{G}$ is a compact subspace of $Y^X$.)\newline\indent
+    For each point $a\in X$, let $C_a$ denote the closure of $\mc{F}(a)$ in $Y$.
+    By assumption, each $C_a$ is compact, hence the product $C=\prod_{a\in X} C_x$ is also compact.
+    Because $\mc{F}\subset C\subset Y^X$, the closure of $\mc{F}$ in $Y^X$ is also contained in $C$; because $Y^X$ is a Hausdorff space, $\mc{G}$ is a compact subspace of $Y^X$.
+
+    \noindent(Step 2: Showing that each member of $\mc{G}$ is continuous, and $\mc{G}$ is pointwise equicontinuous under $d$.)\newline\indent
+    It suffices to check that $\mc{G}$ is pointwise equicontinuous under $d$.
+    Given $p\in X$, let $V_p$ be a neighborhood of $p$ in $X$ such that $f\in\mc{F}$ and $x\in V_p$ implies $d(f(x), f(p))<\epsilon$.
+    Given $g\in\mc{G}$ and $x\in V_p$, we can find $h\in\mc{F}$ such that $h\in\pi_p^{-1}(B_d(g(p), \epsilon))\cap\pi_x^{-1}(B_d(g(x), \epsilon))$, i.e., $d(h(p), g(p))<\epsilon$ and $d(h(x), h(x))<\epsilon$.
+    In this case,
+    \begin{align*}
+        d(g(x), g(p))\leq d(g(x), h(x))+d(h(x), h(p))+d(h(p), g(p))<3\epsilon,
+    \end{align*}
+    which proves that $\mc{G}$ is pointwise equicontinuous.
+
+    \noindent(Step 3: The topology on $Y^X$ and the topology on $C(X, Y)$ coincide on $\mc{G}$.)\newline\indent
+    It is clear that the topology on $Y^X$ restricted to $\mc{G}$ is coarser than the topology on $C(X, Y)$ restricted to $\mc{G}$.
+    Thus, it remains to show that the converse inclusion; for this, given a basis member $B_K(f, \epsilon)\cap \mc{G}$ of the latter topology (assume $f\in\mc{G}$), we need to find a basis member $B$ of the pointwise convergence topology on $Y^X$ such that $f\in B\cap\mc{G}\subset B_K(f, \epsilon)\cap\mc{G}$. (How could we skip some procedures?)
+
+    Using pointwise equicontinuity of $\mc{G}$, for each point $x\in X$, let $U_x$ be a neighborhood of $x$ in $X$ such that $t\in U_x$ and $g\in\mc{G}$ implies $d(g(t), g(x))<\epsilon/4$; using compactness of $K$, cover $K$ with finitely many neighborhoods $U_{p_1}, \cdots, U_{p_n}$.
+    Then, choose
+    \begin{align*}
+        B=\bigcap_{i=1}^n \pi_{p_i}^{-1}(B_d(f(p_i), \epsilon/4))
+    \end{align*}
+    so that whenever $g\in B\cap\mc{G}$ we have $d(g(p_i), f(p_i))<\epsilon/4$ for all $i$.
+    If $g\in B\cap\mc{G}$ and $x\in K$, there is an index $i$ such that $x\in U_{p_i}$, so
+    \begin{align*}
+        d(g(x), f(x))\leq d(g(x), g(p_i))+d(g(p_i), f(p_i))+d(f(p_i), f(x))<\dfrac{3}{4}\epsilon.
+    \end{align*}
+    This implies that $g\in B_K(f, \epsilon)\cap\mc{G}$, as desired.
+
+    \noindent(Step 4: Concluding the proof of (a).)\newline\indent
+    Using the results from Step 1 to Step 3, we derive that $\mc{F}$ is contained in a compact subspace of $C(X, Y)$.
+    By Step 1 and Step 2, the closure $\mc{G}$ of $\mc{F}$ in $Y^X$ is a compact subspace of $Y^X$ (in the product topology) which is contained in $C(X, Y)$; by Step 3, $\mc{G}$ is also a subspace of $C(X, Y)$ (in the topology of compact convergence).
+    Therefore, $\mc{F}$ is contained in a compact subspace $\mc{G}$ of $C(X, Y)$.
+\end{proof}
+\begin{proof}[Proof of (b)]
+    Assume that $X$ is a locally compact Hausdorff space, and let $\mc{H}$ be a compact subspace of $C(X, Y)$ which contains $\mc{F}$.
+    We show that $\mc{H}$ is pointwise equicontinuous under $d$ and pointwise (relatively) compact, from which it follows that $\mc{F}$ is pointwise equicontinuous under $d$ and pointwise relatively compact.
+
+    We first show that $\mc{H}$ is pointwise compact.
+    For this, we fix a point $a\in X$, and consider the following composition:
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.0cm]
+        C(X, Y)\arrow[r, "\imath_a", hook]
+        &
+        X\times C(X, Y)\arrow[r, "\textsf{ev}"]
+        &
+        Y
+        \\
+        H\arrow[rr, "\jmath"']\arrow[u, hook]
+        &
+        &
+        H(a)\arrow[u, hook]
+    \end{tikzcd},
+    \end{equation*}
+    where $\imath_a$ maps $f\in C(X, Y)$ to $(a, f)\in X\times C(X, Y)$.
+    Because $\imath_a$ is continuous for all $a\in X$ and $\textsf{ev}$ is continuous (see \cref{ev is continuous if the domain is LCH}, and note that the compact convergence topology on $C(X, Y)$ and the compact-open topology on the space coincide).
+    Hence, $\jmath$ maps the compact subspace $\mc{H}$ of $C(X, Y)$ onto a compact $\mc{H}(a)$ of $Y$.
+
+    We now show that $\mc{H}$ is pointwise equicontinuous under $d$; for this, we fix a point $a\in X$ and let $A$ be a compact subspace of $X$ containing a neighborhood of $a$ in $X$.
+    Then it suffices to check that the following restriction
+    \begin{align*}
+        \mc{R}:=\{f|_A: f\in\mc{H}\}
+    \end{align*}
+    is equicontinuous at $a$.
+    Give $C(A, Y)$ the compact convergence topology.
+    Because $A$ is compact, the compact convergence topology on $C(A, Y)$ and the uniform topology on $C(A, Y)$ coincide.
+    Also, it can be easily verified that the restriction map $r: C(X, Y)\rightarrow C(A, Y)$ is continuous (see the following problem), which implies that $\mc{R}=r(\mc{H})$ is a compact subspace of $C(A, Y)$.
+    Hence, $\mc{R}$ is totally bounded under the uniform metric on $C(A, Y)$ induced by $d$, so $\mc{R}$ is pointwise equicontinuous under $d$.
+\end{proof}
+\begin{prob}
+    Show that the restriction map $r: C(X, Y)\rightarrow C(A, Y)$ in the proof of (b) above is continuous.
+\end{prob}
+\begin{sol}
+    Given $f\in C(X, Y)$ and a basis member $B_2:=B_K(f, \epsilon)$ of the topology on $C(A, Y)$, because $K$ is a compact subspace of $A$, $K$ is a compact subspace of $X$.
+    Hence, one can consider the basis member $B_1:=B_K(f, \epsilon)$ of the topology on $C(X, Y)$, and this basis member is mapped onto $B_2$ by the restriction map.
+\end{sol}
+
+\subsection{Some particular versions of Ascoli's theorem}
+
+We first introduce the following classical version of Ascoli's theorem.
+The following remark plays as a technically essential tool in this subsection, and it worths considering the remark as a lemma:
+\begin{rmk}
+    When $(Y, d)$ is a complete metric space, relative compactness and total boundedness for subspaces of $Y$ coincide.
+\end{rmk}
+\begin{thm}[Classical version of Ascoli's theorem]
+    Let $X$ be a compact space; let $(\bb{R}^n, d)$ denote the Euclidean space in either the square metric or the Euclidean metric; give $C(X, \bb{R}^n)$ the corresponding uniform topology (which coincides the compact convergence topology).
+    For a subset $\mc{F}$ of $C(X, \bb{R}^n)$, the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\mc{F}$ is pointwise equicontinuous under $d$ and pointwise bounded.
+        }
+        \item[(b)]
+        {
+            $\mc{F}$ is relatively compact in $C(X, \bb{R}^n)$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Since boundedness and total boundedness coincide in $\bb{R}$, it is clear that (a) implies (b).
+    To prove the converse implication, assume that $\mc{F}$ is relatively compact in $C(X, \bb{R}^n)$ and let $\mc{G}$ be the closure of $\mc{F}$ in $C(X, \bb{R}^n)$.
+    What we want to show is the following:
+    \begin{center}
+        $\mc{G}$ is pointwise equicontinuous under $d$ and pointwise bounded.
+    \end{center}
+    We first prove that $\mc{G}$ is pointwise bounded.
+    Since $\mc{G}$ is a compact subspace of $C(X, Y)$, given $\epsilon>0$, there are finitely many maps $f_1, \cdots, f_n\in\mc{F}$ such that $\mc{G}\subset\bigcup_{i=1}^n B_{\ol\rho}(f_i, \epsilon)$, thus $\mc{G}$ is pointwise bounded.
+    Now we prove pointwise equicontinuity.
+    Suppose $g\in\mc{G}$ and let $f\in\mc{F}$ be a point such that $\ol\rho(g, f)<\epsilon/3$; given a point $p\in X$, let $V$ be a neighborhood of $p$ in $X$ such that $x\in V$ and $h\in\mc{F}$ implied $d(h(x), h(p))<\epsilon/3$.
+    We then have
+    \begin{align*}
+        d(g(x), g(p))\leq d(g(x), f(x))+d(f(x), f(p))+d(f(p), g(p))<\epsilon
+    \end{align*}
+    for all $x\in V$, proving pointwise equicontinuity of $\mc{G}$.
+\end{proof}
+\begin{cor}
+    Let $X$ be a compact space; let $d$ denote either the square metric or the Euclidean metric on $\bb{R}^n$; give $C(X, \bb{R}^n)$ the corresponding uniform topology (which coincides the compact convergence topology).
+    For a subset $\mc{F}$ of $C(X, \bb{R}^n)$, the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\mc{F}$ is compact.
+        }
+        \item[(b)]
+        {
+            $\mc{F}$ is closed in $C(X, \bb{R}^n)$, pointwise equicontinuous under $d$, and bounded under the sup metric $\rho$.
+        }
+    \end{enumerate}
+\end{cor}
+\begin{proof}
+    Note the following observations:
+    \begin{itemize}
+        \item
+        {
+            By Ascoli's theorem, $\mc{F}$ is relatively compact if and only if $\mc{F}$ is pointwise equicontinuous under $d$ and pointwise totally bounded.
+        }
+        \item
+        {
+            By Heine-Borel theorem, $\mc{F}$ is compact if and only if $\mc{F}$ is complete and totally bounded under the sup metric.
+        }
+        \item
+        {
+            Because $C(X, Y)$ is complete under the sup metric, closedness and completeness coincide for subspaces of $C(X, Y)$.
+        }
+    \end{itemize}
+    Hence, (a) implies (b).
+    To show that (b) implies (a), it suffices to check that boundedness of $\mc{F}$ implies pointwise total boundedness of $\mc{F}$.
+    Since $\mc{F}\subset B_{\ol\rho}(0, R)$ for some real number $R>0$, $\mc{F}(a)\subset[-R, R]$ for all $a\in X$.
+    Being a subspace of a totally bounded space, $\mc{F}(a)$ is also totally bounded for each $a\in X$, as desired.
+\end{proof}
+
+As the second type, we assume that $X$ is a compact space and $(Y, d)$ is a complete metric spcae.
+\begin{thm}
+    Let $X$ be a compact space, $(Y, d)$ be a complete metric space, and $\mc{F}$ be a subset of $C(X, Y)$.
+    Give $C(X, Y)$ the compact convergence topology (which coincides the uniform topology).
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $\mc{F}$ is pointwise equicontinuous and pointwise totally bounded, then $\mc{F}$ is relatively compact.
+        }
+        \item[(b)]
+        {
+            The converse of (a) holds if $X$ is a Hausdorff space.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{rmk}
+    Suppose $X$ is a compact Hausdorff space.
+    Then $\mc{F}$ is relatively compact if and only if $\mc{F}$ is pointwise equicontinuous and pointwise totally bounded.
+\end{rmk}
+\begin{proof}
+    The results follow from Ascoli's theorem and the first remark.
+\end{proof}
+
+As the third type, we assume that $X$ is a locally compact Hausdorff space and $(Y, d)$ is a complete metric space.
+\begin{thm}
+    Suppose $X$ is a locally compact Hausdorff space and $(Y, d)$ is a complete metric space.
+    Give $C(X, Y)$ the compact convergence topology.
+    Then a subset $\mc{F}$ of $C(X, Y)$ is relatively compact if and only if $\mc{F}$ is pointwise totally bounded and pointwise equicontinuous under $d$.
+\end{thm}
+\begin{proof}
+    Note again that pointwise total boundedness and pointwise relative compactness coincide, since $(Y, d)$ is complete.
+\end{proof}
+
+\begin{cor}[Generalized Arzel\`{a}'s theorem]
+    Let $X$ be a $\sigma$-compact Hausdorff space and $(Y, d)$ be a complete metric space.
+    Give $C(X, Y)$ the compact convergence topology.
+    If a sequence $(f_n)_{n\in\bb{N}}\subset C(X, Y)$ is pointwise equicontinuous and pointwise totally bounded under $d$, then the sequence $(f_n)_{n\in\bb{N}}$ has a subsequence which converges compactly in $C(X, Y)$.
+\end{cor}
+\begin{proof}
+    \color{red}
+    It is not solved, yet.
+    \color{black}
+\end{proof}
+\begin{cor}[Arzel\`{a}'s theorem of undergraduate mathematical analysis]
+    Let $X$ be a compact Hausdorff space and $(Y, d)$ be a complete metric space.
+    Give $C(X, Y)$ the compact convergence topology (which coincides the uniform topology).
+    If a sequence $(f_n)_{n\in\bb{N}}\subset C(X, Y)$ is pointwise equicontinuous and pointwise totally bounded under $d$, then the sequence $(f_n)_{n\in\bb{N}}$ has a subsequence which converges compactly (or uniformly, since $X$ is assumed to be compact) in $C(X, Y)$.
+\end{cor}
+\begin{proof}
+    By the preceeding theorem, $(f_n)_{n\in\bb{N}}$ is relatively compact in $C(X, Y)$.
+    Because $C(X, Y)$ is a Hausdorff space, the closure of $(f_n)_{n\in\bb{N}}$ is closed, which justifies the assertion.
+\end{proof}
+\begin{rmk}
+    When $Y$ is given as $\bb{R}$ or $\bb{C}$, total boundedness reduces to boundedness, since they are equivalent on those metric spaces.
+\end{rmk}

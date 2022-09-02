@@ -1,0 +1,177 @@
+\section{Topological groups}
+
+\begin{defi}[Topological groups]
+    A group $G$ is called a topological group if $G$ is also a topological space such that both multiplication and inversion are continuous.
+    (The continuity axiom can be replaced by the following axiom: The map from $G\times G$ into $G$ defined by $(a, b)\mapsto ab^{-1}$ is continuous.)
+\end{defi}
+\begin{rmk}
+    A continuous group homomorphism is called a topological group homomorphism.
+\end{rmk}
+
+Let $G$ be a topological group.
+For any point $a$ of $G$, the following maps
+\begin{eqnarray*}
+    \rho_a: G\rightarrow G,& g\mapsto ga\\
+    \lambda_a: G\rightarrow G,& g\mapsto ag\\
+    \gamma_a: G\rightarrow G,& g\mapsto aga^{-1}
+\end{eqnarray*}
+will be frequently used in this chapter to investigate properties of topological groups.
+Indeed, the above maps are group isomorphisms which are also homeomorphisms.
+\begin{obs}
+    Some direct conclusions from the result that the above maps are group-isomorhphic homeomorphisms are listed here:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $G$ is a homogeneous space, i.e., for every pair $x, y$ of points of $G$, there is a homeomorphism of $G$ onto itself mapping $x$ to $y$.
+        }
+        \item[(b)]
+        {
+            Every neighborhood $W$ of $g$ in $G$ can be written as $W=Ug=gV$, where $U=Wg^{-1}$ and $V=g^{-1}W$ are neighborhoods of the identity.\footnote{A neighborhood of the identity in a topological group is called an identity neighborhood.}
+        }
+        \item[(c)]
+        {
+            Let $G, K$ be topological groups and $f: G\rightarrow K$ be a group homomorphism.
+            Then $f$ is continuous on $G$ if $f$ is continuous at a point of $G$.
+        }
+    \end{enumerate}
+    While (a) is direct and (b) is clear, (c) seems to be explained.
+    Assume that $f$ is continuous at $p\in G$, and choose $x\in G$ and let $W$ be a neighborhood of $y:=f(x)$ in $K$.
+    Then $f(p)y^{-1}W$ is a neighborhood of $f(p)$ in $K$, hence there is a neighborhood $U$ of $p$ in $G$ such that $f(U)\subset f(p)y^{-1}W$.
+    The neighborhood $xp^{-1}U$ of $x$ in $G$, as desired, is mapped into $W$ under $f$.
+\end{obs}
+
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The (abelian) groups $(\bb{Z}, +)$, $(\bb{R}, +)$, and $(\bb{R}^{>0}, \cdot)$ are topological groups. (As usual, impose each space the order topology.)
+        }
+        \item[(b)]
+        {
+            $(S^1, \cdot)$ is a topological group. (As usual, let $A\subset S^1$ be a basis member if $A$ is the intersection of an open ball in $\bb{C}$ and $S^1$.)
+        }
+        \item[(c)]
+        {
+            The general linear group $GL_n(\bb{R})$ is a topological group, when it is topologized naturally as a subspace of $\bb{R}^{n^2}$.
+        }
+    \end{enumerate}
+\end{exmp}
+
+Topological groups behave well in the context of products.
+\begin{prop}
+    Suppose that $(G_\alpha)_{\alpha\in I}$ is a collection of topological groups.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The product $G:=\prod_\alpha G_\alpha$, endowed with the product topology, is a topological group.
+        }
+        \item[(b)]
+        {
+            For each index $\alpha\in I$, the projection map $\pi_\alpha$ is an open topological group homomorphism.
+        }
+        \item[(c)]
+        {
+            (A universal property)
+            For every topological group $H$ and topological group homomorphisms $f_\alpha: H\rightarrow G$ for $\alpha\in I$, there is a unique topological group homomorphism $f: H\rightarrow G$ such that $\pi_\alpha\circ f=f_\alpha$ for each $\alpha\in I$.
+            In short, there is a unique topological group homomorphism $f: H\rightarrow G$ satisfying the following commutative diagram:
+            \begin{equation*}
+            \begin{tikzcd}[row sep=1.0cm, column sep=1.0cm]
+                &
+                \prod_{\alpha\in I} G_\alpha
+                \arrow[dr, "\pi_\gamma"]
+                &\\
+                H\arrow[ur, "f"]\arrow[rr, "f_\gamma"']
+                &
+                &
+                G_\gamma
+            \end{tikzcd}.
+            \end{equation*}
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    To show that the product of topological groups is a topological group, it suffices to check continuity of multiplication and inversion: being endowed with the product topology and each multiplication and inversion are continuous, the multiplication and inversion in $G$ are also continuous.
+    Because each projection is open and continuous, it is clear that each projection is an open topological group homomorphism.
+    The existence and uniqueness of a ``group homomorphism'' $f$ is due to a universal property of product groups; its continuity follows from the equation $\pi_\alpha\circ f=f_\alpha$ for $\alpha\in I$.
+\end{proof}
+
+Topological groups also behave well in the context of subgroups and closures.
+\begin{prop}
+    A subgroup $H$ of a topological groups $G$ is a topological group.
+    Also, the closure $\ol{H}$ of $H$ in $G$ is a subgroup of $G$, hence a topological group.
+    In addition, if $H$ is a normal subgroup of $G$, then $\ol H$ is also a normal subgroup of $G$.
+\end{prop}
+\begin{proof}
+    It is easy to check that subgroups of a topological group is a topological group.
+    To check that $\ol H$ is a subgroup of $G$, it suffices to check if $ab^{-1}\in\ol H$ for any $a, b\in\ol H$.
+    Considering the following continuous map $\kappa: G\times G\rightarrow G$ defined by $\kappa(x, y)=xy^{-1}$, we have $\kappa(\ol H\times\ol H)=\kappa(\ol{H\times H})\subset\ol{\kappa(H\times H)}=\ol{H\times H}=\ol H\times\ol H$, so $H$ is a subgroup of $G$.
+    Finally, assume $H$ is a normal subgroup of $G$.
+    To show that $\ol H$ is a normal subgroup of $G$, it suffices to check if $ghg^{-1}\in \ol H$ for all $g\in G$ and $h\in\ol{H}$; consider the continuous map $\gamma_g$ for $g\in G$, and observe that $\gamma_g(\ol H)\subset\ol{\gamma_g(H)}=\ol H$.
+\end{proof}
+
+Regarding subgroups, we introduce the following proposition.
+\begin{prop}
+    Let $G$ be a topological group and $H$ be a subgroup of $G$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The subgroup $H$ is open in $G$ if it contains a nonempty open set.
+        }
+        \item[(b)]
+        {
+            If $H$ is open in $G$, then $H$ is closed in $G$.
+        }
+        \item[(c)]
+        {
+            The subgroup $H$ is closed in $G$ if and only if there is an open subset $U$ of $G$ such that $H\cap U$ is a nonempty closed subspace of $U$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Let $H$ be a subgroup of $G$.
+    To prove (a), suppose $H$ contains an open subspace $U$ of $G$.
+    Then $H$ is open in $G$, since $H=UH=\bigcup_{h\in H}Uh$.
+    To prove (b), assume $H$ is open in $G$.
+    Because $G\setminus H=\bigcap_{a\in G\setminus H} aH$ is open, $H$ is closed.
+    When proving (c), note that one way is clear.
+    Let $U$ be an open subset of $G$ such that $U\cap H$ is a nonempty closed subspace of $U$.
+    Letting $V=U\cap\ol H$ where the overline is used to denote the closure in $G$, $V$ is an open subset of $\ol H$ such that $V\cap H=U\cap H$ is a nonempty closed subspace of $V$, hence of $\ol H$.
+    Because $H$ is dense in $\ol H$, it can be easily checked that $V\cap H$ should be empty and $V\subset H$.
+    Because $V$ is an open subspace of $\ol H$, $H$ turns out to be an open subspace of $\ol H$, hence a closed subspace of $\ol H$.
+    Because the closure of $H$ in $\ol H$ is $\ol H$, we have $\ol H=H$, i.e. $H$ is closed in $G$, as desired.
+\end{proof}
+\begin{rmk}
+    As an undesired result obtained in the proof of (a) is the following:
+    \begin{center}
+        For a topological group $G$ and its open subset $U$, $XU$ and $UX$ are open for any subset $X$ of $G$.
+    \end{center}
+    Using this result, we can derive that the maps $(x, y)\mapsto xy$ and $(x, y)\mapsto x^{-1}y$ defined on $G\times G$ are open (and continuous).
+\end{rmk}
+
+We end this section with the discovery that a $T_1$-topological space is necessarily a regular space.
+\begin{thm}\label{T1 tg}
+    A topological space satisfying a $T_1$-axiom is a Hausdorff space and a regular space.
+\end{thm}
+To prove this, we need the following lemma:
+\begin{lem}\label{symmetric id nbhd}
+    If $U$ is a neighborhood of $e\in G$ in $G$, there is a symmetric identity neighborhood $V$ such that $VV\subset U$.
+    (We say a subset $A$ of $G$ is symmetric if $A^{-1}=A$.)
+\end{lem}
+\begin{proof}[Proof of \cref{symmetric id nbhd}]
+    Because multiplication is continuous, there is an identity neighborhood $V_1$ such that $V_1V_1\subset U$; because inversion is continuous, there is an identity neighborhood $W$ such that $V:=WW^{-1}\subset V_1$.
+    Therefore, $VV\subset U$, and it is easy to check that $V$ is a symmetric identity neighborhood.
+\end{proof}
+\begin{proof}[Proof of \cref{T1 tg}]
+    Suppose that every singletone in $G$ is closed and choose two distinct points $x, y\in G$.
+    \begin{center}
+        Want: an identity neighborhood $V$ in $G$ such that $xy^{-1}\notin VV$.
+    \end{center}
+    If the above desire is satisfied, we then have $xy^{-1}\neq u^{-1}v$ for all $u, v\in V$, $ux\neq vy$, thus $Vx\cap Vy=\varnothing$.
+    Using the preceeding lemma, one can find a symmetric identity neighborhood $V$ such that $VV\subset G\setminus\{xy^{-1}\}$.
+    This proves that $G$ is a Hausdorff space.
+
+    It remains to prove that a $T_1$-topological group is regular.
+    For this, it suffices to show the existence of a symmetric identity neighborhood $Vx\cap VA=\varnothing$, where $A$ is a closed subspace of $G$ and $x$ is a point of $G$ not contained in $A$.
+    As in the first paragraph, our goal is to find an identity neighborhood $V$ in $G$ such that $ax^{-1}\notin VV$ for all $a\in A$, and for this we find such $V$ satisfying $VV\subset G\setminus Ax^{-1}$ by using the preceeding lemma.
+    This proves that $G$ is a regular space.
+\end{proof}

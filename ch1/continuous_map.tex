@@ -1,0 +1,105 @@
+\section{Continuous maps}
+
+In this section, we assume $X, Y, Z$ are topological spaces.
+
+\begin{defi}[Continuity]
+    The map $f: X\rightarrow Y$ is said to be continuous if $f^{-1}(U)$ is open in $X$ whenever $U$ is open in $Y$.
+    If the map $f$ is bijective and its inverse is also continuous, then $f$ is called a homeomorphism.
+    In addition, if $f$ is injective and continuous, and the induced map $\tilde{f}: X\rightarrow f(X)$ defined by $\tilde{f}(a)=f(a)$ for all $a\in X$ is a homeomorphism, then $f$ is called an embedding of $X$ into $Y$.
+    (It will be explained that such restriction of continuous maps are always continuous.)
+\end{defi}
+
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The procedure for checking continuity can be reduced to the members of a basis or a subbasis generating the topology on the codomain $Y$. \color{brown}(Why?)\color{black}
+        }
+        \item[(b)]
+        {
+            A homeomorphism naturally induces a bijection between the topologies on the domain and the codomain of the homeomorphism. Also, a bijective continuous map is a homeomorphism if and only if the map is an open map.
+        }
+    \end{enumerate}
+\end{rmk}
+
+If given maps $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous, some naturally induced maps are also continuous, as indicated below. (Checking continuity is left as an exercise.)
+
+\begin{prop}
+    Suppose $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous.
+    \begin{enumerate}
+        \item[(a)] Every constant map is continuous.
+        \item[(b)] $g\circ f$ is continuous.
+        \item[(c)] Every restriction of a continuous map on a subspace is continuous. Also, if $Y$ is a subspace of $Z$, then $\tilde{f}: X\rightarrow Z$ defined by $\tilde{f}(x)=f(x)$ for all $x\in X$ is continuous.
+    \end{enumerate}
+\end{prop}
+
+\begin{prob}
+    Suppose that $f: X\rightarrow Y$ is continuous.
+    If $x$ is a limit point of the subset $A$ of $X$, is it necessarily true that $f(x)$ is a limit point of $f(A)$?
+\end{prob}
+\begin{sol}
+    It is not necessarily true; consider constant maps.
+\end{sol}
+
+\begin{thm}
+    Let $A$ be a set; let $\{X_\alpha\}_{\alpha\in I}$ be an indexed family of spaces; and let $\{f_\alpha: A\rightarrow X_\alpha\}_{\alpha\in I}$ be an indexed family of functions.
+    \begin{enumerate}
+        \item[(a)] There is a unique coarsest topology $\mc{T}$ on $A$ relative to which each of the function $f_\alpha$ is continuous. In fact, the topology $\mc{T}$ is generated as a subbasis by the following collection:
+        \begin{align*}
+            \left\{f_\alpha^{-1}(U_\alpha)
+            :
+            \alpha\in I\textsf{ and }U_\alpha\textsf{ is open in }X_\alpha\right\}.
+        \end{align*}
+        \item[(b)] A map $g: Y\rightarrow A$ is continuous relative to $T$ if and only if each composition $f_\alpha\circ g$ is continuous.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \begin{enumerate}
+        \item[(a)]
+            Almost clear; such topology necessarily contains the given collection.
+        \item[(b)]
+            It remains to prove if part.
+            Suppose $g_\alpha:=f_\alpha\circ g$ is continuous for each $\alpha\in I$.
+            Given an open subset $U$ of $A$, we have $g_\alpha^{-1}(A)=g^{-1}(f_\alpha^{-1}(A))$, completing the proof.
+    \end{enumerate}
+\end{proof}
+\begin{rmk}
+    The product topology on a product space satisfies the above properties; in fact, the product topology is the topology on $A$ with
+    \begin{center}
+        $\ds{A=\prod_{\alpha\in I}X_\alpha}$\quad and\quad$f_\alpha=\pi_\alpha$ for each $\alpha\in I$.
+    \end{center}
+\end{rmk}
+
+\begin{prob}
+    Let $(X, d)$ be a metric space.
+    \begin{enumerate}
+        \item[(a)]
+            Show that $d: X\times X\rightarrow\bb{R}$ is continuous.
+        \item[(b)]
+            Let $X'$ be a space heving the same underlying set as $X$.
+            Show that if $d': X'\times X'\rightarrow\bb{R}$ is continuous, where $d'$ is the map defined by $d'(a, b)=d(a, b)$ for all $(a, b)\in X'\times X'$, then the topology on $X'$ is finer than the topology on $X$.
+            Deduce that the metric topology on $X$ induced by the metric $d$ is the coarsest topology on $X$ relative to which $d$ is continuous.
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    Note that the collection $\{(-a, a):a\in\bb{R}^{>0}\}$ is a subbasis of the standard topology on $\bb{R}$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Given $(a, a)\in X\times X$, consider the basis member $B_d(a, \epsilon)\times B_d(a, \epsilon)$.
+            If $(p, q)$ belongs to the member, then $d(p, q)\leq d(p, a)+d(a, q)<2\epsilon$, so $d$ is continuous.
+        }
+        \item[(b)]
+        {
+            Consider the set identity map $\imath: X'\times X'\rightarrow X\times X$.
+            We wish to show that $\imath$ is continuous.
+            Since $d'=d\circ\imath$ is continuous, $\imath^{-1}(d^{-1}([0, a)))$ is open whenever $a>0$.
+            Because the collection of $d^{-1}([0, a))$ with $a>0$ is a subbasis of the topology on $X\times X$, it is implied that $\imath$ is continuous.
+            Hence, the topology on $X\times X$ is coarser than the topology on $X'\times X'$.
+            
+            Given a point $a\in X$ with its neighborhood $A$ which is open in $X$, the point $(a, a)$ is contained in its neighborhood $A\times X$, which is open in $X\times X$.
+            Since the topology on $X\times X$ is coarser than the topology on $X'\times X'$, there is a basis member $U\times V$ such that $(a, a)\in U\times V\subset A\times X$.
+            Hence, $U$ is a set open in $X$ such that $a\in U\subset A$.
+        }
+    \end{enumerate}
+\end{sol}

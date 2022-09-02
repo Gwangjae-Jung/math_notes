@@ -1,0 +1,72 @@
+\section{Quotients of topological groups}
+
+Suppose that $H$ is a subgroup of a topological group $G$.
+We give the quotient $G/H$ the quotient topology induced by the projection map $p: G\rightarrow G/H$.
+Then a subset of $G/H$ is open if and only if its preimage under $p$ is open in $G$.
+\begin{prop}
+    Let $G$ be a topological group and $H$ be a subgroup of $G$.
+    Then, the projection map $p: G\rightarrow G/H$ is an open quotient map, hence $G/H$ is a quotient space of $G$.
+    Moreover, the quotient space $G/H$ is Hausdorff if and only if $H$ is closed in $G$, and $G/H$ is discrete if and only if $H$ is open in $G$.
+\end{prop}
+\begin{proof}
+    Since $G/H$ is given the quotient topology induced by $p$, $p$ is clearly a quotient map.
+    If $U$ is an open subspace of $G$, then $p(U)$ is open in $G/H$, since $p^{-1}(p(U))=UH$ is open in $G$ and $p$ is a quotient map.
+    Because $p$ is chosen so that every point of $G$ is mapped to an element of $G/H$ that contains the point, $G/H$ is a quotient space of $G$.
+
+    It is clear that $H$ is closed in $G$ if $G/H$ is a Hausdorssf space, since $H=p^{-1}(\{H\})$ and $\{H\}$ is a closed singletone in $G/H$.
+    Conversely, if $H$ is closed in $G$, because $H=p^{-1}(\{H\})$, we find that $\{H\}$ is closed in $G/H$, hence every translation of $\{H\}$ is closed, i.e., $G/H$ is a Hausdorff space.
+
+    Similarly, it is clear that $H$ is open in $G$ if $G/H$ is discrete.
+    Converse implication is now almost clear.
+\end{proof}
+
+\begin{thm}
+    Let $G$ be a topological group.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $N$ is a normal subgroup of $G$, then the group $G/N$ is a topological group with respect to the quotient topology on $G/N$.
+        }
+        \item[(b)]
+        {
+            The quotient map $p: G\rightarrow G/N$ is an open topological group homomorphism.
+        }
+        \item[(c)]
+        {
+            Moreover, the topological group $G/N$ is a Hausdorff space if and only if $N$ is closed.
+            Hence, in particular, $G/\ol N$ is a Hausdorff topological group.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    To check that $G/N$ is a topological group, it remains to check if multiplication and inversion are continuous, which are easy to check.
+    The remaining assertions follow from the preceeding proposition.
+\end{proof}
+
+\begin{exmp}
+    Consider the abelian group $(\bb{R}, +)$ and its normal subgroup $\bb{Z}$.
+    The quotient group $(\bb{R}/\bb{Z}, +)$ is homeomorphic to $(S^1, \cdot)$
+\end{exmp}
+
+We end this section with a morphism theorem.
+\begin{thm}[Morphism theorem for topological groups]
+    Let $f: G\rightarrow H$ be a topological group homomorphism, and suppose that the normal subgroup $N$ of $G$ is contained in $\ker(f)$
+    Then $f$ factors through the open topological group homomorphism $p: G\rightarrow G/N$ by a unique topological group homomorphism $\ol f$, satisfying the following commutative diagram:
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+        G
+        \arrow[r, "f"]
+        \arrow[d, "p"']
+        &
+        K\\
+        G/N
+        \arrow[ur, "\ol f"', dashed]
+    \end{tikzcd}
+    \end{equation*}
+    Furthermore, $f$ is open if and only if $\ol f$ is open.
+\end{thm}
+\begin{proof}
+    The existence and uniqueness of such group homomorphism $\ol f$ is already proved.
+    Since $p^{-1}\circ\ol f^{-1}=f^{-1}$ and $p$ is a quotient map, $\ol f$ is easily turned out to be continuous, so $\ol f$ is a topological group homomorphism.
+    It can also be checked easily that $f$ is open if and only if $\ol f$ is open.
+\end{proof}

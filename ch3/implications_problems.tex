@@ -1,0 +1,100 @@
+\section{Countability and separation axioms (Problems)}
+
+\begin{prob}
+    Show that the suggested alternative definition for regular and normal spaces are equivalent to the original definitions.
+\end{prob}
+\begin{sol}
+    Suppose $X$ is a regular space.
+    We first show part (a).
+    Given a point $a\in X$ with its neighborhood $U$ in $X$, consider the closed subspace $B:=X\setminus U$ of $X$.
+    Using the regularity of $X$, one can find a neighborhood $V$ of $a$ in $X$ and a neighborhood $W$ of $B$ in $X$ which are disjoint.
+    Then $\overline{V}\subset X\setminus W\subset X\setminus B=U$, proving the only if part.
+    To show the if part, suppose whenever a point $a$ of $X$ with its neighborhood $U$ in $X$ is given, there is a neighborhood of $a$ in $X$ whose closure in $X$ is contained in $U$ exists.
+    Given a point $x\in X$ and a closed subspace $B$ of $X$ not containing $x$, consider the neighborhood $U:=X\setminus B$ of $x$ in $X$.
+    Let $V$ be a neighborhood of $x$ in $X$ whose closure is contained in $U$.
+    Then $V$ and $X\setminus\overline{V}$ are disjoint open subsets of $X$ separating $x$ and $B$, proving the if part.
+
+    Part (b) is almost clear, and part (c) follows if we replace points of $X$ with closed subspaces of $X$.
+\end{sol}
+
+\color{red}
+\begin{prob}[Tube lemma for Lindel\"{o}f spaces]
+    
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+\color{black}
+
+\begin{prob}
+    Prove \cref{converse inheritance} for complete regular spaces.
+\end{prob}
+\begin{enumerate}
+    \item[(a)]{
+        Let $X$ be a completely regular space and $Y$ be a subspace of $X$.
+        If $a\in Y$ and $B$ is a closed subspace of $Y$ not containing $a$, then $B=Y\cap\overline{B}$, so $a\notin\overline{B}$.
+        Therefore, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(a)=0$ and $f(\overline{B})=\{1\}$.
+        The restriction of $f$ on $Y$ separates $a$ and $B$.
+    }
+    \item[(b)]{
+        Suppose $\{X_\alpha\}_{\alpha\in A}$ is a collection of completely regular spaces and write $X=\prod_{\alpha\in A}X_\alpha$.
+        Let $a$ be a point of $X$ and $B$ be a closed subspace of $X$ not containing $a$.
+        Then $a$ is contained in the open subspace $X\setminus B$, so there is a basis member $\prod_{\alpha\in A} O_\alpha$ about $a$ in $X$ contained in $X\setminus B$, with $O_\alpha\neq X_\alpha$ if and only if $\alpha=\alpha_1, \cdots, \alpha_n$.
+        For each $\alpha_i\,(i=1, \cdots, n)$, let $f_i: X_{\alpha_i}\rightarrow[0, 1]$ be a continuous function such that $f_i(a_{\alpha_i})=1$ and $f_i(X_{\alpha_i}\setminus O_{\alpha_i})=\{0\}$.
+        Then, define the function $f: X\rightarrow[0, 1]$ by $f(x)=f_1(x_{\alpha_1})\times\cdots\times f_n(x_{\alpha_n})$ for $x\in X$.
+        The function $f$ is continuous and $f(a)=1$, and $f$ maps $B$ onto $\{0\}$.
+    }
+\end{enumerate}
+
+\begin{prob}
+    Prove part (d) of \cref{converse inheritance}.
+\end{prob}
+\begin{sol}
+    Let $\{X_\alpha\}_{\alpha\in A}$ be a collection of $T_1$-spaces such that the product space $\ds{X:=\prod_{\alpha\in A} X_\alpha}$ is a Hausdorff (regular, normal) space.
+    We show that each $X_\alpha$ is also a Hausedorff (regular, normal) space.
+    \begin{enumerate}
+        \item[(1)]
+        {
+            When $X$ is a Hausdorff space and $p, q$ are disjoint points of $X$, let $U_\beta$ and $V_\beta$ be disjoint open sets in $X_\beta$ separating $p_\beta$ and $q_\beta$, where $\beta\in A$.
+            Then $\prod_{\alpha\in A} U_\alpha$ and $\prod_{\alpha\in A} V_\alpha$ are desired sets, where $U_\alpha=X_\alpha$ and $V_\alpha=X_\alpha$ when $\alpha\neq\beta$.
+        }
+        \item[(2)]
+        {
+            Suppose $X$ is a regular space, and let $p$ be a point of $X$.
+            Given $\beta\in A$, let $U_\beta$ be a neighborhood of $p_\beta$ in $X_\beta$ and $U_\alpha=X_\alpha$ for all $\alpha\neq\beta$.
+            Since $\prod_{\alpha\in A}U_\alpha$ is a neighborhood of $p$ in $X$, by normality, there is a basis member $\prod_{\alpha\in A}V_\alpha$ containing $p$ with the closure in $X$ contained in $\prod_{\alpha\in A}U_\alpha$.
+            Projecting onto $X_\beta$, we find that $V_\beta$ is a neighborhood of $p_\beta$ whose closure is contained in $U_\beta$.
+            Therefore, if the product space is regular, then so is each $X_\alpha$.
+        }
+        \item[(3)]
+        {
+            Given $\beta\in A$, let $B_\beta$ be a closed subspace of $X_\beta$ and let $B_\alpha=X_\alpha$ for all $\alpha\neq\beta$.
+            Also, let $U_\beta$ be a neighborhood of $B_\beta$ in $X_\beta$ and let $U_\alpha=X_\alpha$ for all $\alpha\neq\beta$.
+            Then, the subspace $B:=\prod_{\alpha\in A}B_\alpha$ is a closed subspace of $X$ contained in the open subspace $U:=\prod_{\alpha\in A} U_\alpha$ of $X$.
+            By normality, there is a neighborhood $V$ of $B$ in $X$ whose closure in $X$ is contained in $U$.
+
+            Define $F_\beta=\prod_{\alpha\in A} Z_\alpha$, where $Z_\beta=X_\beta$ and $Z_\alpha=\{x_\alpha\}$ for some $x_\alpha\in X_\alpha$ when $\alpha\neq\beta$.
+            Then, the map $\imath: X_\beta\rightarrow F_\beta$ defined by
+            \begin{eqnarray*}
+                (\pi_\alpha\circ\imath)(p)=\left\{\begin{matrix}
+                    p & \textsf{if }\alpha=\beta\\
+                    x_\alpha & \textsf{otherwise}
+                \end{matrix}\right.
+            \end{eqnarray*}
+            for all $p\in X_\beta$ is a homeomorphism.
+            Note that $F_\beta\cap V$ is open in $F_\beta$ and contains $F_\beta\cap B$ (which is closed in $F_\beta$) and that the closure of $F_\beta\cap V$ in $F_\beta$ is contained in $F_\beta\cap U$ (which is open in $F_\beta$).
+            Because $\imath^{-1}(F_\beta\cap B)=B_\beta$ and $\imath^{-1}(F_\beta\cap V)=V_\beta$, the open subspace $\imath^{-1}(F_\beta\cap V)$ of $X_\beta$ is a neighborhood of $B_\beta$ in $X_\beta$ whose closure in $X_\beta$ is contained in $U_\beta$.
+            Therefore, $X_\beta$ is a normal space.
+        }
+    \end{enumerate}
+\end{sol}
+
+\color{red}
+\begin{prob}
+    Let $f, g: X\rightarrow Y$ be continuous maps, where $Y$ is a Hausdorff space.
+    Show that $\{x\in X: f(x)=g(x)\}$ is a closed subspace of $X$.
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+\color{black}

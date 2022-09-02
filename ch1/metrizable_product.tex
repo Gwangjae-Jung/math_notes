@@ -1,0 +1,78 @@
+\section{Metrizable product spaces}
+
+Let $X_n$ be a metrizable space for each $n\in\bb{N}$.
+
+\begin{nota}
+    Given a metric $d_n$ inducing the topology on $X_n$ for each $n$,
+    define the following metric on the product space $X:=\prod_{n=1}^\infty X_n$ as follows:
+    \begin{align*}
+        \overline{\rho}: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\overline{d_n}(x_n, y_n)\right\},\\
+        D: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\frac{\overline{d_n}(x_n, y_n)}{n}\right\}.
+    \end{align*}
+\end{nota}
+
+The former metric is called the uniform metric on $X$ and the latter metric is called the $D$-metric on $X$.
+Among them, the former one can also be considered on any product spaces.
+
+\begin{thm}
+    The $D$-metric on $X$ induces the product topology on $X$.
+\end{thm}
+
+\begin{proof}
+    We first show that the topology $T_D$ induced by the $D$-metric is finer than the product topology.
+    Given a point $x\in X$ and a basis member $B=\prod_{n\in\bb{N}}B_n$ of the product topology with
+    \begin{align*}
+        \ds{\{n\in\bb{N}:B_n\neq X_n\}=\{n_1, \cdots, n_k\}},
+    \end{align*}
+    let us find a basis member of $T_D$ which contains $x$ and contained in $B$.
+    For each $n$, let $C_n=B_{d_n}(x_n, r_n)$ be a neighborhood of $x_n$ contained in $B_n$, where $C_n=X_n$ if and only if $B_n=X_n$ and $0<r_n<1$ for the other $n$'s, and let $C=\prod_{n\in\bb{N}}C_n$.
+    And let $\ds{\epsilon=\min_{1\leq i\leq k}\left\{\frac{r_{n_i}}{n_i}\right\}}$.
+    Consider $G=B_D(x, \epsilon)$.
+    If a point $y$ of $X$ is in $G$, then
+    \begin{align*}
+        \sup_{n\in\bb{N}}\left\{\frac{\overline{d_n}(x_n, y_n)}{n}\right\} < \epsilon,\quad\overline{d_n}(x_n, y_n) < r_n,
+    \end{align*}
+    so $y\in C\subset B$, i.e., $x\in G\subset B$.
+    
+    Conversely, suppose a point $x$ of $X$ and a basis element $B_D(p, r)\in T_D$ containing $x$ are given.
+    By choosing a small real number $\epsilon>0$, we can achieve $x\in B_D(x, \epsilon)\subset B_D(p, r)$.
+    Let $N$ be a positive integer such that $1/N < \epsilon$.
+    For each positive integer $n<N$, let $B_n=B_{d_n}(x_n, \epsilon)$; for each integer $n\geq N$, let $B_n=X_n$.
+    Then $x\in\prod_{n\in\bb{N}}B_n\subset B_D(x, \epsilon)\subset B_D(p, r)$, as desired.
+\end{proof}
+
+\begin{prob}
+    Let $(X, \alpha)$ and $(Y, \beta)$ be metric spaces.
+    Show that every isometry from $X$ into $Y$ is an embedding.
+\end{prob}
+\begin{sol}
+    Let $f$ be an isometry from $X$ into $Y$.
+    It is clear that $f$ is an injective continuous map.
+    Because $f$ maps an open ball of radius $r>0$ in $X$ onto an open ball of radius $r$ in $Y$, $f$ is an open map.
+    Therefore, every isometry from $X$ into $Y$ is an embedding.
+\end{sol}
+
+We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips the uniform metric $\overline{\rho}$.
+\begin{prop}
+    Let $\overline{\rho}$ be the uniform metric on $\bb{R}^\bb{N}$.
+    Given $x=(x_1, x_2, \cdots)\in\bb{R}^\bb{N}$ and a real number $0<\epsilon<1$, define
+    \begin{align*}
+        U(x, \epsilon):=\prod_{n=1}^\infty (x_n-\epsilon, x_n+\epsilon).
+    \end{align*}
+    \begin{enumerate}
+        \item[(a)] $U(x, \epsilon)\neq B_{\overline{\rho}}(x, \epsilon)$ and $U(x, \epsilon)$ is not open in the uniform topology.
+        \item[(b)] $\ds{B_{\overline{\rho}}(x, \epsilon)=\bigcup_{0<r<\epsilon} U(x, r)}$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item[(a)]
+            The point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\overline{\rho}}(x, \epsilon)$.
+            Furthermore, no neighborhood of this point entirely lies in $U(x, \epsilon)$.
+            Proving the details is left as an exercise.
+        \item[(b)]
+            For each real number $0<r<\epsilon$, we have $U(x, r)\subset B_{\overline{\rho}}(x, \epsilon)$.
+            Conversely, if $y\in B_{\overline{\rho}(x, \epsilon)}$, then $overline{\rho}(x, y)<\epsilon$, so $\ds{\sup_{n\in\bb{N}}}\{\overline{d_n}(x_n, y_n)\}=\delta$ for some $0\leq\delta<\epsilon$.
+            Hence, $B_{\overline{\rho}}(x, \epsilon)\subset U(x, r)$ for some real number $r$ such that $\delta<r<\epsilon$.
+    \end{enumerate}
+\end{proof}

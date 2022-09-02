@@ -1,0 +1,157 @@
+\section{Connected spaces}
+
+\begin{defi}
+    Let $X$ be a topological space.
+    A pair $(A, B)$ is called a separation of $X$ if $\{A, B\}$ is a partition of $X$ by nonempty subsets of $X$.
+    If $X$ has no separation, then $X$ is called a connected space.
+\end{defi}
+\begin{rmk}
+    The topological space $X$ is connected if and only if only subset of $X$ which is both open and closed in $X$ are $X$ and the empty set.
+\end{rmk}
+
+When discussing connectedness of the subspace $A$ of $X$, according to the above definition, subspaces of $A$ shall be considered.
+The following theorem implies that we can argue connectedness of the subspace $A$ of $X$ with regard to subspaces $X$.
+\begin{thm}[Connected subspace]
+    Suppose $X$ is a topological space and $A$ is a subspace of $X$.
+    Then $(U, V)$ is a separation of $X$ if and only if
+    \begin{enumerate}
+        \item[(a)] $\{U, V\}$ is a partition of $Y$ by nonempty subsets of $Y$
+        \item[(b)] and neither of which contains a limit point of the other, i.e., $\overline{A}\cap B=A\cap\overline{B}=\varnothing$, where the closures are taken in $X$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Suppose $(U, V)$ is a separation of $Y$.
+    Because $U$ is both open and closed in $Y$, $U=\overline{U}\cap Y$.
+    Since $U\cap V=\varnothing$, we have $\overline{U}\cap V=\varnothing$.
+
+    Conversely, assuming (a) and (b), we have $\overline{U}\cap Y=\overline{U}\cap(U\sqcup V)=U$, i.e., $U$ is open in $Y$.
+\end{proof}
+
+Before introducing some examples of connected spaces, we first introduce a lemma stating regarding a connected subspace, which will be frequently used.
+\begin{lem}
+    If the sets $C$ and $D$ form a separation of $X$, and if $Y$ is a connected subspace of $X$, then $Y$ lies entirely within $C$ or $D$.
+\end{lem}
+\begin{proof}
+    Define $A:=Y\cap C$ and $B:=Y\cap D$.
+    Since $(C, D)$ is a separation of $X$, $C$ and $D$ are open (and closed) in $X$, so $A$ and $B$ are open in $Y$.
+    If $A$ and $B$ are nonempty, then $(A, B)$ is a separation of $Y$, a contradiction.
+\end{proof}
+
+\begin{prop}\label{nonempty intersection keeps connectedness}
+    Suppose $\{U_\alpha\}_{\alpha\in I}$ is a collection of connected subspaces, and assume all the members have a common point.
+    Then the union of the members of the collection is connected.
+\end{prop}
+\begin{proof}
+    Suppose the union $A$ of $A_\alpha$'s is not connected.
+    Then there is a separation $(U, V)$ of $A$.
+    Each $A_\alpha$ resides entirely in $U$ or $V$.
+    Without loss of generality, assume $A_{\alpha_0}$ is in $U$ for some $\alpha_0\in I$.
+    Since a common point is in $U$ and not in $V$, all $A_\alpha$'s are in $U$, so $A\subset U$, a contradiction.
+\end{proof}
+
+\begin{prop}\label{adding limit points keeps connectedness}
+    If $A$ is a connected subspace of $X$, then adding some of its limit points keeps the space connected.
+    To be precise, if $A\subset B\subset\overline{A}$, then $B$ is connected.
+\end{prop}
+\begin{proof}
+    Suppose $B$ is not connected for some such $B$, and let $(U, V)$ be a separation of $B$.
+    Since $A$ is a connected subspace of $B$, without loss of generality, $A\subset U$, and $\overline{A}\subset \overline{U}$.
+    Because $\overline{U}$ and $V$ are disjoint, $B\cap V=\varnothing$, a contradiction.
+\end{proof}
+
+\begin{prop}\label{continuity keeps connectedness}
+    A continuous image of a connected space is connected.
+\end{prop}
+\begin{proof}
+    Let $X$ be a connected space and $f: X\rightarrow Y$ be a continuous map.
+    Suppose $f(X)$ is not connected and let $(U, V)$ be a separation of $f(X)$.
+    Since $U$ and $V$ are open in $f(X)$, their preimages are open in $X$, forming a separation of $X$, a contradiction.
+\end{proof}
+
+The idea of the proof of the following proposition is worth remarking.
+\begin{prop}
+    A finite product of connected spaces is connected.
+\end{prop}
+\begin{sol}
+    It suffices to prove for the product of two connected spaces, since the desired result can be obtained by mathematical induction.
+    Given a point $(a, b)\in X_1\times X_2$, where $X_1$ and $X_2$ are connected spaces, define the cross $C(a, b):=(\{a\}\times X_2)\cup(X_1\times\{b\})$.
+    Since each line in $C(a, b)$ is homeomorphic to $X_1$ or $X_2$, it is connected; by \cref{nonempty intersection keeps connectedness}, the cross $C(a, b)$ is connected.
+    Because
+    \begin{align*}
+        X_1\times X_2=\bigcup_{a\in X_1}C(a, b)
+    \end{align*}
+    for any given $b\in X_2$ and the intersection of such $C(a, b)$'s is nonempty, by \cref{nonempty intersection keeps connectedness}, $X_1\times X_2$ is connected.
+\end{sol}
+
+In fact, the above proposition extends to an arbitrary product.
+\begin{prop}
+    Let $\{X_\alpha\}_{\alpha\in I}$ be a family of connected spaces.
+    Then the product $X=\prod_{\alpha\in I}X_\alpha$ is connected.
+\end{prop}
+\begin{proof}
+    We first fix a point $a=(a_\alpha)_{\alpha\in I}\in X$, and let
+    \begin{align*}
+        X_K=\{x\in X
+        :
+        x_\alpha=a_\alpha\textsf{ whenever }\alpha\in I\setminus K
+        \}
+    \end{align*}
+    for each finite subset $K$ of $I$.
+    In other words, $X_K$ is a subset of $X$ which consists of all the points permitting every possible value for indices in $K$ only.
+
+    \textbf{Step 1: The union of $X_K$'s is connected}\newline\indent
+    By definition, $X_K\approx\prod_{\alpha\in K}X_\alpha$.
+    This also implies that the union $Y$ of $X_K$'s is also connected, since each $X_K$ contains the point $a$.
+
+    \textbf{Step 2: The closure of $Y$ in $X$ is $X$}\newline\indent
+    Suppose $p\in X$ and let $W$ be a neighborhood of $p$.
+    There is a basis member $B=\prod_{\alpha\in I} B_\alpha$ such that $p\in B\subset W$ (clearly, $J:=\{\alpha\in I: B_\alpha\neq X_\alpha\}=\{\alpha_1, \cdots, \alpha_n\}$).
+    Because $B$ intersects $X_J$, we can conclude that $p\in\overline{Y}$.
+
+    By Step 1 and Step 2, the product space $X$ is the closure of a connected space, so it is connected.
+\end{proof}
+
+We give a problem in the textbook, with a solution using the cross we constructed in this section.
+\begin{prob}
+    Let $X, Y$ be connected spaces and $A, B$ are nonempty proper subsets of $X, Y$, respectively.
+    Show that $(X\setminus A)\times(Y\setminus B)$ is connected.
+\end{prob}
+\begin{sol}
+    Let $(p, q)$ be a point of $(X\setminus A)\times(Y\setminus B)$, and define
+    \begin{align*}
+        M:=\bigcup_{x\in X\setminus A}C(x, q),\quad N:=\bigcup_{y\in Y\setminus B}C(p, y).
+    \end{align*}
+    It is easy to check that $M, N$ are nonempty and contain $(p, q)$, and $M\cup N=(X\setminus A)\times(Y\setminus B)$.
+    Therefore, $(X\setminus A)\times(Y\setminus B)$ is connected.
+\end{sol}
+
+\begin{exmp}
+    Since $\bb{R}$ is connected in the standard topology, $\bb{R}^\bb{N}$ is connected in the product topology.
+
+    However, $\bb{R}^\bb{N}$ is not connected in the uniform topology.
+    Let $A$ be the set of all bounded sequences in $\bb{R}^\bb{N}$, and let $B$ be the set of all unbounded sequences in $\bb{R}^\bb{N}$.
+    Clearly, $\bb{R}^\bb{N}=A\sqcup B$ and $A, B$ are nonempty.
+    It is easy to check that $A$ and $B$ are open subsets.
+    Thus, $\bb{R}^\bb{N}$ is not connected.
+
+    Because the box topology is finer than the uniform topology, $\bb{R}^\bb{N}$ is not connected in the box topology.
+\end{exmp}
+
+\begin{thm}[Intermediate value property]
+    Let $X$ be a connected space; let $Y$ be an ordered set in the order topology; and let $f: X\rightarrow Y$ be a continuous map.
+    If $a, b\in X$ and $r$ is a point in $Y$ between $f(a)$ and $f(b)$, there is a point $p\in X$ such that $f(p)=r$.
+\end{thm}
+\begin{proof}
+    Suppose there is an intermediate value $r$ such that $r\notin f(X)$.
+    Then $f(X)=(f(X)\cap (-\infty, r))\sqcup(f(X)\cap(r, \infty))$, forming a separation of $f(X)$.
+    However, $f(X)$ is connected, because $X$ is connected.
+\end{proof}
+
+\begin{prob}\label{Particular uncountable space - connected "metrizable" spaces}
+    Show that a connected metric space with more than one point is uncountable.\footnote{The result of this problem will be generalized later. See \cref{nonempty intersection keeps connectedness} on \cpageref{nonempty intersection keeps connectedness}.}
+\end{prob}
+\begin{sol}
+    Given a point $a\in X$, define a function $f: X\rightarrow[0, \infty)$ by $f(x)=d(x, a)$ for $x\in X$, where $d$ is a metric on a connected metric space $X$.
+    Since $f$ is continuous, $f(X)$ is connected.
+    Since $X$ has more than one point, $f(X)$ is uncountable, so $X$ is uncountable.
+\end{sol}

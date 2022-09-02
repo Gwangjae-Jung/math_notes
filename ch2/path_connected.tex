@@ -1,0 +1,93 @@
+\section{Path-connected spaces}
+
+\begin{defi}[Path-connected space]
+    A space $X$ is said to be path-connected if given any two point $a$ and $b$ in $X$, there is a continuous map $f: [0, 1]\rightarrow X$ such that $f(0)=a$ and $f(1)=b$.
+    We call such $f$ a path from $a$ to $b$.
+\end{defi}
+
+\begin{prop}
+    Path-connectedness implies connectedness, but not conversely.
+\end{prop}
+\begin{proof}
+    Suppose $X$ is a path-connected space, but $X$ is not connected.
+    Then $X$ has a separation $(U, V)$.
+    Choose a point $a\in U$ and $b\in V$, and let $f: [0, 1]\rightarrow X$ be a path from $a$ to $b$.
+    Since $[0, 1]$ is connected, the image of $f$ is also connected.
+    Since $f(0)=a\in U$, the image of $f$ lies in $U$, but $f(1)=b\notin U$, a contradiction.
+
+    To show that the connectedness does not always imply the path-connectedness, consider the topologist's sine curve $\overline{S}$, where $S$ is the subspace of $\bb{R}^2$ defined as
+    \begin{align*}
+        S:=\left\{
+            \left(x, \sin\left(\frac{1}{x}\right)\right)
+            \,:\,
+            0<x\leq 1
+            \right\}
+    \end{align*}
+    Clearly, $S$ is connected, so is its closure $\overline{S}$.
+    Nevertheless, $\overline{S}$ is not path-connected. \color{brown}(Why?)\color{black}
+\end{proof}
+
+\begin{prop}
+    A continuous image of a path-connected space is path-connected.
+\end{prop}
+\begin{proof}
+    Let $f: X\rightarrow Y$ be a continuous map, where $X$ is a path-connected space.
+    If $p, q\in f(X)$, there are points $a, b\in X$ such that $f(a)=p$ and $f(b)=q$.
+    If $\gamma$ is a path from $a$ to $b$, then $f\circ\gamma$ is a path from $p$ to $q$.
+\end{proof}
+
+\begin{prop}
+    A product of path-connected spaces is path-connected.
+\end{prop}
+\begin{proof}
+    Let $\{X_\alpha\}_{\alpha\in I}$ be a collection of path-connected spaces, and let $X:=\prod_{\alpha\in I} X_\alpha$.
+    Given two points $a, b\in X$, let $f_\alpha: [0, 1]\rightarrow X_\alpha$ be a path from $a_\alpha$ to $b_\alpha$ for each $\alpha\in I$.
+    Define a map $F: [0, 1]\rightarrow X$ by $F=(f_\alpha)_{\alpha\in I}$.
+    The map $F$ is continuous relative to the product topology on $X$, so $F$ is a path from $a$ to $b$.
+\end{proof}
+
+\begin{prop}
+    Let $\{X_\alpha\}_{\alpha\in I}$ be a collection of path-connected spaces with a point in common.
+    Then the union of $X_\alpha$'s is also path-connected.
+\end{prop}
+\begin{proof}
+    Let $p$ be a common point.
+    Given two points $x$ and $y$ from the union, let $f_1$ and $f_2$ be paths lying in the union from $x$ to $p$ and from $p$ to $y$, respectively.
+    Concatenating $f_2$ after $f_1$ makes a path lying in the union from $x$ to $y$.
+\end{proof}
+
+\begin{rmk}
+    Regarding connectedness, adding some of limit points keeps the space connected.
+    This is not valid for path-connectedness. (Consider the topologist's sine curve)
+\end{rmk}
+
+\begin{prob}
+    Show that if $A$ is an open connected subspace of $\bb{R}^2$, then $A$ is path-connected.
+\end{prob}
+\begin{sol}
+    Given $p\in A$, let $C(p)$ denote the set of points in $A$ which can be joined to $p$ by a path in $A$.
+    We will show that $C(p)$ is both open and closed; since $A$ and $\varnothing$ are the only open and closed subspaces of $A$ and $C(p)$ is nonempty, it is forced that $C(p)=A$, i.e., every point of $A$ can be joined to $p$ by a path in $A$.
+
+    We first show that $C(p)$ is open.
+    Given a point $x\in C(p)$, let $r$ be a positive real number such that $B(x, r)\in A$ (openness of $A$ is used).
+    Since any two points of a ball can be joined by a line segment, $B(x, r)\subset C(p)$, i.e., $C(p)$ is open.
+
+    To show that $C(p)$ is closed, we show that $A\setminus C(p)$ is open.
+    Assume $A\setminus C(p)$ is not open, and let $y$ be a point of $A\setminus C(p)$ such that $B(y, \epsilon)\not\subset A\setminus C(p)$ for all $\epsilon>0$.
+    Because $y\in A$, there is a positive real number $s$ such that $B(y, s)\subset A$.
+    Let $z$ be a point of $C(p)\cap B(y, s)$.
+    Then, we can find a path from $p$ to $z$ and a path from $z$ to $y$, a contradiction.
+
+    Hence, $C(p)$ is a subset of $A$ which is open and closed in $A$.
+    Therefore, $A=C(p)$, i.e., $A$ is path-connected.
+\end{sol}
+
+\begin{prob}
+    Show that every co-countable subspace of $\bb{R}^2$ is path-connected.
+\end{prob}
+\begin{sol}
+    Given two points $a, b$ of a co-countable subspace $A$ of $\bb{R}^2$, there are countably many lines passing $a\in A$ which intersects $\bb{R}^2\setminus A$.
+    Because there are uncountably many lines passing $a\in A$, we can choose a line $l_1$ passing $a$ not intersecting $\bb{R}^2\setminus A$.
+    We can also find a line $l_2$ passing $b$ not intersecting $\bb{R}^2\setminus A$ which is not parallel to $l_1$.
+    We can thus find a path from $a$ to $b$ lying in $A$ which lies in $l_1\cup l_2$.
+\end{sol}

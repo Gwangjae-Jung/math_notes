@@ -1,0 +1,103 @@
+\section{Compact metrizable spaces}
+
+We first introduce some other types of compactness:
+\begin{defi}
+    Let $X$ be a space.
+    \begin{enumerate}
+        \item[(a)] $X$ is said to be limit point compact, if every infinite subset of $X$ has a limit point in $X$.
+        \item[(b)] $X$ is said to be sequentially compact, if every infinite sequence with values in $X$ has a convergent subsequence.
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    If $X$ is sequentially compact, then $X$ is complete, i.e., every Cauchy sequence in $X$ is convergent.
+\end{rmk}
+
+\begin{prop}
+    Compactness implies limit point compactness.
+\end{prop}
+\begin{proof}
+    Left as an exercise.
+\end{proof}
+
+In metrizable spaces, the above three compactness coincide.
+\begin{thm}
+    Suppose $X$ is a metrizable space.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $X$ is compact.
+        }
+        \item[(b)]
+        {
+            $X$ is limit point compact.
+        }
+        \item[(c)]
+        {
+            $X$ is sequentially compact.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    We already proved that (a) implies (b) and it is easy to show that (b) implies (c).
+    The most difficult part of the proof is to show that (c) implies (a).
+    Assume $X$ is sequentially compact.
+    
+    \textbf{Step 1: Showing the existence of the Lebesgue number.}\newline\indent
+    We wish to prove that for any open cover $\mc{A}$ of $X$ there is a real number $\delta>0$ such that every open set with diameter less than $\delta$ is contained in some member of $\mc{A}$.
+    Suppose there is no such $\delta$.
+    Then, for each $n\in\bb{N}$, there is an open set $C_n$ of diameter less than $1/n$ which is not contained in any member of an open cover $\mc{A}$ of $X$.
+    Choose a point $x_n\in C_n$.
+    By sequential compactness, the sequence $(x_n)_n$ has a convergent subsequence $(x_{n_k})_k$.
+    Let $x$ be the limit of the subsequence, and let $A$ be a member of $\mc{A}$ containing $x$.
+    And let $r>0$ be a real number such that $B_d(x, r)\subset A$.
+    If $i$ is large enough so that
+    \begin{center}
+        $\ds{d(x, x_{n_i})<\frac{r}{2}}$\quad and\quad$\ds{\frac{1}{n_i}<\frac{r}{2}}$,
+    \end{center}
+    then $C_{n_i}$ lies in $A$, a contradiction.
+    
+    \textbf{Step 2: Showing that $X$ is totally bounded.}\newline\indent
+    Suppose $X$ is a sequentially compact space which is not totally bounded.
+    We can choose countably many points $x_1, x_2, \cdots\in X$ such that $\bigcup_{n=1}^\infty B_d(x_n, \epsilon)\subsetneq X$ for some $\epsilon>0$.
+    Since $X$ is sequentially compact, we can find a convergent subsequence $(x_{n_k})_k$ of $(x_n)_n$, a contradiction.
+    
+    \textbf{Step 3: Deriving that $X$ is compact.}\newline\indent
+    Let $\mc{A}$ be an open cover of $X$.
+    By the result of Step 1, there is a Lebesgue number $\delta>0$ for the collection $\mc{A}$.
+    By the result of Step 2, finitely many balls in $X$ of radius $\ds{\frac{2\delta}{5}}$ cover $X$.
+    Therefore, a finite subcover of $\mc{A}$ covers $X$. 
+\end{proof}
+
+In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
+\begin{thm}[Heine-Borel theorem]
+    Let $(X, d)$ be a metric space.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $X$ is compact.
+        }
+        \item[(b)]
+        {
+            $X$ is limit point compact.
+        }
+        \item[(c)]
+        {
+            $X$ is complete and totally bounded.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    By the preceeding theorem, it suffices to show that (c) is equivalent to compactness.
+    Since it is already observed that sequential compactness implies (c), it suffices to show that (c) implies any of compactnesses.
+    For this, we will show that (c) implies sequential compactness.
+
+    Let $(x_n)_n\subset X$ be a sequence.
+    Since $X$ is sequentially compact, there is a ball $B_1$ in $X$ of radius $2^{-1}$ which contains $x_n$'s for infinitely many $n\in N_1\subset\bb{N}$.
+    Because $X\cap B_1$ is also totally bounded, a ball $B_2$ with the center in $X\cap B_1$ of radius $2^{-2}$ contains $x_n$'s for infinitely many $n\in N_2\subset N_1$.
+    Continuing inductively, we can find $n_i\in N_i$ for each $i\in\bb{N}$ with $n_1<n_2<\cdots$.
+    Then $d(x_{n_i}, x_{n_k})\leq 2^{1-i}$ if $i<k$.
+    Because $X$ is complete, $(x_n)_n$ has a convergent subsequence.
+    Therefore, (c) implies sequential compactness.
+\end{proof}

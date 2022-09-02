@@ -1,0 +1,89 @@
+\section{Pointwise equicontinuous collection of continuous maps}
+
+\begin{defi}[Equicontinuity]
+    Let $X$ be a topological space, $(Y, d)$ be a metric space, and let $\mc{F}$ be a subset of $C(X, Y)$, i.e., a collection of continuous functions from $X$ into $Y$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Pointwise equicontinuity)
+            The collection $\mc{F}$ is said to be equicontinuous at a point $x_0\in X$ if, for any $\epsilon>0$, there is a neighborhood $U$ of $x_0$ in $X$ such that $x\in U$ and $f\in\mc{F}$ implies $d(f(x), f(x_0))<\epsilon$.
+            If $\mc{F}$ is equicontinuous at every point of $X$, then $\mc{F}$ is said to be pointwise equicontinuous.
+        }
+        \item[(b)]
+        {
+            (Uniform equicontinuity)
+            Suppose that $X$ is a metric space and $d_X$ be the metric on $X$ inducing the topology on $X$.
+            The collection $\mc{F}$ is said to be uniformly equicontinuous if, for every $\epsilon>0$, there is $\delta>0$ such that $a, b\in X$ with $d_X(a, b)<\delta$ and $f\in\mc{F}$ implies $d(f(a), f(b))<\epsilon$.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    In the course of introduction to mathematical analysis, we studied the following version of Ascoli's theorem:
+    \begin{center}
+        Suppose $K$ is a compact metric space and let $(f_n)_{n\in\bb{N}}$ be a sequence of complex-valued continuous functions (continuous functions with values in a complete metric space, respectivley) on $K$.
+        If $(f_n)_n$ is pointwise bounded (totally bounded under the sup metric) and uniformly equicontinuous, then $(f_n)_n$ is uniformly bounded and $(f_n)_n$ contains a uniformly convergent subsequence.
+    \end{center}
+\end{rmk}
+
+\begin{lem}\label{families of totally bounded continuous maps are equicontinuous}
+    Suppose that $X$ is a topological space and $(Y, d)$ is a metric space, and assume $C(X, Y)$ equips the uniform topology.
+    If $\mc{F}\subset C(X, Y)$ is totally bounded under the uniform metric, then $\mc{F}$ is pointwise equicontinuous under $d$.
+\end{lem}
+\begin{proof}
+    Fix a positive real number $0<\epsilon<1$ and write $\mc{F}=\bigcup_{i=1}^N B_{\ol\rho}(f_i, \epsilon)$, where $f_i\in\mc{F}$ for each $i$.
+    To show pointwise equicontinuity, we fix a point $p\in X$ and choose a neighborhood $U_i$ of $p$ in $X$ such that $x\in U_i$ implies $d(f_i(x), f_i(p))<\epsilon$; when $U=\bigcap_{i=1}^N U_i$, then $U$ is still a neighborhood of $p$ in $X$ and whenever $x\in U$ we have $d(f_i(x), f_i(p))<\epsilon$ for all $i$.
+    Given $f\in\mc{F}$, choose an index $i$ such that $\ol\rho(f, f_i)<\epsilon$.
+    Because
+    \begin{align*}
+        d(f(x), f(p))\leq d(f(x), f_i(x))+d(f_i(x), f_i(p))+d(f_i(p), f(p))<3\epsilon
+    \end{align*}
+    whenever $x\in U$.
+    Therefore, every totally bounded subset of $C(X, Y)$ is pointwise equicontinuous.
+\end{proof}
+
+The preceeding lemma states that a totally bounded (in the uniform metric) subset of continuous functions is pointwise equicontinuous.
+Its reverse is generally not true; for example, the countable collection $(f_n: \bb{R}\rightarrow\bb{R},\,x\mapsto n)_{n\in\bb{N}}$.
+The following lemma states that the converse to the preceeding lemma is valid if both domain and codomain are compact.
+\begin{lem}
+    Let $X$ be a topological space and $(Y, d)$ be a metric space.
+    Assume that both $X$ and $Y$ are compact.
+    If the subset $\mc{F}$ of $C(X, Y)$ is pointwise equicontinuous, then $\mc{F}$ is totally bounded under the uniform and sup metrics corresponding to $d$.
+\end{lem}
+\begin{rmk}
+    Suppose $X$ is a topological space and $(Y, d)$ is a metric space.
+    When we consider the space $C(X, Y)$, we first consider the uniform metric $\ol\rho$.
+    If $X$ is assumed to be compact, we can also consider the sup metric, which will be denoted by $\rho$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            As the following properties are particularly related to points within arbitrarily small distance and both $\ol\rho$ and $\rho$ coincide at every pair of continuous functions within distance less than $1$, they are common properties of $C(X, Y)$ under each metric: completeness, total boundedness. (For example, if $C(X, Y)$ under the uniform metric is complete, then so is $C(X, Y)$ under the sup metric, and vice versa.)
+        }
+        \item[(b)]
+        {
+            The boundedness of $C(X, Y)$ is not common; while the space may be unbounded under the sup metric, the space is clearly bounded under the uniform metric; $C(X, Y)=B_{\ol\rho}(0, 2)$, where $0$ in the first argument is the zero map.
+        }
+    \end{enumerate}
+\end{rmk}
+\begin{proof}
+    According to the preceeding remark, it suffices to justify the total boundedness under the sup metric $\rho$.
+
+    Using pointwise equicontinuity, for each point $a\in X$, find a neighborhood $D_a$ of $a$ in $X$ such that $x\in D_a$ and $f\in\mc{F}$ implies $d(f(x), f(a))<\epsilon$.
+    Since $X$ is compact, we can cover $X$ with finitely many $D_a$'s, suppose $\{D_{a_i}\}_{i=1}^k$ covers $X$ and write $U_i=D_{a_i}$.
+    On the other hand, cover $Y$ with finitely many open balls $V_1, \cdots, V_m$ of diameter less than $\epsilon$.
+
+    Let $J$ be the collection of all functions from $\{1, \cdots, k\}$ into $\{1, \cdots, m\}$.
+    Given $\alpha\in J$, if there is a function $f\in\mc{F}$ such that $f(a_i)\in V_{\alpha(i)}$ for all $i=1, \cdots, k$, choose one such function $f\in\mc{F}$ and label it $f_\alpha$.
+    The collection $\{f_\alpha\}$ is indexed by a subset $I$ of $J$ and is thus finite.
+    
+    Choose a map $f\in\mc{F}$.
+    Because $V_j$'s ($j=1, \cdots, m$) cover $Y$, for each $i$, $f(a_i)$ belings to some $V_j$; write $f(a_i)\in V_{\beta(i)}$, and consider the function $f_\beta$.
+    Given a point $x\in X$, there is an index $i$ such that $x\in U_i$, and
+    \begin{align*}
+        d(f(x), f_\beta(x)) \leq d(f(x), f(a_i))+d(f(a_i), f_\beta(a_i))+d(f_\beta(a_i), f_\beta(x)).
+    \end{align*}
+    The first and the last term in the right-hand side are, respectivley, less than $\epsilon$ (pointwise equicontinuity) and the second term is also less than $\epsilon$ (the diameter of $V_i$ is less than $\epsilon$), so $d(f(x), f_\beta(x))<3\epsilon$.
+    This implies that $f\in B_\rho(f_\beta, 4\epsilon)$.
+    Therefore, $\mc{F}$ is covered by the open balls $B_\rho(f_\alpha, 4\epsilon)$ for $\alpha\in I$, so $\mc{F}$ is totally bounded under the sup metric.
+\end{proof}
+
+The above theory, together with the theory developed in the following section, will be used in the last section when we prove Ascoli's theorem.

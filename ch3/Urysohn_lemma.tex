@@ -1,0 +1,113 @@
+\section{Urysohn lemma}
+\begin{thm}[Urysohn lemma]\label{Urysohn lemma}
+    If $X$ is a normal space, then any two (nonempty) disjoint closed subspaces of $X$ can be separated by a continuous function on $X$.
+    To be precise, if $A$ and $B$ are (nonempty) disjoint closed subspaces of $X$, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(A)=\{0\}$ and $f(B)=\{1\}$.
+\end{thm}
+\begin{rmk}
+    The Urysohn lemma implies that if every pair of closed sets in $X$ can be separated by disjoint open sets, i.e., $X$ is normal, then each such pair can be separated by a continuous function.
+    The converse is trivial. (Why?)
+\end{rmk}
+\begin{proof}[Proof of \cref{Urysohn lemma}]
+    Let $A$ and $B$ be nonempty and disjoint closed subsets of $X$.
+
+    \textbf{Step 1.}
+    Let $P$ be the set of rational numbers in $[0, 1]$ and write $P=\{x_1, x_2, x_3, \cdots\}$ with $x_1=1, x_2=0$.
+    Now define an open subset $U_p$ for $p\in P$ as follows:
+    \begin{enumerate}
+        \item[(1)]
+        {
+            Fitst, let $U_1:=X\setminus B$, which contains $A$.
+            Second, by normality, we can find a neighborhood $U_0$ of $A$ in $X$ whose closure is in $U_1$.
+        }
+        \item[(2)]
+        {
+            Suppose we have constructed $U_p$'s for $p\in P_n$, where $P_n=\{x_1, \cdots, x_n\} $ for $n\geq 3$ such that $p, q\in P_n$ with $p<q$ implies
+            \begin{align}\label{rule}
+                \overline{U_p}\subset U_q.
+            \end{align}
+            For convinience, denote $r=p_{n+1}$.
+            We want $U_r$ to satisfy \cref{rule} with all $U_p$'s with indices in $P_{n+1}$.
+            For this, it suffices to care the immediate successor $s$ and predecessor $p$ of $r$ in $P_{n+1}$; if $U_r$ satisfies \cref{rule} with $U_p$ and $U_s$, then $U_r$ satisfies \cref{rule} with all the other $U_p$'s with $p\in P_{n+1}$.
+
+            Since $U_p$ and $U_s$ satisfies $\overline{U_p}\subset U_s$, by normality, we can find a neighborhoof $U_r$ of the closed subspace $\overline{U_p}$ in $X$ such that $\overline{U_r}\subset U_s$.
+            For such $U_r$, \cref{rule} is satisfied for every pair of $U_p$'s with $p\in P_{n+1}$.
+        }
+    \end{enumerate}
+    By induction, we have $U_p$ defined for all $p\in P$.
+
+    \textbf{Step 2.}
+    We now define $U_p$ for all rational numbers $p$ as follows: just let $U_p=\varnothing$ whenever $p<0$ and $U_p=X$ whenever $p>1$.
+    For such $U_p$'s with $p\in\bb{Q}$, \cref{rule} is satisfied.
+    
+    \textbf{Step 3.}
+    For each point $x\in X$, define the set
+    \begin{align*}
+        C(x):=\{p\in\bb{Q}:x\in U_p\}.
+    \end{align*}
+    For each $x$, the set $C(x)$ is bounded (below by a nonnegative real number, and above by 1).
+    Thus, we may define the function $f: X\rightarrow[0, 1]$ by $f(x)=\inf C(x)$ for $x\in X$.
+
+    \textbf{Step 4.}
+    We now show that the function $f$ is a continuous map mapping $A$ onto $\{0\}$ and $B$ onto $\{1\}$.
+    First, since every point $a\in A$ belongs to $U_0$, $f(a)=0$; since every point $b\in B$ does not belong to $U_1$, $f(b)=1$.
+    Before proving continuity, we note the following lemma:
+    \begin{center}
+        $x\in\overline{U_r}$ implies $f(x)\leq r$, and $x\notin U_r$ implies $f(x)\geq r$.
+    \end{center}
+    To check the continuity, fix a point $x\in X$ and let $(a, b)$ be a neighborhood of $f(x)$ in $\bb{R}$.
+    We want to find a neighborhood $W$ of $x$ in $X$ whose image under $f$ is contained in $(a, b)$.\footnote{When trying to prove continuuity with the original definition of continuity, you might encounter some technical problem.}
+    Using the density of $\bb{Q}$, we can find rational numbers $c, d$ such that $a<c<f(x)<d<b$.
+    If we can find a neighborhood of $x$ in $X$ whose image under $f$ is a subset of $[c, d]$, the proof ends.
+    By the above lemma, if $c<f(x)<d$, then $x\in U_d\setminus\overline{U_c}$.
+    Hence, $W:=U_d\setminus\overline{U_c}$ is a neighborhood of $x$ in $X$.
+    Furthermore, if $y\in W$, then $c\leq f(y)\leq d$, hence $W$ is a neighborhood of $x$ in $X$ with the image in $(a, b)$.
+    Therefore, $f$ is a continuous function from $X$ into $[0, 1]$ mapping $A$ into $\{0\}$ and $B$ onto $\{1\}$.
+\end{proof}
+\begin{prob}
+    Prove the lemma introduced in the fourth step of the proof of \cref{Urysohn lemma}.
+\end{prob}
+\begin{sol}
+    Suppose first that $x\in\overline{U_r}$.
+    Whenever $r<p$, since $x\in\overline{U_r}\subset U_p$, $C(x)$ contains $p\in\bb{Q}$ with $p>r$; $f(x)=\inf C(x)\leq r$.
+    Conversely, if $x\notin U_r$, whenever $p<r$, since $\overline{U_p}\subset U_r$, $p\notin C(x)$ for all $p<r$ and it implies that $f(x)=\inf C(x)\geq r$.
+\end{sol}
+
+The following problem deals with a property of completely regular spaces, and its solution does not require the Urysohn lemma.
+\begin{prob}
+    Let $X$ be a completely regular space and $A, B$ be disjoint closed subspaces of $X$.
+    Show that if $A$ is compact, then there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(A)=\{0\}$ and $f(B)=\{1\}$.
+\end{prob}
+\begin{sol}
+    For each point $a\in A$, let $f_a: X\rightarrow[0, 1]$ be a continuous function such that $f_a(a)=0$ and $f_a(B)=\{1\}$.
+    Note that the collection $\{f_a^{-1}([0, r)):a\in A\}$ is an open cover of $A$ by sets open in $X$, where $r$ is a real number such that $0<r<\dfrac{1}{2}$.
+    Thus, $A$ can be covered by finitely many sets $f_{a_i}^{-1}([0, r))$ for $i=1, \cdots, n$.
+    Define the function $f: X\rightarrow[0, 1]$ by $f(x)=f_1(x)\times\cdots\times f_n(x)$ for $x\in X$.
+    Then $0\leq f(a)<r$ for all $a\in A$ and $f(B)=\{1\}$.
+    If $g:[0, 1]\rightarrow[0, 1]$ is the function defined by
+    \begin{eqnarray*}
+        g(x)=\left\{
+        \begin{matrix}
+            0 & \textsf{if }0\leq x<r\\
+            \dfrac{x-r}{1-r} & \textsf{otherwise}
+        \end{matrix}\right.,
+    \end{eqnarray*}
+    then the composite $g\circ f$ is a desired continuous map from $X$ into $[0, 1]$.
+\end{sol}
+
+In \cref{Particular uncountable space - connected "metrizable" spaces}, we have proved that every connected metrizable space having more than one point is uncountable.
+As we have studied in the preceeding section that every metrizable space is normal, one might want to generalize the result to a broader category of spaces.
+In the following problem, we will prove that every connected regular space with more than one point is uncountable.
+\begin{prob}[Nontrivial connected regular spaces are uncountable]\label{nontrivial connected regular spaces are uncountable}
+    Prove that a connected normal space having more than one point is uncountable.
+    And deduce that a connected regular space having more than one point is uncountable.
+\end{prob}
+\begin{sol}
+    Suppose $X$ is a connected normal space having more than one point.
+    Since every singletone is closed, there is a continuous map $f: X\rightarrow[0, 1]$ such that $f(a)=0$ and $f(b)=1$, where $a, b$ are disjoint points of $X$.
+    Since $X$ is connected, $f(X)$ is connected, so $f(X)=[0, 1]$.
+    Therefore, $X$ is necessarily uncountable.
+            
+    Assume there is a connected regular space $X$ with more than one point which is countable.
+    It is clear that $X$ is Lindel\"{o}f, so $X$ is a Lindel\"{o}f regular space; a normal space.
+    It contradicts to the former result.
+\end{sol}
