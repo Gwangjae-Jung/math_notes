@@ -1,0 +1,31 @@
+\theoremstyle{definition}
+    \newtheorem{defi}{Definition}[section]
+    \newtheorem{tempdef}{(!)Definition}[section]
+    \newtheorem{redef}{Re-definition}[section]
+    \newtheorem{qst}{Question}[section]
+    \newtheorem{prob}{Problem}[section]
+    \newtheorem{thm}[defi]{Theorem}
+    \newtheorem{prop}[defi]{Proposition}
+    \newtheorem{lem}[defi]{Lemma}
+    \newtheorem{cor}[defi]{Corollary}
+    \newtheorem{exmp}[defi]{Example}
+    
+\theoremstyle{remark}
+    \newtheorem{obs}[defi]{Observation}
+    \newtheorem*{rmk}{Remark}
+    \newtheorem*{sketch}{Sketch}
+    \newtheorem*{nota}{Notation}
+    \newtheorem*{sol}{Solution}
+
+% Regarding `cleveref' package, one should enter the following customization command, provided that 'amsthm' package is loaded:
+%           \crefname{<type>}{<singular>}{<plural>}
+
+\crefname{defi}{Definition}{Definitions}
+\crefname{qst}{Question}{Questions}
+\crefname{prob}{Problem}{Problems}
+\crefname{thm}{Theorem}{Theorems}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{lem}{Lemma}{Lemmas}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{exmp}{Example}{Examples}
+\crefname{obs}{Observation}{Observations}

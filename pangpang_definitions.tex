@@ -1,0 +1,63 @@
+% General
+\newcommand{\ds}[1]{\displaystyle{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\Romannumeral}[1]{\MakeUppercase{\romannumeral #1}}
+%\newcommand{\diy}[1]{\Huge{\textbf{\color{cyan}{#1} \color{black}}}}
+
+% Fonts
+\newcommand{\bb}[1]{{\mathbb{#1}}}
+\newcommand{\mc}[1]{{\mathcal{#1}}}
+
+% Paranthesis
+\newcommand{\genone}[1]{{\left\langle{#1}\right\rangle}}
+\newcommand{\gentwo}[1]{{\left({#1}\right)}}
+
+% Set theory
+\newcommand{\card}[1]{\textsf{card}({#1})}
+
+% Algebra
+\newcommand{\norm}[1]{{\left\lVert{#1}\right\rVert}}
+\newcommand{\aut}[1]{{\textrm{Aut}({#1})}}
+\newcommand{\emb}[1]{{\textrm{Emb}({#1})}}
+\newcommand{\gal}[1]{{\textrm{Gal}({#1})}}
+\newcommand{\stab}[2]{{\textsf{stab}_{#1}({#2})}}
+\newcommand{\ch}[1]{{\textsf{char}({#1})}}
+\newcommand{\nmal}{\trianglelefteq}
+
+% Mathematical analysis
+\newcommand{\borel}[1]{\mc{B}_{#1}}
+\newcommand{\real}[1]{\textsf{Re}\left({#1}\right)}
+\newcommand{\imag}[1]{\textsf{Im}\left({#1}\right)}
+\newcommand{\esssup}[1]{\textsf{ess\,sup}{#1}}
+
+% General topology
+\newcommand{\dist}[3]{{#1}\left({#2},{#3}\right)}
+\newcommand{\id}[1]{\textit{id}_{#1}}
+
+\ifunsolved
+\else
+    %////////////////////////%
+    %  Commutative diagrams  %
+    %////////////////////////%
+    
+    \RequirePackage{tikz-cd,xparse}
+    \NewDocumentEnvironment{cd}{}
+      {\[\begin{tikzcd}}
+      {\end{tikzcd}\]\ignorespacesafterend}
+    \NewDocumentEnvironment{es}{}
+      {
+        \renewcommand{\>}{\rar\&}
+        \tikzcdset{ampersand replacement=\&}
+        \begin{cd}[column sep=small] % possiblly tiny
+      }
+      {\end{cd}}
+    \NewDocumentEnvironment{rd}{}
+      {
+        \tikzcdset{math mode=false,labels={font=\scriptsize}}
+        \[\begin{tikzcd}
+      }
+      {\end{tikzcd}\]}
+    \tikzcdset{arrow style=tikz}
+    \tikzset{>={Straight Barb[scale=0.8]}}
+\fi
