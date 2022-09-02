@@ -1,0 +1,58 @@
+\section{Commutator subgroups}
+
+\begin{defi}[Commutator subgroup]
+    For a group $G$, write
+    \begin{align*}
+        [G, G]=\genone{ghg^{-1}h^{-1}: g, h\in G}
+    \end{align*}
+    and call $[G, G]$ the commutator subgroup of $G$.
+    Each element of $G$ of the form $ghg^{-1}h^{-1}\,(g, h\in G)$ is called a commutator, and is also denoted by $[g, h]$.
+\end{defi}
+\begin{rmk}
+    A group $G$ is an abelian group if and only if $[G, G]=\{1_G\}$.
+\end{rmk}
+
+\begin{prop}
+    Let $G$ be a group.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $[G, G]\nmal G$.
+        }
+        \item[(b)]
+        {
+            $G/[G, G]$ is an abelian group.
+        }
+        \item[(c)]
+        {
+            Assuming $N\nmal G$, $G/N$ is an abelian group if and only if $[G, G]\leq N$.
+            Hence, $G/[G, G]$ is the largest abelian quotient of $G$.
+        }
+        \item[(d)]
+        {
+            If $\phi: G\rightarrow A$ is a homomorphism of a group $G$ into an abelian group $A$, then $\phi$ factors through $[G, G]$, i.e., $[G, G]\leq\ker\phi$.
+            Hence, $\phi$ induces a homomorphism $\ol\phi: G/[G, G]\rightarrow A$ of abelian groups such that $\ol\phi\circ\pi=\phi$.
+            \begin{equation*}
+            \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+                G\arrow[d, "\pi"', ->>]\arrow[dr, "\phi"]    &   \\
+                G/[G, G]\arrow[r, "\ol\phi"', dashed]   &   A
+            \end{tikzcd}
+            \end{equation*}
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \color{brown}Checking (a) and (b) is left as an exercise. \color{black}
+    To prove (c), note that $G/N$ is an abelian group if and only if $[G/N, G/N]=\{1_{G/N}\}$, which is equivalent to $[G, G]\leq N$.
+
+    To prove (d), note that $[G, G]\leq\phi^{-1}(\{1_A\})$ so $\ol\phi$ is a well-defined group homomorphism; since $G/[G, G]$ is abelian, $\ol\phi$ is a homomorphism of abelian groups.
+\end{proof}
+
+\begin{prob}
+    Find a group $G$ such that $Z(G/Z(G))$ is nontrivial.
+\end{prob}
+\begin{sol}
+    Let $G=D_8$, where $D_8$ is the dihedral group of order 8.
+    Then $Z(G)=\{1, r^2\}$ and $G/Z(G)$ is a group of order 4, which is abelian.
+    Hence, the center of $G/Z(G)$ is nontrivial.
+\end{sol}

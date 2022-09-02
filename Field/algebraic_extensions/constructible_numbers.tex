@@ -1,0 +1,34 @@
+\section{Constructible numbers}
+
+\begin{thm}[Constructibility criterion \Romannumeral{1}]\label{constructibility_1}
+    $\alpha\in\bb{R}$ is constructible if and only if there is a tower of quadratic extensions from $\bb{Q}$ whose head field contains $\alpha$.
+\end{thm}
+\begin{proof}
+    Assuming the existence of such a tower, it is almost clear that $\alpha$ is constructible.
+    Conversely, if $\alpha\in\bb{R}$ is constructible, a construction of $\alpha$ by straight lines and circles naturally induces a tower of quadratic extensions with $\alpha$ being contained in the head field.
+\end{proof}
+Another constructibility criterion is introduced in \cref{constructibility_2}.
+\begin{cor}
+    A real algebraic conjugate of a constructible real number is also constructible.
+\end{cor}
+\begin{proof}
+    Let $\alpha$ be a constructible real number and $\beta$ be a real algebraic conjugate of $\alpha$.
+    Then there is a unique $\bb{Q}$-isomorphism $\sigma: \bb{Q}(\alpha)\rightarrow\bb{Q}(\beta)$ mapping $\alpha$ to $\beta$.
+    By the previous theorem, there is a tower of quadratic extensions
+    \begin{align*}
+        \bb{Q}<\bb{Q}(\sqrt{d_1})<\cdots<\bb{Q}(\sqrt{d_1}, \cdots, \sqrt{d_n})=K
+    \end{align*}
+    where $d_1, \cdots, d_n\in\bb{Q}$ and $K$ contains $\alpha$.
+    By isomorphism extension theorem, there is a field embedding $\widetilde{\sigma}: K\rightarrow \ol{\bb{Q}(\beta)}=\ol{\bb{Q}}$ extending $\sigma$.
+    Then
+    \begin{align*}
+        \bb{Q}<\bb{Q}(\widetilde{\sigma}(\sqrt{d_1}))<\cdots<\bb{Q}(\widetilde{\sigma}(\sqrt{d_1}), \cdots, \widetilde{\sigma}(\sqrt{d_n}))=\widetilde{\sigma}(K)
+    \end{align*}
+    is a tower of quadratic extensions and $\beta$ belongs to $\widetilde{\sigma}(K)$.
+\end{proof}
+\begin{cor}
+    If $\alpha\in\bb{R}$ is constructible, then the degree of $\alpha$ over $\bb{Q}$ is a power of 2.
+\end{cor}
+\begin{proof}
+    Clear.
+\end{proof}

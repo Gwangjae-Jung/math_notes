@@ -1,0 +1,99 @@
+\section{Applications of cyclotomic extensions}
+
+\subsection{Cyclotomic extensions and abelian extensions}
+
+In this section, we study a matching between finite abelian groups and finite abelian extensions.
+To be precise,
+\begin{enumerate}
+    \item[(\Romannumeral{1})]
+    {
+        Given a finite abelian group $G$, there is a cyclotomic extension $E$ of $\bb{Q}$ such that $\gal{E/\bb{Q}}\approx G$.
+    }
+    \item[(\Romannumeral{2})]
+    {
+        (Kronecker-Weber's theorem)
+        Every finite abelian extension $E$ over $\bb{Q}$ is a cyclotomic extension of $\bb{Q}$.
+    }
+\end{enumerate}
+In this note, the proof of Kronecker-Weber's theorem will not be introduced, but only the proof of (\Romannumeral{1}) will be introduced.
+\begin{sketch}
+    Write $G\approx Z_{m_1}\times\cdots Z_{m_k}$, where $m_1|\cdots|m_k$.
+    We wish to find a positive integer $n$ such that $\bb{Q}\leq E\leq\bb{Q}(\zeta_n)$ such $\gal{E/\bb{Q}}\approx G$.
+    (Note that $E/\bb{Q}$ is a Galois extension when such $n$ exists, for $\bb{Q}(\zeta_n)/\bb{Q}$ is an abelian extension.)
+    If $n={p_1}^{a_1}\cdots{p_k}^{a_k}$ is the factorization of $n$ into pairwise distinct positive prime numbers, then
+    \begin{align*}
+        \gal{\bb{Q}(\zeta_n)/\bb{Q}}\approx(\bb{Z}/{p_1}^{a_1}\bb{Z})^\times\times\cdots\times(\bb{Z}/{p_k}^{a_k}\bb{Z})^\times.
+    \end{align*}
+    If one assumes $a_i=1$ for all $1\leq i\leq k$ for easy computation, we have $\gal{\bb{Q}(\zeta_n)/\bb{Q}}\approx Z_{p_1-1}\times\cdots\times Z_{p_k-1}$. 
+    Since $\gal{E/\bb{Q}}\approx\gal{\bb{Q}(\zeta_n)/\bb{Q}}/\gal{\bb{Q}(\zeta_n)/E}$, \color{teal}if, for each $1\leq i\leq k$, one can find a prime number $p_i$ such that $m_i|(p_i-1)$\color{black}, then the proof proceeds as follows.
+    For each $1\leq i\leq k$, let $h_i=(q_i-1)/{m_i}$ and find a subgroup $H_i$ of $Z_{p_i-1}$ of order $h_i$.
+    Then there is a subgroup $A$ of $\gal{\bb{Q}(\zeta_n)/\bb{Q}}$ such that $A\approx H_1\times\cdots\times H_k$.
+    If $E$ is the fixed field of $A$ in $\bb{Q}(\zeta_n)$, then
+    \begin{align*}
+        \gal{E/\bb{Q}}
+        \approx\frac{\gal{\bb{Q}(\zeta_n)/\bb{Q}}}{\gal{\bb{Q}(\zeta_n)/E}}
+        \approx\frac{Z_{p_1-1}\times\cdots\times Z_{p_k-1}}{H_1\times\cdots\times H_k}
+        \approx\prod_{i=1}^k\frac{Z_{p_i-1}}{H_i}
+        \approx\prod_{i=1}^k Z_{m_i}
+        \approx G.
+    \end{align*}
+\end{sketch}
+
+To complete the proof of (\Romannumeral{1}), the following lemma should be proved, whose proof is given in \Cref{proof: infinitely many primes modulo an integer}:
+\begin{lem}\label{infinitely many primes modulo an integer}
+    Given a positive integer $m$, there are infinitely many prime numbers modulo $m$.
+\end{lem}
+
+\subsection{Constructibility}
+We first find the condition of $n$ for which a regular $n$-gon can be constructed.
+\begin{thm}[Constructibility of a regular $n$-gon]
+    Suppose that $n$ is an integer greater than or equal to 3.
+    Then a regular $n$-gon (with the length of a side 1) is constructible if and only if $n=2^k p_1\cdots p_l$, where $k, l\geq 0$ and $p_1, \cdots, p_l$ are pairwise distinct Fermat primes.\footnote{A prime number of the form $2^a+1$ for some positive integer $a$ is called a Fermat prime.}
+\end{thm}
+\begin{proof}
+    Remark that the constructibility of a regular $n$-gon coincides the constructibility of
+    \begin{align*}
+        \gamma:=\cos\left(\frac{2\pi}{n}\right)=\frac{\zeta_n+\zeta_n^{-1}}{2},
+    \end{align*}
+    where $\zeta_n=\exp(2\pi i/n)$.
+    Since $t^2-2\gamma t+1$ is satisfied by $\zeta_n\in\bb{C}\setminus\bb{R}$, $[\bb{Q}(\zeta_n):\bb{Q}(\gamma)]=2$.
+
+    Assume first that a regular $n$-gon is constructible, i.e., $\gamma$ is constructible.
+    Then $[\bb{Q}(\gamma): \bb{Q}]$ is a power of 2, so $[\bb{Q}(\zeta_n):\bb{Q}]$ is also a power of 2.
+    This forces $n$ is the product of a power of 2 and pairwise distinct Fermat primes.
+
+    Assuming conversely, we find that $\gal{\bb{Q}(\zeta_n)/\bb{Q}}$ is a 2-group.
+    Therefore, (writing $|\gal{\bb{Q}(\zeta_n)/\bb{Q}}|=2^m$) there is a subgroup $H_r$ of $\gal{\bb{Q}(\zeta_n)/\bb{Q}}$ of order $2^r$ for each integer $0\leq r\leq m$ such that
+    \begin{align*}
+        \{\id{\bb{Q}(\zeta_n)}\}=H_0<H_1<\cdots<H_{m-1}<H_m=\gal{\bb{Q}(\zeta_n)/\bb{Q}}.
+    \end{align*}
+    By Galois's theorem, we have
+    \begin{align*}
+        \bb{Q}(\zeta_n)=\bb{Q}(\zeta_n)^{H_0}>\bb{Q}(\zeta_n)^{H_1}>\cdots>\bb{Q}(\zeta_n)^{H_{m-1}}>\bb{Q}(\zeta_n)^{H_m}=\bb{Q},
+    \end{align*}
+    hence $\gamma\in\bb{Q}(\zeta_n)$ is constructible, as desired.
+\end{proof}
+
+We end this section with another constructibility criterion.
+In \cref{constructibility_1}, we proved that a real number $\alpha$ is constructible if and only if there is a tower of quadratic extensions from $\bb{Q}$ whose head field contains $\alpha$.
+In the following theorem in which we consider the normal(Galois) closure of $\bb{Q}(\alpha)$, we do not have to consider its subfields but only have to know the extension degree of the Galois closure.
+\begin{thm}[Constructibility criterion \Romannumeral{2}]\label{constructibility_2}
+    Let $\alpha$ be a real algebraic number and $K$ be the normal(Galois) closure of $\bb{Q}(\alpha)$ over $\bb{Q}$.
+    Then $\alpha$ is constructible if and only if $[K:\bb{Q}]$ is a power of 2.
+\end{thm}
+\begin{proof}
+    Assume first that $\alpha$ is constructible and let $\alpha_1, \cdots, \alpha_n$ be all algebraic conjugates of $\alpha$ (and let $\alpha_1=\alpha$).
+    Because
+    \begin{align*}
+        \bb{Q}\leq\bb{Q}(\alpha_1)\leq\cdots\leq\bb{Q}(\alpha_1, \cdots, \alpha_n)=K
+    \end{align*}
+    and $\alpha_i$ is constructible for $1\leq i\leq n$, each subextension degree is a power of $2$, as desired.
+
+    Assume conversely that $[K:\bb{Q}]=2^r$ for some nonnegative integer $r$.
+    For each integer $0\leq i\leq r$, there is a subgroup $H_r$ of $\gal{K/\bb{Q}}$ of index $2^i$.
+    Then
+    \begin{align*}
+        \bb{Q}=K^{H_0} < K^{H_1} < \cdots < K^{H_r}=K
+    \end{align*}
+    is a desired tower of quadratic extensions from $\bb{Q}$.
+\end{proof}

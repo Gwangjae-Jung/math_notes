@@ -1,0 +1,182 @@
+\section{Normal extensions}
+
+Before studying normal extensions, we first observe the following proposition, whose proof, in particular, provides us essential intuition regarding normal extensions.
+\begin{prop}
+    Suppose that $E/F$ is an algebraic field extension and $\sigma: E\hookrightarrow E$ is an $F$-embedding.
+    Then $\sigma(E)=E$, i.e., $\sigma\in\aut{E/F}$.
+\end{prop}
+\begin{proof}
+    If $E/F$ is a finite extension, the proposition follows from the observation that $\sigma$ is a vector space isomorphism between finite dimensional vector spaces over $F$.
+    To prove the proposition in general settings, it suffices to show that $\alpha\in\sigma(E)$, where $\alpha\in E$.
+    Given $\alpha\in E$, let $f(t)$ be the minimal polynomial of $\alpha$ over $F$ and write
+    \begin{align*}
+        f(t)=\left((t-\alpha_1)\cdots(t-\alpha_k)\times(t-\beta_1)\cdots(t-\beta_s)\right)^r,
+    \end{align*}
+    where $\alpha_1, \cdots, \alpha_k\in E$ and $\beta_1, \cdots, \beta_s\in\ol{F}\setminus E$ are pairwise distinct.
+    Since $\sigma(E)\leq E$ and $f(t)$ is fixed by the action of $\sigma$, $\sigma$ permutes $\{\alpha_1, \cdots, \alpha_k\}$, justifying that $\alpha\in \sigma(E)$.
+\end{proof}
+
+We defined a normal extension in \cref{normal extension}.
+Since we now know that the splitting field for a nonconstant polynomial $f(t)$ over a field $F$ is the smallest field containing $F$ and all roots $f(t)$ and that the splitting field for $f(t)$ over $F$ is unique up to isomorphism, we emphasize the following general definition for splitting fields.
+\begin{defi}[Splitting field]
+    Let $F$ be a field and $R$ be a collection of nonconstant polynomials over $F$.
+    If $S$ is the collection of the roots of the polynomials in $R$, the splitting field for $R$ over $F$ is defined as the field $F(S)$.
+    (Note that this definition coincides the old definition, where $R$ is a finite collection.)
+\end{defi}
+\begin{exmp}
+    If $R$ is the collection of all nonconstant (monic) polynomials over a field $F$, then the splitting field for $R$ over $F$ is the algebraic closure of $F$.
+\end{exmp}
+
+\begin{thm}[Normal extension]\label{equiv_normal_extensions}
+    Suppose that $E/F$ is an algebraic extension and assume $E\leq\ol F$.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            There is a collection $\mc{R}$ of nonconstant polynomials over $F$ for which $E$ is the splitting field over $F$.
+        }
+        \item[(b)]
+        {
+            If $\tau\in\emb{E/F}$, then $\tau\in\aut{E/F}$.
+            In other words, $\emb{E/F}=\aut{E/F}$.\footnote{Hence, in particular, a finite field extension $E/F$ is a normal extension if and only if $[E:F]_\sep=|\aut{E/F}|$.}
+        }
+        \item[(c)]
+        {
+            If $\alpha\in E$, then all roots of $m_{\alpha, F}(t)$ are in $E$.
+            In other words, $m_{\alpha, F}(t)$ splits completely over $E$.
+        }
+    \end{enumerate}
+    In either of the above cases, we call $E/F$ a normal extension.
+\end{thm}
+\begin{proof}
+    Assume (a) and let $\tau: E\hookrightarrow\ol F$ be an $F$-embedding.
+    By the first proposition in this section, it suffices to verify that $\tau(E)\leq E$.
+    If $\alpha$ is a root of a polynomial in $\mc{R}$, it can easily be checked that $\tau(\alpha)$ is a root of the same polynomial.
+    Hence $\tau(E)\leq E$.
+
+    Assume (b), and let $m(t)$ be the minimal polynomial of $\alpha\in E$ over $F$.
+    Given a root $\beta$ of $m(t)$, let $\sigma: F(\alpha)\rightarrow F(\beta)$ be the unique $F$-isomorphism such that $\sigma(\alpha)=\beta$.
+    We then can extend $\sigma$ to $\widetilde{\sigma}: E\hookrightarrow\ol{F}$; by the assumption (b), $\range\widetilde{\sigma}=E$, so $\beta\in E$, as desired.
+
+    Finally, assume (c).
+    Then $E=F(\mc{R})$, where $\mc{R}$ is the collection of the minimal polynomial of $\alpha\in E$ over $F$ for $\alpha\in E$.
+    This proves that (a), (b), and (c) are equivalent.
+\end{proof}
+
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose that $E/F$ is an algebraic extension of degree 2.
+            Then $E=F(\alpha)$ for some $\alpha\in E$, where the minimal polynomial $m(t)$ of $\alpha$ over $F$ is of the form $t^2+bt+c$ for some $b, c\in F$.
+            The other root of $m(t)$ is given by $-b-\alpha\in E$, so $E$ is the splitting field for $m(t)$ over $F$.
+        }
+        \item[(b)]
+        {
+            Unlike algebraic and separable extensions, a normal extension of a normal extension may not be a normal extension.
+            (An example: $\bb{Q}<\bb{Q}(\sqrt{2})<\bb{Q}(\sqrt[4]{2})$.)
+        }
+    \end{enumerate}
+\end{exmp}
+
+In fact, normal extensions seems to have some properties satisfied in group theory when extension towers are seen reversely.
+A counterpart of the following proposition in group theory is that if $H\leq K\leq G$ and $H$ is a normal subgroup of $G$, then $H$ is a normal subgroup of $K$.
+\begin{prop}
+    Suppose that $F\leq E\leq K$ and $K/F$ is a normal extension.
+    Then $K/E$ is a normal extension.
+\end{prop}
+\begin{proof}
+    Suppose that $\tau: K\hookrightarrow\ol E$ is an $E$-embedding.
+    Since $F\leq E$ and we may assume that $\ol E=\ol F$, $\tau$ is an $F$-embedding of $K$ into $\ol F$, so $\tau(K)=K$ and $K/E$ is a normal extension.
+\end{proof}
+
+\begin{prop}
+    Let $E_1/F$ and $E_2/F$ are algebraic extensions such that $E_1, E_2\leq\ol F$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $\tau: \ol F\hookrightarrow \ol F$ is a field embedding, then $\tau(E_1E_2)=\tau(E_1)\tau(E_2)$.
+        }
+    \end{enumerate}
+    Assume further that $E_1/F$ and $E_2/F$ be normal extensions such that $E_1, E_2\leq\ol F$.
+    \begin{enumerate}
+        \item[(b)]
+        {
+            $(E_1E_2)/F$ is a normal extension.
+        }
+        \item[(c)]
+        {
+            $(E_1\cap E_2)/F$ is a normal extension.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a) easily follows from the identity
+    \begin{align*}
+        \tau\left(\frac{\alpha_1'\beta_1'+\cdots+\alpha_n'\beta_n'}{\alpha_1\beta_1+\cdots+\alpha_m\beta_m}\right)
+        =
+        \frac{\tau(\alpha_1')\tau(\beta_1')+\cdots+\tau(\alpha_n')\tau(\beta_n')}{\tau(\alpha_1)\tau(\beta_1)+\cdots+\tau(\alpha_m)\tau(\beta_m)},
+    \end{align*}
+    where $\alpha_i, \alpha_j'\in E_1$ and $\beta_i, \beta_j'\in E_2$ for all integers $1\leq i\leq m$ and $1\leq j\leq n$.
+
+    To prove (b), let $\tau: E_1E_2\hookrightarrow\ol F$ be an $F$-embedding.
+    Then $\tau(E_1E_2)=\tau(E_1)\tau(E_2)=E_1E_2$, for $E_1/F$ and $E_2/F$ are normal extensions.
+    This proves that $(E_1E_2)/F$ is a normal extension.
+
+    To prove (c), assume $\alpha\in E_1\cap E_2$.
+    Then all roots of the minimal polynomial $m(t)$ of $\alpha$ over $F$ are in both $E_1$ and $E_2$, so $(E_1\cap E_2)/F$ is a normal extension.
+\end{proof}
+
+We end this section with the notion of normal closures and introducing an algebraic extension which we call a Galois extension.
+But before this, we solve a technical problem.
+\begin{obs}\label{composition of infinitely many  fields}
+    Let $\{F_\alpha: \alpha\in\mc{A}\}$ be a collection of fields which are contained in a larger field $E$.
+    The composition $F$ of $F_\alpha$ for $\alpha\in A$ (the smallest subfield of $E$ containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$) is
+    \begin{align*}
+        K:=\left\{x\in E: \textsf{$x$ belongs to a composition of $F_\alpha$ for finitely many $\alpha$'s}\right\}.
+    \end{align*}
+    (In fact, $F_0$ necessarily (by definition) contains $K$, and $K$ is a field containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$.)
+\end{obs}
+\begin{thm}[Normal closure]\label{normal closure}
+    Let $E/F$ be a field extension and assume $E\leq\ol F$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The set $\{K: \textsf{$E\leq K\leq\ol F$ and $K/F$ is a normal extension}\}$ has the least element $K_0$.
+            In fact, $K_0$ is the composition of $\sigma(E)$ for $\sigma\in\emb{E/F}$.
+            We call $K_0$ the normal closure of $E/F$.
+        }
+        \item[(b)]
+        {
+            In particular, if $E/F$ is a separable extension, then so is $K_0/F$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    We first show that $K_0$ is the smallest normal extension over $F$ containing $E$.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            Since $\emb{E/F}$ contains the inclusion of $E$ into $\ol F$, $E\leq K_0$.        
+        }
+        \item[(\romannumeral 2)]
+        {
+            Given an $F$-embedding $\tau: K_0\hookrightarrow\ol F$, note that $\tau\circ\sigma\in\emb{E/F}$ whenever $\sigma\in\emb{E/F}$.
+            In fact, $\tau$ permutes $\emb{E/F}$ by left multiplication, so $\tau(K_0)=K_0$.
+        }
+        \item[(\romannumeral 3)]
+        {
+            Finally, if $K$ is an intermediate subfield of $\ol{F}/E$ which is normal over $F$, then $K$ necessarily contains $\sigma(E)$ for $\sigma\in\emb{E/F}$; if $\sigma\in\emb{E/F}$, by extending $\sigma$ to $\widetilde{\sigma}\in\emb{K/F}$, we have $\sigma(E)\leq\widetilde{\sigma}(K)=K$.
+        }
+    \end{enumerate}
+    
+    We now assume that $E/F$ is a separable extension.
+    Then $(\sigma E)/F$ is a separable extension whenever $\sigma\in\emb{E/F}$.
+    If $x\in K_0$, then $x$ belongs to the composition of some finitely many fields $(\sigma E)$'s, and such finite composition is a separable extension over $F$.
+    Therefore, when $E/F$ is a separable extension, then the normal closure of $E$ over $F$ is also separable over $F$.
+\end{proof}
+
+In particular, (b) of \cref{normal closure} implies that we can construct a separable and normal extension whenever a separable field extension is given, by extending the extension field, if necessary.
+\begin{defi}[Galois extension]
+    A field extension which is separable and normal is called a Galois extension.
+\end{defi}

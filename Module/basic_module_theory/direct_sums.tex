@@ -1,0 +1,310 @@
+\section{Direct sums of submodules}
+Throughout this section, we assume that $I$ is a nonempty index set and that every set indexed by the elements of $I$ is nonempty.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Direct products of sets}
+
+\begin{defi}[Direct product]
+    Let $I$ be a nonempty index set and suppose that $X_i$ is a nonempty set for each $i\in I$.
+    The product $\prod_{i\in I} X_i$ is defined as the collection of the function $f$ from $I$ into $\bigcup_{i\in I} X_i$ such that $f(i)\in X_i$ for each $i\in I$.
+\end{defi}
+
+\begin{prop}[A universal property of direct products]
+    Let $X=\prod_{i\in I} X_i$ be the product of nonempty sets $X_i$ for $i\in I$.
+    For any nonempty set $S$ and for any collection of functions $\theta_j: S\rightarrow X_j\,(j\in I)$, there is a unique set map $\phi: S\rightarrow \prod_{i\in I} X_i$ such that $\pi_j\circ\phi=\theta_j$ for each $j\in I$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.8cm]
+        S\arrow[r, "\phi", dashed]\arrow[dr, "\theta_j"']
+        &
+        \prod_{i\in I}X_i\arrow[d, "\pi_j", ->>]\\
+        & X_j
+    \end{tikzcd}
+    \end{equation*}
+\end{prop}
+
+By naturally defining operations on direct products, one can easily check that the direct product of $\square\square$'s is a $\square\square$.
+Here is an analogous universal property for the direct products of $\square\square$'s.
+\begin{prop}[A universal property of dirct products of $\square\square$'s]
+    For each $i\in I$, assume that $X_i$ and $Y_i$ are $\square\square$ and let $\phi_i: X_i\rightarrow Y_i$ be a $\square\square$-homomorphism.
+    Also, let $\pi_j: \prod_{i\in I} X_i \rightarrow X_j$ and $\eta_j: \prod_{i\in I} Y_i \rightarrow Y_j$ be the natural projections for $j\in I$.
+    Then there is a unique $\square\square$-homomorphism $\phi_*: \prod_{i\in I} X_i\rightarrow \prod_{i\in I} Y_i$ such that $\eta_j\circ\phi_*=\phi_j\circ\pi_j$ for all $j\in I$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.5cm, column sep=1.8cm]
+        \prod_{i\in I} X_i
+        \arrow[r, "\phi_*", dashed]
+        \arrow[d, "\pi_j"', ->>]
+        \arrow[dr, "\phi_j\circ\pi_j"', sloped]
+        &
+        \prod_{i\in I} Y_i
+        \arrow[d, "\eta_j", ->>]
+        \\
+        X_j
+        \arrow[r, "\phi_j"']
+        &
+        Y_j
+    \end{tikzcd}
+    \end{equation*}
+\end{prop}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{External direct sum}
+
+While the idea of external direct sum can be extended to other structured objects (even for sets, as illustrated in the following definition), for convinience, we assume that the summands are either $R$-modules or $R$-algebras when considering their external direct sum.
+
+\begin{defi}[External direct sum]
+    Let $I$ be a nonempty index set and $X_i$ be a nonempty set for $i\in I$.
+    The external direct sum $\bigoplus_{i\in I} X_i$ of $X_i$'s are defined as the collection of the element $x$ in the direct product of $X_i$'s such that $x(i)$ is nonzero for all but finitely many $i$'s.
+    In other words,
+    \begin{align*}
+        \bigoplus_{i\in I} X_i:=\left\{x\in\prod_{i\in I}X_i : x(i)=0\textsf{ for all but finitely many }i\in I\right\}.
+    \end{align*}
+\end{defi}
+
+Several easy observations are given as follows:
+\begin{obs}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            When the index set is finite, then the external direct sum and the direct product coincide.
+        }
+        \item[(b)]
+        {
+            If $X_i$ is a $\square\square$ for each $i\in I$, then $\bigoplus_{i\in I} X_i\leq_{\square\square}\prod_{i\in I} X_i$.
+        }
+        \item[(c)]
+        {
+            Suppose that $\mc{B}_i$ is an $F$-basis of the $F$-vector space $V_i$ for each $i\in I$.
+            Then the union $\bigcup_{i\in I}\imath_i(\mc{B}_i)\subset\bigoplus_{i\in I} V_i$ is an $F$-basis of $\bigoplus_{i\in I} V_i$, where $\imath_i$ is the natural embedding.
+        }
+    \end{enumerate}
+\end{obs}
+
+The following observation is almost clear, but it will be a key observation when identifying external direct sums and internal direct sums.
+\begin{obs}
+    Each element of $\bigoplus_{i\in I} X_i$ can be written as $\sum_{i\in I} \imath_i(x_i)$ with $x_i\in X_i$ for all $i\in I$, where $x_i=0$ for all but finitely many $i$'s.
+    And such summation is uniquely determined.
+\end{obs}
+\begin{proof}
+    Clearly, $x=\sum_{i\in I} \imath_i(x(i))$ is a desired sum.
+    If $\sum_{i\in I} \imath_i(a_i)=\sum_{i\in I} \imath_i(b_i)$ with $a_i, b_i\in X_i$, then $\sum_{i\in I} \imath_i(a_i-b_i)=0$, which forces $a_i=b_i$.
+\end{proof}
+
+\begin{prop}[A universal property of the external direct sum of $R$-modules]
+    Let $X_i$ be an $R$-module for $i\in I$.
+    For any $R$-module $M$ and $R$-module homomorphisms $\alpha_j: X_j\rightarrow M$ for $j\in I$, there is a unique $R$-module homomorphism $\alpha: \bigoplus_{i\in I} X_i\rightarrow M$ such that $\alpha\circ\imath_j=\alpha_j$ for $j\in I$.
+    (In general, this universal property is invalid for $R$-algebras.)
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+        X_j\arrow[r, "\imath_j", hook]\arrow[dr, "\alpha_j"']
+        &
+        \bigoplus_{i\in I} X_i\arrow[d, "\alpha", dashed]\\
+        &
+        M
+    \end{tikzcd}
+    \end{equation*}
+\end{prop}
+\begin{proof}
+    If such a \textit{set map} $\alpha: \bigoplus_{i\in I} X_i\rightarrow M$ has to be defined, then it should be defined as follows: For each $x\in \bigoplus_{i\in I} X_i$,
+    \begin{align}\label{univ. prop. ext. direct sum}
+        \alpha(x)=\sum_{i\in I}\alpha_i(x(i)).
+    \end{align}
+    By the definition of the external direct sum, the summation in \cref{univ. prop. ext. direct sum} is a finite sum.
+    For such \textit{set map} $\alpha$, if $x, y\in\bigoplus_{i\in I} X_i$ and $r\in R$, then
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $\alpha(x+y)=\sum_{i\in I}\alpha_i((x+y)(i))=\sum_{i\in I}(\alpha_i(x(i))+\alpha(y(i)))=\alpha(x)+\alpha(y)$ and
+        }
+        \item[(2)]
+        {
+            $\alpha(rx)=\sum_{i\in I}\alpha_i((rx)(i))=\sum_{i\in I} r\alpha_i(x(i))=r\alpha(x)$.
+        }
+    \end{enumerate}
+    Hence, $\alpha$ is a unique $R$-module homomorphism for which the above diagram commutes.
+    It can be easily explained that such $\alpha$ fails to be an $R$-algebra homomorphism.
+\end{proof}
+
+\begin{rmk}[Universal properties of direct products and external direct sums]
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (A universal property of direct products)
+            For any $\square\square$ $Y$ and for every set of $\square\square$-homomorphisms $\{\alpha_j: Y\rightarrow X_j\}_{j\in I}$, there is a unique $\square\square$-homomorphism $\alpha: Y\rightarrow\prod_{i\in I} X_i$ such that $\pi_j\circ\alpha=\alpha_j$ for all $j\in I$.
+        }
+        \item[(b)]
+        {
+            (A universal property of external direct sums)
+            For any $\square\square$ $Y$ and for every set of $\square\square$-homomorphisms $\{\alpha_j: X_j\rightarrow Y\}_{j\in I}$, there is a unique $\square\square$-homomorphism $\alpha: \bigoplus_{i\in I} X_i\rightarrow Y$ such that $\alpha\circ\imath_j=\alpha_j$ for all $j\in I$.
+        }
+    \end{enumerate}
+    \begin{equation*}
+    \textsf{(a):}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+        Y\arrow[r, "\alpha", dashed]\arrow[dr, "\alpha_j"']
+        &
+        \prod_{i\in I} X_i\arrow[d, "\pi_j", ->>]
+        \\
+        &
+        X_j
+    \end{tikzcd}
+    \quad\quad\textsf{(b):}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+        X_j\arrow[r, "\alpha_j"]\arrow[d, "\imath_j"', hook]
+        &
+        Y
+        \\
+        \bigoplus_{i\in I} X_i\arrow[ur, "\alpha"', dashed]
+        &
+    \end{tikzcd}
+    \end{equation*}
+    These two universal properties cannot be interchanged.
+    \begin{enumerate}
+        \item[(1)]
+        {
+            We first justify that the direct product $\prod_{i\in I} X_i$ does not generally satisfy the universal property of the external direct sum in (b) by considering the following example: $I=\bb{N}$ with $X_j=Y=\bb{Z}$ and $\alpha_j=\id{\bb{Z}}$ for all $j\in\bb{Z}$.
+        }
+        \item[(2)]
+        {
+            We now check that the external direct sum $\bigoplus_{i\in I} X_i$ does not generally satisfy the universal property of the direct sum in (a).
+            Suppose that the index set $I$ is infinite and there is an element $y\in Y$ such that $\alpha_j(y)\neq 0$ for infinitely many $j\in I$.
+            For such $j$, we have $(\pi_j\circ\alpha)(y)\neq 0$, implying that $\alpha(y)(j)\neq 0$ for infinitely many $j$'s, a contradiction.
+        }
+    \end{enumerate}
+\end{rmk}
+
+As an application of a universal property, we end this subsection with the following observation:
+\begin{obs}
+    Let $X_i$ and $Y_i$ be $R$-modules for $i\in I$ and $\phi_i: X_i\rightarrow Y_i$ be an $R$-module homomorphism.
+    And let $\imath_j: X_j\rightarrow \bigoplus_{i\in I} X_i$ and $\jmath_j: Y_j\rightarrow \bigoplus_{i\in I} Y_i$ be natural embeddings.
+    Then there is a unique $R$-module homomorphism $\phi: \bigoplus_{i\in I} X_i\rightarrow \bigoplus_{i\in I} Y_i$ such that $\jmath_j\circ\phi=\phi_i\circ\imath_j$ for all $j\in I$.
+    In fact, by the property of $\phi$, the $j$-th component of $\phi$ satisfies the following identity:
+    \begin{align*}
+        \eta_j\circ\phi=\phi_j,
+    \end{align*}
+    where $\eta_j:\bigoplus_{i\in I} Y_i\twoheadrightarrow Y_j$ is the natural projection, so there is no confusion of notation.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.5cm, column sep=1.5cm]
+        X_j
+        \arrow[r, "\phi_j"]
+        \arrow[d, "\imath_j"', hook]
+        \arrow[dr, "\jmath_j\circ\phi_j"{sloped}]
+        &
+        Y_j
+        \arrow[d, "\jmath_j", hook]
+        \\
+        \bigoplus_{i\in I} X_i
+        \arrow[r, "\phi"', dashed]
+        &
+        \bigoplus_{i\in I} Y_i
+    \end{tikzcd}
+    \end{equation*}
+\end{obs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Internal direct sum}
+
+We studied the sum of $F$-linearly independent $F$-subspaces of an $F$-vector space.
+Such idea naturally extends to $R$-submodules, since a vector space is a module over a division ring.
+\begin{defi}[Internal direct sum of submodules]
+    Let $M$ be an $R$-module and $N_i$ be an $R$-submodule of $M$ for each $i\in I$ with the following property:
+        Given an element $x\in\sum_{i\in I} N_i$, for each $i\in I$, there is a unique element $x_i\in N_i$ such that
+        \begin{center}
+            $x_i\neq 0$ only for finitely many $i\in I$, and $\ds{x=\sum_{i\in I} x_i}$.
+        \end{center}
+    In this case, the sum of $N_i$'s is called the internal direct sum of $N_i$'s and denoted by $\bigoplus_{i\in I} N_i$.
+\end{defi}
+Unlike the direct products and the external direct sums (where the latter are subobjects of the former), the internal direct sums are considered only for $R$-modules.
+
+A simple observation which have been done in linear algebra is given as follows.
+\begin{obs}
+    Let $M$ be an $R$-module and $N_i$ be an $R$-submodule of $M$ for each $i\in I$.
+    Then, the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $M=\bigoplus_{i\in I} N_i$.
+        }
+        \item[(b)]
+        {
+            Every element of $M$ can be uniquely written as $\sum_{i\in I} x_i$, where only finitely many $x_i$'s are nonzero.
+        }
+        \item[(c)]
+        {
+            $M=\sum_{i\in I}N_i$ and the way of writing $0\in M$ as $\sum_{i\in I} x_i$, where only finitely many $x_i$'s are nonzero, is unique; the trivial method.
+        }
+        \item[(d)]
+        {
+            $M=\sum_{i\in I}N_i$, and for each $i\in I$, $N_i\cap\sum_{j\in I\setminus\{i\}}N_j=0$.
+        }
+    \end{enumerate}
+    When proving their equivalence, note that (a) and (b) are equivalent by definition; (b) naturally implies (c) and (c) implies (b), which can be easily justified by the method of contradiction.
+    To prove (d) when (c) is assumed, suppose $x\in N_i\cap\sum_{j\in I\setminus\{i\}}N_j$ and consider $0=x-x$, which forces $x=0$; to prove (c) when (d) is assumed, consider a nontrivial expression for $0\in M$ and deduce a contradiction.
+\end{obs}
+
+\begin{obs}
+    Let $M$ be an $R$-module.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $S$ is an $R$-linearly independent subset of $M$, then $\sum_{x\in S} Rx=\bigoplus_{x\in S} Rx$.
+        }
+        \item[(b)]
+        {
+            In particular, if $S$ is an $R$-basis of $M$, then $M=\bigoplus_{x\in S} Rx$.
+        }
+    \end{enumerate}
+\end{obs}
+
+\begin{prop}
+    Let $M$ be an $R$-module and assume that $N_i'\leq_R N_i\leq_R M$ for $i\in I$.
+    If $\bigoplus_{i\in I} N_i'=\bigoplus_{i\in I} N_i$, then $N_i'=N_i$ for all $i\in I$.
+\end{prop}
+\begin{proof}
+    The result is almost straightforward.
+    It suffices to prove that $x_j\in N_j'$ for each $j\in I$ when $x_j\in N_j$ is given.
+    Since $x_j=\imath_j(x_j)\in\bigoplus_{i\in I} N_i$ has the unique expression $x_j+\sum_{i\in I\setminus\{j\}}0$ in $\bigoplus_{i\in I}N_i$, this expression should be valid in $\bigoplus_{i\in I}N_i'$, implying that $x_j\in N_j'$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Identifying direct sums}
+
+In this subsection, we prove that an external direct sum can be considered an internal direct sum and the converse consideration is also valid.
+When observing the definition of each direct sum, one can notice that finiteness is required for an element to be in the respective direct sum and that linear independency is also required.
+Hence, in particular when the index set $I$ is finite so that one may assume that $I=\{1, \cdots, n\}$ for some $n\in\bb{N}$, we may identify the element $(x_1, \cdots, x_n)\in\bigoplus_{i\in I}^\textsf{ext} N_i$ with the element $x_1+\cdots+x_n\in\bigoplus_{i\in I}^\textsf{int} N_i$.
+
+In the following two observations, assume that $M$ is an $R$-module and $N_i$ is an $R$-submodule of $M$ for each $i\in I$.
+
+\begin{obs}
+    Suppose that $\sum_{i\in I}N_i=\bigoplus_{i\in I}N_i$.
+    Define the map $\phi: \bigoplus_{i\in I}^\textsf{int} N_i \rightarrow \bigoplus_{i\in I}^\textsf{ext} N_i$ by
+    \begin{align*}
+        \left(\phi\left(\sum_{i\in I} x_i\right)\right)(j)=x_j\quad(j\in I, x_i\in I,\textsf{ and }x_i\neq 0\textsf{ only for finitly many }i\in I).
+    \end{align*}
+    Then $\phi$ is an $R$-module isomorphism.
+\end{obs}
+\begin{proof}
+    \color{brown}The proof is technical.\color{black}
+\end{proof}
+
+\begin{obs}
+    Consider the natural embedding $\imath_j: N_j\hookrightarrow\bigoplus_{i\in I}^\textsf{ext} N_i$.
+    Then $\bigoplus_{i\in I}^\textsf{ext} N_i=\bigoplus_{i\in I}^\textsf{int}\imath_i(N_i)$.
+    Hence, under the identification $N_i=\imath_i(N_i)$, we may also identify $\bigoplus_{i\in I}^\textsf{ext} N_i=\bigoplus_{i\in I}^\textsf{int} N_i$.
+\end{obs}
+\begin{proof}
+    \color{brown}Clear.\color{black}
+\end{proof}

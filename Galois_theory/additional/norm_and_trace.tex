@@ -1,0 +1,51 @@
+\section{Norm and trace}
+
+\begin{defi}
+    Let $E/F$ be a finite separable extension and write $\emb{E/F}=\{\sigma_1, \cdots, \sigma_n\}$.
+    The norm map $N_{E/F}: E\rightarrow F$ and the trace map $tr_{E/F}: E\rightarrow F$ is defined by
+    \begin{align*}
+        N_{E/F}(\alpha)=\prod_{i=1}^n \sigma_i(\alpha)\quad\textsf{and}\quad
+        tr_{E/F}(\alpha)=\sum_{i=1}^n \sigma_i(\alpha)\quad(\alpha\in E).
+    \end{align*}
+\end{defi}
+\begin{rmk}
+    Let $K$ be the normal closure of $E$ over $F$ and suppose $\tau\in\gal{K/E}$.
+    Given $\sigma\in\emb{E/F}$, its extension to $K$ is an $F$-embedding of $K$ into $\ol F$, so $\sigma(E)\leq K$ and $\tau\circ\sigma$ is an $F$-embedding of $E$ into $\ol F$.
+    Therefore, an automorphism in $\gal{K/F}$ permutes $\emb{E/F}$ by left multiplication.
+    This proves that $\tau(N_{E/F}(\alpha))=N_{E/F}(\alpha)$ and $\tau(tr_{E/F}(\alpha))=tr_{E/F}(\alpha)$, i.e., $N_{E/F}(\alpha), tr_{E/F}(\alpha)\in F$.
+\end{rmk}
+\begin{obs}
+    One can easily find the norm and the trace of an element $\alpha$ which is separable over a field $F$ by computing its minimal polynomial over $F$.
+    To be precise, if $\alpha$ is separable over $F$, then its minimal polynomial $m(t)=t^n+a_{n-1}t^{n-1}+\cdots+a_1t+a_0$ over $F$ satisfies
+    \begin{align*}
+        m(t)=(t-\sigma_1\alpha)\cdots(t-\sigma_n\alpha),
+    \end{align*}
+    where $n=[F(\alpha): F]_\sep=[F(\alpha): F]$, thus $N_{F(\alpha)/F}(\alpha)=(-1)^n a_0$ and $tr_{F(\alpha)/F}(\alpha)=-a_{n-1}$.
+\end{obs}
+
+\begin{prop}
+    Suppose that $K/F$ is a finite separable extension and $F\leq E\leq K$.
+    Then
+    \begin{align*}
+        N_{K/F}=N_{E/F}\circ N_{K/E}\quad\textsf{and}\quad tr_{K/F}=tr_{E/F}\circ tr_{K/E}.
+    \end{align*}
+\end{prop}
+\begin{proof}
+    Let $L$ be the normal(Galois) closure of $K$ over $F$, and write
+    \begin{align*}
+        G=\gal{L/F},\quad H=\gal{L/E},\quad I=\gal{L/K}.
+    \end{align*}
+    Then, for $\alpha\in K$,
+    \begin{align*}
+        N_{K/E}(\alpha)=\prod_{\sigma\in\emb{K/E}}\sigma\alpha=\prod_{\sigma I\in H/I}\sigma\alpha,\quad
+        tr_{K/E}(\alpha)=\sum_{\sigma\in\emb{K/E}}\sigma\alpha=\sum_{\sigma I\in H/I}\sigma\alpha.
+    \end{align*}
+    (It suffices to check that the computation of the last (finite) product(sum) is well-defined.
+    If $\sigma I=\tau I$ for some $\sigma, \tau\in H$, then $\tau^{-1}\sigma\in I$ so $\sigma\alpha=\tau\alpha$ whenever $\alpha\in K$.)
+    Letting $n=N_{K/E}(\alpha)$ and $t=tr_{K/E}(\alpha)$, we have
+    \begin{align*}
+        N_{E/F}(n)=\prod_{\tau H\in G/H} \tau n=\prod_{\sigma\tau I\in G/I}(\sigma\tau\alpha),\quad
+        tr_{E/F}(t)=\sum_{\tau H\in G/G} \tau t=\sum_{\sigma\tau I\in G/I}(\sigma\tau\alpha).
+    \end{align*}
+    Such $\sigma\tau$'s form $G/I$ and they are $F$-embeddings of $K$ into $\ol F$, so $N_{K/F}=N_{E/F}\circ N_{K/E}$ and $tr_{K/F}=tr_{E/F}\circ tr_{K/E}$, as desired.
+\end{proof}

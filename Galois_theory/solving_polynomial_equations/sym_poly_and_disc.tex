@@ -1,0 +1,216 @@
+\section{Symmetric polynomials and discriminants}
+
+\begin{rmk}
+    When $F$ is a field such that $\ch{F}\neq 2$, the roots of the quadratic equation $x^2+ax+b=0\,(a, b\in F)$ are given by
+    \begin{align*}
+        x=\frac{-a\pm\sqrt{a^2-4b}}{2}.
+    \end{align*}
+    We will consider above formula as a function in the coefficients of the polynomial $t^2+at+b$, i.e., a function of the coefficients of the polynomial.
+\end{rmk}
+
+\begin{obs}
+    Let $F$ be a field and $s_1, \cdots, s_n$ be pairwise distinct indeterminates with $n\in\bb{Z}^{>0}$.
+    Then the polynomial
+    \begin{align*}
+        G(t):=t^n-s_1t^{n-1}+\cdots+(-1)^ns_n\in F(s_1, \cdots, s_n)[t]
+    \end{align*}
+    is called the general polynomial of degree $n$.
+    (Here, the field $F(s_1, \cdots, s_n)$ is transcedental over $F$.)
+    Writing $E=F(s_1, \cdots, s_n)$ (and fixing an algebraic closure $\ol E$ of $E$) and
+    \begin{align*}
+        G(t)=(t-x_1)\cdots(t-x_n)\quad (x_1, \cdots, x_n\in \ol{E}),
+    \end{align*}
+    we can find the formula for $s_i$ in $x_1, \cdots, x_n$ for each integer $i=1, \cdots, n$.
+    The indeterminates $s_1, \cdots, s_n$ are called the elementary symmetric polynomials in $x_1, \cdots, x_n$.
+    (The extension $E(x_1, \cdots, x_n)/E$ is a finite Galois extension.)
+\end{obs}
+For a clear argument, we start from $x_1, \cdots, x_n$, rather than from the elementary symmetric polynomials in $x_1, \cdots, x_n$.
+\begin{defi}[General polynomial]
+    Let $F$ be a field and $x_1, \cdots, x_n$ be pairwise distinct indeterminates ($n\in\bb{Z}^{>0}$).
+    Define
+    \begin{align*}
+        s_1=\sum_{1\leq i\leq n} x_i,\quad s_2=\sum_{1\leq i<j\leq n} x_ix_j,\quad\cdots, \quad s_n=x_1\cdots x_n.
+    \end{align*}
+    Then $s_i$ is called the $i$-th elementary symmetric polynomial in $x_1, \cdots, x_n$ for each integer $1\leq i\leq n$.
+    Under the above definition, letting $E=F(s_1, \cdots, s_n)$ (which is transcedental over $F$), the polynomial
+    \begin{align*}
+        G(t):=(t-x_1)\cdots(t-x_n)=t^n-s_1t^{n-1}+\cdots+(-1)^ns_n\in E[t]
+    \end{align*}
+    is a separable polynomial over $E$ and is called the general polynomial over $F$ of degree $n$.
+    Hence, the splitting field for $G(t)$ over $E$ is clearly $E(x_1, \cdots, x_n)$, which is a finite Galois extension over $F$.
+\end{defi}
+
+Our first goal is to find the Galois group of $G(t)$ over $E$, which clearly embeds into $S_n$.
+Note that $S_n$ acts on $\{x_1, \cdots, x_n\}$ by permutation, i.e., given $\sigma\in S_n$, $\sigma(x_i)=x_{\sigma(i)}$ for all $i$.
+This action naturally extends to the group action of $S_n$ by left multiplication on $F[x_1, \cdots, x_n]$ and $F(x_1, \cdots, x_n)$.
+Hence, the latter group action affords a group embedding $S_n\hookrightarrow\aut{K}$, where $K=E(x_1, \cdots, x_n)$. \color{brown}(How can $S_K$ be reduced to $\aut{K}$?) \color{black}
+Because the action fixes the elements of $E$, the above group embedding reduces to $S_n\hookrightarrow\aut{K/E}=\gal{K/E}$.
+Therefore, the Galois group of $G(t)$ over $E$ is, up to isomorphism, $S_n$.
+
+We summarize the above observation as the following theorem:
+\begin{thm}
+    Let $F$ be a field and $x_1, \cdots, x_n$ be pairwise distinct indeterminates for $n\geq 1$, and let $E=F(s_1, \cdots, s_n)$ and $K=E(x_1, \cdots, x_n)$.
+    Then $K$ is the splitting field for $G(t)$ over $E$ and $K/E$ is a finite Galois extension with the Galois group $S_n$, up to isomorphism.
+    (Hence, we may identify $\gal{K/E}=S_n$.)
+\end{thm}
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Because $G(t)$ is separable and $\gal{K/E}$ acts on the roots of $G(t)$ transitively, $G(t)$ is an irreducible polynomial over $E$.
+        }
+        \item[(b)]
+        {
+            By Galois's theorem, $F(x_1, \cdots, x_n)^{S_n}=F(s_1, \cdots, s_n)$.
+            In fact, $F[x_1, \cdots, x_n]^{S_n}=F[s_1, \cdots, s_n]$.
+            To justify the latter identity (which cannot be direcly deduced from Galois's theorem), it suffices to prove $F[x_1, \cdots, x_n]^{S_n}\subset F[s_1, \cdots, s_n]$: If $u\in F[x_1, \cdots, x_n]^{S_n}$, then $u\in F(s_1, \cdots, s_n)\cap F[x_1, \cdots, x_n]$, so $u\in F[s_1, \cdots, s_n]$.
+        }
+        \item[(c)]
+        {
+            For any positive integer $n>1$, $A_n$ is defined set-theoretically to be the collection of all even permutations in $S_n$.
+            Thus, there is a unique subgroup of $\gal{K/E}$ of index 2, so there is no confusion to identify such a subgroup with $A_n$.
+        }
+    \end{enumerate}
+\end{rmk}
+
+Our next goal is to find $F(x_1, \cdots, x_n)^{A_n}$.
+Define $E$ and $K$ as we have defined in this section.
+By Artin's theorem (or by Galois's theorem), we have $\gal{K/K^{A_n}}=A_n$, thus $[K^{A_n}: E]=2$, i.e., $K^{A_n}$ is a quadratic extension over $E$.
+
+\begin{defi}[Discriminant]
+    Let $\alpha_1, \cdots, \alpha_n$ be the roots of $f(t)\in F[t]$ (where $n=\deg f(t)\geq 2$).
+    Define
+    \begin{align*}
+        \delta=\delta_f=\prod_{1\leq i<j\leq n}(\alpha_i-\alpha_j),\quad\Delta=\Delta_f=\delta^2.
+    \end{align*}
+    Both $\delta$ and $\Delta$ are called the discriminant of $f(t)$.\footnote{Note that $\delta$ is defined up to sign. In this note, we mean $\Delta$ when speaking of a discriminant.}
+\end{defi}
+\begin{obs}[Computation of discriminants]
+    Remark a formula for the determinant of a Vandermonde matrix:
+    \begin{align*}
+        \det\begin{pmatrix}
+                1   &   x_1 &   \cdots  &   x_1^{n-1}\\
+                1   &   x_2 &   \cdots  &   x_2^{n-1}\\
+            \vdots  &\vdots &   \ddots  &   \vdots   \\
+                1   &   x_n &   \cdots  &   x_n^{n-1}
+        \end{pmatrix}
+        =\prod_{1\leq i<j\leq n}(x_j-x_i).
+    \end{align*}
+    Hence, letting $V=(x_i^{j-1})_{\substack{1\leq i\leq n\\q\leq j\leq n}}$, $\Delta_G=\det(V^T V)$.
+    Here, $V^T V=(z_{i+j-2})_{i, j}$, where $z_k=z_1^k+\cdots+z_n^k$ for $k\geq 0$.
+
+    By computing the determinant for $n=3$, we have
+    \begin{align*}
+        \Delta_G=-4s_2^3-27s_3^2-4s_1^3s_3+s_1^2s_2^2+18s_1s_2s_3.
+    \end{align*}
+    In fact, the above result reduces to a simpler formula when one reduces the $t^{n-1}$-term of $G(t)$ by shifting $G(t)$; if one obtains $b(t)=t^3+pt+q$ by shifting $G(t)$, then
+    \begin{align*}
+        \Delta_G=\Delta_b=-4p^3-27q^3.
+    \end{align*}
+    We postpone to compute the discriminant of the general polynomial of degree 4 later in this note.
+\end{obs}
+
+Remarking that $\delta$ is a square root of $\delta$ which is defined up to sign, we investigate when $\delta$ is fixed by a permutaion of the roots.
+\begin{prop}
+    Throughout this proposition, $G(t)$ stands for the general polynomial in $F(s_1, \cdots, s_n)$ for $n\geq 2$.
+    Let $f(t)$ be a separable polynomial over $F$ of degree $d$ and identify $G_f\leq S_d$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\Delta_f\in F$.
+            In particular, $\Delta_G\in F(s_1, \cdots, s_n)$.
+        }
+        \item[(b)]
+        {
+            $\sigma\delta_f=\delta_f$ whenever $\sigma\in G_f$ is even and $\sigma\delta_f=-\delta_f$ whenever $\sigma\in G_f$ is odd.
+            Hence, if $K$ is the splitting field for $f(t)$ over $F$ and \color{teal}$\ch{F}\neq 2$\color{black}, then $K^{G_f\cap A_d}=F(\delta_f)$.
+            In particular, if $\ch{F}\neq 2$, then $F(x_1, \cdots, x_n)^{A_n}=F(s_1, \cdots, s_n)(\delta_G)$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    In proving (a), the splitting field $K$ for $f(t)$ over $F$ is a finite Galois extension over $F$.
+    Because $\Delta_f$ is fixed by every automorphism in $\gal{K/E}$, by Galois's theorem, $\Delta_f\in K^\gal{K/F}=F$.
+
+    The first part of (b) easily follows from the definition of $\delta_f$, so $\delta_f\in K^{G_f\cap A_d}$.
+    Since $f(t)$ is assumed to be separable, when $\ch{F}\neq 2$, we have $\delta_f\neq-\delta_f$.
+    Thus, if $\sigma\in G_f\cap A_d$ fixes $\delta_f$, then $\sigma$ is necessarily even, so $\gal{K/F(\delta_f)}\leq G_f\cap A_d$, i.e., $F(\delta_f)\geq K^{G_f\cap A_d}$.
+\end{proof}
+\begin{cor}
+    Suppose that $F$ is a field such that $\ch{F}\neq 2$ and $f(t)$ is a separable polynomial over $F$ (where $n=\deg f(t)\geq 2$).
+    Let $K$ be the splitting field for $f(t)$ over $F$ and identify $G_f\leq S_n$.
+    Then $G_f\leq A_n$ if and only if $\delta_f\in F$.
+\end{cor}
+\begin{proof}
+    $G_f\cap A_n=G_f$ if and only if $F(\delta_f)=K^{G_f\cap A_n}=K^{G_f}=F$.
+\end{proof}
+
+This concludes our study on general polynomials and their discriminants (for fields with characteristic not being 2).
+We end this section with categorizing the Galois group of a cubic polynomial over a field with the characteristic not being 2.
+\begin{obs}
+    Let $F$ be a field such that $\ch{F}\neq 2$ and $f(t)=t^3+pt^2+qt+r$ be a separable polynomial over $F$. (Separability is always ensured when the base field is perfect, and we generally consider perfect fields.)
+    After shifting $f(t)$, redefine $f(t)=t^3+at+b$.
+    (The roots of the former and the latter $f(t)$ differ by $p/3$, respectively.)
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose that $f(t)$ is reducible.
+            \begin{enumerate}
+                \item[(\romannumeral 1)]
+                {
+                    If $f(t)$ splits completely over $F$, then all root of $f(t)$ are in $F$, so $G_f=\{\id{F}\}$.
+                }
+                \item[(\romannumeral 2)]
+                {
+                    If $f(t)$ does not split completely over $F$, then $f(t)$ is a product of a linear factor over $F$ and an irreducible quadratic factor over $F$.
+                    Hence, $G_f\approx Z_2$.
+                }
+            \end{enumerate}
+        }
+        \item[(b)]
+        {
+            Suppose that $f(t)$ is irreducible.
+            Then $\deg f(t)$ divides the order of the Galois group of $f(t)$. (And since $f(t)$ is assumed to be separable, $G_f$ is transitive on the roots of $f(t)$.)
+            Remark that the discriminant $\Delta$ of $f(t)$ is given by $\Delta=-4a^3-27b^2$.
+            \begin{enumerate}
+                \item[(\romannumeral 3)]
+                {
+                    $\delta\in F$ if and only if $G_f\leq A_3$.
+                    In this case, $G_f\approx A_3$.
+                }
+                \item[(\romannumeral 4)]
+                {
+                    $\delta\notin F$ if and only if $G_f\not\leq A_3$.
+                    In this case, $G_f\approx S_3$.
+                }
+            \end{enumerate}
+        }
+    \end{enumerate}
+\end{obs}
+\begin{exmp}
+    In this example, we compute the Galois group of the polynomial
+    \begin{align*}
+        f(t)=t^3+t+1\in F[t]
+    \end{align*}
+    with the base field $F$ varies among $\bb{Q},\, \bb{Q}(\sqrt{-31}),\,\bb{F}_3$, and $\bb{F}_7$.
+    Note that $\Delta=\Delta_f=-31$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Because $f(t)$ is irreducible over $\bb{Q}$ and $\delta=\delta_f=\sqrt{-31}\notin\bb{Q}$, $G_{f,\,\bb{Q}}\approx S_3$.
+        }
+        \item[(b)]
+        {
+            One can verify that $f(t)$ is irreducible over $\bb{Q}(\sqrt{-31})$ by checking if $f(t)$ is irreducible over $\bb{Z}[\sqrt{-31}]$, whose field of fractions is $\bb{Q}(\sqrt{-31})$.
+            Since $\delta=\sqrt{-31}\in\bb{Q}(\sqrt{-31})$, we have $G_{f,\,\bb{Q}(\sqrt{-31})}\approx A_3$.
+        }
+        \item[(c)]
+        {
+            Since $f(t)=(t-1)(t^2+t+2)$ and $t^2+t+2\in\bb{F}_3[t]$ is irreducible, $G_{f,\,\bb{F}_3}\approx Z_2$.
+        }
+        \item[(d)]
+        {
+            Since $f(t)$ is irreducible over $\bb{F}_7$ and $\Delta=-31=4$ is a square in $\bb{F}_7$, $G_{f,\,\bb{F}_7}\approx A_3$.
+        }
+    \end{enumerate}
+\end{exmp}

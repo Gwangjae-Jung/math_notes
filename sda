@@ -1,0 +1,178 @@
+[33mcommit f096cbaf44e38336b3d8042421ba3a49b433fe4e[m[33m ([m[1;36mHEAD -> [m[1;32mmain_algebra[m[33m, [m[1;31malgebra/main_algebra[m[33m)[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 27 01:06:32 2022 +0900
+
+    adfgg
+
+[33mcommit 1909f7d5adb8ad31542cf2296e480bcee3bf65b6[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Tue Aug 23 16:31:09 2022 +0900
+
+    2022-08-23 (Tue) 16:31
+
+[33mcommit 14894d551d7fe740e31d8f82bb9c3e5a6c72f19d[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Tue Aug 23 01:12:35 2022 +0900
+
+    2022-08-23 (Tue) 13:12
+    
+    Start from Part 5: Galois theory
+
+[33mcommit 3a76bbfc1de3c7410a1cfe8e3cffc4e398ddb9be[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Tue Aug 23 01:02:17 2022 +0900
+
+    Remaining: Galois theory
+
+[33mcommit 0e423c214f563d4a9d9325cef3219096cb428083[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Mon Aug 22 19:42:37 2022 +0900
+
+    [Separable extension] done
+
+[33mcommit 9b7605c75ed3ac5efeaecca80d4159f42faa4c3a[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 20 15:05:17 2022 +0900
+
+    2022-08-20 (Sat) 15:04
+    
+    1. Chapter [Finite fields - Part 1] is done.
+    
+    One should start from:
+    [Separable extensions and normal extensions]
+
+[33mcommit 52f9223a108042609cafd432acdbd4c9a09d73b5[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 20 01:32:14 2022 +0900
+
+    2022-09-20 (Sat) 01:31
+    
+    1. Package 'cleveref' is loaded.
+    2. Other than algebraic conjugates are explained.
+
+[33mcommit 2db691cf545ea3a3352aa259e1f33201a2622469[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 19 10:32:03 2022 +0900
+
+    sadfg
+
+[33mcommit fb474bcbdc0d4f7af813e548e503c6331b4061e7[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 19 10:31:56 2022 +0900
+
+    2022-08-19 (Fri) 10:31
+
+[33mcommit 4e1deab5b9789dde9b942a1f09d2202bdc1bdb0c[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 19 00:14:19 2022 +0900
+
+    2022-08-19 (Fri) 00:14
+
+[33mcommit 0aa53896c81afd8ab98c7efc492299b4472ca609[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Wed Aug 17 20:26:12 2022 +0900
+
+    2022-08-17 (Wed) 20:26
+
+[33mcommit a2b0e51d97d1b8ab1e9dbf8a02b496af683d6f95[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Tue Aug 16 14:27:31 2022 +0900
+
+    [2022-08-16 (Tue) 14:27~] Field theory
+
+[33mcommit 614455b0e0c2fe1cdc6b30099c08406579727f14[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sun Aug 14 03:33:25 2022 +0900
+
+    Module thoery done
+
+[33mcommit 3879f2cbd178c4a26c2a22b2e50b4af91cc8a832[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sun Aug 14 03:05:01 2022 +0900
+
+    similarity
+
+[33mcommit 72d389273f51fa86ab185601ab447a74d628e66d[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 21:50:10 2022 +0900
+
+    Section [applications of structure theores] done.
+
+[33mcommit a6385295a910fefed0d3aba8c41f889956d0007a[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 20:03:48 2022 +0900
+
+    asdf
+
+[33mcommit 4d25cdbe4132df7e3e6a62d274f2dc766b3acbfc[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 16:22:53 2022 +0900
+
+    2022-08-13 (Sat) 16:22
+
+[33mcommit c4765c9c996bbdc22318290ff7cb9ff1f652f009[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 15:14:50 2022 +0900
+
+    2022-08-13 (Sat) 15:14
+
+[33mcommit d80354cab1029ec96ae65749b1b90f20b32cbf69[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 11:39:00 2022 +0900
+
+    Some modifications
+
+[33mcommit 8b110efa2c0498e05dee83956ca8c64100423313[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 11:33:53 2022 +0900
+
+    A secction is divided
+
+[33mcommit 9ed22c9ad349c36018954559a03509ddf217302e[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 00:08:49 2022 +0900
+
+    adsf
+
+[33mcommit e42f025dfd8536ec2d9ff4e2216f97e8b5363ceb[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Sat Aug 13 00:05:21 2022 +0900
+
+    asdf
+
+[33mcommit 6bbe9fd6a589e6c6b190a2686c05e099ef64daa1[m[33m ([m[1;31malgebra/git-bash[m[33m)[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 12 13:52:47 2022 +0900
+
+    generalized PDT
+
+[33mcommit cec908b75f63a6617b8623d4804da6739acef37b[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 12 13:31:41 2022 +0900
+
+    asdf
+
+[33mcommit b88b7d6a65fd0b485ec854dfb36067ca66548719[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 12 13:29:05 2022 +0900
+
+    2022-08-12 (Fri) 13:28
+
+[33mcommit 9e9d0957121966ab075c78f8782a1873cd12ea53[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 12 13:14:12 2022 +0900
+
+    CDT for abelian groups done
+
+[33mcommit ccfb19db6fb4503ac34df0013a98803357f02eda[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 12 10:48:26 2022 +0900
+
+    1. Section [Another definition of the rank] done.
+    2. Some errata are corrected.
+
+[33mcommit 9d32e822f0ffa99f21e4549ee7cb188b13265cad[m
+Author: Gwangjae-Jung <rhkdwo2048@gmail.com>
+Date:   Fri Aug 12 01:05:22 2022 +0900
+
+    First uploaded at [2022 08-12 (Fri) 01:05]

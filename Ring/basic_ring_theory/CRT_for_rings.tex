@@ -1,0 +1,79 @@
+\section{Chinese remainder theorem for rings}
+
+Throughout this section, unless stated otherwise, all rings are assumed to be commutative and have the nonzero identity.
+\begin{rmk}
+    In this section, applying comaximality appropriately is essential, and the key propositions are as follows: For a commutative ring $R$ with the nonzero identity and comaximal ideals $A$ and $B$,
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $A\cap B=AB$.
+        }
+        \item[(b)]
+        {
+            The map $\phi: R\rightarrow R/A\times R/B$ defined by $\phi(r)=(r+A, r+B)$ for $r\in R$ is a ring epimorphism.
+            Thus, by the first isomorphism theorem, $R/AB=R/(A\cap B)\approx R/A\times R/B$.
+        }
+    \end{enumerate}
+    The above two propositions will be a lot helpful not only when proving the Chinese remainder theorem but also when solving some relevant problems.
+\end{rmk}
+
+\begin{thm}[Chinese remainder theorem]
+    Let $R$ be a commutative ring with the nonzero identity, and suppose that $A_1, \cdots, A_n$ be pairwise comaximal ideals of $R$.
+    Then $A_1\cdot\cdots\cdot A_n=\bigcap_{i=1}^n A_i$, so we have the following isomorphism of rings:
+    \begin{align*}
+        \frac{R}{A_1\cdot\cdots\cdot A_n} \approx \frac{R}{A_1}\times\cdots\times\frac{R}{A_n}.
+    \end{align*}
+\end{thm}
+\begin{proof}
+    We prove the theorem by induction on $n$.
+    
+    \textbf{Step 1. Proof for $n=2$}\newline
+    When $n=2$, since $A_1$ and $A_2$ are comaximal, $A_1A_2=A_1\cap A_2$ and there are elements $a\in A_1$ and $b\in A_2$ such that $a+b=1$.
+    Hence, the ring homomorphism $\phi: R\rightarrow R/A_1\times R/A_2$ defined by $\phi(x)=(x+A_1, x+A_2)$ for $x\in R$ is surjective, since $\phi(xb+ya)=(x+A_1, y+A_2)$.
+    The desired result follows from the first isomorphism theorem.
+
+    \textbf{Step 2. Generalization}\newline
+    What we want to show is the following two statements:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $A_1\cdot\cdots\cdot A_n=\bigcap_{i=1}^n A_i$.
+        }
+        \item[(b)]
+        {
+            The ring homomorphism $\phi: R\rightarrow R/A_1\times\cdots\times R/A_n$ defined by $\phi(x)=(x+A_1, \cdots, x+A_n)$ for $x\in R$ is surjective.
+        }
+    \end{enumerate}
+    
+    We prove (a) by induction; we assume the equation holds for $(n-1)$-pairwise comaximal ideals.
+    For each $i=1, \cdots, n-1$, let $a_i\in A_i$ and $b_i\in A_n$ be elements such that $a_i+b_i=1$.
+    Because
+    \begin{align*}
+        1=(a_1+b_1)\cdots(a_{n-1}+b_{n-1})=a_1\cdot\cdots\cdot a_{n-1}+\star
+    \end{align*}
+    with $\star:=1-(a_1+b_1)\cdots(a_{n-1}+b_{n-1})\in A_n$ and $a_1\cdot\cdots\cdot a_{n-1}\in A_1\cdot\cdots\cdot A_{n-1}$, we find that $A_1\cdot\cdots A_{n-1}$ and $A_n$ are comaximal.
+    Therefore, $\bigcap_{i=1}^n A_i=A_1\cdot\cdots\cdot A_n$, as desired.
+
+    To prove (b), it suffices to find $x_i\in R$ for each $i=1, \cdots, n$ such that
+    \begin{center}
+        $x_i\equiv 1$ mod $A_i$ and $x_i\equiv 0$ mod $A_j$ whenever $j\neq i$.
+    \end{center}
+    And for this, it suffices to find $x_i\in R$ for each $i$ such that
+    \begin{center}
+        $x_i\equiv 1$ mod $A_i$ and $x_i\equiv 0$ mod $B_i$,
+    \end{center}
+    where $B_i=\bigcap_{j\neq i} A_j$; such $x_i$ indeed exists for each $i$, since $A_i$ and $B_i$ are comaximal as found in the preceeding paragraph.
+\end{proof}
+
+\begin{exmp}[Ideals of product rings]
+    Suppose $R$ and $S$ are commutative rings with respective nonzero identities.
+    We will justify that every ideal of $R\times S$ is of the form $I\times J$, where $I\nmal R$ and $J\nmal S$.
+
+    Suppose $A\nmal R\times S$, and let $\pi_1: R\times S\rightarrow R$ and $\pi_2: R\times S\rightarrow S$ be the natural projections.
+    \begin{center}
+        Goal: To prove that $A=\pi_1(A)\times\pi_2(A)$.
+    \end{center}
+    To prove the goal, it suffice to prove that $\pi_1(A)\times\pi_2(A)\subset A$.
+    Choose a point $(p, q)\in\pi_1(A)\times\pi_2(A)$ and let $x\in R$ and $y\in S$ be elements such that $(p, y), (x, q)\in A$.
+    Then it easily follows that $(p, q)=(1, 0)(p, y)+(0, 1)(x, q)\in A$, as desired.
+\end{exmp}

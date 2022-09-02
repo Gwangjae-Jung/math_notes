@@ -1,0 +1,142 @@
+\section{Basic ideal theory}
+
+\begin{prop}
+    Let $R$ be a ring and assume $A$ and $B$ are ideals of $R$.
+    Define two subsets $A+B$ and $AB$ of $R$ as follows:
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $A+B:=\{x+y: x\in A,\,y\in B\}$.
+        }
+        \item[(2)]
+        {
+            $AB$ is defined as the collection of finite sums of elements of the form $ab$ with $a\in A$ and $b\in B$.
+        }
+    \end{enumerate}
+    Then both $A+B$ and $AB$ are ideals of $R$.
+    In fact, one can prove the following statements: For $I,\,J\nmal R$,
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $I+J$ is the smallest ideal of $R$ containing $I$ and $J$.
+        }
+        \item[(b)]
+        {
+            $I\cap J$ is the largest ideal of $R$ contained in $I\cap J$.
+        }
+        \item[(c)]
+        {
+            $IJ$ is an ideal of $R$ contained in $I\cap J$.
+        }
+        \item[(d)]
+        {
+            Assume that $R$ is a commutative ring with the nonzero identity.
+            If $I$ and $J$ are comaximal, i.e., $I+J=R$, then $IJ=I\cap J$.
+            In general, if $I_1, I_2, \cdots, I_n$ are pairwise comaximal ideals of $R$, then $I_1I_2\cdots I_n=\bigcap_{i=1}^n I_i$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \color{brown}Checking from (a) to (c) is left as an exercise. \color{black}
+    To prove (d), assume that $R$ is a commutative ring with the nonzero identity.
+    Because $I$ and $J$ are assumed to be comaximal, there are elements $a\in I$ and $b\in J$ such that $a+b=1$.
+    Thus, if $x\in I\cap J$, then $x=1x=(a+b)x=ax+xb\in IJ$, as desired.
+    The generalized case will be explained when proving the Chinese remainder theorem.
+\end{proof}
+
+\begin{prop}
+    Let $R$ be a ring and $A$ be a nonempty subset of $R$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $RAR$ is an ideal of $R$.
+        }
+        \item[(b)]
+        {
+            Assume that $R$ contains the nonzero identity.
+            Then $RAR$ is the smallest ideal of $R$ containing $A$, i.e., $(A)=RAR$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a) can be easily justified if one notes that $ras\times r'a's'=tasr'\times a'\times s'\in RAR$ for all $r, r', s, s'\in R$ and $a, a'\in A$.
+    To prove (b), assume $R$ is a ring with the nonzero identity.
+    Clearly, $RAR$ is an ideal of $R$ containing $A$.
+    If $I$ is an ideal of $R$ containing $A$, then $RAR$ is contained in $I$ by definition, so $(A)=RAR$.
+\end{proof}
+\begin{obs}
+    Let $R$ be a commutative ring and let $A$ and $B$ be finitely generated ideals of $R$ given by $A=(a_1, \cdots, a_m)$ and $B=(b_1, \cdots, b_n)$.
+    One can easily check that $AB=(a_ib_j: 1\leq i\leq m, 1\leq j\leq n)$.
+\end{obs}
+
+\begin{prop}\label{field: trivial ideals only}
+    Let $R$ be a ring with the nonzero identity, and let $I$ be an ideal of $R$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $I=R$ if and only if $I$ contains a unit of $R$.
+        }
+        \item[(b)]
+        {
+            Assume that $R$ is commutative.
+            Then $R$ is a field if and only if its only ideals are $0$ and $R$.
+            Hence, a ring homomorphism from a field is either injective or trivial.
+        }
+    \end{enumerate}
+\end{prop}
+
+\begin{defi}
+    Let $R$ be a ring.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            A proper ideal $M$ of $R$ is called a maximal ideal if $I$ is an ideal of $R$ containing $M$ then $I=M$ or $I=R$.
+        }
+        \item[(b)]
+        {
+            A proper ideal $P$ of $R$ is called a prime ideal if $ab\in P$ implies $a\in P$ or $b\in P$.
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{prop}
+    Let $R$ be a ring with the nonzero identity.
+    Then $R$ has a maximal ideal.
+\end{prop}
+\begin{proof}
+    We try to apply Zorn's lemma to prove this statement.
+    
+    \textbf{Step 1. Setting a nonempty partially ordered subset}\newline
+    Let $X$ be a collection of all proper ideals of $R$.
+    Then $X$ is nonempty and partially ordered by set inclusion.
+
+    \textbf{Step 2. Checking the upper bound axiom}\newline
+    Let $\mc{C}$ be any ascending chain in $X$, and let $U$ be the union of the members of $\mc{C}$.
+    Our goal in this step is to prove that $U$ is an upper bound of the the chain $\mc{C}$ in $X$, and for this it suffices to show that $U\in X$, i.e., $U$ is a proper ideal of $R$.
+
+    Since $U$ is a union of ideals in the chain $\mc{C}$, $U$ is an ideal of $R$.
+    If $U=R$, then $U$ contains the identity, which implies that there is a member of $\mc{C}$ which contains the identity, a contradiction.
+    Hence, $U\in X$ and $U$ is an upper bound of $\mc{C}$.
+
+    \textbf{Step 3. Deriving desired results}\newline
+    Therefore, by Zorn's lemma, $X$ has a maximal element $M$.
+    And it is clear that a maximal element of $X$ is a maximal ideal of $R$.
+\end{proof}
+\begin{rmk}
+    Slightly modifying the proof, one can prove that every proper ideal of $R$ is contained in a maximal ideal of $R$ or that there is a maximal ideal of $R$ containing $a\in R$ whenever $a$ is a nonunit element of $R$.
+\end{rmk}
+
+Properties of maximal ideals and prime ideals are given as follows:
+\begin{prop}
+    Let $R$ be a ring with the nonzero identity, and suppose $I$ is an ideal of $R$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $I$ is a maximal ideal of $R$ if and only if $R/I$ is a field.
+        }
+        \item[(b)]
+        {
+            $I$ is a prime ideal of $R$ if and only if $R/I$ is an integral domain.
+        }
+    \end{enumerate}
+\end{prop}

@@ -1,0 +1,322 @@
+\section{Field extensions}
+
+What you basically need to know: field extensions, algebraic elements, algebraic extensions.
+
+\begin{obs}[Basic observations on field compositions]\label{basic of field composition}
+    For a field $F$ and a set $S$, $F(S)$ is defined to be the smallest field containing $F\cup S$, i.e., $F(S)$ is the intersection of all fields containing $F\cup S$.
+    (For composition of infinitely many fields, see \cref{composition of infinitely many  fields}.)
+    
+    Suppose that $E$ and $F$ are subfields of a field $K$.
+    Then $E(F)=F(E)$, because both of them are the smallest subfield of $K$ containing $E\cup F$.
+    (Hence, it does not matter to write $EF$ in place of $E(F)$.)
+    Moreover,
+    \begin{align}\label{field composition}
+        EF
+        =\left\{
+            \frac{\alpha_1'\beta_1'+\cdots+\alpha_n'\beta_n'}{\alpha_1\beta_1+\cdots+\alpha_m\beta_m}
+            :
+            \textsf{$m, n\in\bb{Z}^{>0}$, and $\alpha_i, \alpha_j'\in E$ and $\beta_i, \beta_j'\in F$ for all $i, j$}\right\}.
+    \end{align}
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            Since $EF$ is the smallest subfield of $K$ containing $E\cup F$, $EF$ necessarily contains all fractional elements as illustrated in \cref{field composition}.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Conversely, the collection suggested in \cref{field composition} is a field containing $E\cup F$.
+        }
+    \end{enumerate}
+    By (\romannumeral 1) and (\romannumeral 2), \cref{field composition} holds.
+
+    Now, assume that $E/F$ is a field extension and $\alpha, \beta\in E$.
+    Then there is an obvious equivalence:
+    \begin{align*}
+        (F(\alpha))(\beta)=F(\alpha, \beta)=(F(\beta))(\alpha)=F(\alpha)F(\beta).
+    \end{align*}
+    The first three naturally coincides (the third also coincides by symmetry), because
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $(F(\alpha))(\beta)$ is the smallest field containing $F(\alpha)\cup\{\beta\}$, so it clearly contains $F(\alpha, \beta)$, the smallest field containing $F\cup(\alpha, \beta)$.
+        }
+        \item[(2)]
+        {
+            $F(\alpha, \beta)$ is the smallest field containing $F\cup\{\alpha, \beta\}$, so it contains $(F(\alpha))(\beta)$, the smallest field containing $F(\alpha)\cup\{\beta\}$.
+        }
+    \end{enumerate}
+    In short, the first two coincides since both are the smallest fields containing $F\cup\{\alpha, \beta\}$.
+    To show that the fourth also coincides the first three, note that $F(\alpha)F(\beta)$ contains $F(\alpha)\cup F(\beta)$ and that $F(\alpha, \beta)$ contains $F\cup\{\alpha, \beta\}$ so that it contains $F(\alpha)\cup F(\beta)$.
+\end{obs}
+
+\begin{obs}
+    Suppose that $E/F$ is a field extension and $\alpha\in E$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $F(\alpha)$ is the smallest field containing $F\cup\{\alpha\}$, so it necessarily contains $Q_{F[\alpha]}=\{f(\alpha)/g(\alpha): f(t), g(t)\in F[t], f(\alpha)\neq 0\}$.
+            Conversely, $Q_{F[\alpha]}$ is a field containing $F$.
+            Therefore, $F(\alpha)=Q_{F[\alpha]}$.
+        }
+        \item[(b)]
+        {
+            Any element of the form $1/f(\alpha)$ with $f(t)\in F[t]$ and $f(\alpha)\neq 0$ if and only if $F(\alpha)=F[\alpha]$.
+            (One implication is clear; because $F(\alpha)\geq F[\alpha]$, if the former condition is satisfied then $F(\alpha)=F[\alpha]$.)
+        }
+    \end{enumerate}
+\end{obs}
+\begin{qst}\label{qst: rationalizability}
+    Given a field extension $E/F$ with an elements $\alpha\in E$, what can be an equivalent condition for $F(\alpha)=F[\alpha]$?
+\end{qst}
+
+\begin{obs}[The minimal polynomial of an algebraic element]\label{min.poly}
+    Suppose that $E/F$ is a field extension and $\alpha\in E$ is algebraic over $F$.
+    Let $\ker\mc{E}_\alpha=\{f(t)\in F[t]: \mc{E}_\alpha(f(t))=0\}$.
+    \begin{enumerate}
+        \item[(1)]
+        {
+            Since $F[t]$ is a PID. and $\alpha$ is algebraic over $F$, there is a monic polynomial $m(t)\in F[t]$ which generates $\ker\mc{E}_\alpha$.
+            Moreover, a monic generator of $\ker\mc{E}_\alpha$ is unique; if $m(t)$ and $n(t)$ are monic polynomials over $F$ and each of them generates $\ker\mc{E}_\alpha$, then $(m(t))=(n(t))$, so $m(t)\sim_\times n(t)$ and $m(t)=n(t)$.
+            \begin{defi}
+                The unique monic polynomial over $F$ generating $\ker\mc{E}_\alpha$ the minimal polynomial of $\alpha$ over $F$.
+            \end{defi}
+        }
+        \item[(2)]
+        {
+            Assume that $a(t)b(t)\in \ker\mc{E}_\alpha$ for some $a(t), b(t)\in F[t]$.
+            Then $a(\alpha)b(\alpha)=0$, so $a(t)\in \ker\mc{E}_\alpha$ or $b(t)\in \ker\mc{E}_\alpha$.
+            This proves that $\ker\mc{E}_\alpha$ is a nonzero prime ideal of $F[t]$.
+            Hence, the minimal polynomial of $\alpha$ over $F$ is irreducible over $F$.
+            Moreover, $\ker\mc{E}_\alpha$ is a maximal ideal of $F[t]$ and $F[t]/\ker\mc{E}_\alpha$ is a field, for $F[t]$ is a PID.
+        }
+    \end{enumerate}
+
+    Suppose that $E/F$ is a field extension with $\alpha\in E$, and assume that $f(\alpha)=0$ for some nonzero monic polynomial $f(t)$ over $F$.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $f(t)$ is irreducible over $F$.
+        }
+        \item[(b)]
+        {
+            $f(t)$ is the minimal polynomial of $\alpha$ over $F$.
+        }
+        \item[(c)]
+        {
+            $f(t)$ is a polynomial of the least degree having a root $\alpha$.
+        }
+    \end{enumerate}
+    This equivalence follows from the observation that the minimal polynomial $m(t)$ of $\alpha$ over $F$ is irreducible over $F$ and that $f(t)=g(t)m(t)$ for some nonzero polynomial $g(t)\in F[t]$.
+\end{obs}
+\begin{obs}[An answer to \cref{qst: rationalizability}]
+    We will prove that $F(\alpha)=F[\alpha]$ if and only if $\alpha$ is algebraic over $F$.
+
+    If $F(\alpha)=F[\alpha]$, then $1/\alpha=u(\alpha)$ for some polynomial $u(t)\in F[t]$, thus $\alpha$ is a root of $tu(t)-1\in F[t]$ and $\alpha$ is algebraic over $F$.
+    Assuming conversely, it suffices to show that $1/f(\alpha)\in F[\alpha]$ whenever $f(t)\in F[t]$ is a polynomial such that $f(\alpha)\neq 0$.
+    Let $r(t)\in F[t]$ be a unique polynomial such that $\deg r(t)<\deg m(t)$, where $m(t)$ is the minimal polynomial of $\alpha$ over $F$.
+    Since $r(t)$ and $m(t)$ are relatively prime, there are polynomials $a(t), b(t)\in F[t]$ such that $a(t)r(t)+b(t)m(t)=1$, so $1/f(\alpha)=1/r(\alpha)=a(\alpha)$.
+\end{obs}
+
+The following theorem, called Kronecker's theorem, has been expected in \cref{min.poly}.
+\begin{thm}[Kronecker's theorem]
+    Let $F$ be a field and $f(t)\in F[t]$ be an irreducible polynomial.
+    Then there is a field extension $E/F$ such that $E$ contains a root of $f(t)$.
+\end{thm}
+\begin{proof}
+    Since $F[t]$ is a Euclidean domain and $f(t)\in F[t]$ is irreducible, the quotient ring $K:=F[t]/(f(t))$ is a field.
+    Our goal is to show that $K$ contains an isomorphic copy of $F$ and that $K$ contains a root of $f(t)$.
+    
+    First, consider the map $\imath: F\rightarrow K$ defined by $\imath(a)=\ol{a}=a+(f(t))$ for $a\in F$.
+    One can easily check that $\imath$ is a field embedding, implying that $K$ contains an isomorphic copy of $F$.
+    Next, in the field $K=F[t]/(f(t))$, the element $\ol{t}=t+(f(t))\in K$ satisfies
+    \begin{align*}
+        f^\imath(\ol{t})=\ol{f(t)}=\ol{0},
+    \end{align*}
+    so $\ol{t}\in K$ is a root of $f(t)$.
+\end{proof}
+\begin{rmk}
+    In fact, $f(t)$ need not be irreducible, since we may replace $f(t)$ with its irreducible factor.
+\end{rmk}
+
+\begin{qst}\label{qst: form of min.poly.}
+    Suppose that $E/F$ is a field extension and $\alpha\in E$ is algebraic over $F$.
+    Is $m_\alpha(t)\in F[t]$ of the form $m_\alpha(t)=((t-\alpha_1)\cdots(t-\alpha_k))^m$?
+    If so, can it be implied that $k=j$ and $m=n$, if we also have $m_\alpha(t)=((t-\beta_1)\cdots(t-\beta_j))^n$?
+    This question will be answered in \cref{form of min.poly.}.
+\end{qst}
+
+We now study some preliminary properties regarding field extensions and algebraic extensions, in particular.
+Note that whenever $E/F$ is a field extension, we can treat $E$ as an $F$-vector space.
+As an application of this idea, we shortly prove that the order of any finite field is a prime power.
+If $E/\bb{F}_p$ is a finite field extension, where $p$ is a positive prime number, then $E\approx \bb{F}_p^n$ as $\bb{F}_p$-vector space, implying $|E|=p^n$.
+
+\begin{prop}
+    Suppose that $E/F$ is a field extension and $\alpha\in E$ is algebraic over $F$.
+    Then $[F(\alpha): F]$ is the degree of the minimal polynomial of $\alpha$ over $F$.
+\end{prop}
+\begin{proof}
+    Since $\alpha$ is algebraic over $F$, we have $F(\alpha)=F[\alpha]$.
+    Thus, if the degree of the minimal polynomial of $\alpha$ over $F$ is $n$, we may conjecture that $\{1, \alpha, \cdots, \alpha^{n-1}\}$ is an $F$-basis of $F(\alpha)$, \color{brown}which is, in fact, true\color{black}.
+\end{proof}
+
+\begin{prop}
+    Finite field extensions are algebraic extensions.
+\end{prop}
+\begin{proof}
+    Suppose that $E/F$ is a finite field extension and let $x$ be an element of $E$.
+    Writinig $n=[E: F]$, then $\{1, x, \cdots, x^{n-1}, x^n\}$ is $F$-linearly dependent.
+\end{proof}
+\begin{rmk}
+    Later, it will be proved that a finite field extension is a finite succesive simple algebraic extension.
+\end{rmk}
+\begin{cor}\label{algebraic elements form a field}
+    Let $E/F$ be a field extension and let $K$ be the set of all elements of $E$ which are algebraic over $F$.
+    Then $K$ is a field.
+    In particular, if $\alpha, \beta\in E$ are algebraic over $F$, then $\alpha\pm\beta$ and $\alpha\beta^{\pm 1}$ (assume $\beta\neq 0$ when taking -1) are also algebraic over $F$.
+\end{cor}
+\begin{proof}
+    Given such $\alpha$ and $\beta$, $F(\alpha, \beta)/F$ is, clearly, a finite extension, so it is an algebraic extension.
+\end{proof}
+Applying the structure of the composition of two fields suggested in \cref{basic of field composition} and \cref{algebraic elements form a field}, one can show that algebraic extensions shift to the composition of two fields.
+The statement and proof are given in \cref{shift of algebraic extensions under field compositions}.
+\begin{prop}
+    If $K/E$ and $E/F$ are field extensions, then $[K: F]=[K: E][E: F]$, even if either of the extensions is infinite.\footnote{We understand $[K: F]=[K: E][E: F]$ as an equality of cardinal numbers.}
+\end{prop}
+\begin{proof}
+    Let $\{\alpha_i: i\in I\}$ be an $E$-basis of $K$ and $\{\beta_j: j\in J\}$ be an $F$-basis of $E$.
+    \begin{center}
+        Goal: To show that $\mc{B}:=\{\alpha_i\beta_j: i\in I, j\in J\}$ is an $F$-basis of $K$.
+    \end{center}
+    It is clear by hypothesis that $\mc{B}$ generates the $F$-vector space $K$.
+    Suppose that a finite sum $\sum c_{i, j}\alpha_i\beta_j$ is zero, where $c_{i, j}\in F$ for all $i$ and $j$.
+    Gathering terms $i$ by $i$, we have $\sum(\sum c_{i, j}\beta_j)\alpha_i=0$, so $\sum c_{i, j}\beta_j=0$ for each $i$, hence $c_{i, j}=0$ for all $i, j$.
+\end{proof}
+The multiplicativity of extension degree is valid when the extensions are given as a linear tower.
+The `sub'multiplicativity (not the multiplicativity) holds for finite extensions in general.
+And the following submultiplicativity implies that two field extensions are finite extensions if and only if the composition is a finite field extension over the base field.
+\begin{prop}\label{submultiplicativity of field composition}
+    If $E/F$ is a field extension and both $K/F$ and $L/F$ are finite field extensions with $K, L\leq E$, then $[KL: F]\leq[K: F][L: F]$.
+    The equality holds if and only if an $F$-basis of one of $K$ and $L$ is linearly independent over the other field.
+    (See also \cref{shift of finiteness}.)
+\end{prop}
+\begin{proof}
+    Let $\{x_1, \cdots, x_m\}$ be an $F$-basis of $K$ and let $\{y_1, \cdots, y_n\}$ be an $F$-basis of $L$.
+    Since $KL=L(x_1, \cdots, x_m)$, we obtain the inequality from
+    \begin{align*}
+        [KL:F]=[KL:L][L:F]\leq mn=[K:F][L:F].
+    \end{align*}
+    The equaility holds if and only if $[KL:L]=[K:F]$ and $[KL:K]=[L:F]$, which is equivalent to state that $\{x_1, \cdots, x_m\}$ is $L$-linearly independent and $\{y_1, \cdots, y_n\}$ is $K$-linearly independent.
+\end{proof}
+\begin{cor}
+    If $E/F$ is a field extension and both $K$ and $L$ are intermediate subfields such that $[K:F]$ and $[L:F]$ are relatively prime, then $[KL:F]=[K:F][L:F]$, hence an $F$-basis of one of $K$ and $L$ is linearly independent over the other field.
+\end{cor}
+\begin{proof}
+    Remark that $[K:F]$ and $[L:F]$ divides $[KL:F]$.
+\end{proof}
+
+\begin{thm}
+    A field extension $E/F$ is a finite extension if and only if $E=F(\alpha_1, \cdots, \alpha_n)$ for some finitely many elements $\alpha_1, \cdots, \alpha_n\in E$ which are algebraic over $F$.
+\end{thm}
+\begin{proof}
+    Assume first that $E/F$ is a finite extension and let $\{\alpha_1, \cdots, \alpha_n\}$ be an $F$-basis of $E$.
+    Then each $\alpha_i$ is algebraic over $F$ and $E=F(\alpha_1, \cdots, \alpha_n)$.
+
+    Assume conversely that $E$ is generated over $F$ by finitely many elements in $E$ which are algebraic over $F$.
+    Then $[E:F]$ is not greater than the product of the degree of $\alpha_i$ over $F$ for all $i$.
+\end{proof}
+\begin{cor}\label{shift of finiteness}
+    Suppose that $F\leq E\leq L$ and $F\leq K\leq L$ are field extensions.
+    Then $EK/K$ is a finite extension if $E/F$ is a finite extension, even if $K/F$ may be an infinite extension.
+    (In \cref{submultiplicativity of field composition}, we proved that the $EK/F$ is a finite extension if and only if both $E/F$ and $K/F$ are finite extensions.)
+    \begin{equation*}
+    \begin{tikzcd}[every arrow/.append style={dash}, row sep=0.3cm, column sep=0.4cm]
+        &
+        L\arrow[d]
+        &
+        \\
+        &
+        EK\arrow[dl]\arrow[dr, dashed, "\textsf{finite}"{sloped}]
+        &
+        \\
+        E\arrow[dr]\arrow[ddr, "\textsf{finite}"'{sloped}]
+        &
+        &
+        K\arrow[dl]
+        \\
+        &
+        E\cap K\arrow[d]
+        &
+        \\
+        &
+        F
+        &
+    \end{tikzcd}
+    \end{equation*}
+\end{cor}
+\begin{proof}
+    Let $\alpha_1, \cdots, \alpha_n$ be elements of $E$ which are algebraic over $F$ such that $E=F(\alpha_1, \cdots, \alpha_n)$.
+    Then $EK=K(\alpha_1, \cdots, \alpha_n)$, so $EK/K$ is a finite extension.
+\end{proof}
+\begin{qst}[The existence of a primitive element]\label{qst: primitive elements}
+    Given a finite field extension $E/F$, can we find an element $\alpha\in E$ such that $E=F(\alpha)$? (Such an element $\alpha$ is called a primitive elements of $E$ over $F$.)
+\end{qst}
+
+\begin{thm}
+    Suppose that $F\leq L\leq K$ is a field extension.
+    Then $K/F$ is an algebraic extension if and only if both $K/L$ and $L/F$ are algebraic extensions.
+\end{thm}
+\begin{proof}
+    It is clear that $K/L$ and $L/F$ are algebraic extensions if $K/F$ is an algebraic extension.
+    Assume conversely that voth $K/L$ and $L/F$ are algebraic extensions.
+    Given an element $\alpha\in K$, write $m_{\alpha, K}(t)=t^n+a_{n-1}t^{n-1}+\cdots+a_1t+a_0$.
+    \begin{equation*}
+    \begin{tikzcd}[every arrow/.append style={dash}, row sep=0.2cm, column sep=0.2cm]
+        K
+            \arrow[dd]
+            \arrow[dr]
+        &
+        \\
+        &
+        F(\alpha, a_0, a_1, \cdots, a_{n-1})
+            \arrow[dd]
+        \\
+        L
+            \arrow[dd]
+        &
+        \\
+        &
+        F(a_0, a_1, \cdots, a_{n-1})
+            \arrow[dl]
+        \\
+        F   &   
+    \end{tikzcd}
+    \end{equation*}
+    Then $\alpha$ is algebraic over $F(a_0, a_1, \cdots, a_{n-1})$ and $F(a_0, a_1, \cdots, a_{n-1})/F$ is a finite extension.
+    Hence, $[F(\alpha, a_0, a_1, \cdots, a_{n-1}): F]<\infty$, so $\alpha$ is algebraic over $F$.
+    Therefore, $K/F$ is an algebraic extension.
+\end{proof}
+
+Regarding algebraic extensions, there are some shifts of algebraic extensions to the composition of fields, as given in \cref{shift of finiteness}.
+\begin{prop}\label{shift of algebraic extensions under field compositions}
+    Suppose that both $E$ and $K$ are intermediate subfield of $L/F$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $EK/K$ is an algebraic extension, if $E/F$ is an algebraic extension.
+        }
+        \item[(b)]
+        {
+            Show that $EK/F$ is an algebraic extension if $E/F$ and $K/F$ are algebraic extensions.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Note that an element of $EK$ is of the form
+    \begin{align*}
+        \frac{\alpha_1'\beta_1'+\cdots+\alpha_n'\beta_n'}{\alpha_1\beta_1+\cdots+\alpha_m\beta_m},
+    \end{align*}
+    where $m, n\in\bb{Z}^{>0}$ and $\alpha_i, \alpha_j'\in E$ and $\beta_i, \beta_j'\in K$ for all integers $1\leq i\leq m$ and $1\leq j\leq n$.
+    When proving (a), it suffices to show that $\alpha\beta$ is algebraic over $K$ whenever $\alpha\in E$ and $\beta\in K$, which is clear.
+    When proving (b), it suffices to show that $\alpha\beta$ is algebraic over $F$, which is justified in \cref{algebraic elements form a field}.
+\end{proof}

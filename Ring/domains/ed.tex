@@ -1,0 +1,24 @@
+\section{Euclidean domain}
+
+\begin{defi}[Size function and Euclidean domain]
+    Let $D$ be an integral domain.
+    Any function $N: D\rightarrow\bb{Z}^{>0}$ such that $N(0)=0$ is called a size function on $D$.
+    The integral domain $D$ is called a Euclidean domain if it has a size funciton $N$ on $D$ satisfying the following property:
+    \begin{center}
+        For any $a, b\in D$ with $b\neq 0$, there are $q, r\in D$ such that $a=qb+r$ with either $r=0$ or $N(r)<N(b)$.
+    \end{center}
+\end{defi}
+\begin{exmp}
+    Fields, the Gaussian integer ring $\bb{Z}[i]$ are Euclidean domains.
+\end{exmp}
+
+\begin{thm}
+    Euclidean domains are principal ideal domains.
+\end{thm}
+\begin{proof}
+    Let $D$ be a Euclidean domain and $I$ be an ideal of $D$.
+    By the well-ordering principle of $\bb{N}$, there is a nonzero element $\alpha$ of $I$ with the smallest value of a size function on $D$.
+    If $x\in I$, there are elements $q, r\in D$ such that $x=q\alpha+r$ with either $r=0$ or $N(r)<N(\alpha)$.
+    Because $r=x-q\alpha$, $r$ is an element of $I$, which forces $r=0$ and $x=q\alpha$.
+    Therefore, $I=(\alpha)$, proving that $D$ is a principal ideal domain.
+\end{proof}

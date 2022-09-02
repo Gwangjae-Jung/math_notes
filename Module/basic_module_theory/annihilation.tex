@@ -1,0 +1,142 @@
+\section{Annihilation in submodules}
+
+\begin{defi}
+    Let $M$ be an $R$-module.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Torsion)
+            Given an element $x\in M$, if there is a nonzero element $r\in R$ such that $rx=0$, then $x$ is called an $r$-torsion element (or simply a torsion element) or said to be annihilated by $r$.
+            Also, the collection $M_\tor$ of the torsion elements in $M$ is called the torsion part of $M$.
+            If $M=M_\tor$, then $M$ is called a torsion $R$-module; if $M_\tor=\{0\}$, then $M$ is called a torsion-free $R$-module.
+        }
+        \item[(b)]
+        {
+            For a nonempty subset $N$ of $M$, define
+            \begin{align*}
+                \ann_R(N):=\{r\in R: rn=0\textsf{ for all }n\in N\}.
+            \end{align*}
+            Also, for a nonempty subset $S$ of $R$, define
+            \begin{align*}
+                \Ann_M(S):=\{x\in M: sx=0\textsf{ for all }s\in S\}.
+            \end{align*}
+        }
+    \end{enumerate}
+\end{defi}
+\begin{obs}
+    Let $M$ be an $R$-module with a nonempty subset $N$, and let $I$ be a nonempty subset of $R$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Assume that $R$ is commutative.
+            Then $\ann_R(N)$ is an ideal of $R$, and $\Ann_M(I)$ is an $R$-submodule of $M$.
+        }
+        \item[(b)]
+        {
+            Assume that $R$ may not be commutative.
+            When $N\leq_R M$ and $I\nmal R$, then $\ann_R(N)$ is an ideal of $R$ and $\Ann_M(I)$ is an $R$-submodule of $M$.
+        }
+    \end{enumerate}
+    In either of the above case, $\ann_R(N)$ is called the annihilator ideal of $N$ in $R$ and $\Ann_M(I)$ is called the $R$-submodule of $M$ annihilated by $I$.
+    \color{brown}(Proving the above observations is left for the readers.) \color{black}
+    In most situations, when considering $\ann_R(N)$ and $\Ann_M(I)$, it is assumed that $N\leq_R M$ and $I\nmal R$.
+\end{obs}
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $r\in R^\times$, then $\Ann_M(r)=0$.
+            In particular, every vector space is torsion-free.
+        }
+        \item[(b)]
+        {
+            $M$ is torsion-free if and only if $\ann_R(x)=0$ for all $x\in M\setminus\{0\}$.
+        }
+        \item[(c)]
+        {
+            $M_\tor$ may not be an $R$-submodule of $M$.
+            For example, consider the $\bb{Z}/6\bb{Z}$-module $\bb{Z}/6\bb{Z}$.
+            Then its torsion part is $\{\ol 0, \ol 2, \ol 3, \ol 4\}$, which is not an $\bb{Z}/6\bb{Z}$-submodule of $\bb{Z}/6\bb{Z}$.
+
+            In fact, when $R$ is an integral domain, then $M_\tor$ is an $R$-submodule of $M$.
+        }
+    \end{enumerate}
+\end{exmp}
+
+Remarking that $G/[G, G]$ is a largest abelian quotient group for a group $G$, we can establish analogous propositions which coincide our intuition.
+\begin{prop}
+    Let $D$ be an integral domain and let $M$ be a $D$-module.
+    Then $M/M_\tor$ is torsion-free.
+\end{prop}
+\begin{proof}
+    Use the overline notation to denote the quotient by $M_\tor$, and assume that $\ol{x}\in\ol{M}$ is a torsion element, i.e., there is a nonzero element $r\in R$ such that $r\ol{x}=\ol{0}$.
+    Then $rx\in M_\tor$, so $x$ is a torsion element.
+    Hence, $\ol{x}=\ol{0}$.
+\end{proof}
+\begin{prop}
+    Let $D$ be an integral domain and let $N$ be a $D$-submodule of a $D$-module $M$.
+    If $M/N$ is torsion-free, then $M_\tor\leq_D N$.
+\end{prop}
+\begin{proof}
+    Suppose that $x\in M_\tor$ and $r$ is a nonzero element of $R$ such that $rx=0$.
+    Using the overline notation to denote the quotient by $N$, because $\ol M$ is torsion-free and $r\ol x=\ol{rx}=\ol 0$, $\ol x=\ol 0$, implying that $x\in N$.
+\end{proof}
+
+Assume that $D$ is a PID. and $M$ is a $D$-module.
+Given an element $d\in D$, we wish to understand $M$ as a $D/(d)$-module.
+The following propositions deal with this situation, and these propositions are essential when proving the uniqueness part of the cyclic decomposition theorem in \Cref{Cyclic decomposition}.
+\begin{lem}
+    Let $D$ be a PID. and $M$ be a $D$-module.
+    Suppose that $p$ is an irreducible (or a nonzero prime, equivalently) element of $D$ annihilating $M$, i.e., $pM=0$.
+    Writing $\ol D=D/(p)$, then $\ol D$ is a field.
+    Defining the $\ol D$-scalar multiplication on $M$ by
+    \begin{align*}
+        \ol a \cdot x:=a \cdot x\quad(a\in D, x\in M),
+    \end{align*}
+    then $M$ is a $\ol D$-vector space.
+\end{lem}
+\begin{proof}
+    This is because the above scalar multiplication is well-defined. \color{brown}(Checking well-definedness is left as an exercise.)\color{black}
+\end{proof}
+\begin{rmk}
+    The above lemma extends to a general situation: If $R$ is a commutative ring with an ideal $(a)$ and $M$ is an $R$-module annihilated by $a$, then $M$ is an $R/(a)$-module if the $R/(a)$-scalar multiplication is defined by $\ol{s}\cdot x:=sx$ for $\ol{s}\in R/(a)$ and $x\in M$.
+\end{rmk}
+\begin{exmp}
+    Let $R$ be a commutative ring and $M$ be an $R$-module, and let $a$ be an element of $R$.
+    Even if $M$ may not be annihilated by $a$, $\Ann_M(a)$ is ahhihilated by $a$.
+    Thus, $\Ann_M(a)$ can be considered an $R/(a)$-module.
+    In particular, if $(a)$ is a maximal ideal of $R$, then $\Ann_M(a)$ can be considered an $R/(a)$-vector space, for $R/(a)$ is a field.
+\end{exmp}
+The following proposition states some coincidences between $D$-modules and $\ol D$-vector spaces, where $D$ and $\ol D$ are as in the preceeding lemma.
+\begin{prop}
+    Let $D$ be a PID., and let $M$ and $M'$ be $D$-modules.
+    Suppose that $p$ is an irreducible element of $D$ annihilating $M$ and $M'$, and write $\ol D=D/(p)$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $N$ is a $D$-submodule of $M$ if and only if $N$ is a $\ol D$-subspace of $M$.
+        }
+        \item[(b)]
+        {
+            Suppose that $S$ is a subset of $M$.
+            Then the $D$-submodule of $M$ generated by $S$ and the $\ol D$-vector space generated by $S$ coincide.
+        }
+        \item[(c)]
+        {
+            Let $\phi: M\rightarrow M'$ be a map.
+            Then $\phi$ is $D$-linear if and only if $\phi$ is $\ol D$-linear.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Each equivalence follows directly from the assumption that $p$ annihilates $M$ and $M'$.
+\end{proof}
+\begin{rmk}
+    As in the preceeding lemma, these coincidences may extend to a general case.
+\end{rmk}
+\begin{exmp}
+    Suppose that $D$ is a PID. and $p\in D$ is an irreducible element.
+    Then $D/(p)$ is a field, so $D/(p)\not\approx D/(p)\oplus D/(p)$ as $D/(p)$-vector spaces.
+    By (c) of the preceeding proposition, therefore, $D/(p)$ and $D/(p)\oplus D/(p)$ are not isomorphic as $D$-modules, too.
+\end{exmp}
+More preparation for proving the uniqueness part of the cyclic decomposition theorem will be stated in \Cref{Cyclic decomposition}, as it should be.

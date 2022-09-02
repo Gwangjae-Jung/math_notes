@@ -1,0 +1,71 @@
+\section{Cyclic extensions}
+
+Starting from this section, we study the splitting field for $t^n-a\in F[t]$ over $F$ under some conditions, due to some technical problems.
+\begin{obs}
+    Let $F$ be a field.
+    Then $t^n-a\in F[t]$ is separable whenever $a\neq 0$ and $\ch{F}$ does not divide $n$.
+\end{obs}
+Note that we are mainly interested in (finite) Galois extensions and the condition that $\ch{F}$ does not divide $n$ (together with $a\in F\setminus\{0\}$) is the separability condition.
+Hence, we are interested in the splitting field for $t^n-a\in F[t]$ over $F$ under the following assumption:
+\begin{center}
+    Assumption: $F$ is a field and $\ch{F}$ does not divide $n$.
+\end{center}
+In particular, when $\ch{F}=0$, then $t^n-a$ is separable whenever $n\in\bb{N}$ and $a\neq 0$.
+
+\begin{prop}\label{radical -> cyclic}
+    Let $F$ be a field and $n$ be a positive integer which is not divisible by $\ch{F}$, and assume that $F$ contains an $n$-th root of unity.
+    If $a\in F$ and $\alpha$ is a root of $t^n-a\in F[t]$, then
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $F(\alpha)$ is the splitting field for $t^n-a$ over $F$.
+        }
+        \item[(b)]
+        {
+            $F(\alpha)/F$ is a cyclic extension and $\gal{F(\alpha)/F}$ embeds into $Z_n$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    The proof of (b) would be sufficient.
+    Without loss of generality, we may assume $a\neq 0$, for $a=0$ forces $F(\alpha)=F$.
+    Since $t^n-a$ is a separable polynomial over $F$, $F(\alpha)/F$ is a finite Galois extension, and an automorphism $\sigma\in\gal{F(\alpha)/F}$ maps $\alpha$ to $\alpha\zeta^k$, where $\zeta$ is a primitive $n$-th root of unity and $k$ is an integer.
+    This induces the map $\rho: \gal{F(\alpha)/F}\rightarrow \bb{Z}/n\bb{Z}$ defined by $\rho\sigma=\ol k$, which is a group monomorphism.
+\end{proof}
+\begin{cor}
+    Let $F$ be a field and $n$ be a positive integer which is not divisible by $\ch{F}$.
+    If $a\in F$ and $f(t)=t^n-a\in F[t]$, then $G_f$ is a solvable group.
+\end{cor}
+\begin{proof}
+    The roots of $f(t)$ are $\alpha, \alpha\zeta, \cdots, \alpha\zeta^{n-1}$, where $\alpha$ is a root of $f(t)$ and $\zeta$ is a primitive $n$-th root of unity. (Remark that the separability of $f(t)$ is ensured by the assumption on $\ch{F}$ and $n$.)
+    Consider the tower $F\leq F(\zeta)\leq F(\alpha, \zeta)$, and observe that bith $F(\zeta)/F$ and $F(\alpha, \zeta)/F(\zeta)$ are (finite) abelian extensions.
+    It now follows that $G_f$ is a solvable group.
+\end{proof}
+
+We now prove the following converse of (b) in \cref{radical -> cyclic}.
+\begin{prop}
+    Suppose that $n$ is a positive integer and $F$ is a field whose characteristic does not divide $n$.
+    Assume that $F$ contains a primitive $n$-th root of unity.
+    If $K/F$ is a finite cyclic extension of degree $n$, then there is an element $\alpha\in K$ such that $\alpha^n\in F$ and $K=F(\alpha)$ (in short, $K=F(\sqrt[n]{a})$ for some $a\in F$).
+\end{prop}
+\begin{proof}
+    See \cref{the proof of cyclic->radical}.
+\end{proof}
+\begin{rmk}
+    We summarize the preceeding equivalence as follows:
+    \begin{quotation}
+        Suppose that $n$ is a positive integer and $F$ is a field whose characteristic doen not divide $n$, and assume further that $F$ contains a primitive $n$-th root of unity.
+        \begin{enumerate}
+            \item[(a)]
+            {
+                Let $\alpha$ be a root of $t^n-a\in F[t]$.
+                Then $F(\alpha)$ is the splitting field for $t^n-a$ over $F$, and $F(\alpha)/F$ is a cyclic extension of degree dividing $n$.
+            }
+            \item[(b)]
+            {
+                Conversely, if $K/F$ is a cyclic extension of degree $n$, then there is an element $\alpha\in K$ such that $K=F(\alpha)$ and $\alpha^n\in F$.
+                (Hence, $K/F$ is a radical extension.)
+            }
+        \end{enumerate}
+    \end{quotation}
+\end{rmk}

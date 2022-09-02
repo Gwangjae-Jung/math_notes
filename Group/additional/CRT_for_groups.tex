@@ -1,0 +1,13 @@
+\section{Chinese remainder theorem for groups}
+
+\begin{thm}[Chinese remainder theorem for groups (two normal subgroups)]
+    Suppose $M, N$ are normal subgroups of $G$ such that $G=MN$.
+    Then $G/(M\cap N)\approx (G/M)\times(G/N)$.
+\end{thm}
+\begin{proof}
+    Define a map $\phi: G\rightarrow (G/M)\times(G/N)$ by $\phi(x)=(xM, xN)$ for $x\in G$.
+    It is straightforward that $\phi$ is a group homomorphism with $M\cap N$ as the kernel.
+    Thus, it remains to check surjectivity.
+    Because $G=MN$, given $(aM, bN)\in(G/M)\times(G/N)$, we can write $a=m_an_a$ and $b=m_bn_b$ for some $m_a, m_b\in M$ and $n_a, n_b\in N$.
+    Using these elements, we also have $(aM, bN)=(n_aM, m_bN)$, and $\phi$ maps $n_am_b$ to this tuple.
+\end{proof}

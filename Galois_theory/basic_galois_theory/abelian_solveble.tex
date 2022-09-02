@@ -1,0 +1,76 @@
+\section{Abelian extensions and solvable extensions}
+
+\begin{defi}
+    Let $K/F$ be a Galois extension.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Abelian extension)
+            $K/F$ is called an abelian extension if $\gal{K/F}$ is an abelian group.
+        }
+        \item[(b)]
+        {
+            (Solvable extension)
+            $K/F$ is called a solvable extension if $\gal{K/F}$ is a solvable group.
+        }
+    \end{enumerate}
+\end{defi}
+
+Throughout this section, in order for Galois's theorem to be valid, we assume that all extensions are finite extensions.
+We introduce some applications of Galois's theorem in some kinds of finite extensions.
+
+\begin{obs}
+    If $K/F$ is a finite cyclic(abelian) extension and $F\leq E\leq K$, then $K/E$ and $E/F$ are also cyclic(abelian) extensions.
+    The converse is not true, in general.
+\end{obs}
+\begin{prop}
+    Suppose that $F\leq E\leq K$ and $K/F$ is a finite Galois extension.
+    If $E/F$ and $K/E$ are solvable extensions, then $K/F$ is also a solvable extension.
+\end{prop}
+\begin{proof}
+    $\gal{E/F}\approx{\gal{K/F}}/{\gal{K/E}}$ and $\gal{K/E}$ are solvable, so $\gal{K/F}$ is solvable.
+\end{proof}
+\begin{prop}
+    Suppose that $F\leq E\leq K$ and $K/F$ is a solvable extension.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $K/E$ is a solvable extension.
+        }
+        \item[(b)]
+        {
+            If $E/F$ is a Galois extension, then $E/F$ is a solvable extension.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a) is clear, because a subgroup of a solvable group is solvable.
+    (b) is clear, because $\gal{E/F}\approx{\gal{K/F}}/{\gal{K/E}}$ is a quotient of a solvable group by its normal subgroup.
+\end{proof}
+\begin{prop}
+    Suppose that $K/F$ is a finite Galois extension.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $K/F$ is a (finite) solvable extension.
+        }
+        \item[(b)]
+        {
+            $K/F$ has an abelian tower; there are fields $F_1, \cdots F_k$ such that
+            \begin{align*}
+                F=F_0\leq F_1\leq \cdots\leq F_{k-1}\leq F_k=K
+            \end{align*}
+            and $F_i/F_{i-1}$ is an abelian extension for $i=1, \cdots, k$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (This equivalence is almost clear by Galois's theorem.)
+    Assume first that $K/F$ is a finite solvable extension, and let $\{\id{K}\}=H_0\nmal H_1\nmal \cdots\nmal H_k=\gal{K/F}$ be a `solvability chain' of $\gal{K/F}$.
+    It is easy to check that $K=K^{H_0}\geq K^{H_1}\geq \cdots\geq K^{H_k}=F$ and $K^{H_{i-1}}/K^H$ is an abelian extension.
+    Assuming that $K/F$ has an abelian tower, Galois's theorem establishes a corresponding tower for $\gal{K/F}$, and it is clear that $\gal{F_i/F_{i-1}}\approx\gal{K/F_{i-1}}/\gal{K/F_i}$ is abelian.
+\end{proof}
+
+Some topics regarding abelian extensions will be introduced later when studying cyclotomic extensions.
+In studying solvability of polynomial equations, we will justify that the equation is solvable by radicals if and only if its Galois group is a solvable group.

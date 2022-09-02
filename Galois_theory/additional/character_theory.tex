@@ -1,0 +1,33 @@
+\section{Character theory}
+
+\begin{defi}
+    Let $G$ be a group and $L$ be a field.
+    A linear character $\chi$ of $G$ with values in $L$ is a group homomorphism from $G$ into the multiplicative group $L^\times$.
+    We say a collection of characters $\{\chi_1, \cdots, \chi_r\}$ of $G$ with values in $L$ is $L$-linearly indepenedent whenever there is no nontrivial relation
+    \begin{align*}
+        a_1\chi_1+\cdots+a_r\chi_r=0\quad(a_1, \cdots, a_r\in L).
+    \end{align*}
+\end{defi}
+
+\begin{prop}\label{linear_independence_of_charaaters}
+    Let $\{\chi_1, \cdots, \chi_d\}$ be a collection of pairwise distinct characters of a group $G$ with values in a field $L$.
+    Then $\{\chi_1, \cdots, \chi_d\}$ is $L$-linearly indepenedent.
+\end{prop}
+\begin{proof}
+    Assume that $\{\chi_1, \cdots, \chi_d\}$ is $L$-linearly depenedent, and among all linear dependence relataions, we choose one with the minimal number $m$ of nonzero coefficients $a_i$.
+    (By renumbering, we may write $a_1\chi_1+\cdots+a_m\chi_m=0$ with $a_1, \cdots, a_m\in L^\times$.)
+    Let $g_0$ be an element of $G$ such that $\chi_1(g_0)\neq\chi_d(g_0)$.
+    From
+    \begin{align*}
+        \left\{\begin{array}{c}
+            a_1\chi_1(g)+\cdots+a_{d-1}\chi_{d-1}(g)+a_d\chi_d(g)=0\\
+            a_1\chi_1(g_0 g)+\cdots+a_{d-1}\chi_{d-1}(g_0 g)+a_d\chi_d(g_0 g)=0
+        \end{array}\right.
+    \end{align*}
+    we have
+    \begin{align*}
+        \sum_{i=1}^{d-1} a_i(\chi_d(g_0)-\chi_i(g_0))\chi_i(g)=0.
+    \end{align*}
+    Since the first term is nonzero, we obtained another linear dependence with fewer nonzero coefficients.
+    This contradicts the minimality of $m$, hence $\{\chi_1, \cdots, \chi_d\}$ is $L$-linearly indepenedent.
+\end{proof}

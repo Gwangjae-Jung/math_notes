@@ -1,0 +1,15 @@
+\section{Some problems in field theory}
+
+\begin{prob}
+    Find all $\bb{Q}$-automorphisms of $\bb{R}$.
+\end{prob}
+\begin{sol}
+    Suppose that $\sigma\in\aut{\bb{R}/\bb{Q}}$.
+    Since $\sigma$ is the identity on $\bb{Q}$, if $\sigma$ is continuous, then $\sigma=\id{\bb{R}}$.
+
+    Suppose that $a\in\bb{R}$ is positive.
+    Then $\sigma(a)=(\sigma(\sqrt{a}))^2\geq 0$.
+    Hence, if $a,\, b\in\bb{R}$ and $a<b$, then $\sigma a\leq\sigma b$, i.e., $\sigma$ is monotonically increasing.
+    Thus, in particular, if $a,\, b\in\bb{R}$ and $|a-b|<1/n$ for some integer $n$, then $|\sigma a-\sigma b|\leq 1/n$, so $\sigma$ is continuous whenever $\sigma\in\aut{\bb{R}/\bb{Q}}$.
+    By continuity, $\sigma=\id{\bb{R}}$ and $\aut{\bb{R}/\bb{Q}}=\{\id{\bb{R}}\}$.
+\end{sol}

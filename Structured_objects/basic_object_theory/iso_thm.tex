@@ -1,0 +1,206 @@
+\section{Isomorphism theorems}
+
+In this section, we only consider groups, rings, $R$-modules, and $R$-algebras as objects, where $R$ is a ring with identity.
+And we understand $Y\nmal X$ as the assumption that the quotient object $X/Y$ is well-defined.
+
+Before introducing isomorphism theorems, we first introduce a powerful lemma which is used to check well-definedness of maps defined on quotient objects.
+\begin{lem}\label{well-definedness of maps on quotients}
+    Suppose $\phi: X\rightarrow Y$ is a $\square\square$-homomorphism and $X'\nmal X$ and $Y'\nmal Y$.
+    When trying to define a map $\ol\phi: X/X'\rightarrow Y/Y'$ by $\ol\phi\ol x:=\ol{\phi x}\,(x\in X)$,
+    \begin{enumerate}
+        \item[(a)]
+        {
+            the followings are equivalent:
+            \begin{enumerate}
+                \item[(1)]
+                {
+                    $\ol\phi$ is a well-defined $\square\square$-homomorphism.
+                }
+                \item[(2)]
+                {
+                    $\phi X'\leq Y'$, i.e., $X'\leq\phi^{-1} Y'$.
+                }
+            \end{enumerate}
+        }
+        \item[(b)]
+        {
+            Also, the followings are also equivalent:
+            \begin{enumerate}
+                \item[(3)]
+                {
+                    $\ol\phi$ is a well-defined $\square\square$-monomorphism.
+                }
+                \item[(4)]
+                {
+                    $X'=\phi^{-1}Y'$.
+                }
+            \end{enumerate}
+        }
+        \begin{equation*}
+        \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+            X
+            \arrow[r, "\phi"]
+            \arrow[d, "\pi_1"', twoheadrightarrow]
+            &
+            Y
+            \arrow[d, "\pi_2", twoheadrightarrow]
+            \\
+            X/X'
+            \arrow[r, "\ol\phi"', dashed]
+            &
+            Y/Y'
+        \end{tikzcd}
+        \end{equation*}
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    We first prove the equivalence in (a).
+    First, assume (1).
+    Then, whenever $\ol x=\ol y$ we should have $\ol{\phi x}=\ol{\phi y}$, i.e., $\phi(xy^{-1})\in Y'$.
+    Hence, $\phi X'\leq Y'$, implying (2).
+    Conversely, assume (2).
+    If $\ol x=\ol y$ so that $xy^{-1}\in X'$, then $(\phi x)(\phi y)^{-1}\in Y'$ so $\ol{\phi x}=\ol{\phi y}$, implying (1).
+
+    We now prove (b).
+    It is helpful to note that we need to further check injectivity.
+    Assuming (3), (2) is automaticaly implied; if $x\in\phi^{-1}Y'$ so that $\ol\phi\ol x=\ol{\phi x}=\ol 0$, because $\ol\phi$ is a monomorphism, we have $\ol x=\ol 0$ and $x\in X'$, implying (4).
+    Conversely, assuming (4), (1) is automaticaly implied; if $\ol\phi\ol x=\ol 0$, then $\phi x\in Y'$, which implies $x\in\phi^{-1} Y'=X'$ and $\ol x=\ol 0$, implying (3).
+\end{proof}
+
+The first isomorphism theorem is widely used.
+\begin{thm}[First isomorphism theorem]
+    If $\phi: X\rightarrow Y$ is a $\square\square$-homomorphism and if one tries to define a map $\ol\phi: X/\ker\phi\rightarrow\range{\phi}$ by $\ol\phi\ol x=\phi x\,(x\in X)$, then $\ol\phi$ is a well-defined $\square\square$-isomorphism.
+\end{thm}
+\begin{proof}
+    By \cref{well-definedness of maps on quotients}, $\ol\phi$ is a well-defined monomorphism, since $\ker\phi=\phi^{-1}0$.
+    Surjectivity is clear by definition, so $\ol\phi$ is a $\square\square$-isomorphism.
+\end{proof}
+
+We now introduce the second isomorphism theorem, which is rarely applied.
+Before introducing the second isomorphism theorem, we introduce a temporal notation.
+\begin{nota}
+    Let $A, B\leq X$.
+    For a group $X$, we understand $A*B=AB$; for a ring, an $R$-module, and an $R$-algebra $X$, we understand $A*B=A+B$.
+\end{nota}
+\begin{prop}
+    If $Y\nmal X$ and $Z\leq X$, then
+    \begin{enumerate}
+        \item[(a)]
+        {
+            the restriction of $Y$ to $Z$ is normal in $Z$, i.e., $Y\cap Z\nmal Z$.
+        }
+        \item[(b)]
+        {
+            $Y\nmal Y*Z\leq X$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{thm}[Second isomorphism theorem]
+    Suppose $Y\nmal X$ and $Z\leq X$.
+    The map
+    \begin{align*}
+        \ol\jmath: \frac{Z}{Y\cap Z}\rightarrow\frac{Y*Z}{Y}
+    \end{align*}
+    defined by $\ol\jmath(\ol z):=\ol z\,(\ol z\in Z/(Y\cap Z))$ is a well-defined $\square\square$-isomorphism.
+\end{thm}
+\begin{proof}
+    \color{brown}You should prove this isomorphism theorem for each object.\color{black}
+\end{proof}
+
+\begin{thm}[Third isomorphism theorem]
+    Suppose $Y, Z\nmal X$ and $Z\leq Y$.
+    If one tries to define a map
+    \begin{align*}
+        \phi: \frac{X}{Y}\rightarrow\frac{X/Z}{Y/Z}
+    \end{align*}
+    by $\phi(\ol x)=\ol{\ol x}\,(\ol x\in X/Y)$ (be careful when interpreting overlines), then $\phi$ is a well-defined $\square\square$-isomorphism.
+\end{thm}
+\begin{proof}
+    By hypothesis $Z\leq Y$, it is clear that $\ol x=\ol y$ in $X/Y$ implies $xy^{-1}\in Y$ so that $\phi(x)=\phi(y)$.
+    Both injectivity and surjectivity easily follows from definition, and it can also be easily checked that $\phi$ is a group homomorphism. \color{brown}(Check them.) \color{black}
+    Therefore, $\phi$ is a group isomorphism.
+\end{proof}
+
+\begin{thm}[Fourth isomorphism theorem; lattice isomorphism theorem]
+    Suppose $Y\nmal X$.
+    Then the subobject lattice of $X$ containing $Y$ and the subobject lattice of $X/Y$ are in bijection.
+    Moreover, for example, when $X$ is a group, indices, normality, inclusion, are also preserved.
+\end{thm}
+\begin{proof}
+    \color{brown}You should prove this isomorphism theorem for each object.\color{black}
+\end{proof}
+
+
+\subsection{The fourth isomorphism theorem for groups and its proof}
+\begin{thm}
+    Suppose $G$ is a group and $N$ is a normal subgroup of $G$.
+    Then there is a bijection from the set of subgroups $A$ of $G$ which contain $N$ onto the set of subgroups $\ol A=A/N$ of $G/N$.
+    In particular, every subgroup of $\ol G$ is of the form $A/N$ for some subgroup $A$ of $G$ containing $N$ (namely, its preimage in $G$ under the natural projection homomorphism from $G$ to $G/N$).
+    This bijection has the following properties: For all $A, B\leq G$ with $N\leq A$ and $N\leq B$,
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $A\leq B$ if and only if $\ol A\leq\ol B$.
+        }
+        \item[(b)]
+        {
+            if $A\leq B$, then $[B:A]=[\ol B: \ol A]$.
+        }
+        \item[(c)]
+        {
+            $\ol{\genone{A, B}}=\genone{\ol A, \ol B}$.
+        }
+        \item[(d)]
+        {
+            $\ol{A\cap B}=\ol A\cap \ol B$.
+        }
+        \item[(e)]
+        {
+            $A\nmal G$ if and only if $\ol A\nmal \ol G$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Let $\pi: G\rightarrow G/N$ denote the canonical projection epimorphism.
+    Becasue $\pi$ is a group homomorphism, if $A$ is a subgroup of $G$ containing $N$, then $\pi(A)=A/N$ is a subgroup of $G/N$; conversely, if $A/N$ is a subgroup of $G/N$, then its preimage $\pi^{-1}(G/N)$ is a subgroup of $G$ containing $N$, because $N=\pi^{-1}(N/N)\subset\pi^{-1}(A/N)$.
+    \color{brown}(Show that the images (and preimages) of subobjects under homomorphisms are objects.) \color{black}
+    Thus, the map $\pi$ induces the map $\pi_*$ from the collection of the subgroups of $G$ containing $N$ into the set of subgroups of $G/N$.
+    
+    We now prove the injectivity of $\pi_*$.
+    Assume $A, B$ are subgroups of $G$ containing $N$ such that $\pi_*(A)=\pi_*(B)$.
+    Because $A=\pi_*^{-1}(\pi_*(A))$ \color{brown}(why?)\color{black}, we easily obtain that $A=B$.
+    Surjectivity is clear, because preimages of subgroups are subgroups of the domain.
+    Therefore, $\pi_*$ is a desired bijection.
+
+    We now prove remaining algebraic properties.
+    Let $A$ and $B$ be subgroups of $G$ containing $N$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Because $\pi_*$ is order-preserving map, the result is clear.
+        }
+        \item[(b)]
+        {
+            This result follows from the third isomorphism theorem.
+        }
+        \item[(c)]
+        {
+            First, since $A, B\leq\genone{A, B}$, we have $\ol A, \ol B\leq\ol{\genone{A, B}}$ and $\genone{\ol A, \ol B}\leq\ol{\genone{A, B}}$.
+            Conversely, because every element of $\ol{\genone{A, B}}$ turns out to be the coset by a word in $\genone{A, B}$, it is found that $\ol{\genone{A, B}}\leq\genone{\ol A, \ol B}$. (The converse could also be proved by applying that $\genone{A, B}$ is the unique smallest subgroup of $G$ contined in any subgroup $L$ of $G$ contained in both $A$ and $B$ so $\ol{\genone{A, B}}$ is such subgroup of $G/N$ contained in both $\ol A$ and $\ol B$.)
+        }
+        \item[(d)]
+        {
+            If $\ol x\in\ol{A\cap B}$, then $x\in A\cap B$ so $\ol x\in\ol A\cap \ol B$.
+            Converse can be similarly proved.
+        }
+        \item[(e)]
+        {
+            It is almost clear that $\ol A\nmal \ol G$ if $A\nmal G$. \color{brown}(Check it.) \color{black}
+            Suppose conversely that $\ol A\nmal \ol G$ and assume $g\in G$ and $a\in A$.
+            Because $\ol{gag^{-1}}\in \ol A$, we have $gag^{-1}\in A$, so $A\nmal G$. (Easy.)
+        }
+    \end{enumerate}
+
+    This concludes the proof of the lattice isomorphism theorem for groups.
+    As the name suggests, one can almost freely identify lattice diagrams if one is given as the diagram of a quotient.
+\end{proof}

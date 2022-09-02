@@ -1,0 +1,58 @@
+\section{Irreducible elements and prime elements}
+
+\begin{defi}
+    Let $D$ be an integral domain.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Irreducible element)
+            A nonzero and nonunit element $r\in D$ is called an irreducible element if $r$ satisfies the following property:
+            \begin{center}
+                If $r=ab$ for some $a, b\in D$, either $a$ or $b$ is a unit in $D$.
+            \end{center}
+        }
+        \item[(b)]
+        {
+            (Prime element)
+            A nonzero and nonunit element $p\in D$ is called a prime element if $p$ satisfies the following property:
+            \begin{center}
+                If $p|ab$ for some $a, b\in D$, then $p|a$ or $p|b$.
+            \end{center}
+            The above statement is equivalent to the following statement:
+            \begin{center}
+                If $ab\in (p)$ for some $a, b\in D$, then $a\in (p)$ or $b\in (p)$.
+            \end{center}
+            Hence, a nonzero and nonunit element $p$ of $D$ is a prime element if and only if $(p)$ is a prime ideal of $D$.
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{obs}
+    Suppose $x, y$ are nonzero and nonunit elements of $D$ and assume $x\sim_\times y$.
+    Then $y$ is an irreducible (a prime, respectively) element of $D$ if $x$ is an irreducible (a prime) element of $D$.
+\end{obs}
+\begin{proof}
+    Write $y=ux$ for some unit $u$ in $D$, and assume first that $x$ is irreducible.
+    Whenever $y=ab$ for some $a, b\in D$, because $x=u^{-1}ab$ and $x$ is irreducible, $u^{-1}a$ or $b$ is a unit in $D$, implying that $a$ or $b$ is a unit in $D$.
+    Now assume that $x$ is a prime element.
+    Then $y$ is clearly a prime element, since $(x)=(y)$.
+\end{proof}
+
+\begin{prop}
+    A prime element is an irreducible element.
+\end{prop}
+\begin{proof}
+    Let $p$ be a prime element of the integral domain $D$, and write $p=ab$ with $a, b\in D$.
+    Without loss of generality, we may assume that $a\in (p)$, i.e., $a=px$ for some $x\in D$; from $p=pxb$, we have $b\in D^\times$ as desired.
+\end{proof}
+\begin{rmk}
+    Later in this chapter, it will be proved that a Euclidean domain is a principal ideal domain.
+    Since any integral domain contains a maximal ideal, every Euclidean domain (or a principal ideal domain) contains a prime element and an irreducible element.
+\end{rmk}
+
+We end this section with a simple property satisfied in any integral domain.
+\begin{obs}[Factorization of elements of integral domains]
+    Let $D$ be an integral domain and $r$ be a nonzero and nonunit element of $D$.
+    Then there clearly exist elements $a_1, a_2\in D$ such that $r=a_1a_2$.
+    If $r$ is irreducible, then either $a_1$ or $a_2$ is a unit in $D$; if $r$ is reducible, then $a_1, a_2$ can be chosen to be (nonzero and) nonunit. \color{brown}(What if not?)\color{black}
+\end{obs}

@@ -1,0 +1,109 @@
+\section{Basic properties of finite fields}
+
+For a positive prime number $p$, it is conventional to denote a power of $p$ by $q$.
+We already have studied in the previous chapter that if $F$ is a finite field of characteristic $p$, then $|F|=q$ for some $n\in\bb{N}$.
+Even though we do not know the existence of a finite field of order $q$, we first investigate some properties that a finite field of order $q$ should satisfy.
+
+\begin{prop}\label{properties of finite fields}
+    Suppose that $F$ is a finite field of order $q=p^n$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\ch{F}=p$, so the prime subfield of $F$ is isomorphic to $\bb{F}_p$.
+            Hence, we may write $\bb{F}_p\leq F$.
+        }
+        \item[(b)]
+        {
+            Every element of $F$ is a root of $t^q-t\in\bb{F}_p[t]$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Considering an additive group $F$ and letting $\ch{F}=a$ for some positive prime number $a$, we must have $a=p$.
+    (b) easily follows if we consider $F^\times$
+\end{proof}
+\begin{obs}\label{the candidate for finite fields}
+    The statement in (b) implies that every element of a finite field of order $q$ (if such a field exists) is a root of the polynomial $t^q-t$ over $\bb{F}_p$.
+    Since $(t^q-t)'=qt^{q-1}-1=-1\neq 0$, the polynomial $t^q-t\in\bb{F}_p[t]$ is separable, so it has $q$-distinct roots.
+    Thus, to find a finite field of order $q$, there is no other choice but to consider the collection of all roots of $t^q-t\in\bb{F}_p[t]$, and such collection is contained in the splitting field for $t^q-t$ over $\bb{F}_p$.
+\end{obs}
+
+\begin{thm}[Existence and uniqueness of finite fields]
+    Let $K$ be the splitting field for $t^q-t\in\bb{F}_p[t]$ over $\bb{F}_p$.
+    If we let
+    \begin{align*}
+        F=\{\alpha\in K: \alpha^q=\alpha\},
+    \end{align*}
+    then $F$ is a finite field of oreder $q$.
+    Hence, $F=K$.
+    By \cref{the candidate for finite fields}, a finite field of order $q$ is unique up to isomorphism.
+\end{thm}
+\begin{proof}
+    We already proved that $|F|=q$.
+    Thus, it remains to show that $F$ is a subfield of $K$; if it is done, then $F$ is a field containing all roots of $t^q-t\in\bb{F}_p[t]$, so $F=K$.
+    (For example, if $\alpha, \beta\in F$, then
+    \begin{center}
+        $(\alpha+\beta)^q=\alpha^q+\beta^q=\alpha+\beta$ and $(\alpha\beta)^q=\alpha^q\beta^q=\alpha\beta$,
+    \end{center}
+    \color{brown}Proving details are left as an exercise.\color{black})
+\end{proof}
+\begin{rmk}
+    Note that a finite field of a prime order is a set-theoretically defined field, while a finit field whose order is a power of a prime number is uniquely defined up to isomorphism, for a field of order $q$ is the splitting field for $t^q-t\in\bb{F}_p[t]$ over $\bb{F}_p$.
+\end{rmk}
+
+Remark that we have deduced by applying the cyclic decomposition theorem that a finite multiplicative subgroup of a field is a cyclic group.
+\begin{nota}
+    In this chapter, for an element $\alpha$ which is algebraic over $\bb{F}_q$, the minimal polynomial of $\alpha$ over $\bb{F}_q$ will be denoted by $m_{\alpha, q}(t)$.
+\end{nota}
+
+\begin{prop}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\bb{F}_q=\bb{F}_p(\alpha)$ for some $\alpha\in\bb{F}_q$.
+        }
+        \item[(b)]
+        {
+            Given a positive integer $m$, there is an irreducible polynomial over $\bb{F}_q$ whose degree if $m$.
+        }
+    \end{enumerate}
+    In short, if $E/F$ is a field extension and $|E|<\infty$, then there is a primitive element $\alpha\in E$ over $F$.
+\end{prop}
+\begin{proof}
+    Writing $\bb{F}_q^\times=\genone{\alpha}$ for some $\alpha\in\bb{F}_q^\times$, we easily obtain (a).
+    If $\beta\in\bb{F}_{q^m}$ is a generator of $\bb{F}_{q^m}$, then $m_{\alpha, q}(t)\in\bb{F}_q[t]$ is a desired polynomial, for $\bb{F}_{q^m}=\bb{F}_q(\beta)$.
+\end{proof}
+
+Regarding separability of polynomials, we have studied that an irreducible polynomial over a field of characteristic 0 is separable.
+The same property holds for finite fields.
+\begin{prop}
+    An irreducible polynomial over a finite field is separable.
+\end{prop}
+\begin{proof}
+    Let $F$ be a finite field of order $q$ and let $f(t)\in F[t]$ be an irreducible polynomial.
+    Then $f(t)=m_{\alpha, q}(t)$ for some $\alpha\in\bb{F}_{q^k}$.
+    Since $\alpha^{q^k}-\alpha=0$, $f(t)$ divides $t^{q^k}-t\in\bb{F}_q[t]$, which is separable.
+    Therefore, $f(t)$ is separable.
+\end{proof}
+
+\begin{prop}
+    Suppose that $r, n$ are positive integers such that $r\leq n$.
+    Then $\bb{F}_{p^r}\leq\bb{F}_{p^n}$ if and only if $r|n$.
+\end{prop}
+\begin{proof}
+    If $\bb{F}_{p^r}\leq\bb{F}_{p^n}$, then $\bb{F}_{p^n}$ is a $\bb{F}_{p^r}$-vector space, so $r|n$.
+    Conversely, if $r|n$, whenever $\alpha\in\bb{F}_{p^r}$, we have $\alpha^{p^n}=\alpha^{p^r p^r \cdots p^r}=(\cdots((\alpha^{p^r})^{p^r})\cdots)^{p^r}=\alpha$, so $\bb{F}_{p^r}\leq\bb{F}_{p^n}$.
+\end{proof}
+
+We end this section by introducing the algebraic closure of $\bb{F}_q$.
+Let $F\bb{F}_q$ be an algebraic extension and let $\alpha\in F$.
+Then $F(\alpha)\approx\bb{F}_{p^n}$ for some $n\in\bb{N}$, so we may write $\alpha\in\bb{F}_{p^n}$.
+\begin{thm}
+    The algebraic closure of $\bb{F}_q$ is, up to isomorphism, $\bigcup_{n=1}^\infty \bb{F}_{q^n}$.
+\end{thm}
+\begin{proof}
+    It is clear that $F:=\bigcup_{n=1}^\infty \bb{F}_{q^n}$ is an algebraic extension over $\bb{F}_q$.
+    It remains to show that $F$ is an algebraic closure of $\bb{F}_q$, it suffices to show that an irreducible polynomial $f(t)$ over $\bb{F}_q[t]$ splits completely over $F$.
+    Let $n=\deg f(t)$ and $\alpha$ be a root of $f(t)$.
+    Then $\alpha\in\bb{F}_{p^n}\subset F$, as desired.
+\end{proof}

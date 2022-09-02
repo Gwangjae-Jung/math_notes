@@ -1,0 +1,194 @@
+\section{Isomorphism extension theorems}
+
+Due to their importance, the below three isomorphism extension theorems are moved to this section, even though they could be proved in eralier sections.
+
+\begin{thm}[For simple algebraic extensions]\label{iet 1}
+    Let $K/E$ and $L/F$ be field extensions and $\sigma: E\rightarrow F$ be a field isomorphism.
+    If $p(t)\in E[t]$ is irreducible, then $p^\sigma(t)\in F[t]$ is also irreducible.
+    Also, if $\alpha\in K$ is a root of $p(t)$ and $\beta\in L$ is a root of $p^\sigma(t)$, then there is a unique field isomorphism $\widetilde{\sigma}: E(\alpha)\rightarrow F(\beta)$ extending $\sigma$ such that $\widetilde{\sigma}(\alpha)=\beta$.
+    \begin{equation*}
+        \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+            K   &   L\\
+            E(\alpha)\arrow[u, dash]\arrow[r, "\widetilde{\sigma}", "\approx\textsf{, unique}"', dashed]
+            &
+            F(\beta)\arrow[u, dash]\\
+            E\arrow[u, , "p(t)", dash]\arrow[r, "\approx", "\sigma"']
+            &
+            F\arrow[u, "p^\sigma(t)"', dash]
+        \end{tikzcd}
+    \end{equation*}
+\end{thm}
+\begin{proof}
+    \color{brown}It should be satisfied that $\widetilde{\sigma}(u(\alpha))=u^\sigma(\beta)$ for all $u(t)\in E[t]$.\color{black}
+\end{proof}
+\begin{cor}[An answer to \cref{qst: form of min.poly.}]\label{form of min.poly.}
+    Let $K/F$ be a field extension and $\alpha\in K$ is algebraic over $F$.
+    Then the minimal polynomial $p(t)$ of $\alpha$ is of the form
+    \begin{align*}
+        p(t)=\left((t-\alpha_1)\cdots(t-\alpha_k)\right)^m,
+    \end{align*}
+    where $\alpha_1, \cdots, \alpha_k$ are in a splitting field for $p(t)$ over $F$.
+    Moreover, if
+    \begin{align*}
+        p(t)=\left((t-\beta_1)\cdots(t-\beta_j)\right)^n,
+    \end{align*}
+    where $\beta_1, \cdots, \beta_j$ are in a splitting field for $p(t)$ over $F$, then $k=j$ and $m=n$.
+\end{cor}
+\begin{proof}
+    Suppose that $\alpha$ and $\beta$ are roots of $p(t)$.
+    Then there is a unique $F$-isomorphism $\mu: F(\alpha)\rightarrow F(\beta)$ such that $\mu(\alpha)=\beta$.
+    Because $p(t)\in F[t]$, we have $p^\mu(t)=p(t)$, so the multiplicity of $\alpha$ is not greater than the multiplicity of $\beta$ and vice versa, due to the symmetry.
+\end{proof}
+Speaking of the isomorphism extension theorem for simple algebraic extensions, we introduce an equivalence regarding algebraic conjugates.
+\begin{defi}
+    Let $E/F$ and $K/F$ be field extensions.
+    Elements $\alpha\in E$ and $\beta\in K$ are said to be algebraically conjugate over $F$ if their minimal polynomial over $F$ are the same.
+\end{defi}
+By considering \cref{iet 1}, we can obtain the following equivalence:
+\begin{obs}
+    Let $\alpha, \beta$ be elements in a field extension of $F$ which are algebraic over $F$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\alpha$ and $\beta$ are algebraically conjugate over $F$ if and only if there is an $F$-isomorphism $\sigma: F(\alpha)\rightarrow F(\beta)$ such that $\sigma(\alpha)=\beta$.        
+        }
+        \item[(b)]
+        {
+            Let $m(t)$ is the minimal polynomial of $\alpha$ over $F$.
+            A root of $m(t)$ is an algebraic conjugate of $\alpha$ over $F$, and an algebraic conjugate of $\alpha$ over $F$ is a root of $m(t)$.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{proof}
+    We first prove (a).
+    When $\alpha$ and $\beta$ are algebraically conjugate over $F$, \cref{iet 1} proves the existence of a desired $F$-isomorphism.
+    Assuming conversely, since $m_\alpha(t)\in F[t]$ is fixed by $\sigma$, we have $m_\alpha(\beta)=0$, so $m_\beta(t)|m_\alpha(t)$ and $m_\alpha(t)|m_\beta(t)$ by symmetry.
+    Therefore, $\alpha$ and $\beta$ are algebraically conjugate over $F$.
+
+    In proving (b), note that it is clear from definition that an algebraic conjugate $\beta$ of $\alpha$ over $F$ is a root of $m(t)$.
+    Let $\beta$ be a root of $m(t)$ and assume that the minimal polynomial $f(t)$ of $\beta$ over $F$ is not $m(t)$.
+    Then there is a nonconstant monic polynomial $g(t)\in F[t]$ such that $m(t)=f(t)g(t)$, and either $f(t)$ or $g(t)$ has $\alpha$ a root, a contradiction.
+    Therefore, a root of the minimal polynomial of $\alpha$ is an algebraic conjugate of $\alpha$ over $F$.
+\end{proof}
+\begin{prop}
+    Let $F$ be a field and write $\alpha\sim\beta$ for elements $\alpha, \beta$ which are algebraic over $F$ whenever
+    \begin{center}
+        $\beta$ is an algebraic conjugate of $\alpha$ over $F$.
+    \end{center}
+    Then $\sim$ denotes an equivalence relation on the field of elements algebraic over $F$.
+    Hence, $\alpha$ and $\beta$ are algebraically conjugate over $F$ if and only if the minimal polynomials of $\alpha$ and $\beta$ over $F$ are the same.
+\end{prop}
+
+\begin{thm}[For splitting fields]\label{iet 2}
+    Let $\sigma: E\rightarrow F$ be a field isomorphism and $f(t)$ be a nonconstant polynomial over $E$.
+    Suppose that $K$ is a splliting field for $f(t)$ over $E$ and $L$ is a splitting field for $f^\sigma(t)$ over $F$.
+    Then there is a field isomorphism $\widetilde{\sigma}: K\rightarrow L$ extending $\sigma$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+        K\arrow[r, "\widetilde{\sigma}", "\approx\textsf{, unique}"', dashed]
+        &
+        L\\
+        E\arrow[u, "f(t)", dash]\arrow[r, "\approx", "\sigma"']
+        &
+        F\arrow[u, "f^\sigma(t)"', dash]
+    \end{tikzcd}
+    \end{equation*}
+\end{thm}
+\begin{proof}[Proof 1]
+    We prove the theorem by applying Kronecker's theorem inductively.
+    Let $a(t)\in E[t]$ be an irreducible factor of $f(t)$ and $\alpha_1\in K$ be a root of $a(t)$.
+    Then $a^\sigma(t)\in F[t]$ is an irreducible factor of $f^\sigma(t)$ and has a root $\beta_1\in L$.
+    By \cref{iet 1}, there is a field isomorphism $\sigma_1: E(\alpha_1)\rightarrow F(\beta_1)$ extending $\sigma$.
+    Hence, there are polynomials $p_1(t)\in E(\alpha_1)[t]$ and $q_1(t)\in F(\beta_1)[t]$ such that
+    \begin{align*}
+        (t-\alpha_1)p_1(t)=f(t)=(t-\beta_1)q_1(t).
+    \end{align*}
+    As we have done earlier, let $a_2(t)\in E(\alpha_1)[t]$ be an irreducible factor of $p_1(t)$ and $\alpha_2\in K$ be a root of $a_2(t)$.
+    Then $a_2^\sigma(t)\in F(\beta_1)[t]$ is also irreducible and has a root $\beta_2$, and there is a field isomorphism $\sigma_2: E(\alpha_1)(\alpha_2)\rightarrow F(\beta_1)(\beta_2)$ extending $\sigma_1$.
+    Since $\deg f(t)$ is finite, this process will terminate and produces a field isomorphism $\widetilde{\sigma}: K\rightarrow L$.
+\end{proof}
+\begin{proof}[Proof 2]
+    We prove the theorem by induction on $\deg f(t)$.
+    Note that the theorem is clear when $\deg f(t)=1$.
+    Assuming that the theorem is valid for all nonconstant polynomials over $E$ of degree less than $n$, suppose that $\deg f(t)=n$.
+    Let $\alpha\in K$ be a root of $f(t)$ and $\beta\in L$ be a root of $f^\sigma(t)$.
+    By Theorem \ref{iet 1}, there is a field isomorphism $\sigma_1: E(\alpha)\rightarrow F(\beta)$ extending $\sigma$.
+    Writing
+    \begin{align*}
+        (t-\alpha)p(t)=f(t)=(t-\beta)q(t)
+    \end{align*}
+    for some $p(t)\in E(\alpha)[t]$ and $q(t)\in F(\beta)[t]$, it remains to justify that $E$ is a splitting field for $p(t)$ over $E(\alpha)$ and $F$ is a splitting field for $q(t)$ over $F(\beta)$; it then follows from the induction hypothesis that there is a field isomorphism $\widetilde{\sigma}: K\rightarrow L$ extending $\sigma$.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            It is clear that $p(t)$ splits completely over $K$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            If there is a proper subfield $I$ of $K$ containing $E(\alpha)$ over which $p(t)$ splits completely, then $f(t)=(t-\alpha)p(t)$ would split complitely over $I$, which contradicts to the hypothesis that $K$ is a splitting field for $f(t)$ over $E$.
+            Therefore, there is no proper subfield of $K$ over which $p(t)$ splits completely.
+        }
+    \end{enumerate}
+    The same argument holds for $L$, as desired.
+\end{proof}
+\begin{cor}
+    A splitting field for a nonconstant polynomial over a field is unique up to isomorphism.
+\end{cor}
+\begin{proof}
+    It easily follows from \cref{iet 2}.
+\end{proof}
+
+\begin{thm}[For algebraic closures]\label{iet 3}
+    Let $\sigma: E\rightarrow F$ be a field isomorphism.
+    If $K/E$ is an algebraic extension, there is a field embedding $\widetilde{\sigma}: K\rightarrow\ol F$ extending $\sigma$.
+    \begin{equation*}
+        \begin{tikzcd}[row sep=1.0cm, column sep=1.5cm]
+            &   \ol F\\
+            K\arrow[r, "\widetilde{\sigma}", "\approx"', dashed]
+            &
+            \widetilde{\sigma}(K)\arrow[u, dash]\\
+            E\arrow[u, dash]\arrow[r, "\approx", "\sigma"']
+            &
+            F\arrow[u, dash]
+        \end{tikzcd}
+    \end{equation*}
+\end{thm}
+\begin{proof}
+    We find a field embedding of $K$ into $\ol F$ by applying Zorn's lemma.
+
+    \textbf{Step 1. Setting a nonempty partially ordered set}\newline\noindent
+    Set
+    \begin{align*}
+        X:=\{(L, \tau): E\leq L\leq K\textsf{ and }\tau: L:\rightarrow K\textsf{ is a field embedding}\}.
+    \end{align*}
+    Then $(E, \sigma)\in X$, so $X$ is nonempty.
+    And for $(L_1, \tau_1), (L_2, \tau_2)\in X$, let $(L_1, \tau_1)\leq(L_2, \tau_2)$ if and only if
+    \begin{align*}
+        L_1\leq L_2\textsf{ and } \tau_2|_{L_1}=\tau_1.
+    \end{align*}
+    \color{brown}Then this relation is a partial order on $X$.\color{black}
+
+    \textbf{Step 2. Showing that every subchain has an upper bound}\newline\noindent
+    Let $\mc{C}$ be an ascending chain of $X$.
+    To find its upper bound in $X$, let
+    \begin{align*}
+        C:=\bigcup_{(L, \tau)\in \mc{C}} L
+    \end{align*}
+    and define a map $\tau_C: L\rightarrow \ol F$ by $\tau_C(x):=\tau_x(x)$, where $(L_x, \tau_x)\in\mc{C}$ is a member such that $x\in L_x$.
+    \color{brown}Then $E\leq C\leq K$ and $\tau_C$ is a well-defined field embedding, \color{black}so $(C, \tau_C)$ is an upper bound of $\mc{C}$ in $X$.
+
+    \textbf{Step 3. Deriving the result}\newline\noindent
+    By Zorn's lemma, there is a maximal element $(M, \mu)\in X$.
+    We will justify that $M=K$ by the method of contradiction; assume $M\lneqq K$.
+    Then there is an element $\alpha\in K\setminus M$; let $p(t)\in M[t]$ be the minimal polynomial of $\alpha$, and let $\beta\in \ol F$ be a root of $p^\mu(t)\in F[t]$.
+    By \cref{iet 1}, there is a field embedding $\widetilde{\mu}: M(\alpha)\rightarrow\ol F$ extenidng $\mu$, so $(M, \mu)\lneqq(M(\alpha), \widetilde{\mu})$, a contradiction.
+\end{proof}
+\begin{cor}
+    An algebraic closure of a field is unique up to isomorphism.
+\end{cor}
+\begin{proof}
+    Given a field $F$, let $K$ and $L$ be algebraic closures of $F$.
+    For $\id{F}$, by \cref{iet 3}, there is a field embedding $\mu: K\rightarrow L$.
+    Since $K$ is algebraically closed, so is $\mu(K)$.
+    Because $L/\mu(K)$ is an algebraic extension, we have $\mu(K)=L$, as desired.
+\end{proof}

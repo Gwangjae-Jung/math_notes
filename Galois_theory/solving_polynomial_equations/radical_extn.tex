@@ -1,0 +1,121 @@
+\section{Radical extensions}
+
+We introduce another type of finite field extension, called the radical extension, and we define the solvability of a nonconstant polynomial over a field in terms of a radical extension.
+\begin{defi}
+    Let $F$ be a field
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Radical extension)
+            Let $E/F$ be a finite field extension with a `radical tower' given as follows:
+            \begin{align*}
+                F\leq (\alpha_1)\leq F(\alpha_1, \alpha_2)\leq \cdots\leq F(\alpha_1, \cdots, \alpha_k)=E,
+            \end{align*}
+            where ${\alpha_1}^{n_1}\in F$ and ${\alpha_i}^{n_i}\in F(\alpha_1, \cdots, \alpha_{i-1})\,(2\leq i\leq k)$ for some positive integers $n_1, \cdots, n_k$.
+            Then $E/F$ is called an $\{n_i\}$-radical extension, or just a radical extension, in short.
+        }
+        \item[(b)]
+        {
+            (Solvability of a nonconstant polynomial)
+            Let $f(t)$ be a nonconstant polynomial over $F$ and let $K$ be the splitting field for $f(t)$ over $F$.
+            If there is a radical extension $E/F$ such that $F\leq K\leq E$, then $f(t)$ is said to be solvable by radicals.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    Indeed, given a nonconstant polynomial $f(t)$ over a field $F$, all roots of $f(t)$ can be written in terms of elementary operations and radicals if and only if the splitting field for $f(t)$ over $F$ is contained in a radical extension over $F$ (i.e., $f(t)$ is solvable by radicals).
+\end{rmk}
+
+\begin{obs}
+    Let $E/F$ be an $\{n_i\}$-radical extension, and let $K$ be the normal closure of $E$ over $F$. (Here, $K/F$ need not be a Galois extension.)
+    Then $K/F$ is also an $\{n_i\}$-radical extension.
+\end{obs}
+\begin{proof}
+    Write a radical tower of $E/F$ as
+    \begin{align*}
+        F\leq F(\alpha_1)\leq \cdots\leq F(\alpha_1, \cdots, \alpha_n)=E.
+    \end{align*}
+    Remark that $K$ is the composition of $\sigma E$, where $\sigma$ runs through $\emb{E/F}$.
+    For simplicity, write $\mc{A}=\{\alpha_1, \cdots, \alpha_n\}$ and $\emb{E/F}=\{\id{E}=\sigma_1, \cdots, \sigma_s\}$.
+    Then $K=F(\sigma_1\mc{A}, \cdots, \sigma_s\mc{A})$, so by adjoining $\sigma_i\alpha_j$ for each $i$ and $j$ one by one, one can establish a radical tower for $K/F$.
+\end{proof}
+
+\begin{center}
+    Assumption: By the end of this chapter, for simplicity, we assume that all fields are of characteristic 0.
+\end{center}
+Our goal in this section is to prove the following equivalence:
+\begin{thm}[Solvability of a polynomial]
+    Let $F$ be a field (of characteristic 0) and $f(t)$ be a nonconstant polynomial over $F$.
+    Then $f(t)$ is solvable by radicals if and only if $G_f$ is a solvable group.
+\end{thm}
+\begin{proof}[Proof of `if' part]
+    Assume that $G_f$ is a solvable group and let $K$ be the splitting field for $f(t)$ over $F$.
+    \color{teal}To construct a tower for a field extension with each adjacent extension being cyclic, we make use of a property of finite solvable groups\color{black}.
+    Let $H_1, \cdots, H_k$ be subgroups of $G_f$ such that
+    \begin{align*}
+        G_f=H_0\triangleright H_1\triangleright \cdots\triangleright H_{k-1}\triangleright H_k=\{\id{K}\},
+    \end{align*}
+    where $H_{i-1}/H_i$ is a cyclic group of a prime order $p_i$ for $i=1, \cdots, k$.
+    By Galois's theorem, we have a tower
+    \begin{align*}
+        F=K_0<K_1<\cdots<K_{k-1}<K_k=K,
+    \end{align*}
+    where $K_i/K_{i-1}$ is a cyclic extension of degree $p_i$ for $i=1, \cdots, k$.
+    \color{teal}To let each adjacent extension be radical, we adjoin an appropriate primitive root of unity\color{black}.
+    Write $n=|G_f|$ and let $\zeta$ be a primitive $n$-th root of unity and consider the following tower:
+    \begin{align*}
+        F\leq F(\zeta) = K_0(\zeta) < \cdots < K_{k-1}(\zeta) < K_k(\zeta)=K(\zeta).
+    \end{align*}
+    Because $\gal{K_i(\zeta)/K_{i-1}(\zeta)}\approx \gal{K_i/(K_i\cap K_{i-1}(\zeta))}\hookrightarrow \gal{K_i/K_{i-1}}$ and each base field contains an appropriate primitive root of unity, $K_i(\zeta)/K_{i-1}(\zeta)$ is a radical extension ($i=1, \cdots, k$).
+    Because $F(\zeta)/F$ is also radical, $K(\zeta)/F$ is a radical extension.
+    Therefore, $f(t)$ is solvable by radicals.
+\end{proof}
+\begin{proof}[Proof of `only if' part]
+    Assume that $f(t)$ is sovable by radicals.
+    Let $E$ be the splitting field for $f(t)$ over $F$, $L$ be an $\{n_i\}$-radical extension over $F$ containing $E$, and $K$ be the normal closure of $L$ over $F$.
+    Then $K/F$ is a finite Galois extension which is $\{n_i\}$-radical.
+    Hence, there are elements $\alpha_1, \cdots, \alpha_k\in K$ such that
+    \begin{align*}
+        F\leq F(\alpha_1)\leq \cdots\leq F(\alpha_1, \cdots, \alpha_k)=K
+    \end{align*}
+    where ${\alpha_1}^{n_1}\in F$ and ${\alpha_i}^{n_i}\in F(\alpha_1, \cdots, \alpha_{i-1})\,(2\leq i\leq k)$.
+
+    \color{teal}To let each adjacent extension be cyclic, we adjoin an appropriate primitive root of unity\color{black}.
+    Let $n=\textsf{lcm}\{n_1, \cdots, n_k\}$ and $\zeta$ be a primitive $n$-th root of unity.
+    Adjoining $\zeta$, we have
+    \begin{align*}
+        F\leq F(\zeta)\leq F(\zeta)(\alpha_1)\leq \cdots\leq F(\zeta)(\alpha_1, \cdots, \alpha_k)=K(\zeta).
+    \end{align*}
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            Note that \color{teal}$K/F$ is a finite Galois extension, so $K$ is the splitting field for some nonconstant polynomial $h(t)$ over $F$\color{black}.
+            Then, $K(\zeta)$ is the splitting field for $(t^n-1)h(t)$ over $F$, so $K(\zeta)/F$ is also a finite Galois extension.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Observe that $F(\zeta)/F$ is an abelian extension with the Galois group isomorphic to a subgroup of $Z_n$ and the other adjacent extensions are cyclic extensions.
+        }
+    \end{enumerate}
+    Hence, the Galois extension $K(\zeta)/F$ is a solvable extension.
+    Because $K/F$ is a Galois extension, $K/F$ is also a solvable extension.
+\end{proof}
+\begin{cor}
+    General polynomials of degree at least 5 are insolvable.
+\end{cor}
+\begin{proof}
+    $S_n$ is insolvable if and only if $n\geq 5$.
+\end{proof}
+\begin{prop}
+    Let $p$ be a prime number and $f(t)\in\bb{Q}[t]$ be an irreducible polynomial of degree $p$.
+    If $f(t)$ has only two nonreal complex roots, then $G_f\approx S_p$.
+\end{prop}
+\begin{proof}
+    Since $f(t)$ is irreducible, $p$ divides the order of $G_f$ and $G_f$ contains an element of order $p$.
+    Identifying $G_f\leq S_p$, such an element is a $p$-cycle.
+    On the other hand, because there are only two nonreal complex roots, $G_f$ contains a transposition.
+    Therefore, $G_f=S_p$, for $G_f$ contains a $p$-cycle and a transposition.
+\end{proof}
+\begin{exmp}
+    The Galois group of $t^5-9t+3\in\bb{Q}[t]$ is $S_5$.
+\end{exmp}

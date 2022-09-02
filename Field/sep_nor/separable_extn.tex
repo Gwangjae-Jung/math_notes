@@ -1,0 +1,331 @@
+\section{Separable extensions}
+
+\begin{defi}[Separability]
+    Given an algebraic field extension $E/F$, an element $\alpha\in E$ is said to be separable over $F$ if its minimal polynomial over $F$ is a separable polynomial.
+    In particular, the extension $E/F$ is said to be a separable extension if every element in $E$ is separable over $F$.
+    If every algebraic extension over a $F$ is separable, then $F$ is said to be perfect.
+\end{defi}
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            It is easy to check that an irreducible polynomial over a field of characteristic 0 is a separable polynomial.
+            It will be proved in the next chapter that an irreducible polynomial over a finite field is also a separable polynomial.
+            Hence, fields of characteristic 0 and finite fields are perfect fields.
+        }
+        \item[(b)]
+        {
+            Algebraically closed fields are perfect fields, and algebraic extensions of perfect fields are perfect fields.
+        }
+    \end{enumerate}
+\end{exmp}
+
+Some expereice from algebraic extensions helps studying separable extensions.
+\begin{qst}\label{qst: separable extn}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Are the sum and multiplication of two separable elements separable?
+        }
+        \item[(b)]
+        {
+            Is a separable extension of a separable extension is a separable extension?
+        }
+    \end{enumerate}
+\end{qst}
+
+Our study begins with the degree which can measure the separability.
+\begin{obs}
+    Suppose that $E/F$ is a field extension and $\alpha\in E$ is algebraic over $F$.
+    Then the minimal polynomial $m(t)$ of $\alpha$ over $F$ is irreducible and
+    \begin{align*}
+        m(t)=((t-\alpha_1)\cdots(t-\alpha_k))^n
+    \end{align*}
+    for some pairwise distinct elements $\alpha_1, \cdots, \alpha_k\in\ol F$ and $n\in\bb{Z}^{>0}$.
+    It is clear from the above expression that $k$ is the number of distinct roots of the minimal polynomial of $\alpha$ over $F$ and that $k$ divides the extension degree of $F(\alpha)/F$.
+    But we will find what $k$ also means, by noticing that $m(t)$ is the irreducible polynomial of $\alpha_i$ for all $i$.
+    
+    (Without loss of generality, assume $\alpha_1=\alpha$.)
+    After choosing an index $i$, by \cref{iet 1}, there is a unique $F$-embedding $\sigma: F(\alpha)\hookrightarrow\ol F$ such that $\sigma(\alpha)=\alpha_i$, so $k\leq|\emb{F(\alpha)/F}|$.\footnote{When considering $\emb{E/F}$ as a set, it is assumed that an algebraic closure $\ol F$ of $F$ is given and we consider $F$-embeddings of $E$ into $\ol F$. Still, its cardinality does not depend on the choice of an algebraic closure of $\ol F$.}
+    Conversely, given $\sigma\in\emb{F(\alpha)/F}$, since $m(t)$ is fixed by the action of $\sigma$, $\sigma(\alpha)$ is a root of $m(t)$; because every $F$-embedding of $F(\alpha)$ into $\ol F$  is determined by its action on $\alpha$, we have $k\geq|\emb{F(\alpha)/F}$.
+    Therefore, $k$ also denotes the number of all distinct $F$-embeddings of $F(\alpha)$ into $\ol F$.
+\end{obs}
+Generalizing the above observation, we define the separable degree of an algebraic extension as follows:
+\begin{defi}\label{old separable degree}
+    Let $E/F$ be an algebraic field extension, where $F\leq E\leq \ol F$ with $\ol F$ being the algebraic closure of $F$.
+    The separable degree of $E/F$, denoted by $[E:F]_\sep$, is defined by the cardinality of the set of $F$-embeddings of $E$ into $\ol F$.
+    In other words,
+    \begin{align*}
+        [E:F]_\sep:=|\{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is an $F$-embedding}\}|.
+    \end{align*}
+    \begin{equation*}
+    \begin{tikzcd}[row sep=0.7cm, column sep=1.8cm]
+        \ol F
+        &
+        \ol F
+        \\
+        E
+            \arrow[u, dash]
+            \arrow[r, "\tau", "\approx"', dashed]
+        &
+        \tau(E)
+            \arrow[u, dash]
+        \\
+        F
+            \arrow[u, dash]
+            \arrow[r, "=", "\id{F}"']
+        &
+        F
+            \arrow[u, dash]
+    \end{tikzcd}
+    \end{equation*}
+\end{defi}
+
+The above definition seems to be poorly defined, since the cardinality of the set of such $F$-embeddings seems to depend on the choice of an algebraic closure of $F$. (This is intuitively (and, in fact, logically) true, for an algebraic closure is unique up to isomorphism.)
+Moreover, one may wish to generalize the definition so that $\tau$ extends a field isomorphism, not just the idenity map on $F$.
+\begin{obs}
+    Let $E/F$ be an algebraic extension and let $\ol F$ and $\widetilde F$ be algebraic extensions of $F$, which contains $E$.
+    We will show that there is a bijection
+    \begin{align*}
+        \{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is an $F$-embedding}\}
+        \longleftrightarrow
+        \{\mu: E\hookrightarrow\widetilde F: \textsf{$\mu$ is an $F$-embedding}\},
+    \end{align*}
+    which explains that the above definition of separable degree does not depend on the choice of an algebraic closure of $F$.
+
+    Consider the following diagram, where an $F$-embedding $\tau: E\hookrightarrow\ol F$ is given.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=0.7cm, column sep=1.5cm]
+        \widetilde F
+        &
+        &
+        \ol F
+            \arrow[ll, "\widetilde{\id{F}}"', "\approx"]
+        \\
+        \star
+            \arrow[u, dash]
+        &
+        E
+            \arrow[l, "f(\tau)"', "\approx", dashed]
+            \arrow[r, "\tau", "\approx"']
+        &
+        \tau(E)
+            \arrow[u, dash]
+        \\
+        F
+            \arrow[u, dash]
+        &
+        F
+            \arrow[l, "\id{F}"', "="]
+            \arrow[u, dash]
+            \arrow[r, "\id{F}", "="']
+        &
+        F
+            \arrow[u, dash]
+    \end{tikzcd}
+    \end{equation*}
+    For the diagram to be commutative, it should be satisfied that $f(\tau)=\widetilde{\id{F}}\circ\tau$.
+    By defining $f$ so, we have established a map
+    \begin{align*}
+        f:
+        \{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is an $F$-embedding}\}
+        \rightarrow
+        \{\mu: E\hookrightarrow\widetilde F: \textsf{$\mu$ is an $F$-embedding}\},
+    \end{align*}
+    \color{brown}which is a bijection\color{black}; thus, we may write without any confusion that $[E: F]_\sep=|\emb{E/F}|$.
+\end{obs}
+\begin{obs}
+    As in the preceeding observation, assume that $F\leq E\leq \ol F$ is a tower of algebraic extensions, where $ol F$ is an algebraic closure of $F$.
+    And let $\sigma: F\hookrightarrow\ol F$ be a field embedding, i.e., $\sigma: F\rightarrow \sigma(F)$ is a field isomorphism.
+    We will justify that
+    \begin{align*}
+        [E:F]_\sep=|\{\mu: E\hookrightarrow\ol F: \textsf{$\tau$ is a field embedding and $\tau|_F=\sigma$}\}|
+    \end{align*}
+    (the separable degree of a given algebraic extension does not depend on the base field isomorphism (embedding)) by showing that there is a bijection
+    \begin{align*}
+        \{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is an $F$-embedding}\}
+        \longleftrightarrow
+        \{\mu: E\hookrightarrow\ol F: \textsf{$\tau$ is a field embedding and $\tau|_F=\sigma$}\}.
+    \end{align*}
+
+    Consider the following diagram when an $F$-embedding $\tau: E\hookrightarrow\ol F$ is given.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=0.7cm, column sep=1.5cm]
+        \ol F
+        &
+        &
+        \ol F
+            \arrow[ll, "\widetilde{\sigma}"', "\approx"]
+        \\
+        \star
+            \arrow[u, dash]
+        &
+        E
+            \arrow[l, "g(\tau)"', "\approx", dashed]
+            \arrow[r, "\tau", "\approx"']
+        &
+        \tau(E)
+            \arrow[u, dash]
+        \\
+        \sigma(F)
+            \arrow[u, dash]
+        &
+        F
+            \arrow[l, "\sigma", "\approx"']
+            \arrow[u, dash]
+            \arrow[r, "\id{F}"', "="]
+        &
+        F
+            \arrow[u, dash]
+    \end{tikzcd}
+    \end{equation*}
+    For the diagram to be commutative, it should be satisfied that $g(\tau)=\widetilde{\sigma}\circ\tau$.
+    By defining $g$ so, we have establised a map
+    \begin{align*}
+        g:
+        \{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is an $F$-embedding}\}
+        \rightarrow
+        \{\mu: E\hookrightarrow\ol F: \textsf{$\tau$ is a field embedding and $\tau|_F=\sigma$}\}.
+    \end{align*}
+    \color{brown}which is a bijection\color{black}.
+\end{obs}
+
+By the preceeding two observations, we may re-define the separable degree of an algebraic extension.
+\begin{defi}[Separable degree]
+    Let $E/F$ be an algebraic field extension and let $\ol F$ be the algebraic closure of $F$.
+    And let $\sigma: F\hookrightarrow\ol F$ be a field embedding.
+    Then the separable degree of $E/F$, denoted by $[E:F]_\sep$, is defined by the cardinality of field embeddings from $E$ into $\ol F$ whose restriction to $F$ is $\sigma$.
+    In other words,
+    \begin{align*}
+        [E:F]_\sep:=|\{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is a field embedding and $\tau|_F=\sigma$}\}|.
+    \end{align*}
+    (As observed in the preceeding two observations, this definition is independent of the choice of an algebraic closure of $F$ and a field embedding $\sigma: F\hookrightarrow\ol F$.)
+\end{defi}
+\begin{rmk}
+    Suppose that $\alpha$ is an element which is algebraic over $F$.
+    Then $\alpha$ is separable over $F$ if and only if its separable degree and extension degree are the same.
+\end{rmk}
+
+In the remaining of this section, we study some properties regarding separable degrees and separability of algebraic field extensions, and the primitive element theorem for separable extensions in the end of this section.
+
+\begin{lem}\label{separable extn. multiplicativity}
+    Suppose that $K/E$ and $E/F$ are algebraic field extensions.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $[K:F]_\sep=[K:E]_\sep[E:F]_\sep$.
+        }
+        \item[(b)]
+        {
+            In particular, if $E/F$ is a finite extension, then the separable degree of $E/F$ divides the extension degree of $E/F$.
+        }
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    Fix an algebraic closure $\ol F$ of $F$ containing $K$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Given $\sigma\in\emb{K/F}$, $\sigma$ is an extension of $\sigma|_E\in\emb{E/F}$, so $[K:F]_\sep\leq[K:E]_\sep[E:F]_\sep$.
+            Conversely, there are $[E:F]_\sep$-distinct $F$-embeddings of $E$ into $\ol F$, thus there are at least $[K:E]_\sep[E:F]_\sep$-distinct $F$-embeddings of $K$ into $\ol F$, so $[K:F]_\sep\geq[K:E]_\sep[E:F]_\sep$.
+        }
+        \item[(b)]
+        {
+            Assume that $E/F$ is a finite extension and write $E=F(\alpha_1, \cdots, \alpha_n)$ for some elements $\alpha_1, \cdots, \alpha_n\in E$ which are algebraic over $F$.
+            Considering the following tower of simple algebraic extensions:
+            \begin{align*}
+                F\leq F(\alpha_1)\leq F(\alpha_1, \alpha_2)\leq \cdots \leq F(\alpha_1, \cdots, \alpha_n)=E.
+            \end{align*}
+            In each simple algebraic extension, the separable degree divides the extension degree.
+            Since each degree is multiplicative, we find that $[E:F]_\sep$ divides $[E:F]$.
+        }
+    \end{enumerate}
+    This completes the proof.
+\end{proof}
+
+\begin{prop}
+    Let $E/F$ be a finite extension.
+    Then $E/F$ is a separable extension if and only if its separable degree and extension degree are the same.
+\end{prop}
+\begin{proof}
+    Write $E=F(\alpha_1, \cdots, \alpha_r)$ for some $\alpha_1, \cdots, \alpha_r\in E$ which are algebraic over $F$, and consider a tower of simple algebraic extensions.
+    If $E/F$ is a separable extension, then each simple extension is separable.
+    Hence, the separable degree and the extension degree of each simple extension are the same, and $[E:F]=[E:F]_\sep$.
+    Conversely, if $[E:F]=[E:F]_\sep$ and $\alpha\in E$, then $[F(\alpha):F]=[F(\alpha): F]_\sep$, implying that $E/F$ is a sepatable extension.
+\end{proof}
+\begin{rmk}
+    In particular, if $\alpha_1, \cdots, \alpha_r\in\ol F$, then $F(\alpha_1, \cdots, \alpha_r)/F$ is a separable extension if and only if $\alpha_1, \cdots, \alpha_r$ are separable over $F$.
+\end{rmk}
+
+\begin{cor}\label{separability equivalence}
+    Suppose that $K/E$ and $E/F$ are finite field extensions.
+    Then $K/F$ is a separable extension if and only if both $K/E$ and $E/F$ are separable extensions.
+\end{cor}
+\begin{proof}
+    It is clear that both $K/E$ and $E/F$ are separable extensions if $K/F$ is a separable extension.
+    Assume conversely that $K/E$ and $E/F$ are separable extensions.
+    Since $[K:E]=[K:E]_\sep$ and $[E:F]=[E:F]_\sep$, we have $[K:F]=[K:F]_\sep$, implying that $K/F$ is a separable extension.    
+\end{proof}
+
+In fact, \cref{separability equivalence} extends to the following proposition:
+\begin{prop}
+    Suppose that $K/E$ and $E/F$ are algebraic field extensions.
+    Then $K/F$ is a separable extension if and only if both $K/E$ and $E/F$ are separable extensions.
+\end{prop}
+\begin{proof}
+    It is clear that both $K/E$ and $E/F$ are separable extensions if $K/F$ is a separable extension.
+    Assume conversely that $K/E$ and $E/F$ are separable extensions.
+    Given $\alpha\in K$, there is the separable minimal polynomial $m(t)=t^n+a_{n-1}t^{n-1}+\cdots+a_1t+a_0\in E[t]$ of $\alpha$ over $E$, hence $\alpha$ is a separable element over $F(a_0, a_1, \cdots, a_{n-1})$.
+    Since $a_i$ is a separable element over $F$, we can easily find that $F(\alpha, a_0, a_1, \cdots, a_{n-1})/F$ is a separable extension by showing that its extension degree and separable degree are the same.
+    Thus, $\alpha$ is a separable element over $F$, and $K/F$ is a separable extension.
+\end{proof}
+\begin{cor}\label{the field of separable elements}
+    Given an algebraic extension $E/F$, let $S_{E/F}$ be the collection of all elements of $E$ which are separable over $F$.
+    Then $S_{E/F}$ is an intermediate subfield of $E/F$.
+\end{cor}
+\begin{proof}
+    Given two elements $\alpha, \beta\in E$ which are separable over $F$, $F(\alpha, \beta)/F$ is a separable extension, so $\alpha\pm\beta, \alpha\beta^{\pm 1}$ are separable over $F$.
+\end{proof}
+\begin{rmk}
+    Hence, if $\alpha, \beta\in E$ are algebraic over $F$, then so are $\alpha\pm\beta$ and $\alpha\beta^{\pm 1}$.
+\end{rmk}
+
+\begin{prop}
+    Suppose that $E_1/F$ and $E_2/F$ are separable extensions, where $E_1, E_2$ are contained in $\ol F$.
+    Then $(E_1E_2)/F$ is a separable extension.
+\end{prop}
+\begin{proof}
+    Considering the form of the typical element of $E_1E_2$, it suffices to check that $\alpha\beta\in E_1E_2$ is separable over $F$, where $\alpha\in E_1$ and $\beta\in E_2$; now this is clear by \cref{the field of separable elements}.
+\end{proof}
+
+\begin{thm}[Primitive element theorem]\label{primitive element theorem}
+    Suppose that $E/F$ is a finite separable extension.
+    Then there is an element $\alpha\in E$ such that $E=F(\alpha)$.
+\end{thm}
+\begin{proof}
+    \color{teal}This proof is not well-motivated, yet.\color{black}
+
+    Suppose that $F$ is a finite field.
+    Because $E/F$ is a finite extension, $E$ is a finite field, hence there is a primitive element for $E/F$.
+    Thus, we may assume that $F$ is an infinite field.
+    It suffices to show that for any two elements $\beta, \gamma\in \ol F$ there is an element $\alpha\in \ol F$ such that $F(\gamma)=F(\alpha, \beta)$, for $E/F$ is a finite extension.
+    Let $\{\beta_1, \cdots, \beta_r\}$ be the set of roots of the minimal polynomial $f(t)$ of $\beta$ over $F$, and let $\{\gamma_1, \cdots, \gamma_s\}$ be the set of roots of the minimal polynomial $g(t)$ of $\gamma$ over $F$, where $\beta_1=\beta$ and $\gamma_1=\gamma$.
+    Because $F$ is infinite, there is an element $c\in F$ such that
+    \begin{align*}
+        c\neq\frac{\beta-\beta_i}{\gamma_j-\gamma}\quad(2\leq i\leq r, 2\leq j\leq s).
+    \end{align*}
+    Then let $\alpha=\beta+c\gamma$; we will show that $F(\beta, \gamma)=F(\alpha)$.
+    Consider the polynomial $h(t)=f(\alpha-ct)\in F(\alpha)[t]$.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            $h(\gamma)=f(\beta)=0$, so the minimal polynomial $m(t)$ of $\gamma$ over $F(\alpha)$ divides $h(t)$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Since $c\gamma-c\gamma_j\neq\beta_i-\beta$ for all $2\leq i\leq r$ and $2\leq j\leq s$, we have $h(\gamma_j)=f(\beta+c\gamma-c\gamma_j)\neq 0$.
+        }
+    \end{enumerate}
+    Because $m(t)$ also divides $g(t)$ and $E/F$ is a separable extension, $m(t)=t-\gamma$.
+    So, $\gamma\in F(\alpha)$ and $\beta=\alpha-c\gamma\in F(\alpha)$, hence $F(\beta, \gamma)=F(\alpha)$.
+\end{proof}

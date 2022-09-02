@@ -1,0 +1,56 @@
+\section{Noetherian ring}
+
+\begin{defi}[Noetherian ring]
+    Let $R$ be a ring (not necessarily an integral domain).
+    Then the followings are equivalent, and a ring satisfying any of the following property is called a Noetherian ring.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Finite condition)
+            Every ideal of $R$ is finitely generated.
+        }
+        \item[(b)]
+        {
+            (Ascending chain condition)
+            Every ascending chain of ideals of $R$ is finite.
+            To be precise, if $I_1, I_2, \cdots$ are ideals of $R$ such that $I_1\subset I_2\subset\cdots$, then there is an integer $n\in\bb{N}$ such that $I_j=I-k$ for all $j, k\geq n$.
+        }
+        \item[(c)]
+        {
+            (Maximal condition)
+            Let $S$ be any nonempty collection of ideals of $R$ partially ordered by set inclusion.
+            Then $S$ contains a maximal member.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    Every principal ideal domain is a Noetherian ring, since it satisfies the finite conditon.
+\end{rmk}
+\begin{proof}
+    We first prove that the finite condition implies the ascending chain condition.
+    Let $I_1\subset I_2\subset\cdots$ be an ascending chain of ideals of $R$, and define
+    \begin{align*}
+        I=\bigcup_{n=1}^\infty I_n.
+    \end{align*}
+    One can easily check that $I$ is an ideal of $R$.
+    By hypothesis, $I=(a_1, \cdots, a_k)$ for some $a_1, \cdots, a_k\in R$; because, for each $i$, $a_i\in I_j$ for some $j\in\bb{N}$, the ascending chain is finite.
+
+    We now prove that the ascending chain condition implies the maximal condition.
+    Let $S$ be a nonempty collection of ideals of $R$ and partially order $S$ by set inclusion.
+    Choose a member $I_1$ of $S$; if $I_1$ is maximal, the proof is done.
+    If $I_1$ is not maximal, there is another member $I_2$ of $S$ strictly containing $I_1$.
+    By induction, given a non-maximal member $I_n$ of $S$, there is another member $I_{n+1}$ of $S$ strictly containing $I_n$.
+    Because the ascending chain $I_1\subset I_2\subset\cdots$ is finite by hypothesis, there is an integer $n$ such that $I_n$ is maximal, which proves that $S$ contains a maximal member.
+    (Hence, in this case, we did not have to apply Zorn's lemma.)
+
+    Finally, we prove that the maximal condition implies the finite condition.
+    Define the collection $S$ of ideals of $R$ by
+    \begin{align*}
+        S:=\{J\nmal R: J\subset I\textsf{ and }J\textsf{ is finitely generated}\}.
+    \end{align*}
+    By hypothesis, $S$ contains a maximal member $M$.
+    We will show that $I=M$ by contradiction.
+    Assume $M\subsetneq I$.
+    Then there is an element $x\in I\setminus M$, thus $M\subsetneq (M, x)\subset I$.
+    Because $(M, x)$ is also finitely generated, $(M, x)\in S$, so $M$ is not a maximal member of $S$, a contradiction.
+\end{proof}

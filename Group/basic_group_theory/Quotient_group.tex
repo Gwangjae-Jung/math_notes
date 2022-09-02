@@ -1,0 +1,76 @@
+\section{Quotient group}
+
+Imposing the quotient by a subgroup $H$ of $G$ gives a coset space, and the coset space is indeed a partition of $G$.
+\begin{thm}[Lagrange's theorem]
+    Suppose $G$ is a finite group and let $H$ be a subgroup of $G$.
+    Then $|H|$ divides $|G|$ and $|G|=|G/H||H|$.
+\end{thm}
+\begin{proof}
+    Imposing a quotient by a subgroup gives a partition of the group.
+\end{proof}
+\begin{rmk}
+    Clearly, partitions of a partition give a partition, from which some other results can be derived.
+    For example, if $H\leq K\leq G$ and $G/K$ and $K/H$ are finite, then $[G: H]=[G:K][K:H]$.
+\end{rmk}
+
+Motivation of normal subgroups is introduced in the first part of this note.
+Thus, in the remaining of this section, further properties of normal subgroups are introduced.
+
+We first start with kind of trivial statements, regarding the structures of quotient groups.
+Proving the following propositions is left as an exercise.
+\begin{prop}
+    Let $G$ be an abelian group.
+    Then every subgroup of $G$ is naturally a normal subgroup and every quotient group is abelian.
+    Furthermore, if $G$ is cyclic, then every quotient group is cyclic.
+\end{prop}
+\begin{prop}[Restriction of normality]
+    Suppose $H\leq K\leq G$.
+    If $H$ is a normal subgroup of $G$, then $H$ is normal in $K$.
+\end{prop}
+\begin{prop}[Normality of restriction]
+    Let $K$ be a subgroup of a group $G$.
+    If $N$ is a normal subgroup of $G$, then the restriction of $N$ to $K$, i.e., $N\cap K$, is normal in $K$.
+\end{prop}
+\begin{prop}
+    Let $G$ be a group.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The center $Z(G)$ of $G$ is a normal subgroup of $G$.
+        }
+        \item[(b)]
+        {
+            If $\phi\in\aut(G)$, then $\phi(Z(G))=Z(G)$.
+        }
+    \end{enumerate}
+\end{prop}
+
+The following lemma is not about a normal subgroup, but it helps in some other situations.
+\begin{lem}
+    If $H$ and $K$ are finite subgroups of $G$, then
+    \begin{equation*}
+        |HK|=\frac{|H||K|}{|H\cap K|}.
+    \end{equation*}
+\end{lem}
+\begin{proof}
+    Note that $HK=\bigcup_{h\in H}{hK}$ so $|HK|$ is divisible by $|K|$.
+    Given $a\in H$ and $b\in K$, assume $hk=ab$ for some $h\in H, k\in K$.
+    Then $a^{-1}h=bk^{-1}\in H\cap K$ and vice versa, and there are precisely $|H\cap K|$ choices for $(h, k)$.
+\end{proof}
+
+We now introduce a criterion for determining if the composite of two subgroups is a subgroup.
+\begin{prop}
+    Let $H$ and $K$ be subgroups of $G$.
+    Then $HK$ is a subgroup of $G$ if and only if $H$ and $K$ commute, i.e., $HK=KH$.
+    Hence, in particular, if $H\leq N_G(K)$, i.e., one normalizes the other, then $HK$ is a subgroup of $G$.
+\end{prop}
+\begin{proof}
+    Assume $HK$ is a subgroup of $G$.
+    We need to show that $KH\subset HK$ and $HK\subset KH$.
+    Because $HK$ is a subgroup of $G$, for any $hk\in HK$ with $h\in H$ and $k\in K$, we have $k^{-1}h^{-1}=(hk)^{-1}\in HK$, from which it is derived that $KH\subset HK$.
+    We could also derive from the same equation that $HK\subset KH$, since $k^{-1}h^{-1}\in KH$.
+
+    Now assume conversely that $HK=KH$.
+    Given $ab, hk\in HK$ with $a, h\in H$ and $b, k\in K$, we have $(ab)(hk)^{-1}=a(bk^{-1}h^{-1})$.
+    Because $bk^{-1}h^{-1}\in KH=HK$, $bk^{-1}h^{-1}=uv$ for some $u\in H$ and $v\in K$, and $(ab)(hk)^{-1}=(au)v\in HK$, as desired.
+\end{proof}

@@ -1,0 +1,88 @@
+\section{Multiples and divisors}
+
+The idea of multiples and divisors are assumed to be considered in integral domains.
+Throughout this section, $D$ denotes an integral domain.
+
+\begin{defi}[Multiple and divisor]
+    Let $a$ and $b$ be elements of $D$.
+    If there is $c\in D$ such that $a=bc$, then $a$ is called a multiple of $b$ (and $b$ is called a divisor of $a$).
+    If $d\in D$ is a divisor of both $a$ and $b$, then $d$ is called a common divisor of $a$ and $b$; if $m\in D$ is a multiple of both $a$ and $b$, then $m$ is called a common multiple of $a$ and $b$.
+
+    Assume $a_1, \cdots, a_n\in D$.
+    Then an element $d\in D$ is called a greatest common divisor of $a_1, \cdots, a_n$ if
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $d$ is a common divisor of $a_1, \cdots, a_n$ and
+        }
+        \item[(2)]
+        {
+            $d$ is a multiple of every common divisor of $a_1, \cdots, a_n$.
+        }
+    \end{enumerate}
+    Also, an element $l\in D$ is called a least common multiple of $a_1, \cdots, a_n$ if
+    \begin{enumerate}
+        \item[(3)]
+        {
+            $l$ is a common multiple of $a_1, \cdots, a_n$ and
+        }
+        \item[(4)]
+        {
+            $l$ is a divisor of every common multiple of $a_1, \cdots, a_n$.
+        }
+    \end{enumerate}
+
+    We say $a$ and $b$ are relatively prime if $(a)$ and $(b)$ are comaximal, i.e., $(a, b)=(a)+(b)=D$.
+\end{defi}
+
+To illustrate properties of multiple and divisor in terms of ideals, we define an equivalence relation $\sim$ on $D$ as follows:
+\begin{center}
+    For $a, b\in D$, $a\sim_\times b$ if and only if $a=ub$ for some $u\in D^\times$.
+\end{center}
+\begin{obs}
+    Suppose $a, b\in D$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $a$ is a divisor of $b$ if and only if $(b)\nmal (a)\nmal R$.
+            Thus, $a\sim_\times b$ if and only if $(a)=(b)$, and $(u)=D$ whenever $u$ is a unit of $D$.
+            Note that $(a)=(b)$ if and only if $a$ divides $b$ and $b$ divides $a$.
+        }
+        \item[(b)]
+        {
+            $a\sim_\times 0$ if and only if $a=0$; assuming $a\in D^\times$, $a\sim_\times b$ if and only if $b\in D^\times$.
+        }
+        \item[(c)]
+        {
+            Suppose $x_1, \cdots, x_n\in D$ and $a\sim_\times b$.
+            If $a$ is a common divisor (or a common multiple, respectively) of $x_1, \cdots, x_n$, then so is $b$.
+        }
+    \end{enumerate}
+\end{obs}
+
+\begin{prop}
+    Suppose $a, b\in D$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $(a)+(b)=(a, b)$
+        }
+        \item[(b)]
+        {
+            $(a)(b)=(ab)$.
+        }
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Suppose $x_1, \cdots, x_n\in D$.
+    Then $d\in D$ is a greatest common divisor of $x_1, \cdots, x_n$ if and only if $(x_1, \cdots, x_n)\nmal (d)\nmal (d')$ whenever $d'\in D$ is a common divisor of $x_1, \cdots, c_n$; $m\in D$ is a least common multiple of $x_1, \cdots, x_n$ if and only if $(m')\nmal (m)\nmal (x_1)\cap\cdots\cap(x_n)$ whenever $m'\in D$ is a common multiple of $x_1, \cdots, x_n$.
+    Also, a greatest common divisor and a least common multiple of $x_1, \cdots, x_n$ are unique up to multiplication by a unit in $D$, respectively.
+\end{prop}
+
+We end this section with an observation on principal ideal domains.
+\begin{obs}
+    Let $D$ be a principal ideal domain and $a, b\in D$.
+    If we let $(a)+(b)=(x)$, then $x$ is a greatest common divisor of $a$ and $b$, and vice versa.
+    Similarly, if we let $(a)\cap(b)=(y)$, then $y$ is a least common multiple of $a$ and $b$, and vice versa.
+\end{obs}

@@ -1,0 +1,104 @@
+\section{Unique factorization domain}
+
+\begin{defi}[Unique factorization domain]
+    An integral domain $D$ is called a unique factorization domain if every nonzero and nonunit element $r$ of $D$ satisfies the following properties:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $r$ can be written as a finite product of irreducible elements of $D$.
+        }
+        \item[(b)]
+        {
+            The decomposition in (a) is unique ip to multiplication by units; if $r=p_1p_2\cdots p_m=q_1q_2\cdots q_n$, where $m, n\in\bb{N}$ and $p_i$ and $q_j$ for $1\leq i\leq m, 1\leq j\leq n$ are irreducible elements of $D$, then $m=n$ and $p_i\sim_\times q_i$ for each $i$.
+        }
+    \end{enumerate}
+\end{defi}
+
+We have studied the following equivalences valid in principal ideal domains:
+\begin{enumerate}
+    \item[(a)]
+    {
+        $p$ is a prime element of $D$.
+    }
+    \item[(b)]
+    {
+        $p$ is an irreducible element of $D$.
+    }
+    \item[(c)]
+    {
+        $(p)$ is a prime ideal of $D$.
+    }
+    \item[(d)]
+    {
+        $(p)$ is a maximal ideal of $D$.
+    }
+\end{enumerate}
+Among them, (a) and (c) are equivalent by definition, (a) implies (b) and (d) implies (c) in any integral domain.
+In UFDs, a nonzero prime ideal is no longer necessarily a maximal ideal; howerver, an irreducible element is still a prime element.
+\begin{prop}
+    In a UFD, an irreducible element is a prime element.
+\end{prop}
+\begin{proof}
+    Let $r$ be an irreducible element of a UFD $D$ and assume $r|ab$ for some nonzero elements $a, b$ of $D$.
+    Then $r$ is an irreducible factor of $ab$ and an irreducible factor of $a$ or $b$.
+    Therefore, $r|a$ or $r|b$ and $r$ is a prime element.
+\end{proof}
+
+In the following observation, some obvious but helpful properties of unique factor domains are listed.
+\begin{obs}
+Let $D$ be a UFD.
+Suppose that $a=u{p_1}^{r_1}{p_2}^{r_2}\cdots{p_n}^{r_n}\in D$, where $u\in D^\times$, $p_i$ is an irreducible element of $D$ and $r_i\in\bb{N}$ for each $i$.
+\begin{enumerate}
+    \item[(a)]
+    {
+        If $p$ is an irreducible element of $D$ dividing $a$, then $a\sim_\times p_i$ for some $i$.
+        Hence, if $d$ is an element of $D$ dividing $a$, then $d\sim_\times{p_1}^{f_1}{p_2}^{f_2}\cdots{p_n}^{f_n}$, where $0\leq f_i\leq r_i$ for each $i$.
+    }
+\end{enumerate}
+Suppose further that $b=v{p_1}^{s_1}{p_2}^{s_2}\cdots{p_n}^{s_n}\in D$, where $v\in D^\times$, $p_i$ is an irreducible element of $D$ and $s_i\in\bb{N}$ for each $i$.
+\begin{enumerate}
+    \item[(b)]
+    {
+        Letting $e_i=\min\{r_i, s_i\}$ and $f_i=\max\{r_i, s_i\}$ for each $i$, ${p_1}^{e_1}{p_2}^{e_2}\cdots{p_n}^{e_n}$ is a greatest common divisor of $a$ and $b$, and ${p_1}^{f_1}{p_2}^{f_2}\cdots{p_n}^{f_n}$ is a least common multiple of $a$ and $b$.
+    }
+    \item[(c)]
+    {
+        Hence, if $g$ is a greatest common divisor and $l$ is a least common multiple of $a$ and $b$, respectively, then $gl\sim_\times ab$.
+        Also, if $a$ and $b$ are nonzero, then $(l/a, l/b)=(a/g, b/g)=D$.
+    }
+\end{enumerate}
+\end{obs}
+
+In the remaining of this seciton, we will prove that a principal ideal domain is a UFD.
+In the proof, given a nonzero and nonunit element $a$ from a principal ideal domain $D$, we should factorize $r$ into irreducible elements.
+For this, we should investigate the existence of an irreducible element of $D$ dividing $a$; for this, it suffices to prove the existence of a prime (or a maximal) ideal of $D$ containing $a$, which is already proved in the preceeding chapter.
+\begin{thm}
+    Every principal ideal domain is a UFD.
+\end{thm}
+\begin{proof}
+    Let $D$ be a principal ideal domain and let $a$ be a nonzero and nonunit element of $D$.
+
+    \textbf{Step 1. Proving the existence part}\newline\indent
+    Note that whenever $c\in D$ is nonzero and nonunit, there is a maximal ideal of $D$ containing $c$.
+    If $a$ is reducible, find a maximal ideal $(r_1)$ of $D$ containing $a$ and write $a=r_1a_1$; if $a_1$ is reducible, find an irreducible element $r_2$ of $D$ dividing $a_1$ and write $a_1=r_2a_2$.
+    By induction, when $a_n$ is reducible, let $r_{n+1}$ be an irreducible element of $D$ dividing $a_n$ and write $a_n=r_{n+1}a_{n+1}$.
+    We will justify that such process terminates in finite steps so that $a_n$ is irreducible for some $n\in\bb{N}$.
+    Assume that $a_n$ is not irreducible for all $n$.
+    Because each $r_n$ is nonunit, we have a properly ascending chain $(a)\subsetneq (a_1)\subsetneq (a_2)\subsetneq\cdots$ of ideals of $D$.
+    Since a principal ideal domain is a Noetherian ring, the ascending chain is finite, i.e., $(a_n)=(a_{n+1})=\cdots$ for some integer $n\in\bb{N}$, a contradiction.
+    Therefore, whenever $a$ is a nonzero and nonunit element of $D$, then one can find a factorization of $a$ into irreducible elements of $D$.
+
+    \textbf{Step 2. Proving the uniqueness part}\newline\indent
+    The uniqueness part can be proved by induction.
+    Assume that $a$ has the following two factorizations into irreducible elements of $D$:
+    \begin{center}
+        $a=u p_1 \cdots p_m$ and $a=v q_1 \cdots q_n$,
+    \end{center}
+    where $u, v\in D^\times$ and $p_i$'s and $q_j$'s are irreducible elements of $D$ for all $i$ and $j$. (Without loss of generality, assume that $m\leq n$.)
+    Since $p_1|(q_1\cdots q_n)$ and $p_1$ is a prime element of $D$, (after renumbering we can write) $p_1|q_1$ so that $p_1\sim_\times q_1$. \color{brown}(How?) \color{black}
+    By the same argument, we have (again, after renumbering) $p_i\sim_\times q_i$ for each $i$.
+    Hence, if $m<n$, by the law of cancellation, $q_{m+1}\cdots q_n\sim_\times 1$, a contradiction.
+    Therefore, $m=n$ and $p_i\sim_\times q_i$ for each $i$.
+
+    By Step 1 and Step 2, every principal ideal domain is a UFD.
+\end{proof}

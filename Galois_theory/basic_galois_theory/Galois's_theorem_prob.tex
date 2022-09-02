@@ -1,0 +1,133 @@
+\section{Some problems regarding Galois's theorem}
+
+\begin{prob}\label{gapped_proof: Galois's_thm}
+    Suppose that $K/F$ and $L/F$ are finite Galois extensions with $K, L\leq \ol F$.
+    As in the preceeding remark, write $L=(K\cap L)(\gamma)$.
+    Show that the minimal polynomial of $\gamma$ over $K$ and over $K\cap L$ are the same.
+\end{prob}
+\begin{sol}
+    Using the suggested notations, we have $KL=K(\gamma)$.
+    Letting $m_1(t)$ and $m_2(t)$ be the minimal polynomial of $\gamma$ over $K\cap L$ and over $K$, respectively, because $m_2(t)|m_1(t)$, it suffices to show that $[K:K\cap L]=[KL:K]$ (already justified); this implies $\deg m_1(t)=\deg m_2(t)$ and $m_1(t)=m_2(t)$, as desired.
+\end{sol}
+
+\begin{prob}
+    Find the minimal polynomial of $1+\sqrt[3]{2}+\sqrt[3]{4}$ over $\bb{Q}$.
+\end{prob}
+\begin{sol}
+    Considering a Galois extension over $\bb{Q}$ containing $\alpha:=1+\sqrt[3]{2}+\sqrt[3]{4}$, it is natural to suggest $E:=\bb{Q}(\rho, \zeta)$, the splitting field for $t^3-2$ over $\bb{Q}$. (Here, $\rho=\sqrt[3]{2}$ and $\zeta=\exp(2\pi i/3)$.)
+    Computing its Galois group, we find that $\gal{E/\bb{Q}}=\genone{\sigma, \tau}$, where
+    \begin{align*}
+        \sigma:\left\{\begin{array}{c}
+            \rho\mapsto\rho\zeta\\
+            \zeta\mapsto\zeta
+        \end{array}\right.,\quad
+        \tau:\left\{\begin{array}{c}
+            \rho\mapsto\rho\\
+            \zeta\mapsto\zeta^{-1}
+        \end{array}\right..
+    \end{align*}
+    If $f(t)$ is a nonconstant polynomial over $\bb{Q}$, then $f(t)$ is fixed by the action of automorphisms in $\gal{E/\bb{Q}}$ by Galois's theorem.
+    Hence, if $f(\alpha)=0$, then $\eta\alpha$ is also a root of $f(t)$, where $\eta\in\gal{E/\bb{Q}}$; this implies that the minimal polynomial $m(t)$ of $\alpha$ over $\bb{Q}$ is necessarily satisfied the following elements:
+    \begin{align*}
+        1+\rho+\rho^2,\quad 1+\rho\zeta+\rho^2\zeta^{-1},\quad 1+\rho\zeta^{-1}+\rho^2\zeta.
+    \end{align*}
+    Because $\bb{Q}$ is of characteristic 0, $m(t)$ is separable.
+    Hence, $m(t)$ is divisible by
+    \begin{align*}
+        (t-(1+\rho+\rho^2))(t-(1+\rho\zeta+\rho^2\zeta^{-1}))(t-(1+\rho\zeta^{-1}+\rho^2\zeta))=t^3-3t^2-3t-1.
+    \end{align*}
+    Since $t^3-3t^2-3t-1$ is irreducible over $\bb{Q}$, we conclude that $m(t)=t^3-3t^2-3t-1$.
+\end{sol}
+\begin{rmk}
+    In fact, when $K/F$ is a finite Galois extension and $\alpha\in K$, then the minimal polynomial of $\alpha$ over $F$ is the square-free part $p(t)$ of
+    \begin{align*}
+        \prod_{\sigma\in\gal{K/F}}(t-\sigma\alpha).
+    \end{align*}
+    Here's a justification.
+    By Galois's theorem, the minimal polynomial of $\alpha$ over $F$ is satisfied by $\sigma\alpha$ for all $\sigma\in\gal{K/F}$.
+    On the other hand, because the roots of $p(t)$ are the whole pairwise distinct $\sigma\alpha$'s, we have $p(t)\in F[t]$ by Galois's theorem.
+    Therefore, $p(t)$ the monic polynomial over $\bb{Q}$ of the least degree which has $\sigma\alpha$ a root for each $\sigma\in\gal{K/F}$.
+\end{rmk}
+
+\begin{prob}
+    Let $K/F$ be a Galois group of extension degree $p^n$, where $p$ is a positive prime number and $n$ is a positive integer.
+    Show that, for each integer $1\leq r\leq n$, that there is a subfield $E_r$ of $K/F$ such that $E_r/F$ is a Galois extension of extension degree $p^r$.
+\end{prob}
+\begin{sol}
+    Since $\gal{K/F}$ is a group of order $p^n$, for each integer $1\leq r\leq n$, there is a normal subgroup $H_r$ of $G$ such that $[G: H_r]=p^r$.\footnote{This can be proved by deducing that the center of the Galois group is nontrivial and then applying the lattice isomorphism theorem for groups.}
+    Therefore, the fixed field $E_r=K^{H_r}$ is a Galois extension over $F$ of degree $p^r$.
+\end{sol}
+
+\begin{prob}[Biquadratic extension]
+    Let $F$ be a field such that $\ch{F}\neq 2$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose that $K=F(\sqrt{D_1}, \sqrt{D_2})$, where $D_1, D_2\in F$ have the property that none of $D_1, D_2$ or $D_1D_2$ is a square in $F$.    
+            Prove that $K/F$ is a Galois extension with the Galois group isomorphic to the Klein 4-group.
+        }
+        \item[(b)]
+        {
+            Conversely, suppose that $K/F$ is a Galois extenion with the Galois group isomorphic to the Klein 4-group.
+            Show that $K=F(\sqrt{D_1}, \sqrt{D_2})$, where $D_1, D_2\in F$ have the property that none of $D_1, D_2$ or $D_1D_2$ is a square in $F$.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    Assume first that $K=F(\sqrt{D_1}, \sqrt{D_2})$, where $D_1, D_2\in F$ have the property that none of $D_1, D_2$ or $D_1D_2$ is a square in $F$.
+    Then $K/F$ is clearly a Galois extension with the extension degree at most 4.
+    In fact, $K$ is the splitting field for $(t^2-D_1)(t^2-D_2)$ over $F$, so (after identification) $\gal{K/F}\leq\gal{F(\sqrt{D_1})/F}\times\gal{F(\sqrt{D_2})/F}\approx V_4$.
+    Moreover, because none of $D_1, D_2$ or $D_1D_2$ is a square in $F$, $F(\sqrt{D_1})\cap F(\sqrt{D_2})=F$, thus the Galois group of $K/F$ is the Klein 4-group.
+
+    Conversely, assume that $K/F$ is a Galois extension with the Galois group isomorphic to the Klein 4-group $\genone{a, b: a^2, b^2, aba^{-1}b^{-1}}$.
+    \begin{equation*}
+        \begin{tikzcd}[row sep=0.5cm, column sep=0.5cm]
+            &
+            F
+                \arrow[dl, dash]
+                \arrow[d, dash]
+                \arrow[dr, dash]
+            &
+            \\
+            F(\sqrt{\alpha})
+                \arrow[dr, dash]
+            &
+            F(\sqrt{\gamma})
+                \arrow[d, dash]
+            &
+            F(\sqrt{\beta})
+                \arrow[dl, dash]
+            \\
+            &
+            K
+            &
+        \end{tikzcd}
+        \quad\quad
+        \begin{tikzcd}[row sep=0.5cm, column sep=0.8cm]
+            &
+            V_4
+                \arrow[dl, dash]
+                \arrow[d, dash]
+                \arrow[dr, dash]
+            &
+            \\
+            \genone{a}
+                \arrow[dr, dash]
+            &
+            \genone{ab}
+                \arrow[d, dash]
+            &
+            \genone{b}
+                \arrow[dl, dash]
+            \\
+            &
+            \{1\}
+            &
+        \end{tikzcd}
+    \end{equation*}
+    where $\alpha, \beta, \gamma\in F$ are not squares in $F$.
+    Because $a$ fixes $\alpha$ and $b$ fixes $\beta$, $ab=a\circ b$ fixes $\alpha\beta$.
+    Moreover, since $F(\sqrt{\alpha})\neq F(\sqrt{\beta})$, $\alpha\beta$ is not a square in $F$.
+    (Hence, we may let $\gamma=\alpha\beta$.)
+    Therefore, $K=F(\sqrt{\alpha}, \sqrt{\beta})$.
+\end{sol}

@@ -1,0 +1,163 @@
+\section{Gauss's lemmas}
+
+Our goal in this section is to prove that $D[x]$ is a UFD if $D$ is a UFD.
+Throughout this section, $D$ is an integral domain and $Q$ is the field of fractions of $D$.
+
+\begin{defi}[Content of a polynomial]
+    Let $D$ be an integral domain and $f(x)=a_nx^n+\cdots+a_1x+a_0$ be a polynomial over $D$.
+    A greatest common divisor of $a_0, a_1, \cdots, a_n$ is called a content of $f$, and is denoted by $\cont(f)$.
+    If $\cont(f)$ is a unit in $D$, then the polynomial $f$ is called a primitive polynomial.
+\end{defi}
+
+Some obvious observations:
+\begin{obs}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $p(x)\in D[x]$ is a nonzero polynomial, then there is a primitive polynomial $p_1(x)$ over $D$ such that $p(x)=\cont(p)\cdot p_1(x)$.
+        }
+    \end{enumerate}
+    Suppose $a, b\in D$ and $f(x), g(x)\in D[x]$ are nonzero and primitive polynomials.
+        \begin{enumerate}
+        \item[(b)]
+        {
+            $\cont(af)=a$.
+        }
+        \item[(c)]
+        {
+            If $af(x)=bg(x)$, then $a\sim_\times b$.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{exmp}
+    If $p(x)\in D[x]$ is a nonconstant irreducible polynomial, then $p(x)$ is primitive.
+\end{exmp}
+
+\begin{thm}[Gauss's lemma of primitivity]
+    Let $D$ be a UFD and $f(x), g(x)$ be polynomials over $D$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\cont(fg)=\cont(f)\cdot\cont(g)$
+        }
+        \item[(b)]
+        {
+            Hence, if $f(x)$ and $g(x)$ are primitive, then so is $f(x)g(x)$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Since (b) follows from (a), it suffices to prove (a).
+    Because $f(x)=\cont(f)\cdot f_1(x)$ and $g(x)=\cont(g)\cdot g_1(x)$ for some primitive polynomials $f_1(x), g_1(x)\in D[x]$, it suffices to prove that $f_1(x)g_1(x)$ is a primitive polynomial over $D$.
+    For this, assume that $f_1(x)g_1(x)$ is not primitive and let $p$ be a prime element of $D$ dividing $\cont(f_1g_1)$.
+    Consider the map $\phi: D[x]\rightarrow D[x]/(p)$ defined by
+    \begin{align*}
+        \phi\left(\sum_{r=0}^n a_rx^r\right)=\sum_{r=0}^n\ol{a_r}x^r\quad(a_r\in D\textsf{ for each }r).
+    \end{align*}
+    Note that $D[x]/(p)\approx(D/pD)[x]$ is an integral domain and $\phi(f_1(x)g_1(x))=0$, and that $\phi$ is a ring homomorphism.
+    Thus, without loss of generality, we may assume that $\phi(f_1(x))=0$, implying that $p$ divides $f_1(x)$, which contradicts the primitivity of $f_1$.
+    Therefore, $f_1(x)g_1(x)$ is primitive.
+\end{proof}
+
+\begin{cor}
+    Let $D$ be a UFD, and suppose that $p(x)$ is a nonzero polynomial over $D$.
+    Then $p(x)$ is reducible in $D[x]$ if $p(x)$ is reducible in $Q[x]$.
+    (To be precise, if $p(x)=A(x)B(x)$ for some $A(x), B(x)\in Q[x]$, then there are elements $s, t\in Q$ such that $a(x):=sA(x)$ and $b(x):=tB(x)$ belong to $D[x]$ and $p(x)=a(x)b(x)$.
+    Hence, there exist $a(x), b(x)\in D[x]$ such that $p(x)=a(x)b(x)$ and $\deg a=\deg A$ and $\deg b=\deg B$.)
+\end{cor}
+\begin{proof}
+    Because $p(x)$ is reducible over $Q$, we can write $p(x)=A(x)B(x)$ for some (nonconstant polynomials) $A(x), B(x)\in Q[x]$.
+    By reducing fractions, we can write $A(x)=\dfrac{c}{m}a(x)$ and $B(x)=\dfrac{d}{n}b(x)$ for some primitive polynomials $a(x), b(x)$ over $D$ and $c, d, m, n\in D$ with $m, n\neq 0$.
+    Writing $p(x)=\cont(p)\cdot p_1(x)$ with $p_1(x)\in D[x]$ being primitive, we have $mn\cdot\cont(p)\cdot p_1(x)=cd\cdot a(x)b(x)$, hence $mn\cdot\cont(p)\sim_\times cd$, i.e., $p(x)\sim_\times \cont(p)\cdot a(x)b(x)$.
+    This proves the desired statements.
+\end{proof}
+
+\begin{thm}[Gauss's lemma of irreducibility]
+    Let $D$ be a UFD and $Q$ be the field of fractions of $D$.
+    Assume that $p(x)$ is a primitive polynomial over $D$.
+    Then $p(x)$ is irreducible over $D$ if and only if $p(x)$ is irreducible over $Q$.
+\end{thm}
+\begin{proof}
+    We first assume that $p(x)$ is irreducible over $D$ and let $a(x), b(x)$ be polynomials over $Q$ such that $p(x)=a(x)b(x)$.
+    By reducing fractions, we may write $a(x)=\dfrac{c}{m}a_0(x)$ and $b(x)=\dfrac{d}{n}b_0(x)$, where $c, d, m, n\in D\setminus\{0\}$ and $a_0(x), b_0(x)$ are primitive polynomials over $D$.
+    Because $mn\cdot p(x)=cd\cdot a_0(x)b_0(x)$ and $p(x)$ is primitive, we have $mn\sim_\times cd$, so $p(x)\sim_\times a_0(x)b_0(x)$.
+    Because $p(x)$ is irreducible over $D$, either $a_0(x)$ or $b_0(x)$ is a unit in $D[x]$, so either $a_0(x)$ or $b_0(x)$ is a constant polynomial.
+    This proves that $p(x)$ is irreducible over $Q$.
+
+    We now assume that $p(x)$ is irreducible over $Q$ and let $a(x), b(x)$ be polynomials over $D$ such that $p(x)=a(x)b(x)$.
+    Then, without loss of generality, $a(x)\in Q[x]^\times=Q$, thus $a(x)$ is a constant polynomial over $D$.
+    Becasue $p(x)$ is primitive, we find that $a(x)\in D^\times$, priving that $p(x)$ is irreducible over $D$.
+\end{proof}
+
+\begin{cor}
+    Let $D$ be a UFD and $f(x), g(x)$ be primitive polynomials over $D$.
+    Then $f(x)\sim_\times g(x)$ in $D[x]$ if and only if $f(x)\sim_\times g(x)$ in $Q[x]$.
+\end{cor}
+\begin{proof}
+    It is clear that $f(x)\sim_\times g(x)$ in $Q[x]$ if $f(x)\sim_\times g(x)$ in $D[x]$.
+    Assume conversely that $f(x)\sim_\times g(x)$ in $Q[x]$ so that we can write $f(x)=(b/a)g(x)$ for some $b/a\in Q[x]^\times=Q^\times$.
+    Since both $f(x)$ and $g(x)$ are primitive and $af(x)=bg(x)$, we have $a\sim_\times b$, so $b/a\in D^\times$.
+    Therefore, $f(x)\sim_\times g(x)$ in $D[x]$.
+\end{proof}
+
+\begin{rmk}[Review of Gauss's lemmas]
+    Let $D$ be a UFD and $Q$ be the field of fractions of $D$.
+    The Gauss's lemma of primitivity implies that any finite product of primitive polynomials over $D$ is primitive.
+    The Gauss's lemma of irreduciblity implies the followings:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            A polynomial $p(x)$ over $D$ is reducible over $D$ if it is reducible over $Q$.
+        }
+        \item[(b)]
+        {
+            Let $p(x)$ be a primitive polynomial over $D$.
+            Then $p(x)$ is irreducible over $D$ if and only if $p(x)$ is irreducible over $Q$.
+        }
+    \end{enumerate}
+\end{rmk}
+
+\begin{thm}
+    If $D$ is a UFD, then so is $D[x]$.
+\end{thm}
+\begin{proof}
+    Let $f(x)$ be a nonzero and nonunit polynomial over $D$.
+
+    \noindent\textbf{Step 1. Proving the existence part}\newline\indent
+    Let $f_1(x)$ be the polynomial over $D$ such that $f(x)=\cont(f)\cdot f_1(x)$.
+    The factorization of $\cont(f)$ cen be accomplished in $D$.
+    To factorize $f_1(x)$ in $D[x]$, we first factorize $f_1(x)$ in a UFD $Q[x]$; write $f_1(x)=p_1(x)\cdot\cdots\cdot p_n(x)$ be the factorization of $f_1(x)$ in $Q[x]$.
+    By reducing fractions, for each $i=1, \cdots, n$, there is a primitive polynomial $q_i(x)$ over $D$ and $a_i, b_i\in D\setminus\{0\}$ such that $p_i(x)=(b_i/a_i) q_i(x)$.
+    \begin{enumerate}
+        \item[(1)]
+        {
+            Since each $p_i(x)$ is irreducible over $Q$, each $q_i(x)$ is also irreducible over $Q$, and so over $D$.
+        }
+        \item[(2)]
+        {
+            Because $(a_1\cdot\cdots\cdot a_n)f_1(x)=(b_1\cdot\cdots\cdot b_n)\cdot q_1(x)\cdot\cdots\cdot q_n(x)$, we have $a_1\cdot\cdots\cdot a_n\sim_\times b_1\cdot\cdots\cdot b_n$.
+        }
+    \end{enumerate}
+    Therefore, $f(x)=\cont(f)\cdot f_1(x)\sim_\times \cont(f)\cdot q_1(x)\cdot\cdots\cdot q_n(x)$ has a factorization into irreducible elements in $D[x]$.
+
+    \noindent\textbf{Step 2. Proving the uniqueness part}\newline\indent
+    Suppose that two factorization of $f(x)$ into irreducible elements in $D[x]$ are given as follows:
+    \begin{align*}
+        f(x)=(r_1\cdot\cdots\cdot r_m)\cdot a_1(x)\cdot\cdots\cdot a_j(x)=(s_1\cdot\cdots\cdot s_n)\cdot b_1(x)\cdot\cdots\cdot b_k(x),
+    \end{align*}
+    where $r_1, \cdots, d_m, s_1, \cdots, s_n$ are irreducible elements of $D$ and $a_1(x), \cdots, a_j(x), b_1(x), b_k(x)$ are irreducible polynomials in $D[x]$. (Being primitive, all nonconstant polynomial factors can be assumed to be primitive.)
+    In this case, $r_1\cdot\cdots\cdot r_m$ and $s_1\cdot\cdots\cdot s_n$ are the content of the polynomial $f(x)$, so they differ by multiplication by a unit; hence, $m=n$ and $r_i\sim_\times s$ for each $i$.
+    Because $a_1(x), \cdots, a_j(x), b_1(x), \cdots, b_k(x)$ are primitive and irreducible over $D$, they are irreducible over $Q$; because $Q[x]$ is a UFD, $j=k$ and (up to renumbering) $a_i(x)\sim_\times b_i(x)$ for each $i$.
+    This proves the uniqueness part.
+\end{proof}
+
+An additional problem, which is not essential when studying further theory.
+\begin{prob}\label{cyclotomic_poly_over_Z}
+    Suppose that $f(x), g(x)\in D[x]$ are primitive.
+    Explain that if $f(x)=g(x)h(x)$ for some $h(x)\in Q[x]$ then $h(x)$ is a polynomial over $D$.
+\end{prob}
+\begin{sol}
+    By reducing fractions, we can write $h(x)=\dfrac{b}{a}h_0(x)$ for some $a, b\in D\setminus\{0\}$ and a primitive polynomial $h_0(x)$ over $D$.
+    From $af(x)=bg(x)h_0(x)$, we obtain $a\sim_\times b$ so $u=b/a\in D^\times$.
+    Therefore, $h(x)=uh_0(x)\in D[x]$, as desired.
+\end{sol}

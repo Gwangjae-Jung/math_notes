@@ -1,0 +1,79 @@
+\section{The field of real numbers}
+
+In this section, we construct the field of real numbers.
+Keep in mind that we do not admit the existence of the field of real numbers yet.
+
+Let $\mc{C}_\bb{Q}$ denote the collection of all Cauchy sequences of rational numbers and define operations as follows:
+\begin{align*}
+    (a_n)_n+(b_n):=(a_n+b_n)_n,\quad
+    c\cdot(a_n)_n:=(ca_n)_n,\quad
+    (a_n)\times(b_n):=(a_nb_n).
+\end{align*}
+\color{brown}Checking well-definedness is left as an exercise. \color{black}
+Then $\mc{C}_\bb{Q}$ is a $\bb{Q}$-algebra with the above operations and has the multiplicative identity $(1)_n$.
+
+For a sequence $(a_n)_n$ of rational numbers and a rational number $\alpha$, $(a_n)_n$ is said to converge to $\alpha$ if there is a rational number $\alpha$ with the following property:
+\begin{center}
+    Whenever $\epsilon>0$, there is a positive integer $N$ such that $n\geq N$ implies $|a_n-\alpha|<\epsilon$.
+\end{center}
+And let $\mc{M}$ denote the collection of all rational sequences which converges to 0.
+\begin{prop}
+    $\mc{M}$ is a maximal ideal of $\mc{C}_\bb{Q}$.
+    Therefore, the quotient ring $\mc{C}_\bb{Q}/\mc{M}$ is a field containing an isomorphic copy of $\bb{Q}$.
+\end{prop}
+\begin{proof}
+    It is easy to justify that $\mc{M}$ is an ideal of $\mc{C}_\bb{Q}$.
+    
+    To show that $\mc{M}$ is a maximal ideal of $\mc{C}_\bb{Q}$, suppose that $(a_n)_n \in \mc{C}_\bb{Q}\setminus\mc{M}$.
+    Set
+    \begin{align*}
+        x_n
+        =\left\{\begin{array}{cc}
+            10^{-n} &   (a_n\neq 10^{-n})\\
+            0       &   (a_n=10^{-n})
+        \end{array}\right.,
+    \end{align*}
+    then $(x_n)_n\in\mc{M}$ and $(a_n-x_n)_n\in\mc{C}_\bb{Q}$ and $a_n-x_n\neq 0$ for all $n$.
+    Because $((a_n-x_n)^{-1})_n\in\mc{C}_\bb{Q}$, $(1)_n=((a_n-x_n)^{-1})_n\times(a_n-x_n)_n\in\mc{C}_\bb{Q}$.
+    
+    Finally, it can be easily justified that $\mc{C}_\bb{Q}/M$ is a field containing an isomorphic copy of $\bb{Q}$ by considering the field embedding $\mu: \bb{Q}\hookrightarrow \mc{C}_\bb{Q}$ defined by $\mu(1)=\ol{(1)_n}$.
+\end{proof}
+
+\begin{defi}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            In the remaining of this section, we define $\bb{R}=\mc{C}_\bb{Q}/\mc{M}$.
+        }
+        \item[(b)]
+        {
+            An element $\alpha\in\bb{R}$ is defined to be not less than 0 if there is a rational sequence $(a_n)_n$ such that $\alpha=\ol{(a_n)_n}$ and $a_n\geq 0$ for all $n$.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{prop}
+    Suppose that $\alpha, \beta\in\bb{R}$.
+    Show the followings.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Either $\alpha>\beta$ or $\alpha=\beta$ or $\alpha<\beta$, and not simultaneously.
+        }
+        \item[(b)]
+        {
+            If $\alpha, \beta>0$, then $\alpha+\beta, \alpha\beta>0$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Almost clear.
+\end{proof}
+
+Given $\alpha=\ol{(a_n)_n}\in\bb{R}$, let $|\alpha|:=\ol{(|a_n|)_n}$.
+This induces the natural metric $d$ on $\bb{R}$.
+\begin{thm}
+    $(\bb{R}, d)$ is a complete metric space.
+\end{thm}
+\begin{proof}
+    Somebody proved the theorem.
+\end{proof}

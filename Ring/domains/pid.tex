@@ -1,0 +1,54 @@
+\section{Principal ideal domain}
+
+\begin{defi}[Principal ideal domain]
+    An integral domain in which every ideal is principal is called a principal ideal domain.
+\end{defi}
+
+\begin{rmk}
+    Let $D$ be a principal ideal domain and $a, b\in D$.
+    Write $(a, b)=(x)$ and $(a)\cap(b)=(y)$.
+    Then, $x$ is a greatest common divisor of $a$ and $b$, and $y$ is a least common multiple of $a$ and $b$, which exist uniquely up to multiplication by units in $D$, respectively.
+\end{rmk}
+
+\begin{thm}
+    In principal ideal domains, nonzero prime ideals and nonzero maximal ideals coincide.
+\end{thm}
+\begin{proof}
+    It suffices to prove that any nonzero prime ideal of a prinicpal ideal $D$ is a maximal ideal of $D$.
+    Let $P=(p)$ be a nonzero prime ideal of $D$, and suppose $P\leq I\nmal D$ with $I=(a)$ for some $a\in D$.
+    Since $p\in (a)$, $p=ab$ for some $b\in D$.
+    Because $p$ is a prime element of $D$, we have $p|a$ or $p|b$, which, respectively, implies $I=P$ or $a\in D^\times$ so that $I=D$.
+    Therefore, every nonzero prime ideal of $D$ is a maximal ideal of $D$.
+\end{proof}
+
+We have observed that in any integral domain a prime element is an irreducible element and that nonzero prime ideals and nonzero maximal ideals coincide in principal ideal domains.
+The following theorem states some equivalences in principal ideal domains.
+\begin{thm}[Equivalences in principal ideal domains]
+    Let $D$ be a principal ideal domain and $p$ be a nonzero element of $D$.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $p$ is a prime element of $D$.
+        }
+        \item[(b)]
+        {
+            $p$ is an irreducible element of $D$.
+        }
+        \item[(c)]
+        {
+            $(p)$ is a prime ideal of $D$.
+        }
+        \item[(d)]
+        {
+            $(p)$ is a maximal ideal of $D$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    (a) and (c) are verified to be equivalent when we defined prime elements; we have proved that (c) and (d) are equivalent; we have proved that (a) implies (b).
+    Thus, it remains to prove that (b) implies any other statement; here, we will show that (b) implies (d).
+
+    Suppose $(p)\leq I\nmal D$ and write $I=(a)$.
+    We can write $p=ab$ for some $b\in D$, thus $a$ or $b$ is a unit in $D$, which, respectively, implies that $I=D$ or $I=P$, implying that $(p)$ is a maximal ideal of $D$.
+\end{proof}

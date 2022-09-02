@@ -1,0 +1,77 @@
+\section{Basic observation regarding Galois extensions}
+
+Remark that an algebraic field extension which is both separable and normal is called a Galois extension.
+When $E/F$ is a Galois extension, we write $\aut{E/F}=\gal{E/F}$; because $E/F$ is a normal extension, we have $\aut{E/F}=\gal{E/F}=\emb{E/F}$ and we call $\gal{E/F}$ the Galois group of $E/F$ (note that $\aut{E/F}$ is a group with the multiplication being function composition.)
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (A review of \cref{equiv_normal_extensions})
+            An algebraic field extension $E/F$ is a normal extension if and only if $\emb{E/F}=\aut{E/F}$.
+            Hence, in particular, if $E/F$ is a finite extension, then $E/F$ is a normal extension if and only if $[E:F]_\sep=|\aut{E/F}|$.
+        }
+        \item[(b)]
+        {
+            (Finite Galois extension)
+            A finite field extension $E/F$ is a Galois extension if and only if $[E:F]=|\aut{E/F}|$.
+            \color{brown}(It is left as an exercise to check the equivalence.)\color{black}
+        }
+        \item[(c)]
+        {
+            Except for \Cref{infty_gal_extn}, all Galois extensions are assumed to be a finite extension.
+        }
+    \end{enumerate}
+\end{rmk}
+
+Note that if $K/F$ is a Galois extension and $E$ is an intermediate subfield of $K/F$, then $K/E$ is a Galois extension and $\gal{K/E}\leq\gal{K/F}$.
+Conversely, given a subgroup $H$ of $\gal{K/F}$, we define the fixed field $K^H$ of $H$ in $K$ by
+\begin{align*}
+    K^H:=\{x\in K: \textsf{$\sigma x=x$ for all $\sigma\in H$}\}.
+\end{align*}
+It is easy to check that $F\leq K^H\leq K$.
+
+In the following section, the fundamental theorem of finite Galois's extensions, also known as the Galois's main theorem, is introduced, in which we are interested in a one-to-one bijection between the collection of the intermediate subfields of a finite Galois extension and the collection of the subgroups of the Galois group of the extension.
+The following propositions, which could be introduced before proving the Galois's main theorem, are moved to this section, due to its generality.
+\begin{prop}\label{maximality_of_primitive_deg_implies_finiteness_of_the_extension}
+    Suppose that $E/F$ is a separable extension.
+    If there is a positive integer $n$ such that $[F(\alpha): F]\leq n$ for all $\alpha\in E$, then ($E/F$ is a finite extension and) $[E:F]\leq n$. 
+\end{prop}
+\begin{proof}
+    By assumption, there is an element $\beta\in E$ such that $[F(\beta): F]$ is the greatest.
+    \begin{center}
+        Goal: To show that $E=F(\beta)$.
+    \end{center}
+    In fact, our goal can easily be deduced from the primitive element theorem for finite separable extensions.
+    If $F(\beta)<E$, then there is an element $\gamma\in E\setminus F(\beta)$ and $F(\beta)<F(\beta, \gamma)$; because $F(\beta, \gamma)/F$ is a finite separable extension, there is an element $\alpha\in F(\beta, \gamma)$ such that $F(\beta, \gamma)=F(\alpha)$, which contradicts the maximality of $\beta$.
+\end{proof}
+\begin{lem}[Artin's theorem]
+    Let $K$ be a field and $H$ be a finite subgroup of $\aut{K}$.
+    Then $K/K^H$ is a Galois extension and $\gal{K/K^H}=H$.\footnote{If $H$ is an infinite subgroup of $\aut{K}$, Artin's theorem is not valid, in general. Hence, the map $E\mapsto\gal{K/E}$ is not a surjection, in general.}
+\end{lem}
+\begin{proof}
+    We first show that $K/K^H$ is a Galois extension.
+    For this, we show that for any $\alpha\in K$ the minimal polynomial $m(t)$ of $\alpha$ over $K^H$ is separable and has all roots in $K$.
+    
+    \color{magenta}Let $\{\sigma_1, \cdots, \sigma_r\}$ be a maximal subset of $H$ such that $\sigma_1\alpha, \cdots, \sigma_r\alpha$ are pairwise distinct. \color{black}
+    Letting $\tau_i=\sigma_1^{-1}\circ\sigma_i$ for each integer $i=1, \cdots, r$, then $\tau_1\alpha, \cdots, \tau_r\alpha$ are pairwise distinct.
+    If they are not maximally pairwise distinct, then there is another field automorphism $\tau_{r+1}$ of $K$ such that $\tau_1\alpha, \cdots, \tau_r\alpha, \tau_{r+1}\alpha$ are pairwise distinct; then $\sigma_1\alpha, \cdots, \sigma_r\alpha, \sigma_{r+1}\alpha$ are also pairwise distinct, which contradicts the maximality of $\{\sigma_1, \cdots, \sigma_r\}$.
+    Hence, $\{\tau_1=\id{K}, \cdots, \tau_r\}$ is also a maximal subset of $H$ such that $\tau_1\alpha, \cdots, \tau_r\alpha$ are pairwise distinct; thus, we may assume that $\sigma_1=\id{K}$.
+
+    Define a polynomial
+    \begin{align*}
+        f(t):=(t-\sigma_1\alpha)\cdots(t-\sigma_r\alpha),
+    \end{align*}
+    which is satisfied by $\alpha$.
+    Given $\tau\in H$, by the maximality of $\{\sigma_1, \cdots, \sigma_r\}$, we have $\tau\circ\sigma_i\in\{\sigma_1, \cdots, \sigma_r\}$ for all $i$; $\tau\in H$ \textit{permutes} $\{\sigma_1, \cdots, \sigma_r\}$.
+    Therefore, $f^\tau(t)=f(t)$ and $f(t)\in K^H[t]$, for evey coefficient of $f(t)$ is fixed by every field automorphism in $H$.
+    Because $f(t)$ is a multiple of $m(t)$ and $f(t)$ is separable, $m(t)$ is separable and $K/K^H$ is a separable extension.
+    Moreover, a root of $m(t)$ is of the form $\sigma_i\alpha$ for some $i$, which is contained in $K$, so $K/K^H$ is a normal extension.
+    Because $[F(\alpha): F]\leq r\leq |H|<\infty$ for all $\alpha\in K$, by \cref{maximality_of_primitive_deg_implies_finiteness_of_the_extension}, we conclude that $K/K^H$ is a finite Galois extension with $[K:K^H]\leq |H|$.
+
+    We finally show that $\gal{K/K^H}=H$.
+    It is clear that $H\leq\gal{K/K^H}$, thus it follows from
+    \begin{align*}
+        |H|\leq|\gal{K/K^H}|=[K:K^H]\leq|H|
+    \end{align*}
+    that $\gal{K/K^H}=H$.
+\end{proof}

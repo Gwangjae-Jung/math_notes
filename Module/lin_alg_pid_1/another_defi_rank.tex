@@ -1,0 +1,60 @@
+\section{Another definition of the rank}
+
+Again, let $D$ be a PID. and $M$ be a finitely generated $D$-module.
+We have studied that the rank of a finitely generated $D$-module is determined by the free part of the module.
+For a vector space over a field, its dimension and the maximal cardinality of linearly independent subset coincided.
+The following theorem ensures that such intuition for vector spaces over fields also holds for modules over PID.s.
+\begin{thm}
+    The maximal number of $D$-linearly independent elements of $M$ is the rank of $M$.
+\end{thm}
+\begin{proof}
+    Let $m$ be the maximal number of $D$-linearly independent elements of $M$.
+    By the definition of the rank of a finitey generated module over a PID., it is clear that $\rank_D(M)\leq m$.
+    If $\mc{B}=\{x_1, \cdots, x_r, x_{r+1}\}$ is a subset of $M$ which is $D$-linearly independent ($r=\rank_D(M)$), then $\mc{B}$ is a $D$-basis of the $D$-submodule $Dx_1\oplus\cdots\oplus Dx_{r+1}$ of $M$, thus $M$ has a rank $(r+1)$ free $D$-submodule of $M$, a contradiction.
+    Therefore, $\rank_D(M)=m$.
+\end{proof}
+
+Some properties regarding the rank of a module over a PID. now follows.
+The following theorem states that a finitely generated $D$-module $M$ has rank $n$ if and only if $M$ is nearly isomorphic to $D^n$.
+\begin{thm}
+    Let $M$ be a finitely generated $D$-module of rank $n$, and let $\{x_1, \cdots, x_n\}$ is a $D$-linearly independent subset of $M$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Then $N:=Dx_1\oplus\cdots\oplus Dx_n\approx D^n$, and $M/N$ is a torsion $D$-module.
+        }
+        \item[(b)]
+        {
+            Conversly, suppose that $M$ contains a free $D$-submodule $N$ of rank $n$ and $M/N$ is a torsion $D$-module.
+            Then $\rank_D(M)=n=\rank_D(N)$.
+        }
+    \end{enumerate}
+    Therefore, $\rank_D(M)=n$ if and only if there is a free $D$-submodule $N$ of $M$ such that $\rank_D(N)=n$ and $M/N$ is a torsion $D$-module.
+\end{thm}
+\begin{proof}
+    The former implication is easy to prove.
+    To show the latter implication, it suffices to show that $S\cup\{x_1, \cdots, x_n\}$ is never $D$-linearly independent whenever $S\subset M$, where $\{x_1, \cdots, x_n\}$ is a $D$-basis of $N$.
+    Suppose $y_1, \cdots, y_k\in M$.
+    Then, for each $1\leq i\leq k$, there is a nonzero element $r_i$ of $D$ such that $r_i y_i\in N$, and such $r_i$'s gives a nontrivial $D$-linear combination of 0 by $\{x_1, \cdots, x_n, y_1, \cdots, y_k\}$.
+\end{proof}
+
+The following two propositions are what we have desired.
+\begin{prop}
+    Let $A$ and $B$ be $D$-modules of finite ranks.
+    Then $\rank_D(A\oplus B)=\rank_D(A)+\rank_D(B)$.
+\end{prop}
+\begin{proof}
+    Writing $A=A_\tor\oplus\mc{F}_A$ and $B=B_\tor\oplus\mc{F}_B$ ($\mc{F}_A$ and $\mc{F}_B$ are free parts of $A$ and $B$, respectively), we have $(A\oplus B)/(\mc{F}_A\oplus\mc{F}_B)\approx A/\mc{F}_A\oplus B/\mc{F}_B$, so $(A\oplus B)/(\mc{F}_A\oplus\mc{F}_B)$ is a torsion $D$-module.
+    Therefore, $\rank_D(A\oplus B)=\rank_D(A)+\rank_D(B)$.
+\end{proof}
+
+\begin{prop}
+    Let $M$ be a $D$-module of a finite rank and let $N$ be a $D$-submodule of $M$.
+    Then $\rank_D(M/N)=\rank_D(M)-\rank_D(N)$.
+\end{prop}
+\begin{proof}
+    Write $h=\rank_D(M/N)$.
+    If $\{x_1, \cdots, x_n\}$ is a $D$-basis ofthe free part of $N$ and $\ol{\mc{B}}:=\{\ol{y_1}, \cdots, \ol{y_h}\}$ is a $D$-basis of the free part of $\ol M=M/N$, then $\mc{C}:=\{x_1, \cdots, x_n, y_1, \cdots, y_h\}$ is a $D$-linearly independent subset of $M$.
+    Also, $M/\genone{\mc{C}}\approx (M/N)/(\genone{\mc{C}}/N)= \ol M/\genone{\ol{\mc{B}}}$ is a torsion $D$-module.
+    Therefore, $\rank_D(M)=\rank_D(N)+\rank_D(M/N)$.
+\end{proof}

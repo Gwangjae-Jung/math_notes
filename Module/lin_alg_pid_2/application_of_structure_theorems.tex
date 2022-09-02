@@ -1,0 +1,208 @@
+\section{Applications of structure theorems}\label{applications of structure theorems}
+
+As assumed starting from the preceeding chapter, we assume that $D$ is a PID. and $M$ is a finitely generated $D$-module (by here, $M$ need not be a \textit{torsion} module).
+By the structure theorem, there is a decomposition of $M$ into a torsion $D$-submodule and a free $D$-submodule.
+Moreover, if $M=T_1\oplus\mc{F}_1=T_2\oplus\mc{F}_2$ are such decompositions ($T_i$ is a torsion $D$-submodule of $M$ and $\mc{F}_i$ is a free $D$-submodule of $M$ for $i=1, 2$), then $T_1=M_\tor=T_2$ and $\mc{F}_1\approx M/M_\tor\approx \mc{F}_2$.
+Since the free part of $M$ has an obvious structure (being isomorphic to $R^k$ for some nonnegative integer $k$), the structure of $M_\tor$ needs to be investigated to fully understand the structure of $M$.
+Thus, from now on, we assume that $M$ is a finitely generated torsion $D$-module.
+
+The first tool required to understand the structure of $M$ is the primary decomposition theorem, which states that a finitely generated torsion module over a PID. can be understood as the internal direct sum of the $p$-torsion submodules for $p\in\mc{P}$; to be precise, if $\ann_M(D)=(m)$ with the factorization $m={p_1}^{f_1}\cdots{p_k}^{f_k}$, then $M=\bigoplus_{i=k}\Ann_M({p_i}^{f_i})=\bigoplus_{p\in\mc{P}} M(p)$.
+And the second tool (or together with the first tool) is the cyclic decomposition theorem, which determines the isomorphic type of the given torsion module.
+In fact, isomorphic torsion $D$-modules share the same invariants and non-isomorphic torsion $D$-modules have distinct invariants.
+
+\subsection{Finitely generated abelian groups}
+
+By the structure theorem, given a finitely generated abelian group $A$, we have $A=A_\tor\oplus\mc{F}$ for some free $\bb{Z}$-submodule of $A$.
+Thus, we may assume that $A$ is a torsion $\bb{Z}$-module.
+\begin{exmp}
+    Let $A$ be an abelian group of order $72=2^3\cdot 3^2$.
+    Letting $\ann_\bb{Z}(A)=(m)$ for some positive integer $m$, since $m|n$, $m=2^a\cdot 3^b$, where $a$ and $b$ are integers such that $1\leq a\leq 3$ and $1\leq b\leq 2$.\footnote{Note that $a, b$ cannot be zero, because there are elements of $A$ of order 2 and 3, respectively.}
+    By the primary decomposition theorem, $A=A(2)\oplus A(3)$ and $\ann_\bb{Z}(A(2))=(2^a)$ and $\ann_\bb{Z}(A(3))=(3^b)$.
+    Using the cyclic decomposition theorem, the isomorphic types of $A(2)$ and $A(3)$ are given as follows:
+    \begin{eqnarray*}
+        A(2) & : &
+            Z_2 \oplus Z_2 \oplus Z_2\,(a=1),\;
+            Z_2 \oplus Z_4\,(a=2),\;
+            Z_8\,(a=3)\\
+        A(3) & : &
+            Z_3 \oplus Z_3\,(b=1),\;
+            Z_9\,(b=2).
+    \end{eqnarray*}
+    Hence, there are 6 isomorphic types for $A$.
+
+    In fact, if $A$ is an abelian group of order ${p_1}^{f_1}\cdots{p_k}^{f_k}$ with $p_1, \cdots, p_k$ being pairwise distinct positive prime numbers and $f_i\geq 1$ for all $i$, then $\ann_\bb{Z}(A)=(m)$ with $m={p_1}^{e_1}\cdots{p_k}^{e_k}$ for some $1\leq e_i\leq f_i$ for each $i$ and $A=\bigoplus_{i=1}^k A(p_i)$ with $\ann_\bb{Z}(A(p_i))=({p_i}^{e_i})$ for each $i$.
+    Because there are $\pi(f_i)$ isomorphic types for each $A(p_i)$, there are $\pi_(f_1)\cdots\pi(f_k)$ isomorphic types for $A$.
+\end{exmp}
+
+\begin{prop}
+    Let $A$ be a finite abelian group with $\ann_\bb{Z}(A)=(m)$ for some positive integer $m$.
+    Then $A$ is cyclic if and only if $|A|=m$.
+\end{prop}
+\begin{proof}
+    Note that it is alwasy true that $m$ divides the order of $A$.
+    If $A$ is cyclic, then there is an element $x$ of $A$ whose order is $|A|$, so $m=|A|$.
+    Conversely, if $m=|A|$, then there is an element $y$ of $A$ annihiated by $m$ but not by any proper divisor of $m$ (otherwise, $\ann_\bb{Z}(A)$ would properly contain $(m)$, a contradiction).
+    Then $\genone{y}$ is a subgroup of $A$ of order $|A|$, so $A$ is cyclic.
+\end{proof}
+
+We now introduce an application of the above proposition in the field theory.
+\begin{prop}
+    Let $F$ be a field and $G$ be a finite subgroup of the multiplicative group $F^\times$.
+    Then $G$ is a cyclic group.
+\end{prop}
+\begin{proof}
+    Let $n$ be the order of $G$.
+    Since $G$ is abelian, by the cyclic decomposition theorem, there are positive integers $d_1, \cdots, d_k$ with $d_1|\cdots|d_k$ such that $G\approx Z_{d_1}\times\cdots\times Z_{d_k}$ and $\ann_\bb{Z}(G)=(d_k)$.
+    Hence, every element of $G$ is a root of the polynomial $x^{n_k}-1$, which has at most $n_k$-distinct roots.
+    Therefore, $k=1$ and $G$ is cyclic.
+\end{proof}
+
+\subsection{Vector spaces over fields}
+
+Let $V$ be an $n$-dimensional vector space over a field $F$ and let $T$ be an $F$-linear operator on $V$.
+Write
+\begin{align*}
+    \phi_T(t)=p_1(t)^{e_1}\cdots p_k(t)^{e_k}\quad\textsf{and}\quad m_T(t)=p_1(t)^{f_1}\cdots p_k(t)^{f_k},
+\end{align*}
+where $p_1(t), \cdots, p_k(t)$ are pairwise distinct monic irreducible polynomial over $F$ and $1\leq f_i\leq e_i$ for each $i=1, \cdots, k$.
+
+\subsubsection*{Applying the primary decomposition theorem on $V$}
+By the primary decomposition theorem, $V=\bigoplus_{i=1}^k\Ann_V((p_i(t)^{f_i}))=\bigoplus_{i=1}^k\ker(p_i(T)^{f_i})$.
+For notational convinience, let $W_i=\Ann_V(p_i(t)^{f_i})=\ker(p_i(T)^{f_i})$ and $T_i=T|_{W_i}$ for each $i=1, \cdots, k$.
+Then, whenever $\mc{B}_i$ is an $F$-basis of $W_i$ and $\mc{B}=\bigsqcup_{i=1}^k\mc{B}_i$, then
+\begin{align*}
+    [T]^\mc{B}_\mc{B}=\begin{pmatrix}
+        [T_1]^{\mc{B}_1}_{\mc{B}_1}&&&\\
+        &[T_2]^{\mc{B}_2}_{\mc{B}_2}&&\\
+        &&\ddots&\\
+        &&&[T_k]^{\mc{B}_k}_{\mc{B}_k}
+    \end{pmatrix}.
+\end{align*}
+Hence, $m_T(t)=m_{T_1}(t)\cdots m_{T_k}(t)$ and $\phi_T(t)=\phi_{T_1}(t)\cdots\phi_{T_k}(t)$.
+The following results can also be deduced.
+\begin{enumerate}
+    \item[(\romannumeral 1)]
+    {
+        $\ann_{F[t]}(\Ann_V(p_i(t)^{f_i}))=(p_i(t)^{f_i})$, so $m_{T_i}(t)=p_i(t)^{f_i}$.
+        Also, $\phi_{T_i}=p_i(t)^{e_i}$, so $\dim_F(W_i)=\deg(p_i(t)^{e_i})=e_i\deg(p_i(t))$.
+    }
+    \item[(\romannumeral 2)]
+    {
+        Whenever $g_i\geq f_i$, we have $\Ann_V(p_i(t)^{f_i})=V(p_i(t))=\Ann_V(p_i(t)^{g_i})$.
+        Thus, in particular, $W_i=\ker(p_i(T)^{e_i})$.
+    }
+\end{enumerate}
+Before considering the cylcic decomposition, we deduce a criterion to determine if a given linear operator is diagonalizable.
+\begin{cor}[Diagonalizability]
+    $T$ is diagonalizable over $F$ if and only if the minimal polynomial of $T$ splits completely over $F$.
+\end{cor}
+\begin{proof}
+    If $T$ is diagonalizable over $F$ and has eigenvalues $\lambda_1, \cdots, \lambda_k$, then $(t-\lambda_1)\cdots(t-\lambda_k)$ is the minimal polynomial of $T$.
+    Conversely, if the minimal polynomial of $T$ splits completely over $F$, then the primary decomposition of $V$ with respect to $T$ is the eigenspace decomposition of $V$, i.e., $V$ is diagonalizable.
+\end{proof}
+
+\subsubsection*{Applying the cyclic decomposition theorem on each $W_i$}
+After determining the primary decomposition of $V$ with respect to a given linear operator $T$, for each $W_i$, we can apply the first form of cyclic decomposition: For each primary summand $W_i$,
+\begin{enumerate}
+    \item[(\romannumeral 1)]
+    {
+        there are $T$-invariant subspaces $U_{i 1}, \cdots, U_{i h_i}$ of $W$ such that $W_i = U_{i 1}\oplus\cdots\oplus U_{i h_i}$.
+        }
+    \item[(\romannumeral 2)]
+    {
+        Writing $\phi_{T|_{U_{i j}}}(t)=m_{T|_{U_{i j}}}(t)=p(t)^{r_{i j}}$ for each $j=1, \cdots, h_i$,  there are unique integer $h_i$ and $r_{i 1}, \cdots, r_{i h_i}$ such that $f_i=r_{i 1}\geq\cdots\geq r_{i h_i}\geq 1$.
+    }
+\end{enumerate}
+As illustrated in the preceeding section, the invariants
+\begin{align*}
+    \{m_T(t), h_i, r_{ij}: 1\leq i\leq k, 1\leq j\leq h_i\}
+\end{align*}
+determines the isomorphic types of $V$.
+In particular, since $\dim_F W_i=\sum_{j=1}^{h_i}\dim_F U_{ij}=\sum_{j=1}^{h_i}(r_{ij}\deg p_i(t))$, the invariants determines the isomorphic types of $V$.
+In fact, the invariants determines the similarity class of the operator $T$.
+\begin{prop}
+    The invariants determine the similarity class of $T$.
+\end{prop}
+\begin{proof}
+    As explained above, from the invariants we can restore the dimension of $V$.
+    Considering a matrix representation of $T$ restricted to the $T$-cyclic subspace with the minimal polynomial $p_i(t)^{r_{ij}}$ for each $i$ and $j$, there is an $F$-basis $\mc{B}_{i j}$ of the $T$-cyclic subspace such that
+    \begin{align*}
+        [T|_{U_{i j}}]^{\mc{B}_{i j}}_{\mc{B}_{i j}}=C(p_i^{r_{i j}}).
+    \end{align*}
+    This determines a matrix representation of $T$ restricted to each primary summand up to similarity transform, hence determines a similarity class of $T$.
+\end{proof}
+\begin{cor}
+    If it is given that the characteristic polynomial of $T$ is $p_1(t)^{e_1}\cdots p_k(t)^{e_k}$, there are $\pi(e_1)\cdots\pi(e_k)$-distinct similarity classes of $T$.
+\end{cor}
+
+In \cref{T-cyclic basic}, it is proved that if $V$ is $T$-cyclic then $\phi_T(t)=m_T(t)$.
+The statement and the proof of the converse is given as follows.
+\begin{prop}
+    Suppose that the characteristic polynomial and the minimal polynomial of $T$ are the same.
+    Then $V$ is $T$-cyclic, i.e., $V$ is a cyclic $F[t]$-module.
+\end{prop}
+\begin{proof}
+    Using the notation of in \cref{CDT 1 with the PDT}, we have $e_i=f_i$ and $h_i=1$ for all $i=1, \cdots, k$.
+    Therefore, by the Chinese remainder theorem
+    \begin{align*}
+        V\approx \frac{F[t]}{(p_1(t)^{f_1})}\oplus\cdots\oplus \frac{F[t]}{(p_k(t)^{f_k})}\approx \frac{F[t]}{(m_T(t))},
+    \end{align*}
+    so $V$ is a cyclic $F[t]$-submodule.
+\end{proof}
+
+\begin{prob}
+    Suppose that $E/F$ be a field extension and $A, B\in\mc{M}_{n, n}(F)$.
+    Show that $A\sim B$ over $F$ if $A\sim B$ over $E$.
+\end{prob}
+\begin{sol}
+    It suffices to show that the invariants computed over $E$ and those computed over $F$ are equal; then it is naturally deduced that the invariants of $A$ and $B$ computed over $F$ are equal so $A$ and $B$ are similar over $F$.
+    Let $M$ be the rational canonical form of $A$ computed over $F$, which is unique up to similarity transform.
+    Since $M$ can be considered a rational canonical form of $A$ computed over $E$, by the uniqueness of the invariants, $M$ is similar to the rational canonical form of $A$ computed over $E$.
+    This implies that the invariants of $A$ computed over $E$ and $F$ are equal.
+\end{sol}
+\begin{rmk}
+    In fact, in the above solution, we proved a more general result: the invariants computed over a field and those computed over an extended field are identical.
+    Transitivity of similarity is due to this general result and the uniqueness of cyclic decomposition.
+    By the general result, it can easily be deduced that the minimal polynomial of a linear operator over a base field and the minimal polynomial computed over a subfield are equal.
+\end{rmk}
+
+\subsection{Jordan canonical form}
+Assume that $F$ is algebraically closed.
+Then we can write $m_T(t)=(t-\lambda_1)^{f_1}\cdots(t-\lambda_k)^{f_k}$ and $\phi_T(t)=(t-\lambda_1)^{e_1}\cdots(t-\lambda_k)^{e_k}$.
+Letting $U_{i j}$ be the $(i, j)$-th $T$-cyclic subspace, define $N_{i j}=(T-\lambda_1\id{V})|_{U_{i j}}$.
+Then there is a $T$-cyclic basis $\mc{B}_{i j}$ such that
+\begin{align*}
+    [N_{i j}]^{\mc{B}_{i j}}_{\mc{B}_{i j}}=\begin{pmatrix}
+        0   &       &       &       &   \\
+        1   &   0   &       &       &   \\
+            &   1   &   0   &       &   \\
+            &       &\ddots &\ddots &   \\
+            &       &       &   1   &   0
+    \end{pmatrix}\in\mc{M}_{r_{i j}, r_{i j}}(F).
+\end{align*}
+(By reversing $\mc{B}_{i j}$, we can obtain the transposed nilpotent matrix.)
+Hence,
+\begin{align*}
+    [T_{U|_{i j}}]^{\mc{B}_{i j}}_{\mc{B}_{i j}}=\begin{pmatrix}
+        \lambda_i   &           &           &       &   \\
+            1       &\lambda_i  &           &       &   \\
+                    &     1     &\lambda_i  &       &   \\
+                    &           &\ddots     &\ddots &   \\
+                    &           &           &   1   &\lambda_i
+    \end{pmatrix}\in\mc{M}_{r_{i j}, r_{i j}}(F),
+\end{align*}
+and gathering all the (reversed) bases, we obtain the Jordan canonical form of $T$.
+
+\begin{obs}
+    Let $\mc{C}$ be the $F$-basis of $V$ obtained by reversing an $F$-basis $\mc{B}$ of $V$.
+    If $[T]^\mc{B}_\mc{B}=(a_{i, j})$, where $1\leq i\leq n$ and $1\leq j\leq n$, then
+    \begin{align*}
+        [T]^\mc{C}_\mc{C}=\begin{pmatrix}
+            a_{n, n}    &   a_{n, n-1}      &   \cdots  &   a_{n, 1}    \\
+            a_{n-1, n}  &   a_{n-1, n-1}    &   \cdots  &   a_{n-1, 1}  \\
+            \vdots      &   \vdots          &   \ddots  &   \vdots      \\
+            a_{1, n}    &   a_{1, n-1}      &   \cdots  &   a_{1, 1}
+        \end{pmatrix}.
+    \end{align*}
+    In particular, applying this idea to a Jordan canonical form, we find that a Jordan canonical form is similar to its transposition over $F$; implying that $A\sim A^T$ over $F$.
+\end{obs}

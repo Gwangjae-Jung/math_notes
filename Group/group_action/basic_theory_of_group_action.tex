@@ -1,0 +1,50 @@
+\section{Basic theory of group action}
+
+\begin{defi}[Group action]
+    Let $G$ be a group and $A$ be a nonempty set.
+    A function $\sigma: G\times A\rightarrow A$ is called a group action of $G$ on $A$, if $\sigma$ satisfies the following axioms: simply writing $\sigma(g, a)=g\cdot a$ for all $g\in G$ and $a\in A$,
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $1_G\cdot a=a$ for all $a\in A$.
+        }
+        \item[(b)]
+        {
+            $x\cdot(y\cdot a)=xy\cdot a$ for all $x, y\in G$ and $a\in A$.
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{defi}
+    Suppose that a group $G$ acts on a nonempty set $A$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Stabilizer)
+            Given $a\in A$, the \color{brown}subgroup $G_a:=\{g\in G: g\cdot a=a\}$ of $G$ \color{black}is called the stabilizer of $a\in A$.
+        }
+        \item[(b)]
+        {
+            (Orbit)
+            Given $a\in A$, the subset $G\cdot a=\{g\cdot a: g\in G\}$ is called the orbit of $a$.
+        }
+        \item[(c)]
+        {
+
+        }
+        \item[(a)]
+        {
+
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{obs}
+    Suppose that a group $G$ acts on a nonempty set $A$.
+    Then the collection of all orbits in $A$ form a partition of $A$.
+    Hence, we have the following equation, when $A$ is a finite set:
+    \begin{align*}
+        |A|=|A^G|+\sum_{i=1}^r|G\cdot a_i|,
+    \end{align*}
+    where $A^G$ is the collection of elements of $A$ whose orbit has exactly one element and $a_1, \cdots, a_r$ are representatives of pairwise disjoint orbits with more than one elements.
+\end{obs}

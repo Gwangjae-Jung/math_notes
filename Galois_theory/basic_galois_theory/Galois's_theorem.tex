@@ -1,0 +1,229 @@
+\section{Fundamental theorems of finite Galois extensions}
+
+\begin{thm}[Galois's theorem (Part \Romannumeral{1})]\label{Galois's_thm_1}
+    Let $K/F$ be a finite Galois extension.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            There is an order-reversing bijection between the intermediate subfields of $K/F$ and the subgroups of $\gal{K/F}$, which maps an intermediate subfield $E$ of $K/F$ to the corresponding Galois group $\gal{K/E}$ and a subgroup $H$ of $\gal{K/F}$ to the fixed field $K^H$.
+        }
+        \item[(b)]
+        {
+            If $E$ is an intermediate subfield of $K/F$, then $\emb{E/F}$ is in bijection with $\gal{K/F}/\gal{K/E}$.
+            Furthermore, $E/F$ is a Galois extension if and only if $\gal{K/E}\nmal\gal{K/F}$.
+            In particular, if $E/F$ is a Galois extension, then
+            \begin{align*}
+                \gal{E/F}\approx\frac{\gal{K/F}}{\gal{K/E}}.
+            \end{align*}
+        }
+    \end{enumerate}
+\end{thm}
+\begin{rmk}
+    Let $K/F$ be a finite Galois extension.
+    Suppose that $F\leq E_1\leq E_2\leq K$ and $H_1\leq H_2\leq \gal{K/F}$.
+    By order-reversing we mean that $\gal{K/E_1}\geq\gal{G/E_2}$ and $K^{H_1}\geq K^{H_2}$, which is easy to verify.
+    Hence, the subfield lattice of a finite Galois extension and the \textit{flipped} subgroup lattice of the Galois group are the same.
+    Moreover, corresponding extension degrees and group indices coincide; for example, $[E_2: E_1]=[K:E_1]/[K:E_2]=[\gal{K/E_1}: \gal{K/E_2}]$ and $[K^{H_1}: K^{H_2}]=[\gal{K/K^{H_2}}: \gal{K/K^{H_1}}]=[H_2: H_1]$.
+    Finally, since an intermediate subfield $E$ of $K/F$ is a Galois extension over $F$ if and only if $E/F$ is a normal extension, $E/F$ is a normal extension if and only if $\gal{K/E}$ is a normal subgroup of $\gal{K/F}$.
+\end{rmk}
+
+To prove the Galois's theorem, we need the following proposition:
+\begin{prop}
+    Suppose that $K/F$ is a finite Galois extension and $F\leq E\leq K$.
+    Then $K^{\gal{K/E}}=E$.
+\end{prop}
+\begin{proof}
+    Write $L=K^\gal{K/E}$.
+    It is clear that $E\leq K^\gal{K/E}=L$, and it follows that $\gal{K/L}\leq\gal{K/E}$.
+    If $\sigma\in\gal{K/E}$, then $\sigma x=x$ for all $x\in L$, thus $\sigma\in\gal{K/L}$, i.e., $\gal{K/E}\leq\gal{K/L}$.
+    Thus, $\gal{K/E}=\gal{K/L}$ and
+    \begin{align*}
+        [K:E]=|\gal{K/E}|=|\gal{K/L}|=[K:L]
+    \end{align*}
+    implies that $L=E$.
+\end{proof}
+\begin{rmk}
+    This also explains that the map $E\mapsto\gal{K/E}$ is injective; if $\gal{K/E_1}=\gal{K/E_2}$, then $E_1=K^{\gal{K/E_1}}=K^{\gal{K/E_2}}=E_2$.
+\end{rmk}
+\begin{proof}[Proof of (a) of \cref{Galois's_thm_1}]
+    Clearly, the given bijection is order-reversing.
+    If $F\leq E\leq K$, then $E\mapsto\gal{K/E}\mapsto K^\gal{K/E}=E$ by the preceeding proposition; if $H\leq\gal{K/F}$, then $H\mapsto K^H\mapsto\gal{K/K^H}=H$ by Artin's theorem.
+\end{proof}
+
+\begin{prop}
+    Let $K/F$ be a Galois extension (not necessarily finite) and suppose $\sigma\in\gal{K/F}$.
+    If $F\leq E\leq K$, then both $K/E$ and $K/\sigma E$ are Galois extensions, and
+    \begin{align*}
+        \gal{K/\sigma E}=\sigma\cdot\gal{K/E}\cdot\sigma^{-1}.
+    \end{align*}
+\end{prop}
+\begin{proof}
+    It is clear that $K/E$ and $K/\sigma E$ are Galois extensions.
+    Define a map $\rho: \gal{K/E}\rightarrow\gal{K/\sigma E}$ by $\rho(\tau)=\sigma\circ\tau\circ\sigma^{-1}$.
+    Then $\rho$ is a well-defines group homomorphism with $\ker\rho=\{\id{K}\}$.
+    Also, given $\eta\in\gal{K/\sigma E}$, clearly $\tau=\sigma^{-1}\circ\eta\sigma\in\gal{K/E}$ and $\rho(\tau)=\eta$, so $\rho$ is surjective.
+    Therefore, $\gal{K/\sigma E}=\range\rho=\sigma\cdot\gal{K/E}\cdot\sigma^{-1}$.
+\end{proof}
+\begin{proof}[Proof of (b) of \cref{Galois's_thm_1}]
+    Because $E/F$ is a separable extension, we have
+    \begin{align*}
+        |\emb{E/F}|=[E:F]=\frac{[K:F]}{[K:E]}=[\gal{K:F}: \gal{K/E}],
+    \end{align*}
+    so $\emb{E/F}$ and $\gal{K/F}/\gal{K/E}$ are in bijection.
+
+    We now prove the normality part.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            Suppose that $E/F$ is a normal extension (or equivalently, a Galois extension).
+            Define a group homomorphism $\rho: \gal{K/F}\rightarrow\gal{E/F}$ by
+            \begin{align*}
+                \rho(\sigma)=\sigma|_E\quad(\sigma\in\gal{K/F}).
+            \end{align*}
+            It is clear that $\ker\rho=\gal{K/E}$.
+            Given $\tau\in\gal{E/F}$, there is an extension $\widetilde\tau: K\rightarrow\ol F$, where $\ol F$ is an algebraic closure of $F$ containing $K$.
+            The desired isomoprhism follows from the first isomoprhism theorem.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Assume that $E/F$ is not a normal extension (or equivalently, not a Galois extension).
+            Then there is an $F$-embedding $\sigma: E\hookrightarrow\ol F$ such that $\sigma E\neq E$.
+            Then, $\gal{K/E}\neq\gal{K/\sigma E}$ by (a) of \cref{Galois's_thm_1}, while
+            \begin{align*}
+                \gal{K/\sigma E}=\sigma\cdot\gal{K/E}\cdot\sigma^{-1}=\gal{K/E}.
+            \end{align*}
+            Therefore, if $\gal{K/E}$ is a normal subgroup of $\gal{K/F}$, then $E/F$ is a normal (Galois) extension.
+        }
+    \end{enumerate}
+    The desired isomoprhism under the condition that $E/F$ is a normal extension follows from $\gal{K/E}=\ker\rho\nmal\gal{K/F}$.
+\end{proof}
+
+The following further properties of Galois correspondence can be easily verified.
+\begin{thm}[Galois's theorem (Part \Romannumeral{2})]\label{Galois's_thm_2}
+    Let $K/F$ be a finite Galois extension and suppose $E_1, E_2$ are intermediate subfields of $K/F$.
+    Write $H_1=\gal{K/E_1}$ and $H_2=\gal{K/E_2}$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\gal{K/E_1E_2}=H_1\cap H_2$, i.e., $K^{H_1\cap H_2}=E_1E_2$.
+        }
+        \item[(b)]
+        {
+            $\gal{K/(E_1\cap E_2)}=\genone{H_1, H_2}$, i.e., $K^{\genone{H_1, H_2}}=E_1\cap E_2$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    We first show that $K^{H_1\cap H_2}=E_1E_2$.
+    Since $E_1E_2$ contains $E_1$ and $E_2$, $\gal{K/E_1E_2}$ is contained in $H_1$ and $H_2$, so $K^{H_1\cap H_2}\leq K^\gal{K/E_1E_2}=E_1E_2$.
+    Conversely, since $H_1\cap H_2$ is contained in $H_1$ and $H_2$, its fixed field $K^{H_1\cap H_2}$ contains $E_1$ and $E_2$, hence $E_1E_2\leq K^{H_1\cap H_2}$.
+
+    We now prove the second correspondence.
+    Since $E_1\cap E_2$ is contained in $E_1$ and $E_2$, $\gal{K/(E_1\cap E_2)}$ contains $H_1\cup H_2$, hence $E_1\cap E_2\leq K^\genone{H_1, H_2}$.
+    Conversely, since $K^\genone{H_1, H_2}$ is contained in $K^{H_1}$ and $K^{H_2}$, $K^\genone{H_1, H_2}\leq E_1\cap E_2$.
+\end{proof}
+
+\cref{Galois's_thm_1,Galois's_thm_2}, together, are called Galois's main theorem.
+Sometimes, the following correspondence is also included in Galois's main theorem.
+\begin{prop}
+    Suppose that $K/F$ and $L/F$ are finite Galois extensions, where $K, L\leq\ol F$.
+    Then $KL/F$ is a finite Galois extension and $\gal{KL/L}\approx\gal{K/(K\cap L)}$.
+\end{prop}
+\begin{proof}
+    By assumption, it is clear that the extension $KF/L$ is finite, separable, and normal, i.e., $KF/L$ is a finite Galois extension.
+    To show the isomorphism, consider the map $\rho: \gal{KL/L}\rightarrow\gal{K/(K\cap L)}$ defined by $\rho(\sigma)=\sigma|_K$ for $\sigma\in\gal{KL/L}$.
+    Since $K/F$ is a normal extension, $\sigma(K)=K$ for all $\sigma\in\gal{KL/L}$, i.e., $\rho$ is a well-defined group homomorphism.
+    Also, $\ker\rho=\{\id{KL}\}$, so $\rho$ is injective.
+    Thus, it remains to show that $\rho$ is surjective.
+    \color{magenta}The problem in this step is we could not apply the isomoprhism extension theorem to prove the surjectivity, for an extension may not be the identity map on $L$. \color{black}
+    Instead, we show that $\rho$ is surjective by showing $\range\rho=\gal{K/(K\cap L)}$.
+    For this, it suffices to show $\range\rho\geq\gal{K/(K\cap L)}$, or equivalently, $K^{\range\rho}\leq K\cap L$.
+    If $x\in K^{\range\rho}$ and $\sigma\in\gal{KL/L}$, then $\sigma(x)=\sigma|_K(x)=x$.
+    Thus, $x\in(KL)^\gal{KL/L}=L$, implying that $K^{\range\rho}\leq K\cap L$, as desired.
+\end{proof}
+\begin{rmk}
+    The following results can be considered corollaries of the above proposition: Suppose $K/F$ and $L/F$ are finite Galois extensions with $K, L\leq \ol F$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+                $[KL:F]=[KL:L][L:F]=\dfrac{[K:F][L:F]}{[K\cap L:F]}$.
+        }
+        \item[(b)]
+        {
+                $[KL:L]$ divides $[K:F]$.
+                In particular, $[KL:L]=[K:F]$ if and only if $K\cap L=F$.
+        }
+    \end{enumerate}
+\end{rmk}
+\begin{rmk}
+    In the above proof, one might think of the following proof with a gap when proving the surjectivity of $\rho$ by constructing an extension $\widetilde{\tau}\in\gal{KL/L}$ of $\tau\in\gal{K/(K\cap L)}$.
+    
+    \begin{enumerate}
+        \item[(1)]
+        {
+            Since $L/F$ is a finite separable extension, by the primitive element theorem, there is an element $\gamma\in L$ such that $L=(K\cap L)(\gamma)$.
+            }
+        \item[(2)]
+        {
+            Hence, $KL=K(\gamma)$.
+            If $\gamma\in K$, there is nothing to prove, for $K=KL$ and $L\leq K$.
+        }
+        \item[(3)]
+        {
+            Assume $\gamma\notin K$.
+            \color{red}Since $\gamma$ is an algebraic conjugate of $\gamma$, by the isomoprhism extension theorem, there is an extension $\widetilde{\tau}: KL\rightarrow KL$ extending $\tau$. \color{black}
+            It is easy to check that $\widetilde{\tau}\in\gal{KL/L}$.
+        }
+    \end{enumerate}
+    In the above proof, when one seeks to apply the isomophism extension theorem, one should consider the minimal polynomial $m(t)$ of $\gamma$ over $K$ and $m^\tau(t)$.
+    Although $m(\gamma)=0$ is clear, \color{red}$m^\tau(t)$ may not be satisfied by $\gamma$, unless $m(t)\in (K\cap L)[t]$\color{black}, where the field $K\cap L$ is fixed by $\tau$.
+    (We say this error is a `gap,' because it is in fact true, as justified in \cref{gapped_proof: Galois's_thm}.)
+\end{rmk}
+
+The following correspondence will show some significance when computing the Galois group of a reducible polynomial over a field.
+\begin{prop}
+    Suppose that $K/F$ and $L/F$ are Galois extensions, where $K, L\leq\ol F$, and define the map $\rho: \gal{KL/F}\rightarrow\gal{K/F}\times\gal{L/F}$ by $\rho(\sigma)=(\sigma|_K, \sigma|_L)$ for $\sigma\in\gal{KL/F}$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\rho$ is a well-defined group monomorphism.    
+            Hence, $\gal{KL/F}$ embeds into $\gal{K/F}\times\gal{L/F}$.
+        }
+        \item[(b)]
+        {
+            Assume further that the field extensions $K/F$ and $L/F$ are finite.
+            Then $|\range\rho|=[KL:F]=[K:F][L:F]=|\gal{K/F}\times\gal{L/F}|$ if and only if $K\cap L=F$.
+            In other words, $\rho$ is a group isomophism if and only if $K\cap L=F$.
+        }
+    \end{enumerate}
+\end{prop}
+
+\begin{obs}
+    We review some properties regarding field compositions.
+    Suppose that $K, L$ are intermediate subfields of $\ol F/F$ so that the composition $KL$ of $K$ and $L$ is well-defined.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            If $K/F$ is a finite (algebraic, separable, normal) extension, then so is $KL/L$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Hence, if $K/F$ is a finite Galois extension, then so is $KL/L$.
+            (In fact, if $K/F$ is a Galois extension, then so is $KL/L$.)
+            Furthermore, we have $\gal{KL/L}\approx\gal{K/(K\cap L)}$.
+            Hence, $[KL:L]=[K:K\cap L]$, and $[KL:L]=[K:F]$ if and only if $K\cap L=F$.
+        }
+    \end{enumerate}
+\end{obs}
+
+Note from \cref{normal closure} that given an algebraic field extension $E/F$ there is the smallest field $K$ containing $E$ such that $K/F$ is a normal extension, and that $K/F$ is the smallest Galois extension if $E/F$ is assumed to be a separable extension.
+Thus, the normal closure of a separable extension is often called a Galois closure.
+
+One last remark:
+\begin{rmk}
+    Suppose that $K/F$ is a Galois extension and $F\leq E\leq K$.
+    Let $\sigma\in\gal{K/F}$ and $\tau\in\emb{E/F}$, where an algebraic closure $\ol F$ of $F$ is given.
+    By the isomophism extension theorem, there is an $F$-embedding $\widetilde\tau: K\hookrightarrow\ol F$ extending $\tau$.
+    Since $K/F$ is a normal extension, $\widetilde\tau K=K$, so $\tau E\leq K$ and $\sigma\circ\tau: E\hookrightarrow K$ is a well-defined $F$-embedding of $E$ into $\ol F$.
+    Hence, an element of $\gal{K/F}$ permutes the elements of $\emb{E/F}$ by left multiplication.
+\end{rmk}

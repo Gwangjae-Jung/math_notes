@@ -1,0 +1,40 @@
+\section{Field of fractions}
+
+Throughout this section, $D$ is an integral domain.
+
+Define a relation $\sim$ on $Y_D:= D\times(D\setminus\{0\})$ by $(a, b)\sim (c, d)$ if and only if $ad-bc=0$. \color{brown}(Explain why the relation is an equivalence relation on $Y_D$.) \color{black}
+And let $[a/b]$ denote the equivalence class of $(a, b)$ in $Q_D:=Y_D/\sim$.
+Also, define the addition and the multiplication on $Y_D/\sim$ as follows:
+\begin{align*}
+    [a/b]+[c/d]:=[(ad+bc)/bd],\quad [a/b]\times[c/d]:=[ac/bd].
+\end{align*}
+
+\begin{thm}
+    $Q_D$ is a field, and the map $\jmath: D\rightarrow Q_D$ defined by $\jmath(a)=[a/1]$ for $a\in D$ is a ring monomorphism.
+    In fact, if $D$ is a field, then $\jmath$ is a field isomorphism.
+\end{thm}
+According to the preceeding theorem, we may identify $D$ as a subset or a subring of $Q_D$.
+Hence, we may also write $[a/b]=[a/1][1/b]=\jmath(a)\jmath(b)^{-1}=ab^{-1}$ for all $a, b\in D$ with $b\neq 0$.
+
+Together with the ring monomorphism $\jmath: D\hookrightarrow Q_D$, $Q_D$ satisfies the following universal property:
+\begin{thm}[A universal property of the field of fractions $(Q_D, \jmath: D\hookrightarrow Q_D)$]
+    For any monomorphism $\imath: D\hookrightarrow F$ of the integral domain $D$ into a ring $F$, there is a unique field monomorphism $\imath_*: Q_D\hookrightarrow F$ such that $\imath_*\circ\jmath=\imath$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.2cm, column sep=2.0cm]
+        D\arrow[r, "\jmath", hook]
+        \arrow[dr, sloped, "\imath\,(\textsf{ring mono.})"' hook]
+        &
+        Q_D\arrow[d, "\imath_*", hook, dashed]
+        \\
+        &
+        F
+    \end{tikzcd}
+    \end{equation*}
+\end{thm}
+\begin{proof}
+    Given an embedding $\imath$ of the integral domain $D$ into a field $F$, define
+    \begin{align*}
+        \imath_*[a/b]:=\imath(a)\imath(b)^{-1}\quad(a\in D, b\in D\setminus\{0\}).
+    \end{align*}
+    Once it is proved that $\imath_*$ is a well-defined map, it can easily be seen that $\imath_*$ is a field homomorphism which is injective and that $\imath_*\circ\jmath=\imath$.
+\end{proof}

@@ -1,0 +1,168 @@
+\section{Chains of groups}
+
+There are two widely used chains for groups.
+One is generally called the composition series, and the other will be called the solvability chain (or series) in this note.
+
+We first introduce the composition series, after introducing its motivation.
+\begin{defi}[Maximal (normal) subgroup]
+    A subgroup $M$ of $G$ is called a maximal (normal) subgroup of $G$ if
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $H<G$ ($H\triangleleft G$) and
+        }
+        \item[(b)]
+        {
+            whenever $H\leq K\leq G$ ($H\leq K\nmal G$), either $K=H$ or $K=G$.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{defi}[Simple group]
+    A group is called a simple group if there are only two normal subgroups: the trivial subgroup and the group itself.
+    In other words, a group is simple if and only if the trivial subgroup is the maximal normal subgroup.
+\end{defi}
+
+From definition and our intuition, we first impose a straightforward result and its outstanding corollary, which states that every finite group has a \textit{simple normal chain}, which is a composition series.
+\begin{prop}
+    Let $G$ be a nontrivial group.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $N$ is a maximal normal subgroup of $G$.
+        }
+        \item[(b)]
+        {
+            $N\triangleleft G$ and $G/N$ is simple.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Use the lattice isomorphism theorem.
+\end{proof}
+\begin{defi}[Composition series]
+    Let $G$ be a group, and suppose there are finitely many subgroups $G_1, \cdots, G_n$ such that
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\{1_G\}=G_n\triangleleft G_{n-1}\triangleleft \cdots \triangleleft G_1 \triangleleft G_0=G$ and
+        }
+        \item[(b)]
+        {
+            each $G_i/G_{i+1}$ ($i=0, 1, \cdots, n-1$) is a simple group.
+        }
+    \end{enumerate}
+    To be short, a composition series is a simple normal chain.
+\end{defi}
+\begin{cor}
+    Every finite group has a composition series.
+\end{cor}
+\begin{proof}
+    Since $G$ is finite, $G$ has a maximal normal subgroup $G_1$, and $G_1$ also has a maximal normal subgroup.
+    By induction, we can establish a finite normal chain.
+    Simplicity follows from normality.
+\end{proof}
+
+Now we study solvability chains of groups.
+\begin{defi}[Solvability chain]
+    Let $G$ be a group, and suppose there are finitely many subgroups $G_1, \cdots, G_n$ such that
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\{1_G\}=G_n\triangleleft G_{n-1}\triangleleft \cdots \triangleleft G_1 \triangleleft G_0=G$ and
+        }
+        \item[(b)]
+        {
+            each $G_i/G_{i+1}$ ($i=0, 1, \cdots, n-1$) is an abelian group.
+        }
+    \end{enumerate}
+    To be short, a solvability chain is an abelian normal chain.
+    In addition, a group which has a solvability chain is called a solvable group.
+\end{defi}
+As every finite group has a composition series, every abelian group (even if it is infinite) has a solvability chain.
+
+Solvable groups behave well under subgroups and homomorphic images.
+\begin{prop}
+    Suppose $G$ is a solvable group.
+    Then subgroups of $G$ are solvable, and homomorphic images of $G$ are also solvable.\footnote{Because the proposition holds when the words `solvable' are replaced by `abelian' or `cyclic,' solvable groups can be seen as a generalization of abelian groups.}
+\end{prop}
+\begin{proof}
+    To prove the first part of the proposition, let $H$ be a subgroup of $G$ and let $\{1_G\}=G_n\triangleleft G_{n-1}\triangleleft \cdots \triangleleft G_1 \triangleleft G_0=G$ be a solvability chain of $G$.
+    A good idea for the proof is to consider restrictions as follows:
+    \begin{align*}
+        \{1_G\}=G_n\cap H\triangleleft G_{n-1}\cap H\triangleleft \cdots \triangleleft G_1\cap H \triangleleft G_0\cap H=H.
+    \end{align*}
+    For each $i=0, 1, \cdots, n$, define $H_i=G_i\cap H$.
+    It remains to show that $H_i/H_{i+1}$ is abelian for $i=0, 1, \cdots, n-1$, and for this, we decide to prove that $H_i/H_{i+1}$ embeds into $G_i/G_{i+1}$.
+    Because the natural embedding $\iota_i: H_i\hookrightarrow G_i$ satisfies $\iota_i^{-1}(G_{i+1})=H_{i+1}$, $\iota_i$ induces a group monomorphism $\ol{\iota_i}: H_i/H_{i+1}\hookrightarrow G_i/G_{i+1}$.
+
+    Before proving the second part of the proposition, note that a homomorphic image of $G$ is isomorphisc to $G/N$ for some normal subgroup $N$ of $G$.
+    Consider the canonical projection map $\pi: G\rightarrow G/N$ and the following chain:
+    \begin{align*}
+        \{\ol{1_G}\}=\pi(G_n)\triangleleft \pi(G_{n-1})\triangleleft \cdots \triangleleft \pi(G_1) \triangleleft \pi(G_0)=\pi(G).
+    \end{align*}
+    Letting $\pi_i: G_i\rightarrow G_i/N$ for each $i=0, 1, \cdots, n$, because $G_{i+1}\leq\pi_i^{-1}(G_{i+1}/N)$, $\pi_i$ induces the following group homomorphism:
+    \begin{align*}
+        \ol{\pi_i}: \frac{G_i}{G_{i+1}}\rightarrow\frac{G_i/N}{G_{i+1}/N}.
+    \end{align*}
+    Because $\ol{\pi_i}$ is surjective, it is derived that $\ol{G_i}/\ol{G_{i+1}}$ is abelian for each $i=0, 1, \cdots, n-1$, as desired.
+\end{proof}
+To review, the preceeding proposition states that solvable groups behave well under subgroups and homomorphic images (or equivalently, quotients by normal subgroups).
+The following proposition can be considered a converse of the preceeding proposition.
+\begin{prop}
+    Let $G$ be a group and $N$ be a normal subgroup of $G$.
+    If both $N$ and $G/N$ are solvable, then $G$ is also solvable.
+\end{prop}
+\begin{proof}
+    Use the lattice isomorphism theorem and concatenate solvability chains.
+\end{proof}
+Another well-behaviour of solvable groups is given as the following proposition:
+\begin{prop}
+    If $G_1$ and $G_2$ are solvable groups, then so is $G_1\times G_2$.
+\end{prop}
+\begin{proof}
+    Find solvability chains of $G_1$ and $G_2$, and enlarge subgroups of $G_1\times G_2$ term by term and step by step. \color{brown}Detailed proof is left as an exercise, because the proof is easy.\color{black}
+\end{proof}
+
+We now introduce some results derived when composition series and solvability chain meet each other.
+\begin{prop}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            A finite abelian simple group is a cyclic group of a prime order.
+        }
+        \item[(b)]
+        {
+            A finite solvable simple group is a cyclic group of a prime order.
+        }
+        \item[(c)]
+        {
+            Thus, a finite nonabelian simple group is never solvable.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a) easily follows, because every subgroup of an abelian group is a normal subgroup.
+    To prove (b), note that a solvable simple group is necessarily abelian, and (a) forces such a group to be a cyclic group of a prime order.
+    (c) follows easily when one assumes that there is a finite nonabelian simple group which is solvable; by (b), such a group is cyclic, which contradicts (b).
+\end{proof}
+
+We end this section with an alternative definition of `finite' solvable groups.
+\begin{prop}
+    If $G$ is a finite group, then $G$ is solvable if and only if there are finitely many subgroups $G_1, \cdots, G_n$ of $G$ such that
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\{1_g\}=G_n\triangleleft G_{n-1}\triangleleft \cdots\triangleleft G_1\triangleleft G_0=G$ and
+        }
+        \item[(b)]
+        {
+            $G_i/G_{i+1}$ is a cyclic group of a prime order for each $i=0, 1, \cdots, n-1$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    If part is clear, so it remains to prove only if part.
+    Since $G$ is finite, a composition series $\{1_g\}=G_n\triangleleft G_{n-1}\triangleleft \cdots\triangleleft G_1\triangleleft G_0=G$ of $G$ exists.
+    Because each $G_i/G_{i+1}$ is finite, simple, and solvable, each quotient needs to be a cyclic group of a prime order, as desired.
+\end{proof}

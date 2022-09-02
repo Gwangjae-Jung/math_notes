@@ -1,0 +1,80 @@
+\section{Quotient objects}
+
+Given a $\square\square$ $X$ and its sub-$\square\square$ $Y$, we want the quotient $X/Y$ a $\square\square$.
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (For groups)
+            Suppose $N$ is a subgroup of $G$ and we want to impose $G/N$ a group structure, by defining
+            \begin{equation}\label{quotient group operation}
+                (aN)\cdot(bN)=(ab)N.
+            \end{equation}
+            Assuming that the operation is well-defined, one can easily verify the group axioms.
+            Hence, $G/N$, together with the operation defined in \cref{quotient group operation}, is a group if and only if the operation is well-defined.
+            
+            The statement that the operation is well defined is equivalent to the following statement:
+            \begin{center}
+                If $aN=xN$ and $bN=yN$, then $(ab)N=(xy)N$. (Here, $a, b, x, y\in G$.)
+            \end{center}
+            \begin{enumerate}
+                \item[(1)]
+                {
+                    Suppose the operation is well defined.
+                    Then $(ab)(xy)^{-1}\in N$, but we also have $(ab)(xy)^{-1}=aby^{-1}x^{-1}=ax^{-1}\cdot x\cdot by^{-1}\cdot x^{-1}$ and $x\cdot by^{-1}\cdot x^{-1}\in N$.
+                    Therefore, for any $g\in G$ and $n\in N$, we have $gng^{-1}\in N$.
+                }
+                \item[(2)]
+                {
+                    Suppose conversely that $gng^{-1}\in N$ for all $g\in G$ and $n\in N$.
+                    Whenever $aN=xN$ and $bN=yN$, because $ax^{-1}, by^{-1}\in N$, we have $(ab)(xy)^{-1}=aby^{-1}x^{-1}=ax^{-1}\cdot (x\cdot by^{-1}\cdot x^{-1})\in N$, so $(ab)N=(xy)N$.
+                }
+            \end{enumerate}
+            By (1) and (2), we can derive the following conclusion:
+            \begin{center}
+                $G/N$ is a group if and only if $gng^{-1}\in N$ for all $g\in G$ and $n\in N$.
+            \end{center}
+            We call such subgroup $N$ a normal subgroup of $G$.
+        }
+        \item[(b)]
+        {
+            (For rings)
+            Suppose $I$ is a subring of $R$ and we want to impose $R/I$ a ring structure, by defining
+            \begin{equation}\label{quotient ring operation}
+                (aI)+(bI)=(a+b)I\quad\textsf{and}\quad (aI)(bI)=(ab)I.
+            \end{equation}
+            Assuming that the operations are well-defined, one can easily verify the ring axioms.
+            Hence, $R/I$, together with the operations defined in equation \cref{quotient ring operation}, is a ring if and only if the operations are well-defined.
+            Since the addition is well-defined if and only if $R/I$ is a group, the addition is well-defined if and only if $I$ is a subgroup of $R$.
+            We thus assume that $I$ is a subgroup of $R$.
+            
+            The statement that the multiplication is well defined is equivalent to the following statement:
+            \begin{center}
+                If $aI=xI$ and $bI=yI$, then $(ab)I=(xy)I$. (Here, $a, b, x, y\in R$.)
+            \end{center}
+            Or equivalently,
+            \begin{center}
+                If $a-x\in I$ and $b-y\in I$, then $ab-xy\in I$.
+            \end{center}
+            Writing $a-x=s$ and $b-y=t$ ($s, t\in I$), we can easily find that $ab-xy\in I$ if and only if $xt+sy\in I$.
+            Hence, the multiplication is well defined if and only if $IR, RI\subset I$.
+            To summarize,
+            \begin{center}
+                $R/I$ is a ring if and only if $I$ is a subring of $R$ and $RI, IR\subset I$.
+            \end{center}
+            We call such subring $I$ an ideal of $R$.
+        }
+        \item[(c)]
+        {
+            (For $R$-modules)
+            One can easily find that $M/N$ is an $R$-module whenever $N$ is an $R$-submodule of $M$.
+        }
+        \item[(d)]
+        {
+            (For $R$-algebras)
+            Suppose $I$ is an $R$-subalgebra of an $R$-algebra $A$.
+            If $I$ is an ideal of the ring $A$, then the quotient ring $A/I$ is well-defined; because $I$ is an $R$-subalgebra of $A$, it is an $R$-submodule of $A$, so the quotient $R$-module $A/I$ is also well-defined.
+            Therefore, $R/I$ is a well-defined $R$-algebra if and only if $I$ is an $R$-subalgebra of $A$ which is an ideal of the ring $A$.
+        }
+    \end{enumerate}
+\end{exmp}

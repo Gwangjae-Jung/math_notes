@@ -1,0 +1,233 @@
+\section{Cyclotomic extensions}
+
+In this section, we study the polynomial $t^n-1\in F[t]$, where $n$ is a positive integer and $F$ is a fiven base field.
+
+\begin{defi}[$n$-th root of unity]
+    For a positive integer $n$, every member of the collection
+    \begin{align*}
+        \mu_n(\ol F):=\{\alpha\in\ol F: \alpha^n=1\}
+    \end{align*}
+    is called an $n$-th root of unity.
+    Since $\mu_n(\ol F)$ is a finite subgroup of the multiplicative group $F^\times$, $\mu_n(\ol F)$ is a cyclic group.
+    A generator of the finite cyclic group $\mu_n(\ol F)$ is called a primitive $n$-th root of unity.
+\end{defi}
+\begin{exmp}
+    $\mu_n(\ol{\bb{Q}})=\{\exp(2\pi i k/n): \textsf{$k$ is an integer such that $0\leq k\leq n-1$}\}$.
+\end{exmp}
+
+\subsection{The splitting field for $t^n-1$ over a finite field}
+
+\begin{obs}
+    Suppose that $F$ is a field of characteristic $p>0$ and let $n=qm$, where $m$ is a positive integer relatviely prime to $p$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\mu_p(\ol F)\approx\bb{F}_p$ and $\mu_q(\ol F)\approx\bb{F}_q$.
+        }
+        \item[(b)]
+        {
+            We now show that $\mu_n(\ol F)=\mu_m(\ol F)$
+            It is clear that $\mu_m(\ol F)\subset\mu_n(\ol F)$.
+            Suppose that $\alpha\in\mu_n(\ol F)$.
+            Then $(\alpha^m)^q=1$ and $(\alpha^m-1)^q=0$, hence $\alpha\in\mu_m(\ol F)$.
+            Therefore, if $\ch{F}=p>0$ and when we consider $\mu_n(\ol F)$, we may assume that $(n, p)=1$.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{obs}
+    Let $F$ be a field of characteristic $p>0$ and $n$ be a positive integer which is relatively prime to $p$.
+    Let $\zeta$ be a primitive $n$-th root of unity.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $F(\zeta)$ is the splitting field for $t^n-1\in F[t]$ over $F$.
+            Since $t^n-1$ is a separable polynomial over $F$, $F(\zeta)/F$ is a finite Galois extension and $\mu_n(\ol F)=\{1, \zeta, \cdots, \zeta^{n-1}\}$.
+        }
+        \item[(b)]
+        {
+            Since $\sigma\in\aut{F(\zeta)}$ fixes 1, $\sigma$ permutes $\mu_n(\ol F)$, i.e., $\sigma(\mu_n(\ol F))=\mu_n(\ol F)$.
+            Therefore, $\sigma\mu$ is also a primitive $n$-th root of unity, hence $\sigma\mu=\mu^k$ for some integer which is relatively prime to $n$.
+        }
+    \end{enumerate}
+\end{obs}
+Our first goal is to compute $\gal{F(\zeta)/F}$ when $\ch{F}=p>0$.
+\begin{thm}
+    Suppose that $F$ is a field of characteristic $p>0$ and let $n$ be a positive integer relatively prime to $p$, and let $\zeta$ be a primitive $n$-th root of unity.
+    Then $\gal{F(\zeta)/F}$ embeds into $(\bb{Z}/n\bb{Z})^\times$, so $F(\zeta)/F$ is an abelian extension.
+\end{thm}
+\begin{proof}
+    Let $\phi: \gal{F(\zeta)/F}\rightarrow (\bb{Z}/n\bb{Z})^\times$ be the map defiend by
+    \begin{align*}
+        \phi(\sigma)=\ol k\quad(\sigma\in\gal{F(\zeta)/F})
+    \end{align*}
+    where $k$ is an integer such that $\sigma(\zeta)=\zeta^k$.
+    Since $\sigma\in\gal{F(\zeta)/F}$ is a field automorphism of $F(\zeta)$, $\sigma(\zeta)$ is a primitive $n$-th root of unity.
+    Hence, $(n, k)=1$ and $\ol k\in(\bb{Z}/n\bb{Z})^\times$.
+    It is easy to check that $\phi$ is an injective group homomorphism, as desired.
+\end{proof}
+\begin{rmk}
+    Unlike the splitting field for $t^n-1$ over $\bb{Q}$ which will be studied in the following subsection, $\gal{F(\zeta)/F}$ need not be isomorphic to $(\bb{Z}/n\bb{Z})^\times$.
+    As an example, consider $\bb{F}_7$ and the splitting field $K$ for $t^3-1$ over $\bb{F}_7$.
+    Since $2\in\bb{F}_7$ is a primitive third root of unity (in fact, $\mu_3(\ol{\bb{F}_7})=\{1, 2, 4\}\subset\bb{F}_7$), we have $K=\bb{F}_7$ and $\gal{K/\bb{F}_7}=\{\id{\bb{F}_7}\}$.
+\end{rmk}
+
+\subsection{The splitting field for $t^n-1$ over $\bb{Q}$}
+
+\begin{defi}
+    Let $\zeta_n\in\ol{\bb{Q}}$ be a primitive $n$-th root of unity.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Cyclotomic polynomial)
+            The minimal polynomial $\Phi_n(t)\in\bb{Q}[t]$ of $\zeta_n$ is called the $n$-th cyclotomic polynomial.
+        }
+        \item[(b)]
+        {
+            (Cyclotomic extension)
+            The splitting field $\bb{Q}(\zeta_n)$ for $t^n-1$ over $\bb{Q}$ is often called the $n$-th cyclotomic field.
+            If $\bb{Q}\leq E\leq \bb{Q}(\zeta_n)$ for some positive integer $n$, we call $E$ an cyclotomic extension over $\bb{Q}$.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    In the above definition, the $n$-th cyclotomic polynomial is defined as the minimal polynomial of a primitive $n$-th root of unity over $\bb{Q}$.
+    This definition of $\Phi_n(t)$ seems to depend on the choice of a primitive $n$-th root of unity.
+    \begin{center}
+        Goal: To show that $\Phi_n(t)$ is the product of $t-\zeta$, where $\zeta$ runs through all primitive $n$-th roots of unity.
+    \end{center}
+    
+    Fix a primitive $n$-th root $\zeta$ of unity and suppose $\Phi_n(t)$ is the minimal polynomial of $\zeta$ over $\bb{Q}$.
+    If $\beta$ is a root of $\Phi_n(t)$, then there is a $\bb{Q}$-isomorphism from $\bb{Q}(\beta)$ into $\bb{Q}(\zeta)$ mapping $\beta$ to $\zeta$.
+    Since $\bb{Q}(\zeta)$ is the splitting field for $\Phi_n(t)$ over $\bb{Q}$, $\bb{Q}(\beta)=\bb{Q}(\zeta)$ and $\beta$ is a primitive $n$-th root of unity.
+    In other words, every root of $\Phi_n(t)$ is a primitive $n$-th root of unity.
+    Conversely, if $\gamma$ is a primitive $n$-th root of unity, there is a $\bb{Q}$-isomorphism from $\bb{Q}(\zeta)$ to $\bb{Q}(\gamma)$ mapping $\zeta$ to $\gamma$, so $\gamma$ is an algebraic conjugate of $\zeta$ and is a root of $\Phi_n(t)$.
+    Since $\ch{\bb{Q}}=0$, $\Phi_n(t)$ is separable, which completes the proof.
+    To be precise, whenever $n$ is a positive integer,
+    \begin{align*}
+        \Phi_n(t)=\prod_{\substack{1\leq k\leq n\\(n, k)=1}}\left(t-\exp\left(i\frac{2\pi k}{n}\right)\right).
+    \end{align*}
+
+    Because $\deg\Phi_n(t)$ is the number of primitive $n$-th roots of unity, $\deg\Phi_n(t)$ is the number of positive integers not greather than $n$ which are relatively prime to $n$.
+    Therefore, $[\bb{Q}(\zeta_n):\bb{Q}]=\phi(n)$, where $\phi$ is the Euler's $\phi$-function.
+\end{rmk}
+\begin{exmp}
+    Let $p$ be a positive prime number.
+    Since $t^p-1=(t-1)(t^{p-1}+t^{p-2}+\cdots+t+1)$ is a separable polynomial with roots $1, \zeta_p, \zeta_p^2, \cdots, \zeta_p^{p-1}$, $\zeta_p$ satisfies the polynomial $t^{p-1}+t^{p-2}+\cdots+t+1$.
+    Moreover, letting $t-1=s$ and applying Eisenstein's criterion, we can deduce that $t^{p-1}+t^{p-2}+\cdots+t+1$ is an irreducible polynomial over $\bb{Q}$.
+    Therefore, $\Phi_p(t)=t^{p-1}+t^{p-2}+\cdots+t+1$ whenever $p$ is a positive prime number.
+\end{exmp}
+\begin{obs}
+    By considering the orders of $n$-th roots of unity, we have
+    \begin{align*}
+        t^n-1=\prod_{\zeta\in\mu_n(\ol{\bb{Q}})}(t-\zeta)=\prod_{0<d|n}\prod_{\zeta\in\mu_d(\ol{\bb{Q}})}(t-\zeta)=\prod_{0<d|n}\Phi_d(t).
+    \end{align*}
+    Also, $\phi(n)=\sum\phi(d)$ with $d$ running through all positive divisors of $n$.
+\end{obs}
+Combining all preceeding observations and applying Gauss's lemma, we obtain the following theorems.
+\begin{thm}
+    For each positive integer $n$, $\Phi_n(t)$ is an irreducible polynomial over $\bb{Z}$ of degree $\phi(n)$.
+\end{thm}
+\begin{proof}
+    It suffices to prove that $\Phi_n(t)\in\bb{Z}[t]$ for all $n\in\bb{N}$.
+    Assume that $\Phi_n(t)$ is a polynomial over $\bb{Z}$ for all positive integers $n<N$.
+    Note that $t^N-1=\Phi_N(t)\times\prod_{0<d|N, d\neq N}\Phi_d(t)$ and $\Phi_N(t)\in\bb{Q}[t]$.
+    By Gauss's lemma (see \cref{cyclotomic_poly_over_Z}) we have $\Phi_N(t)\in\bb{Z}[t]$, for $t^N-1$ and $\prod_{0<d|N, d\neq N}\Phi_d(t)$ are primitive polynomials over $\bb{Z}$.
+\end{proof}
+\begin{thm}
+    The $n$-th cylcotomic field $\bb{Q}(\zeta_n)$ is, in fact, the splitting field for $\Phi_n(t)$ over $\bb{Q}$.
+    The extension $\bb{Q}(\zeta_n)/\bb{Q}$ is a finite Galois extension of extension degree $\phi(n)$, and its Galois group is isomorphic to $(\bb{Z}/n\bb{Z})^\times$.
+\end{thm}
+\begin{proof}
+    It suffices to prove that $\gal{\bb{Q}(\zeta_n)/\bb{Q}}\approx(\bb{Z}/n\bb{Z})^\times$.
+    In fact, any automorphism $\sigma\in\gal{\bb{Q}(\zeta_n)/\bb{Q}}$ is determined by its action on $\zeta_n$, and the only possible return for $\zeta_n$ is $\zeta_n^k$ with $1\leq k\leq n$ with $(n, k)=1$.
+    Thus, defining the map $\rho: \gal{\bb{Q}(\zeta_n)/\bb{Q}}\rightarrow(\bb{Z}/n\bb{Z})^\times$ by $\rho(\sigma)=\ol k$, it easily turns out that $\rho$ is a group isomorphism.
+\end{proof}
+
+When studying Galois's theorem, we have observed how we could treat the Galois group of a composition field.
+Using such method, we can establish an isomorphism type of $\gal{\bb{Q}(\zeta_n)/\bb{Q}}$ where $\zeta_n$ is a primitive $n$-th root of unity.
+\begin{obs}
+    In this example, assume $F=\bb{Q}$ and let $\zeta_k$ denote a primitive $k$-th root of unity.
+    Assume further that $m, n$ are relatively prime positive integers.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\zeta_m\zeta_n$ is a primitive $mn$-th root of unity.
+            Hence, $\bb{Q}(\zeta_m)\cdot\bb{Q}(\zeta_n)=\bb{Q}(\zeta_{mn})$.
+        }
+        \item[(b)]
+        {
+            $\bb{Q}(\zeta_m)\cap\bb{Q}(\zeta_n)=\bb{Q}$.
+        }
+        \item[(c)]
+        {
+            If $d$ is a positive divisor of $n$, then $\zeta_n^d$ is a primitive $(n/d)$-th root of unity.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{proof}
+    To prove (a), note from $(m, n)=1$ that $(\zeta_m\zeta_n)^m=\zeta_n^m$ is a primitive $n$-th root of unity and that there are integers $a, b$ such that $na+mb=1$.
+    The former observation implies $\bb{Q}(\zeta_m\zeta_n)$ contains $\zeta_n$ (and $\zeta_m$ for a similar reason), and the latter observation implies $\zeta_m^a\zeta_n^b=\zeta_{mn}$.
+    Therefore, $\bb{Q}(\zeta_m\zeta_n)$ contains $\zeta_{mn}=\zeta_m^a\zeta_n^b$, so $\zeta_m\zeta_n$ is a primitive $mn$-root of unity.
+
+    To prove (b), note from (a) that
+    \begin{align*}
+        [\bb{Q}(\zeta_{mn}):\bb{Q}]=\frac{[\bb{Q}(\zeta_m):\bb{Q}][\bb{Q}(\zeta_n):\bb{Q}]}{[\bb{Q}(\zeta_m)\cap\bb{Q}(\zeta_n): \bb{Q}]}.
+    \end{align*}
+    Since $[\bb{Q}(\zeta_{mn}):\bb{Q}]=\phi(mn)=\phi(m)\phi(n)=[\bb{Q}(\zeta_m):\bb{Q}][\bb{Q}(\zeta_n):\bb{Q}]$, we have $\bb{Q}(\zeta_m)\cap\bb{Q}(\zeta_n)=\bb{Q}$.
+
+    Checking (c) is easy.
+\end{proof}
+\begin{prop}[Chinese remainder theorem for cyclotomic fields]
+    Let $n={p_1}^{a_1}\cdots{p_k}^{a_k}$ be the factorization of a positive integer to prime numbers. (Assume that $p_1, \cdots, p_k$ are pairwise distinct positive prime numbers and $a_1, \cdots, a_k$ are positive integers.)
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $s, t$ are relatively prime positive divisors of $n$, then $\bb{Q}(\zeta_s)\cdot\bb{Q}(\zeta_t)=\bb{Q}(\zeta_{st})$ and $\bb{Q}(\zeta_s)\cap\bb{Q}(\zeta_t)=\bb{Q}$.
+        }
+        \item[(b)]
+        {
+            $\gal{\bb{Q}(\zeta_n)/\bb{Q}}\approx\gal{\bb{Q}(\zeta_{{p_1}^{a_1}})/\bb{Q}}\times\cdots\times\gal{\bb{Q}(\zeta_{{p_k}^{a_k}})/\bb{Q}}$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a) follows directly from the preceeding example; it remains to prove (b).
+    Let $s={p_1}^{a_1}$ and $t=n/s$.
+    Because $\bb{Q}(\zeta_n)$ is the composition of $\bb{Q}(\zeta_s)$ and $\bb{Q}(\zeta_t)$, there is a group monomorphism $\rho: \gal{\bb{Q}(\zeta_n)/\bb{Q}}\hookrightarrow\gal{\bb{Q}(\zeta_{{p_1}^{a_1}})/\bb{Q}}\times\gal{\bb{Q}(\zeta_t)/\bb{Q}}$; because $\bb{Q}(\zeta_s)\cap\bb{Q}(\zeta_t)=\bb{Q}$, $\rho$ is a group isomorphism.
+    Proceeding the proof inductively, we can obtain a desired isomorphism.
+\end{proof}
+
+\begin{obs}[Subfield lattice of $\bb{Q}(\zeta_p)$]
+    Let $p$ be a prime number.
+    We will show that every intermediate subfield of $\bb{Q}(\zeta_p)/\bb{Q}$ has a primitive element over $\bb{Q}$ and deliver a formula to find a primitive elemtent.
+
+    By Galois's theorem, an intermediate subfield $E$ of $\bb{Q}(\zeta_p)/\bb{Q}$ and a subgroup $H$ of $\gal{\bb{Q}(\zeta_p)/\bb{Q}}$ correspond bijectively.
+    Because $p$ is a prime number, $[\bb{Q}(\zeta_p):\bb{Q}]=\phi(p)=p-1$, so $\{\zeta_p, \zeta_p^2, \cdots, \zeta_p^{p-1}\}$ is a $\bb{Q}$-basis of $\bb{Q}(\zeta_p)$.
+    Hence, the element
+    \begin{align*}
+        \alpha:=\sum_{\sigma\in H}\sigma\alpha
+    \end{align*}
+    is a (finite) sum of basis members.
+    Thus, if $\tau\in\gal{\bb{Q}(\zeta_p)/\bb{Q}}$ and $\tau\alpha=\alpha$, then $\tau\zeta
+    _p=\sigma\zeta_p$ for some $\sigma\in H$, hence $\tau=\sigma\in H$.
+    This implies that $\bb{Q}(\alpha)\geq\bb{Q}(\zeta_p)^H$.
+    Conversely, since $\bb{Q}(\alpha)$ is fixed by every automorphism in $H$, we have $\bb{Q}(\alpha)\leq\bb{Q}(\zeta_p)^H$.
+    Therefore, $\bb{Q}(\zeta_p)^H=\bb{Q}(\alpha)$.
+    
+    In particular, suppose that $E/\bb{Q}$ is an intermediate subfield of $\bb{Q}(\zeta_p)\bb{Q}$ of degree 2 over $\bb{Q}$, where $p$ is an odd prime.
+    (Such field $E$ exists uniquely, because there is a unique subgroup $\gal{\bb{Q}(\zeta_p)/\bb{Q}}\approx Z_{p-1}$ of index 2.)
+    Then
+    \begin{align}\label{quadratic_cyclotomic_extension_over_Q}
+        E=\left\{\begin{array}{cc}
+            \bb{Q}(\sqrt{p})    &  \textsf{(if $p\equiv 1$ mod 4)}\\
+            \bb{Q}(\sqrt{-p})    &  \textsf{(if $p\equiv 3$ mod 4)}
+        \end{array}\right.
+    \end{align}
+    The proof of the above equation is given in \Cref{proof: quadratic_cyclotomic_extension_over_Q}.
+\end{obs}
+
+\begin{exmp}
+    We will justify that $\sqrt[3]{2}$ is not contained in any cyclotomic field of $\bb{Q}$.
+    If $\sqrt[3]{2}\in\bb{Q}(\zeta_n)$ for some $n\in\bb{N}$, then the normal closure of $\bb{Q}(\sqrt[3]{2})$ over $\bb{Q}$ is contained in $\bb{Q}(\zeta_n)$.
+    Though, the Galois closure of $\bb{Q}(\sqrt[3]{2})/\bb{Q}$ is nonabelian, a contradiction.
+\end{exmp}

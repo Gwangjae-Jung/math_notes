@@ -1,0 +1,153 @@
+\section{Galois groups of polynomials}
+
+\begin{rmk}
+    Let $F$ be a field and $f(t)$ be a nonconstant separable polynomial over $F$, and let $\alpha_1, \cdots, \alpha_n$ be the roots of $f(t)$, where $n=\deg f(t)$.
+    Let $K$ be the splitting field for $f(t)$ over $F$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Every automorphism $\sigma\in\gal{K/L}$ permutes the root of $f(t)$.
+            Hence, the group action of $\gal{K/L}$ on $\{\alpha_1, \cdots, \alpha_n\}$ (by left multiplication) affords a group embedding
+            \begin{align*}
+                \gal{K/L}\hookrightarrow S_n.
+            \end{align*}
+            In general, if $f(t)=f_1(t)\cdots f_k(t)$ is the factorization of $f(t)$ into irreducible polynomials in $F[t]$, then an automorphism $\sigma\in\gal{K/L}$ permutes the roots of $f_i(t)$ for each $1\leq i\leq k$, i.e., $\gal{K/L}$ permutes the roots of the irreducible factors among themselves.
+            Thus, the group action affords a group embedding
+            \begin{align*}
+                \gal{K/L}\hookrightarrow S_{n_1}\times\cdots\times S_{n_d},
+            \end{align*}
+            where $n_i=\deg f_i(t)$ for each $i$.
+        }
+        \item[(b)]
+        {
+            In particular, suppose that $f(t)$ is irreducible.
+            Given any two roots $\alpha_i$ and $\alpha_j$ ($1\leq i, j\leq n$), by isomorphism extension theorem, $\id{F}$ extends to an $F$-automorphism $\sigma: K\rightarrow K$ such that $\sigma\alpha_i=\alpha_j$ \color{brown}(how?)\color{black}.
+            In other words, $\gal{K/F}$ is transitive on the roots of each irreducible factor of $f(t)$.
+        }
+        \item[(c)]
+        {
+            In (a), suppose, in particular, that $f(t)=g(t)h(t)$ for some nonconstant polynomial $g(t), h(t)$ over $F$.
+            Then the splitting field $K_f$ for $f(t)$ over $F$ is the composition of the splitting field $K_g$ and $K_h$ for $g(t)$ and $h(t)$ over $F$, respectively.
+            Thus, $G_f\hookrightarrow G_g\times G_h$ as explained in (a); here, $G_f\approx G_g\times G_h$ if and only if $K_g\cap K_h=F$.
+        }
+    \end{enumerate}
+\end{rmk}
+
+\begin{nota}
+    Given a nonconstant polynomial $f(t)$ over $F$ and its splitting field over $F$, $\gal{K/F}$ is called the Galois group of $f(t)$ over $F$, and is denoted by $G_{f, F}$, or simply by $G_f$, if the base field $F$ is understood.
+    Also, unless stated otherwise, the splitting field for $f(t)$ over $F$ is denoted by $K_{f, F}$, or shortly by $K_f$, if the base field $F$ is understood.
+\end{nota}
+
+Some basic propositions required to investigate Galois groups are given as the following two propositions.
+\begin{prop}
+    Let $f(t)$ be a nonconstant separable polynomial over $F$, and write $n=\deg f(t)$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $G_f$ embeds into $S_n$.
+            Furthermore, if $f(t)=f_1(t)\cdots f_k(t)$ is the factorization of $f(t)$ into irreducible polynomials over $F$, then $G_f$ embeds into $S_{n_1}\times\cdots\times S_{n_k}$, where $n_i=\deg f_i(t)$ for each $i=1, \cdots, k$.
+        }
+        \item[(b)]
+        {
+            If $f(t)$ is irreducible over $F$, then $n$ divides the order of $G_f$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a) is already proved in the beginning of this section.
+    If $f(t)$ is irreducible and $\alpha$ is any root of $f(t)$, then the splitting field for $f(t)$ over $F$ contains $\alpha$, so $n$ divides $|G_f|$.
+\end{proof}
+\begin{prop}
+    Let $f(t)$ be a nonconstant separable polynomial over $F$.
+    Then $f(t)$ is irreducible over $F$ if and only if $G_f$ acts transitively on the roots of $f(t)$.
+\end{prop}
+\begin{proof}
+    Suppose that $f(t)$ is irreducible over $F$ and let $\alpha$ and $\beta$ be any roots of $f(t)$.
+    By isomorphism extension theorem, there is an $F$-automorphism of $K$ mapping $\alpha$ to $\beta$ \color{brown}(why?)\color{black}, as desired.
+
+    Assume conversely that $G_f$ acts on the roots of $f(t)$ transitively.
+    If $f(t)$ is reducible, there are nonconstant polynomials $g(t), h(t)\in F[t]$ such that $f(t)=g(t)h(t)$.
+    If $\alpha$ and $\beta$ are roots of $g(t)$ and $h(t)$, respectively, there is an automorphism $\sigma\in G_f$ such that $\sigma\alpha=\beta$.
+    So $\beta$ is a root of $g(t)$, for $0=\sigma(g(\alpha))=g(\sigma\alpha)=g(\beta)$, which contradicts the separability of $f(t)$.
+\end{proof}
+
+From now on, throughout this section, $F$ is assumed to be a perfect field, over which every irreducible polynomial is separable.
+
+\begin{exmp}
+    Consider $f(t)=t^3-2\in\bb{Q}[t]$.
+    Its roots are $\alpha, \alpha\zeta, \alpha\zeta^2$, where $\alpha=\sqrt[3]{2}, \zeta=\exp(2\pi i/3)$.
+    We then have the following (possibly incomplete) subfield lattice:
+    \begin{equation*}
+    \begin{tikzcd}[row sep=0.5cm, column sep=0.5cm]
+        &
+        K
+            \arrow[dl, dash]
+            \arrow[dr, dash]
+        &
+        \\
+        \bb{Q}(\alpha)
+            \arrow[dr, dash]
+        &
+        &
+        \bb{Q}(\zeta)
+            \arrow[dl, dash]
+        \\
+        &
+        \bb{Q}
+        &
+    \end{tikzcd}
+    \end{equation*}
+    In fact, since $f(t)$ is irreducible over $\bb{Q}$, 3 divides $|G_f|$; because $[\bb{Q}(\zeta):\bb{Q}]=2$, 2 also divides $|G_f|$; because $G_f\hookrightarrow S_3$, we conclude that $G_f\approx S_3$.
+\end{exmp}
+\begin{exmp}
+    Let $f(t)=t^4-2\in\bb{Q}[t]$, and write $\alpha=\sqrt[4]{2}$.
+    Then the splitting field $K$ for $f(t)$ over $\bb{Q}$ is $\bb{Q}(\alpha, i)$.
+    Since $[K:\bb{Q}]=[K:\bb{Q}(\alpha)][\bb{Q}(\alpha):\bb{Q}]=8$ and $f(t)$ is irreducible over $\bb{Q}$, $G_f$ is isomorphic to a transitive subgroup of $S_4$.
+    Therefore, $G_f\approx D_8$, where $D_8$ is the dihedral group of order 8.
+
+    To investigate explicitly, note that $\bb{Q}(i)/\bb{Q}$ and $K/\bb{Q}(i)$ are separable extensions.
+    Thus, there are two distinct $\bb{Q}$-embbedings of $\bb{Q}(i)$ into $\ol{\bb{Q}}$:
+    \begin{align*}
+        \id{\bb{Q}(i)},\quad\gamma: i\mapsto -i.
+    \end{align*}
+    Also, there are four distinct embeddings extending $\id{\bb{Q}(i)}$ and $\gamma$, respectively; they map $\alpha$ to either $\alpha$ or $-\alpha$ or $\alpha i$ or $-\alpha i$.
+    Letting $\sigma$ and $\tau$ be the $\bb{Q}$-automorphisms such that
+    \begin{align*}
+        \sigma(\alpha)=\alpha,\quad \sigma(i)=-i,\\
+        \tau(\alpha)=\alpha i,\quad \tau(i)=i,
+    \end{align*}
+    we find that $G_f=\genone{\sigma, \tau\,|\,\sigma^2=\tau^4=\id{K}, \sigma\tau\sigma=\tau^{-1}}\approx D_8$.
+\end{exmp}
+\begin{exmp}
+    Let $f(t)=(t^2-2)(t^3-2)\in\bb{Q}[t]$ and write $a(t)=t^2-2$ and $b(t)=t^3-2$.
+    Since $\sqrt{2}\notin K_b$, we have $K_a\cap K_b=\bb{Q}$, so $G_f\approx G_a\times G_b\approx Z_2\times S_3$.
+\end{exmp}
+\begin{exmp}
+    Let $f(t)=(t^2-2)(t^2-3)(t^3-2)\in\bb{Q}[t]$.
+    Then $K_f=\bb{Q}(\alpha, \beta, i)$, where $\alpha=\sqrt[6]{2}$ and $\beta=\sqrt{3}$.
+    Letting $a(t)=t^2-2$ and $b(t)=(t^2-3)(t^3-2)$, we have $K_a=\bb{Q}(\sqrt{2})$ and $K_b=\bb{Q}(\sqrt[3]{2}, \sqrt{3}, i)$, so $K_a\cap K_b=\bb{Q}$ and $G_f\approx G_a\times G_b$.
+    It is easy to check that $G_b\approx Z_2\times S_3$, so $G_f\approx Z_2\times Z_2\times S_3\approx V_4\times S_3$.
+\end{exmp}
+\begin{exmp}
+    Let $f(t)=(t^2-5)(t^5-1)\in\bb{Q}[t]$.
+    Since $\sqrt{5}\in\bb{Q}(\zeta_5)$, $K_f=\bb{Q}(\zeta_5)$, thus $G_f\approx(\bb{Z}/5\bb{Z})^\times\approx Z_4$.
+\end{exmp}
+\begin{exmp}
+    We will find a necessary and sufficient condition of an integer $d$ for $\sqrt{d}$ being contained in $\bb{Q}(\zeta_5)$.
+    In fact, $\sqrt{d}\in\bb{Q}(\zeta_5)$ if and only if $\bb{Q}(\sqrt{d})$ is a subfield of $\bb{Q}(\zeta_5)$ containing $\bb{Q}$.
+    By Galois theorem, the only proper subfield of $\bb{Q}(\zeta_5)/\bb{Q}$ is $\bb{Q}(\zeta_5+\zeta_5^{-1})=\bb{Q}(\sqrt{5})$, so $\sqrt{d}\in\bb{Q}(\zeta_5)$ if and only if $d=5k^2$ for an integer $k$.
+    In particular, $\zeta_3\notin\bb{Q}(\zeta_5)$, for otherwise, $\sqrt{-3}\in\bb{Q}(\zeta
+    _5)$, which contradicts our result.
+\end{exmp}
+\color{blue}
+\begin{exmp}
+    Let $f(t)=(t^3-2)(t^3-3)\in\bb{Q}[t]$ and write $\alpha=\sqrt[3]{2}$ and $\beta=\sqrt[3]{3}$.
+    Letting $a(t)=t^3-2$ and $b(t)=t^3-3$, we have
+    \begin{align*}
+        [K_f: \bb{Q}]=\frac{[K_a: \bb{Q}][K_b: \bb{Q}]}{[K_a\cap K_b: \bb{Q}]}=18.
+    \end{align*}
+    To determine the isomorphic type of $G_f$, note that $G_f$ is not abelian.
+    Also, since $G_f\hookrightarrow S_3\times S_3$, there is no element in $G_f$ or order 9.
+    Thus, $G_f$ is one among all possible nonabelian groups of order 18 with no element of order 9.
+\end{exmp}
+\color{black}

@@ -1,0 +1,63 @@
+\section{The Chinese remainder theorem for modules}
+
+In this section, we prove the Chinese remainder theorem for modules.
+\begin{thm}[The Chinese remainder theorem for modules]\label{CRT for modules}
+    Let $R$ be a commutative ring with the nonzero identity and assume that $I_1, \cdots, I_n$ are pairwise comaximal ideals of $R$.
+    If $M$ is an $R$-module, then $\bigcap_{i=1}^n I_iM=(I_1\cdot\cdots\cdot I_n)M$ and
+    \begin{align*}
+        \frac{M}{(I_1\cdot\cdots\cdot I_n)M}\approx\frac{M}{I_1 M}\times\cdots\times\frac{M}{I_n M}.
+    \end{align*}
+\end{thm}
+
+Before proving the theorem, we note the following observation, whose corresponding observation in ring thoery was necessary to prove the Chinese remainder theorem for rings.
+\begin{obs}
+    Let $R$ be a commutative ring with the nonzero identity and assume that $I_1$ and $I_2$ are comaximal ideals of $R$.
+    We will show that $I_1M\cap I_2M=(I_1I_2)M$ if $M$ is an $R$-module.
+
+    In fact, even if $I_1$ and $I_2$ are not comaximal, we have $(I_1I_2)M\leq_R I_1M\cap I_2M$.
+    Using the comaximality of $I_1$ and $I_2$, there are elements $a\in I_1$ and $b\in I_2$ such that $a+b=1\in R$.
+    If $x\in I_1M\cap I_2M$, then $x=1x=(a+b)x=ax+bx$; because $ax\in(I_1I_2)M$ and $bx\in(I_2I_1)M=(I_1I_2)M$, so $x\in(I_1I_2)M$.
+\end{obs}
+\begin{proof}[Proof of \cref{CRT for modules}]
+    As in the proof of the Chinese remainder theorem for rings, we prove the theorem by induction on $n$.
+
+    \textbf{Step 1. Proof for $n=2$}\newline\indent
+    Consider the $R$-module homomorphism $\phi: M\rightarrow (M/{I_1M})\times (M/{I_2M})$ defined by
+    \begin{center}
+        $\phi(x)=(x+I_1M, x+I_2M)$ for $x\in M$.
+    \end{center}
+    Using comaximality of $I_1$ and $I_2$, find $a\in I_1$ and $b\in I_2$ such that $a+b=1\in R$.
+    Then, given $(u+I_1M, v+I_2M)\in (M/{I_1M})\times (M/{I_2M})$, we have $\phi(bu+av)=(u+I_1M, v+I_2M)$, so $\phi$ is surjective.
+    The isomorphism now follows from the first isomorphism theorem.
+
+    \textbf{Step 2. Generalization}\newline\indent
+    What we want to show is the following two statements:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $(I_1\cdot\cdots\cdot I_n)M=\bigcap_{i=1}^n I_iM$.
+        }
+        \item[(b)]
+        {
+            The ring homomorphism $\phi:R\rightarrow R/A_1\times\cdots\times R/A_n$ defined by $\phi(x)=(x+I_1M, \cdots, x+I_nM)$ for $x\in R$ is surjective.
+        }
+    \end{enumerate}
+    We prove (a) by induction; we assume the equation holds for $(n-1)$-pairwise comaximal ideals.
+    For each $i\in 1, \cdots, n-1$, let $a_i\in I_i$ and $b_i\in I_n$ be elements such that $a_i+b_i=1\in R$.
+    Because
+    \begin{align*}
+        1=(a_1+b_1)\cdots(a_{n-1}+b_{n-1})=a_1\cdot\cdots\cdot a_{n-1}+\star
+    \end{align*}
+    with $\star=1-(a_1+b_1)\cdots(a_{n-1}+b_{n-1})\in I_n$ and $a_1\cdot\cdots\cdot a_{n-1}\in I_1\cdot\cdots\cdot I_{n-1}$, we find that $I_1\cdot\cdots\cdot I_{n-1}$ and $I_n$ are comaximal.
+    Therefore, $\bigcap_{i=1}^n I_iM=(I_1\cdot\cdots\cdot I_n)M$, as desired.
+
+    To prove (b), it suffices to find $x_i\in M$ for each $i=1, \cdots, n$ such that
+    \begin{center}
+        $x_i\equiv 1$ mod $I_iM$ and $x_i\equiv 0$ mod $I_jM$ whenever $j\neq i$.
+    \end{center}
+    And for this, it suffices to find $x_i\in M$ for each $i$ such that
+    \begin{center}
+        $x_i\equiv 1$ mod $I_iM$ and $x_i\equiv 0$ mod $M_i$,
+    \end{center}
+    where $M_i=\bigcap_{j\neq i} I_jM$; such $x_i$ indeed exists for each $i$, since $I_iM$ and $M_i$ are comaximal as found in the preceeding paragraph.
+\end{proof}

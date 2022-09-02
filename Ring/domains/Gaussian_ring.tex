@@ -1,0 +1,65 @@
+\section{The Gaussian integer ring}
+
+\subsection{Quotients of the Gaussian integer ring}
+\begin{obs}
+    If $I$ is a nonzero ideal of $\bb{Z}[i]$, the quotient ring $\bb{Z}[i]/I$ is a finite ring.
+    To be precise, letting $I=(\alpha)$, the order of $\bb{Z}[i]/I$ is at most $|\alpha|^2$.
+\end{obs}
+\begin{proof}
+    Write $I=(\alpha)$ for some $\alpha\in\bb{Z}[i]$.
+    Every element of $\bb{Z}[i]/I$ can be uniquely written in the form of $\ol{a+bi}\,(a, b\in\bb{Z})$ with $a\in\bb{Z}[i]$ and $a^2+b^2<|\alpha|^2$ by the division algorithm.
+    Because there are finitely many Gaussian integers of modulus smaller than $|\alpha|$, the quotient ring $\bb{Z}[i]/I$ is finite.
+\end{proof}
+
+\begin{prop}
+    Let $p$ be a prime number.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $p\equiv 3$ mod 4, then $\bb{Z}[i]/(p)$ is isomorphic to the field of order $p^2$.
+        }
+        \item[(b)]
+        {
+            If $p\equiv 1$ mod 4, then $p=\pi\ol\pi$ for some irreducible element $\pi\in\bb{Z}[i]$.
+            Because $(\pi)$ and $(\ol\pi)$ are comaximal, by the Chinese remainder theorem,
+            \begin{align*}
+                \frac{\bb{Z}[i]}{(p)}\approx\frac{\bb{Z}[i]}{(\pi)}\times\frac{\bb{Z}[i]}{(\ol\pi)}.
+            \end{align*}
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    We first prove (a).
+    Since $p$ is a prime element of $\bb{Z}[i]$, the quotient ring is a field of characteristic $p$.
+    Suppose that $a, b, x, y\in\bb{Z}$.
+    Then $a+bi\equiv x+yi$ mod $p$ if and only if $a\equiv x$ and $b\equiv y$ mod $p$, thus the order of the quotient ring is $p^2$.
+
+    We now prove (b).
+    To show that $(\pi)$ and $(\ol\pi)$ are comaximal,it suffices to prove that $\ol\pi\neq(\pi)$; the maximality of $(\pi)$ will prove the comaximality.
+    Assuming $\ol\pi\in(\pi)$, we have $\alpha\ol\pi=\pi$ for some $\alpha\in\bb{Z}[i]$ with $|\alpha|=1$.
+    Writing $\pi=a+bi$ for some $a, b\in\bb{Z}$,
+    \begin{enumerate}
+        \item[(1)]
+        {
+            When $\alpha=1$, we have $a+bi=a-bi$ so that $b=0$ and $p=a^2$.
+        }
+        \item[(2)]
+        {
+            When $\alpha=-1$, we have $-a-bi=a-bi$ so that $a=0$ and $p=b^2$.
+        }
+        \item[(3)]
+        {
+            When $\alpha=i$, we have $-b+ai=a-bi$ so that $a=-b$ and $p=2a^2$.
+        }
+        \item[(4)]
+        {
+            When $\alpha=-i$, we hace $b-ai=a-bi$ so that $a=b$ and $p=2a^2$.
+        }
+    \end{enumerate}
+    In either of the above cases, $p$ is not a prime number, a contradiction.
+    Hence, $(\pi)$ and $(\ol\pi)$ are comaximal and the Chinese remainder theorem holds.
+\end{proof}
+
+\begin{thm}
+    $|\bb{Z}[i]/(\alpha)|=|\alpha|^2$, where $\alpha$ is a nonzero element of $\bb{Z}[i]$.
+\end{thm}

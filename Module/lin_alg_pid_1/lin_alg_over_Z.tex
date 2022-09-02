@@ -1,0 +1,241 @@
+\section{Linear algebra over the ring of integers}
+
+Even stronger than as mentioned in the preceeding section, we assume that $D$ is a Euclidean domain.
+
+\begin{defi}[$D$-elementary operations]
+    Any of the following operations is called a $D$-elementary operation:
+    \begin{enumerate}
+        \item[(E1)]
+        {
+            Interchanging two distinct rows or columns
+        }
+        \item[(E2)]
+        {
+            Adding the $r$-scalar multiple of a row (or column, respectively) to another row (column). ($r\in D$)
+        }
+        \item[(E3)]
+        {
+            Multiplying a row or a column by $u\in D^\times$. \color{brown}(Why $u$ should be a unit in $D$?)\color{black}
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{thm}\label{reduction to a diagonal matrix}
+    Let $D$ be a Euclidean domain and suppose that $A\in\mc{M}_{m, n}(D)$.
+    Then there are matrices $U\in GL_m(D), V\in GL_n(D)$ and elements $d_1, \cdots, d_r\,(r=\min\{m, n\})$ such that
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $U$ and $V$ are products of $D$-elementary matrices.
+        }
+        \item[(2)]
+        {
+            $UAV=\diag\{d_1, \cdots, d_r, 0, \cdots, 0\}\in\mc{M}_{m, n}(D)$ and $d_1|d_2|\cdots|d_r$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \begin{center}
+        Idea: Permuting rows and columns until we have multiples of a diagonal entry on every upper-triangular entries.
+    \end{center}
+    \color{red}Read page 328 of your second textbook.\color{black}
+\end{proof}
+Even though the above theorem is theoretically essential, it is not practically essential.
+\begin{prop}
+    Use the notations in \cref{reduction to a diagonal matrix}.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $d_1$ is a greatest common divisor of all the $mn$-entries of $A$.
+            (It is proved when proving \cref{reduction to a diagonal matrix}.)
+        }
+        \item[(b)]
+        {
+            When $m=n$, since $U$ and $V$ are invertible, we have $\det(A)\sim_\times d_1\cdot\cdots\cdot d_n$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{prop}
+    If $D$ is a Euclidean domain and $A$ is an invertible $n\times n$-matrix over $D$, then $A$ is a product of $D$-elementary matrices.
+\end{prop}
+\begin{proof}
+    Using the notation in \cref{reduction to a diagonal matrix}, each $d_i$ has to be a unit in $D$.
+\end{proof}
+
+\begin{obs}\label{over ED: change of bases}
+    We now consider \cref{reduction to a diagonal matrix} in the situation when we change bases.
+    Let $N$ and $M$ be free $D$-modules of rank $n$ and $m$, respectively, and let $\mc{B}=\{x_1, \cdots, x_n\}$ and $\mc{C}=\{y_1, \cdots, y_m\}$ be $D$-bases of $N$ and $M$, respectively.
+    Suppose further that $\phi: N\rightarrow M$ is a $D$-module homomorphism, and let $A=[\phi]^\mc{B}_\mc{C}\in\mc{M}_{m, n}(D)$.
+    Let $U$, $V$ $d_i\,(1\leq i\leq r=\min\{m, n\})$ be as in \cref{reduction to a diagonal matrix}.
+    Since $U$ and $V$ are invertible, we may identify them as transition matrices; in other words, there are $D$-bases $\mc{B}'=\{z_1, \cdots, z_n\}$ of $N$ and $\mc{C}'=\{w_1, \cdots, w_m\}$ of $M$ such that
+    \begin{align*}
+        UAV
+        = [\id{D^m}]^{\mc{C}}_{\mc{C}'} \cdot [\phi]^{\mc{B}}_\mc{C} \cdot [\id{D^n}]^{\mc{B}'}_{\mc{B}}
+        = [\phi]^{\mc{B}'}_{\mc{C}'}.
+    \end{align*}
+    Therefore, the $D$-module homomorphism $\phi$ can be understood as the following $D$-module homomorphism:
+    \begin{eqnarray*}
+        \phi(z_j)=
+        \left\{\begin{matrix}
+            d_jw_j  & \textsf{if }1\leq j\leq r=\min\{m, n\}\\
+            0       & \textsf{if }m<n\textsf{ and }m<j\leq n
+        \end{matrix}\right..
+\end{eqnarray*}
+\end{obs}
+
+\begin{cor}\label{corollary over Z}
+    Let $D$ be a Euclidean domain and $M$ be a free $D$-module of finite rank.
+    For a $D$-sumodule $N$ of $M$, (because $N$ is also a free $D$-module of finite rank) we can let $n=\rank_D(N)\leq\rank_D(M)=m$.
+    Then there are $m$-elements $w_1, \cdots, w_m\in M$ and $n$-scalars $d_1, \cdots, d_n\in D$ such that
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $\{w_1, \cdots, w_m\}$ is a $D$-basis of $M$.
+        }
+        \item[(2)]
+        {
+            $\{d_1w_1, \cdots, d_nw_n\}$ is a $D$-basis of $N$.
+        }
+        \item[(3)]
+        {
+            $d_1|d_2|\cdots|d_n$.
+        }
+    \end{enumerate}
+    Furthermore, we have
+    \begin{align*}
+        \frac{M}{N} \approx \frac{D}{(d_1)}\oplus\cdots\oplus \frac{D}{(d_n)}\oplus\overbrace{D\oplus\cdots\oplus D}^{(m-n)-D\textsf{'s}}
+    \end{align*}
+\end{cor}
+\begin{proof}
+    Consider the injection $\imath: N\hookrightarrow M$ and find $U, V, \{d_i: 1\leq i\leq n\}$ as in \cref{over ED: change of bases}.
+    Because $\imath(N)=N$ and $\imath(z_j)=d_jw_j$ for $1\leq j\leq n$, $\{w_1, \cdots, w_m\}$ is a $D$-basis of $M$ and $\{d_1w_1, \cdots, d_nw_n\}$ is a $D$-basis of $N$.
+
+    Since $M=\bigoplus_{i=1}^m Dw_i$ and $N=\bigoplus_{i=1}^n Dd_iw_i$, by considering the map $\pi: M\rightarrow D/(d_1)\oplus\cdots\oplus D/(d_n)\oplus\underbrace{D\oplus\cdots\oplus D}_{(m-n)-D\textsf{'s}}$ defined by
+    \begin{align*}
+        \phi(a_1w_1+\cdots+a_mw_m)=(\ol{a_1}, \cdots \ol{a_n}, a_{n+1}, \cdots, a_m),
+    \end{align*}
+    it can easily be checked that $\phi$ is a well-defined $D$-module epimorphism sith $\ker\phi=N$, from which the desired isomorphism is derived.
+\end{proof}
+\begin{rmk}
+    Using this corollary, we can explain the existence part of the cyclic decomposition of a finitely generated module over a Euclidean domain.
+    To be precise, if that $D$ is a Euclidean domain and $X$ be a finitely generated $D$-module, then there are elements $d_1, \cdots, d_n\in D$ such that
+    \begin{enumerate}
+        \item[(1)]
+        {
+            $d_1|\cdots|d_n$ and
+        }
+        \item[(2)]
+        {
+            $X\approx D/(d_1)\oplus D/(d_n)\oplus D^k$ for some integer $k\geq 0$.
+        }
+    \end{enumerate}
+    
+    To justify the above assertion, one should remark that a finitely generated object is isomorphic to a homomorphic image of the free object generated by a finite set.
+    In this case, a finitely generated $D$-module $X$ is isomorphic to a quotient of a free $D$-module of a finite rank.
+    Applying the above corollary to the quotient of the free $D$-module justifies the assertion.
+\end{rmk}
+
+In the remaining of this section, we practice finding a $\bb{Z}$-basis of a $\bb{Z}$-submodule of $\bb{Z}^r$, where $r$ is a positive integer.
+Before studying some particular examples, we first investigate the following proposition.
+\begin{prop}
+    Let $\{x_1, \cdots, x_n\}$ be a subset of $\bb{Z}^n$ and let $N=\sum_{i=1}^n \bb{Z}x_i$.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\rank_\bb{Z} N=n$.
+        }
+        \item[(b)]
+        {
+            $\det(x_1, \cdots, x_n)\neq 0$.
+        }
+        \item[(c)]
+        {
+            $[\bb{Z}^n: N]<\infty$.
+        }
+    \end{enumerate}
+    Also, in any of the above case, $[\bb{Z}^n: N]=\det(x_1, \cdots, x_n)$.
+\end{prop}
+\begin{proof}
+    Let $\mc{B}=\{x_1, \cdots, x_n\}$ and $\mc{E}=\{e_1, \cdots, e_n\}$, and consider the natural inclusion $\imath: N\hookrightarrow\bb{Z}^n$ so that we have the matrix representation $A:=[\imath]^\mc{B}_\mc{E}=(x_1, \cdots, x_n)\in\mc{M}_{n, n}(\bb{Z})$.
+    
+    [(a)$\Rightarrow$(b)]
+    Since $\mc{B}$ is a $\bb{Z}$-basis of $N$, $\mc{B}$ is a $\bb{Q}$-basis of the $\bb{Q}$-vector space $\sum_{i=1}^n\bb{Q}x_i=\bb{Q}^n$.
+
+    [(b)$\Rightarrow$(c)]
+    By \cref{reduction to a diagonal matrix}, there are matrices $U, V\in GL_n(\bb{Z})$ such that $UAV$ is diagonal.
+    Because $\det(A)\neq 0$, each diagonal entry of $UAV$ is nonzero.
+    By \cref{corollary over Z}, $[\bb{Z}^n: N]=|d_1\cdot\cdots\cdot d_n|(=\det(A))|<\infty$.
+
+    [(c)$\Rightarrow$(a)]
+    Since the index of $N$ in $\bb{Z}^n$ is finite, by the isomorphism suggested in \cref{corollary over Z}, the free part of $\bb{Z}^n/N$ should be zero.
+    Therefore, $\rank_\bb{Z}(N)=n$.
+\end{proof}
+
+\begin{exmp}
+    Let $M$ be the free $\bb{Z}$-module $\bb{Z}^2$ of rank 2, and let $N=\bb{Z}(8, 10)^T\oplus\bb{Z}(18, 24)^T$.
+    (For convinience, let $x_1=(8, 10)^T$ and $x_2=(18, 24)^T$.)
+    Our goal is to find a $\bb{Z}$-basis of $N$ which is easy to deal with.
+
+    One strategy is to consider the natural embedding $\imath: N\hookrightarrow\bb{Z}^2$.
+    Letting $\mc{B}=\{x_1, x_2\}$ and $\mc{E}=\{e_1, e_2\}$, we have
+    $A:=[\imath]^\mc{B}_\mc{E}=\begin{pmatrix}
+        8   &   18  \\
+        10  &   24  
+    \end{pmatrix}$.
+    After $\bb{Z}$-elementary operations, we obtain the following diagonal matrix:
+    \begin{align*}
+        UAV=\begin{pmatrix}
+            2&0\\0&6
+        \end{pmatrix},
+    \end{align*}
+    where $U=\begin{pmatrix}
+        1&0\\2&-1
+    \end{pmatrix}$ and $V=\begin{pmatrix}
+        -2&9\\1&-4
+    \end{pmatrix}$.
+    \color{teal}Since $U$ and $V$ are obtained via $\bb{Z}$-elementary operations, they can be considered transition matrices, i.e., a matrix representation of the identity map over $\bb{Z}^2$. \color{black}
+    Identifying $U$ and $V$ as transition matrices $[\id{\bb{Z}^2}]^{\mc{E}}_{\mc{C}'}$ and $[\id{\bb{Z}^2}]^{\mc{B}'}_{\mc{B}}$, respectively, we find that
+    \begin{align*}
+        \mc{B}'=\left\{(2, 4)^T, (0, -6)^T\right\},\quad\mc{C}'=\left\{(1, 2)^T, (0, -1)^T\right\}.
+    \end{align*}
+    Hence, we obtained another $\bb{Z}$-basis $\mc{B}'$ of $N$.
+    Also, we can find that $\bb{Z}^2/N\approx\bb{Z}/2\bb{Z}\oplus\bb{Z}/6\bb{Z}$, so $[\bb{Z}^2: N]=12=|\det A|$.
+\end{exmp}
+
+\begin{exmp}
+    In this example, we seek to find a `simple' $\bb{Z}$-basis of $N=\bb{Z}(-4, 2)^T+\bb{Z}(6, 4)^T+\bb{Z}(10, 10)^T\leq\bb{Z}^2$.
+    (Simply write $x_1=(-4, 2)^T, x_2=(6, 4)^T, x_3=(10, 10)^T$.)
+    
+    We develop another strategy to construct a $\bb{Z}$-linear map and some bases with regard to which matrix representation of the $\bb{Z}$-linear map is $(x_1, x_2, x_3)$.
+    Let $\mc{E}=\{e_1, e_2, e_3\}, \mc{F}=\{e_1, e_2\}$, and $\phi: \bb{Z}^3\rightarrow\bb{Z}^2$ be the map defined by $\phi(e_i)=x_i$, we have $\range\phi=N$ and $A:=[\phi]^\mc{E}_\mc{F}=\begin{pmatrix}
+        -4&6&10\\2&4&10
+    \end{pmatrix}$.
+    We can also find after $\bb{Z}$-elementary operations that
+    \begin{align*}
+        UAV=\begin{pmatrix}
+            2&0&0\\0&2&0
+        \end{pmatrix},
+    \end{align*}
+    where $U=\begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}$ and $V=\begin{pmatrix}
+        1&-1&5\\0&-2&15\\0&1&-7
+    \end{pmatrix}$.
+    \color{teal}Again, since $U$ and $V$ are obtained via $D$-elementary operations, they are invertible so they can be considered transition matrices; let $\mc{B}'$ and $\mc{C}'$ be $\bb{Z}$-bases of $\bb{Z}^3$ and $\bb{Z}^2$, respectively, such that $[\id{\bb{Z}^3}]^{\mc{B}'}_\mc{F}=V$ and $[\id{\bb{Z}^2}]^\mc{F}_{\mc{C}'}=U$. \color{black}
+    Since $\phi$ is onto $N$ and $[\phi]^{\mc{B}'}_{\mc{C}'}=\begin{pmatrix}
+        2&0&0\\0&2&0
+    \end{pmatrix}$, (writing $\mc{B}'=\{v_1, v_2, v_3\}$ and $\mc{C}'=\{u_1, u_2\}$) $N$ is generated by $\{\phi v_1=2u_1=(-4, 2)^T, \phi v_2=2u_2=(2, 0)^T, \phi v_3=0\}$.
+    And finally, it is clear that
+    \begin{align*}
+        N=\bb{Z}\begin{pmatrix}
+            -4\\2
+        \end{pmatrix}\oplus\begin{pmatrix}
+            2\\0
+        \end{pmatrix}=\begin{pmatrix}
+            2\\0
+        \end{pmatrix}\oplus\begin{pmatrix}
+            0\\2
+        \end{pmatrix}.
+    \end{align*}
+\end{exmp}

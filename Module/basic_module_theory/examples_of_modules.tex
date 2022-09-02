@@ -1,0 +1,41 @@
+\section{Examples of submodules}
+
+\begin{exmp}[Abelian groups and $\bb{Z}$-modules]
+    Given an abelian group $A$, the \textit{natural} action of $\bb{Z}$ on $A$ gives a $\bb{Z}$-scalar multiplication on $A$.
+    With this action, the abelian group $A$ can be considered a $\bb{Z}$-module.
+    The converse understanding is clear, by forgetting $\bb{Z}$-scalar multiplications.
+    Therefore, we can identify an abelian group as a $\bb{Z}$-module and vice versa.
+
+    In particular, suppose that $A$ is an abelian group and let $m$ be a positive integer such that $mx=0\in A$ for all $x\in A$.
+    Then $A$ can also be considered $\bb{Z}/m\bb{Z}$-module.
+    In particular, if $m$ is a prime number $p$, then $A$ can be considered an $\bb{F}_p$-vector space.
+\end{exmp}
+
+\begin{exmp}[Vector spaces over fields as modules over polynomial rings]
+    Let $F$ be a field and $V$ be an $F$-vector space and let $T$ be a linear operator on $V$.
+    Given a polynomial $f(t)\in F[t]$, define the action of $f(t)$ on the element $v$ of $V$ as follows:
+    \begin{align*}
+        f(t)\cdot v:=f(T)(v).
+    \end{align*}
+    Together with action, $V$ can be considered an $F[t]$-module, whose scalar multiplication extends the scalar multiplication of the $F$-vector space $V$.
+
+    Now we discuss when an $F$-subspace of $V$ is an $F[t]$-submodule of $V$.
+    It is clear that an $F[t]$-submodule of $V$ is an $F$-subspace of $V$.
+    So let $W$ be an $F$-subspace of $V$ and try to find a condition under which $W$ is an $F[t]$-submodule of $V$.
+    If $W$ is an $F[t]$-submodule of $V$, then $W$ has to be closed under $F[t]$-linear combinations.
+    Hence, in particular, $W$ has to be $T$-invariant.
+    Conversely, if $W$ is an $F$-subspace ov $V$ which is $T$-invariant, it can easily be explained that the $F[t]$-scalar multiplication defined above behaves well on $W$, i.e., $f(t)\cdot w\in W$ whenever $f(t)\in F[t]$ and $w\in W$.
+    Therefore, an $F$-subspace $W$ of $V$ is an $F[t]$-submodule of $V$ if and only if $W$ is $T$-invariant.
+\end{exmp}
+
+We now study quotient modules.
+For this, assume that $M$ is an $R$-module and $N$ be an $R$-submodule of $N$.
+For the quotient $M/N$ to be an $R$-module, $M/N$ has to be an abelian group, which is automatically achieved. \color{brown}(How?) \color{black}
+And it is easy to observe that the \textit{natural} $R$-scalar multiplication on $M/N$ behaves well.
+Therefore, $M/N$ is an $R$-module whenever $N$ is an $R$-submodule of $M$.
+
+\begin{exmp}
+    Let $F$ be a field and $V$ be a finite dimensional vector space over $F$.
+    Supppose that $W$ is an $F$-subspace of $V$.
+    Considering the $F$-linear map $\pi_N: M\rightarrow M/N$, by the dimension theorem, we have $\textsf{dim}M = \textsf{dim}\ker(\pi_N) + \textsf{dim}\range(\pi_N)=\textsf{dim}N+\textsf{dim}(M/N)$.
+\end{exmp}

@@ -1,0 +1,117 @@
+\section{Structured objects in modern algebra}
+
+A structured object, or just an object, in short, is defined as a set $X$ with operators on $X$ such that the operators are `compatible' and $X$ satisfies some further properties.\footnote{By operators we assume that they are `compatible' and binary.}
+
+\begin{defi}[Group]
+    A set $G$ with an operator $\cdot$ on $G$ is called a group if
+    \begin{enumerate}
+        \item[(G1)]
+        {
+            (Compatibility)
+            the operator is associative, i.e., $a\cdot(b\cdot c)=(a\cdot b)\cdot c$ for all $a, b, c\in G$
+        }
+    \end{enumerate}
+    and $G$ satisfies the following further properties:
+    \begin{enumerate}
+        \item[(G2)]
+        {
+            (The identity)
+            There is an element $e$ of $G$ such that $e\cdot x=x\cdot e=x$ for all $x\in G$.
+        }
+        \item[(G3)]
+        {
+            (The inverse)
+            For each $g\in G$, there is an element $g^{-1}\in G$ such that $gg^{-1}=g^{-1}g=e$.
+        }
+    \end{enumerate}
+    \color{brown}It is left as an exercise to explain why the identity of $G$ and an inverse of a given element of $G$ are unique.\color{black}
+\end{defi}
+
+\begin{defi}[Ring]
+    A set $R$ with two operators $+$ and $\times$ are, or to be precise, the tuple $(R, +, 
+    \times)$, is called a ring if
+    \begin{enumerate}
+        \item[(R1)]
+        {
+            (Compatibility)
+            Both $+$ and $\times$ are associative and $+$ and $\times$ are distributive
+        }
+    \end{enumerate}
+    and $R$ satisfies the following further property:
+    \begin{enumerate}
+        \item[(R2)]
+        {
+            $(R, +)$ is an abelian group.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    Assume a ring $R$ has the multiplicative identity $1$. \color{brown}(Check the uniqueness of the multiplicative identity.) \color{black}
+    If $1=0$ in a ring $R$, then $x=x\times 1=x\times(1+0)=x\times(1+1)=x+x$ for all $x\in R$, so $x=0$ for all $x\in R$.
+\end{rmk}
+\begin{defi}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            A ring with a commutative multiplication is called a commutative ring.
+        }
+        \item[(b)]
+        {
+            A commutative ring $R$ is called an integral domain (or a domain, in short), if $ab=0$ implies $a=0$ or $b=0$.
+        }
+        \item[(c)]
+        {
+            A ring with identity in which every nonzero element is a unit is called a division ring.
+            Here, a nonzero element $r$ in a ring $R$ is called a unit if there is an element $u\in R$ such that $ru=ur=1$.\color{brown}Check the uniqueness of the multiplicative inverse of a unit.\color{black}
+        }
+        \item[(d)]
+        {
+            A commutative division ring is called a field.
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{defi}[$R$-module]
+    Assume that $R$ is a ring with identity and a set $M$ equips an addition and an $R$-scalar multiplication.
+    The set $M$, together with $R$ and all the operators, is called a left $R$-module if
+    \begin{enumerate}
+        \item[(M1)]
+        {
+            (Compatibility)
+            All operators are pairwise compatible, e.g., associative, distributive,
+        }
+    \end{enumerate}
+    and $M$ satisfies the following further property:
+    \begin{enumerate}
+        \item[(M2)]
+        {
+            $(M, +)$ is an abelian group.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}
+    If $R$ is a division ring, then an $R$-module is called an $R$-vector space.
+\end{rmk}
+
+\begin{defi}[$R$-algebra]
+    Assume that $R$ is a ring with identity and a set $A$ equips an addition, an $R$-scalar multiplication, and a multiplication.
+    The set $A$, together with $R$ and all the operators, is called an $R$-algebra if
+    \begin{enumerate}
+        \item[(A1)]
+        {
+            (Compatibility)
+            All operators are pairwise compatible, e.g., associative, distributive,
+        }
+    \end{enumerate}
+    and $A$ satisfies the following further properties:
+    \begin{enumerate}
+        \item[(A2)]
+        {
+            $A$ is a ring.
+        }
+        \item[(A3)]
+        {
+            $A$ is an $R$-module.
+        }
+    \end{enumerate}
+\end{defi}

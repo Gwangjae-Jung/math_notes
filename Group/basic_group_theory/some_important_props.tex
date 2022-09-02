@@ -1,0 +1,90 @@
+\section{Some important propositions}
+
+\subsection{Cauchy's group theorem}
+\begin{thm}[Cauchy's group theorem]
+    Let $G$ be a finite group and $p$ be a prime dividing $|G|$.
+    Then there is an element of order $p$ in $G$.
+\end{thm}
+\begin{proof}\footnote{Reference: James Mckay (\textit{Another proof of Cauchy's group theorem}, Amer. Math. Monthly, 66(1959), p.119).}
+    Let $S$ denite the set of $p$-tuples of elements of $G$ the product of whose coordinates is $1$, i.e.,
+    \begin{equation*}
+        S:=\{(x_1, x_2, \cdots, x_p)\in G^p: x_1\cdot x_2\cdot\cdots\cdot x_p=1\}.
+    \end{equation*}
+
+    \textbf{Step 1.}
+    It is easy to observe that $|S|=|G|^{p-1}$.
+
+    \textbf{Step 2.}
+    It is also easy to observe that $S$ is closed under (cyclic) permutations.
+        
+    \textbf{Step 3.}
+    Define the relation $\sim$ on $S$ by letting $\alpha\sim\beta$ if and only if $\beta$ is a cyclic permutation of $\alpha$ ($\alpha, \beta\in S$).
+    Then it is easy to show that the relation $\sim$ is an equivalence relation on $S$.
+    
+    \textbf{Step 4.}
+    An equivalence class contains a single element if and only if a member of the class is of the form $(x, x, \cdots, x)$ for some $x\in G$. (Clearly, in this case, $x^p=1$.)
+
+    \textbf{Step 5.}
+    Hence, $|S|=k+pd$, where $k$ is the number of equivalence classes with a unique member and $d$ is the number of equivalence classes with $p$-distinct members.
+
+    \textbf{Step 6.}
+    Since $k\geq 1$ and $k$ is divisible by $p$, it is implied that there is a nonidentity element $x$ such that $x^p=1$, i.e., of order $p$.
+\end{proof}
+
+\subsection{Conjugacy}
+\begin{defi}[Conjugacy]
+    Let $G$ be a group and let $x, y$ be elements of $G$.
+    The relation $\sim$ defined in $G$ by $x\sim y$ if and only if $x=gyg^{-1}$ for some $g\in G$ is called the conjugacy relation, which is an equivalence relation on $G$.
+    For an element $g\in G$, the map $\gamma_g: G\rightarrow G$ defined by $\gamma_g(x)=gxg^{-1}$ is called the conjugation (automorphism).
+\end{defi}
+
+Suppose $G$ acts on itself by conjugation.
+Then the stabilizer of $x\in G$ is the set $\{g\in G: \gamma_g(x)=x\}$ and the kernel of this action is the intersection of $\stab{G}{x}$ for $x\in X$.
+To be general, the stabilizer of $A\subset G$ is the intersection of $\stab{G}{x}$ for $x\in A$, which is also denoted by $C_G(A)$.
+
+When conjugation is considerd to be acted on the power set of $G$, i.e., $G$ acts on $\mc{P}(G)$ by conjugation, the stabilizer of $A\subset G$ is the set $\{g\in G: \gamma_g(A)=A\}$, and this set will be denoted by $N_G(A)$.
+
+\begin{prob}
+    Check that $C_G(H)\leq N_G(H)\leq G$, whenever $H$ is a subgroup of $G$.
+\end{prob}
+
+\subsection{Some automorphism groups}
+
+\begin{thm}
+    $\aut{Z_n}\approx (\bb{Z}/n\bb{Z})^\times$.
+\end{thm}
+\begin{proof}
+    \color{brown}Left as an exercise.\color{black}
+\end{proof}
+
+\subsection{Difficult order counting}
+
+\begin{prop}
+    Let $G$ be a cyclic group of order $n$ and let $m$ be a positive integer.
+    Then the set
+    \begin{equation*}
+        \{y\in G: y^m=1\}
+    \end{equation*}
+    has $(m, n)$-distinct elements.
+\end{prop}
+\begin{proof}[Proof 1]
+    Suppose $(x^a)^m=1$, where $x$ is a generator of $G$ and $0\leq a<n$.
+    Then $n|am$, so $n'|am'$, where $n=n'd$ and $m=m'd$ with $d=(m, n)$.
+    Because $(m', n')=1$, $a$ is forced to be a multiple of $n'$, i.e., $a\in\{0, n', 2n', \cdots, (d-1)n'\}$.
+    Conversely, for any $a$ in the preceeding set, $(x^a)^m=1$, so the set in the proposition contains $(m, n)$-distinct elements.
+\end{proof}
+\begin{proof}[Proof 2]
+    For convinience, let the set in the proposition be denited by $H$ and write $|H|=a$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Writing $d=(m, n)$, there are integers $r$ and $s$ such that $d=mr+ns$.
+        }
+        \item[(b)]
+        {
+            Since $H\leq G$, $H=\genone{x^c}$ for some integer $c$ such that $ac=n$.
+        }
+    \end{enumerate}
+    We first show that $a|d$; it is because $(x^c)^d=x^{cd}=x^{c(mr+ns)}=1$.
+    Conversely, since $(x^{n/d})^m=(x^{m/d})^n=1$, we have $x^{n/d}\in H$; by Lagrange's theorem we fininally obtain that $d=|x^{n/d}|$ divides $a$.
+\end{proof}

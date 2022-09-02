@@ -1,0 +1,223 @@
+\section{Finitely generated module over a principal ideal domain}
+
+\begin{rmk}[Dimension theorem for vector spaces over fields]
+    Suppose that $F$ is a field and $V, W$ are vector spaces over $F$.
+    And let $L: V\rightarrow W$ be an $F$-linear map.
+    Assuming that $\{w_i:i\in I\}$ is an $F$-basis of $\range(L)$, let $v_i$ be a vector in $V$ for each $i\in I$ such that $L(v_i)=w_i$ and define $U=\sum_{i\in I}Fv_i$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\{v_i: i\in I\}$ is an $F$-basis of $U$ and $U\approx W$.
+        }
+        \item[(b)]
+        {
+            $V=\ker L\oplus U$.
+        }
+    \end{enumerate}
+    In particular, if both $V$ and $W$ are finite dimensional, then $\dim_F V=\dim_F(\ker L)+\dim_F(\range L)$.
+\end{rmk}
+
+In fact, the above dimension theorem extends to the following theorem.
+\begin{thm}[Decomposition theorem for modules over integral domains]\label{domain-kernel-free_image}
+    Assume that $D$ is an integral domain.
+    Let $M$ and $N$ be $D$-modules and $\phi: M\rightarrow N$ be a $D$-module homomorphism \textit{with a free image}, i.e., $\range\phi$ is a free $D$-submodule of $N$.
+    Then there is a free $D$-submodule $\mc{F}$ of $M$ such that
+    \begin{center}
+        $M=\ker\phi\oplus\mc{F}$\quad and\quad $\mc{F}\approx \range\phi$.
+    \end{center}
+\end{thm}
+\begin{proof}
+    \textbf{Step 1. Setting a $D$-submodule}\newline\indent
+    Since $\range\phi$ is a free $D$-module, there is a $D$-basis $\mc{B}=\{v_i: i\in I\}$ of $\range\phi$.
+    For each $i\in I$, choose $u_i\in M$ such that $\phi(u_i)=v_i$, and set $K=\sum_{i\in I} Du_i$.
+
+    \textbf{Step 2. Justifying that the constructed submodule is isomorphic to the image of $\phi$}\newline\indent
+    Clearly, $K$ is mapped onto $\range\phi$ by the restriction of $\phi$ to $K$.
+    Assuming that $\phi|_K(\sum_{i\in I}a_iu_i)=0$, where the sum is finite, we have $a_i=0$ for all $i\in I$, for $\sum_{i\in I}a_iv_i=0$.
+    Hence, $\phi|_K$ is a $D$-module isomorphism and $K\approx\range\phi$.
+
+    \textbf{Step 3. Deriving a desired result}\newline\indent
+    Therefore, $M=K+\ker\phi$.
+    To show the sum is direct, assume that $x\in K\cap\ker\phi$.
+    Since $x\in K$, we may write $x=\sum_{i\in I}a_iu_i$, where the sum is finite; since $x\in\ker\phi$, we have $0=\phi(x)=\sum_{i\in I}a_iv_i$, implying that $a_i=0$ for all $i\in I$.
+    Thus, $K\cap\ker\phi=0$ and the sum $M=K+\ker\phi$ is direct.
+\end{proof}
+
+Before studying further theory, we introduce some lemmas.
+Among the following lemmas, the first two lemmas could have been introduced in the preceeding sections, since they assume the ring to be an integral domain, rather than a PID.
+\begin{lem}\label{free modules over domains are torsion-free}
+    Free modules over integral domains are torsion-free.
+\end{lem}
+\begin{proof}
+    Let $D$ be an integral domain and $M$ be a free $D$-module.
+    And let $\{x_i: i\in I\}$ be a $D$-basis of $M$, and suppose that $x$ is a torsion element of $M$ which is annihilated by a nonzero scalar $r\in D$.
+    Writing $x=\sum_{i\in I}a_ix_i$ (the sum is assumed to be finite), from $rx=0$ we have $ra_i=0$ for all $i\in I$.
+    Since $D$ is an integral domain and $r\neq 0$, we have $a_i=0$ for all $i\in I$.
+    Therefore, $x=0$ and $M$ is torsion-free.
+\end{proof}
+\begin{lem}\label{integral domain is isomorphic to the rank 1 free module over itself}
+    Let $D$ be an integral domain and $M$ be a free $D$-module.
+    If $x$ is a nonzero element of $M$, then $D\approx Dx$ as $D$-modules.
+\end{lem}
+\begin{proof}
+    Define the map $\alpha: D\rightarrow Dx$ by $\alpha(t)=tx$ for $t\in D$.
+    One can easily check that $\alpha$ is a $D$-module epimorphism.
+    If $\alpha(t)=0$, because $D$ is an integral domain, we have $t=0$, hence $\alpha$ is a $D$-module isomorphism.
+\end{proof}
+In the remaining of this chapter, $D$ is assumed to be a PID.
+\begin{lem}\label{pid is isomorphic to its ideals}
+    Let $D$ be a PID and $M$ be a nonzero free $D$-module.
+    If $I$ is a nonzero ideal of $D$, then $I\approx D$ as $D$-modules.
+    In other words, every ideal of the PID $D$ is a free $D$-module of rank 1.
+\end{lem}
+\begin{proof}
+    We can write $I=(a)=aD$ for some $a\in D\setminus\{0\}$.
+    And define the map $\alpha: D\rightarrow I$ by $\alpha(x)=ax$ for $x\in D$.
+    One can easily check that $\alpha$ is a $D$-module epimorphism.
+    If $\alpha(x)=0$, by the law of cancellation, we have $x=0$.
+    Therefore, $\alpha$ is a $D$-module isomorphism.
+\end{proof}
+
+The following theorem states a result what we have expected, but its proof is not simple.
+\begin{thm}\label{submodules of a finite-rank free module over a pid are free}
+    Let $D$ be a PID, and let $M$ be a \textit{finitely generated} free $D$-module.
+    Then a nonzero $D$-submodule $N$ of $M$ is also a free $D$-module, and $\rank_D(N)\leq\rank_D(M)$.
+\end{thm}
+\begin{proof}
+    Let $r=\rank_D(M)$ and $\mc{B}=\{x_1, \cdots, x_r\}$ is a $D$-basis of $M$.
+    Since $M$ is assumed to be finitely generated, we can prove the theorem by induction on $r$. (See in the following proof how the hypothesis that $D$ is a PID is applied.)
+
+    \textbf{Step 1. Proof for the case where $r=1$}\newline\indent
+    When $r=1$, $M$ is generated by a single element $x_1\in M$, so $M=Dx_1$.
+    Then a nonzero $D$-submodule $N$ of $M$ is generated by scalar multiples of $x_1$; because $D$ is a PID, it can easily be explained that $N$ is generated by one element of $M$.
+    Thus, $N=D(cx_1)$ for some $c\in D\setminus\{0\}$.
+    By \cref{integral domain is isomorphic to the rank 1 free module over itself}, $N\approx M$, so $N$ is a free $D$-module of rank 1.
+
+    \textbf{Step 2. Proof by induction}\newline\indent
+    Suppose that the theorem is valid for all free $D$-modules of rank less than $r$.
+    Consider the $D$-module homomorphism $\pi_i: N\rightarrow Dx_i$ for $i=1, \cdots, r$, where $\pi_i(\sum_{j=1}^r c_jx_j)=c_ix_i$ for $c_j\in D$.
+    Since $N$ is nonzero, $\pi_i(N)$ is nonzero for some index $i$; without loss of generality, assume $i=1$.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            By \cref{domain-kernel-free_image}, we have $N=\ker\pi_1\oplus\mc{F}$, where $\mc{F}$ is a $D$-submodule of $N$ which is isomorphic to $\range\pi_1=Dx_1\approx D$.
+            Hence, $\mc{F}$ is a free $D$-module of rank 1.
+        }
+        \item[(\romannumeral 2)]
+        {
+            $\ker\pi_1$ is a $D$-submodule of $Dx_2\oplus\cdots\oplus Dx_r\approx D^{r-1}$.By the induction hypothesis, $\ker\pi_1$ is a free $D$-submodule of $N$ and $\rank_D(\ker\pi_1)\leq r-1$.
+        }
+    \end{enumerate}
+    Therefore, $N$ is a free $D$-submodule of $M$ and $\rank_D(N)\leq\rank_D(M)$.
+\end{proof}
+\begin{cor}
+    If $D$ is a PID, then the submodules of a finitely generated $D$-module are also finitely generated.
+\end{cor}
+\begin{proof}
+    Note that an object is a homomorphic image of a free object.
+    \ifinclude
+    Let $M$ be a $D$-module generated by a finite set $S$, and consider the free $D$-module $\mc{F}_D(S)$ generated by $S$.
+    If $\jmath: S\hookrightarrow M$ is the inclusion map, there is a unique $D$-module homomorphism $\tilde\jmath: \mc{F}_D(S)\rightarrow M$ extending $\jmath$, and $\tilde\jmath$ is clearly surjective.
+    By \cref{submodules of a finite-rank free module over a pid are free}, $D$-submodule $\tilde\jmath^{-1}(N)$ of $\mc{F}_D(S)$ is a free $D$-module of finite rank, hence its image $N=\tilde\jmath(\tilde\jmath^{-1}(N))$ is finitely generated.
+    \else
+    \fi
+\end{proof}
+We introduce some application of the preceeding theory inlinear algebra over PID.s.
+\begin{exmp}[Dimension theorem]
+    When $V$ and $W$ are finite dimensional vector spaces over a field $F$ and $L: V\rightarrow W$ is an $F$-linear map, then $\dim_F V=\dim_F\ker L+\dim_F\range L$.
+    As $V$ and $W$ are free $F$-modules of finite ranks, we assume as follows: Let $D$ be a PID and let $M, N$ be free $D$-modules of finite ranks, and let $\phi: M\rightarrow N$ be a $D$-linear map.
+    We will show that
+    \begin{align*}
+        \rank_D(M)=\rank_D(\ker\phi)+\rank_D(\range\phi).
+    \end{align*}
+
+    Since $W$ is a finitely generated free $D$-module and $D$ is a PID, $\range\phi$ is a free $D$-submodule of $W$.
+    Hence, we can apply \cref{domain-kernel-free_image} to write $M=\ker\phi\oplus\mc{F}$, where $\mc{F}\approx\range\phi$.
+    Note that $\ker\phi$ is a free $D$-submodule of $V$, for $V$ is a finitely generated free $D$-module.
+    Therefore, we obtain that $\rank_D(M)=\rank_D(\ker\phi)+\rank_D(\range\phi)$.
+\end{exmp}
+\begin{exmp}[Coincidence of the rank and the \textit{corresponding} dimension]
+    Let $D$ be a PID and let $\mc{F}_D=\bigoplus_{i\in I} D$ and $\mc{F}_Q=\bigoplus_{i\in I}Q$, where $I$ is a nonempty finite set.
+    Identify $\mc{F}_D$ as a subset of $\mc{F}_Q$ and let $S$ be a nonempty subset of $\mc{F}_D$.
+
+    Observe that $\sum_{x\in S} Dx$ is a $D$-submodule of the finitely generated free $D$-module $\mc{F}_D$, so $\sum_{x\in S} Dx$ is a free $D$-module.
+    Hence, a $D$-basis of $\sum_{x\in S} Dx$ is a $Q$-basis of $\sum_{x\in S} Qx$, implying that
+    \begin{align*}
+        \rank_D\left(\sum_{x\in S}Dx\right)=\dim_Q\left(\sum_{x\in S}Qx\right).
+    \end{align*}
+
+    Using the above coincidence, one can prove the rank theorem for finite dimensional matrices over PID.s.
+    Let $A$ be an $m\times n$ matrix over $D$.
+    Then $\rank_D C_D(A)=\dim_Q C_Q(A)$ and $\rank_D C(A^\star)=\dim_Q C_Q(A^\star)$(where the subscripts in the column spaces denotes the collection of scalars), where $\star=T$ or $\star=H$.
+    Because $\dim_Q C_Q(A)=\dim_Q C_Q(A^\star)$, we obtain the rank theorem for finite dimensional matrices over PID.s.
+\end{exmp}
+
+Before proving another structure theorem, we introduce a lemma which characterizes a finitely generated free module over a PID.
+\begin{lem}
+    If $D$ is a PID, then a finitely generated \textit{torsion-free} $D$-module is \textit{free}.
+\end{lem}
+\begin{proof}
+    Let $S$ be a finite set generating a torsion-free module $M$ over $D$, and \color{teal}let $T=\{x_1, \cdots, x_s\}$ be a maximal $D$-linearly independent subset of $S$\color{black}.
+    Then $\genone{T}=\bigoplus_{i=1}^s Dx_i$ is a free $D$-module of rank $s$ with a $D$-basis $T$.
+    \begin{center}
+        Want to show: For each $x\in S$, there is a nonzero element $m_x\in D$ such that $m_xx\in\genone{T}$.
+    \end{center}
+    (The above statement is clearly valid if $x\in T$.
+    If $x\in S\setminus T$, because $T\sqcup\{x\}$ is $D$-linearly dependent, $a_1x_1+\cdots+a_sx_s+bx=0$ implies $b\neq 0$.)
+
+    Since $D$ is an integral domain and $S$ is finite, the product $m$ of $m_x$ for $x\in S$ is nonzero, and $mx\in\genone{T}$ for all $x\in S$.
+    Now, consider the map $\phi: M\rightarrow\genone{T}$ defined by $\phi(x)=mx$ for $x\in M$.
+    (Because $M$ is generated by $S$, the map $\phi$ is a well-defined $D$-module homomorphism.)
+    \textit{Because $M$ is torsion-free}, $\ker\phi=0$.
+    Therefore, by the first isomorphism theorem, $M\approx\phi(M)=\genone{T}$, so $M$ is free.
+\end{proof}
+\begin{rmk}
+    It is clear that free modules over integral domains are torsion-free (and we already proved it).
+    The preceeding proposition states that a finitely generated module over a PID is free if it is torsion-free.
+    \begin{center}
+        Conclusion: For finitely generated modules over PID.s, being free and being torsion-free coincide.
+    \end{center}
+\end{rmk}
+
+\begin{cor}[Structure theorem for finitely generated modules over PID.s]\label{decomposition of f.g. modules over pids}
+    Let $D$ be a PID and $M$ be a finitely generated $D$-module.
+    Then there is a free $D$-submodule $\mc{F}$ of $M$ such that
+    \begin{align*}
+        M=M_\tor\oplus\mc{F}.
+    \end{align*}
+    Furthermore, if $T_1\oplus\mc{F}_1=M=T_2\oplus\mc{F}_2$ for some torsion $D$-submodules $T_1, T_2$ and free $D$-submodules $\mc{F}_1, \mc{F}_2$ of $M$, then $T_1=T_2$ and $\mc{F}_1\approx\mc{F}_2$.
+    We call $\mc{F}$ the free part of $M$ and its rank the free rank of $M$.
+\end{cor}
+\begin{proof}
+    Since $M/M_\tor$ is torsion-free and finitely generated, $M/M_\tor$ is a free $D$-module, so we naturally consider the natural projection $\pi: M\twoheadrightarrow M/M_\tor$.
+    By \cref{domain-kernel-free_image}, we have $M=M_\tor\oplus\mc{F}$ for some free $D$-submodule $\mc{F}$ of $M$ such that $\mc{F}\approx M/M_\tor$.
+
+    We now justify the uniqueness part.
+    Suppose that $T_1\oplus\mc{F}_1=M=T_2\oplus\mc{F}_2$ for some torsion $D$-submodules $T_1, T_2$ and free $D$-submodules $\mc{F}_1, \mc{F}_2$ of $M$.
+    Because $M_\tor=(T_i\oplus\mc{F}_i)_\tor\textbf{\color{brown}=\color{black}}(T_i)_\tor\oplus(\mc{F}_i)_\tor=T_i$ for $i=1, 2$, we have $T_1=T_2=M_\tor$.
+    Also, because $M/M_\tor=M/M_i\approx\mc{F}_i$, we have $\mc{F}_1\approx\mc{F}_2$.
+\end{proof}
+\begin{rmk}
+    The above structure theorem states the following:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Existence)
+            If $M$ is a finitely generated module over a PID, then $M$ is the direct sum of a torsion submodule and a free submodule.
+        }
+        \item[(b)]
+        {
+            (Uniqueness)
+            Furthermore, if there are two such expressions $T_1\oplus\mc{F}_1=M=T_2\oplus\mc{F}_2$ ($T_i$ is a torsion submodule of $M$ and $\mc{F}_i$ is a free submodule of $M$ for $i=1, 2$), then the torsion submodules $T_1, T_2$ are the torsion part of $M$ and the free submodules $\mc{F}_1, \mc{F}_2$ are isomorphic as modules.
+            In short, $T_1=T_2=M_\tor$ and $\mc{F}_1\approx\mc{F}_2\approx M/M_\tor$.
+        }
+    \end{enumerate}
+    Later in this chapter (after studying some linear algebra over $\bb{Z}$), we will study the decomposition of the torsion part of a finitely generated modules over PID.s.
+\end{rmk}
+
+We end this section with an obvious observation.
+\begin{exmp}
+    Let $R$ be a ring with the nonzero identity and let $M$ be an $R$-module.
+    Suppose that $N$ is an $R$-submodule of $M$, and assume that both $N$ and $M/N$ are finitely generated.
+    Then $N=\genone{x_1, \cdots, x_n}$ and $\ol M=M/N=\genone{\ol{y_1}, \cdots, \ol{y_j}}$ for some $x_1, \cdots, x_n, y_1, \cdots, y_j\in M$, and one can easily verify that $M=\genone{x_1, \cdots, x_n, y_1, \cdots, y_j}$, i.e., $M$ is finitely generated.
+\end{exmp}

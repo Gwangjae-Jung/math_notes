@@ -1,0 +1,44 @@
+\section{Lagrange resolvent}\label{Lagrange_resolvent}
+
+In this section, we assume the followings:
+\begin{enumerate}
+    \item[(\romannumeral 1)]
+    {
+        $F$ is a field containing a primitive $n$-th root of unity, where $n$ is not divisible by $\ch{F}$.
+    }
+    \item[(\romannumeral 2)]
+    {
+        $K/F$ is a cyclic extension of degree $n$.
+    }
+\end{enumerate}
+And let $\sigma$ be a generator of $\gal{K/F}$.
+
+\begin{defi}[Lagrange resolvent]
+    For $\alpha\in K$ and any $n$-th root of unity $\zeta$, define the Lagrange resolvent $\mc{L}_\sigma(\alpha, \zeta)\in K$ by
+    \begin{align*}
+        \mc{L}_\sigma(\alpha, \zeta)=\alpha+\zeta\sigma(\alpha)+\zeta^2\sigma^2(\alpha)+\cdots+\zeta^{n-1}\sigma^{n-1}(\alpha).
+    \end{align*}
+\end{defi}
+\begin{obs}\label{the proof of cyclic->radical}
+    Let $\zeta$ be any $n$-th root of unity.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            By \cref{linear_independence_of_charaaters}, $\{\id{K}, \sigma, \cdots, \sigma^{n-1}\}$ is $K$-linearly independent.
+            Hence, in particular, there is an element $\alpha\in K$ such that $\mc{L}_\sigma(\alpha, \zeta)\neq 0$.
+        }
+        \item[(b)]
+        {
+            One can easily find that $\sigma^k\mc{L}=\zeta^{-k}\mc{L}$ for all integer $k$.
+            Thus, when $\zeta$ is a primitive $n$-th root of unity and $\alpha$ is given as in (a), $\id{K}\in\gal{K/F}$ is the unique automorphism fixing $\mc{L}$.
+            Hence, $\mc{L}$ is contained in $K$ but not in proper subfield of $K$ containing $F$.
+            This implies that $K=F(\mc{L})$.
+        }
+        \item[(c)]
+        {
+            Furthermore, since $\sigma\mc{L}=\zeta^{-1}\mc{L}$, we have $\sigma(\mc{L}^n)=(\zeta^{-1}\mc{L})^n=\mc{L}^n$.
+            By Galois's theorem, we have $\mc{L}^n\in F$.
+        }
+    \end{enumerate}
+    To sum up, if $\zeta$ is a primitive $n$-th root of unity and $\alpha$ is an element of $K$ such that $\mc{L}_\sigma(\alpha, \zeta)\neq 0$, then $K=F(\mc{L})$ and $\mc{L}^n$ belongs to $F$.
+\end{obs}

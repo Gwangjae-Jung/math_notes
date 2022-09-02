@@ -1,0 +1,79 @@
+\section{Splitting fields}
+
+\begin{defi}[Splitting field, normal extension]\label{normal extension}
+    Let $F$ be a field and $\mc{R}$ be a collection of nonconstant polynomials over $F$.
+    If all polynomials in $\mc{R}$ split completely over a field $K$ containing $F$ but not over any proper subfield of $F$, then $K$ is called a splitting field for the polynomials in $\mc{R}$ over $F$ and $K/F$ is said to be a normal extension.
+    In particular, if $\mc{R}$ is finite and $p(t)\in F[t]$ is the product of all polynomials in $\mc{R}$, then $K$ is called a splitting field for $p(t)$ over $F$.
+\end{defi}
+\begin{prop}
+    If $F$ is a field and $p(t)$ is a nonconstant polynomial over $F$, then there is a splitting field for $p(t)$ over $F$.
+\end{prop}
+\begin{proof}
+    Using Kronecker's theorem inductively, we can find a field $K:=F(\alpha_1, \cdots, \alpha_n)$, where $\alpha_1, \cdots, \alpha_n$ are pairwise distint roots of $p(t)$.
+    It is clear that $p(t)$ splits completely over $K$; if $p(t)$ splits completely over an extended field, then the extension necessarily contains all rooots of $p(t)$, thus it contains (an isomorphic copy of) $K$.
+    Therefore, $K$ is a splitting field for $p(t)$ over $F$.
+\end{proof}
+\begin{rmk}
+    The uniqueness part will be proved later in this chapter.
+    See \cref{iet 2}.
+\end{rmk}
+
+\begin{exmp}
+    Suppose that $K/F$ is a finite extension.
+    We will justify that the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $K/F$ is a normal extension.
+        }
+        \item[(b)]
+        {
+            Every nonconstant polynomial over $F$ with a root in $K$ splits completely over $K$.
+        }
+    \end{enumerate}
+
+    To prove that (a) implies (b), assume that $K/F$ is the splitting field for $k(t)\in F[t]$ over $F$ (we can think so, since $K/F$ is a finite extension) and let $p(t)\in F[t]$ be a nonconstant polynomial with a root $\alpha$ in $K$.
+    If $\beta$ is another root of $p(t)$, by \cref{iet 1}, there is an $F$-isomorphism $\sigma: F(\alpha)\rightarrow F(\beta)$ such that $\sigma(\alpha)=\beta$.
+    Since the splitting field for $p(t)$ over $F(\alpha)$ is $K(\alpha)=K$ and the splitting field for $p(t)$ over $F(\beta)$ is $K(\beta)$ \color{brown}(why?)\color{black}, there is a field isomorphism $\widetilde{\sigma}: K\rightarrow K(\beta)$ extending $\sigma$.
+    Since $\widetilde{\sigma}$ is an $F$-isomorphism, $\widetilde{\sigma}$ is an $F$-linear isomorphism, so $\dim_F K=\dim_F K(\beta)$, implying that $\beta\in K$.
+
+    We now show that (b) implies (a).
+    Since $K/F$ is a finite extension, we may write $K=F(\alpha_1, \cdots, \alpha_n)$, where $\alpha_i$ is algebraic over $F$ for each $i=1, \cdots, n$.
+    Let $p(t)$ be the product of the minimal polynomials of $\alpha_i$ over $F$.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            By hypothesis, $p(t)$ splits completely over $K$.
+            Hence, $K$ is not smaller than the splitting field for $p(t)$ over $F$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Conversely, the splitting field for $p(t)$ over $F$ necessarily contains all roots of $p(t)$, so it contains $K$.
+        }
+    \end{enumerate}
+    Therefore, $K$ is the splitting field for $p(t)$ over $F$, so $K/F$ is a normal extension.
+\end{exmp}
+\begin{exmp}
+    Let $K_1/F$ and $K_2/F$ be finite normal extensions.
+    We will justify that $K_1K_2$ is a (finite) normal extension over $F$, and $K_1\cap K_2$ is a (finite) normal extension over $F$.
+
+    Let $a(t), b(t)\in F[t]$ be nonconstant polynomials such that $K_1$ is the splitting field for $a(t)$ over $F$ and $K_2$ is the splitting field for $b(t)$ over $F$ (such setting is plausible, since $K_1/F$ and $K_2/F$ are finite extensions).
+    We will show that $K_1K_2$ is the splitting field for $a(t)b(t)$ over $F$.
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            Since $K_1$ contains all roots of $a(t)$ and $K_2$ contains all roots of $b(t)$, the composition $K_1K_2$ contains all roots of $a(t)b(t)$.
+            Hence, $K_1K_2$ contains the splitting field for $a(t)b(t)$ over $F$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Conversely, $K_1K_2$ is the smallest field containing $F$ and the roots of $a(t)b(t)$, which are necessarily contained in the splitting field for $a(t)b(t)$ over $F$.
+        }
+    \end{enumerate}
+    Therefore, $K_1K_2$ is the splitting field for $a(t)b(t)$ over $F$.
+
+    To show that $K_1\cap K_2$ is a normal extension over $F$, we apply the result of the previous example.
+    Let $p(t)$ be a polynomial over $F$ with a root in $K_1\cap K_2$.
+    Because $K_1/F$ and $K_2/F$ are finite normal extensions, $p(t)\in F[t]$ splits completely over $K_1$ and $K_2$.
+    This implies that all roots of $p(t)$ are in $K_1\cap K_2$, so $K_1\cap K_2$ is a finite normal extension over $F$.
+\end{exmp}
