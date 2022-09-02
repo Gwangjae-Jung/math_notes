@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  2 SEP 2022 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  3 SEP 2022 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -578,7 +578,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ...finite Galois extensions}{43}{section.8.2}
+l.37 ...finite Galois extensions}{44}{section.8.2}
                                                   % [1
 
 ])
@@ -622,42 +622,42 @@ Chapter 6.
 Chapter 7.
 (../Field/additional/finite_fields_basic.tex [39
 
-]) (../Field/additional/some_problems.tex)) (../Galois_theory/__GALOIS_THEORY__.tex [40] [41
+]) (../Field/additional/some_problems.tex [40])) (../Galois_theory/__GALOIS_THEORY__.tex [41] [42
 
 ]
 Chapter 8.
-(../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex [42
+(../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex [43
 
-]) (../Galois_theory/basic_galois_theory/Galois's_theorem.tex [43] [44] [45]) (../Galois_theory/basic_galois_theory/Galois's_theorem_prob.tex [46]) (../Galois_theory/basic_galois_theory/abelian_solveble.tex [47]) (../Galois_theory/basic_galois_theory/gal_gp_of_poly.tex [48] [49]) [50]
+]) (../Galois_theory/basic_galois_theory/Galois's_theorem.tex [44] [45] [46]) (../Galois_theory/basic_galois_theory/Galois's_theorem_prob.tex [47]) (../Galois_theory/basic_galois_theory/abelian_solveble.tex [48]) (../Galois_theory/basic_galois_theory/gal_gp_of_poly.tex [49] [50]) [51]
 Chapter 9.
-(../Galois_theory/some_Galois_extensions/finite_fields_Galois.tex [51
+(../Galois_theory/some_Galois_extensions/finite_fields_Galois.tex [52
 
-]) (../Galois_theory/some_Galois_extensions/finite_fields_application.tex) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions.tex [52] [53] [54]) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions_application.tex [55]) [56]
+]) (../Galois_theory/some_Galois_extensions/finite_fields_application.tex) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions.tex [53] [54] [55]) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions_application.tex [56]) [57]
 Chapter 10.
-(../Galois_theory/solving_polynomial_equations/sym_poly_and_disc.tex [57
+(../Galois_theory/solving_polynomial_equations/sym_poly_and_disc.tex [58
 
-] [58]) (../Galois_theory/solving_polynomial_equations/cyclic_extn.tex [59]) (../Galois_theory/solving_polynomial_equations/radical_extn.tex [60] [61]) (../Galois_theory/solving_polynomial_equations/cubic_quartic.tex) [62]
+] [59]) (../Galois_theory/solving_polynomial_equations/cyclic_extn.tex [60]) (../Galois_theory/solving_polynomial_equations/radical_extn.tex [61] [62]) (../Galois_theory/solving_polynomial_equations/cubic_quartic.tex) [63]
 Chapter 11.
-(../Galois_theory/additional/character_theory.tex) (../Galois_theory/additional/Lagrange_resolvent.tex [63
+(../Galois_theory/additional/character_theory.tex) (../Galois_theory/additional/Lagrange_resolvent.tex [64
 
-]) (../Galois_theory/additional/norm_and_trace.tex) (../Galois_theory/additional/infinite_Galois_extn.tex)) (../Appendix/__Appendix__.tex [64]
+]) (../Galois_theory/additional/norm_and_trace.tex) (../Galois_theory/additional/infinite_Galois_extn.tex)) (../Appendix/__Appendix__.tex [65]
 Appendix A.
-(../Appendix/proofs/infinitely_many_primes_modulo_an_integer.tex) (../Appendix/proofs/quadratic_cyclotomic_extension_of_Q.tex)) [65
+(../Appendix/proofs/infinitely_many_primes_modulo_an_integer.tex) (../Appendix/proofs/quadratic_cyclotomic_extension_of_Q.tex)) [66
 
 ] (./Review_of_modern_algebra.aux) ) 
 Here is how much of TeX's memory you used:
- 25212 strings out of 480210
- 496193 string characters out of 5893466
- 763096 words of memory out of 5000000
- 42255 multiletter control sequences out of 15000+600000
+ 25218 strings out of 480210
+ 496311 string characters out of 5893466
+ 763093 words of memory out of 5000000
+ 42258 multiletter control sequences out of 15000+600000
  483213 words of font info for 79 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  119i,19n,121p,700b,1084s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Review_of_modern_algebra.pdf (66 pages, 570546 bytes).
+Output written on Review_of_modern_algebra.pdf (67 pages, 574300 bytes).
 PDF statistics:
- 1063 PDF objects out of 1200 (max. 8388607)
- 933 compressed objects within 10 object streams
- 342 named destinations out of 1000 (max. 500000)
+ 1071 PDF objects out of 1200 (max. 8388607)
+ 940 compressed objects within 10 object streams
+ 345 named destinations out of 1000 (max. 500000)
  469 words of extra memory for PDF output out of 10000 (max. 10000000)
 

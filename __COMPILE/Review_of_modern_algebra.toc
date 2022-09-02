@@ -31,32 +31,32 @@
 \contentsline {chapter}{\numberline {7}Further field theory}{39}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Basic properties of finite fields}{39}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Some problems in field theory}{40}{section.7.2}%
-\contentsline {part}{III\hspace {1em}Galois theory}{41}{part.3}%
-\contentsline {chapter}{\numberline {8}Basic Galois theory}{42}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Basic observation regarding Galois extensions}{42}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Fundamental theorems of finite Galois extensions}{43}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Some problems regarding Galois's theorem}{46}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Abelian extensions and solvable extensions}{47}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Galois groups of polynomials}{48}{section.8.5}%
-\contentsline {chapter}{\numberline {9}Some Galois extensions}{51}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Galois extensions over finite fields}{51}{section.9.1}%
-\contentsline {section}{\numberline {9.2}More on finite fields}{52}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Cyclotomic extensions}{52}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}The splitting field for $t^n-1$ over a finite field}{52}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}The splitting field for $t^n-1$ over ${\mathbb {Q}}$}{53}{subsection.9.3.2}%
-\contentsline {section}{\numberline {9.4}Applications of cyclotomic extensions}{55}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Cyclotomic extensions and abelian extensions}{55}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Constructibility}{56}{subsection.9.4.2}%
-\contentsline {chapter}{\numberline {10}Solving polynomial equations}{57}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Symmetric polynomials and discriminants}{57}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Cyclic extensions}{60}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Radical extensions}{61}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Cubic and quartic polynomials}{62}{section.10.4}%
-\contentsline {chapter}{\numberline {11}Further Galois theory}{63}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Character theory}{63}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Lagrange resolvent}{63}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Norm and trace}{64}{section.11.3}%
-\contentsline {section}{\numberline {11.4}Infinite Galois extensions}{64}{section.11.4}%
-\contentsline {chapter}{\numberline {A}Proof of some propositions}{65}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{65}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{65}{section.A.2}%
+\contentsline {part}{III\hspace {1em}Galois theory}{42}{part.3}%
+\contentsline {chapter}{\numberline {8}Basic Galois theory}{43}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Basic observation regarding Galois extensions}{43}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Fundamental theorems of finite Galois extensions}{44}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Some problems regarding Galois's theorem}{47}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Abelian extensions and solvable extensions}{48}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Galois groups of polynomials}{49}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Some Galois extensions}{52}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Galois extensions over finite fields}{52}{section.9.1}%
+\contentsline {section}{\numberline {9.2}More on finite fields}{53}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Cyclotomic extensions}{53}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}The splitting field for $t^n-1$ over a finite field}{53}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}The splitting field for $t^n-1$ over ${\mathbb {Q}}$}{54}{subsection.9.3.2}%
+\contentsline {section}{\numberline {9.4}Applications of cyclotomic extensions}{56}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Cyclotomic extensions and abelian extensions}{56}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Constructibility}{57}{subsection.9.4.2}%
+\contentsline {chapter}{\numberline {10}Solving polynomial equations}{58}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Symmetric polynomials and discriminants}{58}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Cyclic extensions}{61}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Radical extensions}{62}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Cubic and quartic polynomials}{63}{section.10.4}%
+\contentsline {chapter}{\numberline {11}Further Galois theory}{64}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Character theory}{64}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Lagrange resolvent}{64}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Norm and trace}{65}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Infinite Galois extensions}{65}{section.11.4}%
+\contentsline {chapter}{\numberline {A}Proof of some propositions}{66}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{66}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{66}{section.A.2}%

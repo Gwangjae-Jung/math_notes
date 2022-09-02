@@ -13,3 +13,37 @@
     Thus, in particular, if $a,\, b\in\bb{R}$ and $|a-b|<1/n$ for some integer $n$, then $|\sigma a-\sigma b|\leq 1/n$, so $\sigma$ is continuous whenever $\sigma\in\aut{\bb{R}/\bb{Q}}$.
     By continuity, $\sigma=\id{\bb{R}}$ and $\aut{\bb{R}/\bb{Q}}=\{\id{\bb{R}}\}$.
 \end{sol}
+
+\begin{prob}\label{degree over the field with a rational}
+    Let $k$ be a field and let $t=P(x)/Q(x)$, where $P(x)$ and $Q(x)$ are relatively prime polynomials over $k$ and $Q(x)\neq 0$.
+    Then $k(x)$ is a simple extension over $k(t)$ obtained by adjoining $t$.
+    Show that the extension degree of $k(x)/k(t)$ is $\max\{\deg P(x), \deg Q(x)\}$.
+\end{prob}
+\begin{sol}
+    Because $k(x)=k(t)(x)$, it suffices to find the degree of the minimal polynomial of $x$ over $k(t)$.
+    Observe that the indeterminate $x$ is satisfied by the polynomial $f(s):=P(s)-t Q(s)\in k(t)[s]$, and we will show that $f(s)$ is irreducible over $k(t)$.
+
+    In fact, since $f(s)\in k[t][s]$ and $\cont(f)\sim_\times 1$, it suffices to show that $f(s)$ is irreducible over $k[t]$ (by Gauss's lemma), for the field of fractions of $k[t]$ is $k(t)$.
+    Since $k[t][s]=k[t, s]=k[s][t]$, it also suffices to show that the polynomial $f(s)$ over $k[s]$ in $t$ is irreducible over $k[s]$.
+    The latter is clear, because $\deg_t f(s)=1$ and $P(s)$ and $Q(s)$ are relatively prime.
+    Therefore, $[k(x): k(s)]=\deg_s f(s)=\max\{\deg P(x), \deg Q(x)\}$.
+\end{sol}
+
+\begin{prob}[L\"{u}roth's theorem]
+    Show that $\aut{k(x)/k}\approx GL_2(k)$, where $k$ is a field and $x$ is an indeterminate.
+\end{prob}
+\begin{sol}
+    Any $k$-automorphism of $k(x)$ is completely determined by its action on $x$.
+    Write $\sigma(x)=f(x)/g(x)$ for some relatively prime polynomials $f(x),\,g(x)$ over $k$ such that $g(x)\neq 0$.
+    Because $\sigma$ fixes $k$, $k(\sigma(x))=\sigma(k(x))$; because an automorphism is surjective, $\sigma(k(x))=\sigma(x)$.
+    Hence, $k(\sigma(x))=k(x)$ and $[k(x): k(\sigma(x))]=1$.
+    This implies that $\deg f(x)$ and $\deg g(x)$ are not greater than 1, with at least one of them being 1.
+    Therefore, $\sigma(x)=(ax+b)/(cx+d)$ for some $a, b, c, d\in k$ and $ad-bc\neq 0$.
+    
+    Conversely, assume that a $k$-embedding $\tau: k(x)\rightarrow k(x)$ defined by $\tau(x)=(ax+b)/(cx+d)$ with $a, b, c, d\in k$ and $ad-bc\neq 0$ is given.
+    Because $\tau(k(x))=k(\tau(x))$ and $[k(x): k(\tau(x))]=\max\{\deg(ax+b), \deg(cx+d)\}=1$, we have $\tau(k(x))=k(x)$, so $\tau$ is a $k$-automorphism of $k(x)$.
+
+    So far, we have found a natural bijection between $\aut{k(x)/k}$ and $GL_2(k)$.
+    In fact, by computing the composition of two $k$-automorphisms of $k(x)$, we can deduce that the natural bijection is a group homomorphism.
+    Therefore, $\aut{k(x)/k}\approx GL_2(k)$.
+\end{sol}
