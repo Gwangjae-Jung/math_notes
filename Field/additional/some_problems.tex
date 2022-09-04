@@ -30,7 +30,7 @@
 \end{sol}
 
 \begin{prob}[L\"{u}roth's theorem]
-    Show that $\aut{k(x)/k}\approx GL_2(k)$, where $k$ is a field and $x$ is an indeterminate.
+    Show that $\aut{k(x)/k}\approx PGL_2(k)$, where $k$ is a field and $x$ is an indeterminate.
 \end{prob}
 \begin{sol}
     Any $k$-automorphism of $k(x)$ is completely determined by its action on $x$.
@@ -43,7 +43,17 @@
     Conversely, assume that a $k$-embedding $\tau: k(x)\rightarrow k(x)$ defined by $\tau(x)=(ax+b)/(cx+d)$ with $a, b, c, d\in k$ and $ad-bc\neq 0$ is given.
     Because $\tau(k(x))=k(\tau(x))$ and $[k(x): k(\tau(x))]=\max\{\deg(ax+b), \deg(cx+d)\}=1$, we have $\tau(k(x))=k(x)$, so $\tau$ is a $k$-automorphism of $k(x)$.
 
-    So far, we have found a natural bijection between $\aut{k(x)/k}$ and $GL_2(k)$.
-    In fact, by computing the composition of two $k$-automorphisms of $k(x)$, we can deduce that the natural bijection is a group homomorphism.
-    Therefore, $\aut{k(x)/k}\approx GL_2(k)$.
+    So far, we have found a surjection $\rho: GL_2(k)\rightarrow \aut{k(x)/k}$, defined by
+    \begin{align*}
+        \rho\begin{pmatrix}
+            a   &   b\\
+            c   &   d
+        \end{pmatrix}=\sigma.
+    \end{align*}
+    Because $\rho$ is a group homomorphism, by the first isomorphism theorem, we have
+    \begin{align*}
+        GL_2(k)/\ker\rho\approx\aut{k(x)/k},
+    \end{align*}
+    where $\ker\rho=\{sI: s\in k^\times\}=Z(GL_2(k))$.
+    Therefore, $\aut{k(x)/k}\approx PGL_2(k)$.
 \end{sol}
