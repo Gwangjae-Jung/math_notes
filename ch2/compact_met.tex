@@ -19,7 +19,6 @@ We first introduce some other types of compactness:
     Left as an exercise.
 \end{proof}
 
-In metrizable spaces, the above three compactness coincide.
 \begin{thm}
     Suppose $X$ is a metrizable space.
     Then the followings are equivalent:
@@ -100,4 +99,27 @@ In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
     Then $d(x_{n_i}, x_{n_k})\leq 2^{1-i}$ if $i<k$.
     Because $X$ is complete, $(x_n)_n$ has a convergent subsequence.
     Therefore, (c) implies sequential compactness.
+\end{proof}
+
+\begin{prob}
+    Let $U$ be an open subset of $\bb{C}$ which contains $\bb{D}$.
+    Show that there is a positive real number $r>1$ such that $B(0, r)\subset U$.
+\end{prob}
+\begin{proof}[Proof 1]
+    Suppose that there is no such $r>1$.
+    Then, we can choose $a_n\in B(0, 1+1/n)\setminus U$ for each $n\in\bb{N}$.
+    Since $(a_n)_{n\in\bb{N}}\subset\ol{B(0, 2)}$, $(a_n)_n$ contains a convergent subsequence $(a_{n_k})_{k\in\bb{N}}$.
+    Letting $\alpha$ be the limit of $(a_{n_k})_k$, we find that $\alpha$ is a limit point of $\bb{C}\setminus U$.
+    Because $\bb{C}\setminus U$ is closed, $\alpha\notin U$.
+    On the other hand, $\alpha\in\partial\bb{D}$ \color{brown}(why?)\color{black}, we have $\alpha\in\partial\bb{D}\subset U$, a contradiction.
+    Therefore, $B(0, r)\subset U$ for some real number $r>1$.
+\end{proof}
+\begin{proof}[Proof 2]
+    Note that the collection of `polar rectangles' is a basis for the topology on $\bb{C}$, where a polar rectangle is of the form
+    \begin{align*}
+        a\leq \rho\leq b,\quad s\leq \theta\leq t,
+    \end{align*}
+    where $a, b, s, t$ are real numbers such that $a\leq b$.
+    Because $\partial\bb{D}$ is compact, for each point $e^{ix}\in\partial\bb{D}\,(0\leq x<2\pi)$ there is a polar rectangle $P_x: a(x)\leq \rho\leq b(x), s(x)\leq \theta\leq t(x)$ such that $e^{ix}\in P_x\subset U$.
+    Choosing finitely many members among $P_x$'s and letting $r$ the smallest $b(x)$, we find that $B(0, r)\subset U$.
 \end{proof}

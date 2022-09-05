@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1662086121 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1662086127
+["pdflatex"] 1662374196 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1662374202
   "../../my_settings/pangpang_conditionals.tex" 1656221183 66 fdb617b31ca6abaf902778962bc5728f ""
   "../../my_settings/pangpang_definitions.tex" 1661566462 1907 64732b4ed6ad9ad935cbf73c703f7afd ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -12,11 +12,11 @@
   "../ch+2/top_gp.tex" 1660927561 10204 bc3e5250db0b1c5223afad45b7988fcb ""
   "../ch+3/further_properties_top_vs.tex" 1658813030 57 2900df07f46044daecc455762ebc637a ""
   "../ch+3/top_vs.tex" 1658813039 35 56b86383479e3daa6f47074309d50cd4 ""
-  "../ch1/continuous_map.tex" 1660024736 5820 8e2605071b1d0d7bf9d14df254f557d5 ""
-  "../ch1/metrizable_product.tex" 1658995809 4246 5b0f5b00869b129c2bb6ba534b07e00e ""
+  "../ch1/continuous_map.tex" 1662374072 5846 d0ab1dc1b93d4e26876d2ce7ed2aaa44 ""
+  "../ch1/metrizable_product.tex" 1662374194 4151 a54240d15022aeaa3f5d7aa9aa227de6 ""
   "../ch1/topology_and_basis.tex" 1658995822 2983 0837ec8e4d47122fe635e34ea2ec5d22 ""
   "../ch2/compact.tex" 1660927099 14431 a7ac62d5f046bbb52776f8b5409485a7 ""
-  "../ch2/compact_met.tex" 1659794393 4551 45134f5fd40d3d11155fd080bd623010 ""
+  "../ch2/compact_met.tex" 1662373948 5973 7a7c9dc485aec9b35bdd3d795fcc17ab ""
   "../ch2/connected.tex" 1660927059 8737 694e4725ac7b1c4a8a16cfb1a566d4e9 ""
   "../ch2/linear_continuum.tex" 1660024223 687 efebef9a1a68ab25434ba0d11ebff3e5 ""
   "../ch2/one-point_compactification.tex" 1660927138 12503 c1f7340f5325420a80be10d66420b184 ""
@@ -31,9 +31,9 @@
   "../ch5/complete_spaces.tex" 1660927426 10702 3dc1399fddfab06fbd56deee48507190 ""
   "../ch5/pointwise_equicontinuity.tex" 1658995363 6718 bf3408524425c82ec0fa38307688bb3b ""
   "../ch5/topologies_on_C0.tex" 1660927508 18866 26620c015af0e9a31e5bc4f47748ccb4 ""
-  "Review of general topology.aux" 1662086126 28000 abf4dea8e19d5ad826cb388c12cf77c2 "pdflatex"
+  "Review of general topology.aux" 1662374201 28000 d2e8eabc2ffc064296ee447a2dbbba09 "pdflatex"
   "Review of general topology.tex" 1662086112 2013 30fd7327c395a8a9e9661eb003cab379 ""
-  "Review of general topology.toc" 1662086126 4939 c5dba385db827ca9d1ba3df9dda186ce "pdflatex"
+  "Review of general topology.toc" 1662374201 4939 77972e261208a949fff6de2149ccdf10 "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""

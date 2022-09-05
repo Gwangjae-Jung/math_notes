@@ -6,8 +6,8 @@ Let $X_n$ be a metrizable space for each $n\in\bb{N}$.
     Given a metric $d_n$ inducing the topology on $X_n$ for each $n$,
     define the following metric on the product space $X:=\prod_{n=1}^\infty X_n$ as follows:
     \begin{align*}
-        \overline{\rho}: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\overline{d_n}(x_n, y_n)\right\},\\
-        D: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\frac{\overline{d_n}(x_n, y_n)}{n}\right\}.
+        \ol{\rho}: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\ol{d_n}(x_n, y_n)\right\},\\
+        D: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\frac{\ol{d_n}(x_n, y_n)}{n}\right\}.
     \end{align*}
 \end{nota}
 
@@ -30,7 +30,7 @@ Among them, the former one can also be considered on any product spaces.
     Consider $G=B_D(x, \epsilon)$.
     If a point $y$ of $X$ is in $G$, then
     \begin{align*}
-        \sup_{n\in\bb{N}}\left\{\frac{\overline{d_n}(x_n, y_n)}{n}\right\} < \epsilon,\quad\overline{d_n}(x_n, y_n) < r_n,
+        \sup_{n\in\bb{N}}\left\{\frac{\ol{d_n}(x_n, y_n)}{n}\right\} < \epsilon,\quad\ol{d_n}(x_n, y_n) < r_n,
     \end{align*}
     so $y\in C\subset B$, i.e., $x\in G\subset B$.
     
@@ -52,27 +52,27 @@ Among them, the former one can also be considered on any product spaces.
     Therefore, every isometry from $X$ into $Y$ is an embedding.
 \end{sol}
 
-We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips the uniform metric $\overline{\rho}$.
+We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips the uniform metric $\ol{\rho}$.
 \begin{prop}
-    Let $\overline{\rho}$ be the uniform metric on $\bb{R}^\bb{N}$.
+    Let $\ol{\rho}$ be the uniform metric on $\bb{R}^\bb{N}$.
     Given $x=(x_1, x_2, \cdots)\in\bb{R}^\bb{N}$ and a real number $0<\epsilon<1$, define
     \begin{align*}
         U(x, \epsilon):=\prod_{n=1}^\infty (x_n-\epsilon, x_n+\epsilon).
     \end{align*}
     \begin{enumerate}
-        \item[(a)] $U(x, \epsilon)\neq B_{\overline{\rho}}(x, \epsilon)$ and $U(x, \epsilon)$ is not open in the uniform topology.
-        \item[(b)] $\ds{B_{\overline{\rho}}(x, \epsilon)=\bigcup_{0<r<\epsilon} U(x, r)}$.
+        \item[(a)] $U(x, \epsilon)\neq B_{\ol{\rho}}(x, \epsilon)$ and $U(x, \epsilon)$ is not open in the uniform topology.
+        \item[(b)] $\ds{B_{\ol{\rho}}(x, \epsilon)=\bigcup_{0<r<\epsilon} U(x, r)}$.
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \begin{enumerate}
         \item[(a)]
-            The point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\overline{\rho}}(x, \epsilon)$.
+            The point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\ol{\rho}}(x, \epsilon)$.
             Furthermore, no neighborhood of this point entirely lies in $U(x, \epsilon)$.
             Proving the details is left as an exercise.
         \item[(b)]
-            For each real number $0<r<\epsilon$, we have $U(x, r)\subset B_{\overline{\rho}}(x, \epsilon)$.
-            Conversely, if $y\in B_{\overline{\rho}(x, \epsilon)}$, then $overline{\rho}(x, y)<\epsilon$, so $\ds{\sup_{n\in\bb{N}}}\{\overline{d_n}(x_n, y_n)\}=\delta$ for some $0\leq\delta<\epsilon$.
-            Hence, $B_{\overline{\rho}}(x, \epsilon)\subset U(x, r)$ for some real number $r$ such that $\delta<r<\epsilon$.
+            For each real number $0<r<\epsilon$, we have $U(x, r)\subset B_{\ol{\rho}}(x, \epsilon)$.
+            Conversely, if $y\in B_{\ol{\rho}(x, \epsilon)}$, then $\ol{\rho}(x, y)<\epsilon$, so $\sup\{\ol{d_n}(x_n, y_n): n\in\bb{N}\}=\delta$ for some $0\leq\delta<\epsilon$.
+            Hence, $B_{\ol{\rho}}(x, \epsilon)\subset U(x, r)$ for some real number $r$ such that $\delta<r<\epsilon$.
     \end{enumerate}
 \end{proof}
