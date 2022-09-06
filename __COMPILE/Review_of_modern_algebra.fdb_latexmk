@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1662438628 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1662438638
+["pdflatex"] 1662439683 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1662439692
   "../../my_settings/pangpang_conditionals.tex" 1656221183 66 fdb617b31ca6abaf902778962bc5728f ""
   "../../my_settings/pangpang_definitions.tex" 1661566462 1907 64732b4ed6ad9ad935cbf73c703f7afd ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -24,7 +24,7 @@
   "../Galois_theory/additional/infinite_Galois_extn.tex" 1661264943 76 243903fee83440f4bd0df5c129eb97a7 ""
   "../Galois_theory/additional/norm_and_trace.tex" 1661664974 2955 dcdba7dd96130d640ef818583d0613b1 ""
   "../Galois_theory/basic_galois_theory/Galois's_theorem.tex" 1661739539 13032 ffd74a31266cf6170c85f1a883f03ec3 ""
-  "../Galois_theory/basic_galois_theory/Galois's_theorem_prob.tex" 1662438626 6806 2a410d61143ee6169caf2c3063d10b0b ""
+  "../Galois_theory/basic_galois_theory/Galois's_theorem_prob.tex" 1662439681 7075 63e186cfe05c5c106ac2235e84b7319e ""
   "../Galois_theory/basic_galois_theory/abelian_solveble.tex" 1662014648 3228 c996af36930ee1071c970f1c14a7e219 ""
   "../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex" 1662131069 5683 d61cabac0060f425758347c3940cd6d1 ""
   "../Galois_theory/basic_galois_theory/gal_gp_of_poly.tex" 1661875386 8804 61815e3707fa25c4adc0d064f6f584b4 ""
@@ -53,9 +53,9 @@
   "../Ring/polynomial_rings/README.tex" 1659507140 127 c43d9959955dbfb428f5efb11c0a5ef9 ""
   "../Ring/polynomial_rings/basic_properties.tex" 1662085086 7088 0160bde3a334bbe69bf6624b6914ce73 ""
   "../preface.tex" 1662105076 326 396e21dc85b06f25d47a5e82166ad8ba ""
-  "Review_of_modern_algebra.aux" 1662438637 35793 93fec656b9116d4b1d5215dec337ed3d "pdflatex"
+  "Review_of_modern_algebra.aux" 1662439691 35793 93fec656b9116d4b1d5215dec337ed3d "pdflatex"
   "Review_of_modern_algebra.tex" 1662085556 772 6e04c8de7ef6fcf7981eaf491a94c973 ""
-  "Review_of_modern_algebra.toc" 1662438637 5365 fe3ecacf6fcca39181be2d9ae567ca20 "pdflatex"
+  "Review_of_modern_algebra.toc" 1662439691 5365 fe3ecacf6fcca39181be2d9ae567ca20 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1654131593 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1654131593 996 a18840b13b499c08ac2de96a99eda4bc ""
