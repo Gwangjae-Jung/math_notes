@@ -15,9 +15,9 @@ The former metric is called the uniform metric on $X$ and the latter metric is c
 Among them, the definition of the former metric generalizes to arbitrary product spaces: If $\{X_\alpha\}_{\alpha\in I}$ is an indexed family of metric spaces and $X=\prod_{\alpha\in I} X_\alpha$, then we may define the uniform metric $\rho: X\times X\rightarrow \bb{R}$ by $\rho(x, y)=\sup_{\alpha\in I}\{\ol{d}_\alpha(x_\alpha, y_\alpha)\}$ for $(x, y)\in X\times X$.
 
 \begin{thm}
-    The $D$-metric on $X$ induces the product topology on $X$.
+    Let $(X_n, d_n)$ be a metric space for each $n\in\bb{N}$ and write $X=\prod_{n\in\bb{N}} X_n$.
+    Then $D$-metric on $X$ induces the product topology on $X$.
 \end{thm}
-
 \begin{proof}
     We first show that the topology $\mc{T}_D$ induced by the $D$-metric is finer than the product topology.
     Given a point $x\in X$ and a basis member $B=\prod_{n\in\bb{N}}B_n$ of the product topology with
@@ -25,7 +25,17 @@ Among them, the definition of the former metric generalizes to arbitrary product
         \ds{\{n\in\bb{N}:B_n\neq X_n\}=\{n_1, \cdots, n_k\}},
     \end{align*}
     let us find a basis member of $\mc{T}_D$ which contains $x$ and contained in $B$.
-    For each $n$, let $C_n=B_{d_n}(x_n, r_n)$ be a neighborhood of $x_n$ contained in $B_n$, where $C_n=X_n$ if and only if $B_n=X_n$ and $0<r_n<1$ for the other $n$'s, and let $C=\prod_{n\in\bb{N}}C_n$.
+    For each $i=1, \cdots, k$, let $r_i$ be a real number such that $0<r_i<1$ and $B_{d_{n_i}}(x_{n_i}, r_i)\subset B_{n_i}$.
+    Set
+    \begin{align*}
+        \epsilon=\min_{1\leq i\leq k}\left\{\frac{r_i}{n_i}\right\}
+    \end{align*}
+    and suppose $y\in B_D(x, \epsilon)$.
+    Then $\ol{d_n}(x_n, y_n)/n<\epsilon$ for all $n\in\bb{N}$.
+    In particular, $\ol{d_{n_i}}(x_{n_i}, y_{n_i})<n_i\epsilon\leq r_i$, so $y_{n_i}\in B_{d_{n_i}}(x_{n_i}, r_i)$ for each all $i$.
+    Hence, $x\in B_D(x, \epsilon)\subset B$, as desired.
+    \ifinclude\else
+    For each $n$, let $C_n=B_{d_n}(x_n, r_n)$ be a neighborhood of $x_n$ contained in $B_n$, where $C_n=X_n$ if and only if $B_n=X_n$ and $0<r_n<1$ for the other $n$'s, and write $C=\prod_{n\in\bb{N}}C_n$.
     And let $\ds{\epsilon=\min_{1\leq i\leq k}\left\{\frac{r_{n_i}}{n_i}\right\}}$.
     Consider $G=B_D(x, \epsilon)$.
     If a point $y$ of $X$ is in $G$, then
@@ -33,11 +43,13 @@ Among them, the definition of the former metric generalizes to arbitrary product
         \sup_{n\in\bb{N}}\left\{\frac{\ol{d_n}(x_n, y_n)}{n}\right\} < \epsilon,\quad\ol{d_n}(x_n, y_n) < r_n,
     \end{align*}
     so $y\in C\subset B$, i.e., $x\in G\subset B$.
+    \fi
     
     Conversely, suppose a point $x$ of $X$ and a basis element $B_D(p, r)\in \mc{T}_D$ containing $x$ are given.
-    By choosing a small real number $\epsilon>0$, we can achieve $x\in B_D(x, \epsilon)\subset B_D(p, r)$.
+    By choosing a small real number $0<\epsilon<1$, we can achieve $x\in B_D(x, \epsilon)\subset B_D(p, r)$.
+    \color{teal}(Such leap is helpful in proving many other propositions regarding metric spaces.) \color{black}
     Let $N$ be a positive integer such that $1/N < \epsilon$.
-    For each positive integer $n<N$, let $B_n=B_{d_n}(x_n, \epsilon)$; for each integer $n\geq N$, let $B_n=X_n$.
+    Let $B_n=B_{d_n}(x_n, \epsilon)$ for each positive integer $n<N$ and let $B_n=X_n$ otherwise.
     Then $x\in\prod_{n\in\bb{N}}B_n\subset B_D(x, \epsilon)\subset B_D(p, r)$, as desired.
 \end{proof}
 
@@ -65,14 +77,13 @@ We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips t
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    \begin{enumerate}
-        \item[(a)]
-            The point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\ol{\rho}}(x, \epsilon)$.
-            Furthermore, no neighborhood of this point entirely lies in $U(x, \epsilon)$.
-            Proving the details is left as an exercise.
-        \item[(b)]
-            For each real number $0<r<\epsilon$, we have $U(x, r)\subset B_{\ol{\rho}}(x, \epsilon)$.
-            Conversely, if $y\in B_{\ol{\rho}(x, \epsilon)}$, then $\ol{\rho}(x, y)<\epsilon$, so $\sup\{\ol{d_n}(x_n, y_n): n\in\bb{N}\}=\delta$ for some $0\leq\delta<\epsilon$.
-            Hence, $B_{\ol{\rho}}(x, \epsilon)\subset U(x, r)$ for some real number $r$ such that $\delta<r<\epsilon$.
-    \end{enumerate}
+    We first prove (a).
+    The point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\ol{\rho}}(x, \epsilon)$.
+    Furthermore, no neighborhood of this point entirely lies in $U(x, \epsilon)$.
+    Proving the details is left as an exercise.
+    
+    We now prove (b).
+    For each real number $0<r<\epsilon$, we have $U(x, r)\subset B_{\ol{\rho}}(x, \epsilon)$.
+    Conversely, if $y\in B_{\ol{\rho}(x, \epsilon)}$, then $\ol{\rho}(x, y)<\epsilon$, so $\sup\{\ol{d_n}(x_n, y_n): n\in\bb{N}\}=\delta$ for some $0\leq\delta<\epsilon$.
+    Hence, $B_{\ol{\rho}}(x, \epsilon)\subset U(x, r)$ for some real number $r$ such that $\delta<r<\epsilon$.
 \end{proof}

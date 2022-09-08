@@ -3,51 +3,51 @@
 \contentsline {section}{\numberline {1.1}Topology and basis}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Continuous maps}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Metrizable product spaces}{7}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Connected spaces and compact spaces}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Connected spaces}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Path-connected spaces}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}The topology of linear continuums}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Compact spaces}{12}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Compact metrizable spaces}{16}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Locally compact spaces and one-point compactification}{17}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Countability and separation axioms}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Countability and separation axioms}{21}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Definitions regarding countability and separation axioms}{21}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Basic properties of countabilities and separabilities}{22}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Examples of regular spaces}{24}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Examples of normal spaces}{24}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Countability and separation axioms (Problems)}{26}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The Urysohn lemma}{27}{section.3.3}%
-\contentsline {section}{\numberline {3.4}The embedding theorem}{28}{section.3.4}%
-\contentsline {chapter}{\numberline {4}The Stone-\v {C}ech compactification}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Compactification}{30}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The Stone-\v {C}ech compactification}{31}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Complete metric spaces and the space of continuous maps}{34}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Complete metric spaces}{34}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Complete metric spaces and uniform metrics}{34}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Isometric embedding of a metric space}{35}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Pointwise equicontinuous collection of continuous maps}{36}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Topologies on the space of continuous functions}{38}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Topology of pointwise convergence and uniform topology}{38}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Topology of compact convergence}{38}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Compact-open topology}{40}{subsection.5.3.3}%
-\contentsline {subsubsection}{Continuity of evaluation maps under the compact-open topology on $C(X, Y)$}{41}{section*.2}%
-\contentsline {section}{\numberline {5.4}Ascoli's theorem}{42}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Generalized Ascoli's theorem}{42}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Some particular versions of Ascoli's theorem}{44}{subsection.5.4.2}%
-\contentsline {part}{II\hspace {1em}Further theory in general topology}{46}{part.2}%
-\contentsline {chapter}{\numberline {6}Quotient topology}{47}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Quotient topology}{47}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Quotient maps}{47}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Quotient topology}{48}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Further properties regarding quotient maps}{49}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Topological groups}{50}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Topological groups}{50}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Quotients of topological groups}{52}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Further properties of topological groups}{53}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Topological vector spaces}{54}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Topological vector spaces}{54}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Further properties of topological vector spaces}{54}{section.8.2}%
-\contentsline {chapter}{\numberline {9}Tietze extension theorem}{55}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Manifolds and partition of unity}{56}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Fundamental groups}{57}{chapter.11}%
+\contentsline {chapter}{\numberline {2}Connected spaces and compact spaces}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Connected spaces}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Path-connected spaces}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The topology of linear continuums}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Compact spaces}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Compact metrizable spaces}{15}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Locally compact spaces and one-point compactification}{16}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Countability and separation axioms}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Countability and separation axioms}{20}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Definitions regarding countability and separation axioms}{20}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Basic properties of countabilities and separabilities}{21}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Examples of regular spaces}{23}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Examples of normal spaces}{23}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Countability and separation axioms (Problems)}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The Urysohn lemma}{26}{section.3.3}%
+\contentsline {section}{\numberline {3.4}The embedding theorem}{27}{section.3.4}%
+\contentsline {chapter}{\numberline {4}The Stone-\v {C}ech compactification}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Compactification}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The Stone-\v {C}ech compactification}{30}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Complete metric spaces and the space of continuous maps}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Complete metric spaces}{33}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Complete metric spaces and uniform metrics}{33}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Isometric embedding of a metric space}{34}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Pointwise equicontinuous collection of continuous maps}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Topologies on the space of continuous functions}{37}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Topology of pointwise convergence and uniform topology}{37}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Topology of compact convergence}{37}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Compact-open topology}{39}{subsection.5.3.3}%
+\contentsline {subsubsection}{Continuity of evaluation maps under the compact-open topology on $C(X, Y)$}{40}{section*.2}%
+\contentsline {section}{\numberline {5.4}Ascoli's theorem}{41}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Generalized Ascoli's theorem}{41}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Some particular versions of Ascoli's theorem}{43}{subsection.5.4.2}%
+\contentsline {part}{II\hspace {1em}Further theory in general topology}{45}{part.2}%
+\contentsline {chapter}{\numberline {6}Quotient topology}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Quotient topology}{46}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Quotient maps}{46}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Quotient topology}{47}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Further properties regarding quotient maps}{48}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Topological groups}{49}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Topological groups}{49}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Quotients of topological groups}{51}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Further properties of topological groups}{52}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Topological vector spaces}{53}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Topological vector spaces}{53}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Further properties of topological vector spaces}{53}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Tietze extension theorem}{54}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Manifolds and partition of unity}{55}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Fundamental groups}{56}{chapter.11}%
