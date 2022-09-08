@@ -22,6 +22,51 @@ In this section, we assume $X, Y, Z$ are topological spaces.
     \end{enumerate}
 \end{rmk}
 
+\begin{thm}
+    Let $X, Y$ be topological spaces and $f: X\rightarrow Y$ be a map.
+    Then the followings are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $f$ is a continuous map.
+        }
+        \item[(b)]
+        {
+            For any closed subset $B$ of $Y$, $f^{-1}(B)$ is closed in $X$.
+        }
+        \item[(c)]
+        {
+            For each $x\in X$ and a neighborhood $V$ of $f(x)$ in $Y$, there is a neighborhood $U$ of $x$ in $X$ such that $f(U)\subset V$.
+        }
+        \item[(d)]
+        {
+            Whenever $U\subset X$, $f(\ol U)\subset\ol{f(U)}$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    (a)$\Leftrightarrow$(b):
+        This follows directly by considering set complements.
+
+    (a)$\Rightarrow$(c):
+        If $x\in X$ and $V$ is a neighborhood of $f(x)$ in $Y$, then $f^{-1}(V)$ is a neighborhood of $x$ in $X$ whose image under $f$ is $V$.
+    
+    (c)$\Rightarrow$(a):
+        Let $V$ be an open subset of $Y$ and let $U=f^{-1}(V)\subset X$.
+        By assumption, for each $x\in X$, there is a neighborhood $A_x$ of $x$ in $X$ such that $f(A_x)\subset V$.
+        Then $A_x\subset U$, so $U$ is open in $X$.
+    
+    (a)$\Rightarrow$(d):
+        Suppose $U\subset X$.
+        We will show that if $x\in\ol U$ then $f(x)\in\ol{f(U)}$.
+        If $V$ is a neighborhood of $f(x)$ in $Y$, then $f^{-1}(V)$ is a neighborhood of $x$ in $X$, so $f^{-1}(V)$ intersects $U$.
+        Thus, $V\cap f(U)=f(f^{-1}(V)\cap U)$ is nonempty, so $f(x)\in\ol{f(U)}$, as desired.
+
+    (d)$\Rightarrow$(b):
+        Let $B$ be a closed subset of $Y$ and let $A=f^{-1}(B)$.
+        By assumption, we have $B=f(A)\subset f(\ol A)\subset \ol{f(A)}=\ol B=B$, so $B=f(\ol A)$ and $\ol A\subset f^{-1}(B)=A$, proving that $A=\ol A$ is closed.
+\end{proof}
+
 If given maps $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous, some naturally induced maps are also continuous, as indicated below. \color{brown}(Checking continuity is left as an exercise.)\color{black}
 
 \begin{prop}
@@ -44,24 +89,26 @@ If given maps $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous, some n
 \begin{thm}
     Let $A$ be a set; let $\{X_\alpha\}_{\alpha\in I}$ be an indexed family of spaces; and let $\{f_\alpha: A\rightarrow X_\alpha\}_{\alpha\in I}$ be an indexed family of functions.
     \begin{enumerate}
-        \item[(a)] There is a unique coarsest topology $\mc{T}$ on $A$ relative to which each of the function $f_\alpha$ is continuous. In fact, the topology $\mc{T}$ is generated as a subbasis by the following collection:
-        \begin{align*}
-            \left\{f_\alpha^{-1}(U_\alpha)
-            :
-            \alpha\in I\textsf{ and }U_\alpha\textsf{ is open in }X_\alpha\right\}.
-        \end{align*}
-        \item[(b)] A map $g: Y\rightarrow A$ is continuous relative to $T$ if and only if each composition $f_\alpha\circ g$ is continuous.
+        \item[(a)]
+        {
+            There is a unique coarsest topology $\mc{T}$ on $A$ relative to which each of the function $f_\alpha$ is continuous. In fact, the topology $\mc{T}$ is generated as a subbasis by the following collection:
+            \begin{align*}
+                \left\{f_\alpha^{-1}(U_\alpha)
+                :
+                \alpha\in I\textsf{ and }U_\alpha\textsf{ is open in }X_\alpha\right\}.
+            \end{align*}
+        }
+        \item[(b)]
+        {
+            A map $g: Y\rightarrow A$ is continuous relative to $\mc{T}$ if and only if each composition $f_\alpha\circ g$ is continuous.
+        }
     \end{enumerate}
 \end{thm}
 \begin{proof}
-    \begin{enumerate}
-        \item[(a)]
-            Almost clear; such topology necessarily contains the given collection.
-        \item[(b)]
-            It remains to prove if part.
-            Suppose $g_\alpha:=f_\alpha\circ g$ is continuous for each $\alpha\in I$.
-            Given an open subset $U$ of $A$, we have $g_\alpha^{-1}(A)=g^{-1}(f_\alpha^{-1}(A))$, completing the proof.
-    \end{enumerate}
+    (a) is almost clear; such topology necessarily contains the given collection.
+    In proving (b), it suffices to prove if part.
+    Suppose $g_\alpha:=f_\alpha\circ g$ is continuous for each $\alpha\in I$.
+    Given an open subset $U$ of $A$, we have $g_\alpha^{-1}(A)=g^{-1}(f_\alpha^{-1}(A))$, completing the proof.
 \end{proof}
 \begin{rmk}
     The product topology on a product space satisfies the above properties; in fact, the product topology is the topology on $A$ with
@@ -74,32 +121,41 @@ If given maps $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous, some n
     Let $(X, d)$ be a metric space.
     \begin{enumerate}
         \item[(a)]
-            Show that $d: X\times X\rightarrow\bb{R}$ is continuous.
-        \item[(b)]
-            Let $X'$ be a space heving the same underlying set as $X$.
-            Show that if $d': X'\times X'\rightarrow\bb{R}$ is continuous, where $d'$ is the map defined by $d'(a, b)=d(a, b)$ for all $(a, b)\in X'\times X'$, then the topology on $X'$ is finer than the topology on $X$.
-            Deduce that the metric topology on $X$ induced by the metric $d$ is the coarsest topology on $X$ relative to which $d$ is continuous.
-    \end{enumerate}
-\end{prob}
-\begin{sol}
-    Note that the collection $\{(-a, a):a\in\bb{R}^{>0}\}$ is a subbasis of the standard topology on $\bb{R}$.
-    \begin{enumerate}
-        \item[(a)]
         {
-            Given $(a, a)\in X\times X$, consider the basis member $B_d(a, \epsilon)\times B_d(a, \epsilon)$.
-            If $(p, q)$ belongs to the member, then $d(p, q)\leq d(p, a)+d(a, q)<2\epsilon$, so $d$ is continuous.
+            Show that $d: X\times X\rightarrow\bb{R}$ is continuous.
         }
         \item[(b)]
         {
-            Consider the set identity map $\imath: X'\times X'\rightarrow X\times X$.
-            We wish to show that $\imath$ is continuous.
-            Since $d'=d\circ\imath$ is continuous, $\imath^{-1}(d^{-1}([0, a)))$ is open whenever $a>0$.
-            Because the collection of $d^{-1}([0, a))$ with $a>0$ is a subbasis of the topology on $X\times X$, it is implied that $\imath$ is continuous.
-            Hence, the topology on $X\times X$ is coarser than the topology on $X'\times X'$.
-            
-            Given a point $a\in X$ with its neighborhood $A$ which is open in $X$, the point $(a, a)$ is contained in its neighborhood $A\times X$, which is open in $X\times X$.
-            Since the topology on $X\times X$ is coarser than the topology on $X'\times X'$, there is a basis member $U\times V$ such that $(a, a)\in U\times V\subset A\times X$.
-            Hence, $U$ is a set open in $X$ such that $a\in U\subset A$.
+            Let $X'$ be a space having the same underlying set as $X$, and define the map $d': X'\times X'\rightarrow\bb{R}$ by $d'(a, b)=d(a, b)$ for all $(a, b)\in X'\times X'$.
+            Show that the topology on $X'$ is finer than the topology on $X$, if $d'$ is continuous.
+            Deduce that the metric topology on $X$ induced by the metric $d$ is the coarsest topology on $X$ relative to which $d$ is continuous.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Choose a point $(a, b)\in X\times X$ and write $r=d(a, b)$.
+            We will show that given a positive real number $\epsilon$ there is a neighborhood of $(a, b)$ whose image under $d$ is contained in $(r-\epsilon, r+\epsilon)$.
+            Let $V=B_d(a, \delta)\times B_d(b, \delta)$ with $\delta>0$, which is a neighborhood of $(a, b)$ in $X\times X$.
+            Whenver $(p, q)\in V$, we have
+            \begin{align*}
+                d(p, q)\leq d(p, a)+d(a, b)+d(b, q)
+                \quad\textsf{and}\quad
+                d(a, b)\leq d(a, p)+d(p, q)_d(q, b,)
+            \end{align*}
+            from which we obtain $r-2\delta<d(p, q)<r+2\delta$.
+            Hence, by choosing $0<\delta<\epsilon/3$ we have $d(V)\subset(r-\epsilon, r+\epsilon)$, as desired.
+            Therefore, $d$ is a continuous map.
+        }
+        \item[(b)]
+        {
+            Choose $a\in X'$, and define the map $\epsilon_a: X'\rightarrow X'\times X'$ by $\epsilon_a(x)=(x, a)$ for $x\in X'$.
+            Then $\epsilon_a$ is continuous, so $k:=d'\circ\epsilon_a$ is continuous.
+            Hence, $k^{-1}((-\infty, r))=B_{d'}(a, r)=B_d(a, r)$ is an open subset of $X'$ for all $r\in\bb{R}$ with $r>0$.
+            Therefore, the topology on $X'$ contains $\{B_d(a, r): a\in X,\, r>0\}$, so the topology on $X'$ is finer than the topology on $X$.
+            The last assertion easily follows.
         }
     \end{enumerate}
 \end{sol}

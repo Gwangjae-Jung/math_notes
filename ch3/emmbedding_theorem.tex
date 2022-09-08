@@ -27,11 +27,10 @@ As an application of the embedding theorem, we will prove Urysohn metrization th
     Therefore, $F$ denotes an embedding of $X$ into $\bb{R}^I$ (or into $[0, 1]^I)$.
 \end{proof}
 
-Here is Urysohn metrization theorem.
+We now introduce the Urysohn metrization theorem, whose statement is stronger than every second countable regular space is normal.
 \begin{thm}[Urysohn metrization theorem]\label{Urysohn met thm}
     Every second countable regular space is metrizable.
 \end{thm}
-
 To prove this theorem, we first prove the following countability lemma.
 \begin{lem}\label{countable separating family}
     Let $X$ be a second countable regular space.
@@ -42,8 +41,6 @@ To prove this theorem, we first prove the following countability lemma.
     Whenever possible, let $f_{m, n}$ be a continuous function from $X$ into $[0, 1]$ such that $f(\overline{B_m})=\{1\}$ and $f(X\setminus B_n)=\{0\}$, where $\overline{B_m}\subset B_n$ (this could be done by applying Urysohn lemma).
     The collection of such continuous function will separate points of $X$ from closed subsets of $X$, and the collection is countable.
 \end{proof}
-
-It is time to prove Urysohn metrization theorem.
 \begin{proof}[Proof of \cref{Urysohn met thm}]
     By the embedding theorem, $X$ can be embedded into $\bb{R}^\bb{N}$.
     Since $\bb{R}^\bb{N}$ is a countable product of metrizable spaces, $\bb{R}^\bb{N}$ is metrizable, and its subspaces are also metrizable.

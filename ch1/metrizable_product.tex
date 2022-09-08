@@ -12,19 +12,19 @@ Let $X_n$ be a metrizable space for each $n\in\bb{N}$.
 \end{nota}
 
 The former metric is called the uniform metric on $X$ and the latter metric is called the $D$-metric on $X$.
-Among them, the former one can also be considered on any product spaces.
+Among them, the definition of the former metric generalizes to arbitrary product spaces: If $\{X_\alpha\}_{\alpha\in I}$ is an indexed family of metric spaces and $X=\prod_{\alpha\in I} X_\alpha$, then we may define the uniform metric $\rho: X\times X\rightarrow \bb{R}$ by $\rho(x, y)=\sup_{\alpha\in I}\{\ol{d}_\alpha(x_\alpha, y_\alpha)\}$ for $(x, y)\in X\times X$.
 
 \begin{thm}
     The $D$-metric on $X$ induces the product topology on $X$.
 \end{thm}
 
 \begin{proof}
-    We first show that the topology $T_D$ induced by the $D$-metric is finer than the product topology.
+    We first show that the topology $\mc{T}_D$ induced by the $D$-metric is finer than the product topology.
     Given a point $x\in X$ and a basis member $B=\prod_{n\in\bb{N}}B_n$ of the product topology with
     \begin{align*}
         \ds{\{n\in\bb{N}:B_n\neq X_n\}=\{n_1, \cdots, n_k\}},
     \end{align*}
-    let us find a basis member of $T_D$ which contains $x$ and contained in $B$.
+    let us find a basis member of $\mc{T}_D$ which contains $x$ and contained in $B$.
     For each $n$, let $C_n=B_{d_n}(x_n, r_n)$ be a neighborhood of $x_n$ contained in $B_n$, where $C_n=X_n$ if and only if $B_n=X_n$ and $0<r_n<1$ for the other $n$'s, and let $C=\prod_{n\in\bb{N}}C_n$.
     And let $\ds{\epsilon=\min_{1\leq i\leq k}\left\{\frac{r_{n_i}}{n_i}\right\}}$.
     Consider $G=B_D(x, \epsilon)$.
@@ -34,7 +34,7 @@ Among them, the former one can also be considered on any product spaces.
     \end{align*}
     so $y\in C\subset B$, i.e., $x\in G\subset B$.
     
-    Conversely, suppose a point $x$ of $X$ and a basis element $B_D(p, r)\in T_D$ containing $x$ are given.
+    Conversely, suppose a point $x$ of $X$ and a basis element $B_D(p, r)\in \mc{T}_D$ containing $x$ are given.
     By choosing a small real number $\epsilon>0$, we can achieve $x\in B_D(x, \epsilon)\subset B_D(p, r)$.
     Let $N$ be a positive integer such that $1/N < \epsilon$.
     For each positive integer $n<N$, let $B_n=B_{d_n}(x_n, \epsilon)$; for each integer $n\geq N$, let $B_n=X_n$.
