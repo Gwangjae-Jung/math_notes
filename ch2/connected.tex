@@ -9,19 +9,19 @@
     The topological space $X$ is connected if and only if the only subsets of $X$ which are both open and closed in $X$ are $\varnothing$ and $X$.
 \end{rmk}
 
-When discussing connectedness of the subspace $A$ of $X$, according to the above definition, subspaces of $A$ shall be considered.
-The following theorem implies that we can argue connectedness of the subspace $A$ of $X$ with regard to subspaces $X$.
+When discussing connectedness of a subspace $A$ of $X$, according to the above definition, subspaces of $A$ shall be considered.
+The following theorem lets us argue the connectedness of a subspace $A$ of $X$ with regard to the subspaces $X$.
 \begin{thm}[Connected subspace]
     Suppose $X$ is a topological space and $A$ is a subspace of $X$.
-    Then $(U, V)$ is a separation of $X$ if and only if
+    Then $(U, V)$ is a separation of $A$ if and only if
     \begin{enumerate}
         \item[(a)]
         {
-            $\{U, V\}$ is a partition of $Y$ by nonempty subsets of $Y$
+            $\{U, V\}$ is a partition of $A$ by nonempty subsets of $A$ (here, $U$ and $V$ need not be open or closed in $A$ or $X$)
         }
         \item[(b)]
         {
-            and neither of which contains a limit point of the other, i.e., $\overline{A}\cap B=A\cap\overline{B}=\varnothing$, where the closures are taken in $X$.
+            and neither $U$ nor $V$ contains a limit point (in $X$) of the other, i.e., $\overline{U}\cap V=U\cap\overline{V}=\varnothing$. (The overline notations stand for the closure in $X$.)
         }
     \end{enumerate}
 \end{thm}
@@ -29,13 +29,15 @@ The following theorem implies that we can argue connectedness of the subspace $A
     Suppose $(U, V)$ is a separation of $Y$.
     Because $U$ is both open and closed in $Y$, $U=\overline{U}\cap Y$.
     Since $U\cap V=\varnothing$, we have $\overline{U}\cap V=\varnothing$.
+    For the same reason, $U\cap\ol V=\varnothing$.
 
-    Conversely, assuming (a) and (b), we have $\overline{U}\cap Y=\overline{U}\cap(U\sqcup V)=U$, i.e., $U$ is open in $Y$.
+    Conversely, assuming (a) and (b), we have $\overline{U}\cap A=\overline{U}\cap(U\sqcup V)=U$, so $U$ is closed in $A$.
+    For the same reason, $V$ is also closed in $A$, so $(U, V)$ is a separation of $A$.
 \end{proof}
 
-Before introducing some examples of connected spaces, we first introduce a lemma stating regarding a connected subspace, which will be frequently used.
+We introduce a useful lemma regarding connected spaces, implying that a connected subspace lies entirely in a `separation component.'
 \begin{lem}
-    If the sets $C$ and $D$ form a separation of $X$, and if $Y$ is a connected subspace of $X$, then $Y$ lies entirely within $C$ or $D$.
+    If $(C, D)$ is a separation of $X$ and if $Y$ is a connected subspace of $X$, then $Y$ lies entirely within $C$ or $D$.
 \end{lem}
 \begin{proof}
     Define $A:=Y\cap C$ and $B:=Y\cap D$.

@@ -4,18 +4,26 @@
 \begin{defi}[Countability axioms]
     Let $X$ be a topological space.
     \begin{enumerate}
-        \item[(a)] $X$ is said to have a countable base at the point $x\in X$, if there is a countable collection $\{B_n\}_{n\in\bb{N}}$ of open subsets of $X$ with the following property:
+        \item[(a)]
+        {
+            $X$ is said to have a countable base at the point $x\in X$, if there is a countable collection $\{B_n\}_{n\in\bb{N}}$ of open subsets of $X$ with the following property:
             \begin{center}
                 For each open set $A\subset X$ there is a positive integer $n$ such that $B_n$ is contained in $A$.
             \end{center}
-        \item[(b)] $X$ is said to be a first-countable space (or to be first countable) if every point of $X$ has a countable base.
-        \item[(c)] $X$ is said to be a second-countable space (or to be second countable) if $X$ has a countable basis.
+        }
+        \item[(b)]
+        {
+            $X$ is said to be a first-countable space if every point of $X$ has a countable base.
+        }
+        \item[(c)]
+        {
+            $X$ is said to be a second-countable space if $X$ has a countable basis.
+        }
     \end{enumerate}
     Remark that the second countability implies the first countability.
 \end{defi}
-\begin{rmk}[A stronger property of second-countability]
-    The definition of the second-countability states that a space has a countable basis.
-    In fact, if the space $X$ is second-countable and $\mc{C}$ is a basis of $X$, then $\mc{C}$ has a countable subcollection which is a basis of $X$.
+\begin{rmk}[A strong property of second-coundtable spaces]
+    If a space $X$ is second-countable and $\mc{C}$ is any basis of $X$, then $\mc{C}$ has a countable subcollection which is a basis of $X$.
 \end{rmk}
 \begin{proof}
     Let $\mc{B}=\{B_n\}_{n\in\bb{N}}$ be a coundtable basis of $X$.
@@ -34,31 +42,29 @@
     Therefore, $\mc{C}^*$ is a countable basis of $X$ which is contained in $\mc{C}$.
     \end{proof}
 \begin{defi}[Separation axioms]
-    Let $X$ be a topological space.
-    $X$ is said to be a Kolomogrov space (or a $T_1$ space) if every finite subset of $X$ is closed in $X$.
+    A topological space $X$ is called a Kolomogrov space (or a $T_1$ space) if every finite subset of $X$ is closed in $X$.
     In the rest definitions, assume $X$ is a Kolomogrov space.
     \begin{enumerate}
         \item[(a)]
         {
-            $X$ is said to be a Hausdorff space (or a $T_2$ space) if given two distinct points $a$ and $b$ in $X$, there are disjoint neighborhoods of $a$ and $b$.
+            $X$ is called a Hausdorff space (or a $T_2$ space) if given two distinct points $a$ and $b$ in $X$, there are disjoint neighborhoods of $a$ and $b$.
         }
         \item[(b)]
         {
-            $X$ is said to be a regular space (or a $T_3$ space) if given a point $a\in X$ and a nonempty closed subset $B\subset X$ not containing $a$, there are disjoint neighborhoods of $a$ and $B$.
+            $X$ is called a regular space (or a $T_3$ space) if given a point $a\in X$ and a nonempty closed subset $B\subset X$ not containing $a$, there are disjoint neighborhoods of $a$ and $B$.
         }
         \item[(c)]
         {
-            $X$ is said to be a completely regular space (or a $T_{3\frac{1}{2}}$ space) if given a point $a\in X$ and a nonempty closed subset $B\subset X$ not containing $a$, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(a)=1$ and $f(B)=\{0\}$.
+            $X$ is called a completely regular space (or a $T_{3\frac{1}{2}}$ space) if given a point $a\in X$ and a nonempty closed subset $B\subset X$ not containing $a$, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(a)=1$ and $f(B)=\{0\}$.
         }
         \item[(d)]
         {
-            $X$ is said to be a normal space (or a $T_4$ space) if given two nonempty disjoint subsets in $X$ there are disjoint neighborhoods of those closed subsets.
+            $X$ is called a normal space (or a $T_4$ space) if given two nonempty disjoint subsets in $X$ there are disjoint neighborhoods of those closed subsets.
         }
     \end{enumerate}
 \end{defi}
-\begin{rmk}[Alternative definitions for some separabilities in terms of locality]
-    Suppose $X$ is a $T_1$ space.
-    Some separabilities on $X$ may be defined alternatively as following statements written in terms of locality:
+\begin{rmk}[Alternative definitions for some separabilities]
+    Assume that $X$ is a $T_1$ space.
     \begin{enumerate}
         \item[(a)]
         {

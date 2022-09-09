@@ -6,9 +6,9 @@
 \end{defi}
 \begin{rmk}
     In fact, we can impose an alternative definition of compactness as follows:
-    \begin{center}
-        The topological space $X$ is said to be compact if for every collection $\mc{C}$ of closed sets in $X$ having the finite intersection property, the intersection of the members of $\mc{C}$ is nonempty. 
-    \end{center}
+    \begin{quotation}
+        The topological space $X$ is said to be compact, if for every collection $\mc{C}$ of closed sets in $X$ having the finite intersection property, the intersection of the members of $\mc{C}$ is nonempty. 
+    \end{quotation}
 \end{rmk}
 \begin{proof}
     Establish some contrapositions to check the above two statements are equivalent.
@@ -34,19 +34,32 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
 \begin{thm}
     Regarding closedness and compactness of subspaces, the following statements holds:
     \begin{enumerate}
-        \item[(a)] Every closed subspace of a compact space is compact.
-        \item[(b)] Every Hausdorff space is compactly normal, i.e., any two disjoint compact subspaces can be separated by (disjoint) neighborhoods.
-        \item[(c)] Every compact subspace of a Hausdorff space is closed. (Hence, every compact Hausdorff space is normal.)
+        \item[(a)]
+        {
+            Every closed subspace of a compact space is compact.
+        }
+        \item[(b)]
+        {
+            Every Hausdorff space is compactly normal.
+            In other words, any two disjoint compact subspaces can be separated by (disjoint) neighborhoods.
+        }
+        \item[(c)]
+        {
+            Every compact subspace of a Hausdorff space is closed. (Hence, every compact Hausdorff space is normal.)
+        }
     \end{enumerate}
 \end{thm}
 \begin{sol}
     \begin{enumerate}
         \item[(a)]
+        {
             Let $X$ be a compact space and $Y$ be a closed subspace of $X$.
             Let $\mc{A}=\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $X$.
             Because the collection $\mc{A}\cup\{X\setminus Y\}$ is also an open covering of $X$, the collection has a finite subcover.
             Among them, excluding $X\setminus Y$ gives a finite subcover of $\mc{A}$ which covers $Y$.
+        }
         \item[(b)]
+        {
             We first prove that a Hausdorff space $X$ is compactly regular.
             Let $p$ be a point of $X$ and $A$ be a compact subspace of $X$ not containing $p$.
             For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $p$ and $a$, respectively.
@@ -57,11 +70,14 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
             For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $a$ and $B$, respectively.
             Since $A$ can be covered by finitely many $U_a$'s, the union of the corresponding $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $B$, respectively.
             Therefore, $X$ is compactly normal.
+        }
         \item[(c)]
+        {
             If $A$ is a compact subspace of a Hausdorff space $X$, then it follows from (b) that $X\setminus A$ is open, hence $A$ is closed.
             In (a), we have shown that a closed subspace of a compact space is compact.
             Thus, compactness and closedness of a subspace of a compact Hausdorff space coincide.
             Hence, every compact Hausdorff space is normal.
+        }
     \end{enumerate}
 \end{sol}
 
