@@ -58,10 +58,8 @@ Among them, the definition of the former metric generalizes to arbitrary product
     Show that every isometry from $X$ into $Y$ is an embedding.
 \end{prob}
 \begin{sol}
-    Let $f$ be an isometry from $X$ into $Y$.
-    It is clear that $f$ is an injective continuous map.
-    Because $f$ maps an open ball of radius $r>0$ in $X$ onto an open ball of radius $r$ in $Y$, $f$ is an open map.
-    Therefore, every isometry from $X$ into $Y$ is an embedding.
+    If $f: X\rightarrow Y$ is an isometry, then $f$ is clearly injective and continuous.
+    Because an open ball of radius $r>0$ in $X$ is mapped onto an open ball of radius $r$ in $Y$ under $f$, $f$ is an open map, so $f$ is an embedding.
 \end{sol}
 
 We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips the uniform metric $\ol{\rho}$.
@@ -72,15 +70,19 @@ We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips t
         U(x, \epsilon):=\prod_{n=1}^\infty (x_n-\epsilon, x_n+\epsilon).
     \end{align*}
     \begin{enumerate}
-        \item[(a)] $U(x, \epsilon)\neq B_{\ol{\rho}}(x, \epsilon)$ and $U(x, \epsilon)$ is not open in the uniform topology.
-        \item[(b)] $\ds{B_{\ol{\rho}}(x, \epsilon)=\bigcup_{0<r<\epsilon} U(x, r)}$.
+        \item[(a)]
+        {
+            $U(x, \epsilon)\neq B_{\ol{\rho}}(x, \epsilon)$ and $U(x, \epsilon)$ is not open in the uniform topology.
+        }
+        \item[(b)]
+        {
+            $B_{\ol{\rho}}(x, \epsilon)=\bigcup_{0<r<\epsilon} U(x, r)$.
+        }
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    We first prove (a).
-    The point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\ol{\rho}}(x, \epsilon)$.
+    In proving (a), note that the point $(x_n+2^{-n}\epsilon)_{n\in\bb{N}}$ is in $U(x, \epsilon)$ but not in $B_{\ol{\rho}}(x, \epsilon)$.
     Furthermore, no neighborhood of this point entirely lies in $U(x, \epsilon)$.
-    Proving the details is left as an exercise.
     
     We now prove (b).
     For each real number $0<r<\epsilon$, we have $U(x, r)\subset B_{\ol{\rho}}(x, \epsilon)$.
