@@ -45,24 +45,25 @@ In this section, we assume $X, Y, Z$ are topological spaces.
     \end{enumerate}
 \end{thm}
 \begin{proof}
+    \hangindent=0.65cm
     (a)$\Leftrightarrow$(b):
         This follows directly by considering set complements.
 
-    (a)$\Rightarrow$(c):
+    \noindent(a)$\Rightarrow$(c):
         If $x\in X$ and $V$ is a neighborhood of $f(x)$ in $Y$, then $f^{-1}(V)$ is a neighborhood of $x$ in $X$ whose image under $f$ is $V$.
     
-    (c)$\Rightarrow$(a):
+    \noindent(c)$\Rightarrow$(a):
         Let $V$ be an open subset of $Y$ and let $U=f^{-1}(V)\subset X$.
         By assumption, for each $x\in X$, there is a neighborhood $A_x$ of $x$ in $X$ such that $f(A_x)\subset V$.
         Then $A_x\subset U$, so $U$ is open in $X$.
     
-    (a)$\Rightarrow$(d):
+    \noindent(a)$\Rightarrow$(d):
         Suppose $U\subset X$.
         We will show that if $x\in\ol U$ then $f(x)\in\ol{f(U)}$.
         If $V$ is a neighborhood of $f(x)$ in $Y$, then $f^{-1}(V)$ is a neighborhood of $x$ in $X$, so $f^{-1}(V)$ intersects $U$.
         Thus, $V\cap f(U)=f(f^{-1}(V)\cap U)$ is nonempty, so $f(x)\in\ol{f(U)}$, as desired.
 
-    (d)$\Rightarrow$(b):
+    \noindent(d)$\Rightarrow$(b):
         Let $B$ be a closed subset of $Y$ and let $A=f^{-1}(B)$.
         By assumption, we have $B=f(A)\subset f(\ol A)\subset \ol{f(A)}=\ol B=B$, so $B=f(\ol A)$ and $\ol A\subset f^{-1}(B)=A$, proving that $A=\ol A$ is closed.
 \end{proof}

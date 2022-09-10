@@ -2,24 +2,21 @@
 
 \begin{defi}[Compact space]
     A topological space $X$ is said to be compact if every covering of $X$ by sets open in $X$ has a finite subcover.
-    If every such covering has a countable subcover, then $X$ is said to be a Lindel\"{o}f space.
+    If every such covering has a countable subcover, then $X$ is called a Lindel\"{o}f space.
 \end{defi}
 \begin{rmk}
     In fact, we can impose an alternative definition of compactness as follows:
     \begin{quotation}
-        The topological space $X$ is said to be compact, if for every collection $\mc{C}$ of closed sets in $X$ having the finite intersection property, the intersection of the members of $\mc{C}$ is nonempty. 
+        The topological space $X$ is said to be compact, if for every collection $\mc{C}$ of closed sets in $X$ with the finite intersection property, the intersection of the members of $\mc{C}$ is nonempty. 
     \end{quotation}
+    The equivalence of compactness and the above property can be checked by considering an appropriate contraposition.
 \end{rmk}
-\begin{proof}
-    Establish some contrapositions to check the above two statements are equivalent.
-    The proof is left as an exercise.
-\end{proof}
 
 As connectedness, compactness of subspaces can also be argued in larger spaces.
 \begin{thm}[Compactness of subspaces]
     Let $A$ be a subspace of $X$.
     Then $A$ is compact if and only if every covering of $A$ by sets open in $X$ has a finite subcover.
-    (This statement is valid if the words `compact' are replaced by `Lindel\"{o}f.')
+    (This statement is valid even if the words `compact' are replaced by `Lindel\"{o}f.')
 \end{thm}
 \begin{proof}
     Suppose $A$ is compact, and $\mathcal{A}=\{A_\alpha\}_\alpha$ is a covering of $A$ by sets open in $X$.
@@ -49,37 +46,31 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
         }
     \end{enumerate}
 \end{thm}
-\begin{sol}
-    \begin{enumerate}
-        \item[(a)]
-        {
-            Let $X$ be a compact space and $Y$ be a closed subspace of $X$.
-            Let $\mc{A}=\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $X$.
-            Because the collection $\mc{A}\cup\{X\setminus Y\}$ is also an open covering of $X$, the collection has a finite subcover.
-            Among them, excluding $X\setminus Y$ gives a finite subcover of $\mc{A}$ which covers $Y$.
-        }
-        \item[(b)]
-        {
-            We first prove that a Hausdorff space $X$ is compactly regular.
-            Let $p$ be a point of $X$ and $A$ be a compact subspace of $X$ not containing $p$.
-            For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $p$ and $a$, respectively.
-            Since $A$ can be covered by finitely many $V_a$'s, the intersection of the corresponding $U_a$'s is a neighborhood of $p$.
-            Thus, $X$ is compactly regular.
+\begin{proof}
+    \hangindent=0.65cm
+    \noindent(a)
+    Let $X$ be a compact space and $Y$ be a closed subspace of $X$.
+    Let $\mc{A}=\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $X$.
+    Because the collection $\mc{A}\cup\{X\setminus Y\}$ is also an open covering of $X$, the collection has a finite subcover.
+    Among them, excluding $X\setminus Y$ gives a finite subcover of $\mc{A}$ which covers $Y$.
 
-            To show that $X$ is compactly normal, let $A, B$ be disjoint compact subspaces of $X$.
-            For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $a$ and $B$, respectively.
-            Since $A$ can be covered by finitely many $U_a$'s, the union of the corresponding $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $B$, respectively.
-            Therefore, $X$ is compactly normal.
-        }
-        \item[(c)]
-        {
-            If $A$ is a compact subspace of a Hausdorff space $X$, then it follows from (b) that $X\setminus A$ is open, hence $A$ is closed.
-            In (a), we have shown that a closed subspace of a compact space is compact.
-            Thus, compactness and closedness of a subspace of a compact Hausdorff space coincide.
-            Hence, every compact Hausdorff space is normal.
-        }
-    \end{enumerate}
-\end{sol}
+    \noindent(b)
+    We first prove that a Hausdorff space $X$ is compactly regular.
+    Let $p$ be a point of $X$ and $A$ be a compact subspace of $X$ not containing $p$.
+    For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $p$ and $a$, respectively.
+    Since $A$ can be covered by finitely many $V_a$'s, the intersection of the corresponding $U_a$'s is a neighborhood of $p$.
+    Thus, $X$ is compactly regular.
+
+    \noindent(c)
+    To show that $X$ is compactly normal, let $A, B$ be disjoint compact subspaces of $X$.
+    For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $a$ and $B$, respectively.
+    Since $A$ can be covered by finitely many $U_a$'s, the union of the corresponding $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $B$, respectively.
+    Therefore, $X$ is compactly normal.
+    If $A$ is a compact subspace of a Hausdorff space $X$, then it follows from (b) that $X\setminus A$ is open, hence $A$ is closed.
+    In (a), we have shown that a closed subspace of a compact space is compact.
+    Thus, compactness and closedness of a subspace of a compact Hausdorff space coincide.
+    Hence, every compact Hausdorff space is normal.
+\end{proof}
 
 \begin{prop}
     A continuous image of a compact space is compact.
@@ -121,29 +112,28 @@ When proving the above theorem, the first version of the tube lemma will be used
     \end{enumerate}
 \end{lem}
 \begin{proof}[Proof of \cref{tube lemmas}]
-    \begin{enumerate}
-        \item[(a)]
-            Since $N$ is open, for each point $(x_0, y)\in\{x_0\}\times Y$, there is a neighborhood $A_y\times B_y$ of the point $(x_0, y)$ contained in $N$, where $A_y$ and $B_y$ are open in $X$ and $Y$, respectively.
-            Because $\{x_0\}\times Y$ is homeomorphic to $Y$, hence $\{x_0\}\times Y$ is also compact.
-            Hence, the slice can be covered by finitely many above basis members.
-            For convinience, write such members as $A_i\times B_i$ for $i=1, \cdots, n$.
-            Write $W=\bigcap_{i=1}^n A_i$, then $\{x_0\}\times Y\subset W\times Y\subset N$.
-        \item[(b)]
-            Since $N$ is open, for each point $(a, t)\in\{a\}\times B$, there is a neighborhood $A_t^a\times B_t^a$ of the point $(a, t)$ contained in $N$, where $A_t^a$ and $B_t^a$ are open in $X$ and $Y$, respectively.
-            Because the slice $\{a\}\times B$ is compact for each $a\in A$, the slice can be covered by finitely many neighborhoods; write it as $A_i^a\times B_i^a$ for $i=1, \cdots, n^a$.
-            Finally, define
-            \begin{align*}
-                U^a:=\bigcap_{i=1}^{n^a}{A_i^a},\quad V^a:=\bigcup_{i=1}^{n^a}{B_i^a}.
-            \end{align*}
-            Then, $U^a\times V^a$ is an open set contained in $N$ containing $\{a\}\times Y$.
-            Since $A$ is compact, finitely many $U^a$'s cover $A$; write them as $U^1, \cdots, U^k$.
-            Finally, define
-            \begin{align*}
-                U:=\bigcup_{i=1}^k U^k,\quad V:=\bigcap_{i=1}^k V^k.
-            \end{align*}
-            Then, $U\times V$ is an open set contained in $N$ containing $A\times B$.
-    \end{enumerate}
-    This completes the proof of tube lemmas.
+    \hangindent=0.65cm
+    (a)
+        Since $N$ is open, for each point $(x_0, y)\in\{x_0\}\times Y$, there is a neighborhood $A_y\times B_y$ of the point $(x_0, y)$ contained in $N$, where $A_y$ and $B_y$ are open in $X$ and $Y$, respectively.
+        Because $\{x_0\}\times Y$ is homeomorphic to $Y$, hence $\{x_0\}\times Y$ is also compact.
+        Hence, the slice can be covered by finitely many above basis members.
+        For convinience, write such members as $A_i\times B_i$ for $i=1, \cdots, n$.
+        Write $W=\bigcap_{i=1}^n A_i$, then $\{x_0\}\times Y\subset W\times Y\subset N$.
+    
+    \noindent(b)
+        Since $N$ is open, for each point $(a, t)\in\{a\}\times B$, there is a neighborhood $A_t^a\times B_t^a$ of the point $(a, t)$ contained in $N$, where $A_t^a$ and $B_t^a$ are open in $X$ and $Y$, respectively.
+        Because the slice $\{a\}\times B$ is compact for each $a\in A$, the slice can be covered by finitely many neighborhoods; write it as $A_i^a\times B_i^a$ for $i=1, \cdots, n^a$.
+        Finally, define
+        \begin{align*}
+            U^a:=\bigcap_{i=1}^{n^a}{A_i^a},\quad V^a:=\bigcup_{i=1}^{n^a}{B_i^a}.
+        \end{align*}
+        Then, $U^a\times V^a$ is an open set contained in $N$ containing $\{a\}\times Y$.
+        Since $A$ is compact, finitely many $U^a$'s cover $A$; write them as $U^1, \cdots, U^k$.
+        Finally, define
+        \begin{align*}
+            U:=\bigcup_{i=1}^k U^k,\quad V:=\bigcap_{i=1}^k V^k.
+        \end{align*}
+        Then, $U\times V$ is an open set contained in $N$ containing $A\times B$.
 \end{proof}
 \begin{proof}[Proof of \cref{products of compact spaces}]
     Let $X, Y$ be compact spaces, and $\mc{A}$ be an open cover of $X\times Y$.
