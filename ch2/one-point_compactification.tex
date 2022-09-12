@@ -24,16 +24,19 @@ One property regarding local compactness:
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    Remark that projection maps are continuous.
-    Let $X=\prod_\alpha X_\alpha$, and we first prove (a).
-    Given a point $x\in X$, there is a compact subspace $C$ of $X$ containing a basis member $\prod_\alpha B_\alpha$ that contains $x$.
-    For each $\alpha$, $\pi_\alpha(C)$ is a compact subspace of $X_\alpha$, which contains the neighborhood $B_\alpha$ of $x_\alpha\in X_\alpha$.
-    Becuase for all but finitely many values of $\alpha$ it is satisfied that $B_\alpha=X_\alpha$, it is proved that each $X_\alpha$ is locally compact and all but finitely many of $X_\alpha$'s are compact.
-    In particular, if $X$ is compact, then each $X_\alpha=\pi_\alpha(X)$ is compact.
+    Write $X=\prod_\alpha X_\alpha$.
+
+    \hangindent=0.65cm
+    \noindent(a)
+    Given a point $x\in X$, there is a compact subspace $C$ of $X$ and a basis member $\prod_\alpha B_\alpha$ such that $x\in\prod_\alpha B_\alpha\subset C$.
+    Because $\pi_\alpha(C)$ is a compact subspace of $X_\alpha$ containing the neighborhood $B_\alpha$ of $x_\alpha\in X_\alpha$ for each $\alpha$, each $X_\alpha$ is locally compact.
+    Moreover, because $B_\alpha=X_\alpha$ for all but finitely many values of $\alpha$, $X_\alpha$ is compact for all but finitely many values of $\alpha$.
+    In particular, if $X$ is compact, then $X_\alpha=\pi_\alpha(X)$ is compact for all $\alpha$.
     
-    Given a point $x\in X$, for each $\alpha$, use local compactness and compactness to find a compact subspace $C_\alpha\subset X_\alpha$ such that $C_\alpha$ contains a neighborhood $B_\alpha$ of $x_\alpha$ in $X_\alpha$.
-    When finding such subspaces, we choose $B_\alpha=C_\alpha=X_\alpha$ whenever $X_\alpha$ is compact.
-    Then, the product of $B_\alpha$'s is a basis member of $X$ containing $x$; the product of $C_\alpha$'s is a compact subspace of $X$.
+    \noindent(b)
+    Given a point $x\in X$, for each $\alpha$, use (local) compactness to find a compact subspace $C_\alpha$ of $X_\alpha$ containing a neighborhood $B_\alpha$ of $x_\alpha$ in $X_\alpha$.
+    When finding such subspaces, choose $B_\alpha=C_\alpha=X_\alpha$ whenever $X_\alpha$ is compact.
+    Then, the product of $B_\alpha$ for all $\alpha$ is a basis member of $X$ containing $x$; the product of $C_\alpha$ for all $\alpha$ is a compact subspace of $X$.
 \end{proof}
 
 \begin{thm}[Existence and uniqueness of a one-point compactification]
@@ -61,12 +64,13 @@ One property regarding local compactness:
     \begin{center}
         $h(x)=x$ if $x\in X$, and $h(p)=q$.
     \end{center}
-    We show $h$ is a homeomorphism extending the identity map on $X$; and for this, it remains to verify that $h$ is a continuous map, because the openness of $h$ will follow from symmetry.
+    We show $h$ is a homeomorphism extending the identity map on $X$; and for this, it suffices to verify that $h$ is a continuous map, because the openness of $h$ will follow by symmetry.
     Suppose first that $U\subset Y_2$ is an open subset contained in $X$.
     Clearly, its preimage is $U$, and because $U$ is open in $X$ and $X$ is open in $Y_1$, $U$ is open in $Y_1$.
     Now, suppose that $U\subset Y_2$ is an open subset containing $q$.
-    Let $C=Y_2\setminus U$ be the complement of $U$ in $Y_2$, which is contained in $X$.
-    The preimage of $C$ is $C$; because $C$ is closed and compact in $Y_2$, $C$ is a compact subspace of $X$, a compact subspace of $Y_1$, so $C$ is closed in $Y_1$, too.
+    Then the subset $C=Y_2\setminus U$ is a closed cubset of $Y_2$, so $C$ is compact.
+    Also, $C$ is contained in $X$.
+    Because $h^{-1}(C)=C$ is a compact subspace of $Y_1$, $h^{-1}(C)$ is closed in $Y_1$.
     Thus, $h$ is a continuous map.
 
     \textbf{Step 2: Proving the existence part.}\newline\noindent
@@ -80,10 +84,10 @@ One property regarding local compactness:
         }
         \item[(T2)]
         {
-            Subsets of the form $Y\setminus C$, where $C$ is a compact subspace of $X$.
+            Subsets of the form $Y\setminus C$, where $C$ is a compact subspace of $X$. (See \cref{check 1p cptf topology}.)
         }
     \end{enumerate}
-    It is left as an exercise to check that the above collection is a topology on $Y$. (See \cref{check 1p cptf topology})
+    It is left as an exercise to check that the above collection is a topology on $Y$. (See \cref{check 1p cptf topology}.)
 
     We first show that $Y$ contains $X$ as a subspace.
     Clearly, the topology on $X$ is coarser than the subspace topology on $X$ inherited from $Y$.
@@ -108,6 +112,7 @@ One property regarding local compactness:
 
 \begin{prob}\label{check 1p cptf topology}
     Show that the collection imposed in the proof of the existence part is a topology on $Y$.
+    And explain why we let $C$ be a compact subspace of $Y$ in the second type rather than a closed subspace of $Y$.
 \end{prob}
 \begin{sol}
     \textbf{Step 1. Cheking the axiom of covering.}\newline\noindent
@@ -120,11 +125,11 @@ One property regarding local compactness:
     \begin{align*}
         U\cup (Y\setminus C)=Y\setminus (C\setminus U)
     \end{align*}
-    and $C\setminus U$ is compact \color{brown}(why?)\color{black}.
+    and $C\setminus U$ is compact. \color{brown}(Why?)\color{black}
 
     \textbf{Step 3. Checking the axiom of intersection.}\newline\noindent
     A finite intersection of sets of the first type is an open subset of $X$, hende the intersection is of the first type.
-    If $(V_\beta=Y\setminus C_k)_{k=1}^n$ is a collection of sets of the second type (each $C_k$ is a compact subspace of $X$), their intersection is of the second type, because the union is $Y\setminus K$, where $\ds{K=\bigcup_{k=1^n} C_k}$ is compact.
+    If $(V_\beta=Y\setminus C_k)_{k=1}^n$ is a collection of sets of the second type (each $C_k$ is a compact subspace of $X$), their intersection is of the second type, because the union is $Y\setminus K$, where $K=\bigcup_{k=1}^n C_k$ is compact.
     The intersection of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subspace of $X$) is of the first type, since
     \begin{align*}
         U\cap (Y\setminus C)=U\setminus C
@@ -185,7 +190,7 @@ As homeomorphism implies that the given two spaces are ``topologically equivalen
         }
         \item[(b)]
         {
-            Since $\bb{N}\approx K$, where $K=\left\{\dfrac{1}{n}: n\in\bb{N}\right\}$, the one-point compactification of $\bb{N}$ is homeomorphic to $K\sqcup\{0\}$.
+            Since $\bb{N}\approx K$, where $K=\left\{1/n: n\in\bb{N}\right\}$, the one-point compactification of $\bb{N}$ is homeomorphic to $K\sqcup\{0\}$.
         }
     \end{enumerate}
 \end{exmp}
