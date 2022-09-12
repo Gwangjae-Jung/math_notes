@@ -88,13 +88,22 @@ As one can expect from the fact that a basis of the topology plays a major role 
 \begin{prop}\label{2nd ctbl implies}
     Suppose $X$ is a second-countable space.
     \begin{enumerate}
-        \item[(a)] $X$ is a Lindel\"{o}f space, i.e., every open covering of $X$ has a countable subcover.
-        \item[(b)] $X$ is a separable space, i.e., $X$ has a coundtable dense subset.
+        \item[(a)]
+        {
+            $X$ is a Lindel\"of space, i.e., every open covering of $X$ has a countable subcover.
+        }
+        \item[(b)]
+        {
+            $X$ is a separable space, i.e., $X$ has a coundtable dense subset.
+        }
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \color{brown}Left as an exercise.\color{black}
 \end{proof}
+\begin{rmk}
+    A topological space $X$ is said to be hereditarily Lindel\"of space if every subspace of $X$ is a Lindel\"of space.
+\end{rmk}
 The converse implications in \cref{2nd ctbl implies} are sometimes valid.
 One of such a particular case is when the space is metrizable, which is also one of a desired property.
 \begin{prop}
@@ -311,24 +320,24 @@ We now introduce some inheritance properties.
 \begin{proof}
     Let $X$ be a well-orderd set.
 
-    \noindent(Step 1: Proving that every subspace of $X$ of the form $(x, y]$ is open in $X$)\newline\indent
+    \textbf{Step 1: Proving that every subspace of $X$ of the form $(x, y]$ is open in $X$}\newline\noindent
     Let $A=(x, y]$ be a subset of $X$.
     Then $X\setminus A=(-\infty, x]\sqcup(y, \infty)$; because $(y, \infty)$ has the least element $y'\in X$, $X\setminus A=(-\infty, x]\sqcup[y', \infty)$ is closed in $X$.
 
-    \noindent(Step 2: Proving that $X$ is normal)\newline\indent
+    \textbf{Step 2: Proving that $X$ is normal}\newline\noindent
     Let $A$ and $B$ be nonempty disjoint closed subspace of $X$.
     \begin{enumerate}
         \item[(\romannumeral 1)]
         {
-        Assume that neither of them contains the least element $m$ of $X$.
-        For each $a\in A$, there is a neighborhood $(x_a, a]$ of $a$ in $X$ not intersecting $B$; for each $b\in B$, there is a neighborhood $(y_b, b]$ of $b$ in $X$ not intersecting $A$.
-        Define
-        \begin{align*}
-            U:=\bigcup_{a\in A}(x_a, a],\quad V:=\bigcup_{b\in B}(y_b, b].
-        \end{align*}
-        They are open in $X$ and $U$ covers $A$, and $V$ covers $B$.
-        If $U$ and $V$ are not disjoint, $(x_a, a]\cap(y_b, b]$ is nonempty for some $a\in A$ and $b\in B$,
-        Without loss of generality, we may assume $a<b$; then we have $a\in(y_b, b]$, a contradicton.
+            Assume that neither of them contains the least element $m$ of $X$.
+            For each $a\in A$, there is a neighborhood $(x_a, a]$ of $a$ in $X$ not intersecting $B$; for each $b\in B$, there is a neighborhood $(y_b, b]$ of $b$ in $X$ not intersecting $A$.
+            Define
+            \begin{align*}
+                U:=\bigcup_{a\in A}(x_a, a],\quad V:=\bigcup_{b\in B}(y_b, b].
+            \end{align*}
+            They are open in $X$ and $U$ covers $A$, and $V$ covers $B$.
+            If $U$ and $V$ are not disjoint, $(x_a, a]\cap(y_b, b]$ is nonempty for some $a\in A$ and $b\in B$,
+            Without loss of generality, we may assume $a<b$; then we have $a\in(y_b, b]$, a contradicton.
         }
         \item[(\romannumeral 2)]
         {

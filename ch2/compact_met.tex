@@ -4,20 +4,29 @@ We first introduce some other types of compactness:
 \begin{defi}
     Let $X$ be a space.
     \begin{enumerate}
-        \item[(a)] $X$ is said to be limit point compact, if every infinite subset of $X$ has a limit point in $X$.
-        \item[(b)] $X$ is said to be sequentially compact, if every infinite sequence with values in $X$ has a convergent subsequence.
+        \item[(a)]
+        {
+            $X$ is said to be limit point compact, if every infinite subset of $X$ has a limit point in $X$.
+        }
+        \item[(b)]
+        {
+            $X$ is said to be sequentially compact, if every (infinite) sequence of points of $X$ has a convergent subsequence.
+        }
     \end{enumerate}
 \end{defi}
 \begin{rmk}
-    If $X$ is sequentially compact, then $X$ is complete, i.e., every Cauchy sequence in $X$ is convergent.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Compactness implies limit point compactness.   
+        }
+        \item[(b)]
+        {
+            Let $X$ be a metric space.
+            If $X$ is sequentially compact, then $X$ is complete and totally bounded.\footnote{Remark that both completeness and total boundedness are properties of metric spaces, for they can be discussed only when a metric on a metrizable space is given.}
+        }
+    \end{enumerate}
 \end{rmk}
-
-\begin{prop}
-    Compactness implies limit point compactness.
-\end{prop}
-\begin{proof}
-    \color{brown}Left as an exercise.\color{black}
-\end{proof}
 
 \begin{thm}
     Suppose $X$ is a metrizable space.
@@ -39,34 +48,30 @@ We first introduce some other types of compactness:
 \end{thm}
 \begin{proof}
     We already proved that (a) implies (b) and it is easy to show that (b) implies (c).
-    The most difficult part of the proof is to show that (c) implies (a).
-    Assume $X$ is sequentially compact.
+    Thus, it remains to prove (a) under (c), so we assume that $X$ is sequentially compact.
+    In this proof, we use the strategy by imposing $X$ a metric $d$ to understand $X$ as a metric space, not just a metrizable space.
     
-    \textbf{Step 1: Showing the existence of the Lebesgue number.}\newline\indent
-    We wish to prove that for any open cover $\mc{A}$ of $X$ there is a real number $\delta>0$ such that every open set with diameter less than $\delta$ is contained in some member of $\mc{A}$.
+    \textbf{Step 1: Showing the existence of the Lebesgue number.}\newline\noindent
+    We wish to prove that for any open cover $\mc{A}$ of $X$ there is a real number $\delta>0$ such that every open set in $X$ with diameter less than $\delta$ is contained in some member of $\mc{A}$.
     Suppose there is no such $\delta$.
     Then, for each $n\in\bb{N}$, there is an open set $C_n$ of diameter less than $1/n$ which is not contained in any member of an open cover $\mc{A}$ of $X$.
-    Choose a point $x_n\in C_n$.
-    By sequential compactness, the sequence $(x_n)_n$ has a convergent subsequence $(x_{n_k})_k$.
-    Let $x$ be the limit of the subsequence, and let $A$ be a member of $\mc{A}$ containing $x$.
-    And let $r>0$ be a real number such that $B_d(x, r)\subset A$.
+    Choosing a point $x_n\in C_n$ for each $n\in\bb{N}$, the sequential compactness of $X$ ensures the existence of a convergent subsequence $(x_{n_k})_k$ of $(x_n)_n$ (with the limit denoted by $x$).\footnote{It is natural to consider countably many objects when one should consider sequences.}
+    Let $A$ be a member of $\mc{A}$ containing $x$, and let $r>0$ be a real number such that $B_d(x, r)\subset A$.
     If $i$ is large enough so that
     \begin{center}
         $\ds{d(x, x_{n_i})<\frac{r}{2}}$\quad and\quad$\ds{\frac{1}{n_i}<\frac{r}{2}}$,
     \end{center}
     then $C_{n_i}$ lies in $A$, a contradiction.
     
-    \textbf{Step 2: Showing that $X$ is totally bounded.}\newline\indent
-    Suppose $X$ is a sequentially compact space which is not totally bounded.
-    We can choose countably many points $x_1, x_2, \cdots\in X$ such that $\bigcup_{n=1}^\infty B_d(x_n, \epsilon)\subsetneq X$ for some $\epsilon>0$.
-    Since $X$ is sequentially compact, we can find a convergent subsequence $(x_{n_k})_k$ of $(x_n)_n$, a contradiction.
-    
-    \textbf{Step 3: Deriving that $X$ is compact.}\newline\indent
+    \textbf{Step 2: Deriving that $X$ is compact.}\newline\noindent
     Let $\mc{A}$ be an open cover of $X$.
     By the result of Step 1, there is a Lebesgue number $\delta>0$ for the collection $\mc{A}$.
-    By the result of Step 2, finitely many balls in $X$ of radius $\ds{\frac{2\delta}{5}}$ cover $X$.
-    Therefore, a finite subcover of $\mc{A}$ covers $X$. 
+    Because a sequentially compact metric space is totally bounded, finitely many balls in $X$ of radius $\ds{\frac{2\delta}{5}}$ cover $X$.
+    Therefore, a finite subcollection of $\mc{A}$ covers $X$. 
 \end{proof}
+\begin{rmk}
+    The result of Step 1 in the above proof is also known as the Lebesgue number lemma.
+\end{rmk}
 
 In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
 \begin{thm}[Heine-Borel theorem]
@@ -105,7 +110,7 @@ In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
     Let $U$ be an open subset of $\bb{C}$ which contains $\bb{D}$.
     Show that there is a positive real number $r>1$ such that $B(0, r)\subset U$.
 \end{prob}
-\begin{proof}[Proof 1]
+\begin{sol}
     Suppose that there is no such $r>1$.
     Then, we can choose $a_n\in B(0, 1+1/n)\setminus U$ for each $n\in\bb{N}$.
     Since $(a_n)_{n\in\bb{N}}\subset\ol{B(0, 2)}$, $(a_n)_n$ contains a convergent subsequence $(a_{n_k})_{k\in\bb{N}}$.
@@ -113,8 +118,8 @@ In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
     Because $\bb{C}\setminus U$ is closed, $\alpha\notin U$.
     On the other hand, $\alpha\in\partial\bb{D}$ \color{brown}(why?)\color{black}, we have $\alpha\in\partial\bb{D}\subset U$, a contradiction.
     Therefore, $B(0, r)\subset U$ for some real number $r>1$.
-\end{proof}
-\begin{proof}[Proof 2]
+\end{sol}
+\begin{sol}[Alternative solution]
     Note that the collection of `polar rectangles' is a basis for the topology on $\bb{C}$, where a polar rectangle is of the form
     \begin{align*}
         a\leq \rho\leq b,\quad s\leq \theta\leq t,
@@ -122,4 +127,4 @@ In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
     where $a, b, s, t$ are real numbers such that $a\leq b$.
     Because $\partial\bb{D}$ is compact, for each point $e^{ix}\in\partial\bb{D}\,(0\leq x<2\pi)$ there is a polar rectangle $P_x: a(x)\leq \rho\leq b(x), s(x)\leq \theta\leq t(x)$ such that $e^{ix}\in P_x\subset U$.
     Choosing finitely many members among $P_x$'s and letting $r$ the smallest $b(x)$, we find that $B(0, r)\subset U$.
-\end{proof}
+\end{sol}

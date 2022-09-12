@@ -282,10 +282,12 @@ In particular, (c) implies that the original definition of the $\epsilon$-neighb
     Suppose $Y$ is not connected, and let $(C, D)$ be a separation of the intersection $Y=\bigcap_{A\in\mc{A}}A$.
     Because $C$ and $D$ are closed in $Y$ and $Y$ is closed in $X$, $C$ and $D$ are closed in $X$.
     Since $X$ is normal, there are disjoint neighborhoods $U$ and $V$ of $C$ and $D$, respectively.
-    Suppose $A\setminus (U\sqcup V)$ is empty for some $A\in\mc{A}$.
-    Since $A$ contains $Y$, $A\subset U\sqcup V$, $A$ has a separation $(A\cap U, A\cap V)$, a contradiction.
-    Therefore, $A\setminus(U\sqcup V)$ is nonempty for all $A\in\mc{A}$, and the collection $\mc{C}$ of $A\setminus(U\sqcup V)$ is a simply ordered collection of sets closed in $X$.
-    Therefore, $\mc{C}$ satisfies the finite intersection property, and the intersection of members in $\mc{C}$ is nonempty, because $X$ is compact.
-    Thus, $Y$ is not contained in $U\sqcup V$, a contradiction.
+    
+    Assume that $A\setminus (U\sqcup V)$ is empty for some $A\in\mc{A}$.
+    Then $A\subset U\sqcup V$ and both $A\cap U, A\cap V$ are nonempty, for $Y\subset A$.
+    Thus, $A$ has a separation $(A\cap U, A\cap V)$, a contradiction; $A\setminus(U\sqcup V)$ is nonempty (i.e., $A\not\subset U\sqcup V$) for all $A\in\mc{A}$.
+    
+    The collection $\mc{C}:=\{A\setminus(U\sqcup V): A\in\mc{A}\}$ is a simply ordered collection of sets closed in $X$, and $\mc{C}$ satisfies the finite intersection property.
+    Because $X$ is compact, the intersection of members in $\mc{C}$ is nonempty, implying that $Y\not\subset U\sqcup V$, a contradiction.
     Therefore, $Y$ is connected.
 \end{sol}

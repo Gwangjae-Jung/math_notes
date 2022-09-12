@@ -54,12 +54,12 @@ Also, some particular versions of Ascoli's theorem will be introduced.
         }
     \end{itemize}
 
-    \noindent(Step 1: Showing that $\mc{G}$ is a compact subspace of $Y^X$.)\newline\indent
+    \textbf{Step 1.}
     For each point $a\in X$, let $C_a$ denote the closure of $\mc{F}(a)$ in $Y$.
     By assumption, each $C_a$ is compact, hence the product $C=\prod_{a\in X} C_x$ is also compact.
     Because $\mc{F}\subset C\subset Y^X$, the closure of $\mc{F}$ in $Y^X$ is also contained in $C$; because $Y^X$ is a Hausdorff space, $\mc{G}$ is a compact subspace of $Y^X$.
 
-    \noindent(Step 2: Showing that each member of $\mc{G}$ is continuous, and $\mc{G}$ is pointwise equicontinuous under $d$.)\newline\indent
+    \textbf{Step 2.}
     It suffices to check that $\mc{G}$ is pointwise equicontinuous under $d$.
     Given $p\in X$, let $V_p$ be a neighborhood of $p$ in $X$ such that $f\in\mc{F}$ and $x\in V_p$ implies $d(f(x), f(p))<\epsilon$.
     Given $g\in\mc{G}$ and $x\in V_p$, we can find $h\in\mc{F}$ such that $h\in\pi_p^{-1}(B_d(g(p), \epsilon))\cap\pi_x^{-1}(B_d(g(x), \epsilon))$, i.e., $d(h(p), g(p))<\epsilon$ and $d(h(x), h(x))<\epsilon$.
@@ -69,7 +69,7 @@ Also, some particular versions of Ascoli's theorem will be introduced.
     \end{align*}
     which proves that $\mc{G}$ is pointwise equicontinuous.
 
-    \noindent(Step 3: The topology on $Y^X$ and the topology on $C(X, Y)$ coincide on $\mc{G}$.)\newline\indent
+    \textbf{Step 3.}
     It is clear that the topology on $Y^X$ restricted to $\mc{G}$ is coarser than the topology on $C(X, Y)$ restricted to $\mc{G}$.
     Thus, it remains to show that the converse inclusion; for this, given a basis member $B_K(f, \epsilon)\cap \mc{G}$ of the latter topology (assume $f\in\mc{G}$), we need to find a basis member $B$ of the pointwise convergence topology on $Y^X$ such that $f\in B\cap\mc{G}\subset B_K(f, \epsilon)\cap\mc{G}$. (How could we skip some procedures?)
 
@@ -85,7 +85,7 @@ Also, some particular versions of Ascoli's theorem will be introduced.
     \end{align*}
     This implies that $g\in B_K(f, \epsilon)\cap\mc{G}$, as desired.
 
-    \noindent(Step 4: Concluding the proof of (a).)\newline\indent
+    \textbf{Step 4.}
     Using the results from Step 1 to Step 3, we derive that $\mc{F}$ is contained in a compact subspace of $C(X, Y)$.
     By Step 1 and Step 2, the closure $\mc{G}$ of $\mc{F}$ in $Y^X$ is a compact subspace of $Y^X$ (in the product topology) which is contained in $C(X, Y)$; by Step 3, $\mc{G}$ is also a subspace of $C(X, Y)$ (in the topology of compact convergence).
     Therefore, $\mc{F}$ is contained in a compact subspace $\mc{G}$ of $C(X, Y)$.

@@ -1,7 +1,7 @@
 \section{Locally compact spaces and one-point compactification}
 
 Some of the properties which are most desired for a topological space to have are the space being metrizable or being a compact Hausdorff space.
-In this section, we impose a situation in which a topological space can be embedded into a sompact Hausdorff space.
+In this section, we impose a situation in which a topological space embeds into a compact Hausdorff space.
 
 \begin{defi}[Local compactness]
     A space $X$ is said to be locally compact at the point $a\in X$ if there is a compact subspace $C$ of $X$ containing a neighborhood of $a$.
@@ -12,9 +12,15 @@ One property regarding local compactness:
 \begin{prop}
     Let $\{X_\alpha\}_\alpha$ be an indexed family of nonempty spaces.
     \begin{enumerate}
-        \item[(a)] If $\prod_\alpha X_\alpha$ is locally compact, then each $X_\alpha$ is locally compact and $X_\alpha$ is compact for all but finitely many values of $\alpha$.
-        If the product space is compact, then each $X_\alpha$ is compact.
-        \item[(b)] The converse of the first statement in (a) is also true.
+        \item[(a)]
+        {
+            If $\prod_\alpha X_\alpha$ is locally compact, then each $X_\alpha$ is locally compact and $X_\alpha$ is compact for all but finitely many values of $\alpha$.
+            If the product space is compact, then each $X_\alpha$ is compact.
+        }
+        \item[(b)]
+        {
+            The converse of the first statement in (a) is also true.
+        }
     \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -34,15 +40,21 @@ One property regarding local compactness:
     Let $X$ be a space.
     Then $X$ is locally compact and Hausdorff if and only if there is a space $Y$ with the following properties:
     \begin{enumerate}
-        \item[(a)] $Y$ is a compact and Hausdorff space containing $X$ as a subspace, i.e., $Y$ is a compactification of $X$.
-        \item[(b)] $Y\setminus X$ is a one-point set.
+        \item[(a)]
+        {
+            $Y$ is a compact and Hausdorff space containing $X$ as a subspace, i.e., $Y$ is a compactification of $X$.
+        }
+        \item[(b)]
+        {
+            $Y\setminus X$ is a one-point set.
+        }
     \end{enumerate}
     Moreover, if $Y_1$ and $Y_2$ are such spaces, then they coincides on $X$ and they are homeomorphic, i.e., $Y$ is uniquely determined up to equivalence.\footnote{Equivalence of compactness is introduced in Chapter 4.}
 \end{thm}
 \begin{proof}
     Since it is easier to check the uniqueness, we first explain the uniqueness (up to equivalence).
 
-    \textbf{Step 1: Proving the uniqueness}\newline\indent
+    \textbf{Step 1: Proving the uniqueness}\newline\noindent
     Suppose $Y_1$ and $Y_2$ are compact Hausdorff spaces satisfying (a), (b), and (c).
     Let $p$ and $q$ denote the unique point of $Y_1\setminus X$ and $Y_2\setminus X$, respectively.
     Define a map $h: Y_1\rightarrow Y_2$ by
@@ -57,7 +69,7 @@ One property regarding local compactness:
     The preimage of $C$ is $C$; because $C$ is closed and compact in $Y_2$, $C$ is a compact subspace of $X$, a compact subspace of $Y_1$, so $C$ is closed in $Y_1$, too.
     Thus, $h$ is a continuous map.
 
-    \textbf{Step 2: Proving the existence}\newline\indent
+    \textbf{Step 2: Proving the existence}\newline\noindent
     Suppose first that $X$ is a locally compact Hausdorff space.
     Let $p$ be any element not in $X$, and let $Y=X\sqcup\{p\}$.
     And impose a topology on $Y$ by declaring the following sets to be open in $Y$:
@@ -86,7 +98,7 @@ One property regarding local compactness:
     Since $X$ is locally compact, there is a compact subspace $C$ of $X$ containing a neighborhood $U$ of $a$ in $X$.
     $(U, Y\setminus C)$ is a desired pair.
 
-    \textbf{Step 3: Proving the converse}\newline\indent
+    \textbf{Step 3: Proving the converse}\newline\noindent
     Suppose such space $Y$ exists for a space $X$.
     Being a subspace of the Hausdorff space $Y$, $X$ is also a Hausdorff space.
     Given a point $a\in X$, because $Y$ is a Hausdorff space, there are neighborhoods $U$ and $V$ of $a$ and the unique point $p\in Y\setminus X$ in $Y$ which are disjoint.
@@ -98,10 +110,10 @@ One property regarding local compactness:
     Show that the collection imposed in the proof of the existence part is a topology on $Y$.
 \end{prob}
 \begin{sol}
-    \noindent\textbf{Step 1. Cheking the first axiom}\newline\indent
+    \textbf{Step 1. Cheking the first axiom}\newline\noindent
     Clearly, $\varnothing$ is of the first type and $Y$ is of the second type, so they belong to the collection.
 
-    \noindent\textbf{Step 2. Checking the axiom of union}\newline\indent
+    \textbf{Step 2. Checking the axiom of union}\newline\noindent
     A union of sets of the first type is an open subset of $X$, hence the union is of the first type.
     If $(V_\beta=Y\setminus C_\beta)_\beta$ is a collection of sets of the second type (each $C_\beta$ is a compact subspace of $X$), their union is of the second type, because the union is $Y\setminus K$, where $\ds{K=\bigcap_\beta C_\beta}$, and $K$ is a closed subspace of $C_\beta$'s, so $K$ is compact.
     The union of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subspace of $X$) is of the second type, since
@@ -110,7 +122,7 @@ One property regarding local compactness:
     \end{align*}
     and $C\setminus U$ is compact \color{brown}(why?)\color{black}.
 
-    \noindent\textbf{Step 3. Checking the axiom of intersection}\newline\indent
+    \textbf{Step 3. Checking the axiom of intersection}\newline\noindent
     A finite intersection of sets of the first type is an open subset of $X$, hende the intersection is of the first type.
     If $(V_\beta=Y\setminus C_k)_{k=1}^n$ is a collection of sets of the second type (each $C_k$ is a compact subspace of $X$), their intersection is of the second type, because the union is $Y\setminus K$, where $\ds{K=\bigcup_{k=1^n} C_k}$ is compact.
     The intersection of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subspace of $X$) is of the first type, since
@@ -167,7 +179,13 @@ As homeomorphism implies that the given two spaces are ``topologically equivalen
 \begin{exmp}
     We introduce some applications of \cref{homeomorphism extends to 1p cptf.s}.
     \begin{enumerate}
-        \item[(a)] Since $\bb{R}\approx S^1\setminus\{1\}$, the one-point compactification of $\bb{R}$ is homeomorphic to $S^1$.
-        \item[(b)] Since $\bb{N}\approx K$, where $K=\left\{\dfrac{1}{n}: n\in\bb{N}\right\}$, the one-point compactification of $\bb{N}$ is homeomorphic to $K\sqcup\{0\}$.
+        \item[(a)]
+        {
+            Since $\bb{R}\approx S^1\setminus\{1\}$, the one-point compactification of $\bb{R}$ is homeomorphic to $S^1$.
+        }
+        \item[(b)]
+        {
+            Since $\bb{N}\approx K$, where $K=\left\{\dfrac{1}{n}: n\in\bb{N}\right\}$, the one-point compactification of $\bb{N}$ is homeomorphic to $K\sqcup\{0\}$.
+        }
     \end{enumerate}
 \end{exmp}
