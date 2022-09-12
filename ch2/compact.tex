@@ -42,7 +42,9 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
         }
         \item[(c)]
         {
-            Every compact subspace of a Hausdorff space is closed. (Hence, every compact Hausdorff space is normal.)
+            Every compact subspace of a Hausdorff space is closed.
+            Hence, in a compact Hausdorff space, closedness and compactness of subspaces coincide.
+            (In particular, every compact Hausdorff space is normal.)
         }
     \end{enumerate}
 \end{thm}
@@ -57,26 +59,26 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
     \noindent(b)
     We first prove that a Hausdorff space $X$ is compactly regular.
     Let $p$ be a point of $X$ and $A$ be a compact subspace of $X$ not containing $p$.
-    For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $p$ and $a$, respectively.
-    Since $A$ can be covered by finitely many $V_a$'s, the intersection of the corresponding $U_a$'s is a neighborhood of $p$.
+    For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $a$ and $p$, respectively.
+    Since $A$ can be covered by finitely many $U_a$'s, the union of such $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $p$, respectively.
     Thus, $X$ is compactly regular.
 
-    \noindent(c)
-    To show that $X$ is compactly normal, let $A, B$ be disjoint compact subspaces of $X$.
+    To show that $X$ is compactly normal, let $A$ and $B$ be disjoint compact subspaces of $X$.
     For each $a\in A$, let $U_a$ and $V_a$ be disjoint neighborhoods of $a$ and $B$, respectively.
-    Since $A$ can be covered by finitely many $U_a$'s, the union of the corresponding $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $B$, respectively.
+    Since $A$ can be covered by finitely many $U_a$'s, the union of such $U_a$'s and the intersection of the corresponding $V_a$'s are disjoint neighborhoods of $A$ and $B$, respectively.
     Therefore, $X$ is compactly normal.
-    If $A$ is a compact subspace of a Hausdorff space $X$, then it follows from (b) that $X\setminus A$ is open, hence $A$ is closed.
-    In (a), we have shown that a closed subspace of a compact space is compact.
-    Thus, compactness and closedness of a subspace of a compact Hausdorff space coincide.
-    Hence, every compact Hausdorff space is normal.
+    
+    \noindent(c)
+    If $A$ is a compact subspace of a Hausdorff space $X$, then (b) implies that $X\setminus A$ is open.
+    Thus, a compact subspace of a Hausdorff space is closed.
+    The desired coincidence follows from (a), and the desired normality follows readily.
 \end{proof}
 
 \begin{prop}
     A continuous image of a compact space is compact.
 \end{prop}
 \begin{proof}
-    Because this proposition is easy to prove, the proof will be left as an exercise.
+    \color{brown}Left as an exercise.\color{black}
 \end{proof}
 
 \begin{prop}
@@ -84,14 +86,12 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
     If $X$ is compact and $Y$ is Hausdorff, then $f$ is a homeomorphism.
 \end{prop}
 \begin{proof}
-    If $A$ is a closed subspace of $X$, then $A$ is compact, and $f(A)$ is a compact subspace of $Y$, hence $f(A)$ is a closed subspace of $Y$.
-    Therefore, $f$ is a homeomorphism.
+    If $A$ is a closed subspace of $X$, then $A$ is compact, so $f(A)$ is compact (and closed in $Y$).
 \end{proof}
 
 \begin{thm}\label{products of compact spaces}
-    The product of finitely many compact spaces is compact.
-    (In fact, this theorem extends to arbitrary products of compact spaces, which is called the Tychonoff's theorem.
-    The proof of the Tychonoff's theorem will not be introduced in this note; read your textbook.)
+    The product of finitely many compact spaces is compact.\footnote{In fact, this theorem extends to arbitrary products of compact spaces, which is called the Tychonoff's theorem.
+    The proof of the Tychonoff's theorem will not be introduced in this note.}
 \end{thm}
 When proving the above theorem, the first version of the tube lemma will be used.
 \begin{lem}\label{tube lemmas}
@@ -104,69 +104,122 @@ When proving the above theorem, the first version of the tube lemma will be used
         }
         \item[(b)]
         {
-            (A generalization of the tube lemma)
+            (A generalized tube lemma)
             Let $A$ and $B$ be compact subspaces of $X$ and $Y$, respectively, and let $N$ be an open subspace of $X\times Y$ containing $A\times B$.
-            Then, there are neighborhoods $U$ and $V$ of $A$ in $X$ and $B$ in $Y$, respectively, such that $A\times B\subset U\times V\subset N$.
-            (Our first version comes when $A=\{x_0\}$ and $B=Y$.)
+            Then, there are neighborhoods $U$ of $A$ in $X$ and $V$ of $B$ in $Y$, respectively, such that $A\times B\subset U\times V\subset N$.
+            ((a) readily follows from (b) when $A=\{x_0\}$ and $B=Y$.)
         }
     \end{enumerate}
 \end{lem}
 \begin{proof}[Proof of \cref{tube lemmas}]
     \hangindent=0.65cm
     (a)
-        Since $N$ is open, for each point $(x_0, y)\in\{x_0\}\times Y$, there is a neighborhood $A_y\times B_y$ of the point $(x_0, y)$ contained in $N$, where $A_y$ and $B_y$ are open in $X$ and $Y$, respectively.
-        Because $\{x_0\}\times Y$ is homeomorphic to $Y$, hence $\{x_0\}\times Y$ is also compact.
-        Hence, the slice can be covered by finitely many above basis members.
-        For convinience, write such members as $A_i\times B_i$ for $i=1, \cdots, n$.
-        Write $W=\bigcap_{i=1}^n A_i$, then $\{x_0\}\times Y\subset W\times Y\subset N$.
+    Since $N$ is open, for each point $(x_0, y)\in\{x_0\}\times Y$, there is a neighborhood $A_y\times B_y$ of the point $(x_0, y)$ contained in $N$, where $A_y$ and $B_y$ are open in $X$ and $Y$, respectively.
+    Because $\{x_0\}\times Y$ is homeomorphic to $Y$, hence $\{x_0\}\times Y$ is also compact.
+    Hence, the slice can be covered by finitely many above basis members.
+    For convinience, write such members as $A_i\times B_i$ for $i=1, \cdots, n$.
+    Write $W=\bigcap_{i=1}^n A_i$, then $\{x_0\}\times Y\subset W\times Y\subset N$.
     
     \noindent(b)
-        Since $N$ is open, for each point $(a, t)\in\{a\}\times B$, there is a neighborhood $A_t^a\times B_t^a$ of the point $(a, t)$ contained in $N$, where $A_t^a$ and $B_t^a$ are open in $X$ and $Y$, respectively.
-        Because the slice $\{a\}\times B$ is compact for each $a\in A$, the slice can be covered by finitely many neighborhoods; write it as $A_i^a\times B_i^a$ for $i=1, \cdots, n^a$.
-        Finally, define
-        \begin{align*}
-            U^a:=\bigcap_{i=1}^{n^a}{A_i^a},\quad V^a:=\bigcup_{i=1}^{n^a}{B_i^a}.
-        \end{align*}
-        Then, $U^a\times V^a$ is an open set contained in $N$ containing $\{a\}\times Y$.
-        Since $A$ is compact, finitely many $U^a$'s cover $A$; write them as $U^1, \cdots, U^k$.
-        Finally, define
-        \begin{align*}
-            U:=\bigcup_{i=1}^k U^k,\quad V:=\bigcap_{i=1}^k V^k.
-        \end{align*}
-        Then, $U\times V$ is an open set contained in $N$ containing $A\times B$.
+    Since $N$ is open, for each point $(a, t)\in\{a\}\times B$, there is a neighborhood $A_t^a\times B_t^a$ of the point $(a, t)$ contained in $N$, where $A_t^a$ and $B_t^a$ are open in $X$ and $Y$, respectively.
+    Because the slice $\{a\}\times B$ is compact for each $a\in A$, the slice can be covered by finitely many neighborhoods; denote each of such neighborhoods by $A_i^a\times B_i^a$ for $i=1, \cdots, n(a)$.
+    Finally, define
+    \begin{align*}
+        U^a:=\bigcap_{i=1}^{n(a)}{A_i^a},\quad V^a:=\bigcup_{i=1}^{n(a)}{B_i^a}.
+    \end{align*}
+    Then, $U^a\times V^a$ is an open subset of $X\times Y$ such that $\{a\}\times Y\subset U^a\times V^a\subset N$.
+    Since $A$ is compact, there is a finite subcollection of $\{U^a\}_{a\in A}$ covering $A$; write it as $\{U^1, \cdots, U^k\}$.
+    Finally, define
+    \begin{align*}
+        U:=\bigcup_{i=1}^k U^k,\quad V:=\bigcap_{i=1}^k V^k.
+    \end{align*}
+    Then, $U$ and $V$ are open in $X$ and $Y$, respectively, and $A\times B\subset U\times V\subset N$.
 \end{proof}
 \begin{proof}[Proof of \cref{products of compact spaces}]
     Let $X, Y$ be compact spaces, and $\mc{A}$ be an open cover of $X\times Y$.
-    Given $x_0\in X$, because the slice $\{x_0\}\times Y$ is compact, there are finitely many members of $\mc{A}$ covering the slice $\{x_0\}\times Y$, and such members cover a tube $U(x_0)\times Y$ about $\{x_0\}\times Y$.
-    Because finitely many $U(x_0)$'s cover $X$, the compactness of $X\times Y$ is justified.
-    The general result can be obtained with help of mathematical induction.
+    Given $x_0\in X$, because the slice $\{x_0\}\times Y$ is compact, there are finitely many members of $\mc{A}$ covering the slice $\{x_0\}\times Y$, and such members cover a tube $U(x_0)\times Y$ about $\{x_0\}\times Y$. (Here, $U(x_0)$ is assumed to be a neighborhood of $x_0$ in $X$.)
+    Due to the compactness of $X$, there are finitely many points $x_1, \cdots, x_n$ such that $\bigcup_{i=1}^n U(x_i)=X$, and this justifies the compactness of $X\times Y$.
+    The general result is deduced inductively.
 \end{proof}
 
-Before introducing some problems, we introduce some properties of compact ordered sets and a relevant theorem.
-\begin{rmk}[Compact ordered sets]
-    Suppose $X$ is an ordered set in the order topology, and assume $X$ is compact.
+Before introducing some problems, we observe properties of ordered sets in the order topologies, regarding compactness.
+\begin{prop}
     \begin{enumerate}
-        \item[(a)] $X$ has the greatest and the least element; otherwise, one can construct an open cover of $X$ with no finite subcover.
-        \item[(b)] (Extreme value theorem) Let $f: K\rightarrow Y$ be a continuous map, where $K$ is a compact space and $Y$ is an ordered set in the order topology. Then $f$ attains the maximum and the minimum. This is because the subspace $f(K)$ of $Y$ is compact.
-        \item[(c)] If $X$ satisfies the least upper bound property, then every closed interval in $X$ is compact.
+        \item[(a)]
+        {
+            Suppose $X$ is an ordered set in the order topology, and assume that $X$ is compact.
+            Then $X$ has both the greatest and the least element.
+        }
+        \item[(b)]
+        {
+            (Extreme value theorem)
+            Let $f: K\rightarrow Y$ be a continuous map, where $K$ is a compact space and $Y$ is an ordered set in the order topology.
+            Then $f$ attains the maximum and the minimum.
+        }
     \end{enumerate}
-\end{rmk}
+\end{prop}
+\begin{proof}
+    \hangindent=0.65cm
+    (a)
+    If $X$ has no least element, the open covering $\{(a, \infty): a\in X\}$ of $X$ contains no finite subcover of $X$, a contradiction.
+    The same argument holds for the case where $X$ has no greatest element, provided that $(a, \infty)$ is replaced by $(-\infty, a)$ for each $a\in X$.
+
+    \noindent(b)
+    The subspace $f(K)$ of $Y$ is compact, and (a) implies that $f(K)$ has both the greatest and the least element.
+\end{proof}
+\begin{prop}
+    Let $X$ be an ordered set in the order topology.
+    If $X$ satisfies the least upper bound property if and only if every closed interval in $X$ is compact.
+\end{prop}
+\begin{proof}
+    \color{red}The proof of only if part is not given in this note. \color{black}
+    Assume that every closed intervel in $X$ is compact, i.e., $[a, b]$ is compact whenever $a, b\in X$ and $a<b$.
+    Let $S$ be a nonempty subset of $X$ which is bounded above.
+    We will show that $S$ has the supremum (the least upper bound) in $X$.
+    Let $u$ be any upper bound of $S$ in $X$, and consider the set
+    \begin{align*}
+        U:=\bigcap_{a\in S}[a, u].
+    \end{align*}
+    Then $U$ is closed in $X$, so $U$ is compact.
+    Because $U$ is a compact ordered set (in the order topology), $U$ has the least element $M$.
+    
+    We now show that $M$ is the supremum of $S$.
+    It is obvious that $M$ is an upper bound of $S$ in $X$; otherwise, there is an element $b\in S$ with $M<b$, which implies $M\notin U$, a contradiction.
+    Assume that $M$ is not the supremum of $S$.
+    Then there is an upper bound $v$ of $S$ such that $v<M$.
+    Because $v\geq a$ for all $a\in S$, we have $v\in U$, so $M\leq v$, a contradiction.
+\end{proof}
 
 The first problem deals with the distance between a point and a subspace and neighborhoods of subspaces in a metric space.
 In particular, (c) implies that the original definition of the $\epsilon$-neighborhood of a subspace and our intuition coincide.
 \begin{prob}
     Let $(X, d)$ be a metric space and $A$ be a nonempty subset of $A$.
     \begin{enumerate}
-        \item[(a)] Show that $\dist{d}{x}{A}=0$ if and only if $x\in\overline{A}$.
-        \item[(b)] Show that if $A$ is compact, then $\dist{d}{x}{A}=d(x, a)$ for some $a\in A$, whenever $x\in X$.
-        \item[(c)] Define the $\epsilon$-neighborhood of $A$ in $X$ to be the set
-            \begin{align*}
-                U(A, \epsilon):=\{x\in X:\dist{d}{x}{A}<\epsilon\}.
-            \end{align*}
+        \item[(a)]
+        {
+            Show that $\dist{d}{x}{A}=0$ if and only if $x\in\overline{A}$.
+        }
+        \item[(b)]
+        {
+            Show that if $A$ is compact, then $\dist{d}{x}{A}=d(x, a)$ for some $a\in A$, whenever $x\in X$.
+        }
+        \item[(c)]
+        {
+            Define the $\epsilon$-neighborhood of $A$ in $X$ to be the set
+                \begin{align*}
+                    U(A, \epsilon):=\{x\in X:\dist{d}{x}{A}<\epsilon\}.
+                \end{align*}
             Show that $U(A, \epsilon)$ equals the union of the open balls $B_d(a, \epsilon)$ for $a\in A$.
-        \item[(d)] Assume that $A$ is compact, and let $U$ be an open set in $X$ containing $A$.
+        }
+        \item[(d)]
+        {
+            Assume that $A$ is compact, and let $U$ be an open set in $X$ containing $A$.
             Show that $U$ contains an $\epsilon$-neighborhood of $A$ for some $\epsilon>0$.
-        \item[(e)] Show that the result in (d) need not hold if $A$ is closed but not compact.
+        }
+        \item[(e)]
+        {
+            Show that the result in (d) need not hold if $A$ is closed but not compact.
+        }
     \end{enumerate}
 \end{prob}
 \begin{sol}
