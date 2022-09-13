@@ -26,17 +26,19 @@
 \end{sol}
 \color{black}
 
-\begin{prob}
-    Prove \cref{converse inheritance} for complete regular spaces.
+\begin{prob}\label{inheritance - completely regular}
+    Prove \cref{converse inheritance} for completely regular spaces.
 \end{prob}
 \begin{enumerate}
-    \item[(a)]{
+    \item[(a)]
+    {
         Let $X$ be a completely regular space and $Y$ be a subspace of $X$.
         If $a\in Y$ and $B$ is a closed subspace of $Y$ not containing $a$, then $B=Y\cap\overline{B}$, so $a\notin\overline{B}$.
         Therefore, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(a)=0$ and $f(\overline{B})=\{1\}$.
         The restriction of $f$ on $Y$ separates $a$ and $B$.
     }
-    \item[(b)]{
+    \item[(b)]
+    {
         Suppose $\{X_\alpha\}_{\alpha\in A}$ is a collection of completely regular spaces and write $X=\prod_{\alpha\in A}X_\alpha$.
         Let $a$ be a point of $X$ and $B$ be a closed subspace of $X$ not containing $a$.
         Then $a$ is contained in the open subspace $X\setminus B$, so there is a basis member $\prod_{\alpha\in A} O_\alpha$ about $a$ in $X$ contained in $X\setminus B$, with $O_\alpha\neq X_\alpha$ if and only if $\alpha=\alpha_1, \cdots, \alpha_n$.
@@ -46,7 +48,7 @@
     }
 \end{enumerate}
 
-\begin{prob}
+\begin{prob}\label{inheritance - (d)}
     Prove part (d) of \cref{converse inheritance}.
 \end{prob}
 \begin{sol}

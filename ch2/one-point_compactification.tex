@@ -111,39 +111,60 @@ One property regarding local compactness:
 \end{proof}
 
 \begin{prob}\label{check 1p cptf topology}
-    Show that the collection imposed in Step 2 of the above proof is a topology on $Y$.
-    And explain why we assume in the second type that $C$ is compact, rather than closed in $Y$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that the collection imposed in Step 2 of the above proof is a topology on $Y$.
+        }
+        \item[(b)]
+        {
+            Explain why we assume in the second type that $C$ is compact, rather than closed in $Y$.
+        }
+    \end{enumerate}
 \end{prob}
 \begin{sol}
-    \textbf{Step 1. Cheking the axiom of covering.}\newline\noindent
-    Clearly, $\varnothing$ is of the first type and $Y$ is of the second type, so they belong to the collection.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            What we need to do is to check the axioms of topology.
+            
+            Clearly, $\varnothing$ is of the first type and $Y$ is of the second type, so they belong to the collection.
 
-    \textbf{Step 2. Checking the axiom of union.}\newline\noindent
-    A union of sets of the first type is an open subset of $X$, hence the union is of the first type.
-    If $\{V_\beta=Y\setminus C_\beta\}_\beta$ is a collection of sets of the second type (each $C_\beta$ is a compact subspace of $X$), their union is of the second type; because the union is $Y\setminus K$ (where $K=\bigcap_\beta C_\beta$) and $K$ is a closed subspace of every $C_\beta$, $K$ is compact.
-    The union of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subset of $X$) is of the second type, since
-    \begin{align*}
-        U\cup (Y\setminus C)=Y\setminus (C\setminus U)
-    \end{align*}
-    and $C\setminus U$ is compact (because $C\setminus U$ is a closed subset of the compact subset $C$).
+            A union of sets of the first type is an open subset of $X$, hence the union is of the first type.
+            If $\{V_\beta=Y\setminus C_\beta\}_\beta$ is a collection of sets of the second type (each $C_\beta$ is a compact subspace of $X$), their union is of the second type; because the union is $Y\setminus K$ (where $K=\bigcap_\beta C_\beta$) and $K$ is a closed subspace of every $C_\beta$, $K$ is compact.
+            The union of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subset of $X$) is of the second type, since
+            \begin{align*}
+                U\cup (Y\setminus C)=Y\setminus (C\setminus U)
+            \end{align*}
+            and $C\setminus U$ is compact (because $C\setminus U$ is a closed subset of the compact subset $C$).
 
-    \textbf{Step 3. Checking the axiom of intersection.}\newline\noindent
-    A finite intersection of sets of the first type is an open subset of $X$, hende the intersection is of the first type.
-    If $(V_\beta=Y\setminus C_k)_{k=1}^n$ is a collection of sets of the second type (each $C_k$ is a compact subspace of $X$), their intersection is of the second type, because the union is $Y\setminus K$, where $K=\bigcup_{k=1}^n C_k$ is compact.
-    The intersection of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subspace of $X$) is of the first type, since
-    \begin{align*}
-        U\cap (Y\setminus C)=U\setminus C
-    \end{align*}
-    is open in $X$.
-
-    \textbf{Further discussion.}
-    If $C$ in the second type is assumed to be closed subsets of $X$ rather than being compact, then $Y$ may not be compact, for a closed subset $C$ of $X$ may not be compact.
-    (Remark that a compact subset of a Hausdorff space is closed.)
+            A finite intersection of sets of the first type is an open subset of $X$, hende the intersection is of the first type.
+            If $(V_\beta=Y\setminus C_k)_{k=1}^n$ is a collection of sets of the second type (each $C_k$ is a compact subspace of $X$), their intersection is of the second type, because the union is $Y\setminus K$, where $K=\bigcup_{k=1}^n C_k$ is compact.
+            The intersection of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subspace of $X$) is of the first type, since
+            \begin{align*}
+                U\cap (Y\setminus C)=U\setminus C
+            \end{align*}
+            is open in $X$.
+        }
+        \item[(b)]
+        {
+            If $C$ in the second type is assumed to be closed subsets of $X$ rather than being compact, then $Y$ may not be compact, for a closed subset $C$ of $X$ may not be compact.
+            (Remark that a compact subset of a Hausdorff space is closed.)
+        }
+    \end{enumerate}
 \end{sol}
 
 Let $X$ be a locally compact Hausdorff space, and let $Y$ be a space (which is unique up to equivalence) constructed as above.
-If $X$ is compact, then $X$ is a closed subspace of $Y$, so the closure of $X$ in $Y$ is $X$, a proper subset of $Y$.
-On the other hand, if $X$ is not compact, as $X$ is a subspace of a compact Hausdorff space $Y$, $X$ is not closed ini $Y$, hence the closure of $X$ in $Y$ is $Y$.
+\begin{itemize}
+    \item
+    {
+        If $X$ is compact, then $X$ is a closed subspace of $Y$, so the closure of $X$ in $Y$ is $X$, which is a proper subset of $Y$.
+    }
+    \item
+    {
+        If $X$ is not compact, as $X$ is a subspace of a compact Hausdorff space $Y$, $X$ is not closed in $Y$, hence the closure of $X$ in $Y$ is $Y$.
+    }
+\end{itemize}
 If $Y$ is such a space and the closure of $X$ in $Y$ is $Y$, $Y$ is called the one-point compactification (or the Alexandroff compactification) of $X$.
 \begin{rmk}
     The above observation states that a locally compact Hausdorff space $X$ has a one-point compactification if and only if $X$ is not compact.
@@ -161,13 +182,14 @@ When the given space is a Hausdorff, the following property can be used as an al
 \end{prop}
 \begin{proof}
     Suppose $X$ is a locally compact Hausdorff space, and suppose further that a point $x\in X$ together with its neighborhood $U$ in $X$ is given.
-    Since $X$ has a compactification $Y$ such that $Y\setminus X$ has the unique point $p$, the subspace $C:=Y\setminus U$ is a closed (hence, compact) subspace of $Y$ containing $p$.
-    Using regularity, one can find a neighborhood $V$ of $x$ and a neighborhood $W$ of $C$ which are disjoint.
-    Then $V$ is a neighborhood of $x$ in $X$ contained in $Y\setminus W\subset U$.
-    Furthermore, denoting the closure of $V$ in $Y$ by $\overline{V}$, the closure of $V$ in $X$ satisfies $X\cap\overline{V}\subset\overline{V}\subset Y\setminus W\subset U$.
-    It is clear that the closure of $V$ in $X$ is compact, since $X$ is a Hausdorff space.
+    Since $X$ has a compactification $Y$ such that $Y\setminus X$ is a singleton, the subset $C:=Y\setminus U$ is a closed (of course, compact) subspace of $Y$.
+    By regularity, there are disjoint neighborhoods $V$ of $x$ and $W$ of $C$ in $Y$.
+    Then, $V$ is a neighborhood of $x$ in $X$ contained in $Y\setminus W\subset U$.
+    Furthermore, if the overline notation denotes the closure of in $Y$, we have $\ol V\subset \ol{Y\setminus W}=Y\setminus W\subset U$.
+    So, the closure of $V$ in $X$ satisfies $X\cap\overline{V}=\overline{V}\subset Y\setminus W\subset U$.
+    Because $\ol V$ is closed in $Y$, it follows that $V$ is relatively compact in $X$.
 
-    The converse of the statement is clear, because the set $C=\overline{V}$ is a desired compact subspace of $X$ for $X$ to be locally compact.
+    The converse is clear, for we may let $C$ be the closure of $V$ in $X$.
 \end{proof}
 
 As a homeomorphism implies the `topologically equivalent' of two topological spaces, one might expect the one-point compactifications of two homeomorphic spaces to be homeomorphic.
@@ -175,7 +197,7 @@ As a homeomorphism implies the `topologically equivalent' of two topological spa
     If $f: A\rightarrow B$ denotes a homeomorphism of locally compact Hausdorff spaces, then $f$ extends to a homeomorphism of their one-point compactifications.
 \end{thm}
 \begin{proof}
-    Assume that $X$ and $Y$ are not compact (otherwise, there is nothing to prove, for $X=A$ and $Y=B$), and let $X$ and $Y$ be the one-point compactifications of $A$ and $B$, respectively.
+    Assume that $A$ and $B$ are not compact (otherwise, there is nothing to prove), and let $X$ and $Y$ be the one-point compactifications of $A$ and $B$, respectively.
     Define $\widetilde{f}: X\rightarrow Y$ by
     \begin{align*}
         \widetilde{f}(x)=\left\{\begin{array}{cc}
