@@ -52,7 +52,7 @@ One property regarding local compactness:
             $Y\setminus X$ is a one-point set.
         }
     \end{enumerate}
-    Moreover, if $Y_1$ and $Y_2$ are such spaces, then they coincides on $X$ and they are homeomorphic, i.e., $Y$ is uniquely determined up to equivalence.\footnote{Equivalence of compactness is introduced in Chapter 4.}
+    Moreover, if $Y_1$ and $Y_2$ are such spaces, then they coincides on $X$ and they are homeomorphic, i.e., $Y$ is uniquely determined up to equivalence.\footnote{Equivalence of compactness is introduced in \Cref{compactification}.}
 \end{thm}
 \begin{proof}
     Since it is easier to check the uniqueness, we first explain the uniqueness (up to equivalence).
@@ -94,25 +94,25 @@ One property regarding local compactness:
     Conversely, the subspace topology on $X$ inherited from $Y$ is also coarser than the topology on $X$, which can be easily checked by intersecting $X$ with the sets of either type.
 
     To show that $Y$ is a compact space, let $\mc{A}$ be any open cover of $Y$.
-    There is a member $A\in\mc{A}$ containing $p$, and the susspace $Y\setminus A$ is closed in $Y$.
-    Since $Y\setminus A$ is contained in the Hausdorff space $X$, $Y\setminus A$ is compact.
-    This proves the compactness of $Y$.
+    Then there is a member $Y\setminus C\in\mc{A}$ of the second type which contains $p$.
+    Since $C$ is a compact subspace of $X$, finitely many members of $\mc{A}$ cover $C$.
+    These members, together with $Y\setminus C$, cover $Y$, as desired.
 
     Finally, we show that $Y$ is a Hausdorff space, in which it remains to show that $p$ and any point $a$ of $X$ can be separated by disjoint sets open in $Y$.
     Since $X$ is locally compact, there is a compact subspace $C$ of $X$ containing a neighborhood $U$ of $a$ in $X$.
-    $(U, Y\setminus C)$ is a desired pair.
+    Then $(U, Y\setminus C)$ is a desired pair.
 
     \textbf{Step 3: Proving the converse.}\newline\noindent
     Suppose such space $Y$ exists for a space $X$.
     Being a subspace of the Hausdorff space $Y$, $X$ is also a Hausdorff space.
-    Given a point $a\in X$, because $Y$ is a Hausdorff space, there are neighborhoods $U$ and $V$ of $a$ and the unique point $p\in Y\setminus X$ in $Y$ which are disjoint.
+    Given a point $a\in X$, because $Y$ is a Hausdorff space, there are neighborhoods $U$ and $V$ of $a$ and $p$ in $Y$ which are disjoint.
     Since $Y\setminus V$ is a closed subspace of $Y$ contained in $X$, $Y\setminus V$ is a compact subspace of $X$ containing the neighborhood $U$ of $a$.
     Therefore, $X$ is locally compact.
 \end{proof}
 
 \begin{prob}\label{check 1p cptf topology}
-    Show that the collection imposed in the proof of the existence part is a topology on $Y$.
-    And explain why we let $C$ be a compact subspace of $Y$ in the second type rather than a closed subspace of $Y$.
+    Show that the collection imposed in Step 2 of the above proof is a topology on $Y$.
+    And explain why we assume in the second type that $C$ is compact, rather than closed in $Y$.
 \end{prob}
 \begin{sol}
     \textbf{Step 1. Cheking the axiom of covering.}\newline\noindent
@@ -120,12 +120,12 @@ One property regarding local compactness:
 
     \textbf{Step 2. Checking the axiom of union.}\newline\noindent
     A union of sets of the first type is an open subset of $X$, hence the union is of the first type.
-    If $(V_\beta=Y\setminus C_\beta)_\beta$ is a collection of sets of the second type (each $C_\beta$ is a compact subspace of $X$), their union is of the second type, because the union is $Y\setminus K$, where $\ds{K=\bigcap_\beta C_\beta}$, and $K$ is a closed subspace of $C_\beta$'s, so $K$ is compact.
-    The union of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subspace of $X$) is of the second type, since
+    If $\{V_\beta=Y\setminus C_\beta\}_\beta$ is a collection of sets of the second type (each $C_\beta$ is a compact subspace of $X$), their union is of the second type; because the union is $Y\setminus K$ (where $K=\bigcap_\beta C_\beta$) and $K$ is a closed subspace of every $C_\beta$, $K$ is compact.
+    The union of a set $U$ of the first type and a set $V=Y\setminus C$ of the second type ($C$ is a compact subset of $X$) is of the second type, since
     \begin{align*}
         U\cup (Y\setminus C)=Y\setminus (C\setminus U)
     \end{align*}
-    and $C\setminus U$ is compact. \color{brown}(Why?)\color{black}
+    and $C\setminus U$ is compact (because $C\setminus U$ is a closed subset of the compact subset $C$).
 
     \textbf{Step 3. Checking the axiom of intersection.}\newline\noindent
     A finite intersection of sets of the first type is an open subset of $X$, hende the intersection is of the first type.
@@ -135,6 +135,10 @@ One property regarding local compactness:
         U\cap (Y\setminus C)=U\setminus C
     \end{align*}
     is open in $X$.
+
+    \textbf{Further discussion.}
+    If $C$ in the second type is assumed to be closed subsets of $X$ rather than being compact, then $Y$ may not be compact, for a closed subset $C$ of $X$ may not be compact.
+    (Remark that a compact subset of a Hausdorff space is closed.)
 \end{sol}
 
 Let $X$ be a locally compact Hausdorff space, and let $Y$ be a space (which is unique up to equivalence) constructed as above.
@@ -145,7 +149,7 @@ If $Y$ is such a space and the closure of $X$ in $Y$ is $Y$, $Y$ is called the o
     The above observation states that a locally compact Hausdorff space $X$ has a one-point compactification if and only if $X$ is not compact.
 \end{rmk}
 \begin{rmk}
-    In Chapter 4, we will consider the general concept of compactification (before studying the Stone-\v{C}ech compactification) over completely regular spaces.
+    In \Cref{compactification}, we will consider the general concept of compactification (before studying the Stone-\v{C}ech compactification) over completely regular spaces.
     Since one-point compactifications are also compactifications, here we briefly explain that the locally compact Hausdorff space $X$ is completely regular.
     If the space $X$ is compact, then $X$ is normal, so $X$ is completely regular; if $X$ is not compact, then $X$ is a subspace of its one-point compactification, so $X$ is completely regular.
 \end{rmk}
@@ -153,7 +157,7 @@ If $Y$ is such a space and the closure of $X$ in $Y$ is $Y$, $Y$ is called the o
 When the given space is a Hausdorff, the following property can be used as an alternative definition of local compactness.
 \begin{prop}
     Suppose $X$ is a Hausdorff space.
-    Then $X$ is locally compact if and only if given $x\in X$ and its neighborhood $U$ in $X$, there is a precompact neighborhood $V$ of $a$ in $X$ whose closure in $X$ is contained in $U$.
+    Then $X$ is locally compact if and only if given $x\in X$ and its neighborhood $U$ in $X$, there is a relatively compact neighborhood $V$ of $a$ in $X$ whose closure in $X$ is contained in $U$.\footnote{By relatively compact we mean that the closure of the space is compact.}
 \end{prop}
 \begin{proof}
     Suppose $X$ is a locally compact Hausdorff space, and suppose further that a point $x\in X$ together with its neighborhood $U$ in $X$ is given.
@@ -166,20 +170,24 @@ When the given space is a Hausdorff, the following property can be used as an al
     The converse of the statement is clear, because the set $C=\overline{V}$ is a desired compact subspace of $X$ for $X$ to be locally compact.
 \end{proof}
 
-As homeomorphism implies that the given two spaces are ``topologically equivalent,'' one might expect one-point compactifications of two homeomorphic spaces to be homeomorphic.
+As a homeomorphism implies the `topologically equivalent' of two topological spaces, one might expect the one-point compactifications of two homeomorphic spaces to be homeomorphic.
 \begin{thm}\label{homeomorphism extends to 1p cptf.s}
     If $f: A\rightarrow B$ denotes a homeomorphism of locally compact Hausdorff spaces, then $f$ extends to a homeomorphism of their one-point compactifications.
 \end{thm}
 \begin{proof}
-    Let $X$ and $Y$ be the one-point compactifications of $A$ and $B$, respectively.
-    Define $\tilde{f}: X\rightarrow Y$ by
-    \begin{center}
-        $\tilde{f}(a)=f(a)$ if $a\in A$, and $\tilde{f}(p)=q$,
-    \end{center}
+    Assume that $X$ and $Y$ are not compact (otherwise, there is nothing to prove, for $X=A$ and $Y=B$), and let $X$ and $Y$ be the one-point compactifications of $A$ and $B$, respectively.
+    Define $\widetilde{f}: X\rightarrow Y$ by
+    \begin{align*}
+        \widetilde{f}(x)=\left\{\begin{array}{cc}
+            f(x)    &   \textsf{(if $x\in A$)}\\
+            q       &   \textsf{(if $x=p$)}
+        \end{array}\right.,
+    \end{align*}
     where $p$ and $q$ are the unique elements of $X\setminus A$ and $Y\setminus B$, respectively.
-    Clearly, $\tilde{f}$ is a bijection.
-    Also, $\tilde{f}$ is a continuous map; if $V\subset B$ is an open subset of $B$, then $\tilde{f}^{-1}(V)=f^{-1}(V)$ is open in $A$, hence $\tilde{f}^{-1}(V)$ is open in $X$; if $C\subset B$ is a compact subset of $B$, then $\tilde{f}^{-1}(Y\setminus C)=X\setminus f^{-1}(C)$ is open in $X$ (because $f^{-1}(C)$ is a compact subspace of $A$).
-    It is easy to show that $\tilde{f}$ has a continuous inverse, which completes the proof.
+    Clearly, $\widetilde{f}$ is a bijection.
+    Also, $\widetilde{f}$ is a continuous map; if $V\subset B$ is an open subset of $B$, then $\widetilde{f}^{-1}(V)=f^{-1}(V)$ is open in $A$; if $C\subset B$ is a compact subset of $B$, then $\widetilde{f}^{-1}(Y\setminus C)=X\setminus f^{-1}(C)$ is open in $X$, for $f^{-1}(C)$ is a compact subspace of $A$.
+    By symmetry, it follows that $\widetilde{f}$ has a continuous inverse.
+    This completes the proof.
 \end{proof}
 \begin{exmp}
     We introduce some applications of \cref{homeomorphism extends to 1p cptf.s}.
