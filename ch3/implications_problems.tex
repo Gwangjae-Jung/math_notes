@@ -4,17 +4,31 @@
     Show that the suggested alternative definition for regular, completely regular, and normal spaces are equivalent to the original definitions.
 \end{prob}
 \begin{sol}
-    Suppose $X$ is a regular space.
-    We first show part (a).
-    Given a point $a\in X$ with its neighborhood $U$ in $X$, consider the closed subspace $B:=X\setminus U$ of $X$.
-    Using the regularity of $X$, one can find a neighborhood $V$ of $a$ in $X$ and a neighborhood $W$ of $B$ in $X$ which are disjoint.
-    Then $\overline{V}\subset X\setminus W\subset X\setminus B=U$, proving the only if part.
-    To show the if part, suppose whenever a point $a$ of $X$ with its neighborhood $U$ in $X$ is given, there is a neighborhood of $a$ in $X$ whose closure in $X$ is contained in $U$ exists.
-    Given a point $x\in X$ and a closed subspace $B$ of $X$ not containing $x$, consider the neighborhood $U:=X\setminus B$ of $x$ in $X$.
-    Let $V$ be a neighborhood of $x$ in $X$ whose closure is contained in $U$.
-    Then $V$ and $X\setminus\overline{V}$ are disjoint open subsets of $X$ separating $x$ and $B$, proving the if part.
+    We use the overline notation to denote the closure in $X$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Assume $B=\{x\}$ for a given point $x\in X$ in the proof of (c).
+        }
+        \item[(b)]
+        {
+            (In this case, the proof is quite simple, for we do not have to consider larger subsets.)
+            Let $X$ be a completely regular space and suppose that a point $x$ of $X$ and its neighborhood $U$ in $X$ is given.
+            Then $B=X\setminus U$ is closed in $X$, so there is a continuous map $f: X\rightarrow [0, 1]$ such that $f(x)=1$ and $f(B)=\{0\}$.
 
-    Part (b) is almost clear, and part (c) follows if we replace points of $X$ with closed subspaces of $X$.
+            Assume conversely, and let $x$ be a point of $X$ and $B$ be a closed subset of $X$ not containing $x$.
+            Then $U=X\setminus B$ is a neighborhood of $x$ in $X$, so there is a continuous map $f: X\rightarrow [0, 1]$ such that $f(x)=1$ and $f(X\setminus U)=\{0\}$.
+        }
+        \item[(c)]
+        {
+            Let $X$ be a normal space and suppose that a closed subset $B$ of $X$ and its neighborhood $U$ in $X$ are given.
+            Then $C=X\setminus U$ is closed in $X$, so there are disjoint neighborhoods $V$ of $B$ and $W$ of $C$ in $X$.
+            Then $B\subset V\subset X\setminus W$ and $\ol{V}\subset\ol{X\setminus W}=X\setminus W\subset X\setminus C=U$.
+
+            Assume conversely, and let $B$ and $C$ be disjoint closed subsets of $X$.
+            If $V$ is a neighborhood of $B$ in $X$ such that $\ol V\subset X\setminus C$, then $V$ and $X\setminus\ol V$ are disjoint neighborhood of $B$ and $C$ in $X$.
+        }
+    \end{enumerate}   
 \end{sol}
 
 \color{red}
