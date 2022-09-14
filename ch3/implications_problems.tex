@@ -1,7 +1,7 @@
 \section{Countability and separation axioms (Problems)}
 
-\begin{prob}
-    Show that the suggested alternative definition for regular and normal spaces are equivalent to the original definitions.
+\begin{prob}\label{separability equivalences}
+    Show that the suggested alternative definition for regular, completely regular, and normal spaces are equivalent to the original definitions.
 \end{prob}
 \begin{sol}
     Suppose $X$ is a regular space.
@@ -26,67 +26,133 @@
 \end{sol}
 \color{black}
 
-\begin{prob}\label{inheritance - completely regular}
-    Prove \cref{converse inheritance} for completely regular spaces.
-\end{prob}
-\begin{enumerate}
-    \item[(a)]
-    {
-        Let $X$ be a completely regular space and $Y$ be a subspace of $X$.
-        If $a\in Y$ and $B$ is a closed subspace of $Y$ not containing $a$, then $B=Y\cap\overline{B}$, so $a\notin\overline{B}$.
-        Therefore, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(a)=0$ and $f(\overline{B})=\{1\}$.
-        The restriction of $f$ on $Y$ separates $a$ and $B$.
-    }
-    \item[(b)]
-    {
-        Suppose $\{X_\alpha\}_{\alpha\in A}$ is a collection of completely regular spaces and write $X=\prod_{\alpha\in A}X_\alpha$.
-        Let $a$ be a point of $X$ and $B$ be a closed subspace of $X$ not containing $a$.
-        Then $a$ is contained in the open subspace $X\setminus B$, so there is a basis member $\prod_{\alpha\in A} O_\alpha$ about $a$ in $X$ contained in $X\setminus B$, with $O_\alpha\neq X_\alpha$ if and only if $\alpha=\alpha_1, \cdots, \alpha_n$.
-        For each $\alpha_i\,(i=1, \cdots, n)$, let $f_i: X_{\alpha_i}\rightarrow[0, 1]$ be a continuous function such that $f_i(a_{\alpha_i})=1$ and $f_i(X_{\alpha_i}\setminus O_{\alpha_i})=\{0\}$.
-        Then, define the function $f: X\rightarrow[0, 1]$ by $f(x)=f_1(x_{\alpha_1})\times\cdots\times f_n(x_{\alpha_n})$ for $x\in X$.
-        The function $f$ is continuous and $f(a)=1$, and $f$ maps $B$ onto $\{0\}$.
-    }
-\end{enumerate}
-
-\begin{prob}\label{inheritance - (d)}
-    Prove part (d) of \cref{converse inheritance}.
+\begin{prob}\label{inheritance: countabilities}
+    Prove \cref{inheritance of countabilities}.
 \end{prob}
 \begin{sol}
-    Let $\{X_\alpha\}_{\alpha\in A}$ be a collection of $T_1$-spaces such that the product space $\ds{X:=\prod_{\alpha\in A} X_\alpha}$ is a Hausdorff (regular, normal) space.
-    We show that each $X_\alpha$ is also a Hausedorff (regular, normal) space.
     \begin{enumerate}
-        \item[(1)]
+        \item[(a)]
         {
-            When $X$ is a Hausdorff space and $p, q$ are disjoint points of $X$, let $U_\beta$ and $V_\beta$ be disjoint open sets in $X_\beta$ separating $p_\beta$ and $q_\beta$, where $\beta\in A$.
-            Then $\prod_{\alpha\in A} U_\alpha$ and $\prod_{\alpha\in A} V_\alpha$ are desired sets, where $U_\alpha=X_\alpha$ and $V_\alpha=X_\alpha$ when $\alpha\neq\beta$.
-        }
-        \item[(2)]
-        {
-            Suppose $X$ is a regular space, and let $p$ be a point of $X$.
-            Given $\beta\in A$, let $U_\beta$ be a neighborhood of $p_\beta$ in $X_\beta$ and $U_\alpha=X_\alpha$ for all $\alpha\neq\beta$.
-            Since $\prod_{\alpha\in A}U_\alpha$ is a neighborhood of $p$ in $X$, by normality, there is a basis member $\prod_{\alpha\in A}V_\alpha$ containing $p$ with the closure in $X$ contained in $\prod_{\alpha\in A}U_\alpha$.
-            Projecting onto $X_\beta$, we find that $V_\beta$ is a neighborhood of $p_\beta$ whose closure is contained in $U_\beta$.
-            Therefore, if the product space is regular, then so is each $X_\alpha$.
-        }
-        \item[(3)]
-        {
-            Given $\beta\in A$, let $B_\beta$ be a closed subspace of $X_\beta$ and let $B_\alpha=X_\alpha$ for all $\alpha\neq\beta$.
-            Also, let $U_\beta$ be a neighborhood of $B_\beta$ in $X_\beta$ and let $U_\alpha=X_\alpha$ for all $\alpha\neq\beta$.
-            Then, the subspace $B:=\prod_{\alpha\in A}B_\alpha$ is a closed subspace of $X$ contained in the open subspace $U:=\prod_{\alpha\in A} U_\alpha$ of $X$.
-            By normality, there is a neighborhood $V$ of $B$ in $X$ whose closure in $X$ is contained in $U$.
+            Let $Y$ be a subspace of $X$, and assume first that $X$ is first-countable.
+            Given a point $p\in Y$, let $\{B_n\}_{n\in\bb{N}}$ be a countable base at $p$ in $X$.
+            Then it is easy to check that the restriction $\{B_n\cap Y\}_{n\in\bb{N}}$ is a countable base at $p$ in $Y$.
 
-            Define $F_\beta=\prod_{\alpha\in A} Z_\alpha$, where $Z_\beta=X_\beta$ and $Z_\alpha=\{x_\alpha\}$ for some $x_\alpha\in X_\alpha$ when $\alpha\neq\beta$.
-            Then, the map $\imath: X_\beta\rightarrow F_\beta$ defined by
-            \begin{eqnarray*}
-                (\pi_\alpha\circ\imath)(p)=\left\{\begin{matrix}
-                    p & \textsf{if }\alpha=\beta\\
-                    x_\alpha & \textsf{otherwise}
-                \end{matrix}\right.
-            \end{eqnarray*}
-            for all $p\in X_\beta$ is a homeomorphism.
-            Note that $F_\beta\cap V$ is open in $F_\beta$ and contains $F_\beta\cap B$ (which is closed in $F_\beta$) and that the closure of $F_\beta\cap V$ in $F_\beta$ is contained in $F_\beta\cap U$ (which is open in $F_\beta$).
-            Because $\imath^{-1}(F_\beta\cap B)=B_\beta$ and $\imath^{-1}(F_\beta\cap V)=V_\beta$, the open subspace $\imath^{-1}(F_\beta\cap V)$ of $X_\beta$ is a neighborhood of $B_\beta$ in $X_\beta$ whose closure in $X_\beta$ is contained in $U_\beta$.
-            Therefore, $X_\beta$ is a normal space.
+            Now assume that $X$ is second-countable, and let $\mc{B}=\{B_n\}_{n\in\bb{N}}$ be a countable basis of $X$.
+            One can easily find that the restriction $\{B_n\cap Y\}_{n\in\bb{N}}$ is a basis of the subspace topology on $Y$.
+        }
+        \item[(b)]
+        {
+            Let $Y$ be a closed subspace of a Lindel\"of space $X$, and let$\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $Y$.
+            Note that each $A_\alpha$ is of the form $O_\alpha\cap Y$, where each $O_\alpha$ is open in $X$.
+            Since $X\setminus Y$ is open in $X$, countably many members $A_\alpha$, together with $X\setminus Y$, cover $X$.
+            This proves that a closed subspace of a Lindel\"of space is a Lindel\"of space.
+        }
+        \item[(c)]
+        {
+            Let $X$ be a separable space and $Y$ be an open subspace of $X$.
+            And let $D$ be a countable dense subset of $X$, and use the overline notation to denote the closure in $X$ (for example, $\ol D=X$).
+            We wish to show that $D\cap Y$ is a (countable) dense subset of $Y$, i.e., $\ol{D\cap Y}\cap Y=Y$.
+            For this, it suffices to show $Y\subset\ol{D\cap Y}$.
+            In fact, if $p\in Y$ and whenever $V$ is a neighborhood of $p$ in $X$ contained in $Y$, then $V$ contains a point of $D\cap Y$.
+            Hence, every point of $Y$ belongs to $\ol{D\cap Y}$, as desired.
+        }
+    \end{enumerate}
+\end{sol}
+
+\begin{prob}\label{inheritance: Hausdorff}
+    Prove \cref{inheritance of separabilities} for Hausdorff spaces.
+\end{prob}
+\begin{sol}
+    All (a), (b), and (c) are obvious.
+\end{sol}
+
+\begin{prob}\label{inheritance: regular}
+    Prove \cref{inheritance of separabilities} for regular spaces.
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Let $X$ be a regular space and $Y$ be a subspace of $X$.
+            Assume that $p\in Y$ and $C$ is a closed subset of $Y$ not containing $p$.
+            Because $C=Y\cap A$ for some subset $A$ closed in $X$ and $A$ does not contain $p$, by regularity of $X$, there are disjoint neighborhoods $U$ of $p$ and $V$ of $A$ in $X$.
+            Then $Y\cap U$ and $Y\cap V$ are disjoint neighborhoods of $p$ and $C$ in $Y$.
+        }
+        \item[(b)]
+        {
+            Let $X_\alpha$ be a regular space for each $\alpha\in\mc{A}$ (here, $\mc{A}$ is an index set), and let $X=\prod_{\alpha\in\mc{A}} X_\alpha$.
+            To justify the regularity of $X$, we make use of the alternative definition.
+            Let $x$ be a point of $X$ and $U$ be a neighborhood of $x$ in $X$.
+            Here, we may assume that $U=\prod_{\alpha\in\mc{A}} B_\alpha$, where $B_\alpha$ is open in $X_\alpha$ for each $\alpha\in\mc{A}$ and $B_\alpha=X_\alpha$ for all but finitely many values of $\alpha\in\mc{A}$.
+            For each $\alpha\in\mc{A}$, use the regularity of $X_\alpha$ to find a neighborhood $V_\alpha$ of $x_\alpha$ in $X_\alpha$ whose closure in $X_\alpha$ is contained in $B_\alpha$ (when $B_\alpha=X_\alpha$, choose $V_\alpha=X_\alpha$).
+            Then $V=\prod_{\alpha\in\mc{A}} V_\alpha$ is a neighborhood of $x$ in $X$ contained in $U$.
+            (Note that the closure of the product is the product of the closures.)
+        }
+        \item[(c)]
+        {
+            Given $\alpha\in\mc{A}$, let $p_\alpha$ be a point of $X_\alpha$ and $C_\alpha$ be a closed subset of $X_\alpha$ not containing $p_\alpha$.
+            Let $x$ be any point of $X$ whose $\alpha$-component is $p_\alpha$ and let $K=\pi_\alpha^{-1} (C_\alpha)$.
+            Because $K$ is closed in $X$ and does not contain $x$, by the regularity of $X$, there are disjoint neighborhoods $U$ of $x$ and $V$ of $K$ in $X$.
+            Applying the result of the following remark (together with the homeomorphism), we can conclude that $X_\alpha$ is regular.
+        }
+    \end{enumerate}
+\end{sol}
+\begin{rmk}
+    Let $\{X_\alpha\}_{\alpha\in\mc{A}}$ be a collection of topological spaces, and assume that $X_\alpha$ is a singleton whenever $\alpha\neq\beta$.
+    Then $X_\beta$ is homeomorphic to $X=\prod_{\alpha\in\mc{A}} X_\alpha$.
+    Indeed, one can impose an explicit homeomorphism.
+    Let $s_\alpha$ be the unique element of $S_\alpha$ for each $\alpha\neq\beta$, and let $\imath: X_\beta\rightarrow X$ be the map defined by
+    \begin{align*}
+        (\pi_\alpha\circ\imath)(x)=\left\{\begin{array}{cc}
+            x   &   \textsf{(if $\alpha=\beta$)}\\
+            s_\alpha    &   \textsf{(otherwise)}
+        \end{array}\right.
+        \quad
+        \textsf{(for all $x\in X_\beta$)}.
+    \end{align*}
+    Then $\imath$ is a desired homeomorphism.
+\end{rmk}
+
+\begin{prob}\label{inheritance: completely regular}
+    Prove \cref{inheritance of separabilities} for completely regular spaces.
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Let $Y$ be a subspace of a completely regular space $X$, and let $p$ be a point of $Y$ and $A$ be a closed subset of $Y$.
+            Then $A=Y\cap B$ for some closed subset $B$ of $X$, and $B$ does not contain $p$.
+            By the complete regularity of $X$, there is a continuous map $f: X\rightarrow [0, 1]$ separating $p$ and $B$.
+            The restriction of $f$ to $Y$ separates $p$ and $A$.
+        }
+        \item[(b)]
+        {
+            Let $X_\alpha$ be a completely regular space for each $\alpha\in\mc{A}$ (here, $\mc{A}$ is an index set), and let $X=\prod_{\alpha\in\mc{A}} X_\alpha$.
+            Let $p$ be a point of $X$ and $U$ be a neighborhood of $p$ in $X$.
+            We may assume that $U=\prod_{\alpha\in\mc{A}} B_\alpha$, with $B_\alpha$ being an open subset of $X_\alpha$ for each $\alpha\in\mc{A}$ and $B_\alpha=X_\alpha$ for all but $\alpha_1, \cdots, \alpha_n\in\mc{A}$.
+            For each $i=1, \cdots, n$, let $f_i: X_{\alpha_i}\rightarrow [0, 1]$ be a continuous map such that $f_i(p_{\alpha_i})=1$ and $f_i(X_{\alpha_i}\setminus B_{\alpha_i})=\{0\}$.
+            Then, the map $f: X\rightarrow [0, 1]$ defined by $f(x)=f_1(x_{\alpha_1})\times\cdots\times f_n(x_{\alpha_n})$ for $x\in X$ is a continuous map with the properties that $f(p)=1$ and $f(X\setminus U)=\{0\}$.
+        }
+    \end{enumerate}
+\end{sol}
+
+\begin{prob}\label{inheritance: normal}
+    Prove \cref{inheritance of separabilities} for normal spaces.
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {    
+            Suppose $Y$ is a closed subspace of a normal space $X$.
+            If $A$ and $B$ are disjoint closed subspaces of $Y$, then they are closed in $X$, too.
+            By normality, there are disjoint open subspaces $U$ and $V$ in $X$ containing $A$ and $B$, respectively.
+            Then $U\cap Y$ and $V\cap Y$ are disjoint open subsets of $Y$ containing $A$ and $B$.
+        }
+        \item[(c)]
+        {
+            Given $\alpha\in\mc{A}$, let $B_\alpha$ and $C_\alpha$ be disjoint closed subsets of $X_\alpha$, and let $B=\pi_\alpha^{-1}(B_\alpha)$ and $C=\pi_\alpha^{-1}(C_\alpha)$.
+            Because $B\cap C=\varnothing$, by the regularity of $X$, there are disjoint neighborhoods $U$ of $B$ and $V$ of $B$ in $X$.
+            Again, applying the natural homeomorphism given in the previous remark, one can conclude that $X_\alpha$ is normal.
         }
     \end{enumerate}
 \end{sol}

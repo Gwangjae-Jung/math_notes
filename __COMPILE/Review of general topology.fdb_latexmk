@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1663044097 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1663044105
+["pdflatex"] 1663119727 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1663119734
   "../../my_settings/pangpang_conditionals.tex" 1656221183 66 fdb617b31ca6abaf902778962bc5728f ""
   "../../my_settings/pangpang_definitions.tex" 1661566462 1907 64732b4ed6ad9ad935cbf73c703f7afd ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -23,17 +23,17 @@
   "../ch2/path_connected.tex" 1662820576 5089 052bd89a403ce3b3ee1ed44d4b2a11c8 ""
   "../ch3/Urysohn_lemma.tex" 1662654043 7352 a11d489b3f7c3c8aabf6e76f156509fc ""
   "../ch3/emmbedding_theorem.tex" 1662653943 3993 61944d4a53a137394e4e61f518dafc22 ""
-  "../ch3/implications.tex" 1663042816 20472 f4c47794465e9ebfcc9042b9b76ce255 ""
-  "../ch3/implications_problems.tex" 1663042788 6446 d1d2d986b89c19fcc4b1d1c53725488e ""
+  "../ch3/implications.tex" 1663118858 18177 0b10de16fb9035de12949510f4604e23 ""
+  "../ch3/implications_problems.tex" 1663119724 9659 4afe267545e490ddd42004dea381f92e ""
   "../ch4/SC_cptf.tex" 1660927388 8015 766dd1785420c2f5ea57177af37a9497 ""
   "../ch4/compactification.tex" 1662999238 5586 28c5403151258ad8bf120cd05dd5ca91 ""
   "../ch5/Ascoli's_theorem.tex" 1662982134 15157 e830d30260f1872be7089f4d29ffcecb ""
   "../ch5/complete_spaces.tex" 1660927426 10702 3dc1399fddfab06fbd56deee48507190 ""
   "../ch5/pointwise_equicontinuity.tex" 1658995363 6718 bf3408524425c82ec0fa38307688bb3b ""
   "../ch5/topologies_on_C0.tex" 1662822981 18981 e455ad7b7621f6175c9b3ab19bc5fd7d ""
-  "Review of general topology.aux" 1663044104 30242 f2498a56d63db0891d009cad84a769b9 "pdflatex"
+  "Review of general topology.aux" 1663119733 31007 c077e3d4ef8fb2f3726898f74b141839 "pdflatex"
   "Review of general topology.tex" 1663036629 2349 f61ab72f1f49829496ef700637372611 ""
-  "Review of general topology.toc" 1663044104 4952 83f15c7129011218acaa31be3627e671 "pdflatex"
+  "Review of general topology.toc" 1663119733 4952 3951b3b96074c1b09bda41405afaa06e "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
