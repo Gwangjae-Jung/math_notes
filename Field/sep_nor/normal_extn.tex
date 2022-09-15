@@ -175,6 +175,18 @@ But before this, we solve a technical problem.
     If $x\in K_0$, then $x$ belongs to the composition of some finitely many fields $(\sigma E)$'s, and such finite composition is a separable extension over $F$.
     Therefore, when $E/F$ is a separable extension, then the normal closure of $E$ over $F$ is also separable over $F$.
 \end{proof}
+\begin{exmp}
+    In this example, we find the normal closure of $E=\bb{Q}(\sqrt[3]{2})$ over $\bb{Q}$.
+    For this, we first need to find all $\bb{Q}$-embeddings of $E$ into $\ol{\bb{Q}}$; because $\sigma\in\emb{E/\bb{Q}}$ is completely determined by its action on $\sqrt[3]{2}$, it suffices to determine all possible values of $\sigma(\sqrt[3]{2})$.
+    Let $\sigma$ be a $\bb{Q}$-embedding of $E$ into $\ol{\bb{Q}}$ and write $\alpha=\sqrt[3]{2}$.
+    Then $(\sigma\alpha)^3=\sigma(\alpha^3)=2$, so $\sigma\alpha$ is a root of $t^3-2$.
+    Hence, all possible values of $\sigma\alpha$ is $\alpha$, $\alpha\zeta$, and $\alpha\zeta^2$, where $\zeta=\exp(2\pi i/3)$.
+
+    As indicated in the preceeding theorem, all we have to do to obtain the normal closure of $E$ over $\bb{Q}$ is to adjoin all $\sigma E$ for all $\bb{Q}$-embeddings $\sigma$ of $E$ into $\ol{\bb{Q}}$, which are $E=\bb{Q}(\alpha)$, $\bb{Q}(\alpha\zeta)$, and $\bb{Q}(\alpha\zeta^2)$.
+    Hence, the normal closure of $E$ over $\bb{Q}$ is $\bb{Q}(\alpha, \alpha\zeta, \alpha\zeta^2)=\bb{Q}(\alpha, \zeta)$, which is the splitting field for $t^3-2$ over $\bb{Q}$.
+    As indicated in part (b) of the preceeding theorem, because $E/\bb{Q}$ is separable (for $\ch{\bb{Q}}=0$), the extension $\bb{Q}(\alpha, \zeta)/\bb{Q}$ is also separable.
+    (Hence, $\bb{Q}(\alpha, \zeta)/\bb{Q}$ is a (finite) Galois extension.)
+\end{exmp}
 
 In particular, (b) of \cref{normal closure} implies that we can construct a separable and normal extension whenever a separable field extension is given, by extending the extension field, if necessary.
 \begin{defi}[Galois extension]

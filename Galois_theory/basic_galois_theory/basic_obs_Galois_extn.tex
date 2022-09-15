@@ -30,14 +30,15 @@ Conversely, given a subgroup $H$ of $\gal{K/F}$, we define the fixed field $K^H$
 \end{align*}
 It is easy to check that $F\leq K^H\leq K$.
 
-In the following section, the fundamental theorem of finite Galois's extensions, also known as the Galois's main theorem, is introduced, in which we are interested in a one-to-one bijection between the collection of the intermediate subfields of a finite Galois extension and the collection of the subgroups of the Galois group of the extension.
-The following propositions, which could be introduced before proving the Galois's main theorem, are moved to this section, due to its generality.
-\begin{prop}\label{maximality_of_primitive}
+In the following section, the fundamental theorem of finite Galois's extensions, also known as Galois's main theorem, is introduced, in which we are interested in a one-to-one bijection between the collection of the intermediate subfields of a finite Galois extension and the collection of the subgroups of the Galois group of the extension.
+The following propositions, which could be introduced before proving Galois's main theorem, are moved to this section, due to its generality.
+
+\begin{prop}
     Suppose that $E/F$ is a separable extension.
     If there is a positive integer $n$ such that $[F(\alpha): F]\leq n$ for all $\alpha\in E$, then ($E/F$ is a finite extension and) $[E:F]\leq n$. 
 \end{prop}
 \begin{proof}
-    By assumption, there is an element $\beta\in E$ such that $[F(\beta): F]$ is the greatest.
+    By assumption, there is an element $\beta\in E$ for which $[F(\beta): F]$ is the greatest.
     \begin{center}
         Goal: To show that $E=F(\beta)$.
     \end{center}
@@ -66,7 +67,7 @@ The following propositions, which could be introduced before proving the Galois'
     Therefore, $f^\tau(t)=f(t)$ and $f(t)\in K^H[t]$, for evey coefficient of $f(t)$ is fixed by every field automorphism in $H$.
     Because $f(t)$ is a multiple of $m(t)$ and $f(t)$ is separable, $m(t)$ is separable and $K/K^H$ is a separable extension.
     Moreover, a root of $m(t)$ is of the form $\sigma_i\alpha$ for some $i$, which is contained in $K$, so $K/K^H$ is a normal extension.
-    Because $[F(\alpha): F]\leq r\leq |H|<\infty$ for all $\alpha\in K$, by \cref{maximality_of_primitive}, we conclude that $K/K^H$ is a finite Galois extension with $[K:K^H]\leq |H|$.
+    Because $[F(\alpha): F]\leq r\leq |H|<\infty$ for all $\alpha\in K$, we conclude that $K/K^H$ is a finite Galois extension with $[K:K^H]\leq |H|$.
 
     We finally show that $\gal{K/K^H}=H$.
     It is clear that $H\leq\gal{K/K^H}$, thus it follows from
