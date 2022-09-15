@@ -192,9 +192,9 @@ The statement and proof are given in \cref{shift of algebraic extensions under f
     Suppose that a finite sum $\sum c_{i, j}\alpha_i\beta_j$ is zero, where $c_{i, j}\in F$ for all $i$ and $j$.
     Gathering terms $i$ by $i$, we have $\sum(\sum c_{i, j}\beta_j)\alpha_i=0$, so $\sum c_{i, j}\beta_j=0$ for each $i$, hence $c_{i, j}=0$ for all $i, j$.
 \end{proof}
-The multiplicativity of extension degree is valid when the extensions are given as a linear tower.
-The `sub'multiplicativity (not the multiplicativity) holds for finite extensions in general.
-And the following submultiplicativity implies that two field extensions are finite extensions if and only if the composition is a finite field extension over the base field.
+The multiplicativity of extension degree is valid when an extension is given as a linear tower, but it may not be valid when the extension is not linear.
+In general, the `sub'multiplicativity (not the multiplicativity) holds for finite extensions.
+And the following submultiplicativity implies that two field extensions are finite extensions if and only if the composition is a finite extension over the base field.
 \begin{prop}\label{submultiplicativity of field composition}
     If $E/F$ is a field extension and both $K/F$ and $L/F$ are finite field extensions with $K, L\leq E$, then $[KL: F]\leq[K: F][L: F]$.
     The equality holds if and only if an $F$-basis of one of $K$ and $L$ is linearly independent over the other field.
@@ -206,7 +206,7 @@ And the following submultiplicativity implies that two field extensions are fini
     \begin{align*}
         [KL:F]=[KL:L][L:F]\leq mn=[K:F][L:F].
     \end{align*}
-    The equaility holds if and only if $[KL:L]=[K:F]$ and $[KL:K]=[L:F]$, which is equivalent to state that $\{x_1, \cdots, x_m\}$ is $L$-linearly independent and $\{y_1, \cdots, y_n\}$ is $K$-linearly independent.
+    As illustrated in the above inequality, the equaility holds if and only if $[KL:L]=[K:F]$ (or $[KL:K]=[L:F]$), which is equivalent to the case where $\{x_1, \cdots, x_m\}$ is $L$-linearly independent (or $\{y_1, \cdots, y_n\}$ is $K$-linearly independent).
 \end{proof}
 \begin{cor}
     If $E/F$ is a field extension and both $K$ and $L$ are intermediate subfields such that $[K:F]$ and $[L:F]$ are relatively prime, then $[KL:F]=[K:F][L:F]$, hence an $F$-basis of one of $K$ and $L$ is linearly independent over the other field.
