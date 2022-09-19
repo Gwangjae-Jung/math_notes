@@ -1,11 +1,11 @@
-\section{Continuous maps}
+f\section{Continuous maps}
 
 In this section, we assume $X, Y, Z$ are topological spaces.
 
 \begin{defi}[Continuity]
     The map $f: X\rightarrow Y$ is said to be continuous if $f^{-1}(U)$ is open in $X$ whenever $U$ is open in $Y$.
     If the map $f$ is bijective and its inverse is also continuous, then $f$ is called a homeomorphism.
-    In addition, if $f$ is injective and continuous, and the induced map $\tilde{f}: X\rightarrow f(X)$ defined by $\tilde{f}(a)=f(a)$ for all $a\in X$ is a homeomorphism, then $f$ is called an embedding of $X$ into $Y$.
+    In addition, if $f$ is injective and continuous, and the induced map $\widetilde{f}: X\rightarrow f(X)$ defined by $\widetilde{f}(a)=f(a)$ for all $a\in X$ is a homeomorphism, then $f$ is called an embedding of $X$ into $Y$.
     (It will be explained that such restriction of continuous maps are always continuous.)
 \end{defi}
 
@@ -73,9 +73,18 @@ If given maps $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous, some n
 \begin{prop}
     Suppose $f: X\rightarrow Y$ and $g: Y\rightarrow Z$ are continuous.
     \begin{enumerate}
-        \item[(a)] Every constant map is continuous.
-        \item[(b)] $g\circ f$ is continuous.
-        \item[(c)] Every restriction of a continuous map on a subspace is continuous. Also, if $Y$ is a subspace of $Z$, then $\tilde{f}: X\rightarrow Z$ defined by $\tilde{f}(x)=f(x)$ for all $x\in X$ is continuous.
+        \item[(a)]
+        {
+            Every constant map is continuous.
+        }
+        \item[(b)]
+        {
+            $g\circ f$ is continuous.
+        }
+        \item[(c)]
+        {
+            Every restriction of a continuous map on a subspace is continuous. Also, if $Y$ is a subspace of $Z$, then $\widetilde{f}: X\rightarrow Z$ defined by $\widetilde{f}(x)=f(x)$ for all $x\in X$ is continuous.
+        }
     \end{enumerate}
 \end{prop}
 
