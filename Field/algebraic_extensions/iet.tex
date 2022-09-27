@@ -37,47 +37,51 @@ Due to their importance, the below three isomorphism extension theorems are move
 \begin{proof}
     Suppose that $\alpha$ and $\beta$ are roots of $p(t)$.
     Then there is a unique $F$-isomorphism $\mu: F(\alpha)\rightarrow F(\beta)$ such that $\mu(\alpha)=\beta$.
-    Because $p(t)\in F[t]$, we have $p^\mu(t)=p(t)$, so the multiplicity of $\alpha$ is not greater than the multiplicity of $\beta$ and vice versa, due to the symmetry.
+    Because $p(t)\in F[t]$, we have $p^\mu(t)=p(t)$, so the multiplicity of $\alpha$ is not greater than the multiplicity of $\beta$ and vice versa, due to symmetry.
 \end{proof}
 Speaking of the isomorphism extension theorem for simple algebraic extensions, we introduce an equivalence regarding algebraic conjugates.
-\begin{defi}
+\begin{defi}[Algebraic conjugates]
     Let $E/F$ and $K/F$ be field extensions.
-    Elements $\alpha\in E$ and $\beta\in K$ are said to be algebraically conjugate over $F$ if their minimal polynomial over $F$ are the same.
+    Elements $\alpha\in E$ and $\beta\in K$ are called algebraic conjugates over $F$ if their minimal polynomial over $F$ are the same.
 \end{defi}
-By considering \cref{iet 1}, we can obtain the following equivalence:
+From \cref{iet 1}, we can deduce the following equivalence:
 \begin{obs}
     Let $\alpha, \beta$ be elements in a field extension of $F$ which are algebraic over $F$.
     \begin{enumerate}
         \item[(a)]
         {
-            $\alpha$ and $\beta$ are algebraically conjugate over $F$ if and only if there is an $F$-isomorphism $\sigma: F(\alpha)\rightarrow F(\beta)$ such that $\sigma(\alpha)=\beta$.        
+            $\alpha$ and $\beta$ are algebraic conjugates over $F$ if and only if there is an $F$-isomorphism $\sigma: F(\alpha)\rightarrow F(\beta)$ such that $\sigma(\alpha)=\beta$.        
         }
         \item[(b)]
         {
-            Let $m(t)$ is the minimal polynomial of $\alpha$ over $F$.
+            Let $m(t)$ be the minimal polynomial of $\alpha$ over $F$.
             A root of $m(t)$ is an algebraic conjugate of $\alpha$ over $F$, and an algebraic conjugate of $\alpha$ over $F$ is a root of $m(t)$.
         }
     \end{enumerate}
 \end{obs}
 \begin{proof}
-    We first prove (a).
-    When $\alpha$ and $\beta$ are algebraically conjugate over $F$, \cref{iet 1} proves the existence of a desired $F$-isomorphism.
-    Assuming conversely, since $m_\alpha(t)\in F[t]$ is fixed by $\sigma$, we have $m_\alpha(\beta)=0$, so $m_\beta(t)|m_\alpha(t)$ and $m_\alpha(t)|m_\beta(t)$ by symmetry.
-    Therefore, $\alpha$ and $\beta$ are algebraically conjugate over $F$.
+    \hangindent=0.65cm
+    \noindent(a)
+    When $\alpha$ and $\beta$ are algebraic conjugates over $F$, \cref{iet 1} proves the existence of a desired $F$-isomorphism.
+    Assuming conversely, since $m_\alpha(t)\in F[t]$ is fixed by $\sigma$, we have $m_\alpha(\beta)=0$, so $m_\beta(t)|m_\alpha(t)$.
+    It naturally follows from symmetry that $m_\alpha(t)|m_\beta(t)$.
+    Therefore, $\alpha$ and $\beta$ are algebraic conjugates over $F$.
 
-    In proving (b), note that it is clear from definition that an algebraic conjugate $\beta$ of $\alpha$ over $F$ is a root of $m(t)$.
+    \noindent(b)
+    By definition, an algebraic conjugate $\beta$ of $\alpha$ over $F$ is a root of $m(t)$.
     Let $\beta$ be a root of $m(t)$ and assume that the minimal polynomial $f(t)$ of $\beta$ over $F$ is not $m(t)$.
     Then there is a nonconstant monic polynomial $g(t)\in F[t]$ such that $m(t)=f(t)g(t)$, and either $f(t)$ or $g(t)$ has $\alpha$ a root, a contradiction.
-    Therefore, a root of the minimal polynomial of $\alpha$ is an algebraic conjugate of $\alpha$ over $F$.
+    Therefore, a root of the minimal polynomial of $\alpha$ over $F$ is an algebraic conjugate of $\alpha$ over $F$.
 \end{proof}
-\begin{prop}
-    Let $F$ be a field and write $\alpha\sim\beta$ for elements $\alpha, \beta$ which are algebraic over $F$ whenever
+\begin{rmk}
+    The above observation induces an equivalence relation regarding algebraic conjugates over a given field.
+    Let $F$ be a field and write $\alpha\sim\beta$ for elements $\alpha, \beta$ which are algebraic over $F$, whenever
     \begin{center}
         $\beta$ is an algebraic conjugate of $\alpha$ over $F$.
     \end{center}
     Then $\sim$ denotes an equivalence relation on the field of elements algebraic over $F$.
     Hence, $\alpha$ and $\beta$ are algebraically conjugate over $F$ if and only if the minimal polynomials of $\alpha$ and $\beta$ over $F$ are the same.
-\end{prop}
+\end{rmk}
 
 \begin{thm}[For splitting fields]\label{iet 2}
     Let $\sigma: E\rightarrow F$ be a field isomorphism and $f(t)$ be a nonconstant polynomial over $E$.
@@ -156,19 +160,19 @@ By considering \cref{iet 1}, we can obtain the following equivalence:
 \begin{proof}
     We find a field embedding of $K$ into $\ol F$ by applying Zorn's lemma.
 
-    \textbf{Step 1. Setting a nonempty partially ordered set}\newline\noindent
+    \textbf{Step 1. Setting a nonempty partially ordered set.}\newline\noindent
     Set
     \begin{align*}
-        X:=\{(L, \tau): E\leq L\leq K\textsf{ and }\tau: L:\rightarrow K\textsf{ is a field embedding}\}.
+        \mc{X}:=\{(L, \tau): E\leq L\leq K\textsf{ and }\tau: L\rightarrow K\textsf{ is a field embedding}\}.
     \end{align*}
-    Then $(E, \sigma)\in X$, so $X$ is nonempty.
-    And for $(L_1, \tau_1), (L_2, \tau_2)\in X$, let $(L_1, \tau_1)\leq(L_2, \tau_2)$ if and only if
+    Then $(E, \sigma)\in \mc{X}$, so $X$ is nonempty.
+    And for $(L_1, \tau_1), (L_2, \tau_2)\in \mc{X}$, let $(L_1, \tau_1)\leq(L_2, \tau_2)$ if and only if
     \begin{align*}
         L_1\leq L_2\textsf{ and } \tau_2|_{L_1}=\tau_1.
     \end{align*}
-    \color{brown}Then this relation is a partial order on $X$.\color{black}
+    \color{brown}Then this relation is a partial order on $\mc{X}$.\color{black}
 
-    \textbf{Step 2. Showing that every subchain has an upper bound}\newline\noindent
+    \textbf{Step 2. Showing that every subchain has an upper bound.}\newline\noindent
     Let $\mc{C}$ be an ascending chain of $X$.
     To find its upper bound in $X$, let
     \begin{align*}
@@ -177,7 +181,7 @@ By considering \cref{iet 1}, we can obtain the following equivalence:
     and define a map $\tau_C: L\rightarrow \ol F$ by $\tau_C(x):=\tau_x(x)$, where $(L_x, \tau_x)\in\mc{C}$ is a member such that $x\in L_x$.
     \color{brown}Then $E\leq C\leq K$ and $\tau_C$ is a well-defined field embedding, \color{black}so $(C, \tau_C)$ is an upper bound of $\mc{C}$ in $X$.
 
-    \textbf{Step 3. Deriving the result}\newline\noindent
+    \textbf{Step 3. Deriving the result.}\newline\noindent
     By Zorn's lemma, there is a maximal element $(M, \mu)\in X$.
     We will justify that $M=K$ by the method of contradiction; assume $M\lneqq K$.
     Then there is an element $\alpha\in K\setminus M$; let $p(t)\in M[t]$ be the minimal polynomial of $\alpha$, and let $\beta\in \ol F$ be a root of $p^\mu(t)\in F[t]$.

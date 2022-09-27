@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {5.2}Splitting fields}{26}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Algebraic closures}{27}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Isomorphism extension theorems}{28}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Constructible numbers}{30}{section.5.5}%
+\contentsline {section}{\numberline {5.5}Constructible numbers}{31}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Separable extensions and normal extensions}{32}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Separable extensions}{32}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Normal extensions}{36}{section.6.2}%

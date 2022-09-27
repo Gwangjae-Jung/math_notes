@@ -92,6 +92,21 @@ The following proposition solves a technical problem when defining algebraic clo
 \end{proof}
 \begin{proof}[Proof 2]
     Invoking Zorn's lemma, we may prove the theorem.
+
+    Given a field $F$, let $\mc{X}$ be the collection of all algebraic extensions over $F$.
+    Since $F/F$ is algebraic, $\mc{X}$ is nonempty.
+    Furthermore, $\mc{X}$ is partially ordered by set inlcusion (or by field extension).
+
+    Given a chain $\mc{C}$ in $\mc{X}$, define
+    \begin{align*}
+        K=\bigcup_{E\in\mc{C}} E.
+    \end{align*}
+    \color{brown}It is clear that $K$ is a field and $K/F$ is algebraic, implying that $K\in\mc{X}$ and $K$ is an upper bound of $\mc{C}$. \color{black}
+
+    By Zorn's lemma, $\mc{X}$ has a maximal member $L$.
+    Assume that $L$ is not an algebraic closure of $F$.
+    Then, there is a nonconstant polynomial with a root $\alpha$ such that $\alpha\notin L$.
+    Because $L(\alpha)$ is a proper extension of $L$ and $L(\alpha)$ is an algebraic extension over $F$, the maximality of $L$ is disobeyed.
 \end{proof}
 
 In fact, an algebraic closure of a field is unique up to isomorphism.
