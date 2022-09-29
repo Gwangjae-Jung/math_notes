@@ -116,12 +116,13 @@ From \cref{iet 1}, we can deduce the following equivalence:
     Note that the theorem is clear when $\deg f(t)=1$.
     Assuming that the theorem is valid for all nonconstant polynomials over $E$ of degree less than $n$, suppose that $\deg f(t)=n$.
     Let $\alpha\in K$ be a root of $f(t)$ and $\beta\in L$ be a root of $f^\sigma(t)$.
-    By Theorem \ref{iet 1}, there is a field isomorphism $\sigma_1: E(\alpha)\rightarrow F(\beta)$ extending $\sigma$.
+    By Theorem \ref{iet 1}, there is a unique field isomorphism $\sigma_1: E(\alpha)\rightarrow F(\beta)$ extending $\sigma$ mapping $\alpha$ to $\beta$.
     Writing
     \begin{align*}
         (t-\alpha)p(t)=f(t)=(t-\beta)q(t)
     \end{align*}
-    for some $p(t)\in E(\alpha)[t]$ and $q(t)\in F(\beta)[t]$, it remains to justify that $E$ is a splitting field for $p(t)$ over $E(\alpha)$ and $F$ is a splitting field for $q(t)$ over $F(\beta)$; it then follows from the induction hypothesis that there is a field isomorphism $\widetilde{\sigma}: K\rightarrow L$ extending $\sigma$.
+    for some $p(t)\in E(\alpha)[t]$ and $q(t)\in F(\beta)[t]$, we have $q(t)=p^{\sigma_1}(t)$.
+    Thus, it remains to justify that $K$ is a splitting field for $p(t)$ over $E(\alpha)$ and $L$ is a splitting field for $q(t)$ over $F(\beta)$; it then follows from the induction hypothesis that there is a field isomorphism $\widetilde{\sigma}: K\rightarrow L$ extending $\sigma_1$ (thus, extending $\sigma$).
     \begin{enumerate}
         \item[(\romannumeral 1)]
         {
@@ -129,7 +130,7 @@ From \cref{iet 1}, we can deduce the following equivalence:
         }
         \item[(\romannumeral 2)]
         {
-            If there is a proper subfield $I$ of $K$ containing $E(\alpha)$ over which $p(t)$ splits completely, then $f(t)=(t-\alpha)p(t)$ would split complitely over $I$, which contradicts to the hypothesis that $K$ is a splitting field for $f(t)$ over $E$.
+            If there is a proper subfield $I$ of $K$ containing $E(\alpha)$ over which $p(t)$ splits completely, then $f(t)=(t-\alpha)p(t)$ would split complitely over $I$, which contradicts the hypothesis that $K$ is a splitting field for $f(t)$ over $E$.
             Therefore, there is no proper subfield of $K$ over which $p(t)$ splits completely.
         }
     \end{enumerate}
@@ -138,9 +139,6 @@ From \cref{iet 1}, we can deduce the following equivalence:
 \begin{cor}
     A splitting field for a nonconstant polynomial over a field is unique up to isomorphism.
 \end{cor}
-\begin{proof}
-    It easily follows from \cref{iet 2}.
-\end{proof}
 
 \begin{thm}[For algebraic closures]\label{iet 3}
     Let $\sigma: E\rightarrow F$ be a field isomorphism.
