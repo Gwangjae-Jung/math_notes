@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1664425199 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1664425207
+["pdflatex"] 1664425300 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1664425308
   "../../my_settings/pangpang_conditionals.tex" 1656221183 66 fdb617b31ca6abaf902778962bc5728f ""
   "../../my_settings/pangpang_definitions.tex" 1661566462 1907 64732b4ed6ad9ad935cbf73c703f7afd ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -14,7 +14,7 @@
   "../Field/algebraic_extensions/alg_cl.tex" 1664265169 5754 af3adf6e6686bd82459e192a14aa5c92 ""
   "../Field/algebraic_extensions/alg_extn.tex" 1663213730 17755 d86b4a763154f753e817a6a641f66f19 ""
   "../Field/algebraic_extensions/constructible_numbers.tex" 1661665651 1935 311bbc20c50e77a3aad7eb1894d72e80 ""
-  "../Field/algebraic_extensions/iet.tex" 1664425197 11530 068d98ff73ce49b83e9a418d3214a8e6 ""
+  "../Field/algebraic_extensions/iet.tex" 1664425298 11570 85487993e03de00195ffd124a513b9a1 ""
   "../Field/algebraic_extensions/splitting_field.tex" 1661166119 5011 b76b05817ac868ab2b3609dc0d84068f ""
   "../Field/sep_nor/normal_extn.tex" 1663223697 11528 f4d0d6562ea8f3004c6674be40ff1cce ""
   "../Field/sep_nor/separable_extn.tex" 1662041160 17055 8904fc48cd8e2e5d0ac6db4b3b1001a4 ""
@@ -53,9 +53,9 @@
   "../Ring/polynomial_rings/README.tex" 1659507140 127 c43d9959955dbfb428f5efb11c0a5ef9 ""
   "../Ring/polynomial_rings/basic_properties.tex" 1662085086 7088 0160bde3a334bbe69bf6624b6914ce73 ""
   "../preface.tex" 1662105076 326 396e21dc85b06f25d47a5e82166ad8ba ""
-  "Review_of_modern_algebra.aux" 1664425206 35653 9cd37ced41092dc1c4fccb586f5e999e "pdflatex"
+  "Review_of_modern_algebra.aux" 1664425307 35653 9cd37ced41092dc1c4fccb586f5e999e "pdflatex"
   "Review_of_modern_algebra.tex" 1662085556 772 6e04c8de7ef6fcf7981eaf491a94c973 ""
-  "Review_of_modern_algebra.toc" 1664425206 5365 fe3ecacf6fcca39181be2d9ae567ca20 "pdflatex"
+  "Review_of_modern_algebra.toc" 1664425307 5365 fe3ecacf6fcca39181be2d9ae567ca20 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1654131593 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1654131593 996 a18840b13b499c08ac2de96a99eda4bc ""
