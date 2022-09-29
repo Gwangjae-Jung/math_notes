@@ -164,7 +164,7 @@ From \cref{iet 1}, we can deduce the following equivalence:
         \mc{X}:=\left\{(L, \tau):
         \begin{array}{c}
             E\leq L\leq K\textsf{ and}\\
-            \tau: L\rightarrow K\textsf{ is a field embedding}
+            \tau: L\rightarrow K\textsf{ is a field embedding extending }\sigma
         \end{array}
         \right\}.
     \end{align*}
@@ -186,7 +186,8 @@ From \cref{iet 1}, we can deduce the following equivalence:
 
     \textbf{Step 3. Deriving the result.}\newline\noindent
     By Zorn's lemma, there is a maximal element $(M, \mu)\in X$.
-    We will justify that $M=K$ by the method of contradiction; assume $M\lneqq K$.
+    We will justify that $M=K$ by contradiction.
+    Assume $M\lneqq K$.
     Then there is an element $\alpha\in K\setminus M$; let $p(t)\in M[t]$ be the minimal polynomial of $\alpha$, and let $\beta\in \ol F$ be a root of $p^\mu(t)\in F[t]$.
     By \cref{iet 1}, there is a field embedding $\widetilde{\mu}: M(\alpha)\rightarrow\ol F$ extenidng $\mu$, so $(M, \mu)\lneqq(M(\alpha), \widetilde{\mu})$, a contradiction.
 \end{proof}
