@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1664867497 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1664867500
+["pdflatex"] 1664867547 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1664867550
   "../../my_settings/pangpang_conditionals.tex" 1664777689 101 42c63d0f7a65026f3b9a3f0663ded71a ""
   "../../my_settings/pangpang_definitions.tex" 1664777751 1873 3a724d679e82af83a70370d2d4b1e646 ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -9,7 +9,7 @@
   "../Appendix/proofs/infinitely_many_primes_modulo_an_integer.tex" 1661743331 219 242cd5fa60c669e85c6b0b19ac49c7e7 ""
   "../Appendix/proofs/quadratic_cyclotomic_extension_of_Q.tex" 1661841293 249 149ed825fdf96db3901212563a9e2201 ""
   "../Field/__FIELD_THEORY__.tex" 1662041830 637 9fdd1c0713060dcc43f5ff22598f6815 ""
-  "../Field/additional/finite_fields_basic.tex" 1664867495 5785 c4b2e073b080bc5586d13e2c8554ee3e ""
+  "../Field/additional/finite_fields_basic.tex" 1664867550 5778 c753eca96b9ef7f546e294a133c17b25 ""
   "../Field/additional/some_problems.tex" 1662309858 3545 dc46fd839f7bf4e817e583cd02d0f336 ""
   "../Field/algebraic_extensions/alg_cl.tex" 1664585095 5751 282122731d64d83023a8e0d07d3ca7da ""
   "../Field/algebraic_extensions/alg_extn.tex" 1663213730 17755 d86b4a763154f753e817a6a641f66f19 ""
@@ -53,9 +53,9 @@
   "../Ring/polynomial_rings/README.tex" 1659507140 127 c43d9959955dbfb428f5efb11c0a5ef9 ""
   "../Ring/polynomial_rings/basic_properties.tex" 1662085086 7088 0160bde3a334bbe69bf6624b6914ce73 ""
   "../preface.tex" 1662105076 326 396e21dc85b06f25d47a5e82166ad8ba ""
-  "Review_of_modern_algebra.aux" 1664867500 35653 9cd37ced41092dc1c4fccb586f5e999e "pdflatex"
+  "Review_of_modern_algebra.aux" 1664867550 35653 9cd37ced41092dc1c4fccb586f5e999e "pdflatex"
   "Review_of_modern_algebra.tex" 1662085556 772 6e04c8de7ef6fcf7981eaf491a94c973 ""
-  "Review_of_modern_algebra.toc" 1664867500 5365 fe3ecacf6fcca39181be2d9ae567ca20 "pdflatex"
+  "Review_of_modern_algebra.toc" 1664867550 5365 fe3ecacf6fcca39181be2d9ae567ca20 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1654131593 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1654131593 996 a18840b13b499c08ac2de96a99eda4bc ""
