@@ -40,11 +40,8 @@ Even though we do not know the existence of a finite field of order $q$, we firs
 \end{thm}
 \begin{proof}
     We already proved that $|F|=q$.
-    Thus, it remains to show that $F$ is a subfield of $K$; if it is done, then $F$ is a field containing all roots of $t^q-t\in\bb{F}_p[t]$, so $F=K$.
-    (For example, if $\alpha, \beta\in F$, then
-    \begin{center}
-        $(\alpha+\beta)^q=\alpha^q+\beta^q=\alpha+\beta$ and $(\alpha\beta)^q=\alpha^q\beta^q=\alpha\beta$,
-    \end{center}
+    Thus, it remains to show that $F$ is a subfield of $K$; if it is done, then $F$ is a field which consists of all roots of $t^q-t\in\bb{F}_p[t]$, so $F$ is the smallest field containing all roots of $t^q-t$, i.e., $F=K$.
+    (For example, if $\alpha, \beta\in F$, then $(\alpha+\beta)^q=\alpha^q+\beta^q=\alpha+\beta$ and $(\alpha\beta)^q=\alpha^q\beta^q=\alpha\beta$.
     \color{brown}Proving details are left as an exercise.\color{black})
 \end{proof}
 \begin{rmk}
@@ -74,7 +71,7 @@ Remark that we have deduced by applying the cyclic decomposition theorem that a 
     If $\beta\in\bb{F}_{q^m}$ is a generator of $\bb{F}_{q^m}$, then $m_{\alpha, q}(t)\in\bb{F}_q[t]$ is a desired polynomial, for $\bb{F}_{q^m}=\bb{F}_q(\beta)$.
 \end{proof}
 
-Regarding separability of polynomials, we have studied that an irreducible polynomial over a field of characteristic 0 is separable.
+Regarding the separability of polynomials, we have studied that an irreducible polynomial over a field of characteristic 0 is separable.
 The same property holds for finite fields.
 \begin{prop}
     An irreducible polynomial over a finite field is separable.
@@ -87,7 +84,7 @@ The same property holds for finite fields.
 \end{proof}
 
 \begin{prop}
-    Suppose that $r, n$ are positive integers such that $r\leq n$.
+    Suppose that $r, n$ are positive integers.
     Then $\bb{F}_{p^r}\leq\bb{F}_{p^n}$ if and only if $r|n$.
 \end{prop}
 \begin{proof}
@@ -96,14 +93,14 @@ The same property holds for finite fields.
 \end{proof}
 
 We end this section by introducing the algebraic closure of $\bb{F}_q$.
-Let $F\bb{F}_q$ be an algebraic extension and let $\alpha\in F$.
+Let $F/\bb{F}_q$ be an algebraic extension and suppose $\alpha\in F$.
 Then $F(\alpha)\approx\bb{F}_{p^n}$ for some $n\in\bb{N}$, so we may write $\alpha\in\bb{F}_{p^n}$.
 \begin{thm}
     The algebraic closure of $\bb{F}_q$ is, up to isomorphism, $\bigcup_{n=1}^\infty \bb{F}_{q^n}$.
 \end{thm}
 \begin{proof}
     It is clear that $F:=\bigcup_{n=1}^\infty \bb{F}_{q^n}$ is an algebraic extension over $\bb{F}_q$.
-    It remains to show that $F$ is an algebraic closure of $\bb{F}_q$, it suffices to show that an irreducible polynomial $f(t)$ over $\bb{F}_q[t]$ splits completely over $F$.
+    It remains to show that an irreducible polynomial $f(t)$ over $\bb{F}_q[t]$ splits completely over $F$.
     Let $n=\deg f(t)$ and $\alpha$ be a root of $f(t)$.
     Then $\alpha\in\bb{F}_{p^n}\subset F$, as desired.
 \end{proof}
