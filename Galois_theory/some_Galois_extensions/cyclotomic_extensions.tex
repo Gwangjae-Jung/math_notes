@@ -107,8 +107,8 @@ Our first goal is to compute $\gal{F(\zeta)/F}$ when $\ch{F}=p>0$.
         \Phi_n(t)=\prod_{\substack{1\leq k\leq n\\(n, k)=1}}\left(t-\exp\left(i\frac{2\pi k}{n}\right)\right).
     \end{align*}
 
-    Because $\deg\Phi_n(t)$ is the number of primitive $n$-th roots of unity, $\deg\Phi_n(t)$ is the number of positive integers not greather than $n$ which are relatively prime to $n$.
-    Therefore, $[\bb{Q}(\zeta_n):\bb{Q}]=\phi(n)$, where $\phi$ is the Euler's $\phi$-function.
+    Because $\deg\Phi_n(t)$ is the number of primitive $n$-th roots of unity, $\deg\Phi_n(t)$ is the number of positive integers not greater than $n$ which are relatively prime to $n$.
+    Therefore, $[\bb{Q}(\zeta_n):\bb{Q}]=\phi(n)$, where $\phi$ is Euler's $\phi$-function.
 \end{rmk}
 \begin{exmp}
     Let $p$ be a positive prime number.
@@ -119,7 +119,7 @@ Our first goal is to compute $\gal{F(\zeta)/F}$ when $\ch{F}=p>0$.
 \begin{obs}
     By considering the orders of $n$-th roots of unity, we have
     \begin{align*}
-        t^n-1=\prod_{\zeta\in\mu_n(\ol{\bb{Q}})}(t-\zeta)=\prod_{0<d|n}\prod_{\zeta\in\mu_d(\ol{\bb{Q}})}(t-\zeta)=\prod_{0<d|n}\Phi_d(t).
+        t^n-1=\prod_{\zeta\in\mu_n(\ol{\bb{Q}})}(t-\zeta)=\prod_{0<d|n}\prod_{\textsf{ord}(\zeta)=d}(t-\zeta)=\prod_{0<d|n}\Phi_d(t).
     \end{align*}
     Also, $\phi(n)=\sum\phi(d)$ with $d$ running through all positive divisors of $n$.
 \end{obs}

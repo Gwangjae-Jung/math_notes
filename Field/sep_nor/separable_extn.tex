@@ -43,14 +43,13 @@ Our study begins with the degree which can measure the separability.
     \end{align*}
     for some pairwise distinct elements $\alpha_1, \cdots, \alpha_k\in\ol F$ and $n\in\bb{Z}^{>0}$.
     It is clear from the above expression that $k$ is the number of distinct roots of the minimal polynomial of $\alpha$ over $F$ and that $k$ divides the extension degree of $F(\alpha)/F$.
-    But we will find what $k$ also means, by noticing that $m(t)$ is the irreducible polynomial of $\alpha_i$ for all $i$.
     
     (Without loss of generality, assume $\alpha_1=\alpha$.)
     After choosing an index $i$, by \cref{iet 1}, there is a unique $F$-embedding $\sigma: F(\alpha)\hookrightarrow\ol F$ such that $\sigma(\alpha)=\alpha_i$, so $k\leq|\emb{F(\alpha)/F}|$.\footnote{When considering $\emb{E/F}$ as a set, it is assumed that an algebraic closure $\ol F$ of $F$ is given and we consider $F$-embeddings of $E$ into $\ol F$. Still, its cardinality does not depend on the choice of an algebraic closure of $\ol F$.}
     Conversely, given $\sigma\in\emb{F(\alpha)/F}$, since $m(t)$ is fixed by the action of $\sigma$, $\sigma(\alpha)$ is a root of $m(t)$; because every $F$-embedding of $F(\alpha)$ into $\ol F$  is determined by its action on $\alpha$, we have $k\geq|\emb{F(\alpha)/F}$.
     Therefore, $k$ also denotes the number of all distinct $F$-embeddings of $F(\alpha)$ into $\ol F$.
 \end{obs}
-Generalizing the above observation, we define the separable degree of an algebraic extension as follows:
+Generalizing the above observation, we can define the separable degree of an algebraic extension as follows:
 \begin{defi}\label{old separable degree}
     Let $E/F$ be an algebraic field extension, where $F\leq E\leq \ol F$ with $\ol F$ being the algebraic closure of $F$.
     The separable degree of $E/F$, denoted by $[E:F]_\sep$, is defined by the cardinality of the set of $F$-embeddings of $E$ into $\ol F$.
@@ -116,26 +115,26 @@ Moreover, one may wish to generalize the definition so that $\tau$ extends a fie
             \arrow[u, dash]
         &
         F
-            \arrow[l, "\id{F}"', "="]
+            \arrow[l, "\id{F}", "="']
             \arrow[u, dash]
-            \arrow[r, "\id{F}", "="']
+            \arrow[r, "\id{F}"', "="]
         &
         F
             \arrow[u, dash]
     \end{tikzcd}
     \end{equation*}
     For the diagram to be commutative, it should be satisfied that $f(\tau)=\widetilde{\id{F}}\circ\tau$.
-    By defining $f$ so, we have established a map
+    This establishes a map
     \begin{align*}
         f:
         \{\tau: E\hookrightarrow\ol F: \textsf{$\tau$ is an $F$-embedding}\}
         \rightarrow
         \{\mu: E\hookrightarrow\widetilde F: \textsf{$\mu$ is an $F$-embedding}\},
     \end{align*}
-    \color{brown}which is a bijection\color{black}; thus, we may write without any confusion that $[E: F]_\sep=|\emb{E/F}|$.
+    \color{brown}which is a bijection\color{black}; thus, we may write down $[E: F]_\sep=|\emb{E/F}|$ without confusion.
 \end{obs}
 \begin{obs}
-    As in the preceeding observation, assume that $F\leq E\leq \ol F$ is a tower of algebraic extensions, where $ol F$ is an algebraic closure of $F$.
+    As in the preceeding observation, assume that $F\leq E\leq \ol{F}$ is a tower of algebraic extensions, where $\ol F$ is an algebraic closure of $F$.
     And let $\sigma: F\hookrightarrow\ol F$ be a field embedding, i.e., $\sigma: F\rightarrow \sigma(F)$ is a field isomorphism.
     We will justify that
     \begin{align*}
@@ -190,7 +189,7 @@ Moreover, one may wish to generalize the definition so that $\tau$ extends a fie
     \color{brown}which is a bijection\color{black}.
 \end{obs}
 
-By the preceeding two observations, we may re-define the separable degree of an algebraic extension.
+By the preceeding two observations, we may re-define the separable degree of an algebraic extension as follows.
 \begin{defi}[Separable degree]
     Let $E/F$ be an algebraic field extension and let $\ol F$ be the algebraic closure of $F$.
     And let $\sigma: F\hookrightarrow\ol F$ be a field embedding.
@@ -206,7 +205,7 @@ By the preceeding two observations, we may re-define the separable degree of an 
     Then $\alpha$ is separable over $F$ if and only if its separable degree and extension degree are the same.
 \end{rmk}
 
-In the remaining of this section, we study some properties regarding separable degrees and separability of algebraic field extensions, and the primitive element theorem for separable extensions in the end of this section.
+In the remaining of this section, we will investigate some properties regarding separable degrees and separability of algebraic field extensions, and the primitive element theorem for finite separable extensions.
 
 \begin{lem}\label{separable extn. multiplicativity}
     Suppose that $K/E$ and $E/F$ are algebraic field extensions.
@@ -299,7 +298,7 @@ In fact, \cref{separability equivalence} extends to the following proposition:
 \end{proof}
 
 \begin{thm}[Primitive element theorem]\label{primitive element theorem}
-    Suppose that $E/F$ is a finite separable extension.
+    Suppose that $E/F$ is a finite \textit{separable} extension.
     Then there is an element $\alpha\in E$ such that $E=F(\alpha)$.
 \end{thm}
 \begin{proof}

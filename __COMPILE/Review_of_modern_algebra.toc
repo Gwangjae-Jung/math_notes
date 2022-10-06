@@ -1,62 +1,127 @@
-\contentsline {part}{I\hspace {1em}Ring theory}{4}{part.1}%
-\contentsline {chapter}{\numberline {1}Basic ring theory}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Basic ideal theory}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Field of fractions}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Chinese remainder theorem for rings}{7}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Noetherian ring}{8}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Types of integral domains}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Multiples and divisors}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Irreducible elements and prime elements}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Euclidean domain}{11}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Principal ideal domain}{11}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Unique factorization domain}{12}{section.2.5}%
-\contentsline {section}{\numberline {2.6}The Gaussian integer ring}{13}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Quotients of the Gaussian integer ring}{13}{subsection.2.6.1}%
-\contentsline {chapter}{\numberline {3}Polynomial rings}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Basic properties}{14}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Gauss's lemmas}{16}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Further ring theory}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}The field of real numbers}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Limits and inverse limits}{20}{section.4.2}%
-\contentsline {part}{II\hspace {1em}Field theory}{21}{part.2}%
-\contentsline {chapter}{\numberline {5}Basic field theory}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Field extensions}{22}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Splitting fields}{26}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Algebraic closures}{27}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Isomorphism extension theorems}{28}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Constructible numbers}{31}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Separable extensions and normal extensions}{32}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Separable extensions}{32}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Normal extensions}{36}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Further field theory}{39}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Basic properties of finite fields}{39}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Some problems in field theory}{40}{section.7.2}%
-\contentsline {part}{III\hspace {1em}Galois theory}{42}{part.3}%
-\contentsline {chapter}{\numberline {8}Basic Galois theory}{43}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Basic observation regarding Galois extensions}{43}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Fundamental theorems of finite Galois extensions}{44}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Some problems regarding Galois's theorem}{47}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Abelian extensions and solvable extensions}{48}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Galois groups of polynomials}{49}{section.8.5}%
-\contentsline {chapter}{\numberline {9}Some Galois extensions}{52}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Galois extensions over finite fields}{52}{section.9.1}%
-\contentsline {section}{\numberline {9.2}More on finite fields}{53}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Cyclotomic extensions}{53}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}The splitting field for $t^n-1$ over a finite field}{53}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}The splitting field for $t^n-1$ over ${\mathbb {Q}}$}{54}{subsection.9.3.2}%
-\contentsline {section}{\numberline {9.4}Applications of cyclotomic extensions}{56}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Cyclotomic extensions and abelian extensions}{56}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Constructibility}{57}{subsection.9.4.2}%
-\contentsline {chapter}{\numberline {10}Solving polynomial equations}{58}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Symmetric polynomials and discriminants}{58}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Cyclic extensions}{61}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Radical extensions}{62}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Cubic and quartic polynomials}{63}{section.10.4}%
-\contentsline {chapter}{\numberline {11}Further Galois theory}{64}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Character theory}{64}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Lagrange resolvent}{64}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Norm and trace}{65}{section.11.3}%
-\contentsline {section}{\numberline {11.4}Infinite Galois extensions}{65}{section.11.4}%
-\contentsline {chapter}{\numberline {A}Proof of some propositions}{66}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{66}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{66}{section.A.2}%
+\contentsline {part}{I\hspace {1em}Structured objects}{5}{part.1}%
+\contentsline {chapter}{\numberline {1}Basic object theory}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Structured objects in modern algebra}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Subobjects}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Quotient objects}{8}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Isomorphism theorems}{9}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}The fourth isomorphism theorem for groups and its proof}{10}{subsection.1.4.1}%
+\contentsline {chapter}{\numberline {2}Free objects}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Remarks on free objects}{12}{section.2.1}%
+\contentsline {part}{II\hspace {1em}Group theory}{14}{part.2}%
+\contentsline {chapter}{\numberline {3}Basic group theory}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Quotient group}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Some important propositions}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Cauchy's group theorem}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Conjugacy}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Some automorphism groups}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Difficult order counting}{17}{subsection.3.2.4}%
+\contentsline {chapter}{\numberline {4}Group action}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Basic theory of group action}{18}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Groups acting on quotient groups by left multiplication}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Groups acting on itself by conjugation}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Automorphism groups}{18}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Sylow's theorem}{18}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Semidirect product of groups}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Recognition theorem 1: Recognizing as a direct product}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Recognition theorem 2: Recognizing as a semidirect product}{19}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Free groups}{20}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Remarks on free abelian groups}{20}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Further group theory}{21}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Generated normal subgroups}{21}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Chinese remainder theorem for groups}{21}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Chains of groups}{21}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Commutator subgroups}{24}{section.7.4}%
+\contentsline {section}{\numberline {7.5}A bijection in a finite abelian group}{24}{section.7.5}%
+\contentsline {part}{III\hspace {1em}Ring theory}{25}{part.3}%
+\contentsline {chapter}{\numberline {8}Basic ring theory}{26}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Basic ideal theory}{26}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Field of fractions}{27}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Chinese remainder theorem for rings}{28}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Noetherian ring}{29}{section.8.4}%
+\contentsline {chapter}{\numberline {9}Types of integral domains}{30}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Multiples and divisors}{30}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Irreducible elements and prime elements}{31}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Euclidean domain}{32}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Principal ideal domain}{32}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Unique factorization domain}{33}{section.9.5}%
+\contentsline {section}{\numberline {9.6}The Gaussian integer ring}{34}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Quotients of the Gaussian integer ring}{34}{subsection.9.6.1}%
+\contentsline {chapter}{\numberline {10}Polynomial rings}{35}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Basic properties}{35}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Gauss's lemmas}{37}{section.10.2}%
+\contentsline {chapter}{\numberline {11}Further ring theory}{40}{chapter.11}%
+\contentsline {section}{\numberline {11.1}The field of real numbers}{40}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Limits and inverse limits}{41}{section.11.2}%
+\contentsline {part}{IV\hspace {1em}Module theory}{42}{part.4}%
+\contentsline {chapter}{\numberline {12}Basic module theory}{43}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Annihilation in submodules}{43}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Examples of submodules}{45}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Direct sums of submodules}{45}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Direct products of sets}{45}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}External direct sum}{46}{subsection.12.3.2}%
+\contentsline {subsection}{\numberline {12.3.3}Internal direct sum}{48}{subsection.12.3.3}%
+\contentsline {subsection}{\numberline {12.3.4}Identifying direct sums}{48}{subsection.12.3.4}%
+\contentsline {section}{\numberline {12.4}The Chinese remainder theorem for modules}{49}{section.12.4}%
+\contentsline {section}{\numberline {12.5}More on modules over polynomial rings over fields}{50}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}Annihilator ideals}{50}{subsection.12.5.1}%
+\contentsline {subsection}{\numberline {12.5.2}Subspaces which are invariant under linear operators}{52}{subsection.12.5.2}%
+\contentsline {subsection}{\numberline {12.5.3}Subspaces which are cyclic with respect to linear operators}{53}{subsection.12.5.3}%
+\contentsline {chapter}{\numberline {13}Free modules}{56}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Remarks on free modules}{56}{section.13.1}%
+\contentsline {chapter}{\numberline {14}Linear algebra over principal ideal domains - Part 1}{57}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Ranks of free modules}{57}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Finitely generated module over a principal ideal domain}{58}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Linear algebra over the ring of integers}{61}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Another definition of the rank}{64}{section.14.4}%
+\contentsline {chapter}{\numberline {15}Linear algebra over principal ideal domains - Part 2}{65}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Primary decomposition}{65}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Cyclic decomposition}{67}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Applications of structure theorems}{72}{section.15.3}%
+\contentsline {subsection}{\numberline {15.3.1}Finitely generated abelian groups}{72}{subsection.15.3.1}%
+\contentsline {subsection}{\numberline {15.3.2}Vector spaces over fields}{73}{subsection.15.3.2}%
+\contentsline {subsection}{\numberline {15.3.3}Jordan canonical form}{74}{subsection.15.3.3}%
+\contentsline {chapter}{\numberline {16}Further module theory}{76}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Tensor products of modules}{76}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Flat modules and injective modules}{76}{section.16.2}%
+\contentsline {part}{V\hspace {1em}Field theory}{77}{part.5}%
+\contentsline {chapter}{\numberline {17}Basic field theory}{78}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Field extensions}{78}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Splitting fields}{82}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Algebraic closures}{83}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Isomorphism extension theorems}{84}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Constructible numbers}{87}{section.17.5}%
+\contentsline {chapter}{\numberline {18}Separable extensions and normal extensions}{88}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Separable extensions}{88}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Normal extensions}{92}{section.18.2}%
+\contentsline {chapter}{\numberline {19}Further field theory}{95}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Basic properties of finite fields}{95}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Some problems in field theory}{96}{section.19.2}%
+\contentsline {part}{VI\hspace {1em}Galois theory}{98}{part.6}%
+\contentsline {chapter}{\numberline {20}Basic Galois theory}{99}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Basic observation regarding Galois extensions}{99}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Fundamental theorems of finite Galois extensions}{100}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Some problems regarding Galois's theorem}{103}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Abelian extensions and solvable extensions}{104}{section.20.4}%
+\contentsline {section}{\numberline {20.5}Galois groups of polynomials}{105}{section.20.5}%
+\contentsline {chapter}{\numberline {21}Some Galois extensions}{108}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Galois extensions over finite fields}{108}{section.21.1}%
+\contentsline {section}{\numberline {21.2}More on finite fields}{109}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Cyclotomic extensions}{109}{section.21.3}%
+\contentsline {subsection}{\numberline {21.3.1}The splitting field for $t^n-1$ over a finite field}{109}{subsection.21.3.1}%
+\contentsline {subsection}{\numberline {21.3.2}The splitting field for $t^n-1$ over ${\mathbb {Q}}$}{110}{subsection.21.3.2}%
+\contentsline {section}{\numberline {21.4}Applications of cyclotomic extensions}{112}{section.21.4}%
+\contentsline {subsection}{\numberline {21.4.1}Cyclotomic extensions and abelian extensions}{112}{subsection.21.4.1}%
+\contentsline {subsection}{\numberline {21.4.2}Constructibility}{113}{subsection.21.4.2}%
+\contentsline {chapter}{\numberline {22}Solving polynomial equations}{114}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Symmetric polynomials and discriminants}{114}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Cyclic extensions}{117}{section.22.2}%
+\contentsline {section}{\numberline {22.3}Radical extensions}{118}{section.22.3}%
+\contentsline {section}{\numberline {22.4}Cubic and quartic polynomials}{119}{section.22.4}%
+\contentsline {chapter}{\numberline {23}Further Galois theory}{120}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Character theory}{120}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Lagrange resolvent}{120}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Norm and trace}{121}{section.23.3}%
+\contentsline {section}{\numberline {23.4}Infinite Galois extensions}{121}{section.23.4}%
+\contentsline {chapter}{\numberline {A}Proof of some propositions}{122}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{122}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{122}{section.A.2}%
