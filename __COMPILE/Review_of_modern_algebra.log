@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  6 OCT 2022 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  8 OCT 2022 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,58 +667,58 @@ LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 5
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [68] [69] [70]) (../Module/lin_alg_pid_2/application_of_structure_theorems.tex [71] [72] [73] [74]) [75]
 Chapter 16.
-) (../Field/__FIELD_THEORY__.tex [76
+(../Module/further_module_thoery/tensor_prod.tex) (../Module/further_module_thoery/exact_seq_flat_proj_md.tex) (../Module/further_module_thoery/some_problems_in_module_theory.tex [76
 
-] [77
+])) (../Field/__FIELD_THEORY__.tex [77] [78
 
 ]
 Chapter 17.
-(../Field/algebraic_extensions/alg_extn.tex [78
+(../Field/algebraic_extensions/alg_extn.tex [79
 
-] [79] [80]) (../Field/algebraic_extensions/splitting_field.tex [81]) (../Field/algebraic_extensions/alg_cl.tex [82] [83]) (../Field/algebraic_extensions/iet.tex [84] [85]) (../Field/algebraic_extensions/constructible_numbers.tex [86]) [87]
+] [80] [81]) (../Field/algebraic_extensions/splitting_field.tex [82]) (../Field/algebraic_extensions/alg_cl.tex [83] [84]) (../Field/algebraic_extensions/iet.tex [85] [86]) (../Field/algebraic_extensions/constructible_numbers.tex [87]) [88]
 Chapter 18.
-(../Field/sep_nor/separable_extn.tex [88
+(../Field/sep_nor/separable_extn.tex [89
 
-] [89] [90]) (../Field/sep_nor/normal_extn.tex [91] [92] [93]) [94]
+] [90] [91]) (../Field/sep_nor/normal_extn.tex [92] [93] [94]) [95]
 Chapter 19.
-(../Field/additional/finite_fields_basic.tex [95
+(../Field/additional/finite_fields_basic.tex [96
 
-]) (../Field/additional/some_problems.tex [96])) (../Galois_theory/__GALOIS_THEORY__.tex [97] [98
+]) (../Field/additional/some_problems.tex [97])) (../Galois_theory/__GALOIS_THEORY__.tex [98] [99
 
 ]
 Chapter 20.
-(../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex [99
+(../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex [100
 
-]) (../Galois_theory/basic_galois_theory/Galois's_theorem.tex [100] [101] [102]) (../Galois_theory/basic_galois_theory/Galois's_theorem_prob.tex [103]) (../Galois_theory/basic_galois_theory/abelian_solveble.tex [104]) (../Galois_theory/basic_galois_theory/gal_gp_of_poly.tex [105] [106]) [107]
+]) (../Galois_theory/basic_galois_theory/Galois's_theorem.tex [101] [102] [103]) (../Galois_theory/basic_galois_theory/Galois's_theorem_prob.tex [104]) (../Galois_theory/basic_galois_theory/abelian_solveble.tex [105]) (../Galois_theory/basic_galois_theory/gal_gp_of_poly.tex [106] [107]) [108]
 Chapter 21.
-(../Galois_theory/some_Galois_extensions/finite_fields_Galois.tex [108
+(../Galois_theory/some_Galois_extensions/finite_fields_Galois.tex [109
 
-]) (../Galois_theory/some_Galois_extensions/finite_fields_application.tex) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions.tex [109] [110] [111]) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions_application.tex [112]) [113]
+]) (../Galois_theory/some_Galois_extensions/finite_fields_application.tex) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions.tex [110] [111] [112]) (../Galois_theory/some_Galois_extensions/cyclotomic_extensions_application.tex [113]) [114]
 Chapter 22.
-(../Galois_theory/solving_polynomial_equations/sym_poly_and_disc.tex [114
+(../Galois_theory/solving_polynomial_equations/sym_poly_and_disc.tex [115
 
-] [115]) (../Galois_theory/solving_polynomial_equations/cyclic_extn.tex [116]) (../Galois_theory/solving_polynomial_equations/radical_extn.tex [117] [118]) (../Galois_theory/solving_polynomial_equations/cubic_quartic.tex) [119]
+] [116]) (../Galois_theory/solving_polynomial_equations/cyclic_extn.tex [117]) (../Galois_theory/solving_polynomial_equations/radical_extn.tex [118] [119]) (../Galois_theory/solving_polynomial_equations/cubic_quartic.tex) [120]
 Chapter 23.
-(../Galois_theory/additional/character_theory.tex) (../Galois_theory/additional/Lagrange_resolvent.tex [120
+(../Galois_theory/additional/character_theory.tex) (../Galois_theory/additional/Lagrange_resolvent.tex [121
 
-]) (../Galois_theory/additional/norm_and_trace.tex) (../Galois_theory/additional/infinite_Galois_extn.tex)) (../Appendix/__Appendix__.tex [121]
+]) (../Galois_theory/additional/norm_and_trace.tex) (../Galois_theory/additional/infinite_Galois_extn.tex)) (../Appendix/__Appendix__.tex [122]
 Appendix A.
-(../Appendix/proofs/infinitely_many_primes_modulo_an_integer.tex) (../Appendix/proofs/quadratic_cyclotomic_extension_of_Q.tex)) [122
+(../Appendix/proofs/infinitely_many_primes_modulo_an_integer.tex) (../Appendix/proofs/quadratic_cyclotomic_extension_of_Q.tex)) [123
 
 ] (./Review_of_modern_algebra.aux) ) 
 Here is how much of TeX's memory you used:
- 26590 strings out of 480210
- 529760 string characters out of 5893466
+ 26616 strings out of 480210
+ 530818 string characters out of 5893466
  764096 words of memory out of 5000000
- 43201 multiletter control sequences out of 15000+600000
+ 43212 multiletter control sequences out of 15000+600000
  484503 words of font info for 83 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  119i,19n,121p,812b,1140s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Review_of_modern_algebra.pdf (123 pages, 837911 bytes).
+Output written on Review_of_modern_algebra.pdf (124 pages, 844896 bytes).
 PDF statistics:
- 1875 PDF objects out of 2073 (max. 8388607)
- 1678 compressed objects within 17 object streams
- 639 named destinations out of 1000 (max. 500000)
- 869 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1887 PDF objects out of 2073 (max. 8388607)
+ 1689 compressed objects within 17 object streams
+ 644 named destinations out of 1000 (max. 500000)
+ 877 words of extra memory for PDF output out of 10000 (max. 10000000)
 

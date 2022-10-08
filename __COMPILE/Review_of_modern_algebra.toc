@@ -82,46 +82,47 @@
 \contentsline {subsection}{\numberline {15.3.3}Jordan canonical form}{74}{subsection.15.3.3}%
 \contentsline {chapter}{\numberline {16}Further module theory}{76}{chapter.16}%
 \contentsline {section}{\numberline {16.1}Tensor products of modules}{76}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Flat modules and injective modules}{76}{section.16.2}%
-\contentsline {part}{V\hspace {1em}Field theory}{77}{part.5}%
-\contentsline {chapter}{\numberline {17}Basic field theory}{78}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Field extensions}{78}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Splitting fields}{82}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Algebraic closures}{83}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Isomorphism extension theorems}{84}{section.17.4}%
-\contentsline {section}{\numberline {17.5}Constructible numbers}{87}{section.17.5}%
-\contentsline {chapter}{\numberline {18}Separable extensions and normal extensions}{88}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Separable extensions}{88}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Normal extensions}{92}{section.18.2}%
-\contentsline {chapter}{\numberline {19}Further field theory}{95}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Basic properties of finite fields}{95}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Some problems in field theory}{96}{section.19.2}%
-\contentsline {part}{VI\hspace {1em}Galois theory}{98}{part.6}%
-\contentsline {chapter}{\numberline {20}Basic Galois theory}{99}{chapter.20}%
-\contentsline {section}{\numberline {20.1}Basic observation regarding Galois extensions}{99}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Fundamental theorems of finite Galois extensions}{100}{section.20.2}%
-\contentsline {section}{\numberline {20.3}Some problems regarding Galois's theorem}{103}{section.20.3}%
-\contentsline {section}{\numberline {20.4}Abelian extensions and solvable extensions}{104}{section.20.4}%
-\contentsline {section}{\numberline {20.5}Galois groups of polynomials}{105}{section.20.5}%
-\contentsline {chapter}{\numberline {21}Some Galois extensions}{108}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Galois extensions over finite fields}{108}{section.21.1}%
-\contentsline {section}{\numberline {21.2}More on finite fields}{109}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Cyclotomic extensions}{109}{section.21.3}%
-\contentsline {subsection}{\numberline {21.3.1}The splitting field for $t^n-1$ over a finite field}{109}{subsection.21.3.1}%
-\contentsline {subsection}{\numberline {21.3.2}The splitting field for $t^n-1$ over ${\mathbb {Q}}$}{110}{subsection.21.3.2}%
-\contentsline {section}{\numberline {21.4}Applications of cyclotomic extensions}{112}{section.21.4}%
-\contentsline {subsection}{\numberline {21.4.1}Cyclotomic extensions and abelian extensions}{112}{subsection.21.4.1}%
-\contentsline {subsection}{\numberline {21.4.2}Constructibility}{113}{subsection.21.4.2}%
-\contentsline {chapter}{\numberline {22}Solving polynomial equations}{114}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Symmetric polynomials and discriminants}{114}{section.22.1}%
-\contentsline {section}{\numberline {22.2}Cyclic extensions}{117}{section.22.2}%
-\contentsline {section}{\numberline {22.3}Radical extensions}{118}{section.22.3}%
-\contentsline {section}{\numberline {22.4}Cubic and quartic polynomials}{119}{section.22.4}%
-\contentsline {chapter}{\numberline {23}Further Galois theory}{120}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Character theory}{120}{section.23.1}%
-\contentsline {section}{\numberline {23.2}Lagrange resolvent}{120}{section.23.2}%
-\contentsline {section}{\numberline {23.3}Norm and trace}{121}{section.23.3}%
-\contentsline {section}{\numberline {23.4}Infinite Galois extensions}{121}{section.23.4}%
-\contentsline {chapter}{\numberline {A}Proof of some propositions}{122}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{122}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{122}{section.A.2}%
+\contentsline {section}{\numberline {16.2}Exact sequences, flat and projective modules}{76}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Some problems in module theory}{76}{section.16.3}%
+\contentsline {part}{V\hspace {1em}Field theory}{78}{part.5}%
+\contentsline {chapter}{\numberline {17}Basic field theory}{79}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Field extensions}{79}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Splitting fields}{83}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Algebraic closures}{84}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Isomorphism extension theorems}{85}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Constructible numbers}{88}{section.17.5}%
+\contentsline {chapter}{\numberline {18}Separable extensions and normal extensions}{89}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Separable extensions}{89}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Normal extensions}{93}{section.18.2}%
+\contentsline {chapter}{\numberline {19}Further field theory}{96}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Basic properties of finite fields}{96}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Some problems in field theory}{97}{section.19.2}%
+\contentsline {part}{VI\hspace {1em}Galois theory}{99}{part.6}%
+\contentsline {chapter}{\numberline {20}Basic Galois theory}{100}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Basic observation regarding Galois extensions}{100}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Fundamental theorems of finite Galois extensions}{101}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Some problems regarding Galois's theorem}{104}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Abelian extensions and solvable extensions}{105}{section.20.4}%
+\contentsline {section}{\numberline {20.5}Galois groups of polynomials}{106}{section.20.5}%
+\contentsline {chapter}{\numberline {21}Some Galois extensions}{109}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Galois extensions over finite fields}{109}{section.21.1}%
+\contentsline {section}{\numberline {21.2}More on finite fields}{110}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Cyclotomic extensions}{110}{section.21.3}%
+\contentsline {subsection}{\numberline {21.3.1}The splitting field for $t^n-1$ over a finite field}{110}{subsection.21.3.1}%
+\contentsline {subsection}{\numberline {21.3.2}The splitting field for $t^n-1$ over ${\mathbb {Q}}$}{111}{subsection.21.3.2}%
+\contentsline {section}{\numberline {21.4}Applications of cyclotomic extensions}{113}{section.21.4}%
+\contentsline {subsection}{\numberline {21.4.1}Cyclotomic extensions and abelian extensions}{113}{subsection.21.4.1}%
+\contentsline {subsection}{\numberline {21.4.2}Constructibility}{114}{subsection.21.4.2}%
+\contentsline {chapter}{\numberline {22}Solving polynomial equations}{115}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Symmetric polynomials and discriminants}{115}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Cyclic extensions}{118}{section.22.2}%
+\contentsline {section}{\numberline {22.3}Radical extensions}{119}{section.22.3}%
+\contentsline {section}{\numberline {22.4}Cubic and quartic polynomials}{120}{section.22.4}%
+\contentsline {chapter}{\numberline {23}Further Galois theory}{121}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Character theory}{121}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Lagrange resolvent}{121}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Norm and trace}{122}{section.23.3}%
+\contentsline {section}{\numberline {23.4}Infinite Galois extensions}{122}{section.23.4}%
+\contentsline {chapter}{\numberline {A}Proof of some propositions}{123}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{123}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{123}{section.A.2}%

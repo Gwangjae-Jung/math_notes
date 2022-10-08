@@ -137,7 +137,7 @@ In fact, the invariants determines the similarity class of the operator $T$.
 
 In \cref{T-cyclic basic}, it is proved that if $V$ is $T$-cyclic then $\phi_T(t)=m_T(t)$.
 The statement and the proof of the converse is given as follows.
-\begin{prop}
+\begin{prop}\label{char_poly and min_poly are the same implies cyclicity}
     Suppose that the characteristic polynomial and the minimal polynomial of $T$ are the same.
     Then $V$ is $T$-cyclic, i.e., $V$ is a cyclic $F[t]$-module.
 \end{prop}
@@ -206,3 +206,24 @@ and gathering all the (reversed) bases, we obtain the Jordan canonical form of $
     \end{align*}
     In particular, applying this idea to a Jordan canonical form, we find that a Jordan canonical form is similar to its transposition over $F$; implying that $A\sim A^T$ over $F$.
 \end{obs}
+
+\begin{prob}[Exercise 12.2.15, \textit{Abstract Algebra}, third edition]
+    Determine up to similarity all 2$\times$2 matrices over $\bb{Q}$ and over $\bb{C}$, respectively.
+\end{prob}
+\begin{sol}
+    Since $A$ satisfies the polynomial $t^4-1=(t-1)(t+1)(t^2+1)$ over $\bb{Q}$, the minimal polynomial of $A$ over $\bb{Q}$ is among the following polynomials over $\bb{Q}$ (note that the degree of the minimal polynomial of $A$ over $\bb{Q}$ is at most 2):
+    \begin{align*}
+        t-1,\quad t+1,\quad (t+1)(t-1),\quad t^2+1
+    \end{align*}
+    The first three cases induce the rational canonical forms $\begin{pmatrix}1&0\\0&1\end{pmatrix},\,\begin{pmatrix}-1&0\\0&-1\end{pmatrix},\,\begin{pmatrix}1&0\\0&-1\end{pmatrix}$ over $\bb{Q}$, respectively, which are not of order 4.
+    The last case induces the rational canonical form $\begin{pmatrix}0&-1\\1&0\end{pmatrix}$ over $\bb{Q}$ of order 4.
+
+    When $A$ is understood as a matrix over $\bb{C}$, then the minimal polynomial of $A$ over $\bb{C}$ divides $(t-1)(t+1)(t-i)(t+i)$.
+    Among such cases, the only choices of the minimal polynomial $m(t)$ of $A$ over $\bb{C}$ for which $A$ is of order 4 are given as follows:
+    \begin{eqnarray*}
+        \textsf{(\romannumeral 1)}&\quad&m(t)=t\pm i,\, A\sim\begin{pmatrix}\pm i&0\\0&\pm i\end{pmatrix}\quad\textsf{(2 distinct similarity classes)}\\
+        \textsf{(\romannumeral 2)}&\quad&m(t)=(t\pm i)(t\pm 1),\, A\sim\begin{pmatrix}\pm i&0\\0&\pm 1\end{pmatrix}\quad\textsf{(4 distinct similarity classes)}
+    \end{eqnarray*}
+\end{sol}
+
+Read also \textit{The conjugacy classes of $GL(2, \bb{F}_q)$}, written by Harold Cooper.

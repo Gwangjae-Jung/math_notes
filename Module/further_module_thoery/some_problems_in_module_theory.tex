@@ -1,0 +1,71 @@
+\section{Some problems in module theory}
+
+\begin{prob}
+    Let $p$ be a positive prime number and let $n$ be a positive integer.
+    And let $F: \bb{F}_{p^n}\rightarrow\bb{F}_{p^n}$ be the Frobenius map.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Note that $F\in\aut{\bb{F}_{p^n}/\bb{F}_p}$.
+            Show that the order of $F$ is $n$.
+        }
+        \item[(b)]
+        {
+            Understand $\bb{F}_{p^n}$ as an $n$-dimensional vector space over $\bb{F}_p$.
+            Find the rational canonical form and the Jordan canonical form of $F$.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $\alpha$ is a primitive element of $\bb{F}_{p^n}/\bb{F}_p$, then the order of $\alpha\in\bb{F}_{p^n}^\times$ is $n$.
+        }
+        \item[(b)]
+        {
+            By (a), $F$ is satisfied by the polynomial $f(t)=t^n-1\in\bb{F}_p[t]$.
+            We wish to justify that $f(t)$ is the minimal polynomial of $F$ over $\bb{F}_p$.
+            Suppose that $f(t)$ is not the minimal polynomial of $F$ over $\bb{F}_p$.
+            Then, there is a nonconstant polynomial $g(t)$ of degree $k<n$ over $\bb{F}_p$ which satisfies $F$.
+            In this case, we have
+            \begin{align*}
+                \sum_{i=0}^k a_ix^{p^i}=g(F)(x)=O\alpha=0\quad\textsf{($a_i\in\bb{F}_p$ for $i=0, 1, \cdots, k$)}
+            \end{align*}
+            for all $x\in\bb{F}_{p^n}$.
+            So, every element of $\bb{F}_{p^n}$ is a root of a polynomial of degree $p^k<p^n$, a contradiction.
+
+            Therefore, $f(t)$ is the minimal polynomial (and the characteristic polynomial) of $F$ over $\bb{F}_p$.
+            Hence, the rational canonical form of $F$ over $\bb{F}_p$ is given by
+            \begin{align*}
+                \left(\begin{array}{ccccc|c}
+                        0   &   0   &   0   &   \cdots  &   0   &   1   \\\hline
+                        1   &   0   &   0   &   \cdots  &   0   &   0   \\
+                        0   &   1   &   0   &   \cdots  &   0   &   0   \\
+                    \vdots  &\vdots &\vdots &   \ddots  &\vdots & \vdots\\
+                        0   &   0   &   0   &   \cdots  &   0   &   0   \\
+                        0   &   0   &   0   &   \cdots  &   1   &   0   \\
+                \end{array}\right).
+            \end{align*}
+
+            To find the Jordan canonical form of $F$ over $\bb{F}_p$, assume that $n$ is not divisible by $p$.
+            Then $f(t)$ is separable, so $F$ is diagonalizable, with the eigenvalues being all $n$-th roots of unity.
+            Suppose $n=p^a m$, where $a$ and $m$ are positive integers and $p$ does not divide $m$.
+            Then $f(t)=(t^m-1)^{p^a}$, so all distinct roots of $f(t)$ are given as $\zeta_m^i$ for $i=0, 1, \cdots, m-1$, where $\zeta_m$ is a primitive $m$-th root of unity.
+            In this case, the Jordan canonical form of $F$ is $\diag(J_0, J_1, \cdots, J_{m-1})$, where
+            \begin{align*}
+                J_i=
+                \left(\begin{array}{ccccccc}
+                    \zeta_m^i   &   1   &   0    &   \cdots  &   0   &   0   \\
+                        0   &\zeta_m^i  &   1    &   \cdots  &   0   &   0   \\
+                        0   &   0   &\zeta_m^i   &   \cdots  &   0   &   0   \\
+                    \vdots  &\vdots &\vdots      &   \ddots  &\ddots &\vdots \\
+                        0   &   0   &   0    &   \cdots  &\zeta_m^i  &   1   \\
+                        0   &   0   &   0    &   \cdots      &   0   &\zeta_m^i
+                \end{array}\right)
+                \in\mc{M}_{p^a, p^a}(\bb{F}_p)
+            \end{align*}
+            for each $i=0, 1, \cdots, m-1$.
+        }
+    \end{enumerate}
+\end{sol}
