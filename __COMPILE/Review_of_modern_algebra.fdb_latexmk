@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1665207135 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1665207139
+["pdflatex"] 1665927183 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1665927194
   "../../my_settings/pangpang_conditionals.tex" 1664777689 101 42c63d0f7a65026f3b9a3f0663ded71a ""
-  "../../my_settings/pangpang_definitions.tex" 1664777751 1873 3a724d679e82af83a70370d2d4b1e646 ""
+  "../../my_settings/pangpang_definitions.tex" 1665212687 1873 1db7ccc734d24a0a0fe0273e568770e9 ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
   "../../my_settings/pangpang_preamble.tex" 1661567046 367 b1b930a25338624377b274bbe3a3b66e ""
   "../../my_settings/pangpang_thmstyle.tex" 1661566526 1142 4292e3389969e1a079bb179f8d33e0c7 ""
@@ -16,7 +16,7 @@
   "../Field/algebraic_extensions/constructible_numbers.tex" 1661665651 1935 311bbc20c50e77a3aad7eb1894d72e80 ""
   "../Field/algebraic_extensions/iet.tex" 1664425298 11570 85487993e03de00195ffd124a513b9a1 ""
   "../Field/algebraic_extensions/splitting_field.tex" 1664858355 5381 4717f680844434893f53d0ea6ae2bdcd ""
-  "../Field/sep_nor/normal_extn.tex" 1663223697 11528 f4d0d6562ea8f3004c6674be40ff1cce ""
+  "../Field/sep_nor/normal_extn.tex" 1665927168 11581 ab0546f6db6924e946ded249ef3f243e ""
   "../Field/sep_nor/separable_extn.tex" 1665038317 16921 9907fc1e36b52e6da29cfc8a895803a8 ""
   "../Galois_theory/__GALOIS_THEORY__.tex" 1662106719 1427 6cd2b461ca045e9da3c41dbca250146d ""
   "../Galois_theory/additional/Lagrange_resolvent.tex" 1662012900 2083 fe42b283a4d31e863ee8bccee8c17726 ""
@@ -95,9 +95,9 @@
   "../Structured_objects/basic_object_theory/subobjects.tex" 1660104414 2520 25e8fd96672ca39aadaa5efb7c6bc945 ""
   "../Structured_objects/free_objects/free_objects.tex" 1661753114 6641 f3ed24cf4859a728dc5d1a03ca7d8709 ""
   "../preface.tex" 1662105076 326 396e21dc85b06f25d47a5e82166ad8ba ""
-  "Review_of_modern_algebra.aux" 1665207139 71028 3442c0e209815dc2682647fc437d4f2c "pdflatex"
+  "Review_of_modern_algebra.aux" 1665927193 71069 8ed721202f726b585d56bff3e4e22917 "pdflatex"
   "Review_of_modern_algebra.tex" 1665044963 769 551d32ee128601cc86f2c62b23c5e90f ""
-  "Review_of_modern_algebra.toc" 1665207139 11450 b1cbc5fddb4f33dbe18a3e6f435a8b60 "pdflatex"
+  "Review_of_modern_algebra.toc" 1665927193 11450 b1cbc5fddb4f33dbe18a3e6f435a8b60 "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
