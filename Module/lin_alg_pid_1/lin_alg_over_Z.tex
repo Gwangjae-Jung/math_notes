@@ -139,7 +139,7 @@ In the remaining of this section, we practice finding a $\bb{Z}$-basis of a $\bb
 Before studying some particular examples, we first investigate the following proposition.
 \begin{prop}
     Let $\{x_1, \cdots, x_n\}$ be a subset of $\bb{Z}^n$ and let $N=\sum_{i=1}^n \bb{Z}x_i$.
-    Then the followings are equivalent:
+    Then the following are equivalent:
     \begin{enumerate}
         \item[(a)]
         {
@@ -159,15 +159,16 @@ Before studying some particular examples, we first investigate the following pro
 \begin{proof}
     Let $\mc{B}=\{x_1, \cdots, x_n\}$ and $\mc{E}=\{e_1, \cdots, e_n\}$, and consider the natural inclusion $\imath: N\hookrightarrow\bb{Z}^n$ so that we have the matrix representation $A:=[\imath]^\mc{B}_\mc{E}=(x_1, \cdots, x_n)\in\mc{M}_{n, n}(\bb{Z})$.
     
-    [(a)$\Rightarrow$(b)]
+    \hangindent=0.65cm
+    \noindent(a)$\Rightarrow$(b)
     Since $\mc{B}$ is a $\bb{Z}$-basis of $N$, $\mc{B}$ is a $\bb{Q}$-basis of the $\bb{Q}$-vector space $\sum_{i=1}^n\bb{Q}x_i=\bb{Q}^n$.
 
-    [(b)$\Rightarrow$(c)]
+    \noindent(b)$\Rightarrow$(c)
     By \cref{reduction to a diagonal matrix}, there are matrices $U, V\in GL_n(\bb{Z})$ such that $UAV$ is diagonal.
     Because $\det(A)\neq 0$, each diagonal entry of $UAV$ is nonzero.
     By \cref{corollary over Z}, $[\bb{Z}^n: N]=|d_1\cdot\cdots\cdot d_n|(=\det(A))|<\infty$.
 
-    [(c)$\Rightarrow$(a)]
+    \noindent(c)$\Rightarrow$(a)
     Since the index of $N$ in $\bb{Z}^n$ is finite, by the isomorphism suggested in \cref{corollary over Z}, the free part of $\bb{Z}^n/N$ should be zero.
     Therefore, $\rank_\bb{Z}(N)=n$.
 \end{proof}
