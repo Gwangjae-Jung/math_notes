@@ -26,6 +26,10 @@
         }
         \item[(d)]
         {
+            For topological spaces $X$, $Y$, and $Z$, if $p: X\rightarrow Y$ and $q: Y\rightarrow Z$ are quotient maps, then $q\circ p: X\rightarrow Z$ is also a quotient map.
+        }
+        \item[(e)]
+        {
             A retraction is a quotient map.\footnote{Given a topological space $X$ and its subspace $A$, a continuous map $r: X\rightarrow A$ such that $r(a)=a$ for all $a\in A$ is called a retraction of $X$ onto $A$.}
         }
     \end{enumerate}
@@ -51,13 +55,19 @@ One has, however, the following proposition:
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    We first verify the following two equations:
-    \begin{align*}
-        q^{-1}(V)=p^{-1}(V)\,(V\subset p(A))\quad\textsf{and}\quad
-        p(U\cap A)=p(U)\cap p(A)\,(U\subset X).
-    \end{align*}
-    To check the first equation, we note that since $V\subset p(A)$ and $A$ is saturated, $p^{-1}(V)$ is contained in $A$, hence $q^{-1}(V)=p^{-1}(V)$.
-    To check the second equation, we note the inclusion $p(U\cap A)\subset p(U)\cap p(A)$.
+    We first verify the following two statements:
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            For any subset $V$ of $p(A)$, $q^{-1}(V)=p^{-1}(V)$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Whenever $U\subset X$, $p(U\cap A)=p(U)\cap p(A)$.
+        }
+    \end{enumerate}
+    To verify (\romannumeral 1), we note that since $V\subset p(A)$ and $A$ is saturated, $p^{-1}(V)$ is contained in $A$, hence $q^{-1}(V)=p^{-1}(V)$.
+    To verify (\romannumeral 2), we note the inclusion $p(U\cap A)\subset p(U)\cap p(A)$.
     If $y\in p(U)\cap p(A)$, then $y=p(u)=p(a)$ for some $u\in U$ and $a\in A$.
     Because $A$ is saturated, $p^{-1}(\{y\})$ is contained in $A$, so $u\in A$.
     \begin{enumerate}
@@ -79,16 +89,7 @@ One has, however, the following proposition:
     The same results hold for closed cases, which can be proved by replacing the words ``open'' by ``closed.''
 \end{proof}
 \begin{rmk}
-    \begin{enumerate}
-        \item[(a)]
-        {
-            It is clear that the composite of quotient maps is again a quotient map.
-        }
-        \item[(b)]
-        {
-            Cartesian product of quotient maps need not be a quotient map.
-        }
-    \end{enumerate}
+    Cartesian product of quotient maps need not be a quotient map.
 \end{rmk}
 
 \subsection{Quotient topology}
@@ -106,7 +107,7 @@ One has, however, the following proposition:
 \end{prob}
 \begin{defi}[Quotient space]
     Let $X$ be a topological space and let $X^*$ be a partition of $X$.
-    Let $p: X\rightarrow X^*$ be a surjection that maps each point of $X$ to the element of $X^*$ containing the point.
+    Let $p: X\rightarrow X^*$ be the natural projection, i.e., the surjection that maps each point of $X$ to the member of $X^*$ containing the point.
     In the quotient topology induced by $p$, the space $X^*$ is called a quotient space.
 \end{defi}
 \begin{rmk}
@@ -116,7 +117,7 @@ One has, however, the following proposition:
 \begin{thm}
     Let $p: X\rightarrow Y$ be a quotient map.
     Let $Z$ be a topological space and $f: X\rightarrow Z$ be a map which is constant on each set $p^{-1}(\{y\})$ for $y\in Y$.
-    Then $f$ induces a map $\ol{f}: Y\rightarrow Z$ such that $\ol{f}\circ p=f$.
+    Then $f$ induces a unique map $\ol{f}: Y\rightarrow Z$ such that $\ol{f}\circ p=f$.
     Furthermore,
     \begin{enumerate}
         \item[(a)]
@@ -141,26 +142,22 @@ One has, however, the following proposition:
     \end{equation*}
 \end{thm}
 \begin{proof}
-    Well-definedness of $\ol f$ is almost clear.
-    To prove (a) and (b), note that $f^{-1}=p^{-1}\circ(\ol f)^{-1}$.
-    \begin{enumerate}
-        \item[(a)]
-        {
-            It is clear that $f$ is continuous if $\ol f$ is continuous.
-            To show the converse, assume $f$ is continuous and $U$ is an open subspace of $Z$.
-            Since $f^{-1}(U)$ is open by continuity and $p$ is a quotient map, $\ol f^{-1}(U)$ is also open, hence $\ol f$ is a continuous map.
-        }
-        \item[(b)]
-        {
-            It is clear that $f$ is a quotient map if $\ol f$ is a quotient map.
-            To show the converse, assume $f$ is a quotient map.
-            By (a), $\ol f$ is a continuous map, and it is easy to check that $\ol f$ is a surjection.
-            It, thus, remains to show that $U\subset Z$ is open if $\ol f^{-1}(U)$ is open.
-            When $\ol f^{-1}(U)$ is open, $p^{-1}\circ\ol f^{-1}(U)$ is open, and its image under $f$ is open, and the image is given as $(f\circ p^{-1}\circ\ol f)(U)=U$, as desired.
-        }
-    \end{enumerate}
-    Therefore, if $f$ is constant on each set $p^{-1}(\{y\})$ for $y\in Y$, then $\ol f$ is well-defined.
-    Furthermore, $\ol f$ is continuous if and only if $f$ is continuous; $\ol f$ is a quotient map if and only if $f$ is a quotient map.
+    Well-definedness of $\ol f$ and its uniqueness are almost clear.
+    Note that $f^{-1}=p^{-1}\circ\ol{f}^{-1}$.
+
+    \hangindent=0.65cm
+    \noindent(a)
+    It is clear that $f$ is continuous if $\ol f$ is continuous.
+    To show the converse, assume $f$ is continuous and $U$ is an open subset of $Z$.
+    Since $f^{-1}(U)$ is open in $X$ and $p$ is a quotient map, $\ol{f}^{-1}(U)$ is also open in $Y$.
+    Thus, $\ol f$ is a continuous map.
+
+    \noindent(b)
+    It is clear that $f$ is a quotient map if $\ol f$ is a quotient map.
+    To show the converse, assume $f$ is a quotient map.
+    By (a), $\ol f$ is a continuous map, and it is clear that $\ol f$ is a surjection.
+    Thus, it remains to show that a subset $U$ of $Z$ is open in $Z$ if (and only if) $\ol{f}^{-1}(U)$ is open in $Y$.
+    When $\ol f^{-1}(U)$ is open in $Y$, $f^{-1}(U)=(p^{-1}\circ\ol f^{-1})(U)$ is open in $X$, so $U$ is open in $Z$, as desired.
 \end{proof}
 
 \begin{cor}
@@ -169,7 +166,7 @@ One has, however, the following proposition:
     \begin{equation*}
         X^*=\{f^{-1}(\{z\}): z\in Z\}.
     \end{equation*}
-    Give $X^*$ the quotient topology.
+    Give $X^*$ the quotient topology induced by the natural projection map $p: X\rightarrow X^*$.
     \begin{enumerate}
         \item[(a)]
         {
@@ -182,10 +179,12 @@ One has, however, the following proposition:
     \end{enumerate}
 \end{cor}
 \begin{proof}
-    Letting $p: X\rightarrow X^*$ be the natural projection, $p$ is a quotient map.
-    By the preceeding theorem, $f^*$ is a well-defined surjective continuous map.
-    By definition of $X^*$, $f^*$ is injective.
+    \hangindent=0.65cm
+    \noindent(a)
+    Note that the natural projection map $p: X\rightarrow X^*$ is a quotient map.
+    By the preceeding theorem, there is a well-defined continuous bijection $f^*: X^*\rightarrow Z$.
     Furthermore, $f^*$ is a quotien map (hence, a homeomorphism) if and only if $f$ is a quotient map.
 
-    Given two distinct points of $X^*$, their images under $f$ are distinct points of $Z$, hence there are disjoint neighborhoods separating those points; their preimage under $f$ are disjoint neighborhoods in $X^*$ separating the given two points.
+    \noindent(b)
+    Given two distinct points of $X^*$, their images under $\ol{f}$ are distinct points of $Z$, hence there are disjoint neighborhoods separating those points; their preimage under $\ol{f}$ are disjoint neighborhoods in $X^*$ separating the given two points.
 \end{proof}
