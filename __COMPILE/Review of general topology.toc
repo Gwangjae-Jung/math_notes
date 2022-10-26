@@ -2,7 +2,8 @@
 \contentsline {chapter}{\numberline {1}Topology and continuous map}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Topology and basis}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Continuous maps}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Metrizable product spaces}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Topologies on function spaces}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Metrizable product spaces}{8}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Connected spaces and compact spaces}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Connected spaces}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Path-connected spaces}{11}{section.2.2}%
