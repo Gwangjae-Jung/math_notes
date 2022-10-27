@@ -7,7 +7,7 @@
     A surjective map $p: X\rightarrow Y$ is called a quotient map if a subset $U$ of $Y$ is open if and only if $p^{-1}(U)$ is open in $X$.
 \end{defi}
 \begin{rmk}
-    Be noted that a quotien map need not be an open map.
+    Be noted that a quotient map need not be an open map.
 \end{rmk}
 \begin{exmp}
     Here are some examples of quotient maps.
@@ -183,8 +183,57 @@ One has, however, the following proposition:
     \noindent(a)
     Note that the natural projection map $p: X\rightarrow X^*$ is a quotient map.
     By the preceeding theorem, there is a well-defined continuous bijection $f^*: X^*\rightarrow Z$.
-    Furthermore, $f^*$ is a quotien map (hence, a homeomorphism) if and only if $f$ is a quotient map.
+    Furthermore, $f^*$ is a quotient map (hence, a homeomorphism) if and only if $f$ is a quotient map.
 
     \noindent(b)
-    Given two distinct points of $X^*$, their images under $\ol{f}$ are distinct points of $Z$, hence there are disjoint neighborhoods separating those points; their preimage under $\ol{f}$ are disjoint neighborhoods in $X^*$ separating the given two points.
+    Given two distinct points $a^*$ and $b^*$ of $X^*$, $\ol{f}(a^*)$ and $\ol{f}(b^*)$ are distinct points of $Z$, hence there are disjoint neighborhoods separating $\ol{f}(a^*)$ and $\ol{f}(b^*)$; their preimage under $\ol{f}$ are disjoint neighborhoods in $X^*$ separating $a^*$ and $b^*$.
 \end{proof}
+
+\subsection{Examples}
+
+\begin{exmp}
+    Define an equivalence relation $\sim$ on the plane $X=\bb{R}^2$ as follows:
+    \begin{center}
+        $(x_1, y_1)\sim(x_2, y_2)$ if and only if $x_1+y_1^2=x_2+y_2^2$.
+    \end{center}
+    \color{brown}(It is left as an exercise to check that $\sim$ is indeed an equivalence relation on $X$.) \color{black}
+    Let $X^*$ be the corresponding quotient space.
+    In fact, $X^*$ is the set which consists of the collections of the form $f^{-1}(\{c\})$ for $c\in\bb{R}$, where $f(x, y)=x+y^2$.
+    Because $f$ is a continuous surjection onto $\bb{R}$, there is a unique continuous bijection $f^*$ such that $f^*\circ p=f$, where $p: X\rightarrow X^*$ is the natural projection.
+    Furthermore, $f$ is a quotient map, so $X^*$ and $\bb{R}$ are homeomorphic.
+
+    Let $\sim$ denote the equivalence relation on $X$ defined as follows:
+    \begin{center}
+        $(x_1, y_1)\sim(x_2, y_2)$ if and only if $x_1^2+y_1^2=x_2^2+y_2^2$.
+    \end{center}
+    \color{brown}(It is left as an exercise to check that $\sim$ is indeed an equivalence relation on $X$.) \color{black}
+    Now, $X^*$ is the collection of the collections of the form $g^{-1}(\{c\})$ for $c\geq 0$, where $g(x, y)=x^2+y^2$.
+    Since $g$ is onto $[0, \infty)$ and is a quotient map, we conclude that $X^*$ and $[0, \infty)$ (equipped with the order topology) are homeomorphic.
+\end{exmp}
+
+\begin{prob}
+    Let $\bb{R}_K$ be the set $\bb{R}$ equipped with the $K$-topology, and let $Y$ be the quotient space obtained from $\bb{R}_K$ by collapsing the set $K$ to a point.
+    And let $p: \bb{R}_K\rightarrow Y$ be the quotient map.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $Y$ satisfies the $T_1$ axiom but $Y$ is not a Hausdorff space.
+        }
+        \item[(b)]
+        {
+            Show that $p\times p: \bb{R}_K\times\bb{R}_K\rightarrow Y\times Y$ is not a quotient map.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            
+        }
+        \item[(b)]
+        {
+
+        }
+    \end{enumerate}
+\end{sol}

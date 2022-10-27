@@ -41,6 +41,7 @@
 \contentsline {section}{\numberline {6.1}Quotient topology}{47}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Quotient maps}{47}{subsection.6.1.1}%
 \contentsline {subsection}{\numberline {6.1.2}Quotient topology}{48}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Examples}{49}{subsection.6.1.3}%
 \contentsline {section}{\numberline {6.2}Further properties regarding quotient maps}{49}{section.6.2}%
 \contentsline {chapter}{\numberline {7}Topological groups}{50}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Topological groups}{50}{section.7.1}%
