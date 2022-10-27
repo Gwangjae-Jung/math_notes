@@ -236,28 +236,7 @@ The following statements will be helpful when justifying that a given surjective
     Therefore, $X^*$ and $[0, \infty)$ (equipped with the order topology) are homeomorphic.
 \end{exmp}
 \begin{exmp}
-    Let $D^2=\{(x, y)\in\bb{R}^2: x^2+y^2\leq 1\}$.
-    Intuitively, by identifying the boundary of $D^2$ in $\bb{R}^2$ a point, we may obtain the surface of a sphere in $\bb{R}^3$, which will be rigorously justified here.
-
-    For such identification, we wish to define an \color{brown}equivalence relation\color{black} $\sim$ on $D^2$ by
-    \begin{center}
-        $(x, y)\sim(u, v)$ if and only if either $(x, y)=(u, v)$ or $\sqrt{x^2+y^2}=\sqrt{u^2+v^2}=1$,
-    \end{center}
-    which can be done by considering the function $f: D^2\rightarrow S^3$ defined by
-    \begin{align*}
-        \begin{array}{c}
-            r\cos(\theta)\\
-            r\sin(\theta)
-        \end{array}
-        \mapsto
-        \begin{array}{c}
-            \sin(\pi r)\cos(\theta)\\
-            \sin(\pi r)\sin(\theta)\\
-            \cos(\pi r)
-        \end{array}.
-    \end{align*}
-    It is straightforward that $f$ is surjective and continous, and $f$ defines the equivalence relation $\sim$.
-    To show that the quotient space $D^2/\sim$ and $S^3$ are isomorphic, it remains to show that $f$ is a quotient map; for this, we will construct a continuous right inverse of $f$.
+    $D^2$ and $S^3$ are homeomorphic.
 \end{exmp}
 \begin{exmp}
     Let $X^*$ be the quotient space $(S^1\times S^1)/\sim$, where $(z, w)\sim(u, v)$ if and only if $zw=uv$.
