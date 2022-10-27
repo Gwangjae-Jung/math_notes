@@ -22,21 +22,13 @@
         }
         \item[(c)]
         {
-            A continuous map which has a right inverse is a quotient map.
-        }
-        \item[(d)]
-        {
             For topological spaces $X$, $Y$, and $Z$, if $p: X\rightarrow Y$ and $q: Y\rightarrow Z$ are quotient maps, then $q\circ p: X\rightarrow Z$ is also a quotient map.
-        }
-        \item[(e)]
-        {
-            A retraction is a quotient map.\footnote{Given a topological space $X$ and its subspace $A$, a continuous map $r: X\rightarrow A$ such that $r(a)=a$ for all $a\in A$ is called a retraction of $X$ onto $A$.}
         }
     \end{enumerate}
 \end{exmp}
 
-For topological spaces $X$ and $Y$, we say a subset $A$ of $X$ is saturated with respect to the surjective map $p: X\rightarrow Y$ when $A$ contains every $p^{-1}(\{y\})$ that it intersects, i.e., $A$ is the inverse image of a subset of $Y$.
-To say $p$ is a quotient map is equivalent to saying that $p$ is a continuous surjection mapping a saturated open (closed, respcetively) subspaces of $X$ onto an open (closed) subspaces of $Y$.
+For topological spaces $X$ and $Y$, we say a subset $A$ of $X$ is saturated with respect to a surjective map $p: X\rightarrow Y$ when $A$ contains every $p^{-1}(\{y\})$ that it intersects, i.e., $A$ is the inverse image of a subset of $Y$.
+To argue $p$ is a quotient map is equivalent to argue that $p$ is a continuous surjection mapping a saturated open (closed, respcetively) subsets of $X$ onto an open (closed) subsets of $Y$.
 
 A restriction of a quotient map to a subspace need not be a quotient map.
 One has, however, the following proposition:
@@ -73,8 +65,8 @@ One has, however, the following proposition:
     \begin{enumerate}
         \item[(a)]
         {
-            Suppose $A$ is an open subspace of $X$.
-            We need to show that a subset $V$ of $p(A)$ is open whenever $q^{-1}(V)$ is open in $A$.
+            Suppose $A$ is an open subset of $X$.
+            We need to show that a subset $V$ of $p(A)$ is open in $p(A)$ whenever $q^{-1}(V)$ is open in $A$.
             Because $q^{-1}(V)$ is open in $A$ and $A$ is open in $X$, $q^{-1}(V)$ is open in $X$.
             Because $A$ is saturated and $V\subset p(A)$, $q^{-1}(V)=p^{-1}(V)$, so $V$ is open in $Y$ and $p(A)$.
         }
@@ -90,7 +82,24 @@ One has, however, the following proposition:
 \end{proof}
 \begin{rmk}
     Cartesian product of quotient maps need not be a quotient map.
+    See \cref{the product of quotient maps need not be a quotient map}.
 \end{rmk}
+
+The following statements will be helpful when justifying that a given surjective continuous map is a quotient map.
+\begin{prop}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Let $p: X\rightarrow Y$ be a continous function.
+            If there is a function continuous $f: Y\rightarrow X$ such that $p\circ f=\id{Y}$, then $p$ is a quotient map.
+            In short, a continuous map with a continuous right inverse is a quotient map.
+        }
+        \item[(b)]
+        {
+            A retraction is a quotient map.\footnote{Given a topological space $X$ and its subspace $A$, a continuous map $r: X\rightarrow A$ such that $r(a)=a$ for all $a\in A$ is called a retraction of $X$ onto $A$.}            
+        }
+    \end{enumerate}
+\end{prop}
 
 \subsection{Quotient topology}
 
@@ -208,10 +217,14 @@ One has, however, the following proposition:
     \end{center}
     \color{brown}(It is left as an exercise to check that $\sim$ is indeed an equivalence relation on $X$.) \color{black}
     Now, $X^*$ is the collection of the collections of the form $g^{-1}(\{c\})$ for $c\geq 0$, where $g(x, y)=x^2+y^2$.
-    Since $g$ is onto $[0, \infty)$ and is a quotient map, we conclude that $X^*$ and $[0, \infty)$ (equipped with the order topology) are homeomorphic.
+    Since $g$ is onto $[0, \infty)$ and is a quotient map \color{red}(showing that $g$ is a qotient map can be done by justifying that $g$ has a right inverse)\color{black}, we conclude that $X^*$ and $[0, \infty)$ (equipped with the order topology) are homeomorphic.
+\end{exmp}
+\begin{exmp}
+    Let $X^*$ be the quotient space $(S^1\times S^1)/\sim$, where $(z, w)\sim(u, v)$ if and only if $zw=uv$.
+    Our goal is to justify that $X^*\approx S^1$.
 \end{exmp}
 
-\begin{prob}
+\begin{prob}\label{the product of quotient maps need not be a quotient map}
     Let $\bb{R}_K$ be the set $\bb{R}$ equipped with the $K$-topology, and let $Y$ be the quotient space obtained from $\bb{R}_K$ by collapsing the set $K$ to a point.
     And let $p: \bb{R}_K\rightarrow Y$ be the quotient map.
     \begin{enumerate}
@@ -229,11 +242,26 @@ One has, however, the following proposition:
     \begin{enumerate}
         \item[(a)]
         {
-            
+            Remark that the $K$-topology on $\bb{R}$ is generated as a basis by $\{(a, b): \textsf{$a, b\in\bb{R}$ and $a<b$}\}\cup\{(a, b)-K: \textsf{$a, b\in\bb{R}$ and $a<b$}\}$.
+
+            Every singletone in $Y$ is of the form $\{a\}$ for $a\in\bb{R}\setminus K$ or $\{K\}$.
+            With respect to the natural projection $p: \bb{R}_K\rightarrow Y$, the preimages of both types of singletons are closed in $\bb{R}_K$, so $Y$ satisfies the $T_1$ axiom.
+
+            To argue that $Y$ is not a Hausdorff space, observe $0^*$ and $k^*$, where $k\in K$ and note that a typical open set in $Y$ is the collection of equivalence classes belonging to $Y$ whose union is an open set in $\bb{R}_K$.
+            Given a neighborhood of $0^*$, there is a basis member $(a, b)-K$ of $\bb{R}_K$ containing $0$.
+            If $k_1$ is a point of $K$ such that $0<k_1<b$, then $k^*=k_1^*$, so a neighborhood of $k^*$ in $Y$ necessarily contains the projection of a neighborhood of $k_1$ in $\bb{R}_K$.
+            This justifies that there is no pair of disjoint neighborhoods of $0^*$ and $k^*$ in $Y$.
         }
         \item[(b)]
         {
-
+            Because $Y$ is not a Hausdorff space, the diagonal of $Y$ is not closed in $Y\times Y$.
+            The preimage of the diagonal of $Y$ under $p\times p$ is
+            \begin{align*}
+                \{(x, x): x\in\bb{R}\setminus K\}\cup (K\times K)=\{(x, x): x\in\bb{R}\}\cup (K\times K).
+            \end{align*}
+            Since the diagonal of $\bb{R}$ is closed in $\bb{R}\times\bb{R}$, it is also closed in a finer space $\bb{R}_K\times\bb{R}_K$; $K\times K$ is obviously closed in $\bb{R}_K\times\bb{R}_K$.
+            Hence, the preimage of the diagonal of $Y$ under $p\times p$ is closed under $\bb{R}_K\times\bb{R}_K$.
+            This is invalid, if $p\times p$ is a quotient map.
         }
     \end{enumerate}
 \end{sol}
