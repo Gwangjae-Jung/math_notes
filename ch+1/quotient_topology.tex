@@ -91,7 +91,7 @@ The following statements will be helpful when justifying that a given surjective
     \begin{enumerate}
         \item[(a)]
         {
-            Let $p: X\rightarrow Y$ be a continous function.
+            Let $p: X\rightarrow Y$ be a continuous function.
             If there is a function continuous $f: Y\rightarrow X$ such that $p\circ f=\id{Y}$, then $p$ is a quotient map.
             In short, a continuous map with a continuous right inverse is a quotient map.
         }
@@ -140,6 +140,7 @@ The following statements will be helpful when justifying that a given surjective
     Let $p: X\rightarrow Y$ be a quotient map.
     Let $Z$ be a topological space and $f: X\rightarrow Z$ be a map which is constant on each set $p^{-1}(\{y\})$ for $y\in Y$.
     Then $f$ induces a unique map $\ol{f}: Y\rightarrow Z$ such that $\ol{f}\circ p=f$.
+    Indeed, $f$ is surjective if and only if $\ol{f}$ is surjective.
     Furthermore,
     \begin{enumerate}
         \item[(a)]
@@ -165,6 +166,7 @@ The following statements will be helpful when justifying that a given surjective
 \end{thm}
 \begin{proof}
     Well-definedness of $\ol f$ and its uniqueness are almost clear.
+    Also, it is clear that $f$ is surjective if and only if $\ol{f}$ is surjective.
     Note that $f^{-1}=p^{-1}\circ\ol{f}^{-1}$.
 
     \hangindent=0.65cm
@@ -231,12 +233,32 @@ The following statements will be helpful when justifying that a given surjective
     \end{center}
     \color{brown}(It is left as an exercise to check that $\sim$ is indeed an equivalence relation on $X$.) \color{black}
     Now, $X^*$ is the collection of the collections of the form $g^{-1}(\{c\})$ for $c\geq 0$, where $g(x, y)=x^2+y^2$.
-    Because $g$ is surjective and continuous, there is a unique bijective continous map $f^*: X^*\rightarrow[0, \infty)$.
+    Because $g$ is surjective and continuous, there is a unique bijective continuous map $f^*: X^*\rightarrow[0, \infty)$.
     Because the map $r: [0, \infty)\rightarrow\bb{R}^2$ defined by $r(x)=(\sqrt{x}, 0)$ for all $x\in[0, \infty)$ is a continuous right inverse of $g$, $g$ is a quotient map.
     Therefore, $X^*$ and $[0, \infty)$ (equipped with the order topology) are homeomorphic.
 \end{exmp}
 \begin{exmp}
-    $D^2$ and $S^3$ are homeomorphic.
+    We will justify that $D^2$ and $S^3$ are homeomorphic.
+    Define a map $f: D^2\rightarrow S^3$ by
+    \begin{align*}
+        f
+        \begin{pmatrix}
+            r\cos(\theta)\\
+            r\sin(\theta)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \sin(\pi r)\cos(\theta)\\
+            \sin(\pi r)\sin(\theta)\\
+            \cos(\pi r)
+        \end{pmatrix},
+    \end{align*}
+    And let $X^*$ be the partition of $X$ defined by the collection of $f^{-1}(\{p\})$ for $p\in S^3$.
+    Since $f$ is surjective and continuous, the naturally induced map $f^*: X^*\rightarrow S^3$ is also surjective and continuous.
+
+    To show that $f^*$ is a homeomorphism, it suffices to show that $f^*$ is a quotient map, which can be justified by showing that $f$ is a quotient map.
+    Generally, we show that $f$ is a quotient map by finding a continuous right inverse of $f$, which is quite difficult in this case.
+    However, considering the nature of $f$, it is intuitively clear that a subset $U$ of $S^3$ is open in $S^3$ whenever its preimage $f^{-1}(U)$ is open in $D^2$.
 \end{exmp}
 \begin{exmp}
     Let $X^*$ be the quotient space $(S^1\times S^1)/\sim$, where $(z, w)\sim(u, v)$ if and only if $zw=uv$.
