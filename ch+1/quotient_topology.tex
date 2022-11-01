@@ -22,12 +22,18 @@
         }
         \item[(c)]
         {
-            For topological spaces $X$, $Y$, and $Z$, if $p: X\rightarrow Y$ and $q: Y\rightarrow Z$ are quotient maps, then $q\circ p: X\rightarrow Z$ is also a quotient map.
+            For topological spaces $X,\, Y\, Z$, if $p: X\rightarrow Y$ and $q: Y\rightarrow Z$ are quotient maps, then $q\circ p: X\rightarrow Z$ is also a quotient map.
+        }
+        \item[(d)]
+        {
+            Cartesian product of quotient maps need not be a quotient map.
+            See \cref{the product of quotient maps need not be a quotient map}.
         }
     \end{enumerate}
 \end{exmp}
 
 For topological spaces $X$ and $Y$, we say a subset $A$ of $X$ is saturated with respect to a surjective map $p: X\rightarrow Y$ when $A$ contains every $p^{-1}(\{y\})$ that it intersects, i.e., $A$ is the inverse image of a subset of $Y$.
+(In fact, because $A=p^{-1}(B)$ for some subset $B$ of $Y$ and $B=p(p^{-1}(B))$, we find that $A=p^{-1}(p(A))$.)
 To argue $p$ is a quotient map is equivalent to argue that $p$ is a continuous surjection mapping a saturated open (closed, respcetively) subsets of $X$ onto an open (closed) subsets of $Y$.
 
 A restriction of a quotient map to a subspace need not be a quotient map.
@@ -47,42 +53,28 @@ One has, however, the following proposition:
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    We first verify the following two statements:
-    \begin{enumerate}
-        \item[(\romannumeral 1)]
-        {
-            For any subset $V$ of $p(A)$, $q^{-1}(V)=p^{-1}(V)$.
-        }
-        \item[(\romannumeral 2)]
-        {
-            Whenever $U\subset X$, $p(U\cap A)=p(U)\cap p(A)$.
-        }
-    \end{enumerate}
-    To verify (\romannumeral 1), we note that since $V\subset p(A)$ and $A$ is saturated, $p^{-1}(V)$ is contained in $A$, hence $q^{-1}(V)=p^{-1}(V)$.
-    To verify (\romannumeral 2), we note the inclusion $p(U\cap A)\subset p(U)\cap p(A)$.
-    If $y\in p(U)\cap p(A)$, then $y=p(u)=p(a)$ for some $u\in U$ and $a\in A$.
-    Because $A$ is saturated, $p^{-1}(\{y\})$ is contained in $A$, so $u\in A$.
+    In either case, we will show that a subset $V$ of $p(A)$ is open in $p(A)$ whenever $q^{-1}(V)$ is open in $A$.
     \begin{enumerate}
         \item[(a)]
         {
-            Suppose $A$ is an open subset of $X$.
-            We need to show that a subset $V$ of $p(A)$ is open in $p(A)$ whenever $q^{-1}(V)$ is open in $A$.
-            Because $q^{-1}(V)$ is open in $A$ and $A$ is open in $X$, $q^{-1}(V)$ is open in $X$.
-            Because $A$ is saturated and $V\subset p(A)$, $q^{-1}(V)=p^{-1}(V)$, so $V$ is open in $Y$ and $p(A)$.
+            Assume $A$ is an open subset of $X$.
+            Because $A$ is saturated, $A=p^{-1}(p(A))$, so $p^{-1}(V)\subset p^{-1}(p(A))=A$, which implies that $q^{-1}(V)=A\cap p^{-1}(V)=p^{-1}(V)$.
+            Therefore, $V$ is open in $Y$ and in $p(A)$.
         }
         \item[(b)]
         {
             Suppose $p$ is an open map.
-            Again, we need to show that a subset $V$ of $p(A)$ is open whenever $q^{-1}(V)$ is open in $A$.
-            Since $q^{-1}(V)=p^{-1}(V)$ and $q^{-1}(V)$ is open in $A$, $q^{-1}(V)=U\cap A$ for some open subspace $U$ of $X$.
-            Hence, $V=q(U\cap A)=p(U\cap A)=p(U)\cap p(A)$, which is open in $p(A)$.
+            Because $q^{-1}(V)$ is open in $A$, $q^{-1}(V)=A\cap U$ for some open subset $U$ of $X$, and $V=p(q^{-1}(V))=p(A\cap U)$.
+            Because $p(A\cap U)=p(A)\cap p(U)$ (see the following remark), we find that $V$ is open in $p(A)$.
         }
     \end{enumerate}
     The same results hold for closed cases, which can be proved by replacing the words ``open'' by ``closed.''
 \end{proof}
 \begin{rmk}
-    Cartesian product of quotient maps need not be a quotient map.
-    See \cref{the product of quotient maps need not be a quotient map}.
+    Let $p: X\rightarrow Y$ be a quotient map and $A$ be a subset of $X$ saturated with respect to $p$.
+    If $B$ is a subset of $X$, then it is clear that $p(A\cap B)\subset p(A)\cap p(B)$.
+    If $y\in p(A)\cap p(B)$, then $y=p(b)$ for some $b\in B$.
+    Because $A$ is saturated and $y\in p(A)$, $b\in A$, so $y=pb\in p(A\cap B)$, as desired.
 \end{rmk}
 
 In practice, it is difficult to check if a given surjective continuous map is a quotient map by merely checking the defining condition.
@@ -120,7 +112,7 @@ The following statements will be helpful when justifying that a given surjective
     Let $X$ be a topological space and $A$ be a nonempty set.
     Given a surjection $p: X\rightarrow A$, there is a unique topology $\mc{T}$ on $A$ relative to which $p$ is a quotient map, which is given as
     \begin{align}\label{quot_top_check}
-        \mc{T}=\{U\subset A: p^{-1}(A)\textsf{ is open in }X\}.
+        \mc{T}=\{U\subset A: \textsf{$p^{-1}(U)$ is open in $X$}\}.
     \end{align}
     This topology is called the quotient topology induced by $p$.
 \end{defi}
@@ -238,8 +230,8 @@ The following statements will be helpful when justifying that a given surjective
     Therefore, $X^*$ and $[0, \infty)$ (equipped with the order topology) are homeomorphic.
 \end{exmp}
 \begin{exmp}
-    We will justify that $D^2$ and $S^3$ are homeomorphic.
-    Define a map $f: D^2\rightarrow S^3$ by
+    We will justify that $D^2$ and $S^2$ are homeomorphic.
+    Define a map $f: D^2\rightarrow S^2$ by
     \begin{align*}
         f
         \begin{pmatrix}
@@ -253,12 +245,12 @@ The following statements will be helpful when justifying that a given surjective
             \cos(\pi r)
         \end{pmatrix},
     \end{align*}
-    And let $X^*$ be the partition of $X$ defined by the collection of $f^{-1}(\{p\})$ for $p\in S^3$.
-    Since $f$ is surjective and continuous, the naturally induced map $f^*: X^*\rightarrow S^3$ is also surjective and continuous.
+    And let $X^*$ be the partition of $X$ defined by the collection of $f^{-1}(\{p\})$ for $p\in S^2$.
+    Since $f$ is surjective and continuous, the naturally induced map $f^*: X^*\rightarrow S^2$ is also surjective and continuous.
 
     To show that $f^*$ is a homeomorphism, it suffices to show that $f^*$ is a quotient map, which can be justified by showing that $f$ is a quotient map.
     Generally, we show that $f$ is a quotient map by finding a continuous right inverse of $f$, which is quite difficult in this case.
-    However, considering the nature of $f$, it is intuitively clear that a subset $U$ of $S^3$ is open in $S^3$ whenever its preimage $f^{-1}(U)$ is open in $D^2$.
+    However, considering the nature of $f$, it is intuitively clear that a subset $U$ of $S^2$ is open in $S^2`'$ whenever its preimage $f^{-1}(U)$ is open in $D^2$.
 \end{exmp}
 \begin{exmp}
     Let $X^*$ be the quotient space $(S^1\times S^1)/\sim$, where $(z, w)\sim(u, v)$ if and only if $zw=uv$.
