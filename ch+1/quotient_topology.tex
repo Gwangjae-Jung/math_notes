@@ -9,7 +9,7 @@
 \begin{rmk}
     Be noted that a quotient map need not be an open map.
 \end{rmk}
-\begin{exmp}
+\begin{exmp}\label{examples of quotient maps}
     Here are some examples of quotient maps.
     \begin{enumerate}
         \item[(a)]
@@ -25,6 +25,16 @@
             For topological spaces $X,\, Y\, Z$, if $p: X\rightarrow Y$ and $q: Y\rightarrow Z$ are quotient maps, then $q\circ p: X\rightarrow Z$ is also a quotient map.
         }
         \item[(d)]
+        {
+            Let $p: X\rightarrow Y$ be a continuous function.
+            If there is a function continuous $f: Y\rightarrow X$ such that $p\circ f=\id{Y}$, then $p$ is a quotient map.
+            In short, a continuous map with a continuous right inverse is a quotient map.
+        }
+        \item[(e)]
+        {
+            A retraction is a quotient map.\footnote{Given a topological space $X$ and its subspace $A$, a continuous map $r: X\rightarrow A$ such that $r(a)=a$ for all $a\in A$ is called a retraction of $X$ onto $A$.}            
+        }
+        \item[(f)]
         {
             Cartesian product of quotient maps need not be a quotient map.
             See \cref{the product of quotient maps need not be a quotient map}.
@@ -53,7 +63,7 @@ One has, however, the following proposition:
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    In either case, we will show that a subset $V$ of $p(A)$ is open in $p(A)$ whenever $q^{-1}(V)$ is open in $A$.
+    Our goal in either case is to show that a subset $V$ of $p(A)$ is open in $p(A)$ whenever $q^{-1}(V)$ is open in $A$.
     \begin{enumerate}
         \item[(a)]
         {
@@ -78,29 +88,16 @@ One has, however, the following proposition:
 \end{rmk}
 
 In practice, it is difficult to check if a given surjective continuous map is a quotient map by merely checking the defining condition.
-The following statements will be helpful when justifying that a given surjective continuous map is a quotient map.
-\begin{prop}
-    \begin{enumerate}
-        \item[(a)]
-        {
-            Let $p: X\rightarrow Y$ be a continuous function.
-            If there is a function continuous $f: Y\rightarrow X$ such that $p\circ f=\id{Y}$, then $p$ is a quotient map.
-            In short, a continuous map with a continuous right inverse is a quotient map.
-        }
-        \item[(b)]
-        {
-            A retraction is a quotient map.\footnote{Given a topological space $X$ and its subspace $A$, a continuous map $r: X\rightarrow A$ such that $r(a)=a$ for all $a\in A$ is called a retraction of $X$ onto $A$.}            
-        }
-    \end{enumerate}
-\end{prop}
+The examples given in \cref{examples of quotient maps} will be helpful when justifying that a given surjective continuous map is a quotient map.
+Here, we provide proofs of (d) and (e).
 \begin{proof}
     \hangindent=0.65cm
 
-    \noindent(a)
+    \noindent(d)
     We need to justify that a subset $U$ of $Y$ is open in $Y$ whenever $p^{-1}(U)$ is open in $X$.
     If $U$ be a subset of $Y$ such that $p^{-1}(U)$ is open, then $U=\id{Y}^{-1}(U)=f^{-1}(p^{-1}(U))$, so $U$ is open in $Y$.
 
-    \noindent(b)
+    \noindent(e)
     Let $A$ be a subspace of $X$ and $p: X\rightarrow A$ be a retraction of $X$ onto $A$.
     It suffices to check that a subset $U$ of $A$ is open in $A$ whenever $p^{-1}(A)$ is open in $X$.
     Because $U=p(p^{-1}(U))=p^{-1}(U)\cap A$, $U$ is open in $A$.

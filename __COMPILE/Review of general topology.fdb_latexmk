@@ -1,12 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1667267502 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1667267506
+["pdflatex"] 1667385723 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1667385725
   "../../my_settings/pangpang_conditionals.tex" 1664777689 101 42c63d0f7a65026f3b9a3f0663ded71a ""
   "../../my_settings/pangpang_definitions.tex" 1665212687 1873 1db7ccc734d24a0a0fe0273e568770e9 ""
   "../../my_settings/pangpang_dictionary.tex" 1661002635 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
   "../../my_settings/pangpang_preamble.tex" 1661567046 367 b1b930a25338624377b274bbe3a3b66e ""
   "../../my_settings/pangpang_thmstyle.tex" 1661566526 1142 4292e3389969e1a079bb179f8d33e0c7 ""
   "../ch+1/further_properties_quot_top.tex" 1659683530 52 d9446b6592e01546e76659b2e397f8bb ""
-  "../ch+1/quotient_topology.tex" 1667267501 15929 f8cf2a9bad09f81340847227e60d6113 ""
+  "../ch+1/quotient_topology.tex" 1667385722 15969 d490a12c4b8b3e361f486468379b6984 ""
   "../ch+2/further_properties_top_gp.tex" 1658812975 50 0b6ffad35bcfc1de4703c442e3a6f1b5 ""
   "../ch+2/quotient_top_gp.tex" 1660927587 3708 033155a6b4a3864ca1b1c0388cab584a ""
   "../ch+2/top_gp.tex" 1660927561 10204 bc3e5250db0b1c5223afad45b7988fcb ""
@@ -32,9 +32,9 @@
   "../ch5/complete_spaces.tex" 1660927426 10702 3dc1399fddfab06fbd56deee48507190 ""
   "../ch5/pointwise_equicontinuity.tex" 1658995363 6718 bf3408524425c82ec0fa38307688bb3b ""
   "../ch5/topologies_on_C0.tex" 1662822981 18981 e455ad7b7621f6175c9b3ab19bc5fd7d ""
-  "Review of general topology.aux" 1667267506 31847 18643741e59b3ba5f7f4ac5b5e234ac6 "pdflatex"
+  "Review of general topology.aux" 1667385725 31991 00de96efd7723ab1ff0853548cf385c1 "pdflatex"
   "Review of general topology.tex" 1666761248 2403 2461f5a618e137028d970d5e2c8b5e74 ""
-  "Review of general topology.toc" 1667267506 5120 afae1bc67551a7e14142c73c6e0764f8 "pdflatex"
+  "Review of general topology.toc" 1667385725 5120 afae1bc67551a7e14142c73c6e0764f8 "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
