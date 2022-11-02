@@ -84,7 +84,7 @@ One has, however, the following proposition:
     Let $p: X\rightarrow Y$ be a quotient map and $A$ be a subset of $X$ saturated with respect to $p$.
     If $B$ is a subset of $X$, then it is clear that $p(A\cap B)\subset p(A)\cap p(B)$.
     If $y\in p(A)\cap p(B)$, then $y=p(b)$ for some $b\in B$.
-    Because $A$ is saturated and $y\in p(A)$, $b\in A$, so $y=pb\in p(A\cap B)$, as desired.
+    Because $A$ is saturated and $y\in p(A)$, $b\in A$, so $y=p(b)\in p(A\cap B)$, as desired.
 \end{rmk}
 
 In practice, it is difficult to check if a given surjective continuous map is a quotient map by merely checking the defining condition.
@@ -244,10 +244,8 @@ Here, we provide proofs of (d) and (e).
     \end{align*}
     And let $X^*$ be the partition of $X$ defined by the collection of $f^{-1}(\{p\})$ for $p\in S^2$.
     Since $f$ is surjective and continuous, the naturally induced map $f^*: X^*\rightarrow S^2$ is also surjective and continuous.
-
     To show that $f^*$ is a homeomorphism, it suffices to show that $f^*$ is a quotient map, which can be justified by showing that $f$ is a quotient map.
-    Generally, we show that $f$ is a quotient map by finding a continuous right inverse of $f$, which is quite difficult in this case.
-    However, considering the nature of $f$, it is intuitively clear that a subset $U$ of $S^2$ is open in $S^2`'$ whenever its preimage $f^{-1}(U)$ is open in $D^2$.
+    Indeed, $f$ is a quotient map, since $f$ is an open map.
 \end{exmp}
 \begin{exmp}
     Let $X^*$ be the quotient space $(S^1\times S^1)/\sim$, where $(z, w)\sim(u, v)$ if and only if $zw=uv$.
