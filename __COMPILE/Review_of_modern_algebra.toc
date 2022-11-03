@@ -48,7 +48,7 @@
 \contentsline {subsection}{\numberline {9.6.1}Quotients of the Gaussian integer ring}{34}{subsection.9.6.1}%
 \contentsline {chapter}{\numberline {10}Polynomial rings}{35}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Basic properties}{35}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Gauss's lemmas}{37}{section.10.2}%
+\contentsline {section}{\numberline {10.2}Gauss' lemmas}{37}{section.10.2}%
 \contentsline {chapter}{\numberline {11}Further ring theory}{40}{chapter.11}%
 \contentsline {section}{\numberline {11.1}The field of real numbers}{40}{section.11.1}%
 \contentsline {section}{\numberline {11.2}Limits and inverse limits}{41}{section.11.2}%
@@ -101,7 +101,7 @@
 \contentsline {chapter}{\numberline {20}Basic Galois theory}{100}{chapter.20}%
 \contentsline {section}{\numberline {20.1}Basic observation regarding Galois extensions}{100}{section.20.1}%
 \contentsline {section}{\numberline {20.2}Fundamental theorems of finite Galois extensions}{101}{section.20.2}%
-\contentsline {section}{\numberline {20.3}Some problems regarding Galois's theorem}{104}{section.20.3}%
+\contentsline {section}{\numberline {20.3}Some problems regarding Galois' theorem}{104}{section.20.3}%
 \contentsline {section}{\numberline {20.4}Abelian extensions and solvable extensions}{105}{section.20.4}%
 \contentsline {section}{\numberline {20.5}Galois groups of polynomials}{106}{section.20.5}%
 \contentsline {chapter}{\numberline {21}Some Galois extensions}{109}{chapter.21}%
@@ -123,6 +123,8 @@
 \contentsline {section}{\numberline {23.2}Lagrange resolvent}{121}{section.23.2}%
 \contentsline {section}{\numberline {23.3}Norm and trace}{122}{section.23.3}%
 \contentsline {section}{\numberline {23.4}Infinite Galois extensions}{122}{section.23.4}%
-\contentsline {chapter}{\numberline {A}Proof of some propositions}{123}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{123}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{123}{section.A.2}%
+\contentsline {part}{VII\hspace {1em}Category theory}{123}{part.7}%
+\contentsline {chapter}{\numberline {24}Category theory}{124}{chapter.24}%
+\contentsline {chapter}{\numberline {A}Proof of some propositions}{125}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{125}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{125}{section.A.2}%

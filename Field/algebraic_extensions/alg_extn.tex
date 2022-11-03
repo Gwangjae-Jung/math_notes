@@ -3,8 +3,9 @@
 What you basically need to know: field extensions, algebraic elements, algebraic extensions.
 
 \begin{obs}[Basic observations on field compositions]\label{basic of field composition}
+    The composition of (sub)fields is defined as the composition of any other algebraic structures.
     For a field $F$ and a set $S$, $F(S)$ is defined to be the smallest field containing $F\cup S$, i.e., $F(S)$ is the intersection of all fields containing $F\cup S$.
-    (For composition of infinitely many fields, see \cref{composition of infinitely many  fields}.)
+    (For the characterization of the composition of subfields, see the remark below.)
     
     Suppose that $E$ and $F$ are subfields of a field $K$.
     Then $E(F)=F(E)$, because both of them are the smallest subfield of $K$ containing $E\cup F$.
@@ -48,6 +49,15 @@ What you basically need to know: field extensions, algebraic elements, algebraic
     In short, the first two coincides since both are the smallest fields containing $F\cup\{\alpha, \beta\}$.
     To show that the fourth also coincides the first three, note that $F(\alpha)F(\beta)$ contains $F(\alpha)\cup F(\beta)$ and that $F(\alpha, \beta)$ contains $F\cup\{\alpha, \beta\}$ so that it contains $F(\alpha)\cup F(\beta)$.
 \end{obs}
+\begin{rmk}[Characterization of the composition of fields]\label{Characterization of the composition of fields}
+    As done in the theory of any other algebraic structures, we wish to characterize the composition of subfields of a given field.
+    Let $\{F_\alpha: \alpha\in\mc{A}\}$ be a collection of fields contained in a larger field $E$.
+    The composition $F_0$ of $F_\alpha$ for all $\alpha\in A$, the smallest subfield of $E$ containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$, coincides the following subset of $E$:
+    \begin{align*}
+        K:=\left\{x\in E: \textsf{$x$ belongs to a composition of $F_\alpha$ for finitely many values of $\alpha$}\right\}.
+    \end{align*}
+    This coincidence is valid; because $K$ is a subfield of $E$ containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$, $K$ contains $F_0$; because $F_0$ is a field containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$, $F_0$ contains $K$.
+\end{rmk}
 
 \begin{obs}
     Suppose that $E/F$ is a field extension and $\alpha\in E$.

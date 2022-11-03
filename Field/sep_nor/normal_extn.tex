@@ -51,12 +51,12 @@ Since we now know that the splitting field for a nonconstant polynomial $f(t)$ o
 \begin{proof}
     Assume (a) and let $\tau: E\hookrightarrow\ol F$ be an $F$-embedding.
     By \cref{embedding into itself is an automorphism}, it suffices to verify that $\tau(E)\leq E$; for this, it suffices to show that $\tau(\alpha)\in E$ whenever $\alpha$ is a root of a polynomial in $\mc{R}$.
-    If $\alpha$ is a root of a polynomial in $\mc{R}$, it can easily be checked that $\tau(\alpha)$ is a root of the same polynomial.
-    Hence $\tau(E)\leq E$.
+    Because $\tau$ fixes $F$, $\tau$ permutes the roots of the minimal polynomial of $\alpha$ over $F$, so $\tau(\alpha)\in E$.
 
     Assume (b), and let $m(t)$ be the minimal polynomial of $\alpha\in E$ over $F$.
     Given a root $\beta$ of $m(t)$, let $\sigma: F(\alpha)\rightarrow F(\beta)$ be the unique $F$-isomorphism such that $\sigma(\alpha)=\beta$.
-    We then can extend $\sigma$ to $\widetilde{\sigma}: E\hookrightarrow\ol{F}$; by the assumption (b), $\range\widetilde{\sigma}=E$, so $\beta\in E$, as desired.
+    Then, $\sigma$ extends to $\widetilde{\sigma}\in\emb{E/F}$, whose range is, by the assumption, $E$.
+    Hence, $\beta\in E$, as desired.
 
     Finally, assume (c).
     Then $E=F(\mc{R})$, where $\mc{R}$ is the collection of the minimal polynomial of $\alpha\in E$ over $F$ for $\alpha\in E$.
@@ -81,14 +81,12 @@ Since we now know that the splitting field for a nonconstant polynomial $f(t)$ o
 
 In fact, normal extensions seems to have some properties satisfied in group theory when extension towers are seen reversely.
 A counterpart of the following proposition in group theory is that if $H\leq K\leq G$ and $H$ is a normal subgroup of $G$, then $H$ is a normal subgroup of $K$.
-\begin{prop}
+\begin{obs}
     Suppose that $F\leq E\leq K$ and $K/F$ is a normal extension.
-    Then $K/E$ is a normal extension.
-\end{prop}
-\begin{proof}
+    We wish to show that $K/E$ is a normal extension.
     Suppose that $\tau: K\hookrightarrow\ol E$ is an $E$-embedding.
     Since $F\leq E$ and we may assume that $\ol E=\ol F$, $\tau$ is an $F$-embedding of $K$ into $\ol F$, so $\tau(K)=K$ and $K/E$ is a normal extension.
-\end{proof}
+\end{obs}
 
 \begin{prop}
     Let $E_1/F$ and $E_2/F$ are algebraic extensions such that $E_1, E_2\leq\ol F$.
@@ -117,26 +115,17 @@ A counterpart of the following proposition in group theory is that if $H\leq K\l
         =
         \frac{\tau(\alpha_1')\tau(\beta_1')+\cdots+\tau(\alpha_n')\tau(\beta_n')}{\tau(\alpha_1)\tau(\beta_1)+\cdots+\tau(\alpha_m)\tau(\beta_m)},
     \end{align*}
-    where $\alpha_i, \alpha_j'\in E_1$ and $\beta_i, \beta_j'\in E_2$ for all integers $1\leq i\leq m$ and $1\leq j\leq n$.
+    where $\alpha_i,\, \alpha_j'\in E_1$ and $\beta_i,\, \beta_j'\in E_2$ for all integers $1\leq i\leq m$ and $1\leq j\leq n$.
 
     To prove (b), let $\tau: E_1E_2\hookrightarrow\ol F$ be an $F$-embedding.
     Then $\tau(E_1E_2)=\tau(E_1)\tau(E_2)=E_1E_2$, for $E_1/F$ and $E_2/F$ are normal extensions.
     This proves that $(E_1E_2)/F$ is a normal extension.
 
-    To prove (c), assume $\alpha\in E_1\cap E_2$.
-    Then all roots of the minimal polynomial $m(t)$ of $\alpha$ over $F$ are in both $E_1$ and $E_2$, so $(E_1\cap E_2)/F$ is a normal extension.
+    To prove (c), let $\alpha$ be an element in $E_1\cap E_2$.
+    Then, all roots of the minimal polynomial $m(t)$ of $\alpha$ over $F$ are in both $E_1$ and $E_2$, so $(E_1\cap E_2)/F$ is a normal extension.
 \end{proof}
 
 We end this section with the notion of normal closures and introducing an algebraic extension which we call a Galois extension.
-But before this, we solve a technical problem.
-\begin{obs}[The composition of infinitely many fields]\label{composition of infinitely many fields}
-    Let $\{F_\alpha: \alpha\in\mc{A}\}$ be a collection of fields which are contained in a larger field $E$.
-    The composition $F_0$ of $F_\alpha$ for all $\alpha\in A$ (the smallest subfield of $E$ containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$) is defined as
-    \begin{align*}
-        K:=\left\{x\in E: \textsf{$x$ belongs to a composition of $F_\alpha$ for finitely many values of $\alpha$}\right\}.
-    \end{align*}
-    (In fact, $F_0$ axiomatically contains $K$, and $K$ is a field containing $\bigcup_{\alpha\in\mc{A}} F_\alpha$.)
-\end{obs}
 \begin{thm}[Normal closure]\label{normal closure}
     Let $E/F$ be a field extension and assume $E\leq\ol F$.
     \begin{enumerate}

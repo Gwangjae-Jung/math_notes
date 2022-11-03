@@ -1,6 +1,6 @@
 \section{Fundamental theorems of finite Galois extensions}
 
-\begin{thm}[Galois's theorem (Part \Romannumeral{1})]\label{Galois's_thm_1}
+\begin{thm}[Galois' theorem (Part \Romannumeral{1})]\label{Galois'_thm_1}
     Let $K/F$ be a finite Galois extension.
     \begin{enumerate}
         \item[(a)]
@@ -27,7 +27,7 @@
     Finally, since an intermediate subfield $E$ of $K/F$ is a Galois extension over $F$ if and only if $E/F$ is a normal extension, $E/F$ is a normal extension if and only if $\gal{K/E}$ is a normal subgroup of $\gal{K/F}$.
 \end{rmk}
 
-To prove Galois's theorem, we need the following proposition:
+To prove Galois' theorem, we need the following proposition:
 \begin{prop}
     Suppose that $K/F$ is a finite Galois extension and $F\leq E\leq K$.
     Then $K^{\gal{K/E}}=E$.
@@ -45,7 +45,7 @@ To prove Galois's theorem, we need the following proposition:
 \begin{rmk}
     This also explains that the map $E\mapsto\gal{K/E}$ is injective; if $\gal{K/E_1}=\gal{K/E_2}$, then $E_1=K^{\gal{K/E_1}}=K^{\gal{K/E_2}}=E_2$.
 \end{rmk}
-\begin{proof}[Proof of (a) of \cref{Galois's_thm_1}]
+\begin{proof}[Proof of (a) of \cref{Galois'_thm_1}]
     Clearly, the given bijection is order-reversing.
     If $F\leq E\leq K$, then $E\mapsto\gal{K/E}\mapsto K^\gal{K/E}=E$ by the preceeding proposition; if $H\leq\gal{K/F}$, then $H\mapsto K^H\mapsto\gal{K/K^H}=H$ by Artin's theorem.
 \end{proof}
@@ -64,7 +64,7 @@ To prove Galois's theorem, we need the following proposition:
     Also, given $\eta\in\gal{K/\sigma E}$, clearly $\tau=\sigma^{-1}\circ\eta\sigma\in\gal{K/E}$ and $\rho(\tau)=\eta$, so $\rho$ is surjective.
     Therefore, $\gal{K/\sigma E}=\range\rho=\sigma\cdot\gal{K/E}\cdot\sigma^{-1}$.
 \end{proof}
-\begin{proof}[Proof of (b) of \cref{Galois's_thm_1}]
+\begin{proof}[Proof of (b) of \cref{Galois'_thm_1}]
     Because $E/F$ is a separable extension, we have
     \begin{align*}
         |\emb{E/F}|=[E:F]=\frac{[K:F]}{[K:E]}=[\gal{K:F}: \gal{K/E}],
@@ -88,7 +88,7 @@ To prove Galois's theorem, we need the following proposition:
         {
             Assume that $E/F$ is not a normal extension (or equivalently, not a Galois extension).
             Then there is an $F$-embedding $\sigma: E\hookrightarrow\ol F$ such that $\sigma E\neq E$.
-            Then, $\gal{K/E}\neq\gal{K/\sigma E}$ by (a) of \cref{Galois's_thm_1}, while
+            Then, $\gal{K/E}\neq\gal{K/\sigma E}$ by (a) of \cref{Galois'_thm_1}, while
             \begin{align*}
                 \gal{K/\sigma E}=\sigma\cdot\gal{K/E}\cdot\sigma^{-1}=\gal{K/E}.
             \end{align*}
@@ -99,7 +99,7 @@ To prove Galois's theorem, we need the following proposition:
 \end{proof}
 
 The following further properties of Galois correspondence can be easily verified.
-\begin{thm}[Galois's theorem (Part \Romannumeral{2})]\label{Galois's_thm_2}
+\begin{thm}[Galois' theorem (Part \Romannumeral{2})]\label{Galois'_thm_2}
     Let $K/F$ be a finite Galois extension and suppose $E_1, E_2$ are intermediate subfields of $K/F$.
     Write $H_1=\gal{K/E_1}$ and $H_2=\gal{K/E_2}$.
     \begin{enumerate}
@@ -123,8 +123,8 @@ The following further properties of Galois correspondence can be easily verified
     Conversely, since $K^\genone{H_1, H_2}$ is contained in $K^{H_1}$ and $K^{H_2}$, $K^\genone{H_1, H_2}\leq E_1\cap E_2$.
 \end{proof}
 
-\cref{Galois's_thm_1,Galois's_thm_2}, together, are called Galois's main theorem.
-Sometimes, the following correspondence is also included in Galois's main theorem.
+\cref{Galois'_thm_1,Galois'_thm_2}, together, are called Galois' main theorem.
+Sometimes, the following correspondence is also included in Galois' main theorem.
 \begin{prop}
     Suppose that $K/F$ and $L/F$ are finite Galois extensions, where $K, L\leq\ol F$.
     Then $KL/F$ is a finite Galois extension and $\gal{KL/L}\approx\gal{K/(K\cap L)}$.
@@ -177,7 +177,7 @@ Sometimes, the following correspondence is also included in Galois's main theore
     \end{enumerate}
     In the above proof, when one seeks to apply the isomophism extension theorem, one should consider the minimal polynomial $m(t)$ of $\gamma$ over $K$ and $m^\tau(t)$.
     Although $m(\gamma)=0$ is clear, \color{red}$m^\tau(t)$ may not be satisfied by $\gamma$, unless $m(t)\in (K\cap L)[t]$\color{black}, where the field $K\cap L$ is fixed by $\tau$.
-    (We say this error is a `gap,' because it is in fact true, as justified in \cref{gapped_proof: Galois's_thm}.)
+    (We say this error is a `gap,' because it is in fact true, as justified in \cref{gapped_proof: Galois'_thm}.)
 \end{rmk}
 
 The following correspondence will show some significance when computing the Galois group of a reducible polynomial over a field.
