@@ -1,7 +1,7 @@
 \section{Normal extensions}
 
 Before studying normal extensions, we first observe the following proposition, whose proof, in particular, provides us essential intuition regarding normal extensions.
-\begin{prop}
+\begin{prop}\label{embedding into itself is an automorphism}
     Suppose that $E/F$ is an algebraic field extension and $\sigma: E\hookrightarrow E$ is an $F$-embedding.
     Then $\sigma(E)=E$, i.e., $\sigma\in\aut{E/F}$.
 \end{prop}
@@ -50,7 +50,7 @@ Since we now know that the splitting field for a nonconstant polynomial $f(t)$ o
 \end{thm}
 \begin{proof}
     Assume (a) and let $\tau: E\hookrightarrow\ol F$ be an $F$-embedding.
-    By the first proposition in this section, it suffices to verify that $\tau(E)\leq E$.
+    By \cref{embedding into itself is an automorphism}, it suffices to verify that $\tau(E)\leq E$; for this, it suffices to show that $\tau(\alpha)\in E$ whenever $\alpha$ is a root of a polynomial in $\mc{R}$.
     If $\alpha$ is a root of a polynomial in $\mc{R}$, it can easily be checked that $\tau(\alpha)$ is a root of the same polynomial.
     Hence $\tau(E)\leq E$.
 

@@ -18,7 +18,7 @@ When $E/F$ is a Galois extension, we write $\aut{E/F}=\gal{E/F}$; because $E/F$ 
         }
         \item[(c)]
         {
-            Except for \Cref{infty_gal_extn}, all Galois extensions are assumed to be a finite extension.
+            Except for \Cref{infty_gal_extn}, all Galois extensions are assumed to be finite extensions.
         }
     \end{enumerate}
 \end{rmk}
@@ -42,7 +42,7 @@ The following propositions, which could be introduced before proving Galois's ma
     \begin{center}
         Goal: To show that $E=F(\beta)$.
     \end{center}
-    In fact, our goal can easily be deduced from the primitive element theorem for finite separable extensions.
+    It is easily deduced from the primitive element theorem for finite separable extensions.
     If $F(\beta)<E$, then there is an element $\gamma\in E\setminus F(\beta)$ and $F(\beta)<F(\beta, \gamma)$; because $F(\beta, \gamma)/F$ is a finite separable extension, there is an element $\alpha\in F(\beta, \gamma)$ such that $F(\beta, \gamma)=F(\alpha)$, which contradicts the maximality of $\beta$.
 \end{proof}
 \begin{lem}[Artin's theorem]
@@ -63,8 +63,8 @@ The following propositions, which could be introduced before proving Galois's ma
         f(t):=(t-\sigma_1\alpha)\cdots(t-\sigma_r\alpha),
     \end{align*}
     which is satisfied by $\alpha$.
-    Given $\tau\in H$, by the maximality of $\{\sigma_1, \cdots, \sigma_r\}$, we have $\tau\circ\sigma_i\in\{\sigma_1, \cdots, \sigma_r\}$ for all $i$; $\tau\in H$ \textit{permutes} $\{\sigma_1, \cdots, \sigma_r\}$.
-    Therefore, $f^\tau(t)=f(t)$ and $f(t)\in K^H[t]$, for evey coefficient of $f(t)$ is fixed by every field automorphism in $H$.
+    Given $\tau\in H$, by the maximality of $\{\sigma_1, \cdots, \sigma_r\}$, we have $(\tau\circ\sigma_i)(\alpha)\in\{\sigma_1\alpha, \cdots, \sigma_r\alpha\}$ for all $i$; $\tau\in H$ \textit{permutes} $\{\sigma_1\alpha, \cdots, \sigma_r\alpha\}$.
+    Therefore, $f^\tau(t)=f(t)$ and $f(t)\in K^H[t]$, for every coefficient of $f(t)$ is fixed by every field automorphism in $H$.
     Because $f(t)$ is a multiple of $m(t)$ and $f(t)$ is separable, $m(t)$ is separable and $K/K^H$ is a separable extension.
     Moreover, a root of $m(t)$ is of the form $\sigma_i\alpha$ for some $i$, which is contained in $K$, so $K/K^H$ is a normal extension.
     Because $[F(\alpha): F]\leq r\leq |H|<\infty$ for all $\alpha\in K$, we conclude that $K/K^H$ is a finite Galois extension with $[K:K^H]\leq |H|$.

@@ -38,7 +38,7 @@ Even stronger than as mentioned in the preceeding section, we assume that $D$ is
     \begin{center}
         Idea: Permuting rows and columns until we have multiples of a diagonal entry on every upper-triangular entries.
     \end{center}
-    \color{red}Read page 328 of your second textbook.\color{black}
+    \color{red}Read page 328 on your second textbook.\color{black}
 \end{proof}
 Even though the above theorem is theoretically essential, it is not practically essential.
 \begin{prop}
@@ -103,14 +103,14 @@ Even though the above theorem is theoretically essential, it is not practically 
     \end{enumerate}
     Furthermore, we have
     \begin{align*}
-        \frac{M}{N} \approx \frac{D}{(d_1)}\oplus\cdots\oplus \frac{D}{(d_n)}\oplus\overbrace{D\oplus\cdots\oplus D}^{(m-n)-D\textsf{'s}}
+        \frac{M}{N} \approx \frac{D}{(d_1)}\oplus\cdots\oplus \frac{D}{(d_n)}\oplus\overbrace{D\oplus\cdots\oplus D}^{(m-n)\textsf{ times of }D}
     \end{align*}
 \end{cor}
 \begin{proof}
     Consider the injection $\imath: N\hookrightarrow M$ and find $U, V, \{d_i: 1\leq i\leq n\}$ as in \cref{over ED: change of bases}.
     Because $\imath(N)=N$ and $\imath(z_j)=d_jw_j$ for $1\leq j\leq n$, $\{w_1, \cdots, w_m\}$ is a $D$-basis of $M$ and $\{d_1w_1, \cdots, d_nw_n\}$ is a $D$-basis of $N$.
 
-    Since $M=\bigoplus_{i=1}^m Dw_i$ and $N=\bigoplus_{i=1}^n Dd_iw_i$, by considering the map $\pi: M\rightarrow D/(d_1)\oplus\cdots\oplus D/(d_n)\oplus\underbrace{D\oplus\cdots\oplus D}_{(m-n)-D\textsf{'s}}$ defined by
+    Since $M=\bigoplus_{i=1}^m Dw_i$ and $N=\bigoplus_{i=1}^n Dd_iw_i$, by considering the map $\pi: M\rightarrow D/(d_1)\oplus\cdots\oplus D/(d_n)\oplus\underbrace{D\oplus\cdots\oplus D}_{(m-n)\textsf{ times of }D}$ defined by
     \begin{align*}
         \phi(a_1w_1+\cdots+a_mw_m)=(\ol{a_1}, \cdots \ol{a_n}, a_{n+1}, \cdots, a_m),
     \end{align*}
