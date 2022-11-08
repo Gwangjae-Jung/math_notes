@@ -27,11 +27,11 @@
     Finally, since an intermediate subfield $E$ of $K/F$ is a Galois extension over $F$ if and only if $E/F$ is a normal extension, $E/F$ is a normal extension if and only if $\gal{K/E}$ is a normal subgroup of $\gal{K/F}$.
 \end{rmk}
 
-To prove Galois' theorem, we need the following proposition:
-\begin{prop}
+Before proving Galois' theorem, we observe the following result:
+\begin{obs}
     Suppose that $K/F$ is a finite Galois extension and $F\leq E\leq K$.
     Then $K^{\gal{K/E}}=E$.
-\end{prop}
+\end{obs}
 \begin{proof}
     Write $L=K^\gal{K/E}$.
     It is clear that $E\leq K^\gal{K/E}=L$, and it follows that $\gal{K/L}\leq\gal{K/E}$.
@@ -47,7 +47,7 @@ To prove Galois' theorem, we need the following proposition:
 \end{rmk}
 \begin{proof}[Proof of (a) of \cref{Galois'_thm_1}]
     Clearly, the given bijection is order-reversing.
-    If $F\leq E\leq K$, then $E\mapsto\gal{K/E}\mapsto K^\gal{K/E}=E$ by the preceeding proposition; if $H\leq\gal{K/F}$, then $H\mapsto K^H\mapsto\gal{K/K^H}=H$ by Artin's theorem.
+    If $F\leq E\leq K$, the preceeding observation implies that $E\mapsto\gal{K/E}\mapsto K^\gal{K/E}=E$; if $H\leq\gal{K/F}$, then $H\mapsto K^H\mapsto\gal{K/K^H}=H$ by Artin's theorem.
 \end{proof}
 
 \begin{prop}
@@ -61,7 +61,7 @@ To prove Galois' theorem, we need the following proposition:
     It is clear that $K/E$ and $K/\sigma E$ are Galois extensions.
     Define a map $\rho: \gal{K/E}\rightarrow\gal{K/\sigma E}$ by $\rho(\tau)=\sigma\circ\tau\circ\sigma^{-1}$.
     Then $\rho$ is a well-defines group homomorphism with $\ker\rho=\{\id{K}\}$.
-    Also, given $\eta\in\gal{K/\sigma E}$, clearly $\tau=\sigma^{-1}\circ\eta\sigma\in\gal{K/E}$ and $\rho(\tau)=\eta$, so $\rho$ is surjective.
+    Also, given $\eta\in\gal{K/\sigma E}$, clearly $\tau=\sigma^{-1}\circ\eta\circ\sigma\in\gal{K/E}$ and $\rho(\tau)=\eta$, so $\rho$ is surjective.
     Therefore, $\gal{K/\sigma E}=\range\rho=\sigma\cdot\gal{K/E}\cdot\sigma^{-1}$.
 \end{proof}
 \begin{proof}[Proof of (b) of \cref{Galois'_thm_1}]
