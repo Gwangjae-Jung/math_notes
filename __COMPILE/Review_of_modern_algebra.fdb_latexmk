@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667885084 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1667885096
+["pdflatex"] 1667903671 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1667903679
   "../../my_settings/pangpang_conditionals.tex" 1664777689 101 42c63d0f7a65026f3b9a3f0663ded71a ""
   "../../my_settings/pangpang_definitions.tex" 1665212687 1873 1db7ccc734d24a0a0fe0273e568770e9 ""
   "../../my_settings/pangpang_dictionary.tex" 1667459211 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -24,10 +24,10 @@
   "../Galois_theory/additional/character_theory.tex" 1662010677 1763 b052425748180a6a18028afaf2e76b53 ""
   "../Galois_theory/additional/infinite_Galois_extn.tex" 1661264943 76 243903fee83440f4bd0df5c129eb97a7 ""
   "../Galois_theory/additional/norm_and_trace.tex" 1661664974 2955 dcdba7dd96130d640ef818583d0613b1 ""
-  "../Galois_theory/basic_galois_theory/Galois'_theorem.tex" 1667885007 13027 b1375fb04f652d07e886f9c05af12f55 ""
+  "../Galois_theory/basic_galois_theory/Galois'_theorem.tex" 1667903669 13314 0a87e4010e8c6e37b9e06038b7dac11f ""
   "../Galois_theory/basic_galois_theory/Galois'_theorem_prob.tex" 1667461907 7070 5d6978abc100a659f090ab7b947249da ""
   "../Galois_theory/basic_galois_theory/abelian_solveble.tex" 1667461821 3223 21385884546343bd662f5e9c291c2053 ""
-  "../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex" 1667885082 5612 abb225500640580e192e5ece4657fa2a ""
+  "../Galois_theory/basic_galois_theory/basic_obs_Galois_extn.tex" 1667903336 5615 b1290dbc0731f04af739c3a8eca3cc7d ""
   "../Galois_theory/basic_galois_theory/gal_gp_of_poly.tex" 1661875386 8804 61815e3707fa25c4adc0d064f6f584b4 ""
   "../Galois_theory/solving_polynomial_equations/cubic_quartic.tex" 1662048251 39 0c586a6d9b97ed865abd020221186f2a ""
   "../Galois_theory/solving_polynomial_equations/cyclic_extn.tex" 1662048172 4014 1b054b99fa2d60c26333d7dd15d09d6c ""
@@ -96,9 +96,9 @@
   "../Structured_objects/basic_object_theory/subobjects.tex" 1660104414 2520 25e8fd96672ca39aadaa5efb7c6bc945 ""
   "../Structured_objects/free_objects/free_objects.tex" 1661753114 6641 f3ed24cf4859a728dc5d1a03ca7d8709 ""
   "../preface.tex" 1662105076 326 396e21dc85b06f25d47a5e82166ad8ba ""
-  "Review_of_modern_algebra.aux" 1667885095 72045 4173e16db99c128969e73303d4b2b28e "pdflatex"
+  "Review_of_modern_algebra.aux" 1667903678 72045 4173e16db99c128969e73303d4b2b28e "pdflatex"
   "Review_of_modern_algebra.tex" 1667459247 768 af53387668d68475c32a73bc6d5e1694 ""
-  "Review_of_modern_algebra.toc" 1667885095 11591 2f7b537392e4be1f6f9e12dc3b442ef3 "pdflatex"
+  "Review_of_modern_algebra.toc" 1667903678 11591 2f7b537392e4be1f6f9e12dc3b442ef3 "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""

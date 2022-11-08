@@ -76,10 +76,7 @@ Before proving Galois' theorem, we observe the following result:
         \item[(\romannumeral 1)]
         {
             Suppose that $E/F$ is a normal extension (or equivalently, a Galois extension).
-            Define a group homomorphism $\rho: \gal{K/F}\rightarrow\gal{E/F}$ by
-            \begin{align*}
-                \rho(\sigma)=\sigma|_E\quad(\sigma\in\gal{K/F}).
-            \end{align*}
+            Define a group homomorphism $\rho: \gal{K/F}\rightarrow\gal{E/F}$ by $\rho(\sigma)=\sigma|_E$ for all $\sigma\in\gal{K/F}$.
             It is clear that $\ker\rho=\gal{K/E}$.
             Given $\tau\in\gal{E/F}$, there is an extension $\widetilde\tau: K\rightarrow\ol F$, where $\ol F$ is an algebraic closure of $F$ containing $K$.
             The desired isomoprhism follows from the first isomoprhism theorem.
@@ -122,6 +119,10 @@ The following further properties of Galois correspondence can be easily verified
     Since $E_1\cap E_2$ is contained in $E_1$ and $E_2$, $\gal{K/(E_1\cap E_2)}$ contains $H_1\cup H_2$, hence $E_1\cap E_2\leq K^\genone{H_1, H_2}$.
     Conversely, since $K^\genone{H_1, H_2}$ is contained in $K^{H_1}$ and $K^{H_2}$, $K^\genone{H_1, H_2}\leq E_1\cap E_2$.
 \end{proof}
+\begin{rmk}
+    In fact, because $E_1E_2$ is the \textit{smallest} intermediate field of $K/F$ \textit{containing} both $E_1$ and $E_2$, the corresponding Galois group is the \textit{largest} subgroup of $\gal{K/F}$ \textit{contained in} $H_1$ and $H_2$.
+    A similar argument is valid when fining the Galois group of $K/(E_1\cap E_2)$.
+\end{rmk}
 
 \cref{Galois'_thm_1,Galois'_thm_2}, together, are called Galois' main theorem.
 Sometimes, the following correspondence is also included in Galois' main theorem.
