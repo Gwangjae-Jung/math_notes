@@ -1,0 +1,90 @@
+\section{Components}
+
+\begin{defi}[(Path-)connected component]
+    Let $X$ be a topological space and let $\sim$ and $\sim_\textbf{p}$ denote the relation on $X$ defined as follows:
+    \begin{center}
+        $x\sim y$ if and only if there is a connected subspace $A$ of $X$ containing $x$ and $y$,\\
+        $x\sim_\textsf{p} y$ if and only if there is a path from $x$ to $y$ lying in $X$.
+    \end{center}
+    These relations are equivalence relations on $X$.
+    Equivalence classes in $X/\sim$ and $X/\sim_\textsf{p}$ are called a connected component of $X$ and a path-connected component of $X$, respectively.
+\end{defi}
+
+\begin{prop}
+    Let $X$ be a topological space.
+    Then, the (path-)connected components of $X$ form a partition of $X$ and a (path-)connected subset of $X$ is contained in precisely one of them.
+    Furthermore, each (path-)connected component of $X$ is (path-)connected.
+\end{prop}
+\begin{proof}
+    Because $\sim$ and $\sim_\textsf{p}$ are equivalence relations on $X$, the (path-)connected components of $X$ form a partition of $X$.
+    
+    We first prove the remaining part for connected case.
+    First, if $A$ is a connected subset of $X$, then it is obvious that $A$ intersects only one connected component of $X$; if $a$ and $b$ are points of $A$, then $C$ contains $a$ and $b$, so $a\sim b$.
+    To show that each connected component of $X$ is connected, let $C$ be a connected component of $X$ and $x_0$ be a point of $C$.
+    If $x$ is a point of $C$, then there is a connected subset $A_x$ of $X$ containing $x_0$ and $x$.
+    By the preceeding observation, $A_x\subset C$, and $C=\bigcup_{x\in C} A_x$, which is connected, since $x_0\in A_x$ for all $x\in C$.
+
+    We now prove the remaining part for path-connected case.
+    If $A$ is a path-connected subset of $X$, then it is obvious that $A$ intersects only one path-connected component of $X$; if $a$ and $b$ are points of $A$, then there is a path from $a$ to $b$ lying in $X$, so $a\sim_\textsf{p} b$.
+    It is obvious that a path-connected component of $X$ is path-connected, because any two points of a path-connected component $C$ of $X$ can be joined by a curve $\gamma$ lying in $X$ and every point on $\gamma$ is contained in $C$.
+\end{proof}
+\begin{rmk}
+    Since a path-connected component of $X$ is path-connected and connected, each path-connected is connected is contained in a connected component.
+    Hence, the collection of the path-connected components of $X$ is a refinement of the collection of the connected components of $X$.
+\end{rmk}
+
+\begin{defi}[Local (path-)connectedness]
+    A space $X$ is said to be locally (path-)connected at a point $x$ of $X$ if for every neighborhood $U$ of $x$ in $X$, there is a (path-)connected neighborhood $V$ of $x$ in $X$ contained in $U$.
+    If $X$ is locally (path-)connected at every point of $X$, then $X$ is said to be locally (path-)connected.
+\end{defi}
+\begin{rmk}
+    Global (path-)connectedness does not imply local (path-)connectedness.
+    For example, the topologist's sine curve is connected but not locally connected.
+\end{rmk}
+
+\begin{prop}
+    Let $X$ be a topological space.
+    Then $X$ is locally (path-)connected if and only if for every open subset $U$ of $X$ each (path-)connected component of $U$ is open in $X$.
+\end{prop}
+\begin{proof}
+    Assume first that $X$ is locally (path-)connected, and let $U$ be a nonempty open subset of $X$, $A$ be a (path-)connected component of $U$.
+    To show $A$ is open in $X$, let $x$ be a point of $A$.
+    Because $x\in U$, there is a (path-)connected neighborhood $V$ of $x$ such that $x\in V\subset U$.
+    Since $V$ is (path-)connected and $V$ contains $x$, $V$ is contained in $A$, proving that $A$ is open in $X$.
+    Assume conversely that each (path-)connected component of an open subset of $X$ is open in $X$.
+    For any point $x$ of $X$ and a neighborhoof $U$ of $X$, the (path-)connected component $A$ of $U$ containing $x$ is open in $X$, proving that $X$ is locally (path-)connected at every point of $X$.
+\end{proof}
+
+\begin{thm}
+    Let $X$ be a topological space.
+    Then each path-connected component of $X$ is contained in a connected component of $X$.
+    When $X$ is locally path-connected, the connected components of $X$ and the path-connected components of $X$ are the same.
+\end{thm}
+\begin{proof}
+    The first half is already proved.
+    Assume $X$ is locally path-connected.
+    Let $x$ be a point of $X$, and let $C$ and $P$ be the connected and path-connected component of $X$ containing $x$, respectively.
+    Suppose $P\subsetneq C$, and define $Q$ as the union of all path-connected components which intersect $C$, except for $P$. (Here, $Q$ is nonempty, for $Q$ is the union of all path-connected components containing the elements of $Q\setminus P\neq\varnothing$.)
+    Since such path-connected components are connected and intersect $C$, they are contained in $C$.
+    Hence, $C=P\cup Q$.
+    Because $X$ is locally path-connected, every path-connected component of $X$ is open in $X$, so $P$ and $Q$ are open in $X$.
+    Because $P$ and $Q$ are disjoint, they form a separation of $C$, a contradiction.
+\end{proof}
+
+\begin{exmp}
+    The connected components of $\bb{R}_l$ are the singletons, hence the path-connected components of $\bb{R}_l$ are the singletons; if $C$ is a connected component of $\bb{R}_l$ and $a, b\in C$ and $a<b$, we have $C=((-\infty, b)\cap C)\sqcup([b, \infty)\cap C)$, which form a separation of $C$.
+    Since a continuous map maps a connected space onto a connected space, the only continuous maps from $\bb{R}$ into $\bb{R}_l$ are constant functions.
+\end{exmp}
+\begin{exmp}
+    Indeed, two topological spaces with different number of (path-)connected components are not homeomorphic.
+    Suppose $X$ and $Y$ are homeomorphic topological spaces with $m$ and $n$ (path-)connected components, where $1\leq m<n<\infty$, with a homeomorphism $f: X\rightarrow Y$.
+    Since a continuous map maps a (path-)connected space onto a (path-)connected space, each of $m$ (path-)connected components of $X$ is mapped into a (path-)connected component of $Y$, so $f$ fails to be surjective, a contradiction.
+\end{exmp}
+\begin{exmp}
+    Let $T=([-1, 1]\times\{0\})\cup(\{0\}\times[-1, 0])\subset \bb{R}^2$.
+    We will justify that $T$ and the subspace $[0, 1]$ of $\bb{R}$ are not homeomorphic, by noticing that if $f: X\rightarrow Y$ is a homeomorphism and $A$ is a subspace of $X$ then $f|_A: A\rightarrow f(A)$ is a homeomorphism.
+    Suppose $T$ and $[0, 1]$ are homeomorphic and let $f: T\rightarrow [0, 1]$ be a homeomorphism.
+    Since $S=T\setminus\{(0, 0)\}$ has three connected components, its image $f(T)$ also has three connected components.
+    However, $f(T)=[0, 1]\setminus f((0, 0))$, which has at most two connected components.
+    Therefore, $T$ and $[0, 1]$ are not homeomorphic.
+\end{exmp}

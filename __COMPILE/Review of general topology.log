@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  2 NOV 2022 20:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  9 NOV 2022 20:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -578,7 +578,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 ...opological vector spaces}{55}{section.8.2}
+l.51 ...}Topological vector spaces}{57}{chapter.8}
                                                   % [1
 
 ])
@@ -598,62 +598,62 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
 Chapter 2.
 (../ch2/connected.tex [9
 
-] [10]) (../ch2/path_connected.tex [11]) (../ch2/linear_continuum.tex) (../ch2/compact.tex [12] [13] [14]
+] [10]) (../ch2/path_connected.tex [11]) (../ch2/components.tex [12]) (../ch2/linear_continuum.tex [13]) (../ch2/compact.tex [14] [15] [16]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 254.
  (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [15]) (../ch2/compact_met.tex [16]) (../ch2/one-point_compactification.tex [17] [18] [19]) [20]
+)) (../ch2/compact_met.tex [17] [18]) (../ch2/one-point_compactification.tex [19] [20] [21]) [22]
 Chapter 3.
-(../ch3/implications.tex [21
+(../ch3/implications.tex [23
 
-] [22] [23] [24]) (../ch3/implications_problems.tex [25] [26]) (../ch3/Urysohn_lemma.tex [27] [28]) (../ch3/emmbedding_theorem.tex) [29]
+] [24] [25] [26]) (../ch3/implications_problems.tex [27] [28]) (../ch3/Urysohn_lemma.tex [29] [30]) (../ch3/emmbedding_theorem.tex) [31]
 Chapter 4.
-(../ch4/compactification.tex [30
+(../ch4/compactification.tex [32
 
-]) (../ch4/SC_cptf.tex [31] [32]) [33]
+]) (../ch4/SC_cptf.tex [33] [34]) [35]
 Chapter 5.
-(../ch5/complete_spaces.tex [34
+(../ch5/complete_spaces.tex [36
 
-] [35]) (../ch5/pointwise_equicontinuity.tex [36]) (../ch5/topologies_on_C0.tex [37] [38] [39] [40] [41]) (../ch5/Ascoli's_theorem.tex [42] [43] [44]) [45] [46
+] [37]) (../ch5/pointwise_equicontinuity.tex [38]) (../ch5/topologies_on_C0.tex [39] [40] [41] [42] [43]) (../ch5/Ascoli's_theorem.tex [44] [45] [46]) [47] [48
 
 ]
 Chapter 6.
-(../ch+1/quotient_topology.tex [47
+(../ch+1/quotient_topology.tex [49
 
-] [48] [49]) (../ch+1/further_properties_quot_top.tex) [50]
+] [50] [51]) (../ch+1/further_properties_quot_top.tex) [52]
 Chapter 7.
-(../ch+2/top_gp.tex [51
+(../ch+2/top_gp.tex [53
 
-] [52]) (../ch+2/quotient_top_gp.tex [53]) (../ch+2/further_properties_top_gp.tex) [54]
+] [54]) (../ch+2/quotient_top_gp.tex [55]) (../ch+2/further_properties_top_gp.tex) [56]
 Chapter 8.
-(../ch+3/top_vs.tex) (../ch+3/further_properties_top_vs.tex) [55
+(../ch+3/top_vs.tex) (../ch+3/further_properties_top_vs.tex) [57
 
 ]
 Chapter 9.
-[56
+[58
 
 ]
 Chapter 10.
-[57
+[59
 
 ]
 Chapter 11.
-[58
+[60
 
 ] (./Review of general topology.aux) ) 
 Here is how much of TeX's memory you used:
- 24810 strings out of 480210
- 483758 string characters out of 5893466
- 747104 words of memory out of 5000000
- 41975 multiletter control sequences out of 15000+600000
- 483258 words of font info for 79 fonts, out of 8000000 for 9000
+ 24829 strings out of 480210
+ 484005 string characters out of 5893466
+ 748104 words of memory out of 5000000
+ 41980 multiletter control sequences out of 15000+600000
+ 483846 words of font info for 81 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  119i,19n,121p,791b,1138s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Review of general topology.pdf" (59 pages, 504393 bytes).
+Output written on "Review of general topology.pdf" (61 pages, 513436 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 778 compressed objects within 8 object streams
- 288 named destinations out of 1000 (max. 500000)
- 333 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 916 PDF objects out of 1000 (max. 8388607)
+ 801 compressed objects within 9 object streams
+ 299 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
