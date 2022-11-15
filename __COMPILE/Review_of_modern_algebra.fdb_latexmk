@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667903742 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1667903749
+["pdflatex"] 1668491372 "e:/math_notes/review_of_modern_algebra/__COMPILE/Review_of_modern_algebra.tex" "Review_of_modern_algebra.pdf" "Review_of_modern_algebra" 1668491377
   "../../my_settings/pangpang_conditionals.tex" 1664777689 101 42c63d0f7a65026f3b9a3f0663ded71a ""
   "../../my_settings/pangpang_definitions.tex" 1665212687 1873 1db7ccc734d24a0a0fe0273e568770e9 ""
   "../../my_settings/pangpang_dictionary.tex" 1667459211 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -39,7 +39,7 @@
   "../Galois_theory/some_Galois_extensions/finite_fields_application.tex" 1661740188 33 0f32af77fe3b724383df088b0f6adb79 ""
   "../Group/__GROUP_THEORY__.tex" 1660100717 1241 8b3cda7c49a29ed931a1b1059a420791 ""
   "../Group/additional/CRT_for_groups.tex" 1659230001 754 9805e509821b840e5dfdb43badbb46b4 ""
-  "../Group/additional/chains_of_groups.tex" 1665927429 8139 7868ece82a0daf39cda8272fc7e27377 ""
+  "../Group/additional/chains_of_groups.tex" 1668491371 8167 91e0730c4f6a5f5fd22c9c4b7a81c069 ""
   "../Group/additional/commutator_subgroup.tex" 1659883667 2286 a5f33897228935be41c3f0da1d9a6343 ""
   "../Group/additional/index_order_p_in_finite_abelian.tex" 1659278957 268 220a6e14011de828792e7db5995c9710 ""
   "../Group/additional/normal_closure.tex" 1659754454 1308 f9e92bb8d629f1dbe3addcbb2b9c6e30 ""
@@ -96,9 +96,9 @@
   "../Structured_objects/basic_object_theory/subobjects.tex" 1660104414 2520 25e8fd96672ca39aadaa5efb7c6bc945 ""
   "../Structured_objects/free_objects/free_objects.tex" 1661753114 6641 f3ed24cf4859a728dc5d1a03ca7d8709 ""
   "../preface.tex" 1662105076 326 396e21dc85b06f25d47a5e82166ad8ba ""
-  "Review_of_modern_algebra.aux" 1667903748 72045 4173e16db99c128969e73303d4b2b28e "pdflatex"
+  "Review_of_modern_algebra.aux" 1668491377 72045 4173e16db99c128969e73303d4b2b28e "pdflatex"
   "Review_of_modern_algebra.tex" 1667459247 768 af53387668d68475c32a73bc6d5e1694 ""
-  "Review_of_modern_algebra.toc" 1667903748 11591 2f7b537392e4be1f6f9e12dc3b442ef3 "pdflatex"
+  "Review_of_modern_algebra.toc" 1668491377 11591 2f7b537392e4be1f6f9e12dc3b442ef3 "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
