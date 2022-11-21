@@ -1,11 +1,17 @@
 \section{Compactification}
 
-In this section, we introduce a general definition of a compactification, unlike when we studied a one-point compactification.
+In this section, we introduce a general definition of a compactification, which, of cource, covers a one-point compactification.
 \begin{defi}[Compactification]
-    Given a space $X$, a space $Y$ is called a compactification of $X$ if
+    Given a space $X$, a space $Y$ is called a compactification of $X$ if the following are satisfied:
     \begin{enumerate}
-        \item[(a)] $Y$ is a compact Hausdorff space containing $X$ as a subspace, and
-        \item[(b)] the closure of $X$ in $Y$ is $Y$.
+        \item[(\romannumeral 1)]
+        {
+            $Y$ is a compact Hausdorff space containing $X$ as a subspace.
+        }
+        \item[(\romannumeral 2)]
+        {
+            The closure of $X$ in $Y$ is $Y$.
+        }
     \end{enumerate}
     Two compactifications $Y_1$ and $Y_2$ of $X$ is said to be equivalent if there is a homeomorphism from $Y_1$ into $Y_2$ extending the identity map on $X$.
 \end{defi}
@@ -14,7 +20,7 @@ In this section, we introduce a general definition of a compactification, unlike
 \end{rmk}
 It is natural to wonder if every completely regular space has a compactification.
 Hopefully, every completely regular space has a compactification, as justified by the lemma which will be introduced soon.
-The lemma states first that every space which can be embedded into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' given as in the lemma, then such compactificaiton is unique up to equivalence.
+The lemma states first that every space which embeds into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' given as in the lemma, then such compactificaiton is unique up to equivalence.
 
 \begin{lem}[Compactification extending an embedding]\label{emb&cptf}
     Let $X$ be a space such that there is an embedding $h$ of $X$ into a compact Hausdorff space $Z$.

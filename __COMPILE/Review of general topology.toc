@@ -7,7 +7,7 @@
 \contentsline {chapter}{\numberline {2}Connected spaces and compact spaces}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Connected spaces}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Path-connected spaces}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Components}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Connected components and path-connected components}{12}{section.2.3}%
 \contentsline {section}{\numberline {2.4}The topology of linear continuums}{14}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Compact spaces}{14}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Compact metrizable spaces}{17}{section.2.6}%

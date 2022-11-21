@@ -4,12 +4,12 @@ Some of the properties which are most desired for a topological space to have ar
 In this section, we impose a situation in which a topological space embeds into a compact Hausdorff space.
 
 \begin{defi}[Local compactness]
-    A space $X$ is said to be locally compact at the point $a\in X$ if there is a compact subspace $C$ of $X$ containing a neighborhood of $a$.
+    A space $X$ is said to be locally compact at a point $a\in X$ if there is a compact subspace $C$ of $X$ containing a neighborhood of $a$.
     If $X$ is locally compact at every point of $X$, then $X$ is said to be locally compact.
 \end{defi}
 
-One property regarding local compactness:
-\begin{prop}
+A simple observation follows:
+\begin{obs}
     Let $\{X_\alpha\}_\alpha$ be an indexed family of nonempty spaces.
     \begin{enumerate}
         \item[(a)]
@@ -22,7 +22,7 @@ One property regarding local compactness:
             The converse of the first statement in (a) is also true.
         }
     \end{enumerate}
-\end{prop}
+\end{obs}
 \begin{proof}
     Write $X=\prod_\alpha X_\alpha$.
 
@@ -52,7 +52,7 @@ One property regarding local compactness:
             $Y\setminus X$ is a one-point set.
         }
     \end{enumerate}
-    Moreover, if $Y_1$ and $Y_2$ are such spaces, then they coincides on $X$ and they are homeomorphic, i.e., $Y$ is uniquely determined up to equivalence.\footnote{Equivalence of compactness is introduced in \Cref{compactification}.}
+    Moreover, if $Y_1$ and $Y_2$ are such spaces, then $Y_1$ and $Y_2$ coincide on $X$ and are homeomorphic, i.e., $Y$ is uniquely determined up to equivalence.\footnote{Equivalence of compactness is introduced in \Cref{compactification}.}
 \end{thm}
 \begin{proof}
     Since it is easier to check the uniqueness, we first explain the uniqueness (up to equivalence).
@@ -61,22 +61,25 @@ One property regarding local compactness:
     Suppose $Y_1$ and $Y_2$ are compact Hausdorff spaces satisfying (a), (b), and (c).
     Let $p$ and $q$ denote the unique point of $Y_1\setminus X$ and $Y_2\setminus X$, respectively.
     Define a map $h: Y_1\rightarrow Y_2$ by
-    \begin{center}
-        $h(x)=x$ if $x\in X$, and $h(p)=q$.
-    \end{center}
+    \begin{align*}
+        h(x)=\left\{
+        \begin{array}{cc}
+            x   &   \textsf{(if $x\in X$)}\\
+            q   &   \textsf{(otherwise, i.e., $x=p$)}
+        \end{array}
+        \right..
+    \end{align*}
     We show $h$ is a homeomorphism extending the identity map on $X$; and for this, it suffices to verify that $h$ is a continuous map, because the openness of $h$ will follow by symmetry.
-    Suppose first that $U\subset Y_2$ is an open subset contained in $X$.
-    Clearly, its preimage is $U$, and because $U$ is open in $X$ and $X$ is open in $Y_1$, $U$ is open in $Y_1$.
-    Now, suppose that $U\subset Y_2$ is an open subset containing $q$.
-    Then the subset $C=Y_2\setminus U$ is a closed cubset of $Y_2$, so $C$ is compact.
-    Also, $C$ is contained in $X$.
-    Because $h^{-1}(C)=C$ is a compact subspace of $Y_1$, $h^{-1}(C)$ is closed in $Y_1$.
-    Thus, $h$ is a continuous map.
+    If $U$ is an open subset of $Y_2$ contained in $X$, its preimage is $U$; because $U$ is open in $X$ and $X$ is open in $Y_1$, $U$ is open in $Y_1$.
+    Assume $U$ is an open subset of $Y_2$ containing $q$.
+    Then the subset $C=Y_2\setminus U$ is closed in $Y_2$, so $C$ is compact and is contained in $X$.
+    It follows that $h^{-1}(C)=C$ is a compact subspace of $Y_1$ and that $h^{-1}(C)$ is closed in $Y_1$.
+    Therefore, $h$ is a continuous map.
 
     \textbf{Step 2: Proving the existence part.}\newline\noindent
     Suppose first that $X$ is a locally compact Hausdorff space.
     Let $p$ be any element not in $X$, and let $Y=X\sqcup\{p\}$.
-    And impose a topology on $Y$ by declaring the following sets to be open in $Y$:
+    And impose a topology on $Y$ by declaring the following subsets to be open in $Y$:
     \begin{enumerate}
         \item[(T1)]
         {
@@ -90,26 +93,24 @@ One property regarding local compactness:
     It is left as an exercise to check that the above collection is a topology on $Y$. (See \cref{check 1p cptf topology}.)
 
     We first show that $Y$ contains $X$ as a subspace.
-    Clearly, the topology on $X$ is coarser than the subspace topology on $X$ inherited from $Y$.
-    Conversely, the subspace topology on $X$ inherited from $Y$ is also coarser than the topology on $X$, which can be easily checked by intersecting $X$ with the sets of either type.
+    (Clearly, the topology on $X$ is coarser than the subspace topology on $X$ inherited from $Y$.)
+    By merely intersecting any subset of $Y$ of either type with $X$, one can easily observe that those two topologies are equal.
 
-    To show that $Y$ is a compact space, let $\mc{A}$ be any open cover of $Y$.
+    To show that $Y$ is compact, let $\mc{A}$ be any open cover of $Y$.
     Then there is a member $Y\setminus C\in\mc{A}$ of the second type which contains $p$.
     Since $C$ is a compact subspace of $X$, finitely many members of $\mc{A}$ cover $C$.
     These members, together with $Y\setminus C$, cover $Y$, as desired.
 
-    Finally, we show that $Y$ is a Hausdorff space, in which it remains to show that $p$ and any point $a$ of $X$ can be separated by disjoint sets open in $Y$.
-    Since $X$ is locally compact, there is a compact subspace $C$ of $X$ containing a neighborhood $U$ of $a$ in $X$.
-    Then $(U, Y\setminus C)$ is a desired pair.
+    Finally, we show that $Y$ is a Hausdorff space, in which it suffices to show that $p$ and any point $a$ in $X$ can be separated by disjoint open subsets of $Y$.
+    Since $X$ is locally compact, there is a compact subspace $C$ of $X$ containing a neighborhood $U$ of $a$ in $X$, and $(U, Y\setminus C)$ is a desired pair.
 
     \textbf{Step 3: Proving the converse.}\newline\noindent
     Suppose such space $Y$ exists for a space $X$.
-    Being a subspace of the Hausdorff space $Y$, $X$ is also a Hausdorff space.
+    Being a subspace of the Hausdorff space $Y$, $X$ is a Hausdorff space.
     Given a point $a\in X$, because $Y$ is a Hausdorff space, there are neighborhoods $U$ and $V$ of $a$ and $p$ in $Y$ which are disjoint.
-    Since $Y\setminus V$ is a closed subspace of $Y$ contained in $X$, $Y\setminus V$ is a compact subspace of $X$ containing the neighborhood $U$ of $a$.
+    Since $Y\setminus V$ is a closed subspace of $Y$ contained in $X$, $Y\setminus V$ is a compact subspace of $X$ containing $U$.
     Therefore, $X$ is locally compact.
 \end{proof}
-
 \begin{prob}\label{check 1p cptf topology}
     \begin{enumerate}
         \item[(a)]
@@ -162,7 +163,7 @@ Let $X$ be a locally compact Hausdorff space, and let $Y$ be a space (which is u
     }
     \item
     {
-        If $X$ is not compact, as $X$ is a subspace of a compact Hausdorff space $Y$, $X$ is not closed in $Y$, hence the closure of $X$ in $Y$ is $Y$.
+        If $X$ is not compact, then $X$ is not closed in $Y$ \color{brown}(why?)\color{black}, so the closure of $X$ in $Y$ is $Y$.
     }
 \end{itemize}
 If $Y$ is such a space and the closure of $X$ in $Y$ is $Y$, $Y$ is called the one-point compactification (or the Alexandroff compactification) of $X$.
@@ -171,11 +172,11 @@ If $Y$ is such a space and the closure of $X$ in $Y$ is $Y$, $Y$ is called the o
 \end{rmk}
 \begin{rmk}
     In \Cref{compactification}, we will consider the general concept of compactification (before studying the Stone-\v{C}ech compactification) over completely regular spaces.
-    Since one-point compactifications are also compactifications, here we briefly explain that the locally compact Hausdorff space $X$ is completely regular.
+    Since one-point compactifications are also compactifications, it will be better if it is explained that a locally compact Hausdorff space $X$ is completely regular.
     If the space $X$ is compact, then $X$ is normal, so $X$ is completely regular; if $X$ is not compact, then $X$ is a subspace of its one-point compactification, so $X$ is completely regular.
 \end{rmk}
 
-When the given space is a Hausdorff, the following property can be used as an alternative definition of local compactness.
+For Hausdorff spaces, local compactness can be intuitively considered as follows:
 \begin{prop}
     Suppose $X$ is a Hausdorff space.
     Then $X$ is locally compact if and only if given $x\in X$ and its neighborhood $U$ in $X$, there is a relatively compact neighborhood $V$ of $a$ in $X$ whose closure in $X$ is contained in $U$.\footnote{By relatively compact we mean that the closure of the space is compact.}
@@ -192,13 +193,13 @@ When the given space is a Hausdorff, the following property can be used as an al
     The converse is clear, for we may let $C$ be the closure of $V$ in $X$.
 \end{proof}
 
-As a homeomorphism implies the `topologically equivalent' of two topological spaces, one might expect the one-point compactifications of two homeomorphic spaces to be homeomorphic.
+As a homeomorphism implies the topologically equivalence of two topological spaces, one might expect the one-point compactifications of two homeomorphic spaces to be homeomorphic.
 \begin{thm}\label{homeomorphism extends to 1p cptf.s}
-    If $f: A\rightarrow B$ denotes a homeomorphism of locally compact Hausdorff spaces, then $f$ extends to a homeomorphism of their one-point compactifications.
+    If $f: A\rightarrow B$ is a homeomorphism of locally compact Hausdorff spaces $A$ and $B$, then $f$ extends to a homeomorphism of the one-point compactifications of $A$ and $B$.
 \end{thm}
 \begin{proof}
     Assume that $A$ and $B$ are not compact (otherwise, there is nothing to prove), and let $X$ and $Y$ be the one-point compactifications of $A$ and $B$, respectively.
-    Define $\widetilde{f}: X\rightarrow Y$ by
+    If $f$ were to be extended to $X$, such an extension (as a set map) should be given as the bijection $\widetilde{f}: X\rightarrow Y$, which is defined by
     \begin{align*}
         \widetilde{f}(x)=\left\{\begin{array}{cc}
             f(x)    &   \textsf{(if $x\in A$)}\\
@@ -206,9 +207,10 @@ As a homeomorphism implies the `topologically equivalent' of two topological spa
         \end{array}\right.,
     \end{align*}
     where $p$ and $q$ are the unique elements of $X\setminus A$ and $Y\setminus B$, respectively.
-    Clearly, $\widetilde{f}$ is a bijection.
-    Also, $\widetilde{f}$ is a continuous map; if $V\subset B$ is an open subset of $B$, then $\widetilde{f}^{-1}(V)=f^{-1}(V)$ is open in $A$; if $C\subset B$ is a compact subset of $B$, then $\widetilde{f}^{-1}(Y\setminus C)=X\setminus f^{-1}(C)$ is open in $X$, for $f^{-1}(C)$ is a compact subspace of $A$.
-    By symmetry, it follows that $\widetilde{f}$ has a continuous inverse.
+    To verify that $\widetilde{f}$ is a continuous map, let $V$ be an open subset of $Y$.
+    If $V$ is contained in $B$, $\widetilde{f}^{-1}(V)=f^{-1}(V)$ is open in $A$, hence in $X$.
+    If $V$ is not contained in $B$, $Y\setminus V$ is closed in $Y$ (hence, compact), implying that $\widetilde{f}^{-1}(Y\setminus V)=f^{-1}(Y\setminus V)$ is compact (hence, closed in $X$), i.e., $f^{-1}(V)$ is open in $X$.
+    By symmetry, it follows that $\widetilde{f}$ has an open map.
     This completes the proof.
 \end{proof}
 \begin{exmp}
@@ -217,6 +219,8 @@ As a homeomorphism implies the `topologically equivalent' of two topological spa
         \item[(a)]
         {
             Since $\bb{R}\approx S^1\setminus\{1\}$, the one-point compactification of $\bb{R}$ is homeomorphic to $S^1$.
+            Similarly, because $\bb{C}\approx\bb{R}^2\approx S^2\setminus\{n\}$ (where $n$ is any point in $S^2$), the one-point compactification of $\bb{C}$ or $\bb{R}^2$ is homeomorphic to $S^2$.
+            In addition, the one-point compactification of $\bb{C}^\times$ can be identified by gluing two distinct points of $S^2$.
         }
         \item[(b)]
         {

@@ -128,3 +128,18 @@ For metric spaces, the above equivalence reduces to the Heine-Borel theorem.
     Because $\partial\bb{D}$ is compact, for each point $e^{ix}\in\partial\bb{D}\,(0\leq x<2\pi)$ there is a polar rectangle $P_x: a(x)\leq \rho\leq b(x), s(x)\leq \theta\leq t(x)$ such that $e^{ix}\in P_x\subset U$.
     Choosing finitely many members among $P_x$'s and letting $r$ the smallest $b(x)$, we find that $B(0, r)\subset U$.
 \end{sol}
+
+\begin{prob}
+    Let $(X, d)$ be a metric space.
+    Show that every isometry of $X$ is surjective, when $X$ is compact.
+    (In fact, remarking the definition of an isometry, we may argue that every isometry of a compact metric space is an homeomorphism.)
+\end{prob}
+\begin{sol}
+    Let $f: X\rightarrow X$ be an isometry of $X$, and suppose $f$ is not surjective.
+    Then there is a point $x\in X\setminus f(X)$.
+    Because $X$ is compact, $f(X)$ is compact, so $X\setminus f(X)$ is open in $X$.
+    It implies the existence of a real number $r>0$ such that $B_d(x, r)\cap f(X)=\varnothing$.
+    Letting $x_0=x$, define $x_n=f(x_{n-1})$ for each positive integer $n$, and let $j, k$ be any positive integers with $j>k$.
+    Then $d(x_j, x_k)=d(x_{j-1}, x_{k-1})=\cdots=d(x_{j-k}, x)>r$, so the sequence $(x_n)_{n\in\bb{N}}$ has no convergent subsequence, which contradicts the compactness of $X$.
+    Therefore, every isometry of a compact metric space is a homeomorphism.
+\end{sol}
