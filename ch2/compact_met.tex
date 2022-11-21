@@ -51,29 +51,29 @@ We first introduce some other types of compactness:
     Thus, it remains to prove (a) under (c), so we assume that $X$ is sequentially compact.
     In this proof, we use the strategy by imposing $X$ a metric $d$ to understand $X$ as a metric space, not just a metrizable space.
     
-    \textbf{Step 1: Showing the existence of the Lebesgue number.}\newline\noindent
+    \textbf{Step 1: Showing the existence of a Lebesgue number.}\newline\noindent
     We wish to prove that for any open cover $\mc{A}$ of $X$ there is a real number $\delta>0$ such that every open set in $X$ with diameter less than $\delta$ is contained in some member of $\mc{A}$.
-    Suppose there is no such $\delta$.
-    Then, for each $n\in\bb{N}$, there is an open set $C_n$ of diameter less than $1/n$ which is not contained in any member of an open cover $\mc{A}$ of $X$.
-    Choosing a point $x_n\in C_n$ for each $n\in\bb{N}$, the sequential compactness of $X$ ensures the existence of a convergent subsequence $(x_{n_k})_k$ of $(x_n)_n$ (with the limit denoted by $x$).\footnote{It is natural to consider countably many objects when one should consider sequences.}
+    If there is no such $\delta$, for each $n\in\bb{N}$, there is an open set $C_n$ of diameter less than $1/n$ which is not contained in any member of an open cover $\mc{A}$ of $X$.
+    Choosing a point $x_n\in C_n$ for each $n\in\bb{N}$, by the sequential compactness of $X$, there is a convergent subsequence $(x_{n_k})_k$ of $(x_n)_n$ (with the limit denoted by $x$).\footnote{It is natural to consider countably many objects when one should consider sequences.}
     Let $A$ be a member of $\mc{A}$ containing $x$, and let $r>0$ be a real number such that $B_d(x, r)\subset A$.
-    If $i$ is large enough so that
-    \begin{center}
-        $\ds{d(x, x_{n_i})<\frac{r}{2}}$\quad and\quad$\ds{\frac{1}{n_i}<\frac{r}{2}}$,
-    \end{center}
-    then $C_{n_i}$ lies in $A$, a contradiction.
+    If a positive integer $i$ is large enough so that
+    \begin{align*}
+        d(x, x_{n_i})<\frac{r}{2}
+        \quad\textsf{and}\quad
+        \frac{1}{n_i}<\frac{r}{2},
+    \end{align*}
+    then $C_{n_i}\subset A$, a contradiction.
     
     \textbf{Step 2: Deriving that $X$ is compact.}\newline\noindent
-    Let $\mc{A}$ be an open cover of $X$.
-    By the result of Step 1, there is a Lebesgue number $\delta>0$ for the collection $\mc{A}$.
-    Because a sequentially compact metric space is totally bounded, finitely many balls in $X$ of radius $\ds{\frac{2\delta}{5}}$ cover $X$.
-    Therefore, a finite subcollection of $\mc{A}$ covers $X$. 
+    Let $\mc{A}$ be an open cover of $X$ and let $\delta>0$ be a Lebesgue number for $\mc{A}$.
+    Because a sequentially compact metric space is totally bounded, finitely many balls in $X$ of radius $\delta/3$ cover $X$.
+    So there is a finite subcollection of $\mc{A}$ which covers $X$.
 \end{proof}
 \begin{rmk}
     The result of Step 1 in the above proof is also known as the Lebesgue number lemma.
 \end{rmk}
 
-In metric spaces, the above equivalence reduces to the Heine-Borel theorem.
+For metric spaces, the above equivalence reduces to the Heine-Borel theorem.
 \begin{thm}[Heine-Borel theorem]
     Let $(X, d)$ be a metric space.
     Then the following are equivalent:
