@@ -1,0 +1,202 @@
+\section{Modes of convergence}
+
+\begin{defi}
+    Suppose $f_n: X\rightarrow \bb{C}$ is a measurable function for each $n\in\bb{N}$.
+    The sequence $(f_n)_{n\in\bb{N}KO}$ is said to be Cauchy in measure if, given $\alpha>0$,
+    \begin{align*}
+        \mu(\{x\in X: |f_n(x)-f_m(x)|\geq\alpha\})\rightarrow 0
+        \,\textsf{as}\,
+        n, m\rightarrow\infty.
+    \end{align*}
+    The sequence $(f_n)_{n\in\bb{N}}$ is said to converge to $f: X\rightarrow\bb{C}$ in measure if for each positive real number $\alpha$,
+    \begin{align*}
+        \mu(\{x\in X: |f_n(x)-f(x)|\geq\alpha\})\rightarrow 0\textsf{ as }n\rightarrow\infty.
+    \end{align*}
+\end{defi}
+\begin{rmk}
+    We may consider pointwise convergences `vertical' convergences, while we may consider convergences with respect to `measures' `horizontal' convergences.
+\end{rmk}
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose $(f_n: X\rightarrow\bb{C})_{n\in\bb{N}}$ is a sequnece of measurable functions which converges to $f$ in measure.
+            Then $(f_n)_{n\in\bb{N}}$ is Cauchy in measure, since $\{x\in X: |f_n(x)-f_m(x)|\geq\epsilon\}$ is contained in
+            \begin{align*}
+                \{x\in X: |f_n(x)-f(x)|\geq\epsilon/2\}\cup\{x\in X: |f(x)-f_m(x)|\geq\epsilon/2\}
+            \end{align*}
+            and the $\mu$-measure of the last two sets tends to 0 as $n, m\rightarrow\infty$.
+        }
+        \item[(b)]
+        {
+            However, convergence almost everywhere does not imply convergence in measure, and vice versa.
+            For example, when $f_n=\chi_{(0, \infty)}: \bb{R}\rightarrow\bb{C}$, then $f_n\rightarrow 0$ pointwise as $n\rightarrow\infty$ but not in measure; when 
+            \begin{eqnarray*}
+                &f_1=\chi_{[0, 1/2]},\, f_2=\chi_{[1/2, 1]},&\\
+                &f_3=\chi_{[0, 1/4]},\, f_4=\chi_{[1/4, 2/4]},\, f_5=\chi_{[2/4, 3/4]},\, f_6=\chi_{[3/4, 1]},&\\
+                &\cdots,&
+            \end{eqnarray*}
+            $f_n\rightarrow 0$ in measure but $(f_n)_{n\in\bb{N}}$ is not pointwise convergent.
+        }
+    \end{enumerate}
+\end{rmk}
+\begin{obs}
+    If $f_n\rightarrow f$ in $L^1$, then $f_n\rightarrow f$ in measure;
+    for any $\epsilon\in\bb{R}^{>0}$, we have $\epsilon\cdot\mu(\{x\in X: |f_n(x)-f(x)|\geq \epsilon\})\leq\int|f_n-f|\rightarrow 0$ as $n\rightarrow\infty$.
+\end{obs}
+
+\begin{obs}[The set of convergences]\label{the set of convergences}
+    Let $X$ be a topological space and $(Y, d)$ be a metric space.
+    Suppose a sequence $(f_n)_{n\in\bb{N}}$ of functions from $X$ into $Y$ is given.
+    Then, for a point $x\in X$, $f_n(x)\rightarrow f(x)$ for a function $f: X\rightarrow Y$ if and only if for each $\epsilon>0$ there is an integer $N(\epsilon)$ such that $n\geq N(\epsilon)$ implies $d(f_n(x), f(x))<\epsilon$.
+    The latter statement for a given positive real number $\epsilon$ is valid if and only if a point $x$ of $X$ belongs to $\bigcap_{n=k}^\infty\{x\in X: d(f_n(x), f(x))<\epsilon\}$ for some positive integer $k$, i.e.,
+    \begin{align*}
+        x\in\bigcup_{k=1}^\infty\bigcap_{n=k}^\infty\{x\in X: d(f_n(x), f(x))<\epsilon\}.
+    \end{align*}
+    Hence, the collection of a point $x$ of $X$ such that $f_n(x)\rightarrow f(x)$ as $n\rightarrow\infty$ is given by
+    \begin{align*}
+        \color{blue}\bigcap_{\epsilon>0} \bigcup_{k=1}^\infty \bigcap_{n=k}^\infty \{x\in X: d(f_n(x), f(x))<\epsilon\}\color{black}.
+    \end{align*}
+    Of course, the intersection for $\epsilon>0$ can be replaced by $j\in\bb{N}$, when $\epsilon$ is replaced by, such as, $1/j$ or $2^{-j}$.
+\end{obs}
+
+\begin{thm}
+    Suppose that $(f_n)_{n\in\bb{N}}$ is a sequence of complex-valued measurable functions and $(f_n)_{n\in\bb{N}}$ is Cauchy in measure.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            There is a subsequence $(f_{n_j})_{j\in\bb{N}}$ of $(f_n)_{n\in\bb{N}}$ which converges to a measurable function $f$ almost everywhere.
+        }
+        \item[(b)]
+        {
+            $f_n\rightarrow f$ in measure as $n\rightarrow\infty$.
+            Moreover, if $f_n$ converges to a function $g$ in measure, then $f=g$ almost everywhere.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Because $(f_n)_{n\in\bb{N}}$ is Cauchy in measure, for each positive integer $t$, there is a positive integer $N(t)$ such that $N(t)<N(t+1)$ and $\mu(\{x\in X: |f_n(x)-f_k(x)|\geq 2^{-t}\})< 2^{-t}$ whenever $n, k\geq N(t)$.
+    Write $g_t=f_{N(t)}$; then $\mu(\{x\in X: |g_t(x)-g_{s}(x)|\geq 2^{-t}\})<2^{-t}$ whenever $s\geq t$.
+    
+    Being motivated from \cref{the set of convergences}, for each positive integer $t$, set
+    \begin{align*}
+        E_t=\{x\in X: |g_t(x)-g_{t+1}(x)|\geq 2^{-t}\},\quad
+        F_t=\bigcup_{s\geq t} E_s,\quad
+        F=\bigcap_{t=1}^\infty F_t.
+    \end{align*}
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            Suppose $x\in X\setminus F$.
+            Then $x\notin F_t$ for some positive integer $t$, and $x\notin F_s$ for all integers $s\geq t$.
+            Hence, it follows that whenever $a, b$ are positive integers greater than or equal to $t$, then $|g_a(x)-g_b(x)|<2^{1-t}$.
+            Therefore, the sequence $(g_t(x))_{t\in\bb{N}}$ is a Cauchy sequence with values in $\bb{C}$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Because $\mu(F_t)\leq\sum_{s\geq t}\mu(E_s)\leq 2^{1-t}$, $\mu(F)=\lim_t\mu(F_t)=0$.
+        }
+    \end{enumerate}
+    Because each $g_t$ is a measurable function defined on $X$, there is a measurable function $f$ defined on $X$ such that $g_t\rightarrow f$ on $X\setminus E$ as $t\rightarrow\infty$.
+    (For example, one may set $f=\lim_t g_t$ on $X\setminus E$ and $f=0$ on $E$.)
+    This proves (a) of the theorem.
+
+    Remark from the above (\romannumeral 1) that whenever $x\in X\setminus F_t$ for some integer $t$, we have $|f(x)-g_t(x)|=\lim_s |g_s(x)-g_t(x)|\leq 2^{1-t}$.
+    This implies that $g_t\rightarrow f$ in measure as $t\rightarrow\infty$, because $\mu(F_t)\rightarrow 0$ as $t\rightarrow\infty$.
+    Remark also that $\{x\in X: |f_n(x)-f(x)|\geq \epsilon\}$ is contained in the union
+    \begin{align*}
+        \{x\in X: |f_n(t)-g_t(x)|\geq \epsilon/2\}
+        \cup
+        \{x\in X: |g_t(x)-f(x)|\geq \epsilon/2\},
+    \end{align*}
+    where the measure of both sets decay as $n, t\rightarrow\infty$.
+    Thus, $f_n\rightarrow f$ in measure as $n\rightarrow\infty$.
+    Furthermore, if $f_n\rightarrow g$ in measure as $n\rightarrow\infty$, because $\{x\in X: |f(x)-g(x)|\geq\epsilon\}$ is contained in the union
+    \begin{align*}
+        \{x\in X: |f(x)-f_n(x)|\geq\epsilon/2\}
+        \cup
+        \{x\in X: |f_n(x)-g(x)|\geq\epsilon/2\},
+    \end{align*}
+    we have $\mu(\{x\in X: |f(x)-g(x)|\geq\epsilon\})\rightarrow 0$ as $n\rightarrow\infty$.
+    It follows that $f=g$ $\mu$-almost everywhere.
+\end{proof}
+
+\begin{cor}
+    If $f_n\rightarrow f$ in $L^1$, there is a subsequence $(f_{n_j})_{j\in\bb{N}}$ of $(f_n)_{n\in\bb{N}}$ such that $f_{n_j}\rightarrow f$ almost everywhere.
+\end{cor}
+\begin{proof} 
+    By assumption, $f_n\rightarrow f$ in measure, hence there is a subsequence of $(f_n)_{n\in\bb{N}}$ which converges to $f$ almost everywhere.
+\end{proof}
+
+We now turn our attention to a uniform convergence of a sequence which converges almost everywhere.
+\begin{lem}\label{a lemma for Egoroff's theorem}
+    Suppose $\mu(X)<\infty$, and let $(f_n)_{n\in\bb{N}}$ be a complex-valued measurable functions defined on $X$ such that $f_n\rightarrow f$ $\mu$-almost everywhere.
+    Then, for any $\epsilon>0$ and $\delta>0$, there is an integer $N$ and a measurable subset $A\in\mc{M}$ of $X$ satisfying the following properties:
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            $\mu(A)<\delta$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            Whenever $n\geq N$ and $x\in X\setminus A$, we have $|f_n(x)-f(x)|<\epsilon$.
+        }
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    Again, as motivated by \cref{the set of convergences}, consider the set of convergences
+    \begin{align*}
+        C=\bigcap_{\alpha>0} \bigcup_{k=1}^\infty \bigcap_{n\geq k} \{x\in X: |f_n(x)-f(x)|<\alpha\}
+    \end{align*}
+    of the sequence $(f_n)_{n\in\bb{N}}$.
+    Since $\mu(X\setminus C)=0$, we have $\mu\left(X\setminus \bigcup_{k=1}^\infty A_k\right)=0$, where
+    \begin{align*}
+        A_k=\bigcap_{n\geq k} \{x\in X: |f_n(x)-f(x)|<\epsilon\}.
+    \end{align*}
+    Since $\mu(X)<\infty$ and $(X\setminus\bigcup_{k=1}^j A_k)_{j\in\bb{N}}$ is decreasing, we have $\lim_j \mu(X\setminus\bigcup_{k=1}^j A_k)=0$, so there is a positive integer $N$ such that $\mu(X\setminus \bigcup_{k=1}^j A_k)<\delta$ whenever $j\geq N$.
+    Letting $A=X\setminus \bigcup_{k=1}^N A_k$, we find easily observe that whenever $x\in X\setminus A$ then $|f_n(x)-f(x)|<\epsilon$ for all $n\geq N$.
+\end{proof}
+\begin{thm}[Egoroff's theorem]
+    Suppose as in \cref{a lemma for Egoroff's theorem}.
+    Then, for every $\epsilon>0$, there is a measurable subset $E$ of $X$ such that $\mu(E)<\epsilon$ and $f_n\rightarrow f$ uniformly on $X\setminus E$.
+\end{thm}
+\begin{proof}
+    By \cref{a lemma for Egoroff's theorem}, for each $k\in\bb{N}$ there is a measurable subset $A_k$ of $X$ and a positive integer $N_k$ with the following properties:
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            $\mu(A_k)<2^{-k}\epsilon$.
+        }
+        \item[(\romannumeral 2)]
+        {
+            If $x\in X\setminus A_k$ and $n\geq N_k$, then $|f_n(x)-f(x)|<1/k$.   
+        }
+    \end{enumerate}
+    And set $A=\bigcup_{k=1}^\infty A_k$.
+    Then $\mu(A)\leq\sum\mu(A_k)<\epsilon$.
+    Moreover, if $x\in X\setminus A$, then $x\in X\setminus A_k$ for all $k\in\bb{N}$; hence, whenever $n\geq N_k$, we have $|f_n(x)-f(x)|<1/k$.
+    Since such inequality holds for all $x\in X\setminus A$ and for each $k\in\bb{N}$, we conclude that $f_n\rightarrow f$ uniformly on $X\setminus A$.
+\end{proof}
+\begin{defi}
+    Let $(f_n)_{n\in\bb{N}}$ be a sequence of functions from a measure space into a metric space.
+    The sequence $(f_n)_{n\in\bb{N}}$ is said to be uniformly convergent $\mu$-almost everywhere in $X$, if for every $\epsilon>0$ there is a measurable subset $A$ of $X$ such that $\mu(A)<\epsilon$ and $(f_n)_{n\in\bb{N}}$ is uniformly convergent on $X\setminus A$.
+\end{defi}
+
+\begin{thm}[Lusin's theorem]
+    Let $A$ be a nonempty Lebesuge measurable subset of $\bb{R}$ such that $m(A)<\infty$, and let $f$ be a complex-valued function defined on $A$.
+    For any $\epsilon>0$, there is a compact subset $K$ of $\bb{R}$ contained in $A$ such that $m(A\setminus K)<\epsilon$ and $f|_K$ is continuous.
+\end{thm}
+\begin{rmk}
+    Since the case where $f$ is complex-valued easily follows from the case where $f$ is real-valued, we may assume that $f$ is real-valued.
+\end{rmk}
+\begin{proof}[Proof 1]
+    Let $(V_n)_{n\in\bb{N}}$ be an enumeration of the open intervals with rational endpoints, which is a basis of the topology on $\bb{R}$.
+    For each $n\in\bb{N}$, let $K_n$ and $K_n'$ be compact subsets of $A$ such that $K_n\subset f^{-1}(V_n)$, $K_n'\subset A\setminus f^{-1}(V_n)$, and $m(A\setminus (K_n\cup K_n'))<2^{-n}\epsilon$.
+    Letting $K=\bigcap_{n\in\bb{N}}(K_n\cup K_n')$, we have
+    \begin{align*}
+        m(A\setminus K)=m\left(\bigcup_{n\in\bb{N}}(A\setminus(K_n\cup K_n'))\right)\leq\sum_{n\in\bb{N}} m(A\setminus(K_n\cup K_n'))<\epsilon.
+    \end{align*}
+    To show the continuity of $f$ over $K$, let $x$ be a point of $K$ and $j$ be any integer such that $f(x)\in V_j$.
+    Then $x$ is a point of $K\setminus K_j'$, which is open in $K$, and $f(K\setminus K_j')\subset f((K_j\cup K_j')\setminus K_j')\subset f(K_j)\subset V_j$.
+    Therefore, $f|_K$ is continuous.
+\end{proof}

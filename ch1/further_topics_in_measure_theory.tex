@@ -1,0 +1,73 @@
+\section{Further topics in measure theory}
+
+\subsection{A subset of $\bb{R}$ which is not Lebesgue measurable}
+
+Here, we introduce a subset of $\bb{R}$ which is not Lebesgue measurable.
+If a set is Lebesgue measurable, then its Lebesgue measure is invariant under translation, rotation, and symmetry.
+
+To begin with, we define a relation $\sim$ on $[0, 1)$ by declaring that $x\sim y$ if and only if $x-y\in\bb{Q}$. \color{brown}(Check that this relation is an equivalence relation on $[0, 1)$.) \color{black}
+Let $N$ be any subset of $[0, 1)$ which contains precisely one member of each equivalence class; let $R=[0, 1)\cap\bb{Q}$.
+For each $r\in R$, define
+\begin{eqnarray*}
+    N_r=\{x+r: x\in N\cap[0, 1-r)\} \cup \{x+r-1: x\in N\cap[1-r, 1)\}.
+\end{eqnarray*}
+(Idea: Shifting and moving that sticks out beyond $[0, 1)$.)
+Then $N_r\subset[0, 1)$, and every $x\in [0, 1)$ belongs to precisely one $N_r$. \color{brown}(Why?) \color{black}
+Assuming $N$ is Lebesgue measurable, by the idea of forming $N_r$, we can easily find that $m(N_r)=m(N)$.
+Because $[0, 1)$ is the disjoint union of $N_r$'s for $r\in R$, we find that $1=m([0, 1))=\sum_{r\in R}m(N_r)=\sum_{r\in R}m(N)$, which is impossible.
+Therefore, the subset $N$ is not Lebesgue measurable.
+
+\subsection{Locally measurable sets and saturated measures}
+
+\begin{defi}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Locally measurable set)
+            A subset $E$ of $X$ is said to be locally measurable if $E\cap A$ is measurable whenever $A$ is a measurable set such that $\mu(A)<\infty$.
+            (Remark that every measurable set is locally measurable; using the notation in (b), we have $\mc{M}\subset\wt{\mc{M}}$.)
+        }
+        \item[(b)]
+        {
+            (Saturated measure)
+            Let $\wt{\mc{M}}$ be the collection of all locally measurable sets.
+            $\mu$ is said to be saturated if $\mc{M}=\wt{\mc{M}}$.
+        }
+    \end{enumerate}
+\end{defi}
+\color{red}
+\begin{prop}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\wt{\mc{M}}$ is a $\sigma$-algebra.
+        }
+        \item[(b)]
+        {
+            If $\mu$ is $\sigma$-finite, then $\mu$ is saturated.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            
+        }
+        \item[(b)]
+        {
+
+        }
+    \end{enumerate}
+\end{proof}
+
+Define the set map $\wt{\mu}: \wt{\mc{M}}\rightarrow[0, \infty]$ by $\wt{\mu}(E)=\mu(E)$ for all $E\in\mc{M}$ and $\wt{\mu}(E)=\infty$ otherwise.
+Then $\wt{\mu}$ is a saturated measure on $\wt{\mc{M}}$, and we call $\wt{\mu}$ the saturation of $\mu$.
+\begin{prop}
+    The saturation of a complete measure is also complete.
+\end{prop}
+\begin{proof}
+    
+\end{proof}
+\color{black}

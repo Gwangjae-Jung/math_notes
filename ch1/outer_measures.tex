@@ -1,0 +1,146 @@
+\section{Outer measures}
+
+\begin{defi}[Outer measure]
+    Let $X$ be a nonempty set.
+    A function $\mu^*: \mc{P}(X)\rightarrow[0, \infty]$ such that $\mu^*(\varnothing)=0$ is called an outer measure on $X$ if $\mu^*$ satisfies the following properties:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Monotonicity) If $A\subset B\subset X$, then $\mu^*(A)\leq\mu^*(B)$.
+        }
+        \item[(b)]
+        {
+            (Countable subadditivity) If $A_n\subset X$ for each $n\in\bb{N}$, then $\mu^*\left(\bigcup_{n=1}^\infty A_n\right)\leq\sum_{n=1}^\infty\mu^*(A_n)$.
+        }
+    \end{enumerate}
+    Indeed, measures are outer measures.
+\end{defi}
+
+The most common way to obtain an outer measure is to start with a family $\mc{E}$ of ``basic sets'' on which a notion of measure is defined (such as rectangles in the plane) and then to approximate arbitrary sets ``from the outside'' by countable unions of members of $\mc{E}$.
+The presice construction is as follows:
+\begin{prop}[Induced outer measure]
+    Let $\mc{E}$ be a subset of $\mc{P}(X)$ containing both $\varnothing$ and $X$, and let $\rho: \mc{E}\rightarrow[0, \infty]$ be a function.
+    Define the function $\mu^*: \mc{P}(X)\rightarrow[0, \infty]$ by
+    \begin{align}\label{induced outer measure}
+        \mu^*(A)=\inf\left\{\sum_{n=1}^\infty\rho(E_n)
+        :
+        \textsf{$\{E_n\}_n$ is a countable covering of $A$ by members of $\mc{E}$}\right\}.
+    \end{align}
+    Then, the map $\mu^*$ is an outer measure on $X$.
+\end{prop}
+\begin{proof}
+    Since $\mc{E}$ contains $X$, the map $\mu^*$ is well defined.
+    To show that $\mu^*$ is an outer measure on $X$, we need to check monotonicity and countable subadditivity.
+
+    The monotonicity is clear; if $A\subset B\subset X$ and $\{B_n\}_n$ is a countable covering of $B$ by members of $\mc{E}$, because it covers $A$, we have $\mu^*(A)\leq\sum_n\rho(B_n)$ and $\mu^*(A)\leq\mu^*(B)$.
+    
+    Given $A_n\subset X$ for each $n\in\bb{N}$, let $\{E_n(k)\}_{k\in\bb{N}}$ be a covering of $A_n$ by members of $\mc{E}$ such that
+    \begin{align*}
+        \mu^*(A_n)\leq\sum_k\rho(E_n(k))<\mu^*(A_n)+\epsilon\cdot 2^{-n}
+    \end{align*}
+    Since the union of $E_n(k)$ for all $n, k$ covers the union of $A_n$ for all $n\in\bb{N}$, we have
+    \begin{align*}
+        \mu^*\left(\bigcup_{n=1}^\infty A_n\right)\leq\sum_{n, k}\rho(E_n(k))=\sum_n\sum_k\rho(E_n(k))<\sum_n(\mu^*(A_n)+\epsilon\cdot 2^{-n})=\sum_n\mu^*(A_n)+\epsilon.
+    \end{align*}
+
+    This proves that the induced map $\mu^*$ is an outer measure on $X$.
+\end{proof}
+\begin{rmk}
+    The outer measure on $X$ constructed above from the function $\rho$ is called the outer measure on $X$ induced by $\rho$, and, if necessary, will be denoted by $\rho^*$.
+\end{rmk}
+
+Next step is to construct a measure on $X$ when an outer measure $\mu^*$ on $X$ is given.
+In fact, such construction is done by restricting the domain.
+\begin{defi}[$\mu^*$-measurable set]
+    If $\mu^*$ is an outer measure on a nonempty set $X$, a subset $A$ of $X$ is called a $\mu^*$-measurable set (or said to be measurable with respect to the outer measure $\mu^*$) if
+    \begin{align*}
+        \mu^*(E)=\mu^*(E\cap A)+\mu^*(E\setminus A)
+    \end{align*}
+    for all $E\subset X$.
+\end{defi}
+\begin{rmk}
+    When $\mu^*$ is an outer measure on $X$, whenever $E,\,A\subset X$, we have $\mu^*(E)\leq\mu^*(E\cap A)+\mu^*(E\setminus A)$.
+    Thus, $A\subset X$ is $\mu^*$-measurable if and only if $\mu^*(E)\geq\mu^*(E\cap A)+\mu^*(E\setminus A)$ for all $E\subset X$.
+    (Here, we may assume $\mu^*(E)<\infty$.)
+\end{rmk}
+
+Here is an intuition inside the concept of $\mu^*$-measurability.
+Suppose $\mu^*$ is an outer measure on $X$ and $A$ is a subset of $X$.
+To say $A$ is `measurable' in some sense, one may suggest that the `interior' measure and the `exterior' measure of $A$ be equal, so that we can treat the identical value the measure of $A$.
+To write in the form of an identity, whenever $E$ is a subset of $X$ containing $A$, it should be satisfied that
+\begin{align}\label{motivating measurability}
+    \mu^*(A)=\mu^*(E)-\mu^*(E\setminus A)
+\end{align}
+where the left-hand side is the `exterior' measure of $A$ and the right-hand side is the `interior' measure of $A$.
+$\mu^*$-measurability is an extension of the idea in \cref{motivating measurability}; whenever $E$ is a subset of $X$, the `exterior' measure $\mu^*(A\cap E)$ of the portion of $A$ contained in $E$ must be equal to the `interior' measure $\mu*(E)-\mu^*(E\setminus A)$ of the portion.
+
+The following theorem justifies the earlier extension; it justifies that all $\mu^*$-measurable sets are ``well-behaved'' relative to $\mu^*$.
+Though it is labeled as a theorem, it is the nature of the collection of all subsets of $X$ which are measurable with respect to $\mu^*$.
+\begin{thm}[Carath\'eodory's extension theorem]
+    If $\mu^*$ is an outer measure on $X$, the collection $\mc{M}^*$ of all $\mu^*$-measurable sets is a $\sigma$-algebra on $X$.
+    And the restriction of $\mu^*$ to $\mc{M}^*$ is a complete measure.\footnote{One should remark that such complete measure need not be the completion of $\mu$. In the following section, however, it will be proved that the completion of a measure and the Carath\'{e}odory extension of the measure coincide \textit{if the measure is $\sigma$-finite}.}
+\end{thm}
+\begin{proof}
+    Let $\mc{M}^*$ denote the collection of subsets of $X$ which are $\mu^*$-measurable.
+    
+    \textbf{Step 1: $\mc{M}^*$ is a $\sigma$-algebra.}\newline\noindent
+    It is clear that $\mc{M}^*$ is closed under set complements in $X$.
+    Thus, it remains to show that $\mc{M}^*$ is closed under countable disjoint unions. (See the footnote in the definition of $\sigma$-algebras.)
+    Whenever $A, B\in\mc{M}^*$ and $E\subset X$, because
+    \begin{eqnarray*}
+        \mu^*(E)
+        &=&\mu^*(E\cap A\cap B)+\mu^*(E\cap A\setminus B)+\mu^*((E\setminus A)\cap B))+\mu^*((E\setminus A)\setminus B)\\
+        &=&\mu^*(E\cap(A\cup B))+\mu^*(E\setminus(A\cup B)),
+    \end{eqnarray*}
+    $\mc{M}^*$ is closed under arbitrary finite set unions.
+
+    Let $\{A_n\}_{n\in\bb{N}}$ be a collection of pairwise disjoint sets in $\mc{M}^*$.
+    Define $B_n:=\bigsqcup_{k=1}^n A_k$ for each $n\in\bb{N}$ and let $B$ be the union of all $A_n$'s.
+    By induction, $\mu^*(E\cap B_n)=\sum_{k=1}^n\mu^*(E\cap A_k)$ for all $E\subset X$.
+    Therefore,
+    \begin{align*}
+        \mu^*(E)=\mu^*(E\cap B_n)+\mu^*(E\setminus B_n)\geq\sum_{k=1}^n\mu^*(E\cap A_k)+\mu^*(E\setminus B)
+    \end{align*}
+    for all $n\in\bb{N}$, so
+    \begin{align*}
+        \mu^*(E)\geq\sum_n\mu^*(E\cap A_n)+\mu^*(E\setminus B)\geq\mu^*(E\cap B)+\mu^*(E\setminus B),
+    \end{align*}
+    implying that $B=\bigsqcup_n A_n$ is also $\mu^*$-measureble.
+    Therefore, $\mc{M}^*$ is a $\sigma$-algebra on $X$.
+
+    \textbf{Step 2: $\mu^*\vline_{\mc{M}^*}$ is a complete measure.}\newline\noindent
+    Let $\mu=\mu^*\vline_{\mc{M}^*}$, and we first justify that $\mu$ is a measure.
+    Clearly, $\mu(\varnothing)=0$.
+    Let $\{A_n\}_n$ be a countable collection of members of $\mc{M}^*$ which are pairwise disjoint.
+    Then $\mu(\bigsqcup_{n=1}^k)=\sum_{n=1}^k \mu(A_n)$ by induction, so $\mu(\bigsqcup_n A_n)\geq\sum_{n=1}^k \mu(A_n)$ for all $k\in\bb{N}$.
+    Hence, $\mu(\bigsqcup_n A_n)\geq\sum_n \mu(A_n)$, and the $\sigma$-subaddititivity of $\mu$ implies that $\mu$ is countably additive.
+    
+    To show completeness, suppose $A$ is a subset of a $\mu$-null set.
+    By monotonicity, $\mu^*(A)=0$, hence $\mu^*(E)\geq\mu^*(E\setminus A)=\mu^*(E\cap A)+\mu^*(E\setminus A)$ for all $E\subset X$.
+    Therefore, $A$ is $\mu^*$-measureble, i.e., $A\in\mc{M}^*$.
+\end{proof}
+
+\begin{rmk}
+    $\textsf{(Function)}\xrightarrow{\textsf{consider infimums}}\textsf{(Outer measure)}\xrightarrow{\textsf{restricting to $\mc{M}^*$}}\textsf{(Complete measure)}$,
+    where $\mc{M}^*$ is the set of $\mu^*$-measurable sets in $X$.
+\end{rmk}
+
+\subsection*{Problems}
+
+\begin{prob}[Exercise 1.17]
+    Let $\mu^*$ be an outer measure on $X$ and $\{A_n\}_n$ be a countable collection of pairwise disjoint $\mu^*$-measureble sets.
+    Show that $\mu^*(E\cap U)=\sum_n\mu^*(E\cap A_n)$, where $U=\bigsqcup_n A_n$.
+\end{prob}
+\begin{sol}
+    It is clear from the countable subadditivity of outer measures that $\mu^*(E\cap U)\leq\sum_n\mu^*(E\cap A_n)$.
+    To show the converse inequality, let $B_k=\bigsqcup_{n\geq k} A_n$, and note that
+    \begin{eqnarray*}
+        \mu^*(E\cap U)
+        &=&\mu^*((E\cap U)\cap A_1)+\mu^*((E\cap U)\setminus A_1)=\mu^*(E\cap A_1)+\mu^*(E\cap B_1)\\
+        &=&\mu^*(E\cap A_1)+\mu^*(E\cap A_2)+\mu^*(E\cap B_2)\\
+        &\vdots&\\
+        &=&\sum_{n=1}^j\mu^*(E\cap A_n)+\mu^*(E\cap B_j)\geq\sum_{n=1}^j\mu^*(E\cap A_n)
+    \end{eqnarray*}
+    for all $j$ so that the desired inequality holds.
+    (Or one can prove the second inequality using $\mu^*(E\cap U)\geq\mu^*(E\cap \bigsqcup_{j=1}^n A_j)=\sum_{j=1}^n\mu^*(E\cap A_j)$.)
+\end{sol}

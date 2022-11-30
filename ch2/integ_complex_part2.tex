@@ -1,0 +1,255 @@
+\section{Integration of complex functions - Part 2}
+
+In this section, as a sequel of the preceeding section, we introduce some applications of the Lebesgue dominated convergence theorem.
+Unless stated otherwise, we assume that a measure space $(X, \mc{M}, \mu)$ is given.
+
+\subsection{Approximation of an $L^1$-function}
+As a Riemann integrable function $f: I\rightarrow\bb{R}$ (where $I$ is an interval in $\bb{R}$) can be approximated by a simple function or a continuous function with a compact support, an $L^1$-function can also be approximated by a simple or continuous function.
+\begin{thm}
+    Let $(X, \mc{M}, \mu)$ be a measure space and suppose $f\in L^1$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            For any $\epsilon>0$, there is a simple integrable function $s=\sum_{j=1}^n a_j\chi_{E_j}$ such that $\int|f-s|<\epsilon$.
+            That is, the collection of the equivalence classes among simple integrable  functions is dense in $L^1$.
+        }
+        \item[(b)]
+        {
+            If $\mu$ is a Lebesgue-Stieltjes measure on $\bb{R}$, each set $E_j$ in (a) can be taken to be a finite union of open intervals.
+            Moreover, there is a continuous function $g$ that vanishes outside a bounded interval such that $\int|f-g|<\epsilon$.
+            Hence, any $f\in L^1$ can be approximated by a $C^\infty$-function in $L^1$-sense.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \hangindent=0.65cm
+
+    \noindent(a)
+    Let $(s_n)_{n=1}^\infty$ be a sequence of simple functions given as in \cref{measurable functions as limits of simple functions}.
+    Because $f\in L^1$, by the Lebesgue dominated convergence theorem, $s_n\rightarrow f$ in $L^1$.
+    
+    \noindent(b)
+    Without loss of generality, we may assume $a_j\neq 0$ for all $j$.
+    Because $s\in L^1$, $\mu(E_j)<\infty$ for each $j$.
+    Thus, for each $j$, given $\epsilon>0$, there is a set $A_j$ which is a finite union of open intervals such that $\mu(E_j\triangle A_j)<\epsilon$.
+    Letting $t=\sum_{j=1}^n a_j\chi_{A_j}$, we have $\int|f-t|\leq\int|f-s|+\int|s-t|<\epsilon(1+2\sum_{j=1}^n |a_j|)$.
+    This justifies that each $E_j$ can be chosen to be a finite union of open intervals.
+    The density of $C^0$ (and $C^\infty$) in $L^1$ now easily follows. \color{brown}(How?)\color{black}
+\end{proof}
+
+\subsection{Completeness of $L^1$}
+Our goal in this subsection is to prove that $L^1$ is a Banach space.
+We start this subsection with the following essential tool, which is also introduced in Chapter 5 of the textbook.
+The `tool' tells us that a normed vector space (with the metric which is induced by the norm) is complete (i.e., a Banach space) if and only if every absolutely convergent series of vectors in the space is convergent.
+\begin{lem}[Checking completeness of a vector space]\label{checking completeness of a vector space}
+    Let $(V, \norm{\cdot})$ be a normed vector space and impose $V$ the metric induced by $\norm{\cdot}$.
+    Then, the following are equivalent:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $V$ is a Banach space.
+        }
+        \item[(b)]
+        {
+            Every absolutely convergent series of vectors in $V$ is convergent.
+            To be precise, $(v_n)_{n\in\bb{N}}$ is a sequence of vectors in $V$ such that $\sum_n\norm{v_n}$ is convergent, then $\sum_n v_n$ is convergent.
+        }
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    Let $(v_n)_{n\in\bb{N}}$ be a sequence of vectors in $V$ such that $\sum_n\norm{v_n}$ is convergent.
+    Because the sequence $\left(\sum_{k=1}^n v_k\right)_{n\in\bb{N}}$ is a Cauchy sequence in $V$ and $V$ is complete, the sequence is convergent in $V$.
+
+    Assume (b) and let $(v_n)_{n\in\bb{N}}$ be a Cauchy sequence in $V$.
+    For each positive integer $j$, there is an integer $f(j)$ such that
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            $f(j)<f(j+1)$ for all $j$, and
+        }
+        \item[(\romannumeral 2)]
+        {
+            $n, m\geq f(j)$ implies $\norm{v_n-v_m}<2^{-j}$.
+        }
+    \end{enumerate}
+    For each $n\in\bb{N}$, define $y_n=v_{f(n+1)}-v_{f(n)}$.
+    Then $\norm{y_n}\leq 2^{-n}$, so $\sum_n\norm{y_n}\leq 1$.
+    By hypothesis, the series $\sum_n y_n$ is convergent, so the subsequence $(v_{f(n)})_{n\in\bb{N}}$ of the Cauchy sequence $(v_n)_n$ is convergent.
+    Therefore, $V$ is complete.
+\end{proof}
+
+Next, we study another convergence theorem derived from the Lebesgue dominated convergence theorem, which is called Levi's convergence theorem.
+In fact, together with \cref{checking completeness of a vector space}, the Levi's convergence theorem justifies that $L^1$ is a Banach space.
+\begin{prop}[Levi's convergence theorem]
+    Let $(f_n)_{n\in\bb{N}}$ be a sequence in $L^1$ such that $\sum_n\int|f_n|<\infty$.
+    Then, the series $\sum_n f_n$ has the following types of convergence:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\sum_n f_n$ converges absolutely $\mu$-almost everywhere (hence, pointwise $\mu$-almost everywhere).
+        }
+        \item[(b)]
+        {
+            $\sum_n f_n\in L^1$, and $\sum_{k=1}^n f_k\rightarrow \sum_n f_n$ in $L^1$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \ifinclude
+    Because each $|f_n|$ belongs to $L^+$, by the monotone convergence theorem, $\int\sum_n |f_n|=\sum_n \int|f_n|<\infty$, hence $\sum_n f_n$ converges absolutely $\mu$-almost everywhere.
+    (In fact, $\sum_n |f_n|\in L^+$.)
+    Because $\sum_n f_n$ is measurable and $\int|\sum_n f_n|\leq\int\sum_n |f_n|<\infty$, $\sum_n f_n\in L^1$.
+    Moreover, because $|\sum_{k=1}^n f_k|\leq\sum_n|f_n|$, by the Lebesgue dominated convergence theorem, we find that $\sum_{k=1}^n f_k\rightarrow\sum_n f_n$ in $L^1$.
+    \else
+    Write $F=\sum_n f_n$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            To check absolute convergence, we observe $\sum_n |f_n|$.
+            Because each $\sum_{k=1}^n |f_k|$ belongs to $L^+$, by the monotone convergence theorem, we have
+            \begin{align*}
+                \int\sum_n|f_n|=\sum_n\int|f_n|<\infty
+            \end{align*}
+            and the results easily follow.
+        }
+        \item[(b)]
+        {
+            Being the limit of a sequence of measurable functions, $F$ is measurable.
+            Because $\int |F|\leq\int\sum_n|f_n|<\infty$, $F$ is integrable.
+            Therefore, by the Lebesgue dominated convergence theorem, $\sum_{k=1}^n f_k$ converges to $F$ in $L^1$.
+        }
+    \end{enumerate}
+    This concludes the proof.
+    \fi
+\end{proof}
+
+Even though Levi's convergence theorem can be applied to some computations of integrals, there is one remarkable observation; the assumption states that the series of norms $\sum_n \norm{f_n}_1$ is finite and the result states that the series of vectors $\sum_n f_n$ is convergent, which is part (b) of \cref{checking completeness of a vector space}.
+Therefore, it can be deduced that $L^1$ is a Banach space.
+\begin{thm}
+    $L^1$ is a Banach space.
+\end{thm}
+As $L^1$ is a Banach space, $L^p$ for $1\leq p\leq \infty$ is known to be a Banach space.
+It will be proved at the end of this chapter.
+
+\subsection{Riemann integrable functions}
+In this subsection, we fix the measure space to be the Lebesgue measure space $(\bb{R}, \mc{L}, m)$ or its restriction to a compact interval $[a, b]$.
+Our goal is to prove that a Riemann integrable function $f: [a, b]\rightarrow\bb{R}$ is Lebesgue integrable and that $f$ is Riemann integrable if and only if $f$ is continuous $m$-almost everywhere.
+
+Suppose $f: [a, b]\rightarrow\bb{R}$ is a (bounded and) Riemann integrable function.
+Given $\epsilon>0$, there is a partition $P_0$ of $[a, b]$ such that $U(P, f)-L(P, f)<\epsilon$ whenever $P$ is a refinement of $P_0$.
+For a partition $P=\{a=x_0, x_1, \cdots, x_{n-1}, x_n=b\}$ of $[a, b]$, define
+\begin{align*}
+    U_P=f(a)\chi_{\{a\}}+\sum_{i=1}^n M_i\chi_{(x_{i-1}, x_i]}
+    \quad\textsf{and}\quad
+    L_P=f(a)\chi_{\{a\}}+\sum_{i=1}^n m_i\chi_{(x_{i-1}, x_i]},
+\end{align*}
+where $M_i=\sup\{f(x): x_{i-1}<x\leq x_i\}$ and $m_i=\inf\{f(x): x_{i-1}<x\leq x_i\}$.
+What we should notice is that $U_P$ and $L_P$ are simple functions on $[a, b]$ if $P$ is a partition of $[a, b]$.
+Furthermore, if $(P_n)_n$ is an incresaing sequence of partitions of $[a, b]$ which are finer than $P_0$ with the property that $\norm{P_n}\rightarrow 0$ as $n\rightarrow\infty$, then $(U_{P_n})_{n\in\bb{N}}$ and $(L_{P_n})_{n\in\bb{N}}$ are sequences of simple functions such that
+\begin{align*}
+    L_{P_1}\leq L_{P_2}\leq\cdots\leq f\leq\cdots\leq U_{P_2}\leq U_{P_1}.
+\end{align*}
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Each $U_{P_n}$ and $L_{P_n}$ is an integrable simple function, which is bounded.
+        }
+        \item[(b)]
+        {
+            Letting $U=\lim_n U_{P_n}$ and $L=\lim_n L_{P_n}$, both $U$ and $L$ are measurable and $L\leq f\leq U$ on $[a, b]$.
+            Furthermore, because $U$ and $L$ are bounded, they are Lebesgue integrable.
+        }
+        \item[(c)]
+        {
+            The Lebesgue integral and the Riemann integral coincide for all $U_{P_n}$ and $L_{P_n}$.
+            Furthermore,
+            \begin{align*}
+                \lim_{n\rightarrow\infty}\int_{[a, b]} U_{P_n}=\lim_{n\rightarrow\infty}\int_a^b U_{P_n}=\ol{\int_a^b}f\quad\textsf{and}\quad\lim_{n\rightarrow\infty}\int_{[a, b]} L_{P_n}=\lim_{n\rightarrow\infty}\int_a^b L_{P_n}=\ul{\int_a^b}f.
+            \end{align*}
+        }
+    \end{enumerate}
+\end{rmk}
+Because all the functions are bounded, we may use the monotone convergence theorem, which gives $\int_{[a, b]}U=\int_{[a, b]}L=\int_a^b f$.
+Because $L\leq f\leq U$, this coincidence of the integrals implies that $U=f=L$ $m$-almost everywhere.
+Therefore, $f$ is Lebesgue integrable and $\int_{[a, b]} f=\int_a^b f$.
+
+We now investigate the condition under which a bounded function $f: [a, b]\rightarrow\bb{R}$ is Riemann integrable, with the notations given above.
+Assume $f$ is Riemann integrable.
+Then $L=f=U$ $m$-almost everywhere.
+Let $P=\bigcup_{n=1}^\infty P_n$ and $E\subset[a, b]$ be the set on which $L\neq U$.
+If $x\in[a, b]\setminus (P\cup E)$, then $L(x)=U(x)$ since $x\notin E$; and one can deduce the continuity of $f$ at $x$ using $x\notin P$.
+Hence, $f$ is continuous $m$-almost everywhere.
+Conversely, assume $f$ is continuous at $m$-almost every point of $[a, b]$ and let $E$ be the set of points in $[a, b]$ at which $f$ is discontinuous.
+And let $(P_n)_{n=1}^\infty$ be any increasing sequence of partitions of $[a, b]$ such that $\norm{P_n}\rightarrow 0$ as $n\rightarrow\infty$.
+If $x\in[a, b]\setminus E$, by continuity of $f$ at $x$, we have $U(x)=L(x)$, so $L=f=U$ $m$-almost everywhere.
+Because $m$ is complete, $f$ is measurable, and
+\begin{align*}
+    \ol{\int_a^b}f=\lim\int_a^b U_{P_n}=\lim\int_{[a, b]} U_{P_n}=\int_{[a, b]}U
+    =\int_{[a, b]}L=\lim\int_{[a, b]} L_{P_n}=\lim\int_a^b L_{P_n}=\ul{\int_a^b}f.
+\end{align*}
+Therefore, $f$ is Riemann integrable on $[a, b]$ if $f$ is continuous $m$-almost everywhere.
+
+We summarize the above results as the following theorem.
+\begin{thm}
+    Let $f: [a, b]\rightarrow\bb{R}$ be a bounded function.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $f$ is Riemann integrable, then $f$ is Lebesgue integrable, and these two integrals of $f$ are the same.
+        }
+        \item[(b)]
+        {
+            $f$ is Rieamann integrable if and only if $f$ is continuous $m$-almost everywhere.
+        }
+    \end{enumerate}
+\end{thm}
+
+\subsection{A differentiation theorem}
+Let $(X, \mc{M}, \mu)$ be a measure space.
+\begin{thm}
+    Let $f: X\times[a, b]\rightarrow\bb{C}\,(-\infty<a<b<\infty)$ be a function.
+    Suppose that $f(\cdot, t): X\rightarrow\bb{C}$ is integrable for each $t\in[a, b]$ and let $F(t)=\int f(x, t)\,d\mu(x)=\int f(\cdot, t)$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose that there exists $g\in L^1$ such that $|f(x, t)|\leq g(x)$ for all $x, t$.
+            If $f(x, \cdot)$ is continuous at $t_0\in[a, b]$ for each $x$, then $F$ is continuous at $t_0$.
+            In particular, if $f(x, \cdot)$ is continuous for each $x$, then $F$ is continuous.
+        }
+        \item[(b)]
+        {
+            Suppose that $f_t=\partial_t f$ exists and there is a function $h\in L^1$ such that $|f_t(x, t)|\leq h(x)$ for all $x, t$.
+            Then $F$ is differentiable and $F'(t)=\int f_t(x, t)\,d\mu(x)$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Note that $F$ is continuous at $t_0\in[a, b]$ if and only if $F(p_n)\rightarrow F(t_0)$ whenever $(p_n)_n$ is any sequence in $[a, b]$ with the limit $t_0$.\footnote{This approach is quite natural and essential, because the \ldct requires the collection of integrable functions to be countable.}
+            Becasue $(f(x, p_n)-f(x, t_0))_n$ is a sequence of integrable functions bounded by $2g$, by the \ldct, we have $\lim_n(F(p_n)-F(t_0))=\int\lim_n(f(\cdot, p_n)-f(\cdot, t_0))=\int 0=0$.
+        }
+        \item[(b)]
+        {
+            Let $(p_n)_n$ be, again, a sequence of points of $[a, b]$ with the limit $t_0$.
+            Then
+            \begin{align*}
+                f_t(x, t_0)=\lim_{n\rightarrow\infty}\frac{f(x, p_n)-f(x, t_0)}{p_n-t_0}.
+            \end{align*}
+            By the \mvt, for each $n$ there is a point $\gamma_n\in[a, b]$ such that $\dfrac{f(x, p_n)-f(x, t_0)}{p_n-t_0}=f_t(x, \gamma_n)$, hence $\left|\dfrac{f(x, p_n)-f(x, t_0)}{p_n-t_0}\right|\leq h(x)$.
+            Also, because each $\dfrac{f(x, p_n)-f(x, t_0)}{p_n-t_0}$ is measurable, it is integrable.
+            Therefore, by the \ldct again, we have
+            \begin{align*}
+                \lim_{n\rightarrow\infty}\frac{F(p_n)-F(t_0)}{p_n-t_0}=\int\lim_{n\rightarrow\infty}\frac{f(x, p_n)-f(x, t_0)}{p_n-t_0}\,d\mu(x)=\int f_t(x, t_0)\,d\mu(x),
+            \end{align*}
+            proving the differentiablility.
+        }
+    \end{enumerate}
+    This completes the proof.
+\end{proof}
+\begin{rmk}
+    Suppose the domain of $f$ were given as $X\times I$, where $I$ is an interval in $\bb{R}$, rather than a compact interval.
+    If $f$ or $F$ satisfies (a) or (b) on any subset $X\times [a, b]$ with $[a, b]\subset I$, then $f$ or $F$ satisfies (a) or (b) on its domain.
+\end{rmk}

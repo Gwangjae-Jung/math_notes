@@ -1,0 +1,285 @@
+\section{Integration of complex functions - Part 1}
+Again, throughout this section, we fix a measure space $(X, \mc{M}, \mu)$.
+
+\subsection{Integration of real-valued measurable functions}
+
+\begin{rmk}
+    By real-valued we mean the case where the codomain is $\bb{R}$ or $\ol{\bb{R}}$.
+\end{rmk}
+Given a measurable function $f: X\rightarrow\ol{\bb{R}}$, we define the integral of $f$ with regard to $\mu$ by
+\begin{align*}
+    \int f:=\int f^+-\int f^-.
+\end{align*}
+(Remark that $f^+$ and $f^-$ are measurable, because $f$ is measurable.)
+We are clearly concerned with the case where $\int f^+$ and $\int f^-$ are both finite.
+\begin{defi}[Integrable real-valued function]
+    A real-valued measurable function $f$ on $X$ is said to be integrable if
+    \begin{align*}
+        \textsf{$\int f^+$ and $\int f^-$ are both finite, i.e., $\int |f|$ is finite.}
+    \end{align*}
+    Furthermore, given $E\in\mc{M}$, we say a real-valued function $f$ on $X$ is integrable on $E$ if $f\chi_E$ is measurable and $\int_E |f|<\infty$.
+\end{defi}
+\begin{nota}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    The collection of real-valued integrable functions (including such functions with values in $\ol{\bb{R}}$) is denoted by $L_r(X, \mc{M}, \mu)$.
+\end{nota}
+
+As real or complex-valued measurable functions form an algebra over $\bb{R}$ or $\bb{C}$, one might wish to check if there is a corresponding result for real-valued or complex-valued integrable functions.
+\begin{prop}\label{properties for real L}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $f, g$ are real-valued measurable functions on $X$ and $f\leq g$, then $\int f\leq\int g$.
+        }
+        \item[(b)]
+        {
+            Under the usual operations, $L_r$ is an $\bb{R}$-vector space, and the integral is an $\bb{R}$-linear functional on $L_r$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $f^+\leq g^+$ and $f^-\geq g^-$, thus $\int f=\int f^+-\int f^-\leq\int g^+-\int g^-=\int g$.
+        }
+        \item[(b)]
+        {
+            To verify that $L_r$ is an $\bb{R}$-vector space, suppose $a,\,b\in\bb{R}$, $f,\,g\in L_r$, and observe that $|af+bg|\leq|a||f|+|b||g|$.
+            We now show that the integral is an $\bb{R}$-linear functional on $L_r$.
+            Let $h=f+g$ and observe that ${h^+}-{h^-}={f^+}-{f^-}+{g^+}-{g^-}$ so $h^++f^-+g^-=h^-+f^++g^+$.
+            The latter identity explains the additivity.
+            $\bb{R}$-scalar multiplicativity easily follows.
+        }
+    \end{enumerate}
+    Remark that $L_r$ need not be an algebra on $\bb{R}$.
+    For example, when the Lebesgue measure space on $\bb{R}$ is given and $f, g\in L_r$ where
+    \begin{align*}
+        f(x)=\begin{cases}
+            x^{-2}  &   \textsf{(if $x>0$)}\\
+            0       &   \textsf{(otherwise)}
+        \end{cases}
+        \quad\textsf{and}\quad
+        g(x)=\begin{cases}
+            x       &   \textsf{(if $0\leq x\leq 1$)}\\
+            0       &   \textsf{(otherwise)}
+        \end{cases},
+    \end{align*}
+    then $f, g\in L_r$ but $fg\notin L_r$.
+\end{proof}
+
+\subsection{Integration of complex-valued measurable functions}
+
+Given a measurable function $f: X\rightarrow\bb{C}$, we define the integral of $f$ with regard to $\mu$ by
+\begin{align*}
+    \int f:=\int\real{f}+i\int\imag{f}.
+\end{align*}
+(Remark that $\real{f}$ and $\imag{f}$ are measurable, because $f$ is measurable.)
+We are concerned with the case where $\int\real{f}$ and $\int\imag{f}$ are integrable.
+\begin{defi}[Integrable complex-valued functions]
+    A complex-valued function $f$ on $X$ is called an integrable function, if
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $f$ is a measurable function, and
+        }
+        \item[(b)]
+        {
+            $\int\real{f}$ and $\int\imag{f}$ are both integrable.\footnote{In other words, $\int |\real{f}|$ and $\int |\imag{f}|$ are both finite, i.e., $\int|f|$ is finite.}
+        }
+    \end{enumerate}
+    Also, given a complex-valued function $f$ and $E\in\mc{M}$, we say $f$ is integrable on $E$ if $f\chi_E$ is measurable and $\int_E|f|<\infty$.
+\end{defi}
+\begin{nota}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    The collection of complex-valued integrable functions is denoted by $L_c(X, \mc{M}, \mu)$.
+\end{nota}
+
+As $L_r$ is an $\bb{R}$-vector space, $L_c$ is a $\bb{C}$-vector space.
+\begin{prop}
+    $L_c$ is a $\bb{C}$-vector space, and the integral on $L_c$ is a $\bb{C}$-linear functional.
+\end{prop}
+\begin{proof}
+    To verify that $L_c$ is a $\bb{C}$-vector space, suppose $a, b\in\bb{C}$, $f, g\in L_c$, and observe that $|af+bg|\leq|a||f|+|b||g|$.
+    The integral is clearly $\bb{C}$-linear; the additivity follows from the definition of the integral, and the $\bb{C}$-scalar multiplicativity follows easily.
+\end{proof}
+
+\begin{prop}
+    If $f\in L_c$, then $|\int f|\leq\int|f|$.
+\end{prop}
+\begin{proof}
+    Let $e^{i\theta}$ be the sign of $\int f$ and $\alpha$ be its complex conjugate.
+    Because $|\int f|=\alpha\int f=\int(\alpha f)$ is real,
+    \begin{align*}
+        \vline\,\int f\,\vline=\real{\int(\alpha f)}=\int\real{\alpha f}\leq\int|\real{\alpha f}|\leq\int|\alpha f|=\int|f|,
+    \end{align*}
+    proving the inequality.
+\end{proof}
+
+\begin{obs}
+    If $f\in L_c$, then the set $E=\{x\in X: f(x)\neq 0\}$ is the union of all $A_n$ for $n\in\bb{N}$, where $A_n=\{x\in X: 1/n<|f(x)|<n\}$.
+    Since $\mu(A_n)/n\leq\int_{A_n} f<\infty$, each $A_n$ has a finite measure for $\mu$.
+    Hence, $E$ is a $\sigma$-finite measurable set.
+\end{obs}
+
+We have constructed the completion of a measure space $(X, \mc{M}, \mu)$ by adjoining all subsets of $\mu$-null sets.
+Hence, one might expect that the measurability, integrability, and even the value of the respective integrals of a function $f: X\rightarrow\bb{C}$ are the same.
+\begin{lem}\label{integral w.r.t. a measure and its completion}
+    Let $(X, \mc{M}, \mu)$ be a measure space with the completion $(X, \ol{\mc{M}}, \ol\mu)$, and let $f: X\rightarrow\bb{C}$ be a function.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $f$ is $\mc{M}$-measurable, then $f$ is $\ol{\mc{M}}$-measurable.
+            (Conversely, if $f$ is $\ol{\mc{M}}$-measurable, then there is a $\mu$-measurable function $f_0: X\rightarrow\bb{C}$ which coincides $f$ $\ol\mu$-almost everywhere. See \cref{nullities are removable}.)
+        }
+        \item[(b)]
+        {
+            Assume $f$ is $\mc{M}$-measurable.
+            Then $\int f\,d\mu=\int f\,d\ol\mu$.
+            In particular, $f$ is integrable with respect to $\mu$ if and only if $f$ is integrable with respect to $\ol\mu$.
+        }
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    (a) is straightforward.
+    To prove (b), it suffices to prove the identity for the case where $f\in L^+$.
+    Indeed, it is clear that $\int f\,d\mu\leq \int f\,d\ol\mu$.
+    To prove the converse inequality, let $s=\sum_{j=1}^n a_j\chi_{E_j}$ be a simple function which is $\ol{\mc{M}}$-measurable and $0\leq s\leq f$ (assume that $E_1, \cdots, E_n$ are pairwise disjoint).
+    Because $E_1, \cdots, E_n\in\ol{\mc{M}}$, there are sets $A_1, \cdots, A_n\in\mc{M}$ such that $A_j\subset E_j$ and $\mu(A_j)=\ol\mu(E_j)$ for $j=1, \cdots, n$.
+    Then
+    \begin{align*}
+        \int s\,d\ol\mu = \int\sum_{j=1}^n a_j\chi_{A_j}\,d\mu\leq\int f\,d\mu,
+    \end{align*}
+    so $\int f\,d\mu=\int f\,d\ol\mu$.
+    The last assertion is a direct conclusion of the preceeding identity.
+\end{proof}
+
+Changing values of a function on a $\mu$-null set makes no difference in integral.
+\begin{lem}\label{equivalent measurable functions}
+    Suppose $f, g\in L_c$.
+    Then $\int_E f=\int_E g$ for all $E\in\mc{M}$ if and only if $\int|f-g|=0$ if and only if $f=g$ $\mu$-almost everywhere.
+\end{lem}
+\begin{proof}
+    It is clear that $\int|f-g|=0$ if and only if $f=g$ $\mu$-almost everywhere and $\int_E f=\int_E g$ for all $E\in\mc{M}$ under any of the other assumptions.
+
+    Suppose $\int_E f=\int_E g$ for all $E\in\mc{M}$.
+    In fact, it suffices to check the equivalence for the case $f, g\in L_r$.
+    Letting $h=f-g\in L_r$, then $\int_E h=0$ whenever $E\in\mc{M}$.
+    If $E=\{x\in X: h(x)\geq 0\}\in\mc{M}$, then $\int_E h=0$ so $h^+=0$ $\mu$-a.e.; similarly, $h^-=0$ $\mu$-a.e., hence $f=g$ $\mu$-a.e.
+\end{proof}
+According to \cref{equivalent measurable functions}, if $f\in L_c$ is finite almost everywhere and one wishes to find $\int f$, then we may re-define $f(x)=0$ when $f(x)$ was infinite.
+
+\begin{defi}[$L^1$ space]
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    Define a relation $\sim$ on $L_c$ by
+    \begin{center}
+        $f\sim g$ if and only if $f=g$ $\mu$-almost everywhere.
+    \end{center}
+    Then $\sim$ denotes an equivalence relation on $L_c$, and the set of equivalence representatives $L_c/\sim$ is denoted by $L^1(X, \mc{M}, \mu)$.\footnote{Such construction is valid for $L_r$ as well as $L_c$. If necessary, we shall use $L_c^1$ and $L_r^1$; otherwise, we regard $L^1=L_c^1$.}
+\end{defi}
+\begin{rmk}
+    $L^1$ is still an $\bb{R}$ (and $\bb{C}$)-vector space under the usual addition and scalar multiplication.
+    Considering the equivalence relation in constructing $L^1$, it will make no confusion when $f\in L^1$ means that $f$ is an integrable function which is defined $\mu$-almost everywhere.
+
+    We introduce two further advantages of $L^1$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Identifying $L^1(\mu)$ and $L^1(\ol{\mu})$)
+            Let $(X, \ol{\mc{M}}, \ol{\mu})$ be the completion of $(X, \mc{M}, \mu)$.
+            Suppose $f\in L^1(\ol{\mu})$ and let $g$ be an $\mc{M}$-measurable function such that $f=g$ $\ol{\mu}$-almost everywhere.
+            Then the equivalence classes of $f$ and $g$ are the same, inducing the same class in $L^1(\ol\mu)$.
+            So, there is a one-to-one correspondence between $L^1(\ol\mu)$ and $L^1(\mu)$:
+            \begin{align*}
+                L^1(\mu)\rightarrow L^1(\ol\mu): h\mapsto h,\qquad
+                L^1(\ol\mu)\rightarrow L^1(\mu): f\mapsto g
+            \end{align*}
+            Hence, we may identify $L^1(\mu)=L^1(\ol\mu)$ and let $f\in L^1(\mu)$ mean that $f$ is a $\ol\mu$-almost everywhere defined function which is integrable with regard to $\ol\mu$.
+            Furthermore, by \cref{integral w.r.t. a measure and its completion}, the above identification works appropriately when integrating a given function in $L^1$.
+        }
+        \item[(b)]
+        {
+            (A metric on $L^1$)
+            The map $\rho: L^1\times L^1\rightarrow[0, \infty)$ defined by
+            \begin{align*}
+                (f, g)\mapsto\int|f-g|\quad\textsf{(for all $f, g\in L^1$)}
+            \end{align*}
+            is a metric on $L^1$.
+            We shall refer to convergence with respect to this metric as convergence in $L^1$, i.e., $f_n\rightarrow f$ in $L^1$ if and only if $\int|f_n-f|\rightarrow 0$.
+        }
+    \end{enumerate}
+\end{rmk}
+
+We end this section after studying a convergence theorem in $L^1$, which seems to be quite strong.
+\begin{thm}[The Lebesgue dominated convergence theorem]
+    Let $(f_n)_{n\in\bb{N}}$ be a sequence in $L^1$, which converges to $f$ $\mu$-almost everywhere.
+    Suppose that there is an integrable function $g: X\rightarrow[0, \infty]$ such that $|f_n|\leq g$ $\mu$-almost everywhere for all $n\in\bb{N}$.
+    Then $f\in L^1$ and $f_n\rightarrow f$ in $L^1$, hence $\int f_n\rightarrow\int f$.
+\end{thm}
+\begin{proof}
+    Clearly, $f$ is a measurable function and $\int|f|\leq\int|g|<\infty$, so $f\in L^1$.
+    Because $|f_n-f|\leq 2g$, we may use Fatou's lemma as follows:
+    \begin{align*}
+        \liminf_{n\rightarrow\infty}\int(2g-|f_n-f|)\geq\int\liminf_{n\rightarrow\infty}(2g-|f_n-f|)=\int 2g.
+    \end{align*}
+    Hence, $\limsup_n\int|f_n-f|=-\liminf_{n\rightarrow\infty}\int(-|f_n-f|)=0$ and $f_n\rightarrow f$ in $L^1$.
+\end{proof}
+
+\subsection*{Problems}
+
+\begin{prob}[2nd textbook, 1.5.8]
+    Suppose $f\in L^1$ and let $E_a=\{x\in X:|f(x)|>a\}$ for each $a\in(0, \infty)$.
+    Prove that $a\cdot\mu(E_a)\rightarrow 0$ as $a\searrow 0$.
+\end{prob}
+\begin{sol}
+    Let $(a_n)_{n\in\bb{N}}$ be a sequence of positive real numbers converging to 0, and define $f_n=a_n\chi_{E_{a_n}}$ for each $n$.
+    Becaue each $f_n$ is a measurable function and $|f_n|\leq f$ for all $n$, by the \ldct we have
+    \begin{align*}
+        \lim_{n\rightarrow\infty}(a_n\cdot\mu(E_{a_n}))=\lim_{n\rightarrow\infty}\int f_n=\int\lim_{n\rightarrow\infty}f_n=\int 0=0.
+    \end{align*}
+    Since this equality holds for any sequence $(a_n)_n\subset[0, \infty)$ converging to 0, we obtain the desired result.
+\end{sol}
+
+\begin{prob}[2nd textbook, 1.5.9]
+    Let $f: E\rightarrow[0, \infty]$ be a function where $E$ is a measurable set of finite measure for $\mu$.
+    For each $n\in\bb{N}$, let $E_n=\{x\in X : |f(x)|\geq n\}$.
+    Show that $f$ is integrable if and only if $\sum_n\mu(E_n)<\infty$.
+    Investigate when $\mu(E)=\infty$.
+\end{prob}
+\begin{sol}
+    Letting $g=\sum_n n\chi_{E_n}$, it is clear from $0\leq g\leq f$ that $\sum_n \mu(E_n)=\int g\leq \int f<\infty$.
+    To show the converse implication, assume $\sum_n \mu(E_n)<\infty$.
+    Because $\mu(E)<\infty$, $f\leq g+1$, so $\int f\leq\int (g+1)=\sum_n \mu(E_n)+\mu(E)<\infty$, hence $f$ is integrable, i.e., $f\in L^1$.
+
+    Under the assumption that $\mu(E)=\infty$, it is still valid that $g\leq f$ so $\sum_n \mu(E_n)<\infty$ if $f$ is integrable.
+    The converse may not hold; consider the function $f: (0, \infty)\rightarrow[0, \infty]$ define by $f(x)=1/\sqrt{x}$, whose integral diverges.
+    For each positive integer $n$, we have $E_n=(0, 1/n^2)$, so $\sum_n\mu(E_n)={\pi^2}/{6}$.
+\end{sol}
+
+\begin{prob}[2nd textbook, 1.5.10]
+    Show that
+    \begin{align*}
+        \lim_{\epsilon\rightarrow 0}\int_{-\infty}^\infty f(x)\cos(\epsilon x)\,dx=\int_{-\infty}^\infty f(x)\,dx
+    \end{align*}
+    whenever $f\in L^1$.
+\end{prob}
+\begin{sol}
+    For any sequence $(\epsilon_n)_{n\in\bb{N}}\subset\bb{R}$ converging to 0, by the Lebesgue dominated convergence theorem, we have
+    \begin{align*}
+        \lim_{n\rightarrow\infty}\int_{-\infty}^\infty f(x)\cos(\epsilon_n x)\,dx=\int_{-\infty}^\infty f(x)\,dx.
+    \end{align*}
+    Since the result holds for any $(\epsilon_n)_{n\in\bb{N}}\subset\bb{R}$ converging to 0, we obtain the desired result.
+\end{sol}
+
+\begin{prob}[Exercise 2.26]
+    Let $(X, \mc{M}, \mu)$ be a measure space and assume $f\in L^1$.
+    Prove that for any real number $\epsilon>0$ there is a real number $\delta>0$ satisfying the following property: Whenever $E\in\mc{M}$ and $\mu(E)<\delta$ then $\int_E |f|<\epsilon$.
+\end{prob}
+\begin{sol}
+    It suffices to prove the statement for $f\in L^+$; then, when $f\in L^1_r$ we have $\int_E |f|\leq\int_E f_++\int_E f_-<2\epsilon$, and if $f\in L^1_c$ we have $\int_E |f|\leq\int_E|\real{f}|+\int_E|\imag{f}|<4\epsilon$.
+    For each $n\in\bb{N}$, define the function $s_n: X\rightarrow[0, \infty]$ by $s_n(x)=\min\{f(x), n\}$ for all $x\in X$.
+    Since $f\in L^1$ and $|s_n|\leq f$, by the Lebesgue dominated convergence theorem, $s_n\rightarrow f$ in $L^1$.
+    Hence, there is a positive integer $N$ such that $\norm{f-s_N}_{L^1}<\epsilon/2$.
+    Furthermore, if $0<\delta<\epsilon/N$, then $\int_E |s_N|\leq \epsilon/2$ whenever $E\in\mc{M}$ and $\mu(E)<\delta$.
+    Therefore, $\int_E |f|\leq\int_E |f-s_N| + \int_E s_N\leq \epsilon$, as desired.
+\end{sol}

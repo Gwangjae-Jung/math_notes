@@ -1,0 +1,403 @@
+\section{Measures}
+
+\begin{defi}[Measure]
+    Let $(X, \mc{M})$ be a measurable space.
+    A function $\mu: \mc{M}\rightarrow[0, \infty]$ with $\mu(\varnothing)=0$ is called a measure on $\mc{M}$ if $\mu$ is countably additive, i.e., if $\{E_n\}_{n\in\bb{N}}\subset\mc{M}$ is pairwise disjoint, then $\mu\left(\bigsqcup_{n=1}^\infty E_n\right)=\sum_{n=1}^\infty \mu(E_n)$.
+    If $\mu$ is a measure on $\mc{M}$, the tuple $(X, \mc{M}, \mu)$ is called a measure space.
+\end{defi}
+\begin{rmk}
+    The monotonicity and the countable subadditivity of measures, as illustrated in \cref{properties of measures}, are due to the countable additivity of measures.
+    Whichever type of measure we consider (outer measures, premeasures, etc.) is assumed to satisfy the empty set condition, monotonicity, and an appropriate (sub)additivity; here, additivity implies monotonicity, and monotonicity implies an appropriate subadditivity.
+\end{rmk}
+\begin{defi}[Some particular measures]
+    Let $(X, \mc{M})$ be a measurable space, and let $\mu: \mc{M}\rightarrow[0, \infty]$ be a function such that $\mu(\varnothing)=0$.
+    $\mu$ is called a finitely additive measure, if $\mu$ is finitely additive but not necessarily countably additive.
+    
+    Assume $(X, \mc{M}, \mu)$ is a measure space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\mu$ is called a finite measure, if $\mu(X)<\infty$ (so that $\mu(E)<\infty$ for all $E\in\mc{M}$).
+        }
+        \item[(b)]
+        {
+            $\mu$ is called a $\sigma$-finite measure, if there is a countable collection $\{E_n\}_{n\in\bb{N}}\subset\mc{M}$ covering $X$ such that $\mu(E_n)<\infty$ for each $n\in\bb{N}$.
+            Furthermore, if $E=\bigcup_n E_n$ with $E_n\in\mc{M}$ for each $n\in\bb{N}$ and $\mu(E_n)<\infty$ for each $n$, then $E$ is said to be $\sigma$-finite for $\mu$.
+        }
+        \item[(c)]{
+            $\mu$ is called a semifinite measure, if for each $E\in\mc{M}$ with $\mu(E)=\infty$ there is $F\in\mc{M}$ with $F\subset E$ such that $0<\mu(F)<\infty$.
+        }
+    \end{enumerate}
+\end{defi}
+
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            A finite measure is $\sigma$-finite, and a $\sigma$-finite measure is semifinite. \color{brown}(Why?)\color{black}
+        }
+        \item[(b)]
+        {
+            A semifinite measure $\mu: \mc{M}\rightarrow[0, \infty]$ requires every member $E\in\mc{M}$ of infinite measure for $\mu$ to contain a set $F\in\mc{M}$ such that $0<\mu(F)<\infty$.
+            In fact, when finding such $F$, we may restrict the lower bound for the measure of $F$.
+            To be precise, if $\mu$ is semifinite, $E$ is a measurable set of infinite measure, and $C$ is any positive real number, then there is a measurable set $F$ such that
+            \begin{align*}
+                F\subset E\quad\textsf{and}\quad C<\mu(F)<\infty.
+            \end{align*}
+            See \cref{semifiniteness strengthened to}.
+        }
+    \end{enumerate}
+\end{rmk}
+
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Let $(X, \mc{M})$ be a measurable space and $f: X\rightarrow [0, \infty]$ be a function.
+            The function $\mu_f: \mc{M}\rightarrow[0, \infty]$ defined by $\mu_f(A)=\sum_{x\in A} f(x)$ is a measure on $\mc{M}$.
+        }
+        \item[(b)]
+        {
+            Let $X$ be an infinite set and $\mc{M}=P(X)$.
+            The function $\mu: \mc{M}\rightarrow[0, \infty]$ defined by $\mu(E)=0$ if $E$ is finite and $\mu(E)=\infty$ if $E$ is infinite is a finitely additive measure on $\mc{M}$, but it is not a measure on $\mc{M}$.
+        }
+    \end{enumerate}
+\end{exmp}
+
+The following are basic properties of measures:
+\begin{prop}\label{properties of measures}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Monotonicity) If $E, F\in\mc{M}$ and $E\subset F$, then $\mu(E)\leq\mu(F)$.
+        }
+        \item[(b)]
+        {
+            (Subadditivity) If $E_n\in\mc{M}$ for each $n\in\bb{N}$, then $\mu\left(\bigcup_n E_n\right)\leq\sum_n\mu(E_n)$.
+        }
+        \item[(c)]
+        {
+            (Continuity from below) If $(E_n)_{n\in\bb{N}}\subset\mc{M}$ is an ascending chain, then $\mu\left(\bigcup_n E_n\right)=\lim_{n\rightarrow\infty}\mu(E_n)$.
+        }
+        \item[(d)]
+        {
+            (Continuity from above) If $(E_n)_{n\in\bb{N}}\subset\mc{M}$ is a descending chain, then $\mu\left(\bigcap_n E_n\right)=\lim_{n\rightarrow\infty}\mu(E_n)$, provided that $\mu(E_1)<\infty$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    It is easy to check (a) and (b), so we will prove (c) and (d).
+
+    \hangindent=0.65cm
+    \noindent(c)
+    Define $F_n:=E_n\setminus E_{n-1}$ for each $n\in\bb{N}$, where $E_0:=\varnothing$.
+    Then $\bigcup_n E_n=\bigsqcup_n F_n$, thus 
+    \begin{align*}
+        \mu\left(\bigcup_n E_n\right)=\mu\left(\bigsqcup_n F_n\right)=\sum_n\mu(F_n)=\sum_n(\mu(E_n)-\mu(E_{n-1}))=\lim_{n\rightarrow\infty}\mu(E_n).
+    \end{align*}
+
+    \noindent(d)
+    Define $A_n=E_1\setminus E_n$ for each $n\in\bb{N}$.
+    Then $(A_n)_{n\in\bb{N}}$ is an ascending chain in $\mc{M}$, so
+    \begin{align*}
+        \mu\left(\bigcup_n A_n\right)=\lim_{n\rightarrow\infty}\mu(A_n)=\mu(E_1)-\lim_{n\rightarrow\infty}\mu(E_n).
+    \end{align*}
+    (Note that $(\mu(E_n))_{n\in\bb{N}}$ is convergent, since the sequence is decreasing and is bounded below.)
+    Because $E_1\setminus\bigcup_n A_n=\bigcap_n(E_1\setminus A_n)=\bigcap_n E_n$, we have the desired identity.
+\end{proof}
+
+\begin{defi}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            ($\mu$-Null set)
+            A set $E\in\mc{M}$ such that $\mu(E)=0$ is called a $\mu$-null set.
+            If a statement about points $x\in X$ is true except for $x$ in some $\mu$-null set, then the statement is said to be true $\mu$-almost everywhere on $X$.
+        }
+        \item[(b)]
+        {
+            (Complete measure)
+            A measure whose domain contains all subsets of $\mu$-null sets is said to be complete.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{nota}
+    Given a measure space $(X, \mc{M}, \mu)$, let $\mc{N}_\mu$ be the collection of all $\mu$-null sets in $\mc{M}$, i.e.,
+    \begin{eqnarray*}
+        \mc{N}_\mu:=\{E\in\mc{M}: \mu(E)=0\}.
+    \end{eqnarray*}
+    One can easily find that $\mc{N}_\mu$ is closed under countable unions.
+\end{nota}
+
+Completeness of a measure can obviate annoying technical problems, and it can be achieved by enlarging the domain of $\mu$ as follows.
+\begin{thm}[Completion of a measure]\label{completion of a measure}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    Define
+    \begin{align*}
+        \ol{\mc{M}}=\{E\cup F:\textsf{$E\in\mc{M}$ and $F$ is a subset of a $\mu$-null set}\}.
+    \end{align*}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $\ol{\mc{M}}$ is a $\sigma$-algebra on $X$ containing $\mc{M}$.
+        }
+        \item[(b)]
+        {
+            There is a unique extension $\ol{\mu}$ of $\mu$ to a complete measure on $\ol{\mc{M}}$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{rmk}
+    The following proof seems quite similar to adjoining the fractional parts to the integer parts.
+\end{rmk}
+\begin{proof}
+    We first show that $\ol{\mc{M}}$ is a $\sigma$-algebra on $X$.
+    It is clear that $\ol{\mc{M}}$ is closed under countable unions, since $M$ and $\mc{N}_\mu$ are closed under countable unions.
+    Thus, it remains to show that $\ol{\mc{M}}$ is closed under set complements.
+    Suppose $E\in\mc{M}$ and $F$ is a subset of $N\in\mc{N}_\mu$, and write $N=F\sqcup G$ (clearly, $G=N\setminus F$), $A=E\cup N\in\mc{M}$.
+    Then $E\cup F=A\setminus G$ and one can show that
+    \begin{align*}
+        X\setminus (E\cup F)=(X\setminus A)\cup G\in\ol{\mc{M}},
+    \end{align*}
+    which proves that $\ol{\mc{M}}$ is closed under set complements.
+    
+    We now construct a measure $\ol{\mu}$ on $\ol{\mc{M}}$ which extends $\mu$.
+    Given $E\cup F\in\ol{\mc{M}}$ with $E$ and $F$ being assumed as earlier, one may suggest that $\ol{\mu}(E\cup F)$ be $\mu(E)$.
+    In fact, this definition is unambiguous; if $E_1\cup F_1=E_2\cup F_2$ with $E_i$ and $F_i$ being assumed correspondingly, we have $E_1\subset E_2\cup F_2\subset E_2\cup N_2$ so $\mu(E_1)\leq\mu(E_2)$, and $\mu(E_2)\leq\mu(E_1)$ by symmetry.
+    It remains to check
+    \begin{enumerate}
+        \item[(i)]
+        {
+            if the constructed map $\ol{\mu}$ is a complete measure on $\ol{\mc{M}}$, and
+        }
+        \item[(ii)]
+        {
+            if such extension is unique.
+        }
+    \end{enumerate}
+    It is clear that $\ol{\mu}$ is a measure on $\ol{\mc{M}}$ and is complete.
+    It remains to prove the uniqueness part.
+    Suppose $\widetilde{\mu}: \ol{\mc{M}}\rightarrow[0, \infty]$ is an extension of $\mu$ to a complete measure on $\ol{\mc{M}}$.
+    Then $\ol{\mu}$ and $\wt{\mu}$ coincide on $M$.
+    By monotonicity, we can find that $\widetilde{\mu}(E\cup F)=\mu(E)$, which proves the uniqueness.
+\end{proof}
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            In the preceeding theorem, $\ol{\mu}$ is called the completion of $\mu$, and $\ol{\mc{M}}$ is called the completion of $\mc{M}$ with respect to $\mu$ (or simply called the $\mu$-completion of $\mc{M}$).
+            Indeed, a completion of a $\sigma$-algebra is determined by a measure on the $\sigma$-algebra.
+        }
+        \item[(b)]
+        {
+            One should not be confused that the extension of $\mu$ to a complete measure is unique.
+            The preceeding theorem states that the extension of $\mu$ to a complete measure ``over $\ol{\mc{M}}$'' is unique.
+        }
+    \end{enumerate}
+\end{rmk}
+
+We move to the list of problems after introducing one remark, which will be helpful in solving some problems in this section.
+\begin{obs}[Maximal measurable subset of finite measure]\label{maximal measurable subset of finite measure}
+    Given a measure space $(X, \mc{M}, \mu)$, let $E$ be a measurable set such that $s=\sup\left(\mu(R_E)\right)$ is finite, where
+    \begin{align*}
+        R_E=\{
+            A\subset E:
+            \textsf{$A$ is measurable and $\mu(A)<\infty$}
+        \}.
+    \end{align*}
+    Our goal is to prove that there is a member $A$ of $R_E$ whose measure is $s$.
+
+    Let $(A_n)_{n\in\bb{N}}\subset R_E$ be a sequence such that $\mu(A_n)\rightarrow s$ as $n\rightarrow\infty$. \color{brown}(Why does such sequence exist?) \color{black}
+    Let $B_n=\bigcup_{i=1}^n A_i$ for each $n$.
+    Because $A_n\subset B_n\in R_E$ for each $n$ and $(B_n)_n$ is ascending, we have $\mu\left(\bigcup_n A_n\right)=\mu\left(\bigcup_n B_n\right)=\lim\mu(B_n)=s<\infty$.
+    Therefore, the union of $A_n$ for all $n$ belongs to $R$, and its measure is $s$.
+\end{obs}
+
+\subsection*{Problems}
+
+\begin{prob}[Exercise 1.8]
+    Suppose $(X, \mc{M}, \mu)$ is a measure space and $(E_n)_{n\in\bb{N}}\subset M$.
+    Show that $\mu\left(\liminf_{n\rightarrow\infty}E_n\right)\leq\liminf_{n\rightarrow\infty}\mu(E_n)$.
+    Also, show that $\mu\left(\limsup_{n\rightarrow\infty}E_n\right)\geq\limsup_{n\rightarrow\infty}\mu(E_n)$ if $\mu\left(\bigcup_n E_n\right)<\infty$.
+\end{prob}
+\begin{sol}
+    Remark that
+    \begin{align*}
+        \limsup_{n\rightarrow\infty} A_n=\bigcap_{n=1}^\infty \bigcup_{k\geq n} A_k
+        \quad\textsf{and}\quad
+        \liminf_{n\rightarrow\infty} A_n=\bigcup_{n=1}^\infty \bigcap_{k\geq n} A_k
+    \end{align*}
+    whenever $A_n$ is a subset of a set $X$ for each $n\in\bb{N}$.
+    Since $\left(\bigcup_{k\geq n} A_k\right)_{n\in\bb{N}}$ is ascending, we have
+    \begin{align*}
+        \mu\left(\liminf_{n\rightarrow\infty}E_n\right)=\lim_{n\rightarrow\infty}\mu\left(\bigcap_{k\geq n} E_k\right)\leq\lim_{n\rightarrow\infty}\inf_{k\geq n}\mu(E_k)=\liminf_{n\rightarrow\infty}\mu(E_n).
+    \end{align*}
+    Similarly, $\left(\bigcup_{k\geq n} A_k\right)_{n\in\bb{N}}$ is descending and $\bigcup_{k\geq 1} E_k$ is finite for $\mu$, we have
+    \begin{align*}
+        \mu\left(\limsup_{n\rightarrow\infty}E_n\right)=\lim_{n\rightarrow\infty}\mu\left(\bigcup_{k\geq n} E_k\right)\geq\lim_{n\rightarrow\infty}\sup_{k\geq n}\mu(E_k)=\limsup_{n\rightarrow\infty}\mu(E_n).
+    \end{align*}
+\end{sol}
+
+\begin{prob}[Exercise 1.11]
+    Let $\mu$ be a finitely additive measure on a measurable space $(X, \mc{M})$.
+    Show that $\mu$ is a measure if and only if $\mu$ is continuous from below.
+    Show also that $\mu$ is a measure if and only if $\mu$ is continuous from above, provided that $\mu(X)<\infty$.
+\end{prob}
+\begin{sol}
+    It suffices to show in each case that continuity implies countable additivity.
+    Let $\{E_n\}_{n\in\bb{N}}$ be a set of pairwise disjoint subsets of $X$ belonging to $\mc{M}$.
+    \begin{enumerate}
+        \item[(a)]
+        {    
+            Define $F_n:=\bigcup_{i=1}^n E_i$ for each $n\in\bb{N}$.
+            Clearly, $(F_n)_n$ is an ascending chain in $\mc{M}$, hence
+            \begin{align*}
+                \mu\left(\bigsqcup_n E_n\right)=\mu\left(\bigcup_n F_n\right)=\lim_{n\rightarrow\infty}\mu(F_n)=\lim_{n\rightarrow\infty}\sum_{i=1}^n\mu(E_i)=\sum_n\mu(E_n).
+            \end{align*}
+        }
+        \item[(b)]
+        {
+            In part (a), define further $G_n:=X\setminus F_n$ for each $n\in\bb{N}$.
+            Because $\mu(G_1)<\infty$ and $(G_n)_n$ is a descending chain in $\mc{M}$, we have
+            \begin{align*}
+                \mu\left(\bigcap_n G_n\right)=\lim_{n\rightarrow\infty}\mu(G_n)=\mu(X)-\sum_n\mu(E_n).
+            \end{align*}
+            Because
+            \begin{align*}
+                \mu\left(\bigcap_n G_n\right)=\mu(X)-\mu\left(\bigcup_n F_n\right)=\mu(X)-\mu\left(\bigsqcup_n E_n\right),
+            \end{align*}
+            we find that $\mu$ is a measure.
+        }
+    \end{enumerate}
+\end{sol}
+
+\begin{prob}[Exercise 1.12]
+    Let $(X, M, \mu)$ be a finite measure.
+    Assume $E,\,F,\,G\in\mc{M}$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $\mu(E)=\mu(F)=\mu(E\cap F)$, if $\mu(E\triangle F)=0$.
+        }
+        \item[(b)]
+        {
+            Define a relation $\sim$ on $\mc{M}$ by $E\sim F$ if and only if $\mu(E\triangle F)=0$.
+            Show that $\sim$ denotes an equivalence relation on $\mc{M}$.
+        }
+        \item[(c)]
+        {
+            Define a map $\rho: \mc{M}\times\mc{M}\rightarrow[0, \infty]$ by $\rho(E, F)=\mu(E\triangle F)$.
+            Show that $\rho(E, G)\leq\rho(E, F)+\rho(F, G)$, and deduce that $\rho$ induces a metric on the space $\mc{M}/\sim$ of the equivalence classes.
+            To be precise, the map $\ol{\rho}: (\mc{M}/\sim)\times(\mc{M}/\sim)\rightarrow[0,\infty]$ defined by $\ol{\rho}(\ol{E}, \ol{F})=\rho(E, F)$ for all $\ol E,\,\ol F\in\mc{M}/\sim$ is a well defined metric on $\mc{M}/\sim$.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $\mu(E\triangle F)=0$, then is $\mu(E\setminus F)=\mu(F\setminus E)=0$, so $\mu(E)=\mu(F)=\mu(E\cap F)$.
+        }
+        \item[(b)]
+        {
+            It is clear that $\sim$ is symmetric and reflexive.
+            To show transitivity, assume $E\sim F$ and $F\sim G$.
+            Note that $E\triangle G\subset(E\triangle F)\cup(F\triangle G)$ so $\mu(E\triangle G)\leq\mu(E\triangle F)+\mu(F\triangle G)=0$.
+        }
+        \item[(c)]
+        {
+            The triangular inequality with regard to $\rho$ is explained in part (b).
+            We now justify that $\ol\rho$ is a metric on $\mc{M}/\sim$.
+            Suppose $E\sim A$ and $F\sim B$.
+            Because $\rho(E, F)\leq\rho(E, A)+\rho(A, B)+\rho(B, F)=\rho(A, B)$ and $\rho(A, B)\leq\rho(E, F)$ by symmetry, the map $\ol{\rho}$ is well-defined.
+            Therefore, $\ol{\rho}$ is a metric on $\mc{M}/\sim$, which follows directly from the definition of $\ol{\rho}$.
+        }
+    \end{enumerate}
+\end{sol}
+
+\begin{prob}[Exercise 1.14]\label{semifiniteness strengthened to}
+    Let $(X, \mc{M}, \mu)$ be a semifinite measure space, and assume $E\in\mc{M}$ is of infinite measure for $\mu$.
+    Show that for any $C>0$ there is a subset $F\in\mc{M}$ of $E$ such that $C<\mu(F)<\infty$.
+\end{prob}
+\begin{sol}
+    Suppose that there is a member $E\in\mc{M}$ such that $\mu(E)=\infty$ and any measurable subset $A$ of $E$ satisfies $\mu(A)=\infty$ or $\mu(A)\leq\alpha$ for some real $\alpha>0$.
+    Then, the supremum $s$ of $R_E$ is finite, where $R_E$ is defined as in \pageref{maximal measurable subset of finite measure}.
+    Hence, there is a member $A$ of $R_E$ such that $\mu(A)=s$.
+    Because $\mu(E\setminus A)=\infty$, by semifiniteness, there is a member $B\subset E\setminus A$ belonging to $\mc{M}$ such that $0<\mu(B)<\infty$.
+    Then, $A\sqcup B\in R_E$ but $\mu(A\sqcup B)>s$, a contradiction.
+\end{sol}
+
+\begin{prob}[Exercise 1.15]
+    Given a measure $\mu$ on a measurable space $(X, \mc{M})$, define a map $\mu_0: \mc{M}\rightarrow[0, \infty]$ by
+    \begin{align*}
+        \mu_0(E):=\sup\{\mu(F):F\in\mc{M}\textsf{ is a subset of }E\textsf{ of finite measure for }\mu\}.
+    \end{align*}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $\mu_0$ is a semifinite measure on $\mc{M}$.
+            $\mu_0$ is called the semifinite part of $\mu$.
+        }
+        \item[(b)]
+        {    
+            Show that if $\mu$ is semifinite, then $\mu=\mu_0$.
+        }
+        \item[(c)]
+        {
+            Show that there is a measure $\nu$ on $\mc{M}$ which assumes only the values $0$ and $\infty$ such that $\mu=\mu_0+\nu$.
+            (In general, such $\nu$ need not be unique.)
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    Remark that $\mu_0\leq\mu$, and $\mu_0(E)=\mu(E)$ if $E\in\mc{M}$ and $\mu(E)<\infty$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            We first show that the map $\mu_0$ is a measure on $\mc{M}$.
+            Since $\mu_0(\varnothing)=0$, it suffice to show that $\mu_0$ is countably additive.
+            Suppose a collection $\{A_n\}_{n\in\bb{N}}\subset\mc{M}$ is pairwise disjoint, and let $B$ be the union of $A_n$ for all $n$.
+            Given a measurable subset $E$ of $B$, we have $\mu(E)=\sum_n\mu(E\cap A_n)\leq\sum_n\mu_0(A_n)$, so $\mu_0(B)\leq\sum_n\mu_0(A_n)$.
+            Conversely, given a measurable subset $F_n$ of $A_n$ of finite measure for each $n$, because every finite union of $F_n$'s is a measurable subset of $B$ of finite measure,
+            \begin{align*}
+                \sum_{n=1}^N\mu(F_n)=\mu\left(\bigsqcup_{n=1}^N F_n\right)\leq\mu_0(B)
+                \quad\textsf{and}\quad
+                \sum_{n=1}^N\mu_0(A_n)\leq\mu_0(B),
+            \end{align*}
+            so $\sum_n\mu_0(A_n)\leq\mu_0(B)$.
+            Hence, $\mu_0$ is a measure on $\mc{M}$.
+
+            Semifiniteness of $\mu_0$ is straightforward; if $\mu_0(E)=\infty$ for some $E\in M$, there is a measurable subset $F$ of $E$ with nonzero finite measure, and $\mu_0(F)=\mu(F)<\infty$.
+        }
+        \item[(b)]
+        {
+            It follows from \cref{semifiniteness strengthened to} that $\mu(E)=\mu_0(E)$ whenever $E\in\mc{M}$ and $\mu(E)=\infty$. \color{brown}(How?)\color{black}
+        }
+        \item[(c)]
+        {
+            Assume such measure $\nu$ exists and $E\in\mc{M}$.
+            If $\mu_0(E)=\mu(E)<\infty$, then $\nu(E)=0$; if $\mu_0(E)<\infty$ bt $\mu(E)=\infty$, then $\nu(E)=\infty$.
+            Also, if $E$ is $\sigma$-finite, then $\nu(E)=0$ by $\sigma$-additivity.
+            Hence, to solve this problem, we need a set map from $\mc{M}$ onto $\{0, \infty\}$ satisfying the above properties.
+
+            Define a set map $\nu: \mc{M}\rightarrow\{0, \infty\}$ by
+            \begin{align*}
+                \nu(E)=\left\{\begin{array}{cc}
+                        0   &   \textsf{(if $E$ is $\sigma$-finite for $\mu$)}\\
+                    \infty  &   \textsf{(otherwise)}
+                \end{array}\right..
+            \end{align*}
+            To check that $\nu$ satisfies the above properties, one must verify that $\mu_0(E)=\infty$ when $\mu(E)=\infty$ and $E$ is $\sigma$-finite, where $E\in\mc{M}$.
+            \color{brown}(This is left as an exercise.) \color{black}
+            $\nu$ clearly satisfies the empty set axiom.
+            Let $\{A_n\}_{n\in\bb{N}}$ be a countable collection of pairwise disjoint measurable sets.
+            If $A_n$ is $\sigma$-finite for all $n$, then $\bigsqcup_n A_n$ is also $\sigma$-finite, hence $\nu(\bigsqcup_n A_n)=0=\sum_n\nu(A_n)$.
+            If $A_k$ is not $\sigma$-finite for some $k\in\bb{N}$, then $\bigsqcup_n A_n$ is not $\sigma$-finite, so $\nu(\bigsqcup_n A_n)=\infty=\sum_n\nu(A_n)$.
+
+            So far, we have proved that $\nu$ is a measure.
+            To check if $\mu=\mu_0+\nu$, we only need to check $\mu(E)=\mu_0(E)+\nu(E)$ for all measurable sets $E$ with $\mu_0(E)<\infty$; if $\mu(E)<\infty$, $E$ is $\sigma$-finite for $\mu$; otherwise, $E$ is not $\sigma$-finite for $\mu$.
+        }
+    \end{enumerate}
+\end{sol}

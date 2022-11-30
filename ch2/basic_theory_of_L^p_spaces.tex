@@ -1,0 +1,213 @@
+\section{Basic theory of $L^p$ spaces for $1\leq p\leq \infty$}
+
+Since we have shown that $L^1$ is a Banach space, we give a generalization of the observation, called the Riesz-Fischer theorem, which states that $L^p$ is a Banach space whenever $1\leq p\leq\infty$.
+We start the section with the definition of $L^p$ space for $1\leq p<\infty$.
+
+\begin{defi}[$L^p$ space for $1<p<\infty$]
+    Given a measure space $(X, \mc{M}, \mu)$ and a real number $p>1$, we consider the following collection:
+    \begin{align*}
+        L^p_c:=\{f: X\rightarrow\bb{C} : \textsf{$f$ is measurable and $\norm{f}_p<\infty$}\},
+    \end{align*}
+    where $\norm{f}_p=(\int |f|^p)^{1/p}$ for all measurable function $f$.
+    The space $L^p$ is defined as the collection of equivalence classes on $L^p_c$, where the equivalence relation $\sim$ on $L^p_c$ is defined as follows:
+    \begin{center}
+        $f\sim g$ if and only if $f=g$ $\mu$-almost everywhere. (Here, $f, g\in L^p_c$.)
+    \end{center}
+\end{defi}
+
+As $L^1$ is, $L^p$ under the above definition is clearly a $\bb{C}$-vector space.
+To argue as in $L^1$ that $\norm{\cdot}_p$ is a norm on $L^p$, it suffices to check the following inequality:
+\begin{center}
+    $\norm{f+g}_p\leq\norm{f}_p+\norm{g}_p$ for all $f, g\in L^p$.
+\end{center}
+This inequality is called the Minkowski inequality, which will be proved in this section.
+
+\begin{prop}[Jensen's inequality]
+    Suppose a function $f: [0, 1]\rightarrow(a, b)\subset\bb{R}$ is integrable and $\phi: (a, b)\rightarrow\bb{R}$ is convex, where $-\infty\leq a\leq b\leq\infty$.
+    Then
+    \begin{align*}
+        \phi\left(\int_0^1 f\right)\leq\int_0^1(\phi\circ f).
+    \end{align*}
+\end{prop}
+\begin{proof}
+    For convinience, write $\alpha=\int_0^1 f\in(a, b)$.
+    Since $\phi$ is a convex function on $(a, b)$, if we let $\beta=\sup\left\{\dfrac{\phi s-\phi\alpha}{s-\alpha}:a<s<\alpha\right\}$, then for each $s\in(a, \alpha)$ we have $\phi s-\phi\alpha\leq\beta(s-\alpha)$.
+    This inequality holds even if $\alpha<s<b$ (how?), so $(\phi\circ f)(x)-\phi(\alpha)\leq\beta(f(x)-\alpha)$ for all $x\in[0, 1]$.
+    Therefore,
+    \begin{equation*}
+        \int_0^1((\phi\circ f)-\phi(\alpha))\geq 0,
+    \end{equation*}
+    proving the inequality.
+\end{proof}
+\begin{obs}
+    Because the exponential function $f(x)=e^x\,(x\in\bb{R})$ is convex, $\exp(\int_0^1 f)\leq\int_0^1 e^f$.
+    In particular, given a partition $\{0=x_0, x_1, \cdots, x_n=1\}$ of $[0, 1]$, if we define the function $f: [0, 1]\rightarrow\bb{R}$ by $f=\sum_{i=1}^n s_i\chi_{(x_{i-1}, x_i]}\, (x_i\in\bb{R})$ and let $a_i=x_i-x_{i-1}$ for each $i$, we have
+    \begin{align*}
+        e^{a_1s_1+\cdots+a_ns_n}\leq a_1e^{s_1}+\cdots+a_ne^{s_n}.
+    \end{align*}
+    Thus, if we let $e^{s_i}=t_i$, we obtain the following result:
+    \begin{center}
+        If $a_i>0$ and $t_i\geq 0$ for each $1\leq i\leq n$ and $a_1+\cdots+a_n=1$ , then
+        \begin{align*}
+            t_1^{a_1}\cdot\cdots\cdot t_n^{a_n}\leq a_1t_1+\cdots+a_nt_n.
+        \end{align*}
+    \end{center}
+\end{obs}
+
+\begin{prop}
+    Suppose $p, q\in[1, \infty)$ such that $p^{-1}+q^{-1}=1$ and $f, g: E\rightarrow[0, \infty]$ are measurable functions defined on a measurable set $E$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (H\"{o}lder's inequality)
+            $\int{fg}\leq\left(\int f^p\right)^{1/p}\left(\int g^q\right)^{1/q}$.
+            Therefore, if $u, v$ are measurable functions, then $\norm{uv}_1\leq\norm{u}_p\norm{v}_q$.
+        }
+        \item[(b)]
+        {
+            (Minkowski's inequality)
+            $\left(\int(f+g)^p\right)^{1/p}\leq\left(\int f^p\right)^{1/p}+\left(\int g^p\right)^{1/p}$.
+            Therefore, if $u, v$ are measurable functions, then $\norm{u+v}_p\leq\norm{u}_p+\norm{v}_p$; hence, $L^p$ is a normed $\bb{C}$-vector space.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \hangindent=0.65cm
+    \noindent(a)
+        The inequality is valid if $\int f^p=0$ or $\int g^q=0$.
+        Thus, we may assume $A:=\left(\int f^p\right)^{1/p}$ and $B:=\left(\int g^q\right)^{1/q}$ are positive.
+        Define $F:=f/A$ and $G:=g/B$.
+        By the preceeding observation, we have $FG\leq p^{-1}F^p+q^{-1}G^q$.
+        By integrating, we obtain $\int FG\leq 1$, giving the desired inequality.
+    
+    \noindent(b)
+        In this proof, we use the norm notation for convinience.
+        By H\"{o}lder's inequality, we have $\int f\cdot(f+g)^{p-1}\leq\norm{f}_p\norm{(f+g)^{p-1}}_q$ and $\int g\cdot(f+g)^{p-1}\leq\norm{g}_p\norm{(f+g)^{p-1}}_q$.
+        Because $(p-1)q=pq-q=(p+q)-q=p$, we have
+        \begin{align*}
+            \int(f+g)^p\leq\left(\int (f+g)^p\right)^{1/q}(\norm{f}_p+\norm{g}_p).
+        \end{align*}
+        When $\int (f+g)^p=0$, there is nothing to prove; when it is nonzero, we obtain the desired inequality.
+\end{proof}
+
+\begin{prob}
+    Given $f\in L^p$ and $g\in L^q$, where $p, q$ are positive real numbers with $1/p+1/q=1$, show that $\norm{fg}_1=\norm{f}_p\norm{g}_q$ if and only if $A|f|^p=B|g|^q$ almost everywhere, where $A$ and $B$ are some real numbers such that $A, B\geq 0$ and $A+B>0$.
+\end{prob}
+\begin{sol}
+    Define $F$ and $G$ as in the proof.
+    Because $FG\leq p^{-1}F^p+q^{-1}G^q$, the eqaultiy holds if and only if $FG=p^{-1}F^p+q^{-1}G^q$ almost everywhere.
+    \begin{rmk}
+        For $a, b>0$, the equaltiy $ab=p^{-1}a^p+q^{-1}b^q$ holds if and only if $a^p=ab=b^q$.
+    \end{rmk}
+    Therefore, the desired equality holds if and only if $A^p|f|^p=B^q|g|^q$ almost everywhere, where $A=c\cdot\norm{f}_p$ and $B=c\cdot\norm{g}_q$ with $c>0$.
+\end{sol}
+
+\ifunsolved
+\else
+\begin{prob}
+    Given $f, g\in L^p\,(1\leq p<\infty)$, find a necessary and sufficient condition for $norm{f+g}_p=\norm{f}_p+\norm{g}_p$.
+    (You may separate the case $p=1$ and $1<p<\infty$.)
+\end{prob}
+\fi
+
+We now define another vector space $L^\infty$.
+\begin{defi}[$L^\infty$ space]
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Given a measurable function $f: X\rightarrow[0, \infty]$, define
+            \begin{align*}
+                \esssup{f}:=\inf\{\alpha\in\bb{R}: \mu(f^{-1}((\alpha, \infty]))=0\}.
+            \end{align*}
+            If the set in the above definition is empty, we let $\esssup{f}=\infty$.
+        }
+        \item[(b)]
+        {
+            Given a measurable function $f$, define $\norm{f}_\infty:=\esssup{|f|}$.
+            And define $L^\infty$ be the collection of the equivalence classes on
+            \begin{align*}
+                I^\infty:=\{f: X\rightarrow\bb{C} : f\textsf{ is measurable and }\norm{f}_\infty<\infty\},
+            \end{align*}
+            where the equivalence relation $\sim$ on $I^\infty$ is given by $f\sim g$ if and only if $f=g$ $\mu$-almost everywhere.
+        }
+    \end{enumerate}
+\end{defi}
+
+Some necessary observations regarding the essential supremum:
+\begin{obs}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose $f: X\rightarrow\bb{C}$ is a measurable function.
+            Then $|f|\leq\alpha$ $\mu$-almost everywhere if and only if $\norm{f}_\infty\leq\alpha$.            
+        }
+        \item[(b)]
+        {
+            Suppose $(f_n: X\rightarrow\bb{C})_{n\in\bb{N}}$ is a sequence of measurable functions and $f: X\rightarrow\bb{C}$ is a measurable function.
+            Show that $\norm{f_n-f}_\infty\rightarrow 0$ if and only if there is a $\mu$-null set $E\in\mc{M}$ for which $f_n\rightarrow f$ uniformly on $X\setminus E$.
+        }
+        \item[(c)]
+        {
+            Assume that $\mu$ is a Borel measure on $X$ assigning positive values to all open subsets of $X$.
+            Show that $\norm{f}_\infty=\norm{f}_{C^0}$ whenever $f: X\rightarrow\bb{C}$ is continuous.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{proof}
+    \hangindent=0.65cm
+    \noindent(a)
+    Clear.
+
+    \noindent(b)
+    $\norm{f_n-f}_\infty\rightarrow 0$ if and only if for any positive integer $k$ there is an integer $N(k)>0$ such that $n\geq N(k)$ implies $\norm{f_n-f}_\infty<1/k$, which is equivalent to the situation where $E_n(k):=\{x\in X: |f_n(x)-f(x)|\geq 1/k\}$ is $\mu$-null whenever $n\geq N(k)$.
+    To rewrite the latter statement, $|f_n(x)-f(x)|<1/k$ whenever $x\in X\setminus E_n(k)$ and $n\geq N(k)$, i.e., $(f_n)_{n\in\bb{N}}$ is uniformly convergent on $X\setminus E$, where $E=\bigcup_{k\in\bb{N}}\bigcup_{n\geq N(k)} E_n(k)$.
+
+    \noindent(c)
+    Let $B$ denote the set of nonnegative real numbers $a$ such that $\mu(\{x\in X: |f(x)|>a\})=0$.
+    Since $f$ is continuous, $m\in B$ if and only if $\{x\in X: |f(x)|>m\}=\varnothing$ \color{brown}(why?)\color{black}, i.e., $|f|\leq m$ on $X$.
+    This implies that $B$ is the collection of upper bounds of $f(X)$, so $\norm{f}_\infty$ is the least upper bound of $f(X)$, i.e., the supremum of $f(X)$.
+\end{proof}
+
+\begin{thm}[Riesz-Fischer theorem]
+    For each $p\in[1, \infty]$, $L^p$ is a Banach space.
+\end{thm}
+\begin{proof}[Proof for $1\leq p<\infty$]
+    To show that $L^p$ is a Banach space is equivalent to show that every absolutely convergent sequence is convergent.
+    Suppose $(f_n)_{n\in\bb{N}}\subset L^p$ is absolutely convergent, and let $A_N=\sum_{n=1}^N |f_n|$ for each $N\in\bb{N}$ and $A=\sum |f_n|$.
+    The monotone convergence theorem and Minkowski's inequality imply
+    \begin{align*}
+        \int A^p=\lim\int A_N^p\leq\lim\left(\sum_{n=1}^N\norm{f_n}_p\right)^p<\infty,
+    \end{align*}
+    so $\sum f_n$ converges absolutely almost everywhere, i.e., $A$ converges almost everywhere, and $A\in L^p$.
+    Then $\left|\sum_{n=1}^N f_n\right|\leq A_N\leq A$, so the Lebesgue dominated convergence theorem implies $\left(\left(\sum_{n=1}^N f_n\right)^p\right)_{N\in\bb{N}}$ is convergent in $L^1$, i.e., $\left(\sum_{n=1}^N f_n\right)_{N\in\bb{N}}$ is convergent in $L^p$.
+    This proves that $L^p$ is a Banach space for all $p\in[1, \infty)$.
+\end{proof}
+\begin{proof}[Another proof for $1\leq p<\infty$]
+    Let $(f_n)_{n\in\bb{N}}$ be a Cauchy sequence in $L^p$, and find an increasing sequence $(n(k))_k$ of positive integers such that $\norm{f_a-f_b}_p<2^{-k}$ whenever $a, b\geq n(k)$.\footnote{Such extraction is a widely used strategy when one deals with a Cauchy sequence.}
+    Set
+    \begin{align*}
+        g_i=\sum_{k=1}^i|f_{n(k+1)}-f_{n(k)}|,\quad g=\sum_{k=1}^\infty|f_{n(k+1)}-f_{n(k)}|.
+    \end{align*}
+    By Minkowski's inequality, $\norm{g_i}_p\leq 1$ for all $i$; by Fatou's lemma, $\norm{g}_p=\int(\lim_i |g_i|^p)^{1/p}\leq\lim_i\norm{g_i}_p\leq 1$, so $g$ is finite almost everywhere and the series
+    \begin{align*}
+        f_{n(1)}(x)+\sum_{k=1}^\infty (f_{n(k+1)}(x)-f_{n(k)}(x))
+    \end{align*}
+    converges almost everywhere.
+    Let $f$ denote the limit function of the above series (put $f=0$ whenever the series diverges).
+    Finally, let $m$ be an integer such that $a, b\geq m$ implies $\norm{f_a-f_b}<\epsilon$.
+    For each integer $a\geq m$, by Fatou's lemma, we have
+    \begin{align*}
+        \int |f-f_a|^p\leq\liminf_{k\rightarrow\infty}\int|f_{n(k)}-f_a|^p\leq\epsilon^p.
+    \end{align*}
+    Therefore, $f-f_m\in L^p$ and $\norm{f-f_n}_p\rightarrow 0$ as $n\rightarrow\infty$.    
+\end{proof}
+\begin{proof}[Proof for $p=\infty$]
+    Let $(f_n)_{n\in\bb{N}}$ be a Cauchy sequence in $L^\infty$.
+    To achieve a limit function, for each positive integer $n$ and $m$, let $A_{n, m}=\{x\in X: |f_n(x)-f_m(x)|>\norm{f_n-f_m}_\infty\}$.
+    Then $A:=\bigcup_{n, m\in\bb{N}} A_{n, m}$ is $\mu$-null, and $|f_n-f_m|\leq\norm{f_n-f_m}_\infty$ on $X\setminus A$.
+    For the limit function to be in $L^\infty$, let $B_n=\{x\in X: |f_n(x)|>\norm{f_n}_\infty\}$ for each $n\in\bb{N}$, and let $B=\bigcup_{n\in\bb{N}} B_n$, which is $\mu$-null.
+    Defining $E=A\cup B$, which is $\mu$-null, the sequence $(f_n)_{n\in\bb{N}}$ is pointwise convergent on $X\setminus E$; let $f: X\rightarrow\bb{C}$ be the function defined by $f(x)=0$ for $x\in E$ and $f(x)=\lim f_n(x)$ for $x\in X\setminus E$.
+    Then $f\in L^\infty$, and if $N(\epsilon)$ is a positive integer for a given real number $\epsilon>0$ such that $n, m\geq N(\epsilon)$ implies $\norm{f_n-f_m}_\infty<\epsilon$, we have $|f_n-f|\leq\epsilon$ on $X\setminus E$ whenever $n\geq N(\epsilon)$.
+    It follows that $\norm{f_n-f}_\infty\rightarrow 0$.
+\end{proof}

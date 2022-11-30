@@ -1,0 +1,153 @@
+\section{Integration of nonnegative functions}
+
+Throughout this section, we fix a measure space $(X, \mc{M}, \mu)$, and we define
+\begin{defi}[The class of nonnegative measurable functions]
+    We define
+    \begin{align*}
+        L^+:=\textsf{(the space of all measurable functions from $X$ to $[0, \infty]$)}.
+    \end{align*}
+\end{defi}
+
+\subsection{Integration of nonnegative measurable simple functions}
+
+If $\phi\in L^+$ is a simple function with the standard representation $\phi=\sum_{j=1}^n a_j\chi_{E_j}$, we define the integral of $\phi$ with respect to $\mu$ by
+\begin{align*}
+    \int\phi\,d\mu:=\sum_{j=1}^n a_j\mu(E_j),
+\end{align*}
+where $d\mu$ would be omitted if the context is clear.
+In addition, if $A\in\mc{M}$, we define $\int_A\phi$ to be $\int \phi\chi_A$.
+
+Some basic, and seemingly obvious, statements regarding integrations of simple functions now follow.
+\begin{prop}
+    Let $\phi$ and $\varphi$ be simple functions in $L^+$.
+    \begin{enumerate}\label{properties for simple L+}
+        \item[(a)]
+        {
+            If $c\geq 0$, then $\int c\phi=c\int\phi$.
+        }
+        \item[(b)]
+        {
+            $\int(\phi+\varphi)=\int\phi+\int\varphi$.
+        }
+        \item[(c)]
+        {
+            If $\phi\leq\varphi$, then $\int\phi\leq\int\varphi$.
+        }
+        \item[(d)]
+        {
+            The map $A\mapsto\int_A\phi$ defined for all $A\in\mc{M}$ is a measure on $\mc{M}$.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Straightforward.
+\end{proof}
+
+\subsection{Integration of nonnegative measurable functions}
+
+Given a function $f\in L^+$, we define the integral of $f$ by
+\begin{align*}
+    \int f:=\sup\left\{
+        \int s: \textsf{$s$ is simple and $0\leq s\leq f$}
+    \right\}.
+\end{align*}
+
+\begin{thm}[Monotone convergence theorem]
+    Suppose $(f_n)_{n\in\bb{N}}\subset L^+$ is monotonically increasing.
+    If $f:=\lim_n f_n(=\sup_n f_n)$, then $\int f=\lim_n\int f_n$.
+\end{thm}
+\begin{proof}
+    Remark that $f=\sup_{n\in\bb{N}} f_n\in L^+$ and $\int f\geq\lim_n\int f_n$.
+    To prove the equality, fix a constant $0<\rho<1$ and set $E_n:=\{x\in X: f_n(x)\geq\rho f(x)\}$ for each $n\in\bb{N}$.
+    Note that the sequence $\{E_n\}_{n\in\bb{N}}$ is increasing and $\bigcup_{n\in\bb{N}} E_n=X$. \color{brown}(Why?) \color{black}
+    We also have the following inequality:
+    \begin{align*}
+        \int f_n\geq\int_{E_n}f_n\geq\rho\int_{E_n}f,
+        \quad\textsf{so}\quad
+        \lim_n\int f_n\geq\rho\lim_n\int_{E_n}f\geq\rho\lim_n\int_{E_n}s,
+    \end{align*}
+    where $s$ is a simple function in $L^+$ such that $0\leq s\leq f$.
+    By (d) of \cref{properties for simple L+}, we have $\lim_n\int_{E_n}s=\int s$, thus $\lim_n\int f_n\geq\rho\int s$ and $\lim_n\int f_n\geq\rho\int f$.
+    This proves the theorem.
+\end{proof}
+\begin{rmk}
+    In the last section, we studied that for a (real or complex-valued) measurable function $f$ on $X$, there is a monotonically increaisng sequence of (simple) functions in $L^+$ which converges to $f$ pointwise on $X$ (and uniformly on any set on which $f$ is bounded).
+    Thus, we may freely use the monotone convergence theorem for functions in $L^+$.
+\end{rmk}
+
+Using the monotone convergence theorem, we can prove that the properties in \cref{properties for simple L+} holds accordingly for nonsimple functions in $L^+$.
+Proving them is left as an exercise.
+
+We introduce some basic but helpful properties.
+Justitifications are left as exercises.
+\begin{exmp}
+    \begin{enumerate}
+    {
+        \item[(a)]
+        {
+            Suppose $f\in L^+$.
+            Then $\int f=0$ if and only if $f=0$ $\mu$-almost everywhere.
+        }
+        \item[(b)]
+        {
+            Suppose $(f_n)_{n\in\bb{N}}\subset L^+$ and $f\in L^+$.
+            If $f_n(x)$ increases to $f(x)$ for $\mu$-almost every $x\in X$, then $\int f=\lim_{n\rightarrow\infty}\int f_n$.
+        }
+    }
+    \end{enumerate}
+\end{exmp}
+\begin{prop}[Fatou's lemma]
+    If $(f_n)_{n\in\bb{N}}$ is any sequence in $L^+$, then
+    \begin{align*}
+        \int\left(\liminf_{n\rightarrow\infty} f_n\right)\leq\liminf_{n\rightarrow\infty}\int f_n.
+    \end{align*}
+\end{prop}
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $(f_n)_n$ is any sequence in $L^+$, $f\in L^+$, and $f_n\rightarrow f$ $\mu$-almost everywhere, then $\int f\leq\liminf_n\int f_n$.
+        }
+        \item[(b)]
+        {
+            If $f\in L^+$ and $\int f<\infty$, then $f^{-1}(\{\infty\})$ is $\mu$-null and $f^{-1}([0, \infty))$ is a $\sigma$-finite for $\mu$.
+        }
+    \end{enumerate}
+\end{exmp}
+
+\subsection*{Problems}
+
+\begin{prob}
+    Let $(X, \mc{M}, \mu)$ be a measure space.
+    Suppose that $(f_n)_{n\in\bb{N}}$ is a sequence in $L^+$ and $f_n\rightarrow f$ pointwise, and $\int f=\lim\int f_n<\infty$.
+    Show that $\int_E f=\lim\int_E f_n$ whenever $E\in\mc{M}$.
+    Explain why this equation may fail if $\int f=\lim\int f_n=\infty$.
+\end{prob}
+\begin{sol}
+    Whenever $E\in\mc{M}$, by Fatou's lemma, we have
+    \begin{align*}
+        \int_E f\leq\liminf\int_E f_n
+        \quad\textsf{and}\quad
+        \int_{X\setminus E}f\leq\liminf\int_{X\setminus E} f_n
+    \end{align*}
+    so $\int f\leq\liminf\int_E f_n+\liminf\int_{X\setminus E} f_n=\liminf \int f_n$ and $\int_E f=\lim\int_E f_n$.
+
+    Let $f_n=\chi_{(0, \infty)}+n^2\chi_{(-1/n, 0)}$ for each $n\in\bb{N}$.
+    Then $\int_{(-1, 0)} f=0$ but $\lim\int_{(-1, 0)} f_n=\infty$.
+\end{sol}
+
+\color{orange}
+\begin{prob}
+    Let $(X, \mc{M}, \mu)$ be a measure space and suppose $f\in L^+$, and define $\lambda: \mc{M}\rightarrow [0, \infty]$ by $\lambda(E)=\int_E f\,d\mu$ for all $E\in\mc{M}$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $\lambda$ is a measure on $\mc{M}$.
+        }
+        \item[(b)]
+        {
+            Prove that $\int f\,d\lambda=\int fg\,d\mu$ for all $g\in L^+$.
+        }
+    \end{enumerate}
+\end{prob}
+\color{black}

@@ -1,0 +1,219 @@
+\section{Product measures}
+
+For two measure spaces $(X, \mc{M}, \mu)$, $(Y, \mc{N}, \nu)$, let $\mc{A}$ be the collection of all finite disjoint unions of the members of $\{E\times F:E\in\mc{M},\, F\in\mc{N}\}$.
+What we seek is a measure on the measurable space $(X\times Y, \mc{M}\otimes\mc{N})$, and it will be constructed by defining a premeasure on $\mc{A}$; we set the function $\mu_0: \mc{A}\rightarrow [0, \infty]$ to be the $\sigma$-additive function such that $\mu_0(E\times F)=\mu(E)\nu(F)$ whenever $E\in\mc{M}$ and $F\in\mc{N}$. (This function is a premeasure on $\mc{A}$.)
+Then there is a measure on $\mc{M}\otimes\mc{N}$ which extends $\mu_0$ (obtained by first taking the Carath\'eodory extension and then restricting to $\mc{M}\otimes\mc{N}$), which will be denoted by $\mu\times\nu$.
+
+The construction of a measure for finitely many measurable spaces can be done analogously.
+\begin{defi}[Product measures]
+    Suppose $(X_i, \mc{M}_i, \mu_i)$ is a measure space for $i=1, \cdots, n$.
+    The product measure $\mu_1\times\cdots\mu_n$ is a measure on the product space $X_1\times\cdots\times X_n$ extending the premeasure $\mu_0: \mc{A}\rightarrow [0, \infty]$, where $\mc{A}$ is the collection of all finite disjoint unions of cubes(rectangles) and $\mu_0(E_1\times\cdots\times E_n)=\mu_1(E_1)\cdot\cdots\cdot\mu_n(E_n)$ whenever $E_i\in\mc{M}_i$ for $i=1, \cdots, n$.
+\end{defi}
+Furthermore, if $X$ and $Y$ are $\sigma$-finite so that $X\times Y$ is $\sigma$-finite, then $\mu\times\nu$ is the unique extension of $\rho$ to a measure.
+
+\begin{nota}
+    Given two measurable spaces $(X, \mc{M})$ and $(Y, \mc{N})$ and a subset $E$ of $X\times Y$, we define the $x$-section $E_x$ and the $y$-section $E^y$ of $E$ by
+    \begin{align*}
+        E_x:=\{y\in Y: (x, y)\in E\},\quad E^y:=\{x\in X:(x, y)\in E\}.
+    \end{align*}
+    Also, if $f$ is a function on $X\times Y$, we define the $x$-section $f_x$ and the $y$-section $f^y$ of $f$ by the function on $Y$ and $X$, resepectively, satisfying
+    \begin{align*}
+        f_x(y)=f^y(x)=f(x, y).
+    \end{align*}
+    Thus, for example, $(\chi_E)_x=\chi_{E_x}$ and $(\chi_E)^y=\chi_{E^y}$.
+\end{nota}
+
+\begin{prop}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $E\in\mc{M}\otimes\mc{N}$, then $E_x\in\mc{N}$ and $E^y\in\mc{M}$.
+        }
+        \item[(b)]
+        {
+            If $f$ is an $\mc{M}\otimes\mc{N}$-measurable function, then $f_x$ is $\mc{N}$-measurable and $f^y$ is $\mc{M}$-measurable.
+        }
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Let $\mc{T}$ be the collection of subsets of $X\times Y$ for which (a) is valid.
+    We wish to show that $\mc{M}\otimes\mc{N}$ is contained in $\mc{T}$.
+    One can easily observe that $\mc{T}$ is a $\sigma$-algebra on $X\times Y$ and that $\mc{T}$ contains $\mc{A}$.
+    (b) easily follows from (a).
+\end{proof}
+
+Our main result in this section is regarding integration with respect to the product measure, assuming that the given measure spaces are $\sigma$-finite.
+\begin{thm}
+    Suppose $(X, \mc{N}, \mu)$ and $(Y, \mc{N}, \nu)$ are $\sigma$-finite measure spaces.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            For each $E\in\mc{M}\otimes\mc{N}$, the maps
+            \begin{align*}
+                h: X\rightarrow[0, \infty],\,x\mapsto \nu(E_x)
+                \quad\textsf{and}\quad
+                w: Y\rightarrow[0, \infty],\,y\mapsto \mu(E^y)
+            \end{align*}
+            are measurable functions on $X$ and $Y$, resepectively.
+        }
+        \item[(b)]
+        {
+            Furthermore, $(\mu\times\nu)(E)=\int\nu(E_x)\,d\mu(x)=\int\mu(E^y)\,d\nu(y)$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \indent\textbf{Step 1.}
+    Suppose the theorem is proven for finite measure spaces $(X, \mc(M), \mu)$ and $(Y, \mc{N}, \nu)$, and assume the measure spaces are $\sigma$-finite, i.e., $X=\bigcup_{n\in\bb{N}} X_n$ and $Y=\bigcup_{j\in\bb{N}} Y_j$ with $\mu(X_n), \nu(Y_j)<\infty$ for all $n, j\in\bb{N}$.
+    (Without loss of generality, we may assume further that $(X_n)_{n\in\bb{N}}$ and $(Y_j)_{j\in\bb{N}}$ are increasing.)
+    Then $h|_{X_n}, w|_{Y_j}$ are measurable for all $n, j\in\bb{N}$, implying that $h$ and $w$ are measurable.
+    Also, after writing $E_n=E\cap (X_n\times Y_n)$ for each $n\in\bb{N}$, we have
+    \begin{align*}
+        (\mu\times\nu)(E_n)=\int\mu((E_n)^y)\,d\nu(y)=\int\nu((E_n)_x)\,d\mu(x)
+    \end{align*}
+    and the monotone convergence theorem induces a desired result.
+
+    \indent\textbf{Step 2.}
+    Hence, we now assume that the given measure spaces are finite.
+    We will prove the theorem by showing that the following collection containes $\mc{M}\otimes\mc{N}$:
+    \begin{align*}
+        \mc{T}:=\left\{
+            E\subset X\times Y:
+            \begin{array}{c}
+                \textsf{$h, w$ are measurable and}\\
+                \textsf{$(\mu\times\nu)(E)=\int\mu(E^y)\,d\nu(y)=\int\nu(E_x)\,d\mu(x)$}
+            \end{array}
+        \right\}
+    \end{align*}
+    One can easily check that $\mc{T}$ contains $\mc{A}$.
+    To show that $\mc{T}$ contains $\mc{M}\otimes\mc{N}$, we shall make use of the monotone class lemma; we will show that $\mc{T}$ is a monotone class on $X\times Y$.
+    
+    Let $(E_n)_{n\in\bb{N}}$ be an increasing sequence in $\mc{T}$.
+    (a) is valid by the continuity of measures; (b) is valid by the monotone convergence theorem.
+    For a decreasing sequence $(E_n)_{n\in\bb{N}}$ in $\mc{T}$, the finiteness of $X$ and $Y$ are essential.
+    In this case, (a) is valid by the continuity of measures, and (b) is valid by the Lebesgue dominated convergence theorem.
+\end{proof}
+In the above theorem, when $s$ is a simple function on $X\times Y$, we have
+\begin{align*}
+    \int s\,d(\mu\times\nu)=\iint s_x\,d\nu d\mu=\iint s^y\,d\mu d\nu.
+\end{align*}
+Thus, the following theorem is naturally deduced.
+\begin{thm}[The Fubini-Tonelli theorem]
+    Suppose $(X, \mc{M}, \mu)$ and $(Y, \mc{N}, \nu)$ are $\sigma$-finite measure spaces.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Tonelli's theorem)
+            If $f\in L^+(X\times Y)$, then the functions
+            \begin{align*}
+                g: X\rightarrow[0, \infty],\, x\mapsto\int f_x\,d\nu
+                \quad\textsf{and}\quad
+                h: Y\rightarrow[0, \infty],\, y\mapsto\int f^y\,d\mu
+            \end{align*}
+            are in $L^+(X)$ and $L^+(Y)$, resepectively, and
+            \begin{align*}
+                \int f\,d(\mu\times\nu)=\int\left(\int f\,d\nu\right)\,d\mu=\int\left(\int f\,d\mu\right)\,d\nu
+            \end{align*}
+        }
+        \item[(b)]
+        {
+            (Fubini's theorem)
+            If $f\in L^1(X\times Y)$, then the functions
+            \begin{align*}
+                g: X\rightarrow\bb{C},\, x\mapsto\int f_x\,d\nu
+                \quad\textsf{and}\quad
+                h: Y\rightarrow\bb{C},\, y\mapsto\int f^y\,d\mu
+            \end{align*}
+            are in $L^1(X)$ and $L^1(Y)$, resepectively, and
+            \begin{align*}
+                \int f\,d(\mu\times\nu)=\int\left(\int f\,d\nu\right)\,d\mu=\int\left(\int f\,d\mu\right)\,d\nu
+            \end{align*}
+        }
+    \end{enumerate}
+\end{thm}
+\begin{rmk}
+    Indeed, when one is interested in a properties of the $L^p$ space ($1\leq p\leq\infty$), one reduces the case to $L^1$ space, to $L^+$ space, and to the space of simple functions.
+\end{rmk}
+\begin{proof}
+    Since (b) follows from (a) by considering componentwise, it suffices to prove (a).
+    Let $(s_n)_{n\in\bb{N}}$ be a sequence of nonnegative real-valued simple functions found conventionally for $f$.
+    Then $g(x)=\int f_x\,d\nu=\int\lim(s_n)_x\,d\nu=\lim\int(s_n)_x\,d\nu$, and the preceeding theorem implies that $g$ is a measurable function.
+    The preceeding theorem also implies $\int g\,d\mu=\int\left(\int\lim(s_n)_x\,d\nu\right)\,d\mu=\lim\iint (s_n)_x\,d\nu d\mu=\lim\int s_n\,d(\mu\times\nu)=\int f\,d(\mu\times\nu)$.
+    The same reasoning proves for $h$.
+\end{proof}
+
+Even if $\mu, \nu$ are complete measures, $\mu\times\nu$ is almost never complete:
+If $A\in\mc{M}$ such that $\mu(A)=0$ and $B\in\mc{P}(Y)\setminus\mc{N}$, then $A\times B\notin\mc{M}\otimes\mc{N}$ (otherwise, its possibe $x$-section $B$ belongs to $\mc{N}$).
+However, $A\times B$ is a subset of the following $(\mu\times\nu)$-null set: $A\times Y$.
+If one wishes to work with complete measures, of course, one can consider the completion of $\mu\times\nu$.
+In this setting the relationship between the measuability of a function on $X\times Y$ and the measurability of its $x$-sections and $y$-sections is not so simple.
+However, the Fubini-Tonelli theorem is still valid when suitably reformulated:
+\begin{thm}[The Fubini-Tonelli theorem for complete measures]
+    Let $(X, \mc{M}, \mu)$ and $(Y, \mc{N}, \nu)$ be complete $\sigma$-finite measure spaces, and let $(X\times Y, \mc{L}, \lambda)$ be the completion of $(X\times Y, \mc{M}\otimes\mc{N}, \mu\times\nu)$.
+    Let $f$ be an $\mc{L}$-measurable satisfying either (\romannumeral 1) $f\geq 0$ or (\romannumeral 2) $f\in L^1(\lambda)$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Then $f_x$ is $\mc{N}$-measurable and $f^y$ is $\mc{M}$-measurable for almost every $x$ and $y$.
+            In case (\romannumeral 2), $f_x$ and $f^y$ are integrable for almost every $x$ and $y$.
+        }
+        \item[(b)]
+        {
+            Moreover, the functions $g: X\rightarrow[0, \infty],\,x\mapsto \int f_x\,d\nu$ and $h: Y\rightarrow[0, \infty],\,y\mapsto \int f^y\,d\mu$ are measurable.
+            In case (\romannumeral 2), $g$ and $h$ are also integrable.
+            Finally,
+            \begin{align*}
+                \int f\,d\lambda=\iint f(x, y)\,d\mu(x)\,d\nu(y)=\iint f(x, y)\,d\nu(y)\,d\mu(x).
+            \end{align*}
+        }
+    \end{enumerate}
+\end{thm}
+\ifinclude
+\begin{proof}
+    $\int f\,d\lambda=\int f\,d(\mu\times\nu)$.
+\end{proof}
+\else
+\begin{proof}
+    Before proving the theorem, we first prove the following two lemmas:
+    \begin{enumerate}
+        \item[(L1)]
+        {
+            If $E\in\mc{M}\otimes\mc{N}$ and $(\mu\times\nu)(E)=0$, then $\nu(E_x)=\mu(E^y)=0$ for almost every $x$ and $y$.
+        }
+        \item[(L2)]
+        {
+            If $f$ is $\mc{L}$-measurable and $f=0$ $\lambda$-almost everywhere, then $f_x$ and $f^y$ are integrable for almost every $x$ and $y$, and $\int f_x\,d\nu=\int f^y\,d\mu=0$ for almost every $x$ and $y$. (In this lemma, the completeness of $\mu$ and $\nu$ is needed.)
+        }
+    \end{enumerate}
+    
+    \noindent(Proof of (L1))\newline\indent
+    The result directly follows from $0=(\mu\times\nu)(E)=\int\mu(E^y)\,d\nu(y)=\int\nu(E_x)\,d\mu(x)$.
+
+    \noindent(Proof of (L2))\newline\indent
+    Set $D=\{(x, y)\in X\times Y: f(x, y)\neq 0\}$ and let $E$ be an $\mc{M}\times\mc{N}$-null set $E$ containing $D$.
+    Note that $f_x=\chi_{D_x}f_x$ and $f^y=\chi_{D^y}f^y$.
+    Because $0=(\mu\times\nu)(E)=\int\mu(E^y)\,d\mu=\int\nu(E_x)\,d\nu$, we have $\mu(E^y)=\nu(E_x)=0$ for almost every $x\in X$ and $y\in Y$.
+    Because $(X, \mc{M}, \mu)$ and $(Y, \mc{N}, \nu)$ are complete, $\nu(D_x)=\mu(D^y)=0$ for such almost every $x, y$.
+    This implies that $f_x=0$ $\nu$-almost everywhere and $f^y=0$ $\mu$-almost everywhere, which further implies $\int f_x\,d\nu=\int f^y\,d\mu=0$.
+
+    To conclude the proof, we apply \cref{Proposition 2.12 in the textbook} to find an $\mc{M}\otimes\mc{N}$-measurable function $g$ on $X\times Y$ such that $f=g$ $\lambda$-almost everywhere.
+    Becuase $g$ is also an $\mc{L}$-measurable function, $f-g$ is an $\mc{L}$-measurable function such that $f-g=0$ $\lambda$-almost everywhere.
+    Hence, $\int f\,d\lambda=\int g\,d\lambda=\int g\,d(\mu\times\nu)$ (see the following remark to see why the last identity holds) and the Fubini-Tonelli theorem implies that
+    $\int f\,d\lambda=\iint f_x\,d\nu\,d\mu=\iint f^y\,d\mu\,d\nu$.
+    On the other hand, by (L2), $(f-g)_x$ and $(f-g)^y$ are integrable for almost every $x\in X$ and $y\in Y$, and $\int(f-g)_x\,d\nu=\int(f-g)^y\,d\mu=0$.
+    Therefore, the measurability and the integrability of $f_x$ and $f^y$ follows from those of $g_x$ and $g^y$, and the equation follows from $f_x=g_x$ and $f^y=g^y$.
+\end{proof}
+\fi
+
+\subsection*{Problems}
+
+\begin{prob}[Exercise 2.46]
+    Let $X=Y=[0, 1]$, $\mc{M}=\mc{N}=\mc{B}_{[0, 1]}$, and $\mu, \nu$ be the Lebesgue measure and the counting measure on $X$ and $Y$, resepectively.
+    Let $D$ be the diagonal of $[0, 1]$.
+    Find $\iint \chi_D\,d\mu d\nu, \iint \chi_D\,d\nu d\mu$ and $\int\chi_D\,d(\mu\times\nu)$.
+\end{prob}
+\begin{sol}
+    It is easy to compute that $\iint \chi_D\,d\mu d\nu=\int0\,d\nu=0$ and $\iint \chi_D\,d\nu d\mu=\int 1\,d\nu=1$.
+    To compute $\int \chi_D\,d(\mu\times\nu)$, remark that $\int\chi_D\, d(\mu\times\nu)$ is the infimum of $\sum_{n=1}^\infty\mu(A_n)\nu(B_n)$, where $(A_n\times B_n)_{n\in\bb{N}}$ covers $D$.
+    Since $D$ is uncountable, there is a positive integer $k$ such that $\mu(A_k)>0$ and $\nu(B_k)=\infty$, from which it follows that $\int \chi_D\,d(\mu\times\nu)=\infty$.
+\end{sol}
