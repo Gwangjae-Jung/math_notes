@@ -241,11 +241,9 @@ We now introduce some inheritance properties.
     \begin{align*}
         F=\bigcup_{n=1}^\infty U_n\setminus\bigcup_{n=1}^\infty\overline{V_n}\supset A,\quad G=\bigcup_{n=1}^\infty V_n\setminus\bigcup_{n=1}^\infty\overline{U_n}\supset B.
     \end{align*}
-    Also, $F\cap G=\varnothing$; otherwise, $F_n\cap G_k\neq\varnothing$ for some $n, l\in\bb{N}$.
-    Without loss of generality, we may assume $n\leq k$.
+    To show $F\cap G=\varnothing$, suppose $F_n\cap G_k\neq\varnothing$ for some $n, k\in\bb{N}$; without loss of generality, we may assume $n\leq k$.
     If $p\in F_n\cap G_k$, then $p\in F_n\subset U_n$; on the other hand, $G_k$ does not intersect $\overline{U_n}$, hence $p\notin G_k$.
-    
-    Therefore, $F$ and $G$ separate $A$ and $B$ and $X$ is a normal space.
+    This proves that $F$ and $G$ separate $A$ and $B$, so $X$ is a normal space.
 \end{proof}
 
 \begin{thm}
@@ -260,10 +258,10 @@ We now introduce some inheritance properties.
         U:=\bigcup_{a\in A}B_d(a, s_a/3),\quad V:=\bigcup_{b\in B}B_d(b, t_b/3).
     \end{align*}
     Then $U$ and $V$ are neighborhoods of $A$ and $B$ in $X$.
-    If $U\cap V$ is nonempty, then $B_d(a, s_a/3)\cap B_d(b, t_b/3)$ contains a point $z\in X$.
+    If $U\cap V$ is nonempty, then for some $a\in A$ and $b\in B$, $B_d(a, s_a/3)\cap B_d(b, t_b/3)$ contains a point $z\in X$.
     We then have the following inequality:
     \begin{align*}
-        d(a, b)\leq d(a, z)+d(z, b)<\dfrac{s_a}{3}+\dfrac{t_b}{3}<\max\left\{s_a, t_b\right\},
+        d(a, b)\leq d(a, z)+d(z, b)<\frac{s_a}{3}+\frac{t_b}{3}<\max\left\{s_a, t_b\right\},
     \end{align*}
     so $b\in B_d(a, s_a)$ or $a\in B_d(b, t_b)$, a contradiction.
     Therefore, $U\cap V$ is empty, proving that $X$ is normal.
