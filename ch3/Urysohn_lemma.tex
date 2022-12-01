@@ -1,59 +1,58 @@
 \section{The Urysohn lemma}
 \begin{thm}[Urysohn lemma]\label{Urysohn lemma}
-    If $X$ is a normal space, then any two (nonempty) disjoint closed subspaces of $X$ can be separated by a continuous function on $X$.
-    To be precise, if $A$ and $B$ are (nonempty) disjoint closed subspaces of $X$, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(A)=\{0\}$ and $f(B)=\{1\}$.
+    If $X$ is a normal space, then any two nonempty disjoint closed subsets of $X$ can be separated by a continuous function on $X$.
+    To be precise, if $A$ and $B$ are nonempty disjoint closed subsets of $X$, there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(A)=\{0\}$ and $f(B)=\{1\}$.
 \end{thm}
 \begin{rmk}
-    The Urysohn lemma implies that if every pair of closed sets in $X$ can be separated by disjoint open sets, i.e., $X$ is normal, then each such pair can be separated by a continuous function.
-    The converse is obvious. \color{brown}(Why?)\color{black}
+    By the Urysohn lemma, every pair of closed subsets of $X$ can be separated by disjoint open subsets of $X$ (in short, $X$ is normal) if and only if each such pair can be separated by a continuous function.
+    (Here, if part is obvious.)
 \end{rmk}
 \begin{proof}
     Let $A$ and $B$ be nonempty and disjoint closed subsets of $X$.
 
     \textbf{Step 1.}
-    Let $P$ be the set of rational numbers in $[0, 1]$ and write $P=\{x_1, x_2, x_3, \cdots\}$ with $x_1=1, x_2=0$.
-    Now define an open subset $U_p$ for $p\in P$ as follows:
+    Let $P$ be the set of rational numbers in $[0, 1]$ and write $P=\{x_1, x_2, x_3, \cdots\}$ with $x_1=1$ and $x_2=0$.
+    Define an open subset $U_p$ for each $p\in P$ as follows:
     \begin{enumerate}
         \item[(1)]
         {
-            Fitst, let $U_1:=X\setminus B$, which contains $A$.
-            Second, by normality, we can find a neighborhood $U_0$ of $A$ in $X$ whose closure is in $U_1$.
+            First, let $U_1:=X\setminus B$, which contains $A$.
+            Second, by normality, we can find a neighborhood $U_0$ of $A$ in $X$ whose closure in $X$ is contained in $U_1$.
         }
         \item[(2)]
         {
-            Suppose we have constructed $U_p$ for $p\in P_n$, where $P_n=\{x_1, \cdots, x_n\} $ for $n\geq 3$ such that $p, q\in P_n$ with $p<q$ implies
+            Suppose, for some positive integer $n\geq 2$, that we have constructed $U_p$ for all $p\in P_n=\{x_1, \cdots, x_n\}$ satisfying the following rule, which is satisfied when $n=2$:
             \begin{align}\label{rule}
-                \overline{U_p}\subset U_q.
+                \textsf{Whenever $p,\,q\in P_n$ and $p<q$, $\overline{U_p}\subset U_q$}.
             \end{align}
-            For convinience, denote $r=p_{n+1}$.
+            Write $r=p_{n+1}$.
             We want $U_r$ to satisfy \cref{rule} with all $U_p$ with indices in $P_{n+1}$.
-            For this, it suffices to care the immediate successor $s$ and predecessor $p$ of $r$ in $P_{n+1}$; if $U_r$ satisfies \cref{rule} with $U_p$ and $U_s$, then $U_r$ satisfies \cref{rule} with all the other $U_p$ with $p\in P_{n+1}$.
-
-            Since $U_p$ and $U_s$ satisfies $\overline{U_p}\subset U_s$, by normality, we can find a neighborhoof $U_r$ of the closed subspace $\overline{U_p}$ in $X$ such that $\overline{U_r}\subset U_s$.
-            For such $U_r$, \cref{rule} is satisfied for every pair of $U_p$ with $p\in P_{n+1}$.
+            In this case, it suffices to care the immediate successor $s$ and predecessor $p$ of $r$ in $P_{n+1}$; if $U_r$ satisfies \cref{rule} with $U_p$ and $U_s$, then $U_r$ satisfies \cref{rule} with all the other $U_p$ with $p\in P_{n+1}$.
+            Since $U_p$ and $U_s$ satisfies $\overline{U_p}\subset U_s$, by normality, there is a neighborhoof $U_r$ of $\overline{U_p}$ in $X$ such that $\overline{U_r}\subset U_s$.
+            For such $U_r$, \cref{rule} is satisfied for $P_{n+1}$.
         }
     \end{enumerate}
-    By induction, we have $U_p$ defined for all $p\in P$.
+    By induction, $U_p$ can be defined for all $p\in P$ with \cref{rule} being satisfied.
 
     \textbf{Step 2.}
-    We now define $U_p$ for all rational numbers $p$ as follows: just let $U_p=\varnothing$ whenever $p<0$ and $U_p=X$ whenever $p>1$.
-    For such $U_p$ with $p\in\bb{Q}$, \cref{rule} is satisfied.
+    We now define $U_p$ for all rational numbers $p$ as follows: Just let $U_p=\varnothing$ whenever $p<0$, and $U_p=X$ whenever $p>1$.
+    Even in this case, \cref{rule} is satisfied.
     
     \textbf{Step 3.}
     For each point $x\in X$, define the set
     \begin{align*}
         C(x):=\{p\in\bb{Q}:x\in U_p\}.
     \end{align*}
-    For each $x$, the set $C(x)$ is bounded (below by a nonnegative real number, and above by 1).
+    For each $x$, the set $C(x)$ is bounded below by a nonnegative real number and it contains 1.
     Thus, we may define the function $f: X\rightarrow[0, 1]$ by $f(x)=\inf C(x)$ for $x\in X$.
 
     \textbf{Step 4.}
     We now show that the function $f$ is a continuous map mapping $A$ onto $\{0\}$ and $B$ onto $\{1\}$.
     First, since every point $a\in A$ belongs to $U_0$, $f(a)=0$; since every point $b\in B$ does not belong to $U_1$, $f(b)=1$.
     Before proving continuity, we note the following lemma:
-    \begin{center}
-        $x\in\overline{U_r}$ implies $f(x)\leq r$, and $x\notin U_r$ implies $f(x)\geq r$.
-    \end{center}
+    \begin{align}\label{lemma in proving the Urysohn lemma}
+        \textsf{$x\in\overline{U_r}$ implies $f(x)\leq r$, and $x\notin U_r$ implies $f(x)\geq r$.}
+    \end{align}
     To check the continuity, fix a point $x\in X$ and let $(a, b)$ be a neighborhood of $f(x)$ in $\bb{R}$.
     We want to find a neighborhood $W$ of $x$ in $X$ whose image under $f$ is contained in $(a, b)$.\footnote{When trying to prove continuuity with the original definition of continuity, you might encounter some technical problem.}
     Using the density of $\bb{Q}$, we can find rational numbers $c, d$ such that $a<c<f(x)<d<b$.
@@ -63,14 +62,11 @@
     Furthermore, if $y\in W$, then $c\leq f(y)\leq d$, hence $W$ is a neighborhood of $x$ in $X$ with the image in $(a, b)$.
     Therefore, $f$ is a continuous function from $X$ into $[0, 1]$ mapping $A$ into $\{0\}$ and $B$ onto $\{1\}$.
 \end{proof}
-\begin{prob}
-    Prove the lemma introduced in the fourth step of the proof of \cref{Urysohn lemma}.
-\end{prob}
-\begin{sol}
+\begin{proof}[Proof of \cref{lemma in proving the Urysohn lemma}]
     Suppose first that $x\in\overline{U_r}$.
     Whenever $r<p$, since $x\in\overline{U_r}\subset U_p$, $C(x)$ contains $p\in\bb{Q}$ with $p>r$; $f(x)=\inf C(x)\leq r$.
     Conversely, if $x\notin U_r$, whenever $p<r$, since $\overline{U_p}\subset U_r$, $p\notin C(x)$ for all $p<r$ and it implies that $f(x)=\inf C(x)\geq r$.
-\end{sol}
+\end{proof}
 
 The following problem deals with a property of completely regular spaces, and its solution does not require the Urysohn lemma.
 \begin{prob}
