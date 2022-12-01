@@ -5,9 +5,9 @@
 \end{thm}
 \begin{rmk}
     The Urysohn lemma implies that if every pair of closed sets in $X$ can be separated by disjoint open sets, i.e., $X$ is normal, then each such pair can be separated by a continuous function.
-    The converse is trivial. (Why?)
+    The converse is obvious. \color{brown}(Why?)\color{black}
 \end{rmk}
-\begin{proof}[Proof of \cref{Urysohn lemma}]
+\begin{proof}
     Let $A$ and $B$ be nonempty and disjoint closed subsets of $X$.
 
     \textbf{Step 1.}
@@ -21,23 +21,23 @@
         }
         \item[(2)]
         {
-            Suppose we have constructed $U_p$'s for $p\in P_n$, where $P_n=\{x_1, \cdots, x_n\} $ for $n\geq 3$ such that $p, q\in P_n$ with $p<q$ implies
+            Suppose we have constructed $U_p$ for $p\in P_n$, where $P_n=\{x_1, \cdots, x_n\} $ for $n\geq 3$ such that $p, q\in P_n$ with $p<q$ implies
             \begin{align}\label{rule}
                 \overline{U_p}\subset U_q.
             \end{align}
             For convinience, denote $r=p_{n+1}$.
-            We want $U_r$ to satisfy \cref{rule} with all $U_p$'s with indices in $P_{n+1}$.
-            For this, it suffices to care the immediate successor $s$ and predecessor $p$ of $r$ in $P_{n+1}$; if $U_r$ satisfies \cref{rule} with $U_p$ and $U_s$, then $U_r$ satisfies \cref{rule} with all the other $U_p$'s with $p\in P_{n+1}$.
+            We want $U_r$ to satisfy \cref{rule} with all $U_p$ with indices in $P_{n+1}$.
+            For this, it suffices to care the immediate successor $s$ and predecessor $p$ of $r$ in $P_{n+1}$; if $U_r$ satisfies \cref{rule} with $U_p$ and $U_s$, then $U_r$ satisfies \cref{rule} with all the other $U_p$ with $p\in P_{n+1}$.
 
             Since $U_p$ and $U_s$ satisfies $\overline{U_p}\subset U_s$, by normality, we can find a neighborhoof $U_r$ of the closed subspace $\overline{U_p}$ in $X$ such that $\overline{U_r}\subset U_s$.
-            For such $U_r$, \cref{rule} is satisfied for every pair of $U_p$'s with $p\in P_{n+1}$.
+            For such $U_r$, \cref{rule} is satisfied for every pair of $U_p$ with $p\in P_{n+1}$.
         }
     \end{enumerate}
     By induction, we have $U_p$ defined for all $p\in P$.
 
     \textbf{Step 2.}
     We now define $U_p$ for all rational numbers $p$ as follows: just let $U_p=\varnothing$ whenever $p<0$ and $U_p=X$ whenever $p>1$.
-    For such $U_p$'s with $p\in\bb{Q}$, \cref{rule} is satisfied.
+    For such $U_p$ with $p\in\bb{Q}$, \cref{rule} is satisfied.
     
     \textbf{Step 3.}
     For each point $x\in X$, define the set
@@ -79,7 +79,7 @@ The following problem deals with a property of completely regular spaces, and it
 \end{prob}
 \begin{sol}
     For each point $a\in A$, let $f_a: X\rightarrow[0, 1]$ be a continuous function such that $f_a(a)=0$ and $f_a(B)=\{1\}$.
-    Note that the collection $\{f_a^{-1}([0, r)):a\in A\}$ is an open cover of $A$ by sets open in $X$, where $r$ is a real number such that $0<r<\dfrac{1}{2}$.
+    Note that the collection $\{f_a^{-1}([0, r)):a\in A\}$ is an open cover of $A$ by sets open in $X$, where $r$ is a real number such that $0<r<1/2$.
     Thus, $A$ can be covered by finitely many sets $f_{a_i}^{-1}([0, r))$ for $i=1, \cdots, n$.
     Define the function $f: X\rightarrow[0, 1]$ by $f(x)=f_1(x)\times\cdots\times f_n(x)$ for $x\in X$.
     Then $0\leq f(a)<r$ for all $a\in A$ and $f(B)=\{1\}$.

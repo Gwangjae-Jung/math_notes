@@ -181,18 +181,16 @@
     \begin{align*}
         A=\bigcup_{a, b\in Y,\, a\neq b} (f^{-1}(U_a)\cap g^{-a}(V_b)),
     \end{align*}
-    because $f^{-1}(U_a)\cap g^{-a}(V_b)=\bigcup_{s\in U_a}\left(f^{-1}(\{s\})\cap g^{-1}(V_b)\right)=\bigcup_{s\in U_a,\, t\in V_b}(f^{-1}(\{s\})\cap g^{-1}(\{t\}))$ for each pair $(a, b)$.
+    because $f^{-1}(U_a)\cap g^{-1}(V_b)=\bigcup_{s\in U_a}\left(f^{-1}(\{s\})\cap g^{-1}(V_b)\right)=\bigcup_{s\in U_a,\, t\in V_b}(f^{-1}(\{s\})\cap g^{-1}(\{t\}))$ for each pair $(a, b)$.
     It easily follows that $A$ is open in $X$.
 \end{sol}
 
 \begin{prob}
     For a topological space $X$ and its subset $A$, we say that $A$ is \textit{discrete} if every point of $A$ is an isolated point of $A$ in $X$.
-    Show that an uncountable subset of a second countable space is indiscrete.
+    Show that an uncountable subset of a second countable space is indiscrete, i.e., every uncountable subset of a second countable space has a limit point.
 \end{prob}
 \begin{sol}
-    Let $\mc{B}$ be a countable basis of the second countable space $X$, and assume that $A$ is an uncountable and discrete subset of $X$.
-    For each point $a$ of $A$, there is a basis member $B_x\in\mc{B}$ such that $B_x\cap A=\{x\}$.
-    Since $\{B_x: x\in A\}$ is a countable collection covering $A$, there is a member $B_p$ for some $p\in A$ which contains uncountably many points of $A$.
-    Then $B_p$ contradicts the isolation property.
-    Therefore, an uncountable subset of a second countable space is indiscrete.
+    Let $\mc{B}$ be a countable basis of the second countable space $X$, and suppose $A$ is an uncountable discrete subset of $X$.
+    For each point $x$ in $A$, let $B_x\in\mc{B}$ be chosen so that $B_x\cap A=\{x\}$.
+    Since the collection of $B_x$ for $x\in A$ is countable, there are at most countably many distinct singletons $\{x\}$ for $x\in A$, a contradiction.
 \end{sol}

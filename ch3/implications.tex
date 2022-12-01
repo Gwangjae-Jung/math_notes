@@ -212,12 +212,9 @@ We now introduce some inheritance properties.
     In fact, it is known that every ordered space is a normal space, whose proof will not be introduced in this note.
 \end{exmp}
 
-\begin{exmp}[Locally compact Hausdorff spaces are regular]
-    Suppose $X$ is a locally compact Hausdorff space.
-    Without loss of generality, we may assume $X$ is not compact. (You will see why.)
-    Let $Y$ be the one-point compactification of $X$.
-    Since $Y$ is a compact Hausdorff space, $Y$ is normal and regular, as illustrated in the following subsection.
-    Hence, $X$, a subspace of $Y$, is also regular.
+\begin{exmp}[Locally compact Hausdorff spaces are (completely) regular]
+    Suppose $X$ is a locally compact Hausdorff space, and let $Y$ be a compact Hausdorff space containing $X$ such that $Y\setminus X$ is a singleton.
+    Then $Y$ is normal, (completely) regular (illustrated in the following subsection), so $X$ is also (completely) regular.
 \end{exmp}
 
 \subsection{Examples of normal spaces}
@@ -309,18 +306,20 @@ We now introduce some inheritance properties.
 \end{proof}
 
 \begin{exmp}[$\bb{R}_l$ is normal]
-    Suppose $A$ and $B$ are disjoint closed subspaces of $\bb{R}_l$.
-    For each $a\in A$, let $[a, x_a)$ be a neighborhood of $a$ in $\bb{R}_l$ contained in $\bb{R}_l\setminus B$; for each $b\in B$, let $[b, y_b)$ be a neighborhood of $b$ in $\bb{R}_l$ contained in $\bb{R}_l\setminus A$.
-    Now set
+    Suppose $A$ and $B$ are nonempty disjoint closed subsets of $\bb{R}_l$.
+    For each $a\in A$, let $[a, x_a)$ be a neighborhood of $a$ in $\bb{R}_l$ contained in $\bb{R}_l\setminus B$, and for each $b\in B$, let $[b, y_b)$ be a neighborhood of $b$ in $\bb{R}_l$ contained in $\bb{R}_l\setminus A$.
+    Define
     \begin{align*}
-        U:=\bigcup_{a\in A}[a, x_a),\quad V:=\bigcup_{b\in B}[b, y_b).
+        U:=\bigcup_{a\in A}[a, x_a)
+        \quad\textsf{and}\quad
+        V:=\bigcup_{b\in B}[b, y_b),
     \end{align*}
-    To show normality, it remains to show that $U$ and $V$ are disjoint.
-    If $U\cap V\neq\varnothing$, then $[a, x_a)\cap[b, y_b)$ is nonempty for some $a\in A$ and $b\in B$.
-    Since $a\neq b$, we may assume $a<b$; then $a<b<x_a<y_b$, and this implies that the point $b$ of $B$ is contained in $[a, x_a)$, a contradiction.
-    Therefore, $\bb{R}_l$ is a normal space.
+    and assume $U\cap V\neq\varnothing$.
+    Then $[a, x_a)\cap[b, y_b)$ is nonempty for some $a\in A$ and $b\in B$.
+    Since $a\neq b$, we may assume $a<b$, which implies that $a<b<x_a<y_b$ and that $b$ is contained in $[a, x_a)$, a contradiction.
+    Therefore, $U\cap V=\varnothing$, proving that $\bb{R}_l$ is a normal space.
 \end{exmp}
 
 \begin{exmp}[Compact Hausdorff spaces are normal]
-    Because closedness and compactness coincide in compact Hausdorff spaces and compact Hausdorff spaces are compactly normal, compact Hausdorff spaces are normal.
+    Because closedness and compactness coincide in compact Hausdorff spaces and Hausdorff spaces are compactly normal, compact Hausdorff spaces are normal.
 \end{exmp}
