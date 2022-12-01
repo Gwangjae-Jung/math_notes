@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {3.1.1}Definitions regarding countability and separation axioms}{23}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Basic properties of countabilities and separabilities}{24}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Examples of regular spaces}{25}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Examples of normal spaces}{26}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.4}Examples of normal spaces}{25}{subsection.3.1.4}%
 \contentsline {section}{\numberline {3.2}Countability and separation axioms (Problems)}{27}{section.3.2}%
 \contentsline {section}{\numberline {3.3}The Urysohn lemma}{29}{section.3.3}%
 \contentsline {section}{\numberline {3.4}The embedding theorem}{31}{section.3.4}%

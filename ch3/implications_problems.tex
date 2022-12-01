@@ -31,15 +31,6 @@
     \end{enumerate}   
 \end{sol}
 
-\color{red}
-\begin{prob}[Tube lemma for Lindel\"{o}f spaces]
-    
-\end{prob}
-\begin{sol}
-    
-\end{sol}
-\color{black}
-
 \begin{prob}\label{inheritance: countabilities}
     Prove \cref{inheritance of countabilities}.
 \end{prob}
@@ -47,24 +38,32 @@
     \begin{enumerate}
         \item[(a)]
         {
-            Let $Y$ be a subspace of $X$, and assume first that $X$ is first-countable.
-            Given a point $p\in Y$, let $\{B_n\}_{n\in\bb{N}}$ be a countable base at $p$ in $X$.
-            Then it is easy to check that the restriction $\{B_n\cap Y\}_{n\in\bb{N}}$ is a countable base at $p$ in $Y$.
+            Let $Y$ be a subspace of $X$.
+            If $\{B_n\}_{n\in\bb{N}}$ is a countable base at $p\in Y$ in $X$, then $\{B_n\cap Y\}_{n\in\bb{N}}$ is a countable base at $p$ in $Y$; if $\{B_n\}_{n\in\bb{N}}$ is a countable basis of the topology on $X$, then $\{B_n\cap Y\}_{n\in\bb{N}}$ is a countable basis of the topology on $Y$.
 
-            Now assume that $X$ is second-countable, and let $\mc{B}=\{B_n\}_{n\in\bb{N}}$ be a countable basis of $X$.
-            One can easily find that the restriction $\{B_n\cap Y\}_{n\in\bb{N}}$ is a basis of the subspace topology on $Y$.
+            For spaces $X_1, X_2, \cdots$, let $\mc{B}_n=\{B_{n, k}\}_{k\in\bb{N}}$ be a countable base at $x_n\in X_n$ in $X_n$.
+            Then
+            \begin{align*}
+                \left\{
+                    \prod_{j\in\bb{N}} U_j:
+                    \begin{array}{c}
+                        \textsf{$U_j\in \mc{B}_j$ for each $j\in\bb{N}$ and}\\
+                        \textsf{$U_j=X_j$ for all but finitely many values of $j$}
+                    \end{array}
+                \right\}
+            \end{align*}
+            is a countable base at $x\in \prod_{n\in\bb{N}} X_n$, where $\pi_n(x)=x_n$ for all $n\in\bb{N}$.
+            When each $\mc{B}_n$ is a countable basis of the topolgy on $X_n$, then the above collection is a countable basis of the topology on $\prod_{n\in\bb{N}} X_n$.
         }
         \item[(b)]
         {
-            Let $Y$ be a closed subspace of a Lindel\"of space $X$, and let$\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $Y$.
-            Note that each $A_\alpha$ is of the form $O_\alpha\cap Y$, where each $O_\alpha$ is open in $X$.
-            Since $X\setminus Y$ is open in $X$, countably many members $A_\alpha$, together with $X\setminus Y$, cover $X$.
-            This proves that a closed subspace of a Lindel\"of space is a Lindel\"of space.
+            Let $Y$ be a closed subspace of a Lindel\"of space $X$, and let $\{A_\alpha\}_\alpha$ be a covering of $Y$ by sets open in $Y$ (then, for each $\alpha$, $A_\alpha=Y\cap O_\alpha$ for an open subset $O_\alpha$ of $X$).
+            Since $X\setminus Y$ is open in $X$, countably many members $A_\alpha$, together with $X\setminus Y$, cover $X$, as desired.
         }
         \item[(c)]
         {
             Let $X$ be a separable space and $Y$ be an open subspace of $X$.
-            And let $D$ be a countable dense subset of $X$, and use the overline notation to denote the closure in $X$ (for example, $\ol D=X$).
+            And let $D$ be a countable dense subset of $X$, and use the overline notation to denote the closure in $X$.
             We wish to show that $D\cap Y$ is a (countable) dense subset of $Y$, i.e., $\ol{D\cap Y}\cap Y=Y$.
             For this, it suffices to show $Y\subset\ol{D\cap Y}$.
             In fact, if $p\in Y$ and whenever $V$ is a neighborhood of $p$ in $X$ contained in $Y$, then $V$ contains a point of $D\cap Y$.
@@ -99,8 +98,7 @@
             Let $x$ be a point of $X$ and $U$ be a neighborhood of $x$ in $X$.
             Here, we may assume that $U=\prod_{\alpha\in\mc{A}} B_\alpha$, where $B_\alpha$ is open in $X_\alpha$ for each $\alpha\in\mc{A}$ and $B_\alpha=X_\alpha$ for all but finitely many values of $\alpha\in\mc{A}$.
             For each $\alpha\in\mc{A}$, use the regularity of $X_\alpha$ to find a neighborhood $V_\alpha$ of $x_\alpha$ in $X_\alpha$ whose closure in $X_\alpha$ is contained in $B_\alpha$ (when $B_\alpha=X_\alpha$, choose $V_\alpha=X_\alpha$).
-            Then $V=\prod_{\alpha\in\mc{A}} V_\alpha$ is a neighborhood of $x$ in $X$ contained in $U$.
-            (Note that the closure of the product is the product of the closures.)
+            Then $V=\prod_{\alpha\in\mc{A}} V_\alpha$ is a neighborhood of $x$ in $X$ whose closure is contained in $U$.
         }
         \item[(c)]
         {
@@ -111,7 +109,7 @@
         }
     \end{enumerate}
 \end{sol}
-\begin{rmk}
+\begin{rmk}[An embedding of a space into a product space]
     Let $\{X_\alpha\}_{\alpha\in\mc{A}}$ be a collection of topological spaces, and assume that $X_\alpha$ is a singleton whenever $\alpha\neq\beta$.
     Then $X_\beta$ is homeomorphic to $X=\prod_{\alpha\in\mc{A}} X_\alpha$.
     Indeed, one can impose an explicit homeomorphism.
@@ -122,9 +120,10 @@
             s_\alpha    &   \textsf{(otherwise)}
         \end{array}\right.
         \quad
-        \textsf{(for all $x\in X_\beta$)}.
+        \textsf{for all $x\in X_\beta$}.
     \end{align*}
     Then $\imath$ is a desired homeomorphism.
+    As an example, $\bb{R}^2$ and the plane $\{(x, y, z)\in\bb{R}^3: y=17\}\approx\bb{R}^2\times\{17\}$ are homeomorphic.
 \end{rmk}
 
 \begin{prob}\label{inheritance: completely regular}
@@ -171,18 +170,23 @@
     \end{enumerate}
 \end{sol}
 
-\color{red}
 \begin{prob}
-    Let $f, g: X\rightarrow Y$ be continuous maps, where $Y$ is a Hausdorff space.
+    Let $f,\,g: X\rightarrow Y$ be continuous maps, where $Y$ is a Hausdorff space.
     Show that $\{x\in X: f(x)=g(x)\}$ is a closed subspace of $X$.
 \end{prob}
 \begin{sol}
-    
+    We prove the closedness of the given subset by proving that $A:=\{x\in X: f(x)\neq g(x)\}$ is open in $X$.
+    Note that $A=\bigcup_{a, b\in Y,\, a\neq b}(f^{-1}(\{a\})\cap g^{-1}(\{b\}))$.
+    If, for each pair $(a, b)$ of distinct points of $Y$, $U_a$ and $V_b$ are disjoint neighborhoods of $a$ and $b$ in $Y$, we have
+    \begin{align*}
+        A=\bigcup_{a, b\in Y,\, a\neq b} (f^{-1}(U_a)\cap g^{-a}(V_b)),
+    \end{align*}
+    because $f^{-1}(U_a)\cap g^{-a}(V_b)=\bigcup_{s\in U_a}\left(f^{-1}(\{s\})\cap g^{-1}(V_b)\right)=\bigcup_{s\in U_a,\, t\in V_b}(f^{-1}(\{s\})\cap g^{-1}(\{t\}))$ for each pair $(a, b)$.
+    It easily follows that $A$ is open in $X$.
 \end{sol}
-\color{black}
 
 \begin{prob}
-    For a topological space $X$ and its subset $A$, we say that $A$ is discrete if every point of $A$ is an isolated point of $A$ in $X$.
+    For a topological space $X$ and its subset $A$, we say that $A$ is \textit{discrete} if every point of $A$ is an isolated point of $A$ in $X$.
     Show that an uncountable subset of a second countable space is indiscrete.
 \end{prob}
 \begin{sol}
