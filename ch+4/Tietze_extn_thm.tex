@@ -1,0 +1,44 @@
+\section{Tietze extension theorem}
+
+\begin{thm}[Tietze extension theorem]
+    Let $X$ be a normal space and let $A$ be a closed subset of $X$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Any continuous map of $A$ into $[a, b]\subset\bb{R}$ extends to a continuous map of $X$ into $[a, b]$.
+        }
+        \item[(b)]
+        {
+            Any continuous map of $A$ into $\bb{R}$ extends to a continuous map of $X$ into $\bb{R}$.
+        }
+    \end{enumerate}    
+\end{thm}
+\begin{proof}
+    The theorem shall be proved by constructing a continuous map of $X$ extending $f$.
+    To this end, we construct a sequence of continuous functions which converges to $f$ uniformly on $X$ and approximates $f$ on $A$ more and more closely as $n\rightarrow\infty$.
+    Then the limit function is continuous on $X$ and it extends $f$.
+
+    \textbf{Step 1.}
+    For convinience, we may assume that $f$ is onto $[-r, r]$ for some positive real number $r$.
+    Our first goal is to show the existence of a continuous map $g_1: X\rightarrow[-r/3, r/3]$ such that $|f-g_1|\leq 2r/3$ on $A$.
+    Write $L=f^{-1}([-r, -r/3])$ and $U=f^{-1}([r/3, r])$, which are closed subsets of $X$.
+    Because $X$ is normal, by the Urysohn lemma, there is a continuous map $g_1: X\rightarrow [-r/3, r/3]$ such that $g(L)=-r/3$ and $g(U)=r/3$.
+    Then $g_1$ satisfies the desired property.
+
+    \textbf{Step 2.}
+    We now prove part (a) of the theorem.
+    After finding $g_1$, because $|f-g_1|\leq 2r/3$, we can find a continuous map $g_2: X\rightarrow [-(2/3)^2 r, (2/3)^2 r]$ such that $|(f-g_1)-g_2|\leq (2/3)^2 r$ on $A$.
+    By induction, for each $n\in\bb{N}$, there is a continuous map $g_n: X\rightarrow [-(2/3)^n r, (2/3)^n r]$ such that $|f-(g_1+\cdots+g_n)|\leq(2/3)^n r$ on $A$.
+    Moreover, the series $\sum g_n$ is absolutely (hence, uniformly) convergent on $X$.
+    Therefore, defining the map $g: X\rightarrow [-r, r]$ by $g=\sum g_n$, we find that $g$ is a continuous map (being the limit of a uniformly convergent sequence of continuous maps) and that $f=g$ on $A$.
+
+    \textbf{Step 3.}
+    We finish the proof with a proof of part (b) of the theorem.
+    Since the open interval $(-1, 1)$ in $\bb{R}$ and $\bb{R}$ are homeomorphic, we may assume that $f$ is into $(-1, 1)$ (by compositing homeomorphisms).
+    Part (a) of the theorem gives a continuous extension $g: X\rightarrow [-1, 1]$ of $f$.
+    Since we wish to obtain a continuous extension of $f$ with values in $(-1, 1)$, we may wish to preserve the values of $f$ (or equivalently. $g$) on $A$ and remove the values 1 and -1 from $g$.
+    To this end, let $D=g^{-1}(\{\pm 1\})$, which is closed in $X$.
+    Because $A$ and $D$ are disjoint closed subsets of $X$, by the Urysohn lemma, there is a continuous map $h: X\rightarrow [0, 1]$ such that $h(A)=\{1\}$ and $h(D)=\{0\}$.
+    Defining a map $k: X\rightarrow [-1, 1]$ by $k(x)=g(x)h(x)$ for all $x\in X$, one can easily find that $k$ is a continuous map into $(-1, 1)$ such that $k=f$ on $A$.
+    Therefore, $k$ is a desired continuous extension of $f$ to $X$.
+\end{proof}

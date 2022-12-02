@@ -10,7 +10,6 @@ Let $X_n$ be a metrizable space for each $n\in\bb{N}$.
         D: X\times X\rightarrow\bb{R},\,(x, y)\mapsto\sup_{n\in\bb{N}}\left\{\frac{\ol{d_n}(x_n, y_n)}{n}\right\}.
     \end{align*}
 \end{nota}
-
 The former metric is called the uniform metric on $X$ and the latter metric is called the $D$-metric on $X$.
 Among them, the definition of the former metric generalizes to arbitrary product spaces: If $\{X_\alpha\}_{\alpha\in I}$ is an indexed family of metric spaces and $X=\prod_{\alpha\in I} X_\alpha$, then we may define the uniform metric $\rho: X\times X\rightarrow \bb{R}$ by $\rho(x, y)=\sup_{\alpha\in I}\{\ol{d}_\alpha(x_\alpha, y_\alpha)\}$ for $(x, y)\in X\times X$.
 
@@ -52,15 +51,18 @@ Among them, the definition of the former metric generalizes to arbitrary product
     Let $B_n=B_{d_n}(x_n, \epsilon)$ for each positive integer $n<N$ and let $B_n=X_n$ otherwise.
     Then $x\in\prod_{n\in\bb{N}}B_n\subset B_D(x, \epsilon)\subset B_D(p, r)$, as desired.
 \end{proof}
+\begin{rmk}
+    In particular, if each $d_n$ havs values in $[0, 1]$, then the map $\rho: X\times X \rightarrow [0, 1]$ defined by $\rho(x, y)=\sum_{n\in\bb{N}} 2^{-n} d_n(x_n, y_n)$ is a metric on $X$ which induces the product topology on $X$.
+    \color{brown}Proving this statement is left as an exercise. \color{black}
+\end{rmk}
 
-\begin{prob}
-    Let $(X, \alpha)$ and $(Y, \beta)$ be metric spaces.
-    Show that every isometry from $X$ into $Y$ is an embedding.
-\end{prob}
-\begin{sol}
+\begin{obs}
+    Every isometry of a metric space into a metric space is an embedding.
+\end{obs}
+\begin{proof}
     If $f: X\rightarrow Y$ is an isometry, then $f$ is clearly injective and continuous.
     Because an open ball of radius $r>0$ in $X$ is mapped onto an open ball of radius $r$ in $Y$ under $f$, $f$ is an open map, so $f$ is an embedding.
-\end{sol}
+\end{proof}
 
 We now introduce the structure of an open ball in $\bb{R}^\bb{N}$ which equips the uniform metric $\ol{\rho}$.
 \begin{prop}

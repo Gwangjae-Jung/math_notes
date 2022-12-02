@@ -19,7 +19,7 @@ Since $I$ separates points of $X$ from closed subsets of $X$, the map $F: X\righ
 By \cref{emb&cptf}, there is a (unique) compactification $Y$ of $X$ such that $F$ extends to an embedding $F_*$ of $Y$ into $B$, and the $f$-component $f_*$ of $F_*$ is a desired extension of $f$, since $f_*=\pi_f\circ F_*$ is continuous.
 The uniqueness of an extension of $f$ easily follows from the assumption that the codomain $\bb{R}$ is a Hausdorff space.
 
-To sum up, by considering an embedding $F$ with regard to $C_b^0(X, \bb{R})$ and considering the compactification $Y$ of $X$ induced by $F$, we could show that every function in $C_b^0(X, \bb{R})$ can be uniquely extended to a continuois function on $Y$.
+To sum up, by considering an embedding $F$ with regard to $C_b^0(X, \bb{R})$ and considering the compactification $Y$ of $X$ induced by $F$, we could show that every function in $C_b^0(X, \bb{R})$ can be uniquely extended to a continuous function on $Y$.
 The above observation is summarized as the following proposition:
 \begin{prop}[Real-version of Stone-\v{C}ech compactification]\label{SC-cptf_ver1}
     Let $X$ be a completely regular space.
@@ -33,7 +33,7 @@ Our goal is to find a compactification satisfying a more general property, which
     Let $X$ be a completely regular space.
     Then, there is a unique (up to equivalence) compactification $\beta(X)$ of $X$ satisfying the following universal property:
     For any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $f_*: \beta(X)\rightarrow K$ extending $f$.
-    In other words, the pair $(\beta(X), \imath)$ ($\imath$ is the inclusion embedding of $X$ into $\beta(X)$) makes the following diagram commutes:
+    In other words, the pair $(\beta(X), \imath)$ ($\imath$ is the inclusion embedding of $X$ into $\beta(X)$) makes the following diagram commute.
     \begin{equation*}
         \begin{tikzcd}[row sep=2.0cm, column sep=2.5cm]
             X
@@ -42,7 +42,7 @@ Our goal is to find a compactification satisfying a more general property, which
             \beta(X)
             \arrow[d, "\textsf{continuous}"'{sloped}, "f_*", dashed] \\
             & K
-        \end{tikzcd}.
+        \end{tikzcd}
     \end{equation*}
     We call such an extension $\beta(X)$ (or the pair $(\beta(X), \imath)$) the Stone-C\v{e}ch compactification of $X$.
 \end{thm}
