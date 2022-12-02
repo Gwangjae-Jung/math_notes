@@ -171,6 +171,27 @@
 \end{sol}
 
 \begin{prob}
+    Let $X$ be a completely regular space and $A,\,B$ be disjoint closed subsets of $X$.
+    Show that there is a continuous function $f: X\rightarrow[0, 1]$ such that $f(A)=\{0\}$ and $f(B)=\{1\}$, if $A$ is compact.
+\end{prob}
+\begin{sol}
+    For each point $a\in A$, let $f_a: X\rightarrow[0, 1]$ be a continuous function such that $f_a(a)=0$ and $f_a(B)=\{1\}$.
+    Note that the collection $\{f_a^{-1}([0, r)):a\in A\}$ is an open cover of $A$ by sets open in $X$, where $r$ is any real number satisfying $0<r<1/2$.
+    Thus, there are finitely many points $a_1, \cdots, a_n$ of $A$ such that $\bigcup_{j=1}^n f_{a_i}^{-1}([0, r))$ covers $A$.
+    Define the function $f: X\rightarrow[0, 1]$ by $f(x)=f_1(x)\times\cdots\times f_n(x)$ for $x\in X$.
+    Then $0\leq f(a)<r$ for all $a\in A$ and $f(B)=\{1\}$.
+    If $g:[0, 1]\rightarrow[0, 1]$ is the function defined by
+    \begin{eqnarray*}
+        g(x)=\left\{
+        \begin{matrix}
+            0 & \textsf{if }0\leq x<r\\
+            \dfrac{x-r}{1-r} & \textsf{otherwise}
+        \end{matrix}\right.,
+    \end{eqnarray*}
+    then the composite $g\circ f$ is a desired continuous map from $X$ into $[0, 1]$.
+\end{sol}
+
+\begin{prob}
     Let $f,\,g: X\rightarrow Y$ be continuous maps, where $Y$ is a Hausdorff space.
     Show that $\{x\in X: f(x)=g(x)\}$ is a closed subspace of $X$.
 \end{prob}

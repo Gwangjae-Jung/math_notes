@@ -1,33 +1,40 @@
 \section{The embedding theorem}
 
-In this section, we introduce the embedding theorem, stating that every completely regular space can be embedded into a (possibly uncountable dimensional) Euclidean space $\bb{R}^I$ for some $I$.
-As an application of the embedding theorem, we will prove Urysohn metrization theorem, stating that every second-countable regular space is metrizable, using the fact that a countable dimensional Euclidean space $\bb{R}^\bb{N}$ is metrizable.
+In this section, we introduce the embedding theorem, stating that every completely regular space embeds into a (possibly uncountable dimensional) Euclidean space $\bb{R}^I$ for some index set $I$.
+As an application of the embedding theorem, we will prove the Urysohn metrization theorem, which states that every second-countable regular space is metrizable.
+When proving the Urysohn metrization theorem, the fact that a countable dimensional Euclidean space $\bb{R}^\bb{N}$ is metrizable will be applied.
 
 \begin{thm}[The embedding theorem]
-    Let $X$ be a completely regular space and let $\left\{f_\alpha\right\}_{\alpha\in I}$ be a collection of continuous functions from $X$ into $\bb{R}$ separating points and closed subspaces of $X$.
+    Let $X$ be a completely regular space and let $\left\{f_\alpha\right\}_{\alpha\in I}$ be a collection of continuous functions from $X$ into $\bb{R}$ separating points and closed subsets of $X$.
     Define the function $F: X\rightarrow\bb{R}^I$ by $F=(f_\alpha)_{\alpha\in I}$.
     Then $F$ denotes an embedding of $X$ into $\bb{R}^I$.
     Furthermore, if each $f_\alpha$ maps $X$ into $[0, 1]$, then $F$ denotes an embedding of $X$ into $[0, 1]^I$.
 \end{thm}
 \begin{proof}
-    It is clear that $F$ is continuous, since $\bb{R}^I$ (or $[0, 1]^I$) equips the product topology.
-    If $a$ and $b$ are disjoint points of $X$, there are indices $i, j\in I$ such that $f_i(a)=1,\, f_i(b)=0$ and $f_j(a)=0,\, f_j(b)=1$, hence $F$ is injective.
-    Therefore, to show that $F$ is an embedding of $X$, it remains to show that $F$ is a homeomorphism from $X$ into its image $F(X)$.
-    For this, we need to show that $F$ maps an open set in $X$ onto an open set in $F(X)$.
+    Because $\bb{R}^I$ (or $[0, 1]^I$) equips the product topology, $F$ is continuous.
+    If $a$ and $b$ are distinct points of $X$, there is an index $i\in I$ such that $f_i(a)\neq 0$ and $f_i(b)=0$, so $F$ is injective.
+    Thus, to show that $F$ is an embedding of $X$, it suffices to show that $F$ is an open map.
     
-    Suppose $U$ is an open subset of $X$, and let $z$ be a point of $F(U)$, and let $x$ be a point of $U$ such that $F(x)=z$.
-    We seek to find a neighborhood of $z$ in $F(X)$ contained in $F(U)$.
-    Let $i\in I$ be an index such that $f_i(x)>0$ and $f_i(X\setminus U)=\{0\}$, and set $W=\pi_i^{-1}((0, \infty))\cap F(X)$.
+    Assume $U$ is an open subset of $X$, and let $z$ be a point of $F(U)$, and let $x$ be the point of $U$ such that $F(x)=z$.
+    The goal is to find a neighborhood of $z$ in $F(X)$ which is contained in $F(U)$.
+    Let $i\in I$ be an index such that $f_i(x)\neq 0$ and $f_i(X\setminus U)=\{0\}$, and set $W=\pi_i^{-1}(\bb{R}\setminus\{0\})\cap F(X)$.
     \begin{enumerate}
-        \item[(a)] Clearly, $W$ is open in $F(X)$ and $W$ contains $z$.
-        \item[(b)] If $y\in W$, there is a point $a\in X$ such that $F(a)=y$.
-        Since $y\in\pi_i^{-1}((0, \infty))$, we have $f_i(a)=\pi_i(y)>0$, so $a\notin X\setminus U$, implying $y\in F(U)$.
-        Thus, $W$ is a neighborhood of $z$ in $F(X)$ which is contained in $F(U)$.
+        \item[(1)]
+        {
+            Clearly, $W$ is open in $F(X)$ and $W$ contains $z$.
+        }
+        \item[(2)]
+        {
+            For a point $y\in W$, let $a$ be a point in $X$ such that $F(a)=y$.
+            Since $y\in\pi_i^{-1}(\bb{R}\setminus\{0\})$, we have $f_i(a)=\pi_i(y)\neq 0$, so $a\notin X\setminus U$, implying $y\in F(U)$.
+            In other words, $W\subset F(U)$.
+        }
     \end{enumerate}
-    Therefore, $F$ denotes an embedding of $X$ into $\bb{R}^I$ (or into $[0, 1]^I)$.
+    This proves that $F$ is an open map.
+    Therefore, $F$ is an embedding of $X$ into $\bb{R}^I$ (or into $[0, 1]^I)$.
 \end{proof}
 
-We now introduce the Urysohn metrization theorem, whose statement is stronger than every second countable regular space is normal.
+We now introduce the Urysohn metrization theorem, which is stronger than our earlier observation that every second countable regular space is normal.
 \begin{thm}[Urysohn metrization theorem]\label{Urysohn met thm}
     Every second countable regular space is metrizable.
 \end{thm}
@@ -37,13 +44,12 @@ To prove this theorem, we first prove the following countability lemma.
     Then there is a countable family of continuous functions from $X$ into $[0, 1]$ separating points of $X$ from closed subsets of $X$.
 \end{lem}
 \begin{proof}[Proof of \cref{countable separating family}]
-    Let $\{B_n\}$ be a countable basis of the topology on $X$.
-    Whenever possible, let $f_{m, n}$ be a continuous function from $X$ into $[0, 1]$ such that $f(\overline{B_m})=\{1\}$ and $f(X\setminus B_n)=\{0\}$, where $\overline{B_m}\subset B_n$ (this could be done by applying Urysohn lemma).
-    The collection of such continuous function will separate points of $X$ from closed subsets of $X$, and the collection is countable.
+    Let $\{B_n\}_{n\in\bb{N}}$ be a countable basis of the topology on $X$.
+    For each pair $(m, n)$ of positive integers for which $\ol{B_m}\subset B_n$, by the Urysohn lemma, there is a continuous function $f_{m, n}$ from $X$ into $[0, 1]$ such that $f(\ol{B_m})=\{1\}$ and $f(X\setminus B_n)=\{0\}$.
+    The collection of such continuous function is countable, and it separates points of $X$ from closed subsets of $X$. (Remark how we obtained alternative definitions of some separabilities of topological spaces.)
 \end{proof}
 \begin{proof}[Proof of \cref{Urysohn met thm}]
-    By the embedding theorem, $X$ can be embedded into $\bb{R}^\bb{N}$.
-    Since $\bb{R}^\bb{N}$ is a countable product of metrizable spaces, $\bb{R}^\bb{N}$ is metrizable, and its subspaces are also metrizable.
+    By \cref{countable separating family} and the embedding theorem, $X$ embeds into $\bb{R}^\bb{N}$, which is metrizable.
 \end{proof}
 
-In the following chapter, the embedding theorem is applied when studying the Stone-\v{C}ech compactification of a completely regular space, to which evert continuous function into a compact Hausdorff space extends continuously (and uniquely\footnote{The uniqueness follows from the assumption that the codomain is a Hausdorff space.}).
+In the following chapter, the embedding theorem is applied when studying the Stone-\v{C}ech compactification of a completely regular space, to which every continuous function into a compact Hausdorff space extends continuously (and uniquely\footnote{The uniqueness follows from the assumption that the codomain is a Hausdorff space.}).
