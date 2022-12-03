@@ -49,10 +49,9 @@ The lemma states first that every space which embeds into a compact Hausdorff sp
             To find a compactification $Y$ of $X$, we seek to find a space $Y$ such that $(X, Y)$ and $(X_0, Y_0)$ are homeomorphic.
             Let $A$ be any set disjoint from $X$ which is in bijection with $Y_0\setminus X_0$ (say $k: A\rightarrow Y_0\setminus X_0$ is such a bijection), and define $Y=X\sqcup A$.
             Define a bijective map $H: Y\rightarrow Y_0$ by
-            \begin{align*}
-                H(x)=h(x)\quad\textsf{if } x\in X,\\
-                H(a)=k(a)\quad\textsf{if } a\in A.
-            \end{align*}
+            \begin{center}
+                $H(x)=h(x)$ if $x\in X$, $H(a)=k(a)$ if $a\in A$.
+            \end{center}
             Topologize $Y$ by declaring that $U\subset Y$ is open in $Y$ if and only if $H(U)$ is open in $Y_0$. (Indeed, the collection induced by such declaration is a topology on $Y$.)
             This topologization makes $H$ a homeomorphism.
             It is easy to justify that $Y$ is a compactification of $X$; it is because $H$ extends $h$ and $h: X\rightarrow X_0$ and $H: Y\rightarrow Y_0$ are homeomorphisms.
@@ -78,7 +77,7 @@ The lemma states first that every space which embeds into a compact Hausdorff sp
     Therefore, if $X$ is a space with an embedding $h$ into a compact Hausdorff space $Z$, then $X$ has a compactification $Y$ such that there is an embedding of $Y$ into $Z$ extending $h$, and such a compactification exist uniquely up to equivalence.
 \end{proof}
 \begin{rmk}
-    We now jestify that every completely regular space has a compactification.
+    We now justify that every completely regular space has a compactification.
     If $X$ is a completely regular space, by the embedding theorem, $X$ could be embedded into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space.
     Applying \cref{emb&cptf} to this situation gives a compactification of $X$.
     Therefore, a space $X$ has a compactification if and only if $X$ is completely regular.
