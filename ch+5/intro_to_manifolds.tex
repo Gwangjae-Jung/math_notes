@@ -1,0 +1,90 @@
+\section{Introduction to manifolds}
+
+\begin{defi}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Locally Euclidean space)
+            A topological space $X$ is called locally Euclidean if there is a non-negative integer $n$ such that every point in $X$ has a neighborhood which is homeomorphic to an open subset of $\bb{R}^n$.
+        }
+        \item[(b)]
+        {
+            ($m$-manifold)
+            A second countable Hausdorff space in which every point has a neighborhood which is homeomorphic to an open subset of $\bb{R}^m$ is called an $m$-manifold.
+        }
+        \item[(c)]
+        {
+            (Support of a real-valued function)
+            Given a real valued function $\phi: X\rightarrow\bb{R}$, the support of $\phi$ is defined to be the closure of $\phi^{-1}(\bb{R}\setminus\{0\})$ in $X$.
+        }
+    \end{enumerate}
+\end{defi}
+\begin{rmk}[Chart, atlas]
+    In theory of differential manifold, a second countable Hausdorff space which is a locally Euclidean space is called a manifold.
+    For this definition, we first observe the notions which follow, after assuming that $X$ is a topological space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Chart)
+            A pair $(U, \varphi)$ of an open subset $U$ of $X$ and a homeomorphism $\varphi$ from $U$ onto an open subset of a Euclidean space is called a chart.\footnote{A chart is also called a coordinate chart, coordinate patch, coordinate map}
+        }
+        \item[(b)]
+        {
+            (Atlas)
+            An indexed family $\{(U_\alpha, \varphi_\alpha)\}_{\alpha\in I}$ is called an atlas for $X$ if it covers $X$.
+        }
+    \end{enumerate}
+    One should remark that a topological space $X$ is a locally Euclidean space if and only if $X$ admits an atlas of which the codomain of each chart is $\bb{R}^n$ for some non-negative integer $n$.
+\end{rmk}
+\begin{rmk}[The separability of manifolds]
+    We wish to call, for example, a 1-manifold a curve, a 2-manifold a surface, and so on.
+    Consider the line with two origins, which is second countable, locally Euclidean, but not a Hausdorff space.
+    Drawing the line with two origins, nobody would wish to call it a curve, so the condition of being a Hausdorff space is essential in defining manifolds.
+\end{rmk}
+
+\begin{prop}
+    Every manifold is completely regular, hence, metrizable.
+\end{prop}
+\begin{proof}
+    Let $M$ be an $m$-manifold for some positive integer $m$.
+    It suffices to show that $M$ is locally compact; then $M$ is a locally compact Hausdorff space, a completely regular space, and the metrizability is immediate from the Urysohn metrization theorem.
+    Let $x$ be a point of $M$ and $A$ be a neighborhood of $x$ in $M$ which embeds into an open subset $W$ of $\bb{R}^m$; let $f: A\rightarrow W$ be such homeomorphism.
+    Because $\bb{R}^m$ is a locally compact Hausdorff space, there is a relatively compact neighborhood $V$ of $f(x)$ in $\bb{R}^m$ whose closure in $\bb{R}^m$ is contained in $W$.
+    Then $f^{-1}(V)$ is open in $A$, hence, in $M$.
+    Because $f^{-1}(\ol{V})$ is a compact subspace of $A$, it is a compact subspace of $M$ which contains a neighborhood of $x$, namely, $f^{-1}(V)$.
+    This proves that $M$ is locally compact.
+\end{proof}
+
+In dealing with the support of a function $f: X\rightarrow \bb{R}$, because the support $K$ of $f$ is defined to be closed in $X$, the argument that $X\setminus K$ will be frequently used.
+In particular, whenever $x$ is a point in $X\setminus K$, there is a neighborhood $U$ of $x$ on which $f$ vanishes.
+
+In the beginning of this section, we proved that an $m$-manifold is completely regular, hence metrizable.
+In fact, because an $m$-manifold $X$ is second countable and completely regular, $X$ embeds into $\bb{R}^\bb{N}$ or $[0, 1]^\bb{N}$, which is infinite dimensional.
+We wish to reduce the dimension to a finite number, which is possible when $X$ is a compact manifold.
+\begin{thm}
+    If $M$ is a compact $m$-manifold with a positive integer $m$, then $X$ embeds into $\bb{R}^N$ for some positive integer $N$.
+\end{thm}
+\begin{proof}
+    Because $M$ is a compact $m$-manifold, there is a finite open cover $\{U_1, \cdots, U_n\}$ of $X$ such that $U_i$ is homeomorphic to an open subset of $\bb{R}^m$ for $i=1, \cdots, n$; let $g_i: U_i\hookrightarrow\bb{R}^m$ denote such homeomorphism for $i=1, \cdots, n$.
+    Remark that $M$ is a compact Hausdorff space, so $M$ is normal.
+    Hence, there is a partition $\{\phi_1, \cdots, \phi_n\}$ of unity dominated by $\{U_1, \cdots, U_n\}$.
+    Letting $A_i$ be the support of $\phi_i$ for $i=1, \cdots, n$, define a map $h_i: X\rightarrow\bb{R}^m$ for each $i=1, \cdots, n$ by
+    \begin{align*}
+        h_i(x)=\left\{
+        \begin{array}{cc}
+            \phi_i(x)\cdot g_i(x)   &   \textsf{for $x\in U_i$}\\
+                    0               &   \textsf{for $x\in X\setminus A_i$}
+        \end{array}\right..
+    \end{align*}
+    Remark that $h_i$ is well-defined and continuous, for ${h_i}|_{U_i}$ and ${h_i}|_{X\setminus A_i}$ are continuous.
+
+    Define a map $F: X\rightarrow\bb{R}^{(m+1)n}$ by
+    \begin{align*}
+        F(x)=(\phi_1(x), \cdots, \phi_n(x), h_1(x), \cdots, h_n(x)).
+    \end{align*}
+    It is clear that $F$ is continuous, so it remains to show that $F$ is injective to show $F$ is an embedding; because $X$ is compact and the codomain is a Hausdorff space, $F$ is a closed map.
+    Suppose $F(x)=F(y)$ for some points $x$ and $y$ in $X$.
+    Then $\phi_i(x)=\phi_i(y)$ for $i=1, \cdots, n$, so $\phi_i(x)=\phi_i(y)$ for some $i$ and $x, y\in U_i$.
+    Then $\phi_i(x)\cdot g_i(x)=h_i(x)=h_i(y)=\phi_i(y)\cdot g_i(y)$, so $g_i(x)=g_i(y)$.
+    Because $g_i$ is injective, it follows that $x=y$, as desired.
+\end{proof}

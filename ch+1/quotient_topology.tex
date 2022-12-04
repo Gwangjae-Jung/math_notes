@@ -127,7 +127,7 @@ Here, we provide proofs of (d) and (e).
 
 \begin{thm}
     Let $p: X\rightarrow Y$ be a quotient map.
-    Let $Z$ be a topological space and $f: X\rightarrow Z$ be a map which is constant on each set $p^{-1}(\{y\})$ for $y\in Y$.
+    Let $Z$ be a topological space and $f: X\rightarrow Z$ be a map which is constant on each fiber of $p$, i.e., on the subset $p^{-1}(\{y\})$ of $X$ for each $y\in Y$.
     Then $f$ induces a unique map $\ol{f}: Y\rightarrow Z$ such that $\ol{f}\circ p=f$.
     Indeed, $f$ is surjective if and only if $\ol{f}$ is surjective.
     Furthermore,
@@ -173,34 +173,31 @@ Here, we provide proofs of (d) and (e).
     When $\ol f^{-1}(U)$ is open in $Y$, $f^{-1}(U)=(p^{-1}\circ\ol f^{-1})(U)$ is open in $X$, so $U$ is open in $Z$, as desired.
 \end{proof}
 
-\begin{cor}
+\begin{cor}[Homeomorphism of a quotient space]
     Let $f: X\rightarrow Z$ be a surjective continuous map.
-    Let $X^*$ be the following collection of subsets of $X$:
-    \begin{equation*}
-        X^*=\{f^{-1}(\{z\}): z\in Z\}.
-    \end{equation*}
+    Let $X^*$ be the collection of the fibers of $f$, i.e., $X^*=\{f^{-1}(\{z\}): z\in Z\}$.
     Give $X^*$ the quotient topology induced by the natural projection map $p: X\rightarrow X^*$.
-    \begin{enumerate}
-        \item[(a)]
-        {
-            The map $f$ induces a bijective continuous map $f^*: X^*\rightarrow Z$, which is a homeomorphism if and only if $f$ is a quotient map.
-        }
-        \item[(b)]
-        {
-            If $Z$ is a Hausdorff space, then so is $X^*$.
-        }
-    \end{enumerate}
+    Then, the map $f$ induces a bijective continuous map $f^*: X^*\rightarrow Z$, which is a homeomorphism if and only if $f$ is a quotient map.
 \end{cor}
 \begin{proof}
-    \hangindent=0.65cm
-    \noindent(a)
     Note that the natural projection map $p: X\rightarrow X^*$ is a quotient map.
     By the preceeding theorem, there is a well-defined continuous bijection $f^*: X^*\rightarrow Z$.
     Furthermore, $f^*$ is a quotient map (hence, a homeomorphism) if and only if $f$ is a quotient map.
-
-    \noindent(b)
-    Given two distinct points $a^*$ and $b^*$ of $X^*$, $\ol{f}(a^*)$ and $\ol{f}(b^*)$ are distinct points of $Z$, hence there are disjoint neighborhoods separating $\ol{f}(a^*)$ and $\ol{f}(b^*)$; their preimage under $\ol{f}$ are disjoint neighborhoods in $X^*$ separating $a^*$ and $b^*$.
 \end{proof}
+\begin{rmk}
+    Under the setting given in the above corollary, we may use, for example, the following facts to distinguish two topological spaces.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            If $Z$ is a Hausdorff space, then so is $X^*$.
+        }
+        \item[(b)]
+        {
+            Suppose $h: A\rightarrow B$ is a continuous bijection.
+            If $h$ is compact and $B$ is a Hausdorff space, then $h$ is a homeomorphism.
+        }
+    \end{enumerate}
+\end{rmk}
 
 \subsection{Examples}
 
@@ -256,6 +253,10 @@ Here, we provide proofs of (d) and (e).
     To show that $f^*$ is a homeomorphism, it suffies to show that $f$ is a quotient map.
     Considering the map $\iota: S^1\rightarrow S^1\times S^1$ defined by $\iota(z)=(z, 1)$, we can easily observe that $\iota$ is a continuous right inverse of $f$.
     Hence, $f$ is a quotient map, and it follows that $f^*$ is a homeomorphism.
+\end{exmp}
+
+\begin{exmp}
+    One can easily find that there are quotient maps for $S^2\rightarrow D^2$, $D^2\rightarrow D^1$, and $D^1\rightarrow S^1$.
 \end{exmp}
 
 \begin{prob}\label{the product of quotient maps need not be a quotient map}
