@@ -1,9 +1,9 @@
 \section{Connected components and path-connected components}
 
 \begin{defi}[(Path-)connected component]
-    Let $X$ be a topological space and let $\sim$ and $\sim_\textbf{p}$ denote the relation on $X$ defined as follows:
+    Let $X$ be a topological space and let $\sim$ and $\sim_\textsf{p}$ denote the relation on $X$ defined as follows:
     \begin{center}
-        $x\sim y$ if and only if there is a connected subspace $A$ of $X$ containing $x$ and $y$,\\
+        $x\sim y$ if and only if there is a connected subset $A$ of $X$ containing $x$ and $y$,\\
         $x\sim_\textsf{p} y$ if and only if there is a path from $x$ to $y$ lying in $X$.
     \end{center}
     These relations are equivalence relations on $X$.
@@ -53,7 +53,7 @@ Local (path-)connectedness can be defined in another way, given as follows:
     Because $x\in U$, there is a (path-)connected neighborhood $V$ of $x$ such that $x\in V\subset U$.
     Since $V$ is (path-)connected and $V$ contains $x$, $V$ is contained in $A$, proving that $A$ is open in $X$.
     Assume conversely that each (path-)connected component of an open subset of $X$ is open in $X$.
-    For any point $x$ of $X$ and a neighborhoof $U$ of $X$, the (path-)connected component $A$ of $U$ containing $x$ is open in $X$, proving that $X$ is locally (path-)connected at every point of $X$.
+    For any point $x$ of $X$ and a neighborhood $U$ of $X$, the (path-)connected component $A$ of $U$ containing $x$ is open in $X$, proving that $X$ is locally (path-)connected at every point of $X$.
 \end{proof}
 
 \begin{thm}
@@ -63,24 +63,27 @@ Local (path-)connectedness can be defined in another way, given as follows:
 \end{thm}
 \begin{proof}
     The first half is already proved.
-    Assume $X$ is locally path-connected.
-    Let $x$ be a point of $X$, and let $C$ and $P$ be the connected and path-connected component of $X$ containing $x$, respectively.
+    Assume $X$ is locally path-connected, and let $x$ be a point of $X$, and let $C$ and $P$ be the connected and path-connected component of $X$ containing $x$, respectively.
     Suppose $P\subsetneq C$, and define $Q$ as the union of all path-connected components which intersect $C$, except for $P$. (Here, $Q$ is nonempty, for $Q$ is the union of all path-connected components containing the elements of $Q\setminus P\neq\varnothing$.)
     Since such path-connected components are connected and intersect $C$, they are contained in $C$.
-    Hence, $C=P\cup Q$.
-    Because $X$ is locally path-connected, every path-connected component of $X$ is open in $X$, so $P$ and $Q$ are open in $X$.
-    Because $P$ and $Q$ are disjoint, they form a separation of $C$, a contradiction.
+    Hence, $C=P\sqcup Q$.
+    Because $X$ is locally path-connected, every path-connected component of $X$ is open in $X$, so $P$ and $Q$ are open in $X$ and they form a separation of $C$, a contradiction.
 \end{proof}
 
 \begin{exmp}
     The connected components of $\bb{R}_l$ are the singletons, hence the path-connected components of $\bb{R}_l$ are the singletons; if $C$ is a connected component of $\bb{R}_l$ and $a, b\in C$ and $a<b$, we have $C=((-\infty, b)\cap C)\sqcup([b, \infty)\cap C)$, which form a separation of $C$.
     Since a continuous map maps a connected space onto a connected space, the only continuous maps from $\bb{R}$ into $\bb{R}_l$ are constant functions.
 \end{exmp}
-\begin{exmp}
-    Indeed, two topological spaces with different number of (path-)connected components are not homeomorphic.
-    Suppose $X$ and $Y$ are homeomorphic topological spaces with $m$ and $n$ (path-)connected components, where $1\leq m<n<\infty$, with a homeomorphism $f: X\rightarrow Y$.
-    Since a continuous map maps a (path-)connected space onto a (path-)connected space, each of $m$ (path-)connected components of $X$ is mapped into a (path-)connected component of $Y$, so $f$ fails to be surjective, a contradiction.
-\end{exmp}
+\begin{obs}
+    As one might expect, two topological spaces with distinct cardinalities of (path-)connected components are not homeomorphic.
+    Let $X$ and $Y$ be homeomorphic spaces with a homeomorphism $f: X\rightarrow Y$, and let $\mc{A}$ and $\mc{B}$ denote the collection of the (path-)connected components of $X$ and $Y$, respectively.
+    Suppose $\card{\mc{A}}<\card{\mc{B}}$, i.e., there is an injection but no bijection from $\mc{A}$ to $\mc{B}$.
+    Because $f$ is continuous, $f$ maps a (path-)connected subset of $X$ into a (path-)connected subset of $Y$.
+    In particular, if $A\in\mc{A}$, then $f(A)$ is contained in precisely one member of $\mc{B}$, and this correspondence gives an injection from $\mc{A}$ to $\mc{B}$.
+    Because such injection cannot be bijective, $f$ fails to be surjective.
+    Thus, we have $\card{\mc{A}}\geq\card{B}$, or equivalently, $\card{\mc{B}}\leq\card{\mc{A}}$.
+    By symmetry, we find that $\card{\mc{A}}=\card{\mc{B}}$.
+\end{obs}
 \begin{exmp}
     Let $T=([-1, 1]\times\{0\})\cup(\{0\}\times[-1, 0])\subset \bb{R}^2$.
     We will justify that $T$ and the subspace $[0, 1]$ of $\bb{R}$ are not homeomorphic, by noticing that if $f: X\rightarrow Y$ is a homeomorphism and $A$ is a subspace of $X$ then $f|_A: A\rightarrow f(A)$ is a homeomorphism.

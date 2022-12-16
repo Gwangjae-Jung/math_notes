@@ -1,0 +1,138 @@
+\section{The fundamental group}
+
+\begin{nota}
+    The category of pointed spaces (the pair of a topological space and a point of the space) is denoted by $\textbf{Top}_*$, where the morphisms of $\textbf{Top}_*$ are the continuous maps preserving base points, i.e., for any two objects $(X, a)$ and $(Y, b)$ of $\textbf{Top}_*$, $f: (X, a)\rightarrow (Y, b)$ is a morphism from $(X, a)$ to $(Y, b)$ if $f$ is a continuous map and $f(a)=b$.
+\end{nota}
+
+\begin{defi}[Fundamental group (First homotopy group)]
+    Let $X$ be a topological space and $x_0$ be a point of $X$.
+    The path homotopy classes of loops bases at $x_0$, denoted by $\pi_1(X, x_0)$, with the product operation introduced in the preceeding section, is called the fundamental group (or the first homotopy group) of $X$ relative to the base point $x_0$.
+\end{defi}
+\begin{thm}
+    For a topological space $X$ and a point $x_0$ of $X$, $(\pi_1(X, x_0), *)$ is a group.
+\end{thm}
+\begin{proof}
+    The product is well-defined on $\pi_1(X, x_0)$, for every path is a loop baset at $x_0$.
+    The operation is associative, $[e_{x_0}]$ is an(the) identity, and $[\ol f]$ is the inverse of $[f]$ for any loop $f$ based at $x_0$.
+\end{proof}
+\begin{rmk}
+    From now on, the operator $*$ will not be denoted if there is no confusion.
+    The bracket notation for equivalence classes shall be used, though.
+\end{rmk}
+
+\begin{exmp}
+    The fundamental group of the unit ball $B^n$ in $\bb{R}^n$ is trivial, because every loop in $B^n$ based at $x_0\in B^n$ is path-homotopic to the constant path $x_0$.
+\end{exmp}
+
+\begin{prop}
+    Let $(X_i, x_i)$ be pointed spaces for $i=1, \cdots, n$.
+    Then there is a group isomorphism $\phi: \pi_1\left(\prod_{i=1}^n X_i, (x_i)_{i=1}^n\right)\rightarrow\prod_{i=1}^n \pi_1(X_i, x_i)$ such that $\phi[f]=([\pi_i\circ f])_{i=1}^n$ for all $[f]\in\pi_1\left(\prod_{i=1}^n X_i, (x_i)_{i=1}^n\right)$.
+\end{prop}
+
+One might ask how the fundamental group of a topological space may depend on the base point.
+Given two points $x_0$ and $x_1$ in $X$ for which there is a path in $X$ from $x_0$ to $x_1$, define a map $\widehat{\alpha}: \pi_1(X, x_0)\rightarrow\pi_1(X, x_1)$ by
+\begin{align*}
+    \widehat{\alpha}[f]=[\ol\alpha][f][\alpha].
+\end{align*}
+\color{brown}It is left as an exercise to show that $\widehat{\alpha}$ is a group isomorphism. \color{black}
+Furthermore, if $C$ is the path-connected component of $X$ containing $x_0$, then $\pi_1(X, x_0)=\pi_1(C, x_0)$.
+Hence, the fundamental group depends on only the path-connected component containing the base point, and such fundamental group do not give us information whatever about the rest of the space.
+Also, we may omit to specify a base point when considering a fundamental group of a path-connected space, because any two fundamental groups are isomorphic.
+
+We now verify that $pi_1$ is a (covariant) functor from $\textbf{Top}_*$ into $\textbf{Grp}$.
+Suppose $h: (X, x_0)\rightarrow (Y, y_0)$ is a continuous map (in other words, a morphism from $(X, x_0)$ to $(Y, y_0)$) and $f$ is a loop in $X$ based at $x_0$.
+Then $h\circ f$ is a loop in $Y$ based at $y_0$.
+Furthermore, because $h\circ f_1$ and $h\circ f_2$ are path homotopic in $Y$ if $f_1$ and $f_2$ are path homotopic in $X$, we find that $h\circ \gamma_1\simeq_\textsf{p} h\circ \gamma_2$ in $Y$ when $\gamma_1$ and $\gamma_2$ are path homotopic loops in $X$ based at $x_0$.
+Therefore, the map $h_*: \pi_1(X, x_0)\rightarrow \pi_1(Y, y_0)$ defined by
+\begin{align*}
+    h_*[\gamma]=[h\circ\gamma]
+\end{align*}
+is a well-defined group homomorphism from $\pi_1(X, x_0)$ to $\pi_1(Y, y_0)$.
+\color{brown}(Check that $h_*$ is a group homomorphism.) \color{black}
+And one can easily find that the map $h\mapsto h_*$ preserves composition and identities:
+Letting $(X, a),\, (Y, b)$, and $(Z, c)$ be objects of $\textbf{Top}_*$,
+\begin{enumerate}
+    \item[(\romannumeral 1)]
+    {
+        whenever $f$ is a morphism from $(X, a)$ to $(Y, b)$ and $g$ is a morphism from $(Y, b)$ to $(Z, c)$, we have $(g\circ f)_*=g_*\circ f_*$, and
+    }
+    \item[(\romannumeral 2)]
+    {
+        $(\id{(X, a)})_*=\id{\pi_1(X, a)}$.
+    }
+\end{enumerate}
+Our observation can be summarized as follows:
+\begin{thm}
+    Let $\pi_1$ be the map from $\textbf{Top}_*$ to $\textbf{Grp}$, which maps an object $(X, x_0)$ of $\textbf{Top}_*$ to $\pi_1(X, x_0)$ and a morphism $f: (X, x_0)\rightarrow (Y, y_0)$ in $\textbf{Top}_*$ to $f_*$.
+    Then $\pi_1$ is a (covariant) functor from $\textbf{Top}_*$ to $\textbf{Grp}$.
+\end{thm}
+And an easy observation:
+\begin{obs}
+    Assume $h: (X, p)\rightarrow (Y, q)$ is an isomorphism in $\textbf{Top}_*$, i.e., a pointed space isomorphism.
+    Then $\pi_1(h)=h_*$ is a group isomorphism.
+\end{obs}
+
+We solve a (technical) notational problem here.
+Suppose $h: X\rightarrow Y$ is a continuous map and let $h_1: (X, x_1)\rightarrow (Y, y_1)$ and $h_2: (X, x_2)\rightarrow (Y, y_2)$ be morphisms of pointed spaces such that $h_1=h=h_2$ as continuous maps.
+Even though we distinguish $h_1$ and $h_2$ if $x_1\neq x_2$, we know that if $x_1$ and $x_2$ lies in the same path-connected component of $X$ then $\pi_1(X, x_1)=\pi_1(X, x_2)$.
+Thus, we may identify $(h_1)_*$ and $(h_2)_*$.
+The following proposition introduces a circumstance where such identification is possible.
+\begin{prop}\label{Independence to base points}
+    Suppose $X$ is a path-connected space, and let $h: X\rightarrow Y$ be a continuous map.
+    For any two points $x_1$ and $x_2$ of $X$, write $y_1=h(x_1)$ and $y_2=h(x_2)$, and let $h_1: (X, x_1)\rightarrow(Y, y_1)$ and $h_2: (X, x_2)\rightarrow (Y, y_2)$ be the morphisms in $\textbf{Top}_*$ such that $h_1=h=h_2$ as continuous maps.
+    Then
+    \begin{align*}
+        \widehat\beta \circ (h_1)_* = (h_2)_* \circ \widehat\alpha,
+    \end{align*}
+    where $\alpha$ is any path in $X$ from $x_1$ to $x_2$ and $\beta$ is the path in $Y$ from $y_1$ to $y_2$ defined by $\beta=h\circ\alpha$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.2cm, column sep=2.0cm]
+        \pi_1(X, x_1)\arrow[r, "\pi_1(h_1)=(h_1)_*"]
+        \arrow[d, "\widehat\alpha"']
+        &
+        \pi_1(Y, y_1)
+        \arrow[d, "\widehat\beta"]
+        \\
+        \pi_1(X, x_2)\arrow[r, "\pi_1(h_2)=(h_2)_*"']
+        &
+        \pi_1(Y, y_2)
+    \end{tikzcd}
+    \end{equation*}
+\end{prop}
+\begin{proof}
+    Easy.
+\end{proof}
+
+We end this section with some interesting circumstances.
+\begin{defi}[Simply connected space]
+    A path-connected space is said to be simply connected if its fundamental group is trivial.
+\end{defi}
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Because every loop in $B^n$ or in $\bb{R}^n$ is path homotopic to a point, $B^n$ and $\bb{R}^n$ is simply connected.
+        }
+        \item[(b)]
+        {
+            A star convex subset of $\bb{R}^k$ is simply connected.
+        }
+    \end{enumerate}
+\end{exmp}
+
+\begin{prop}
+    Let $X$ be a path-connected space.
+    Then the fundamental group of $X$ is abelian if and only if for any two points $p$ and $q$ of $X$ and any two paths $\alpha$ and $\beta$ in $X$ from $p$ to $q$ we have $\widehat\alpha=\widehat\beta$.
+\end{prop}
+\begin{proof}
+    Let $p$ and $q$ be any two points of $X$.
+    Assume first that $\pi_1(X, p)$ is abelian, and let $\alpha$ and $\beta$ be two paths in $X$ from $p$ to $q$.
+    Then, whenever $f$ is a loop in $X$ based at $p$, we have
+    \begin{align*}
+        [\alpha \ol\beta][f][\beta \ol\alpha]=[\alpha \ol\beta][\beta \ol\alpha][f]=[e_p][f]=[f],
+    \end{align*}
+    from which we obtain $\widehat\alpha[f]=\widehat\beta[f]$ for all loops $f$ in $X$ based at $p$.
+    Conversely, assume $\ol\alpha=\ol\beta$ whenever $\alpha$ and $\beta$ are paths in $X$ from $p$ to $q$, where $p$ and $q$ are arbitrary points in $X$.
+    Given two loops $f$ and $g$ based at $p$ and a path $\alpha$ in $X$ from $p$ to $q$, define $\beta=f*\alpha$.
+    Because $\beta$ is a path in $X$ from $p$ to $q$, we have $\widehat\alpha=\widehat\beta$, so $[\ol\alpha g \alpha]=[\ol\beta g \beta]=[\ol\alpha \ol{f} g f \alpha]$, from which we obtain $[g]=[\ol{f} g f]$, i.e., $[f][g]=[g][f]$.
+\end{proof}

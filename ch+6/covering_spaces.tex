@@ -1,0 +1,102 @@
+\section{Covering spaces}
+
+\begin{defi}[Covering space]
+    Let $p: E\rightarrow B$ be a surjective continuous map.
+    An open subset $U$ of $B$ is said to be evenly covered by $p$ if
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            there is a partition $\{V_\alpha\}_{\alpha\in\mc{A}}$ of $p^{-1}(U)$ into open subsets of $E$, and
+        }
+        \item[(\romannumeral 2)]
+        {
+            the restriction of $p$ to $V_\alpha$ denotes a homeomorphism from $V_\alpha$ onto $U$ for each $\alpha\in\mc{A}$.
+        }
+    \end{enumerate}
+    A continuous surjection $p: E\rightarrow B$ is called a covering map and $E$ is called a covering space of $B$ if every point of $B$ admits a neighborhood of $B$ which is evenly covered by $p$.
+\end{defi}
+
+In the following proposition, some basic properties of covering maps are introduced.
+\begin{prop}
+    Let $p: E\rightarrow B$ be a covering map.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            An open subset of an open subset of $B$ which is evenly covered by $p$ is also evenly covered by $p$.
+        }
+        \item[(b)]
+        {
+            For each point $b$ of $B$, $p^{-1}(\{b\})$ has the discrete topology.
+        }
+        \item[(c)]
+        {
+            $p$ is an open map.
+        }
+    \end{enumerate}
+\end{prop}
+
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Projection)
+            Let $\pi_X: X\times Y\rightarrow X$ be the canonical projection map.
+            If $Y$ has the discrete topology, then $\pi_X$ is a covering map.
+        }
+        \item[(b)]
+        {
+            Let $p: E\rightarrow B$ be a continuous surjection and $U$ be a nonempty subset of $B$ which is evenly covered by $p$.
+            If $U$ is connected, then the partition of $p^{-1}(U)$ into slices is unique, because each slice is a connected component of $p^{-1}(U)$.
+        }
+        \item[(c)]
+        {
+            Let $p: E\rightarrow B$ be a covering map.
+            If $B_0$ is a subspace of $B$ and $E_0=p^{-1}(B_0)$, then $p_0:=p|_{E_0}: E_0\rightarrow B_0$ is a covering map.
+            \begin{equation*}
+            \begin{tikzcd}[row sep=1.0cm, column sep=1.8cm]
+                E\arrow[r, "p", "\textsf{covering}"']
+                \arrow[d, dash]
+                &
+                B
+                \arrow[d, dash]
+                \\
+                E_0\arrow[r, "p_0"', "\textsf{covering}"]
+                &
+                B_0
+            \end{tikzcd}
+            \end{equation*}
+        }
+        \item[(d)]
+        {
+            Let $p_k: E_k\rightarrow B_k$ be a covering map for $k=1, 2$.
+            Then $p_1\times p_2: E_1\times E_2\rightarrow B_1\times B_2$ is a covering map.
+        }
+    \end{enumerate}
+\end{exmp}
+
+\color{red}
+\begin{prob}
+    Let $q: X\times Y$ and $r: Y\times Z$ be covering maps, and let $p=r\circ q$.
+    Show that $p$ is a covering map, provided that every fiber of $r$ is finite.
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    Let $p: E\rightarrow B$ be a covering map.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $E$ is a Hausdorff, regular, completely regular, or locally compact Hausdorff space, provided that $B$ is so.
+        }
+        \item[(b)]
+        {
+            Show that $E$ is compact if $B$ is compact and every fiber of $p$ is finite.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+\color{black}

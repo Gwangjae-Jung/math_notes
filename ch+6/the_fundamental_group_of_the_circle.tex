@@ -1,0 +1,173 @@
+\section{The fundamental group of the circle}
+
+\begin{rmk}
+    In this chapter, when considering a lift of a continuous map $f: X\rightarrow B$, we assume that a covering map $p: E\rightarrow B$ is given and we consider a lift $\wt{f}: X\rightarrow E$ of $f$ to $E$.
+    In other words, unless stated otherwise, we consider a map $\wt{f}: X\rightarrow E$ such that $p\circ\wt{f}=f$.
+\end{rmk}
+
+\begin{lem}[Uniqueness of a lifting]
+    Let $p: E\rightarrow B$ be a covering map and $f: X\rightarrow B$ be a continuous map.
+    Assume that $X$ is a connected space, and suppose there are liftings $g_1$ and $g_2$ of $f$ to $E$ which coincide at a point of $X$.
+    Then $g_1=g_2$.
+\end{lem}
+\begin{proof}
+    Let $A=\{x\in X: g_1(x)=g_2(x)\}$ and $B=\{x\in X: g_1(x)\neq g_2(x)\}$; we wish to show that both $A$ and $B$ are open in $X$.
+
+    Assume first that $a\in A$, and write $e=g_1(a)=g_2(a)$.
+    Let $U$ be a neighborhood of $f(a)$ in $B$ which is evenly covered by $p$, and let $V$ be the slice of $p^{-1}(U)$ which contains the point $e$.
+    Finally, set $W=g_1^{-1}(V)\cap g_2^{-1}(V)$, which is a neighborhood of $a$ in $X$.
+    And it follows that $W\subset A$, because whenever $w\in W$, we have $g_1(w), g_2(w)\in V$.
+    Therefore, $W\subset A$, proving that $A$ is open.
+
+    Now, assume that $b\in B$, and let $U$ be a neighborhoof of $f(b)$ in $B$ which is evenly covered by $p$.
+    In this step, let $V_1$ and $V_2$ be the slice of $p^{-1}(U)$ which contains $g_1(b)$ and $g_2(b)$, respectively.
+    By the definition of slices, it follows that $V_1$ and $V_2$ are disjoint.
+    Letting $W=g_1^{-1}(V_1)\cap g_2^{-1}(V_2)$, $W$ is a neighborhood of $b$ in $X$, which is contained in $B$, so $B$ is open.
+
+    By hypothesis, $A$ is nonempty, so we conclude that $B=\varnothing$, i.e., $g_1=g_2$.
+\end{proof}
+\begin{exmp}
+    The above lemma asserts that two liftings over a connected spaces which coincide at a point are necessarily identical.
+    This does not hold when two liftings do not coincide.
+    For instance, consider the case where $p: \bb{R}\rightarrow S^1$ is the natural covering map and $X=[0, 1]$.
+    When $f: X\rightarrow S^1$ is defined by $f(s)=\exp{2\pi i s}$ for all $s\in [0, 1]$, there are two distinct liftings $g_1, g_2: [0, 1]\rightarrow\bb{R}$ of $f$ to $\bb{R}$, e.g.,
+    \begin{center}
+        $g_1(x)=x$ and $g_2(x)=x+1$ for all $x\in[0, 1]$.
+    \end{center}
+    Observe that these two liftings do not coincide at any point of $[0, 1]$.
+\end{exmp}
+
+The above lemma deals with the uniqueness of a lifting over a connected space, provided that a lifting exists.
+The following lemma deals with both the existence and the uniqueness of a lifting of a path.
+\begin{lem}[Path lifting theorem]
+    Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
+    Any path $f: (I, 0)\rightarrow (B, b_0)$ in $B$ has a unique lifting to a path $\wt{f}: (I, 0)\rightarrow (E, e_0)$ in $E$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.2cm, column sep=1.6cm]
+        &
+        (E, e_0)
+        \arrow[d, "p\,\textsf{(covering)}", ->>]
+        \\
+        (I, 0)
+        \arrow[ur, "\wt{f}"]
+        \arrow[r, "f"]
+        &
+        (B, b_0)
+    \end{tikzcd}
+    \end{equation*}
+\end{lem}
+\begin{rmk}
+    The path lifting theorem is quite obvious when $B$ is evenly covered by $p$, for we may choose the restriction of $p$ to the slice containing $e_0$ and composite the inverse of the restriction to the path.
+    Even if $B$ need not be evenly covered, because $p$ is a covering map, we shall make use of open subsets of $B$ which are evenly coveredby $p$.
+\end{rmk}
+\begin{proof}
+    We start the proof by covering $B$ by the open subsets $U$ which are evenly covered by $p$.
+    Then the open subsets $f^{-1}(U)$ of $I$ cover $I$, and the Lebesgue number lemma implies that there is a positive real number $\delta$ such that any open subset of $I$ of diameter less than $\delta$ is contained in at least one $f^{-1}(U)$.
+    So there is a division $0=s_0<s_1<\cdots<s_{n-1}<s_n=1$ of $I$ such that $f([s_i, s_{i+1}])$ is contained in any $U$ for $i=0, 1, \cdots, n-1$.
+
+    We shall define a lifting $\wt{f}: I\rightarrow E$ of $f$ and prove the uniqueness step by step.
+    By assumption, we have $\wt{f}(0)=e_0$.
+    Now we suppose $\wt{f}(s)$ is defined for all $s\in[0, s_i]$, where $0\leq i\leq n-1$.
+    Let $U_i$ be any open subset of $B$ which is evenly covered by $p$ containing $f([s_i, s_{i+1}])$, and let $V_i$ be the slice of $p^{-1}(U_i)$ containing $\wt{f}(s_i)$.
+    Since $p|_{V_i}: V_i\rightarrow U_i$ is a homeomorphism, we may define $\wt{f}(s)=(p|_{V_i})^{-1}(f(s))$ for $s\in[s_i, s_{i+1}]$, which defines a continuous map on $[0, s_{i+1}]$.
+    This proves the existence of a lifting of $f$ to a path in $B$ beginning at $b_0$.
+
+    We now prove the uniqueness part.
+    Let $g_2$ be a lifting of $f$ to a path in $E$ beginning at $e_0$, and write $g_1=\wt{f}$.
+    Suppose $g_1=g_2$ on $[0, s_i]$, where $0\leq i\leq n-1$, and let $U_i$ and $V_i$ be defined as above.
+    Note that $p(g_1([s_i, s_{i+1}]))=p(g_2([s_i, s_{i+1}]))=f([s_i, s_{i+1}])\subset U_i$ and $g_1(s_i)=g_2(s_i)\in V_i$.
+    Because $g_1([s_i, s_{i+1}])$ and $g_2([s_i, s_{i+1}])$ are connected, they are contained in $V_i$, so for each $s\in [s_i, s_{i+1}]$ we have $g_1(s)=(p|_{V_i})^{-1}(f(s))=g_2(s)$.
+    Hence, by induction, we have $g_1=g_2$ on $I$.
+\end{proof}
+
+\begin{lem}[Homotopy lifting theorem]
+    Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
+    Let the map $F: (I\times I, (0, 0))\rightarrow (B, b_0)$ be a continuous map.
+    Then there is a unique lifting of $F$ to a continuous map $\wt F: (I\times I, (0, 0))\rightarrow (E, e_0)$.
+    In particular, if $F$ is a path homotopy, then so is $\wt F$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.2cm, column sep=1.6cm]
+        &
+        (E, e_0)
+        \arrow[d, "p\,\textsf{(covering)}", ->>]
+        \\
+        (I\times I, (0, 0))
+        \arrow[ur, "\wt{F}"]
+        \arrow[r, "F"]
+        &
+        (B, b_0)
+    \end{tikzcd}
+    \end{equation*}
+\end{lem}
+\begin{proof}
+    For each point of $B$, consider a neighborhood which is evenly covered by $p$.
+    Considering the preimages under $F$, note that $I\times I$ is compact so that we may apply the Lebesgue number lemma to find a partition
+    \begin{center}
+        $0=s_0<s_1<\cdots<s_{m-1}<s_m=1$ and $0=t_0<t_1<\cdots<t_{n-1}<t_n=1$,
+    \end{center}
+    where each rectangle is mapped into an open subset of $B$ which is evenly covered by $p$.
+\end{proof}
+
+\begin{defi}[Lifting correspondence]
+    Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
+    Given an element $[f]\in\pi_1(B, b_0)$, let $\wt{f}$ be the lifting of $f$ to the path in $E$ beginning at $e_0$, and let $\phi[f]$ denote the endpoint $\wt{f}(1)$ of $\wt{f}$.\footnote{Note that the lifting of a loop need not be a loop.}
+    Then $\phi: \pi_1(B, b_0)\rightarrow p^{-1}(\{b_0\})$ is a well-defined set map, which is called the lifting correspondence derived from the covering map $p$ and $e_0$.
+\end{defi}
+
+\begin{thm}
+    Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
+    If $E$ is path-connected, then the lifting correspondence $\phi: \pi_1(B, b_0)\rightarrow p^{-1}(\{b_0\})$ is surjective.
+    In particular, if $E$ is simply connected, then $\phi$ is bijective.
+\end{thm}
+\begin{proof}
+    Assume $E$ is path-connected, and let $\wt\gamma: I\rightarrow E$ be a curve in $E$ from $e_0$ to $e_1$, where $e_1$ is any point of $p^{-1}(\{b_0\})$.
+    Then $[p\circ\wt\gamma]\in \pi_1(B, b_0)$ and $\phi[p\circ\gamma]=\wt\gamma(1)=e_1$.
+    Assuming that $E$ is simply connected and $\phi[\gamma_1]=\phi[\gamma_2]$ for some loops $\gamma_1$ and $\gamma_2$ based at $b_0$, we find that their respective liftings $\wt{\gamma_1}$ and $\wt{\gamma_2}$ to $E$ are paths in $E$ from $e_0$ to a point $e_1$ in $\phi^{-1}(\{b_0\})$.
+    Because $E$ is simply connected, it follows that $\wt{\gamma_1}\simeq_\textsf{p}\wt{\gamma_2}$ in $E$, hence $\gamma_1=p\circ\wt{\gamma_1}$ and $\gamma_2=p\circ\wt{\gamma_2}$ are path homotopic in $B$.
+    This proves the injectivity of $\phi$ when $E$ is simply connected.
+\end{proof}
+
+\begin{thm}
+    The fundamental group of $S^1$ is isomorphic to $\bb{Z}$, the free group generated by a single element.
+\end{thm}
+\begin{proof}
+    \color{brown}Use the map $\phi: \pi_1(S^1, e^0)\rightarrow p^{-1}(\{0\})$ defined as above; because $\bb{R}$ is simply connected, it remains to verify that $\phi$ is a group homomorphism.\color{black}
+\end{proof}
+
+\begin{thm}
+    Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            The homomorphism $p_*=\pi_1(p)$ is a group monomorphism.
+        }
+        \item[(b)]
+        {
+            Let $H=\range(p_*)$.
+            Then the lifting correspondence $\phi$ induces an injective map
+            \begin{align*}
+                \Phi: \pi_1(B, b_0)/H \rightarrow p^{-1}(b_0),
+            \end{align*}
+            which is bijective if $E$ is path-connected.
+        }
+        \item[(c)]
+        {
+            If $f$ is a loop in $B$ based at $b_0$, then $[f]\in H$ if and only if $f$ lifts to a loop in $E$ based at $e_0$.
+        }
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \hangindent=0.65cm
+    \noindent(a)
+    It suffices to prove the injectivity of $p_*$.
+    Suppose $p_*[\gamma]=[e_{b_0}]$, i.e., $p\circ\gamma\simeq_\textsf{p} e_{b_0}$.
+    Then the lifting of $p\circ\gamma$ and $e_{b_0}$ to $E$ with $e_0$ at 0 are path homotopic.
+    Because $\gamma$ and $e_{e_0}$ is the unique such lifting of $p\circ\gamma$ and $e_{b_0}$, respectively, we find that $[\gamma]$ is the identity element of $\pi_1(E, e_0)$.
+    Therefore, $p_*$ is a group monomorphism.
+
+    \noindent(b)
+    -----@
+
+    \noindent(c)
+    -----@
+\end{proof}

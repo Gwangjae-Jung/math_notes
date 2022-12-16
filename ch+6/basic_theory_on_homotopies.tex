@@ -1,0 +1,221 @@
+\section{Basic theory on homotopies}
+
+Throughout this section, unless stated otherwise, $I$ denotes the unit interval $[0, 1]$ in $\bb{R}$, and both $X$ and $Y$ are, as usual, assumed to be topological spaces.
+
+\begin{defi}[Homotopy of continuous maps]
+    Let $f$ and $g$ be continuous maps from $X$ into $Y$.
+    A continuous map $F: X\times I\rightarrow Y$ is called a homotopy in $Y$ between $f$ and $g$ if
+    \begin{center}
+        $F(\cdot, 0)=f(\cdot)$ and $F(\cdot, 1)=g(\cdot)$.
+    \end{center}
+    In this case, two continuous maps $f$ and $g$ are said to be homotopic in $Y$, and it is denoted by $f\simeq g$.
+    In particular, if $g$ is a constant map, then $f$ is said to be nulhomotopic.
+\end{defi}
+\begin{exmp}
+    Suppose there is a path in a topological space $X$ from $a$ to $b$.
+    Then $e_a$ and $e_b$ are homotopic, where $e_x: I\rightarrow X$ with $x\in X$ is the constant map with the range $\{x\}$.
+    In particular, in a path-connected space, every pair of two constant maps is homotopic.
+\end{exmp}
+
+\begin{defi}[Path homotopy of paths]
+    Given a topological space $X$, let $f$ and $g$ be paths from $x_0\in X$ to $x_1\in X$.
+    A continuous map $F: I\times I\rightarrow X$ is called a path homotopy in $X$ between $f$ and $g$ if
+    \begin{center}
+        $F(\cdot, 0)=f$ and $F(\cdot, 1)=g$, and $F(0, \cdot)=x_0$ and $F(1, \cdot)=x_1$.
+    \end{center}
+    In this case, two paths $f$ and $g$ are said to be path homotopic in $X$, and it is denoted by $f\simeq_\textsf{p} g$.
+\end{defi}
+
+\begin{exmp}
+    Two paths in $\bb{R}^2$ from $(-1, 0)$ to $(1, 0)$ along the upper and the lower hemicircle are path homotopic in $\bb{R}^2$, while they are not path homotopic in $\bb{R}^2\setminus\{0\}$.
+\end{exmp}
+
+Some easy observations now follow.
+\begin{obs}\label{homotopy induces an equivalence relation}
+    $\simeq$ and $\simeq_\textsf{p}$ are equivalence relations on $C^0(X, Y)$ and $C^0(I, X)$, respectively.
+    \color{brown}(Justification is left as an exercise.)\color{black}
+\end{obs}
+
+\begin{nota}
+    For a path $f: I\rightarrow X$, $[f]$ denotes the equivalence class in $C^0(I, X)/\simeq_\textsf{p}$ containing $f$, i.e., the collection of all paths which are path homotopic to $f$ in $X$.
+    Such equivalence class $[f]$ is called the path homotopy class of $f$.
+\end{nota}
+
+When proving \cref{homotopy induces an equivalence relation}, one may have adopted the idea to concatenate two curves.
+Such operation will be called the product of two paths.
+\begin{defi}[Product of paths]
+    Let $f, g: I\rightarrow X$ be paths such that the final point of $f$ and the initial point of $g$ are the same, i.e., $f(1)=g(0)$.
+    The product $f*g$ of $f$ and $g$ is defined to be the map defined by
+    \begin{align*}
+        (f*g)(t)=\left\{
+            \begin{array}{cc}
+                f(2t)   &   \textsf{(if $0\leq t\leq 1/2$)}\\
+                g(2t-1) &   \textsf{(if $1/2\leq t\leq 1$)}
+            \end{array}\right.,
+    \end{align*}
+    which is a path in $X$.
+\end{defi}
+\begin{defi}[Product of path homotopy classes]
+    Let $[f]$ and $[g]$ be path homotopy classes such that $f(1)=g(0)$.
+    We define the product $[f]*[g]$ of $[f]$ and $[g]$ by $[f]*[g]=[f*g]$.
+\end{defi}
+\begin{rmk}
+    Indeed, the above definition of the product of two path homotopy classes is well-defined, provided that two curves can be concatenated: If $f\simeq_\textsf{p} f_\star$ and $g\simeq_\textsf{p} g_\star$, then $f*g\simeq_\textsf{p} f_\star*g_\star$.
+    It can be easily verified as follows: If $F$ and $G$ are path homotopies between $f$ and $f_\star$ and $g$ and $g_\star$, respectively, then the map $H: I\times I\rightarrow X$ defined by
+    \begin{align*}
+        H(s, t)=\left\{
+        \begin{array}{cc}
+            F(2s, t)    & \textsf{(if $0\leq s\leq 1/2$)}\\
+            G(2s-1, t)  & \textsf{(if $1/2\leq s\leq 1$)}
+        \end{array}
+        \right.
+    \end{align*}
+    is a path homotopy between $f*g$ and $f_\star*g_\star$.
+\end{rmk}
+
+Other simple but essential observations, which require tedious proof, follow.
+\begin{obs}
+    Let $k: X\rightarrow Y$ be a continuous map and $F$ be a path homotopy in $X$ between two paths $f$ and $g$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            $k\circ F$ is a path homotopy between $k\circ f$ and $k\circ g$.
+        }
+        \item[(b)]
+        {
+            If $f(1)=g(0)$, then $k\circ(f*g)=(k\circ f)*(k\circ g)$.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{proof}
+    Clear.
+\end{proof}
+\begin{obs}
+    The operation $*$ on path homotopy classes has the following properties:
+    \begin{enumerate}
+        \item[(a)]
+        {
+            (Associativity)
+            If $[f]*([g]*[h])$ is defined, then so is $([f]*[g])*[h]$, and they are equal.
+        }
+        \item[(b)]
+        {
+            (Right and left identities)
+            Given a point $x$ of $X$, let $e_x$ denote the constant function from $I$ into $X$ with the range $\{x\}$.
+            If $f$ is a path in $X$ from $x_0$ to $x_1$, then $[f]*[e_{x_1}]=[f]$ and $[e_{x_0}]*[f]=[f]$.
+        }
+        \item[(c)]
+        {
+            (Inverse)
+            Given a path $f$ in $X$ from $x_0$ to $x_1$, let $\ol f$ be the reverse of $f$.
+            Then $[f]*[\ol f]=[e_{x_1}]$ and $[\ol f]*[f]=[e_{x_0}]$.
+        }
+    \end{enumerate}
+\end{obs}
+\begin{proof}
+    Every statement is obvious, but we provide a technical proof.
+
+    \hangindent=0.65cm
+    \noindent(a)
+    The two products are defined if and only if $f(1)=g(0)$ and $g(1)=h(0)$.
+    In this case, we may explicitly give a homotopy in $X$ between $f*(g*h)$ and $(f*g)*h$ to obtain that $[f]*([g]*[h])=[f*(g*h)]=[(f*g)*h]=([f]*[g])*[h]$, which is quite tedious.
+
+    \noindent(b)
+    To show $f\simeq_\textsf{p} e_{x_0}*f$, it suffices to show that $\id{I}\simeq_\textsf{p}e_0*\id{I}$, where $e_0: I\rightarrow I$ is the constant map with the image $\{0\}$.
+    The latter path homotopy easily follows, since $I$ is convex.
+    For the same reasoning, we have $\id{I}\simeq_\textsf{p} \id{I}*e_1$ so that $f\simeq_\textsf{p} f*e_{x_1}$.
+
+    \noindent(c)
+    Remark that $f*\ol f=(f\circ\id{I})*(f\circ\ol{\id{I}})=f\circ(\id{I}*\ol{\id{I}})\simeq_\textsf{p} f\circ e_0=e_{x_0}$, and the same reasoning proves that $\ol f*f \simeq_\textsf{p} e_{x_1}$.
+\end{proof}
+\begin{rmk}
+    In the textbook, the following (obvious) statement is introduced as a theorem.
+    \begin{quotation}
+        Let $f$ be a path in $X$ and let $a_0, a_1, \cdots, a_n$ be numbers such that $0=a_0<a_1<\cdots<a_n=1$.
+        Let $f_i: I\rightarrow X$ be the path in $X$ defined by $f_i=f\circ r_i$, where $r_i: I\rightarrow[a_{i-1}\circ a_i]$ for each $i=1, \cdots, n$.
+        Then $[f]=[f_1]*\cdots*[f_n]$.
+    \end{quotation}
+\end{rmk}
+
+A corollary which will be labeled a theorem of the preceeding observation is that the first homotopy group (called the fundamental group, in general) of a topological space relative to a point is a group.
+The definition of the first homotopy group and further topics will be introduced in the folloiwng section, and we end this section with some problems.
+
+\begin{prob}
+    Let $X,\, Y,\, Z$ be topological spaces and $h, h': X\rightarrow Y$ and $k, k': Y\rightarrow Z$ be continuous maps which are homotopic, respectively.
+    Show that $k\circ h$ and $k'\circ h'$ are homotopic.
+\end{prob}
+\begin{sol}
+    Let $H: X\times I\rightarrow Y$ and $K: Y\times I\rightarrow Z$ denote homotopies in $Y$ and $Z$ between $h$ and $h'$, and between $k$ and $k'$, respectively.
+    Consider the map $G: X\times I\rightarrow Z$ defined by $G(x, t)=K(H(x, t), t)$ for $(x, t)\in X\times I$.
+    Then $G$ is continuous, and $G(\cdot, 0)=K(H(\cdot, 0), 0)=k\circ h$, and $G(\cdot, 1)=K(H(\cdot, 1), 1)=k'\circ h'$.
+    Therefore, $G$ is a homotopy in $Z$ between $k\circ h$ and $k'\circ h'$.
+\end{sol}
+\begin{rmk}
+    Because a continuous map is homotopic to itself, we have $k\circ h\simeq k\circ h'$ and $k\circ h\simeq k'\circ h$.
+\end{rmk}
+
+\begin{prob}
+    Let $X$ and $Y$ be topological spaces and $[X, Y]$ be the set of homotopy classes of continuous maps from $X$ into $Y$.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $[X, I]$ has a single element.
+        }
+        \item[(b)]
+        {
+            Show that if $Y$ is path connected then $[I, Y]$ has a single element.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \hangindent=0.65cm
+    \noindent(a)
+    Every continuous map from $X$ into $I$ is homotopic to the zero map in $I$.
+
+    \noindent(b)
+    Given a continuous map $f: I\rightarrow Y$, we may consider $f$ a path in $Y$.
+    Let $\gamma$ be a path in $Y$ from $a$ to $f(0)$, where $a$ is a given point of $Y$.
+    Define a map $H: I\times I\rightarrow Y$ by $H(x, t)=(\gamma*f)(((1-t)(x+1))/2)$, which is continuous.
+    Then $H(x, 0)=f(x)$ and $H(x, 1)=\gamma(0)=g$, so $H$ is a homotopy in $Y$ between $f$ and the constant map on $X$ with the image $\{g\}$, which proves that $[I, Y]$ has a single element.
+\end{sol}
+
+\begin{prob}
+    A topological space $X$ is said to be contractible if the identity map of $X$ is nulhomotopic.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that $I$ and $\bb{R}$ are contractible.
+        }
+        \item[(b)]
+        {
+            Show that a contractible space is path-connected.
+        }
+        \item[(c)]
+        {
+            Show that the set $[X, Y]$ has a single element if $Y$ is contractible.
+        }
+        \item[(d)]
+        {
+            Show that the set $[X, Y]$ has a single element if $X$ is contractible and $Y$ is path-connected.
+        }
+    \end{enumerate}
+\end{prob}
+\begin{sol}
+    \hangindent=0.65cm
+    \noindent(a)
+    Consider the map $H: X\times I\rightarrow X$ defined by $(x, t)=(1-t)x$ for $(x, t)\in X\times I$ with $X=I$ or $X=\bb{R}$.
+
+    \noindent(b)
+    Let $H: X\times I\rightarrow X$ be a homotopy in $X$ between $\id{X}$ and a constant map $c$ whose range is $x_0$ for some $x_0\in X$.
+    It suffices to show the existence of a path in $X$ from $x$ to $x_0$ for each $x\in X$.
+    In fact, for each point $x$ in $X$, the map $H(x, \cdot)$ is a path in $X$ from $x$ to $x_0$.
+
+    \noindent(c)
+    Assume $\id{Y}$ and a constant map $c: Y\rightarrow Y$ on $Y$ are homotopic in $Y$ (write the range of $c$ as $\{y_0\}$).
+    Then $\id{Y}\circ f$ and $c\circ f$ are homotopic in $Y$, where the former composition is $f$ and the latter composition is the constant map with the range $\{y_0\}$, so $[X, Y]$ has a single element.
+
+    \noindent(d)
+    The reasoning used in (c) gives that for any continuous map $f: X\rightarrow Y$ we have $f\circ\id{X}\simeq f\circ c$ for the constant function $c: X\rightarrow X$ with the range $\{x_0\}$.
+    This gives the homotopy $f\simeq f(x_0)$, where the constant is abused in the right-hand side.
+    Even though the right-hand side varies as $f$ varies, because any two constant maps from $Y$ into $Y$ are homotopic (because $Y$ is path-connected), it follows that $f\simeq a$ for a given point $a$ in $Y$ and that $[X, Y]$ has a single element.
+\end{sol}
