@@ -41,7 +41,7 @@ We introduce another type of finite field extension, called the radical extensio
 \end{proof}
 
 \begin{center}
-    Assumption: By the end of this chapter, for simplicity, we assume that all fields are of characteristic 0.
+    Assumption: By the end of this chapter, for convinience, we assume that all fields are of characteristic 0.
 \end{center}
 Our goal in this section is to prove the following equivalence:
 \begin{thm}[Solvability of a polynomial]
@@ -61,7 +61,7 @@ Our goal in this section is to prove the following equivalence:
         F=K_0<K_1<\cdots<K_{k-1}<K_k=K,
     \end{align*}
     where $K_i/K_{i-1}$ is a cyclic extension of degree $p_i$ for $i=1, \cdots, k$.
-    \color{teal}To let each adjacent extension be radical, we adjoin an appropriate primitive root of unity\color{black}.
+    \color{teal}To let each adjacent extension be radical, we adjoin an appropriate primitive root of unity. \color{black}
     Write $n=|G_f|$ and let $\zeta$ be a primitive $n$-th root of unity and consider the following tower:
     \begin{align*}
         F\leq F(\zeta) = K_0(\zeta) < \cdots < K_{k-1}(\zeta) < K_k(\zeta)=K(\zeta).
@@ -71,7 +71,7 @@ Our goal in this section is to prove the following equivalence:
     Therefore, $f(t)$ is solvable by radicals.
 \end{proof}
 \begin{proof}[Proof of `only if' part]
-    Assume that $f(t)$ is sovable by radicals.
+    Assume that $f(t)$ is solvable by radicals.
     Let $E$ be the splitting field for $f(t)$ over $F$, $L$ be an $\{n_i\}$-radical extension over $F$ containing $E$, and $K$ be the normal closure of $L$ over $F$.
     Then $K/F$ is a finite Galois extension which is $\{n_i\}$-radical.
     Hence, there are elements $\alpha_1, \cdots, \alpha_k\in K$ such that
@@ -80,7 +80,7 @@ Our goal in this section is to prove the following equivalence:
     \end{align*}
     where ${\alpha_1}^{n_1}\in F$ and ${\alpha_i}^{n_i}\in F(\alpha_1, \cdots, \alpha_{i-1})\,(2\leq i\leq k)$.
 
-    \color{teal}To let each adjacent extension be cyclic, we adjoin an appropriate primitive root of unity\color{black}.
+    \color{teal}To let each adjacent extension be a cyclic extension, we adjoin an appropriate primitive root of unity\color{black}.
     Let $n=\textsf{lcm}\{n_1, \cdots, n_k\}$ and $\zeta$ be a primitive $n$-th root of unity.
     Adjoining $\zeta$, we have
     \begin{align*}

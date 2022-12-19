@@ -125,6 +125,8 @@
 \contentsline {section}{\numberline {23.4}Infinite Galois extensions}{122}{section.23.4}%
 \contentsline {part}{VII\hspace {1em}Category theory}{123}{part.7}%
 \contentsline {chapter}{\numberline {24}Category theory}{124}{chapter.24}%
-\contentsline {chapter}{\numberline {A}Proof of some propositions}{125}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{125}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{125}{section.A.2}%
+\contentsline {section}{\numberline {24.1}Categories and functors}{124}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Natural morphisms and universals}{125}{section.24.2}%
+\contentsline {chapter}{\numberline {A}Proof of some propositions}{126}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Prime numbers congruent to 1 modulo an integer}{126}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quadratic cyclotomic extension}{126}{section.A.2}%

@@ -1,3 +1,132 @@
 \part{Category theory}
 
 \chapter{Category theory}
+
+\section{Categories and functors}
+
+\begin{defi}[Category]
+    A category $\textbf{C}$ consists of a class of \textit{objects} and sets of \textit{morphisms} between those objects.
+    For every ordered pair $(A, B)$ of objects, there is a set $\Hom{\textbf{C}}{A, B}$ of morphisms from $A$ to $B$, and for every ordered triple $(A, B, C)$ of objects, there is a law of composition of morphisms, i.e., a map
+    \begin{align*}
+        \Hom{\textbf{C}}{A, B}\times\Hom{\textbf{C}}{B, C}\rightarrow\Hom{\textbf{C}}{A, C}
+    \end{align*}
+    where $(f, g)\mapsto gf$, and $gf$ is called the composition of $g$ with $f$.
+    The objects and morphisms satisfy the following axioms: for objects $A,\, B$ and $C$,
+    \begin{enumerate}
+        \item[(\romannumeral 1)]
+        {
+            composition of morphisms is associative,
+        }
+        \item[(\romannumeral 2)]
+        {
+            each object has an identity morphism, i.e., for every object $A$ there is a morphism $1_A\in\Hom{\textbf{C}}{A, A}$ such that $f1_A=f$ for all $f\in\Hom{\textbf{C}}{A, B}$ and $1_Ag=g$ for all $g\in\Hom{\textbf{C}}{B, A}$.
+        }
+    \end{enumerate}
+\end{defi}
+Roughly speaking, a category is a structured collection which consists of objects and morphisms, and the structure is the associativity of composition of morphisms and the existence of an identity morphism for each object.
+
+\begin{defi}[Covariant functor and contravariant functor]
+    Let $\textbf{C}$ and $\textbf{D}$ be categories.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            We say $\mc{F}$ is a (covariant) functor from $\textbf{C}$ to $\textbf{D}$, if
+            \begin{enumerate}
+                \item[(1)]
+                {
+                    for each object $A$ in $\textbf{C}$, $\mc{F}A$ is an object in $\textbf{D}$, and
+                }
+                \item[(2)]
+                {
+                    for each morphism $f\in\Hom{\textbf{C}}{A, B}$, $\mc{F}f\in\Hom{\textbf{D}}{\mc{F}A, \mc{F}B}$
+                }
+            \end{enumerate}
+            and $\mc{F}$ preserves compositions and identities, i.e., whenever $A,\, B$, and $C$ are objects of $\textbf{C}$,
+            \begin{enumerate}
+                \item[(3)]
+                {
+                    $\mc{F}(gf)=(\mc{F}g)(\mc{F}f)$ for all $f\in\Hom{\textbf{C}}{A, B}$ and $f\in\Hom{\textbf{C}}{B, C}$, and
+                }
+                \item[(4)]
+                {
+                    $\mc{F}(1_A)=1_{\mc{F}A}$.
+                }
+            \end{enumerate}
+        }
+        \item[(b)]
+        {
+            We say $\mc{F}$ is a contravariant functor from $\textbf{C}$ to $\textbf{D}$ if (1) and (4) are valid but (2) and (3) are replaced by
+            \begin{enumerate}
+                \item[(2')]
+                {
+                    for each morphism $f\in\Hom{\textbf{C}}{A, B}$, $\mc{F}f\in\Hom{\textbf{D}}{\mc{F}B, \mc{F}A}$
+                }
+                \item[(3')]
+                {
+                    $\mc{F}(gf)=(\mc{F}f)(\mc{F}g)$ for all $f\in\Hom{\textbf{C}}{A, B}$ and $f\in\Hom{\textbf{C}}{B, C}$, and
+                }
+            \end{enumerate}
+        }
+    \end{enumerate}
+    In other words, a contravariant functor reverses morphisms.
+\end{defi}
+To be short, a (covariant) functor is a map of a category to a category which preserves compositions and identities, and a contravariant functor is such a map after reversing morphisms.
+
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            When $G$ and $H$ are groups and $\phi: G\rightarrow H$ is a group homomorphism, there is a naturally induced group homomorphism $\ol\phi: \ol G\rightarrow \ol H$, where the overline notations are used to denote the abelianization.
+            The map which maps a group to its abelianization and a group homomorphism $\phi$ to $\ol\phi$ is a functor from $\textbf{Grp}$ to $\textbf{Ab}$.
+        }
+        \item[(b)]
+        {
+            Let $R$ be a ring and $D$ be a left $R$-module.
+            Remark that $\Hom{R}{D, N}$ is an abelian group, and it is a left $R$-module when $R$ is commutative.
+            We introduce a functor from $R-\textbf{Mod}$ to $\textbf{Ab}$ which maps an $R$-module $N$ to $\Hom{R}(D, N)$.
+            Under such setting, when $f\in\Hom{R}(N_1, N_2)$ for some $R$-modules $N_1$ and $N_2$, 
+        }
+    \end{enumerate}
+\end{exmp}
+
+\section{Natural morphisms and universals}
+
+\begin{defi}[Natural morphism of functors]
+    Let $\textbf{C}$ and $\textbf{D}$ be categories and let $\mc{F}$ and $\mc{G}$ be covariant functors from $\textbf{C}$ to $\textbf{D}$.
+    A natural morphism from $\mc{F}$ to $\mc{G}$ is a map $\eta$ that assigns to each object $A$ in $\textbf{C}$ a morphism $\eta_A\in\Hom{\textbf{D}}{\mc{F}A, \mc{G}A}$ withe the following property:
+    For every pair $(A, B)$ of objects $A$ and $B$ in $\textbf{C}$ and every $f\in\Hom{\textbf{C}}{A, B}$ we have $\mc{G}(f)\eta_A=\eta_B\mc{F}(f)$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.2cm, column sep=2.0cm]
+        A
+        \arrow[d, "f"']
+        &
+        \mc{F}A
+        \arrow[d, "\mc{F}f"']
+        \arrow[r, "\eta_A"]
+        &
+        \mc{G}A
+        \arrow[d, "\mc{G}f"]
+        \\
+        B
+        &
+        \mc{F}B
+        \arrow[r, "\eta_B"']
+        &
+        \mc{G}B
+    \end{tikzcd}
+    \end{equation*}
+    If each $\eta_A$ is an isomorphism, then $\eta$ is called a natural isomorphism of functors.
+\end{defi}
+
+\begin{exmp}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            When $\mc{F}$ is the identity functor from $\textbf{Grp}$ to itself and $\mc{G}$ is the abelianizing functor, then the map $\eta$ assigning to a group $G$ the natural projection $\pi_{\ol{G}}: G\rightarrow G/G'$ is a natural morphism from $\mc{F}$ to $\mc{G}$.
+        }
+        \item[(b)]
+        {
+
+        }
+    \end{enumerate}
+\end{exmp}

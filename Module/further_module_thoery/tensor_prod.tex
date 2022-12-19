@@ -1,1 +1,26 @@
 \section{Tensor products of modules}
+
+In this section, all modules are assumed to be unital, unless stated otherwise.
+
+\begin{sketch}
+    Let $M$ and $N$ be unital $R$-modules, and let $\phi: M\times N\rightarrow R$ be a $R$-bilinear map.
+    We wish, if possible, to find an $R$-module over which we may regard $\phi$ an $R$-module homomorphism.
+\end{sketch}
+\begin{defi}[Tensor products of modules]
+    Let $M_1, \cdots, M_n$ be unital $R$-modules.
+    A pair $(M_1\otimes\cdots\otimes M_n, \jmath)$ of an $R$-module $M_1\otimes\cdots\otimes M_n$ and an $R$-multilinear map $\jmath: M_1\times\cdots\times M_n\rightarrow M_1\otimes\cdots\otimes M_n$ is called the tensor product of $M_1, \cdots, M_n$ if the following universal property is satisfied:
+    For any $R$-module $L$ and an $R$-multilinear map $\phi: M_1\times\cdots\times M_n\rightarrow L$, there is a unique $R$-module homomorphism $\ol\phi: M_1\otimes\cdots\otimes M_n\rightarrow L$ such that $\ol\phi\circ\jmath=\phi$.
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.5cm, column sep=2.0cm]
+        M_1 \times\cdots\times M_n
+        \arrow[r, "\jmath\,\textsf{($R$-mutilinear)}"]
+        \arrow[dr, "\phi\,\textsf{($R$-multilinear)}"'{sloped}]
+        &
+        M_1 \otimes\cdots\otimes M_n
+        \arrow[d, "\ol\phi\,\textsf{($R$-linear)}"]
+        \\
+        &
+        L
+    \end{tikzcd}
+    \end{equation*}
+\end{defi}

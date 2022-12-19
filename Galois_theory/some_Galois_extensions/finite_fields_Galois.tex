@@ -72,5 +72,6 @@ If one adds a nonzero constant to the polynomial, one can get a irreducible sepa
 
     Since $\deg f(t)=p$, the splitting field $K$ for $f(t)$ over $\bb{F}_p$ is isomorphic to the finite field $\bb{F}_{p^p}$ and $\gal{K/\bb{F}_p}\approx\mu_p$.
     Thus, we may write $K=\bb{F}_p(\alpha)$ for some $\alpha\in K$.
-    To complete the proof, we need to justify that the \textit{map} $\sigma_p: K\rightarrow K$ defined by $\sigma_p\alpha=\alpha+1$ is an $\bb{F}_p$-automorphism of $K$ of order $p$, \color{brown}which is easy to check\color{black}.
+    To complete the proof, observe that the map $\tau: K\rightarrow K$ defined by $\tau\alpha=\alpha^p=\alpha-a$ is an $\bb{F}_p$-automorphism of $K$ of order $p$.
+    (In addition, note that $\genone{\tau}=\genone{\sigma_p}\approx Z_p$.)
 \end{proof}
