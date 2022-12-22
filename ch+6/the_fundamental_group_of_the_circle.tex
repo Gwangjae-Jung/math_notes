@@ -5,29 +5,42 @@
     In other words, unless stated otherwise, we consider a map $\wt{f}: X\rightarrow E$ such that $p\circ\wt{f}=f$.
 \end{rmk}
 
-\begin{lem}[Uniqueness of a lifting]
+\begin{thm}[Uniqueness of a lifting]
     Let $p: E\rightarrow B$ be a covering map and $f: X\rightarrow B$ be a continuous map.
     Assume that $X$ is a connected space, and suppose there are liftings $g_1$ and $g_2$ of $f$ to $E$ which coincide at a point of $X$.
     Then $g_1=g_2$.
-\end{lem}
+    \begin{equation*}
+    \begin{tikzcd}[row sep=1.2cm, column sep=1.6cm]
+        &
+        (E, e_0)
+        \arrow[d, "p\,\textsf{(covering)}", ->>]
+        \\
+        (X, x_0)
+        \arrow[ur, "g_1=g_2"{sloped}]
+        \arrow[r, "f"']
+        &
+        (B, b_0)
+    \end{tikzcd}
+    \end{equation*}
+\end{thm}
 \begin{proof}
-    Let $A=\{x\in X: g_1(x)=g_2(x)\}$ and $B=\{x\in X: g_1(x)\neq g_2(x)\}$; we wish to show that both $A$ and $B$ are open in $X$.
+    Let $A_{=}=\{x\in X: g_1(x)=g_2(x)\}$ and $A_{\neq}=\{x\in X: g_1(x)\neq g_2(x)\}$; we wish to show that both $A_{=}$ and $A_{\neq}$ are open in $X$.
 
-    Assume first that $a\in A$, and write $e=g_1(a)=g_2(a)$.
+    Assume first that $a\in A_{=}$, and write $e=g_1(a)=g_2(a)$.
     Let $U$ be a neighborhood of $f(a)$ in $B$ which is evenly covered by $p$, and let $V$ be the slice of $p^{-1}(U)$ which contains the point $e$.
     Finally, set $W=g_1^{-1}(V)\cap g_2^{-1}(V)$, which is a neighborhood of $a$ in $X$.
-    And it follows that $W\subset A$, because whenever $w\in W$, we have $g_1(w), g_2(w)\in V$.
-    Therefore, $W\subset A$, proving that $A$ is open.
+    And it follows that $W\subset A_{=}$, because whenever $w\in W$, we have $g_1(w), g_2(w)\in V$.
+    Therefore, $W\subset A_{=}$, proving that $A_{=}$ is open in $X$.
 
-    Now, assume that $b\in B$, and let $U$ be a neighborhoof of $f(b)$ in $B$ which is evenly covered by $p$.
+    Now, assume that $b\in A_{\neq}$, and let $U$ be a neighborhoof of $f(b)$ in $B$ which is evenly covered by $p$.
     In this step, let $V_1$ and $V_2$ be the slice of $p^{-1}(U)$ which contains $g_1(b)$ and $g_2(b)$, respectively.
     By the definition of slices, it follows that $V_1$ and $V_2$ are disjoint.
-    Letting $W=g_1^{-1}(V_1)\cap g_2^{-1}(V_2)$, $W$ is a neighborhood of $b$ in $X$, which is contained in $B$, so $B$ is open.
+    Letting $W=g_1^{-1}(V_1)\cap g_2^{-1}(V_2)$, $W$ is a neighborhood of $b$ in $X$, which is contained in $A_{\neq}$, so $A_{\neq}$ is open in $X$.
 
-    By hypothesis, $A$ is nonempty, so we conclude that $B=\varnothing$, i.e., $g_1=g_2$.
+    Because $g_1$ and $g_2$ collapse at a point of $X$, $A_{=}$ is nonempty, so we conclude that $A_{\neq}=\varnothing$ so $g_1=g_2$, because $X$ is connected.
 \end{proof}
 \begin{exmp}
-    The above lemma asserts that two liftings over a connected spaces which coincide at a point are necessarily identical.
+    The above theorem asserts that two liftings over a connected spaces which coincide at a point are necessarily identical.
     This does not hold when two liftings do not coincide.
     For instance, consider the case where $p: \bb{R}\rightarrow S^1$ is the natural covering map and $X=[0, 1]$.
     When $f: X\rightarrow S^1$ is defined by $f(s)=\exp{2\pi i s}$ for all $s\in [0, 1]$, there are two distinct liftings $g_1, g_2: [0, 1]\rightarrow\bb{R}$ of $f$ to $\bb{R}$, e.g.,
@@ -39,7 +52,7 @@
 
 The above lemma deals with the uniqueness of a lifting over a connected space, provided that a lifting exists.
 The following lemma deals with both the existence and the uniqueness of a lifting of a path.
-\begin{lem}[Path lifting theorem]
+\begin{thm}[Path lifting theorem]
     Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
     Any path $f: (I, 0)\rightarrow (B, b_0)$ in $B$ has a unique lifting to a path $\wt{f}: (I, 0)\rightarrow (E, e_0)$ in $E$.
     \begin{equation*}
@@ -50,12 +63,12 @@ The following lemma deals with both the existence and the uniqueness of a liftin
         \\
         (I, 0)
         \arrow[ur, "\wt{f}"]
-        \arrow[r, "f"]
+        \arrow[r, "f"']
         &
         (B, b_0)
     \end{tikzcd}
     \end{equation*}
-\end{lem}
+\end{thm}
 \begin{rmk}
     The path lifting theorem is quite obvious when $B$ is evenly covered by $p$, for we may choose the restriction of $p$ to the slice containing $e_0$ and composite the inverse of the restriction to the path.
     Even if $B$ need not be evenly covered, because $p$ is a covering map, we shall make use of open subsets of $B$ which are evenly coveredby $p$.
@@ -80,7 +93,7 @@ The following lemma deals with both the existence and the uniqueness of a liftin
     Hence, by induction, we have $g_1=g_2$ on $I$.
 \end{proof}
 
-\begin{lem}[Homotopy lifting theorem]
+\begin{thm}[Homotopy lifting theorem]
     Let $p: (E, e_0)\rightarrow (B, b_0)$ be a covering map.
     Let the map $F: (I\times I, (0, 0))\rightarrow (B, b_0)$ be a continuous map.
     Then there is a unique lifting of $F$ to a continuous map $\wt F: (I\times I, (0, 0))\rightarrow (E, e_0)$.
@@ -93,12 +106,12 @@ The following lemma deals with both the existence and the uniqueness of a liftin
         \\
         (I\times I, (0, 0))
         \arrow[ur, "\wt{F}"]
-        \arrow[r, "F"]
+        \arrow[r, "F"']
         &
         (B, b_0)
     \end{tikzcd}
     \end{equation*}
-\end{lem}
+\end{thm}
 \begin{proof}
     For each point of $B$, consider a neighborhood which is evenly covered by $p$.
     Considering the preimages under $F$, note that $I\times I$ is compact so that we may apply the Lebesgue number lemma to find a partition
@@ -128,7 +141,7 @@ The following lemma deals with both the existence and the uniqueness of a liftin
 \end{proof}
 
 \begin{thm}
-    The fundamental group of $S^1$ is isomorphic to $\bb{Z}$, the free group generated by a single element.
+    The fundamental group of $S^1$ is isomorphic to $\bb{Z}$.
 \end{thm}
 \begin{proof}
     \color{brown}Use the map $\phi: \pi_1(S^1, e^0)\rightarrow p^{-1}(\{0\})$ defined as above; because $\bb{R}$ is simply connected, it remains to verify that $\phi$ is a group homomorphism.\color{black}
