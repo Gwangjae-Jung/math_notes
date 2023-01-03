@@ -200,11 +200,15 @@
     Note that $A=\bigcup_{a, b\in Y,\, a\neq b}(f^{-1}(\{a\})\cap g^{-1}(\{b\}))$.
     If, for each pair $(a, b)$ of distinct points of $Y$, $U_a$ and $V_b$ are disjoint neighborhoods of $a$ and $b$ in $Y$, we have
     \begin{align*}
-        A=\bigcup_{a, b\in Y,\, a\neq b} (f^{-1}(U_a)\cap g^{-a}(V_b)),
+        A=\bigcup_{a, b\in Y,\, a\neq b} (f^{-1}(U_a)\cap g^{-1}(V_b)),
     \end{align*}
     because $f^{-1}(U_a)\cap g^{-1}(V_b)=\bigcup_{s\in U_a}\left(f^{-1}(\{s\})\cap g^{-1}(V_b)\right)=\bigcup_{s\in U_a,\, t\in V_b}(f^{-1}(\{s\})\cap g^{-1}(\{t\}))$ for each pair $(a, b)$.
     It easily follows that $A$ is open in $X$.
 \end{sol}
+\begin{rmk}
+    Let $X$ be a Hausdorff space and a continuous map $r: X\rightarrow A$ be a retraction.
+    Because $A=\{x\in X: r(x)=\id{X}(x)\}$, so $A$ is closed in $X$.
+\end{rmk}
 
 \begin{prob}
     For a topological space $X$ and its subset $A$, we say that $A$ is \textit{discrete} if every point of $A$ is an isolated point of $A$ in $X$.

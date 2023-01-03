@@ -16,14 +16,14 @@ In this section, we introduce a general definition of a compactification, which,
     Two compactifications $Y_1$ and $Y_2$ of $X$ is said to be equivalent if there is a homeomorphism from $Y_1$ into $Y_2$ extending the identity map on $X$.
 \end{defi}
 \begin{rmk}
-    If the space $X$ has a compactification $Y$, because $X$ is a subspace of $Y$, $X$ is necessarily completely regular.
+    Remark that a topological space which has a compactification is necessarily completely regular.
+    Hence, it is natural to wonder if every completely regular space has a compactification.
 \end{rmk}
-It is natural to wonder if every completely regular space has a compactification.
-Hopefully, every completely regular space has a compactification, as justified by the lemma which will be introduced soon.
-The lemma states first that every space which embeds into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' given as in the lemma, then such compactificaiton is unique up to equivalence.
+\cref{emb&cptf} suggests that every completely regular space has a compactification.
+To be precise, \cref{emb&cptf} suggests first that every space which embeds into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' then such compactification is unique up to equivalence.
 
 \begin{lem}[Compactification extending an embedding]\label{emb&cptf}
-    Let $X$ be a space such that there is an embedding $h$ of $X$ into a compact Hausdorff space $Z$.
+    Let $X$ be a space which admits an embedding $h$ of $X$ into a compact Hausdorff space $Z$.
     Then, there is a unique (up to equivalence) compactification $Y$ of $X$ with the following property:
     There is an embedding $H: Y\hookrightarrow Z$ extending $h$.\footnote{Here, $Y$ is unique up to equivalence, but $H$ need not be unique.}
     \begin{equation*}
@@ -32,7 +32,7 @@ The lemma states first that every space which embeds into a compact Hausdorff sp
             &Z
         \end{tikzcd}
     \end{equation*}
-    Such compactification $Y$ is called the compactificaiton of $X$ induced by $h$.
+    Such compactification $Y$ is called the compactification of $X$ induced by $h$.
 \end{lem}
 \begin{proof}
     We first prove the existence of a compactification $Y$ of $X$ induced by $h: X\hookrightarrow Z$, and then we prove its uniqueness.
@@ -78,7 +78,7 @@ The lemma states first that every space which embeds into a compact Hausdorff sp
 \end{proof}
 \begin{rmk}
     We now justify that every completely regular space has a compactification.
-    If $X$ is a completely regular space, by the embedding theorem, $X$ could be embedded into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space.
-    Applying \cref{emb&cptf} to this situation gives a compactification of $X$.
-    Therefore, a space $X$ has a compactification if and only if $X$ is completely regular.
+    If $X$ is a completely regular space, by the embedding theorem, $X$ embeds into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space.
+    Applying \cref{emb&cptf} gives a compactification of $X$.
+    This proves that a space $X$ has a compactification if and only if $X$ is completely regular.
 \end{rmk}
