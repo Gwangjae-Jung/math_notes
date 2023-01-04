@@ -13,28 +13,27 @@ When proving the Urysohn metrization theorem, the fact that a countable dimensio
 \begin{proof}
     Because $\bb{R}^I$ (or $[0, 1]^I$) equips the product topology, $F$ is continuous.
     If $a$ and $b$ are distinct points of $X$, there is an index $i\in I$ such that $f_i(a)\neq 0$ and $f_i(b)=0$, so $F$ is injective.
-    Thus, to show that $F$ is an embedding of $X$, it suffices to show that $F$ is an open map.
+    Thus, to show that $F$ is an embedding of $X$, it suffices to show that $F$ maps an open subset of $X$ onto an open subset of $F(X)$.
     
     Assume $U$ is an open subset of $X$, and let $z$ be a point of $F(U)$, and let $x$ be the point of $U$ such that $F(x)=z$.
     The goal is to find a neighborhood of $z$ in $F(X)$ which is contained in $F(U)$.
     Let $i\in I$ be an index such that $f_i(x)\neq 0$ and $f_i(X\setminus U)=\{0\}$, and set $W=\pi_i^{-1}(\bb{R}\setminus\{0\})\cap F(X)$.
     \begin{enumerate}
-        \item[(1)]
+        \item[(\romannumeral 1)]
         {
             Clearly, $W$ is open in $F(X)$ and $W$ contains $z$.
         }
-        \item[(2)]
+        \item[(\romannumeral 2)]
         {
             For a point $y\in W$, let $a$ be a point in $X$ such that $F(a)=y$.
             Since $y\in\pi_i^{-1}(\bb{R}\setminus\{0\})$, we have $f_i(a)=\pi_i(y)\neq 0$, so $a\notin X\setminus U$, implying $y\in F(U)$.
             In other words, $W\subset F(U)$.
         }
     \end{enumerate}
-    This proves that $F$ is an open map.
-    Therefore, $F$ is an embedding of $X$ into $\bb{R}^I$ (or into $[0, 1]^I)$.
+    So $F(U)$ is open in $F(X)$, which proves that $F$ is an embedding of $X$ into $\bb{R}^I$ (or into $[0, 1]^I)$.
 \end{proof}
 
-We now introduce the Urysohn metrization theorem, which is stronger than our earlier observation that every second countable regular space is normal.
+We now introduce the Urysohn metrization theorem, whose result is stronger than the result of the Urysohn lemma.
 \begin{thm}[Urysohn metrization theorem]\label{Urysohn met thm}
     Every second countable regular space is metrizable.
 \end{thm}
@@ -54,7 +53,7 @@ To prove this theorem, we first prove the following countability lemma.
 
 \begin{exmp}
     Suppose $X$ is a compact Hausdorff space.
-    If $X$ is metrizable, one can easily deduce that $X$ is second countable, using the connectedness of $X$.
+    If $X$ is metrizable, one can easily deduce that $X$ is second countable, using the compactness of $X$.
     The converse implication that $X$ is metrizable when $X$ is second countable is an immediate result of the Urysohn metrization theorem, because a compact Hausdorff space is normal.
 \end{exmp}
 

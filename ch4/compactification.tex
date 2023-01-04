@@ -1,8 +1,9 @@
 \section{Compactification}
 
-In this section, we introduce a general definition of a compactification, which, of cource, covers a one-point compactification.
+In this section, we deals with a compactification more generally.
+Indeed, such compactification covers a one-point compactification.
 \begin{defi}[Compactification]
-    Given a space $X$, a space $Y$ is called a compactification of $X$ if the following are satisfied:
+    Given a space $X$, a space $Y$ is called a compactification of $X$ if the following conditions are satisfied:
     \begin{enumerate}
         \item[(\romannumeral 1)]
         {
@@ -15,14 +16,11 @@ In this section, we introduce a general definition of a compactification, which,
     \end{enumerate}
     Two compactifications $Y_1$ and $Y_2$ of $X$ is said to be equivalent if there is a homeomorphism from $Y_1$ into $Y_2$ extending the identity map on $X$.
 \end{defi}
-\begin{rmk}
-    Remark that a topological space which has a compactification is necessarily completely regular.
-    Hence, it is natural to wonder if every completely regular space has a compactification.
-\end{rmk}
-\cref{emb&cptf} suggests that every completely regular space has a compactification.
-To be precise, \cref{emb&cptf} suggests first that every space which embeds into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' then such compactification is unique up to equivalence.
+Remark that a topological space which has a compactification is necessarily completely regular.
+Hence, it is natural to wonder if every completely regular space has a compactification.
+\cref{emb&cptf} suggests that every completely regular space has a compactification; it first suggests that every space which embeds into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' then such compactification is unique up to equivalence.
 
-\begin{lem}[Compactification extending an embedding]\label{emb&cptf}
+\begin{thm}[Extension of an embedding to a compactification]\label{emb&cptf}
     Let $X$ be a space which admits an embedding $h$ of $X$ into a compact Hausdorff space $Z$.
     Then, there is a unique (up to equivalence) compactification $Y$ of $X$ with the following property:
     There is an embedding $H: Y\hookrightarrow Z$ extending $h$.\footnote{Here, $Y$ is unique up to equivalence, but $H$ need not be unique.}
@@ -33,52 +31,55 @@ To be precise, \cref{emb&cptf} suggests first that every space which embeds into
         \end{tikzcd}
     \end{equation*}
     Such compactification $Y$ is called the compactification of $X$ induced by $h$.
-\end{lem}
+\end{thm}
 \begin{proof}
     We first prove the existence of a compactification $Y$ of $X$ induced by $h: X\hookrightarrow Z$, and then we prove its uniqueness.
-    \begin{enumerate}
-        \item[(a)]
-        {
-            Let $X_0:=h(X)\approx X$ and $Y_0$ be the closure $\overline{X_0}$ of $X_0$ in $Z$.
-            To argue that $Y_0$ is a compactification of $X_0$, we check the axioms of compactificaitions.
-            Because $Y_0$ is a closed subset of $Z$, $Y_0$ is a compact Hausdorff space.
-            Also, $Y_0$ contains $X_0$ as a subspace; every open subset of $X_0$ is of the form $X_0\cap O=X_0\cap(Y_0\cap O)$, where $O$ is an open subset of $Z$.
-            Finally, the closure of $X_0$ in $Y_0$ is clearly $Y_0\cap\overline{X_0}=Y_0$.
-            Therefore, $Y_0$ is a compactification of $X_0$.
+
+    \indent\textbf{Step 1. Finding a homeomorphic copy of a compactification of $X$.}\newline
+    Let $X_0:=h(X)\approx X$ and $Y_0$ be the closure $\overline{X_0}$ of $X_0$ in $Z$.
+    To argue that $Y_0$ is a compactification of $X_0$, we check the axioms of compactificaitions.
+    Because $Y_0$ is a closed subset of $Z$, $Y_0$ is a compact Hausdorff space.
+    Also, $Y_0$ contains $X_0$ as a subspace; every open subset of $X_0$ is of the form $X_0\cap O=X_0\cap(Y_0\cap O)$, where $O$ is an open subset of $Z$.
+    Finally, the closure of $X_0$ in $Y_0$ is clearly $Y_0\cap\overline{X_0}=Y_0$.
+    Therefore, $Y_0$ is a compactification of $X_0$.
             
-            To find a compactification $Y$ of $X$, we seek to find a space $Y$ such that $(X, Y)$ and $(X_0, Y_0)$ are homeomorphic.
-            Let $A$ be any set disjoint from $X$ which is in bijection with $Y_0\setminus X_0$ (say $k: A\rightarrow Y_0\setminus X_0$ is such a bijection), and define $Y=X\sqcup A$.
-            Define a bijective map $H: Y\rightarrow Y_0$ by
-            \begin{center}
-                $H(x)=h(x)$ if $x\in X$, $H(a)=k(a)$ if $a\in A$.
-            \end{center}
-            Topologize $Y$ by declaring that $U\subset Y$ is open in $Y$ if and only if $H(U)$ is open in $Y_0$. (Indeed, the collection induced by such declaration is a topology on $Y$.)
-            This topologization makes $H$ a homeomorphism.
-            It is easy to justify that $Y$ is a compactification of $X$; it is because $H$ extends $h$ and $h: X\rightarrow X_0$ and $H: Y\rightarrow Y_0$ are homeomorphisms.
-            To be brief, it is because the following diagram commutes:
-            \begin{equation*}
-                \begin{tikzcd}[row sep=large, column sep=huge]
-                    X\arrow[r, "h", "\approx"']\arrow[d, "\imath"', hook]
-                    &
-                    X_0\arrow[d, "\imath_0", hook]\\
-                    Y\arrow[r, "\approx", "H"'] & Y_0
-                \end{tikzcd},
-            \end{equation*}
-            where $\imath$ is the inclusion embedding of $X$ into $Y$ and $\imath_0$ is the inclusion embedding of $X_0$ into $Y_0$.
-        }
-        \item[(b)]
-        {
-            Suppose $Y_1$ and $Y_2$ are compactifications of $X$ which extends $h$ to embeddings from $Y_1$ and $Y_2$ into $Z$, respectively.
-            Denote such embeddings by $H_1: Y_1\hookrightarrow Z$ and $H_2: Y_2\hookrightarrow Z$, respectively.
-            By restricting the codomains of $H_1$ and $H_2$, we find that $H_2\circ H_1^{-1}$ denotes a homeomorphism between $Y_1$ and $Y_2$ extending the identity map on $X$.
-            Therefore, $Y_1$ and $Y_2$ are equivalent.
-        }
-    \end{enumerate}
-    Therefore, if $X$ is a space with an embedding $h$ into a compact Hausdorff space $Z$, then $X$ has a compactification $Y$ such that there is an embedding of $Y$ into $Z$ extending $h$, and such a compactification exist uniquely up to equivalence.
+    \indent\textbf{Step 2. Finding a compactification of $X$.}\newline
+    To find a compactification $Y$ of $X$, we seek to find a space $Y$ such that $(X, Y)$ and $(X_0, Y_0)$ are homeomorphic.
+    Let $A$ be any set disjoint from $X$ which is in bijection with $Y_0\setminus X_0$ (say $k: A\rightarrow Y_0\setminus X_0$ is such a bijection), and define $Y=X\sqcup A$.
+    Define a bijective map $H: Y\rightarrow Y_0$ by
+    \begin{align*}
+        H(x)=\left\{
+            \begin{array}{cc}
+                h(x)    &   \textsf{(if $x\in X$)}\\
+                k(x)    &   \textsf{(if $x\in A$)}
+            \end{array}
+        \right.
+    \end{align*}
+    Topologize $Y$ by declaring that $U\subset Y$ is open in $Y$ if and only if $H(U)$ is open in $Y_0$. (Indeed, the collection induced by such declaration is a topology on $Y$.)
+    This topologization makes $H$ a homeomorphism.
+    It is easy to justify that $Y$ is a compactification of $X$; it is because $H$ extends $h$ and $h: X\rightarrow X_0$ and $H: Y\rightarrow Y_0$ are homeomorphisms.
+    To be brief, it is because the following diagram commutes.
+    \begin{equation*}
+        \begin{tikzcd}[row sep=large, column sep=huge]
+            X\arrow[r, "h", "\approx"']\arrow[d, "\imath\,\textsf{(inclusion)}"', hook]
+            &
+            X_0\arrow[d, "\imath_0\,\textsf{(inclusion)}", hook]\\
+            Y\arrow[r, "\approx", "H"'] & Y_0
+        \end{tikzcd},
+    \end{equation*}
+    
+    \indent\textbf{Step 3. Justifying the uniqueness of a compactification of $X$}\newline
+    Suppose $Y_1$ and $Y_2$ are compactifications of $X$ which extends $h$ to embeddings from $Y_1$ and $Y_2$ into $Z$, respectively.
+    Denote such embeddings by $H_1: Y_1\hookrightarrow Z$ and $H_2: Y_2\hookrightarrow Z$, respectively.
+    By restricting the codomains of $H_1$ and $H_2$, we find that $H_2\circ H_1^{-1}$ denotes a homeomorphism between $Y_1$ and $Y_2$ extending the identity map on $X$.
+    Therefore, $Y_1$ and $Y_2$ are equivalent.
 \end{proof}
+\begin{cor}
+    A topological space $X$ has a compactification if and only if $X$ is completely regular.
+    Moreover, in this case, the compactification of $X$ is unique up to equivalence.
+\end{cor}
 \begin{rmk}
-    We now justify that every completely regular space has a compactification.
-    If $X$ is a completely regular space, by the embedding theorem, $X$ embeds into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space.
-    Applying \cref{emb&cptf} gives a compactification of $X$.
-    This proves that a space $X$ has a compactification if and only if $X$ is completely regular.
+    Since it is already proved that a topological space with a compactification is completely regular, it remains to justify that every completely regular space has a compactification.
+    If $X$ is a completely regular space, by the embedding theorem, $X$ embeds into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space; applying \cref{emb&cptf} gives a compactification of $X$.
+    The uniqueness of a compactification of $X$ also follows from \cref{emb&cptf}.
 \end{rmk}
