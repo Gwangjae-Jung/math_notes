@@ -2,7 +2,7 @@
 
 Throughout this section, we assume that $X$ is a completely regular space, unless stated otherwise.
 
-It is known that finding a compactification $Y$ of a completely regular space $X$ to which every continuous map from $X$ into $\bb{R}$ is continuously extended is a basic problem.
+Finding a compactification $Y$ of a completely regular space $X$ to which every continuous map from $X$ into $\bb{R}$ is continuously extended is a basic problem.
 Regarding this, if a given real-valued function on $X$ were to be extended, then the function must have been bounded.
 
 The idea to find such a compactification of $X$ is to apply \cref{emb&cptf}.
@@ -16,10 +16,28 @@ For each $\alpha\in I$, let $B_\alpha=[\inf(\alpha), \sup(\alpha)]\subset\bb{R}$
     B=\prod_{\alpha\in I}B_\alpha.
 \end{align*}
 Since $I$ separates points of $X$ from closed subsets of $X$, the map $F: X\rightarrow B$ defined by $F=(f)_{f\in I}$ is an embedding of $X$ into the compact Hausdorff space $B$.
-By \cref{emb&cptf}, there is a unique compactification $Y$ of $X$ such that $F$ extends to an embedding $F_*$ of $Y$ into $B$.
-($Y$ is the compactification of $X$ induced by the embedding $F$)
+By \cref{emb&cptf}, there is a unique compactification $Y$ of $X$ such that $F$ extends to an embedding $F_*$ of $Y$ into $B$; namely, the compactification of $X$ induced by the embedding $F$.
 The $f$-component $f_*$ of $F_*$ is a desired extension of $f$, since $f_*=\pi_f\circ F_*$ is continuous.
-Finally, while one might find an extension of $f$ using another method, the assumption that the codomain is compact implies that the extension of $f$ should be unique.
+This proves the existence of a continuous extension of $f$ to a compactification of $X$.
+Remark that the uniqueness of a continuous extension of $f$ to a compactification of $X$ is guaranteed by the assumption that the codomain is a Hausdorff space.
+\begin{equation*}
+\begin{tikzcd}[row sep=large, column sep=huge]
+    &
+    X
+    \arrow[dl, "\textsf{inclusion}"{sloped}, hook]
+    \arrow[d, "F"]
+    \arrow[dr, "f"]
+    &
+    \\
+    Y
+    \arrow[r, "F_*"', hook]
+    &
+    B
+    \arrow[r, "\pi_f"']
+    &
+    \bb{R}
+\end{tikzcd}
+\end{equation*}
 
 To sum up, by considering an embedding $F$ with regard to $C_b^0(X, \bb{R})$ and considering the compactification $Y$ of $X$ induced by $F$, we could show that every function in $C_b^0(X, \bb{R})$ extends uniquely to a continuous function on $Y$.
 The above observation is summarized as the following proposition:
@@ -34,24 +52,25 @@ Such compactification would be defined in terms of a universal property.
 \begin{defi}[The Stone-\v{C}ech compactification of a topological space]\label{SC-cptf}
     Let $X$ be a topological space (not necessarily a completely regular space).
     A pair $(\beta(X), \iota)$ of a compact Hausdorff space $\beta(X)$ and a continuous map $\iota: X\rightarrow \beta(X)$ is called a Stone-\v{C}ech compactification of $X$, if the pair satisfies the following universal property:
-    For any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $\beta(f): \beta(X)\rightarrow K$ such that $\beta(f)\circ\iota = f$.
+    For any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $f_*: \beta(X)\rightarrow K$ such that $f_*\circ\iota = f$.
     \begin{equation*}
         \begin{tikzcd}[row sep=large, column sep=huge]
             X
             \arrow[dr, "f"']
             \arrow[r, "\iota"] &
             \beta(X)
-            \arrow[d, "\beta(f)", dashed] \\
+            \arrow[d, "f_*", dashed] \\
             & K
         \end{tikzcd}
     \end{equation*}
 \end{defi}
 
-Note that a Stone-\v{C}ech compactification of a topological space $X$ is unique up to homeomorphism, provided that it exists.
+Note that a Stone-\v{C}ech compactification of a topological space $X$ is unique up to homeomorphism (but may not be unique up to equivalence), provided that it exists.
 While the Stone-\v{C}ech compactification could be considered for topological spaces which are not completely regular, in this note, we only consider the Stone-\v{C}ech compactification of completely regular spaces.
 \begin{thm}
     Let $X$ be a completely regular space.
-    Then the Stone-\v{C}ech compactification of $X$ exists, which is unique up to equivalence.
+    Then a Stone-\v{C}ech compactification of $X$ exists.
+    Furthermore, a Stone-\v{C}ech compactification of $X$ is unique up to equivalence.
 \end{thm}
 
 The following proposition states that a compactification $Y$ of $X$ in \cref{SC-cptf_ver1}, together with the inclusion of $X$ into $Y$, is a compactification of $X$ to which every continuous map from $X$ to any compact Hausdorff space extends continuously and uniquely.
@@ -60,58 +79,63 @@ The following proposition states that a compactification $Y$ of $X$ in \cref{SC-
     Then, for any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $f_*: Y\rightarrow K$ extending $f$.
 \end{prop}
 \begin{proof}
-    Remark that a compact Hausdorff space is completely regular, so $K$ embeds into $[0, 1]^I$ for some $I$ (let $e: K\hookrightarrow[0, 1]^I$ be such an embedding).
-    So we may consider the composition $g:=e\circ f: X\rightarrow e(K)\subset[0, 1]^I$ rather than $f$.
+    Remark that a compact Hausdorff space is completely regular, so $K$ embeds into $[0, 1]^I$ for some $I$.
+    Let $e: K\hookrightarrow[0, 1]^I$ be such an embedding.
+    To apply the result of \cref{SC-cptf_ver1}, we may consider the composition $g:=e\circ f: X\rightarrow e(K)\subset[0, 1]^I$ rather than $f$, because $g$ is into a Euclidean space so every projection of $g$ is into $\bb{R}$.
     
-    For each $\alpha\in I$, find the unique extension $(g_\alpha)_*: Y\rightarrow[0, 1]$ of $g_\alpha: X\rightarrow[0, 1]$.
+    For each $\alpha\in I$, let $(g_\alpha)_*: Y\rightarrow[0, 1]$ be the unique continuous extension of $g_\alpha: X\rightarrow[0, 1]$.
     Then, the map $g_*: Y\rightarrow[0, 1]^I$ defined by $g_*=((g_\alpha)_*)_{\alpha\in I}$ is the unique continuous extension of $g: X\rightarrow[0, 1]^I$.
     
-    Since we have composited $e$ at the left of $f$ to obtain $g$, to assert that $f_*:=e^{-1}\circ g_*$ is a desired extension of $f$, we need to show that $f_*$ is well-defined.
-    Then, it naturally follows that $f_*$ is a unique continuous extension of $f$.
-    Because the closure of $X$ in $Y$ is $Y$, we have
+    To assert that $f_*:=e^{-1}\circ g_*$ is a desired extension of $f$, it suffices to show that $f_*$ is well-defined, by justifying that $g_*(Y)$ is contained in $e(K)$.
+    Because the closure of $X$ in $Y$ is $Y$ and $e(K)$ is compact,
     \begin{align*}
         g_*(Y)\subset\overline{g_*(X)}=\overline{g(X)}\subset\overline{e(K)}=e(K).
     \end{align*}
-    Therefore, $f_*$ is well-defined, so $f_*$ is a desired extension of $f: X\rightarrow K$.
+    Therefore, $f_*$ is well-defined and $f_*$ is a desired extension of $f: X\rightarrow K$ to $Y$.
     The uniqueness follows from the assumption that $K$ is a Hausdorff space.
 \end{proof}
 
 \begin{prop}[Uniqueness part]
-    A Stone-\v{C}ech compactification of a completely regular space $X$ is unique up to equivalence.
+    Let $X$ be a completely regular space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            A Stone-\v{C}ech compactification of $X$ is unique up to homeomorphism.
+        }
+        \item[(b)]
+        {
+            A compactification of $X$ which is a Stone-\v{C}ech compactification of $X$ is unique up to equivalence.
+        }
+    \end{enumerate}
 \end{prop}
 \begin{proof}
-    Let $Y_1$ and $Y_2$ be two Stone-C\v{e}ch compactifications of $X$, and let $\imath_k$ denote the inclusion embedding of $X$ into $Y_k$ for $k=1, 2$.
-    \begin{equation*}
-        \begin{tikzcd}[row sep=large, column sep=huge]
-            & Y_1\arrow[d, "(\imath_2)_*"']\arrow[dd, bend left, "(\imath_1)_*=\textsf{id}_{Y_1}"]\\
-            X
-            \arrow[ur, "\imath_1", hook]
-            \arrow[r, "\imath_2"', hook]
-            \arrow[dr, "\imath_1"', hook]
-            & Y_2\arrow[d, "(\imath_1)_\star"']\\
-            & Y_2
-        \end{tikzcd}
-        \qquad\qquad
-        \begin{tikzcd}[row sep=large, column sep=huge]
-            & Y_2\arrow[d, "(\imath_1)_\star"']\arrow[dd, bend left, "(\imath_2)_\star=\textsf{id}_{Y_2}"]\\
-            X
-            \arrow[ur, "\imath_2", hook]
-            \arrow[r, "\imath_1"', hook]
-            \arrow[dr, "\imath_2"', hook]
-            & Y_1\arrow[d, "(\imath_2)_*"']\\
-            & Y_1
-        \end{tikzcd}
-        \end{equation*}
-    Clearly, each embedding is continuous.
-    Hence, the universal property of $Y_1$ gives the continuous extension $(\imath_2)_\star: Y_1\rightarrow Y_2$ of $\imath_2$ and the universal property of $Y_2$ gives the continuous extension $(\imath_1)_*: Y_2\rightarrow Y_1$, and these extensions surely extends the identity map on $X$.
-    Since the universal property of $Y_1$ gives a unique extension, the extension $(\imath_1)_*: Y_1\rightarrow Y_1$ of $\imath_1$ is forced to be the identity map on $Y_1$.
-    Therefore, $(\imath_1)_\star\circ(\imath_2)_*$ is the identity map on $Y_1$.
-    Similarly, $(\imath_2)_*\circ(\imath_1)_\star$ is the identity map on $Y_2$.
-    Therefore, $(\imath_1)_\star$ and $(\imath_2)_*$ are homeomorphisms, proving that $Y_1$ and $Y_2$ are equivalent.
+    (a) is clear, since the Stone-\v{C}ech compactification of a topological space is defined by a universal property.
+    (b) can be similarly proved, if one applies the assumption that the given maps are inclusions.
 \end{proof}
 
-So far, we have proved that for a completely regular space the Stone-\v{C}ech compactification exists uniquely.
-We end this section with the functorial property of the correspondence $\beta$ given in \cref{SC-cptf}.
+We end this section with defining a functor from $\textbf{Top}$ to $\textbf{CHaus}$, where $\textbf{CHaus}$ is the category of the compact Hausdorff spaces, with morphisms being the continuous maps of compact Hausdorff spaces into compact Hausdorff spaces.
+For a topological space $X$, let $\beta(X)$ be the Stone-\v{C}ech compactification of $X$.
+For a continuous map $f: X\rightarrow Y$, define $\beta(f): \beta(X)\rightarrow\beta(Y)$ as follows.
+Let $(\beta(X), \imath)$ and $(\beta(Y), \jmath)$ be the Stone-\v{C}ech compactifications of $X$ and $Y$, respectively.
+Then there is a unique continuous map $(\jmath\circ f)_*: \beta(X)\rightarrow\beta(Y)$ satisfying $(\jmath\circ f)_*\circ\imath=\jmath\circ f$; define $\beta(f)=(\jmath\circ f)_*$.
+\begin{equation*}
+\begin{tikzcd}[row sep=large, column sep=huge]
+    X
+    \arrow[r, "f"]
+    \arrow[d, "\imath"']
+    \arrow[dr, "\jmath\circ f"{sloped}]
+    &
+    Y
+    \arrow[d, "\jmath"]
+    \\
+    \beta(X)
+    \arrow[r, "\beta(f):=(\jmath\circ f)_*"']
+    &
+    \beta(Y)
+\end{tikzcd}
+\end{equation*}
+Note that the above correspondence is well-defined (when choosing up to homeomorphism), and the universal property of the Stone-\v{C}ech compactification naturally explains the functoriality of $\beta$.
+Hence, one may argue as follows.
 \begin{prop}
-    The correspondence $\beta$ is a functor from $\textbf{Top}$ (the category of the topological spaces) to $\textbf{CHaus}$ (the category of the compact Hausdorff spaces).
+    The map $\beta: \textbf{Top}\rightarrow\textbf{CHaus}$ defined above is a covariant functor.
 \end{prop}

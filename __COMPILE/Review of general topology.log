@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  4 JAN 2023 21:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  5 JAN 2023 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -578,7 +578,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 ...opological vector spaces}{58}{section.8.2}
+l.51 ...line {8}Topological groups}{62}{chapter.8}
                                                   % [1
 
 ])
@@ -614,45 +614,45 @@ Chapter 4.
 Chapter 5.
 (../ch5/complete_spaces.tex [37
 
-] [38]) (../ch5/pointwise_equicontinuity.tex [39]) (../ch5/topologies_on_C0.tex [40] [41] [42] [43] [44]) (../ch5/Ascoli's_theorem.tex [45] [46] [47]) [48] [49
-
-]
+] [38]) (../ch5/pointwise_equicontinuity.tex [39]) (../ch5/topologies_on_C0.tex [40] [41] [42] [43] [44]) (../ch5/Ascoli's_theorem.tex [45] [46] [47]) [48]
 Chapter 6.
-(../ch+1/quotient_topology.tex [50
+(../ch6/basic_theory_on_homotopies.tex [49
 
-] [51] [52]) (../ch+1/further_properties_quot_top.tex) [53]
-Chapter 7.
-(../ch+2/top_gp.tex [54
-
-] [55]) (../ch+2/quotient_top_gp.tex [56]) (../ch+2/further_properties_top_gp.tex) [57]
-Chapter 8.
-(../ch+3/top_vs.tex) (../ch+3/further_properties_top_vs.tex) [58
+] [50]) (../ch6/the_fundamental_group.tex [51] [52]) (../ch6/covering_spaces.tex [53]) (../ch6/the_fundamental_group_of_the_circle.tex [54] [55]) [56] [57
 
 ]
+Chapter 7.
+(../ch+1/quotient_topology.tex [58
+
+] [59] [60]) (../ch+1/further_properties_quot_top.tex) [61]
+Chapter 8.
+(../ch+2/top_gp.tex [62
+
+] [63]) (../ch+2/quotient_top_gp.tex [64]) (../ch+2/further_properties_top_gp.tex) [65]
 Chapter 9.
-(../ch+4/Tietze_extn_thm.tex) [59
+(../ch+3/top_vs.tex) (../ch+3/further_properties_top_vs.tex) [66
 
 ]
 Chapter 10.
-(../ch+5/intro_to_manifolds.tex [60
+(../ch+4/Tietze_extn_thm.tex) [67
 
-]) [61]
+]
 Chapter 11.
-(../ch+6/basic_theory_on_homotopies.tex [62
+(../ch+5/intro_to_manifolds.tex [68
 
-] [63]) (../ch+6/the_fundamental_group.tex [64] [65]) (../ch+6/covering_spaces.tex [66]) (../ch+6/the_fundamental_group_of_the_circle.tex [67] [68]) [69] [70
+]) [69] [70
 
 ] (./Review of general topology.aux) ) 
 Here is how much of TeX's memory you used:
- 25140 strings out of 480210
- 491021 string characters out of 5893466
- 750104 words of memory out of 5000000
- 42208 multiletter control sequences out of 15000+600000
+ 25143 strings out of 480210
+ 491029 string characters out of 5893466
+ 750103 words of memory out of 5000000
+ 42211 multiletter control sequences out of 15000+600000
  483846 words of font info for 81 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  119i,19n,121p,791b,1140s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Review of general topology.pdf" (71 pages, 598083 bytes).
+Output written on "Review of general topology.pdf" (71 pages, 598658 bytes).
 PDF statistics:
  1068 PDF objects out of 1200 (max. 8388607)
  938 compressed objects within 10 object streams

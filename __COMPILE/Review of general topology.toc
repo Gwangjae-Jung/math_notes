@@ -36,27 +36,27 @@
 \contentsline {section}{\numberline {5.4}Ascoli's theorem}{45}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Generalized Ascoli's theorem}{45}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Some particular versions of Ascoli's theorem}{47}{subsection.5.4.2}%
-\contentsline {part}{II\hspace {1em}Further theory in general topology}{49}{part.2}%
-\contentsline {chapter}{\numberline {6}Quotient topology}{50}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Quotient topology}{50}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Quotient maps}{50}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Quotient topology}{51}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Examples}{52}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Further properties regarding quotient maps}{53}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Topological groups}{54}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Topological groups}{54}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Quotients of topological groups}{56}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Further properties of topological groups}{57}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Topological vector spaces}{58}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Topological vector spaces}{58}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Further properties of topological vector spaces}{58}{section.8.2}%
-\contentsline {chapter}{\numberline {9}Tietze extension theorem}{59}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Tietze extension theorem}{59}{section.9.1}%
-\contentsline {chapter}{\numberline {10}Introduction to manifolds}{60}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Introduction to manifolds}{60}{section.10.1}%
-\contentsline {chapter}{\numberline {11}Fundamental groups}{62}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Basic theory on homotopies}{62}{section.11.1}%
-\contentsline {section}{\numberline {11.2}The fundamental group}{64}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Covering spaces}{66}{section.11.3}%
-\contentsline {section}{\numberline {11.4}The fundamental group of the circle}{67}{section.11.4}%
+\contentsline {chapter}{\numberline {6}Introduction to algebraic topology}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Basic theory on homotopies}{49}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The fundamental group}{51}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Covering spaces}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.4}The fundamental group of the circle}{54}{section.6.4}%
+\contentsline {part}{II\hspace {1em}Further theory in general topology}{57}{part.2}%
+\contentsline {chapter}{\numberline {7}Quotient topology}{58}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Quotient topology}{58}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Quotient maps}{58}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Quotient topology}{59}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Examples}{60}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Further properties regarding quotient maps}{61}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Topological groups}{62}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Topological groups}{62}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Quotients of topological groups}{64}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Further properties of topological groups}{65}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Topological vector spaces}{66}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Topological vector spaces}{66}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Further properties of topological vector spaces}{66}{section.9.2}%
+\contentsline {chapter}{\numberline {10}Tietze extension theorem}{67}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Tietze extension theorem}{67}{section.10.1}%
+\contentsline {chapter}{\numberline {11}Introduction to manifolds}{68}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Introduction to manifolds}{68}{section.11.1}%
 \contentsline {part}{III\hspace {1em}Some other contents}{70}{part.3}%
