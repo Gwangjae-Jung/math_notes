@@ -2,7 +2,7 @@
 
 Throughout this section, we assume that $X$ is a completely regular space, unless stated otherwise.
 
-It is known that finding a compactification $Y$ of a (completely regular) space $X$ to which every continuous map from $X$ into $\bb{R}$ is continuously extended is a basic problem.
+It is known that finding a compactification $Y$ of a completely regular space $X$ to which every continuous map from $X$ into $\bb{R}$ is continuously extended is a basic problem.
 Regarding this, if a given real-valued function on $X$ were to be extended, then the function must have been bounded.
 
 The idea we use to find such a compactification of $X$ is to apply \cref{emb&cptf}.
@@ -15,39 +15,59 @@ For convinience, write $I=C_b^0(X, \bb{R})$ and for each $\alpha\in I$, let $B_\
     B=\prod_{\alpha\in I}B_\alpha.
 \end{align*}
 Since $I$ separates points of $X$ from closed subsets of $X$, the map $F: X\rightarrow B$ defined by $F=(f)_{f\in I}$ is an embedding of $X$ into the compact Hausdorff space $B$.
-By \cref{emb&cptf}, there is a (unique) compactification $Y$ of $X$ such that $F$ extends to an embedding $F_*$ of $Y$ into $B$, and the $f$-component $f_*$ of $F_*$ is a desired extension of $f$, since $f_*=\pi_f\circ F_*$ is continuous.
-The uniqueness of an extension of $f$ easily follows from the assumption that the codomain $\bb{R}$ is a Hausdorff space.
+By \cref{emb&cptf}, there is a (unique) compactification $Y$ of $X$ such that $F$ extends to an embedding $F_*$ of $Y$ into $B$.
+The $f$-component $f_*$ of $F_*$ is a desired extension of $f$, since $f_*=\pi_f\circ F_*$ is continuous.
+Finally, while one might find an extension of $f$ using another method, the assumption that the codomain is compact implies that the extension of $f$ should be unique.
 
-To sum up, by considering an embedding $F$ with regard to $C_b^0(X, \bb{R})$ and considering the compactification $Y$ of $X$ induced by $F$, we could show that every function in $C_b^0(X, \bb{R})$ can be uniquely extended to a continuous function on $Y$.
+To sum up, by considering an embedding $F$ with regard to $C_b^0(X, \bb{R})$ and considering the compactification $Y$ of $X$ induced by $F$, we could show that every function in $C_b^0(X, \bb{R})$ extends uniquely to a continuous function on $Y$.
 The above observation is summarized as the following proposition:
-\begin{prop}[Real-version of Stone-\v{C}ech compactification]\label{SC-cptf_ver1}
+\begin{prop}\label{SC-cptf_ver1}
     Let $X$ be a completely regular space.
-    There is a compactification $Y$ of $X$ satisfying the following property:
+    Then there is a unique compactification $Y$ of $X$ satisfying the following property:
     Any function $f\in C_0^b(X, \bb{R})$ extends continuously to $Y$ uniquely.
 \end{prop}
 
-What we have shown is the existence of a compactification $Y$ of $X$ to which every bounded real-valued continuous function on $X$ extends continuously to $Y$ uniquely.
-Our goal is to find a compactification satisfying a more general property, which turns out to be a universal property:
-\begin{thm}[Universal property of the Stone-\v{C}ech compactification]
-    Let $X$ be a completely regular space.
-    Then, there is a unique (up to equivalence) compactification $\beta(X)$ of $X$ satisfying the following universal property:
-    For any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $f_*: \beta(X)\rightarrow K$ extending $f$.
-    In other words, the pair $(\beta(X), \imath)$ ($\imath$ is the inclusion embedding of $X$ into $\beta(X)$) makes the following diagram commute.
+We now find a compactification of a completely regular space which satisfies a more general property; such compactification would be defined in terms of a universal property.
+\begin{defi}[The Stone-\v{C}ech compactification of a topological space]
+    Let $X$ be a topological space (not necessarily a completely regular space).
+    A pair $(\beta(X), \iota)$ of a compact Hausdorff space $\beta(X)$ and a continuous map $\iota: X\rightarrow \beta(X)$ is called a Stone-\v{C}ech compactification of $X$, if the pair satisfies the following universal property:
+    For any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $\beta(f): \beta X\rightarrow K$ such that $\beta(f)\circ\iota = f$.
     \begin{equation*}
-        \begin{tikzcd}[row sep=2.0cm, column sep=2.5cm]
+        \begin{tikzcd}[row sep=large, column sep=huge]
             X
-            \arrow[dr, "\textsf{continuous}"{sloped}, "f"']
-            \arrow[r, "\imath\,(\textsf{the inclusion})", hook] &
+            \arrow[dr, "f"']
+            \arrow[r, "\iota"] &
             \beta(X)
-            \arrow[d, "\textsf{continuous}"'{sloped}, "f_*", dashed] \\
+            \arrow[d, "\beta(f)", dashed] \\
             & K
         \end{tikzcd}
     \end{equation*}
-    We call such an extension $\beta(X)$ (or the pair $(\beta(X), \imath)$) the Stone-C\v{e}ch compactification of $X$.
+\end{defi}
+
+Note that a Stone-\v{C}ech compactification of a topological space $X$ is unique up to homeomorphism, provided that it exists.
+While the Stone-\v{C}ech compactification could be considered for topological spaces which are not completely regular, in this note, we only consider the Stone-\v{C}ech compactification of completely regular spaces.
+
+\color{orange}
+\begin{thm}[The Stone-\v{C}ech compactification of a completely regular space]
+    Let $X$ be a completely regular space.
+    Then there is a unique (up to equivalence) compactification $\beta(X)$ of $X$ satisfying the following universal property:
+    For any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $f_*: \beta(X)\rightarrow K$ extending $f$.
+    In other words, the pair $(\beta(X), \imath)$ ($\imath$ is the inclusion embedding of $X$ into $\beta(X)$) makes the following diagram commute.
+    \begin{equation*}
+        \begin{tikzcd}[row sep=1.6cm, column sep=2.4cm]
+            X
+            \arrow[dr, "f\,\textsf{(continuous)}"'{sloped}]
+            \arrow[r, "\imath\,(\textsf{inclusion})", hook] &
+            \beta(X)
+            \arrow[d, "f_*\,\textsf{(continuous)}", dashed] \\
+            & K
+        \end{tikzcd}
+    \end{equation*}
 \end{thm}
+\color{black}
 
 If there exists such $Y$ for each $X$, then the Stone-\v{C}ech compactification can be defined by the above universal property.
-For this, one needs to show the existence part, rather than the uniqueness (up to equivalence) part.\footnote{Any object defined by a universal property exists uniquely up to some sense (for example, isomorphism or equivalence).}
+For this, one needs to show the existence part, rather than the uniqueness (up to equivalence) part.
 The following proposition states that a compactification $Y$ of $X$ in \cref{SC-cptf_ver1} is, in fact, a compactification of $X$ to which every continuous map from $X$ to a compact Hausdorff space extends continuously and uniquely.
 \begin{prop}[Existence part]
     Let $X$ be a completely regular space and $Y$ be the compactification of $X$ satisfying the property in \cref{SC-cptf_ver1}.

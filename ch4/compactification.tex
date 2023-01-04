@@ -1,7 +1,6 @@
 \section{Compactification}
 
-In this section, we deals with a compactification more generally.
-Indeed, such compactification covers a one-point compactification.
+In this section, we deals with a general class of compactification, which covers a one-point compactification.\footnote{Generally, the compactification covered in this note is referred to as a Hausdorff compactification, for a compactification is required to be a Hausdorff space.}
 \begin{defi}[Compactification]
     Given a space $X$, a space $Y$ is called a compactification of $X$ if the following conditions are satisfied:
     \begin{enumerate}
@@ -61,11 +60,11 @@ Hence, it is natural to wonder if every completely regular space has a compactif
     To be brief, it is because the following diagram commutes.
     \begin{equation*}
         \begin{tikzcd}[row sep=large, column sep=huge]
-            X\arrow[r, "h", "\approx"']\arrow[d, "\imath\,\textsf{(inclusion)}"', hook]
+            X\arrow[r, "h", "\approx"']\arrow[d, "\textsf{inclusion}"', hook]
             &
-            X_0\arrow[d, "\imath_0\,\textsf{(inclusion)}", hook]\\
+            X_0\arrow[d, "\textsf{inclusion}", hook]\\
             Y\arrow[r, "\approx", "H"'] & Y_0
-        \end{tikzcd},
+        \end{tikzcd}
     \end{equation*}
     
     \indent\textbf{Step 3. Justifying the uniqueness of a compactification of $X$}\newline
@@ -76,10 +75,13 @@ Hence, it is natural to wonder if every completely regular space has a compactif
 \end{proof}
 \begin{cor}
     A topological space $X$ has a compactification if and only if $X$ is completely regular.
-    Moreover, in this case, the compactification of $X$ is unique up to equivalence.
+    Moreover, a compactification of $X$ satisfying the extension property given in \cref{emb&cptf} is unique up to equivalence.
 \end{cor}
 \begin{rmk}
+    A compactification of a completely regular space $X$ may not be unique, but a compactification of $X$ satisfying the extension property for embeddings is unique up to equivalence.
+\end{rmk}
+\begin{proof}
     Since it is already proved that a topological space with a compactification is completely regular, it remains to justify that every completely regular space has a compactification.
     If $X$ is a completely regular space, by the embedding theorem, $X$ embeds into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space; applying \cref{emb&cptf} gives a compactification of $X$.
     The uniqueness of a compactification of $X$ also follows from \cref{emb&cptf}.
-\end{rmk}
+\end{proof}
