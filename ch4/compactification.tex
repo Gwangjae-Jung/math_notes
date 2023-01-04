@@ -19,7 +19,7 @@ Remark that a topological space which has a compactification is necessarily comp
 Hence, it is natural to wonder if every completely regular space has a compactification.
 \cref{emb&cptf} suggests that every completely regular space has a compactification; it first suggests that every space which embeds into a compact Hausdorff space has a compactification, and second that if such compactification is required to satisfy an ``extension property'' then such compactification is unique up to equivalence.
 
-\begin{thm}[Extension of an embedding to a compactification]\label{emb&cptf}
+\begin{thm}[The compactification induced by an embedding]\label{emb&cptf}
     Let $X$ be a space which admits an embedding $h$ of $X$ into a compact Hausdorff space $Z$.
     Then, there is a unique (up to equivalence) compactification $Y$ of $X$ with the following property:
     There is an embedding $H: Y\hookrightarrow Z$ extending $h$.\footnote{Here, $Y$ is unique up to equivalence, but $H$ need not be unique.}
@@ -29,8 +29,11 @@ Hence, it is natural to wonder if every completely regular space has a compactif
             &Z
         \end{tikzcd}
     \end{equation*}
-    Such compactification $Y$ is called the compactification of $X$ induced by $h$.
+    Such compactification $Y$ is called the compactification of $X$ induced by the embedding $h: X\hookrightarrow Z$.
 \end{thm}
+\begin{rmk}
+    A compactification of a completely regular space $X$ may not be unique; what is unique up to equivalence is a compactification of $X$ induced by an embedding of $X$ into a particular compact Hausdorff space.
+\end{rmk}
 \begin{proof}
     We first prove the existence of a compactification $Y$ of $X$ induced by $h: X\hookrightarrow Z$, and then we prove its uniqueness.
 
@@ -75,13 +78,9 @@ Hence, it is natural to wonder if every completely regular space has a compactif
 \end{proof}
 \begin{cor}
     A topological space $X$ has a compactification if and only if $X$ is completely regular.
-    Moreover, a compactification of $X$ satisfying the extension property given in \cref{emb&cptf} is unique up to equivalence.
 \end{cor}
-\begin{rmk}
-    A compactification of a completely regular space $X$ may not be unique, but a compactification of $X$ satisfying the extension property for embeddings is unique up to equivalence.
-\end{rmk}
 \begin{proof}
     Since it is already proved that a topological space with a compactification is completely regular, it remains to justify that every completely regular space has a compactification.
-    If $X$ is a completely regular space, by the embedding theorem, $X$ embeds into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space; applying \cref{emb&cptf} gives a compactification of $X$.
-    The uniqueness of a compactification of $X$ also follows from \cref{emb&cptf}.
+    If $X$ is a completely regular space, by the embedding theorem, $X$ embeds into $[0, 1]^I$ for some $I$, which is a compact Hausdorff space.
+    By \cref{emb&cptf}, the embedding of $X$ into $[0, 1]^I$ induces a compactification of $X$.
 \end{proof}

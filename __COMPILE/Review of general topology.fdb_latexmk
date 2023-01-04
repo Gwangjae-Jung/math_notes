@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1672834722 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1672834725
+["pdflatex"] 1672836875 "e:/math_notes/review_of_general_topology/__COMPILE/Review of general topology.tex" "Review of general topology.pdf" "Review of general topology" 1672836882
   "../../my_settings/pangpang_conditionals.tex" 1664777689 101 42c63d0f7a65026f3b9a3f0663ded71a ""
   "../../my_settings/pangpang_definitions.tex" 1670399861 1920 10d6767c336005efa216868d2e010cfe ""
   "../../my_settings/pangpang_dictionary.tex" 1670394663 647 1723e2fb24d21e1f0830bab7c0b4cb5c ""
@@ -32,15 +32,15 @@
   "../ch3/emmbedding_theorem.tex" 1672820241 4408 460d545c2b2d64c012a55e0657815005 ""
   "../ch3/implications.tex" 1672760466 18692 6af0cf49712654ac270e3dd97c9ed48b ""
   "../ch3/implications_problems.tex" 1672760569 13432 e391eee84d5c5b8e85c4c852ffa92fe6 ""
-  "../ch4/SC_cptf.tex" 1672834623 8691 13aeef78389f970f6a645115bd2c54b8 ""
-  "../ch4/compactification.tex" 1672834721 5925 d1c3e94b617545085ce73c15242755ba ""
+  "../ch4/SC_cptf.tex" 1672836874 8089 4369c8f4a26f8a19284fd133540378d9 ""
+  "../ch4/compactification.tex" 1672835670 5811 738694226f4f34c4ec59413438810449 ""
   "../ch5/Ascoli's_theorem.tex" 1670029291 15119 53c528de70ac5f6aeea0e4bd43557596 ""
   "../ch5/complete_spaces.tex" 1660927426 10702 3dc1399fddfab06fbd56deee48507190 ""
   "../ch5/pointwise_equicontinuity.tex" 1670154202 6703 36801801a250a312ec13ba8ebdb2c821 ""
   "../ch5/topologies_on_C0.tex" 1669907433 18979 6545b6d2dc7c09fef3429a01064cf066 ""
-  "Review of general topology.aux" 1672834725 35773 eaa39a5d7a0501a86171677cbbfcfb0e "pdflatex"
+  "Review of general topology.aux" 1672836881 35937 e8ffdbc992cf02f3b3ab2a661362916f "pdflatex"
   "Review of general topology.tex" 1670854803 3010 5c3b41dba535110fbe83283f0ede4a4e ""
-  "Review of general topology.toc" 1672834725 5725 d8f4c8cbe3d15bffe3541fa025c4a933 "pdflatex"
+  "Review of general topology.toc" 1672836881 5725 d8f4c8cbe3d15bffe3541fa025c4a933 "pdflatex"
   "c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk" 1656219625 11620 8e1e9ae542719cfcf843bbddb96caaae ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1654131800 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1654131593 1004 54797486969f23fa377b128694d548df ""
