@@ -78,7 +78,7 @@ As connectedness, compactness of subspaces can also be argued in larger spaces.
     A continuous image of a compact space is compact.
 \end{prop}
 \begin{proof}
-    \color{brown}Left as an exercise.\color{black}
+    Straightforward, due to the compactness of the domain.
 \end{proof}
 
 \begin{prop}
@@ -248,16 +248,16 @@ In particular, (c) implies that the original definition of the $\epsilon$-neighb
         \item[(d)]
         {    
             Let $f: A\rightarrow \bb{R}$ be a function defined by $f(a)=\dist{d}{a}{X\setminus U}$.
-            \begin{itemize}
-                \item
+            \begin{enumerate}
+                \item[(\romannumeral 1)]
                 {
                     $f$ is continuous; for $a, b\in A$, we have $f(a)\leq d(a, x)\leq d(a, b)+d(b, x)$ for all $x\in X\setminus U$, so $f(a)\leq d(a, b)+f(b)$, from which, by symmetry, we obtain $|f(a)-f(b)|\leq d(a, b)$.
                 }
-                \item
+                \item[(\romannumeral 2)]
                 {
                     $f(a)>0$ for all $a\in A$; otherwise, if $f(p)=0$ for some $p\in A$, then $p\in\ol{X\setminus U}=X\setminus U$, a contradiction.
                 }
-            \end{itemize}
+            \end{enumerate}
             Because $A$ is compact, $f$ attains the minimum $\delta>0$.
             Hence, for example, if $\epsilon=\delta/2$, then $U(A, \epsilon)$ is contained in $U$.
         }

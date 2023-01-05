@@ -73,8 +73,8 @@ While the Stone-\v{C}ech compactification could be considered for topological sp
     Furthermore, a Stone-\v{C}ech compactification of $X$ is unique up to equivalence.
 \end{thm}
 
-The following proposition states that a compactification $Y$ of $X$ in \cref{SC-cptf_ver1}, together with the inclusion of $X$ into $Y$, is a compactification of $X$ to which every continuous map from $X$ to any compact Hausdorff space extends continuously and uniquely.
-\begin{prop}[Existence part]
+The following proposition states that a compactification $Y$ of $X$ in \cref{SC-cptf_ver1}, together with the inclusion of $X$ into $Y$, is a Stone-\v{C}ech compactification of $X$.
+\begin{prop}[Existence part]\label{SC-cptf existence for CReg spaces}
     Let $X$ be a completely regular space and $Y$ be a compactification of $X$ satisfying the property in \cref{SC-cptf_ver1}.
     Then, for any compact Hausdorff space $K$ and a continuous map $f: X\rightarrow K$, there is a unique continuous map $f_*: Y\rightarrow K$ extending $f$.
 \end{prop}
@@ -113,6 +113,64 @@ The following proposition states that a compactification $Y$ of $X$ in \cref{SC-
     (b) can be similarly proved, if one applies the assumption that the given maps are inclusions.
 \end{proof}
 
+So far, we have proved the existence and the uniqueness of the Stone-\v{C}ech compactification of a completely regular space.
+In fact, it is known that the Stone-\v{C}ech compactification exists not only for a completely regular space but also for a topological space.
+
+Here are some basic properties regarding the Stone-\v{C}ech compactification of a completely regular space.
+When we constructed the Stone-\v{C}ech compactification of a completely regular space, we adopted a compactification of the space so that the map of the space into the compactification is the inclusion (an embedding, to be general).
+The following proposition states that the map from the space into its Stone-\v{C}ech compactification is always an embedding.
+\begin{prop}
+    Let $X$ be a completely regular space and $(Y, \imath)$ be the Stone-\v{C}ech compactification of $X$.
+    Then $\imath$ is an embedding of $X$ into $Y$.
+\end{prop}
+\begin{proof}
+    By \cref{SC-cptf existence for CReg spaces}, there is a compactification $Y$ of $X$ which is a Stone-\v{C}ech compactification of $X$.
+    Let $(\beta(X), \imath)$ be a Stone-\v{C}ech compactification of $X$ and $\jmath: X\rightarrow Y$ be the inclusion.
+    Let $\jmath_*: Y\rightarrow \beta(X)$ be the unique continuous map such that $\jmath_*\circ\imath=\jmath$, which is induced by the universal property of the Stone-\v{C}ech compactification.
+    Since $\beta(X)$ and $Y$ are homeomorphic, it follows that $\jmath_*$ is a homeomorphism, proving that $\jmath$ is an embedding.
+\end{proof}
+Next, we investigate the maximality of the Stone-\v{C}ech compactification of a completely regular space.
+\begin{prop}
+    Let $X$ be a completely regular space and $Y$ be any compactification of $X$.
+    Then there is a continuous closed surjective map $g: \beta X\rightarrow Y$, where $(\beta X, \imath)$ is the Stone-\v{C}ech compactification of $X$.
+    (In fact, if $\jmath: X\hookrightarrow Y$ is the inclusion map, the continuous map $f: \beta X\rightarrow Y$ induced by $\jmath$ is a continuous closed surjective map.)
+\end{prop}
+\begin{rmk}
+    Since a continuous map which is closed and surjective is a quotient map, it follows that every compactification of $X$ is homeomorphic to a quotient of $\beta X$.
+\end{rmk}
+\begin{proof}
+    Let $\imath$ be the embedding of $X$ into $\beta X$ and $\jmath$ be the inclusion of $X$ into $Y$.
+    By the universal property of the Stone-\v{C}ech compactification, there is a unique continuous map $f: \beta X\rightarrow Y$ such that $f\circ\imath=\jmath$.
+    Since any continuous map from a compact space into a Hausdorff space is a closed map, $f$ is a closed map.
+    Because the image of $f$ is a closed subset of $Y$ containing $(f\circ\imath)(X)=\imath(X)=X$ and $X$ is dense in $Y$, we conclude that $f$ is surjective.
+\end{proof}
+\color{red}
+\begin{prop}
+    Let $X$ be a completely regular space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Suppose $X$ is normal and identify $X$ as a subset of $\beta X$ (or choose $\beta X$ as a compactification of $X$ satisfying the universal property of the Stone-\v{C}ech compactification).
+            Then $y$ is not a limit point of $X$ in $\beta X$.
+        }
+        \item[(b)]
+        {
+            If $X$ is completely regular but not compact, then $\beta X$ is not metrizable.
+        }
+    \end{enumerate}
+\end{prop}
+\color{black}
+
+An interesting example is introduced.
+\begin{exmp}
+    Remark that $\bb{N}$ equips the discrete topology, so every set map from $\bb{N}$ into any topological space is continuous; in particular, $\bb{N}$ is completely regular.
+    In this example, we prove that $\card{\beta\bb{N}}\geq\card{I^I}$, where $I=[0, 1]\subset\bb{R}$ and $(\beta X, \iota)$ is the Stone-\v{C}ech compactification of $\bb{N}$.
+    
+    Let $D=\{d_n\}_{n\in\bb{N}}$ be a countable dense subset of $I^I$ \color{brown}(Why is $I^I$ separable?) \color{black} and let $f: \bb{N}\rightarrow I^I$ be the map defined by $n\mapsto d_n$ for all $n\in\bb{N}$.
+    Since $I^I$ is a compact Hausdorff space, by the universal property of the Stone-\v{C}ech compactification, there is a unique continuous map $f_*: \beta\bb{N}\rightarrow I^I$ such that $f_*\circ\iota=f$.
+    Since the image of $f_*$ is a closed subset of $I^I$ containing $f(\bb{N})=D$, we find that $\card{\beta\bb{N}}\geq\card{I^I}$.
+\end{exmp}
+
 We end this section with defining a functor from $\textbf{Top}$ to $\textbf{CHaus}$, where $\textbf{CHaus}$ is the category of the compact Hausdorff spaces, with morphisms being the continuous maps of compact Hausdorff spaces into compact Hausdorff spaces.
 For a topological space $X$, let $\beta(X)$ be the Stone-\v{C}ech compactification of $X$.
 For a continuous map $f: X\rightarrow Y$, define $\beta(f): \beta(X)\rightarrow\beta(Y)$ as follows.
@@ -139,3 +197,29 @@ Hence, one may argue as follows.
 \begin{prop}
     The map $\beta: \textbf{Top}\rightarrow\textbf{CHaus}$ defined above is a covariant functor.
 \end{prop}
+
+\begin{prob}
+    Let $X$ be a completely regular space.
+    Show that $X$ is connected if and only if its Stone-\v{C}ech compactification is connected.
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    Let $X$ be a discrete space.
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Show that if $A$ is a subset of $X$ then the closures of $A$ and $X\setminus A$ in $\beta X$ are disjoint, where $(\beta X, \iota)$ is the Stone-\v{C}ech compactification of $X$.
+        }
+        \item[(b)]
+        {
+            Show that if $U$ is an open subset of $\beta X$ then so is its closure in $\beta X$.
+        }
+        \item[(c)]
+        {
+            Show that $\beta X$ is totally disconnected.
+        }
+    \end{enumerate}
+\end{prob}
