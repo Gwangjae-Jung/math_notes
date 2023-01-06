@@ -21,35 +21,36 @@ Also, it is easy to verify that the box topology on $X$ can be generated as a ba
 \end{rmk}
 
 We now assume that $(Y, d)$ is a metric space and $I$ is an index set.
-Even $Y$ is not metrizable, we could have considered the product and box topology on $Y^I$, but the following topology is valid when a metric on $Y$ is given.
-In other words, the following topology on $Y^I$ (generally) depends on the choice of the metric on $Y$.
-\begin{defi}
+Even $Y$ is not metrizable, we could have considered the product and box topology on $Y^I$, but the following topology is considered only when a metric on $Y$ is given.
+\begin{defi}\label{uniform topology}
+    Let $I$ be a nonempty set and $(Y, d)$ be a metric space.
     \begin{enumerate}
         \item[(a)]
         {
             (Uniform metric)
-            Define the map $\ol\rho: Y^I\times Y^I\rightarrow [0,\infty)$ by
-            \begin{align*}
-                (f, g)\mapsto\sup\{\ol{d}(f(x), g(x)): x\in I\}
-                \quad
-                \textsf{for all $f, g\in Y^I$.}
-            \end{align*}
-            The map $\ol\rho$ is a metric on $Y^I$, which is called the uniform metric.
+            Define the map $\ol\rho: Y^I\times Y^I\rightarrow [0,\infty)$ by $(f, g)\mapsto\sup\left\{\ol{d}(f(x), g(x)): x\in I\right\}$ for all $f, g\in Y^I$.
+            The map $\ol\rho$ is a metric on $Y^I$, which is called the uniform metric corresponding to $d$.
         }
         \item[(b)]
         {
             (Uniform topology)
-            Let $I$ be a nonempty set and $(Y, d)$ be a metric space.
-            The topology on $Y^I$ generaged by the following collection as a basis is called the uniform topology on $Y^I$:
-            \begin{align*}
-                \left\{
-                    B_{\ol\rho}(f, \epsilon):
-                    \textsf{$f\in Y^I$ and $\epsilon>0$}
-                \right\}
-            \end{align*}
+            The metric topoogy on $Y^I$ induced by the uniform metric corresponding to $d$ is called the uniform topology induced by $d$.
         }
     \end{enumerate}
 \end{defi}
+\begin{rmk}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            We use the standard bounded metric $\ol d$ induced by $d$ to prevent the case where a distance between two distinct points diverges.
+        }
+        \item[(b)]
+        {
+            As one might have expected, for a metric space $(Y, d)$ and a nonempty set $X$, the convergence in $Y^X$ in the uniform topology is called the uniform convergence.
+            Similarly, the convergence in $Y^X$ in the product topology is called the pointwise convergence.
+        }
+    \end{enumerate}
+\end{rmk}
 
 \begin{prop}
     Let $I$ be a nonempty set and $(Y, d)$ be a metric space.
@@ -72,3 +73,5 @@ In other words, the following topology on $Y^I$ (generally) depends on the choic
     \textbf{Step 2. Investigating the given particular case.}\newline\noindent
     Observe, when $(Y, d)$ is the Euclidean metric space $(\bb{R}, d)$ and $I=\bb{N}$, that $B_{\ol\rho}(0, 1/2)$ cannot be an intersection of finitely many subsets of the form $\pi_n^{-1}(\bb{R})\, (n\in\bb{N})$, and that $\prod_{n\in\bb{N}}(1/n, 1/n)$ cannot be open in the uniform topology on $\bb{R}^\bb{N}$.
 \end{proof}
+
+To study further on the uniform topology, see \Cref{completeness and C0 spaces}.

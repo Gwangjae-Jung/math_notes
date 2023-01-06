@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  6 JAN 2023 02:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.2)  6 JAN 2023 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -578,7 +578,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 ...line {8}Topological groups}{63}{chapter.8}
+l.53 ...line {8}Topological groups}{63}{chapter.8}
                                                   % [1
 
 ])
@@ -594,7 +594,7 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 49.
  [4
 
-]) (../ch1/continuous_map.tex [5] [6]) (../ch1/topologies_on_function_spaces.tex) (../ch1/metrizable_product.tex [7] [8]) [9]
+]) (../ch1/continuous_map.tex [5] [6]) (../ch1/topologies_on_function_spaces.tex [7]) (../ch1/metrizable_product.tex [8]) [9]
 Chapter 2.
 (../ch2/connected.tex [10
 
@@ -610,11 +610,11 @@ Chapter 3.
 Chapter 4.
 (../ch4/compactification.tex [33
 
-]) (../ch4/SC_cptf.tex [34] [35] [36]) [37]
+]) (../ch4/SC_cptf.tex [34] [35] [36]) (../ch4/cptf_problems.tex) [37]
 Chapter 5.
 (../ch5/complete_spaces.tex [38
 
-] [39]) (../ch5/pointwise_equicontinuity.tex [40]) (../ch5/topologies_on_C0.tex [41] [42] [43] [44] [45]) (../ch5/Ascoli's_theorem.tex [46] [47] [48]) [49]
+] [39]) (../ch5/pointwise_equicontinuity.tex [40] [41]) (../ch5/topologies_on_C0.tex [42] [43] [44] [45]) (../ch5/Ascoli's_theorem.tex [46] [47] [48]) [49]
 Chapter 6.
 (../ch6/basic_theory_on_homotopies.tex [50
 
@@ -644,18 +644,18 @@ Chapter 11.
 
 ] (./Review of general topology.aux) ) 
 Here is how much of TeX's memory you used:
- 25153 strings out of 480210
- 491183 string characters out of 5893466
- 750103 words of memory out of 5000000
- 42213 multiletter control sequences out of 15000+600000
+ 25165 strings out of 480210
+ 491448 string characters out of 5893466
+ 750104 words of memory out of 5000000
+ 42222 multiletter control sequences out of 15000+600000
  483846 words of font info for 81 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  119i,19n,121p,791b,1140s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/GJ2/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Review of general topology.pdf" (72 pages, 605315 bytes).
+Output written on "Review of general topology.pdf" (72 pages, 607331 bytes).
 PDF statistics:
- 1081 PDF objects out of 1200 (max. 8388607)
- 950 compressed objects within 10 object streams
+ 1089 PDF objects out of 1200 (max. 8388607)
+ 958 compressed objects within 10 object streams
  372 named destinations out of 1000 (max. 500000)
- 389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

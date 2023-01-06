@@ -1,56 +1,69 @@
 \section{Complete metric spaces}
 
 \subsection{Complete metric spaces and uniform metrics}
+
 \begin{defi}[Complete metric space]
     Let $(X, d)$ be a metric space.
-    A sequence $(x_n)_{n\in\bb{N}}$ of points in $X$ is called a Cauchy sequence, if given $\epsilon>0$, there is an integer $N>0$ such that $n, m>N$ implies $d(x_n, x_m)<\epsilon$.
-    The space $X$ is called a complete metric space if every Cauchy sequence in $X$ is convergent.
+    A sequence $(x_n)_{n\in\bb{N}}$ of points in $X$ is called a Cauchy sequence if the following condition is satisfied: For any positive real number $\epsilon$, there is a positive integer $N$ such that $n, m\geq N$ implies $d(x_n, x_m)<\epsilon$.
+    The metric space $(X, d)$ is called a complete metric space if every Cauchy sequence in $X$ is convergent.
 \end{defi}
 \begin{rmk}
+    The completeness of a metric space is a metric property, rather than a topological property.
+    Hence, the completeness may not be preserved under homeomorphisms.
+\end{rmk}
+
+Some basic properties regarding the completeness of metric spaces are given as follows.
+Proving them is left as an exercise.
+See \cref{completeness_basic_sol}.
+\begin{prop}\label{completeness_basic}
+    Let $(X, d)$ and $(X_n, d_n)$ be complete metric spaces for $n\in\bb{N}$.
     \begin{enumerate}
         \item[(a)]
         {
             (Reduction of criterion)
-            Let $(X, d)$ be a metric space.
-            $X$ is a complete metric space if and only if every Cauchy sequence in $X$ has a convergent subsequence.
+            $X$ is complete if and only if every Cauchy sequence in $X$ has a convergent subsequence.
         }
         \item[(b)]
         {
-            Suppose that $(X, d)$ is a complete metric space.
-            Then a closed subspace of $X$ is complete: every Cauchy sequence in a closed subspace $C$ of $X$ is a Cauchy sequence in $X$, hence it has the limit, which should belong to $C$.
-            Conversely, a complete subspace of $X$ is closed in $X$: If $A$ is a complete subspace of $X$ and $p$ is a limit point of $A$, we can construct a Cauchy sequence of points in $A$ which converges to $p$, and completeness implies that $p\in A$.
-            Therefore, for a complete metric space, closedness and completeness of subspaces coincide.
+            (Completeness and closedness)
+            Let $Y$ be any nonempty subset of $X$ and let $e=d|_{Y\times Y}$.
+            Then $(Y, e)$ is complete if and only if $Y$ is closed in $X$.
         }
         \item[(c)]
         {
-            The product of countably many complete metric spaces is, under the induced $D$-metric, complete: Note that a sequence $(x_n)_n$ converges to $x$ in the product space if and only if $(\pi_k(x_n))_n$ converges to $x_n$ for all $k$.
-            Because $(x_n)_n$ is a Cauchy sequenc in the product space, it can be easily shown that each $(\pi_k(x_n))_n$ is a Cauchy sequence in the $k$-th complete metric space.
+            (Completeness and countable products)
+            The product space $Z=\prod_{n\in\bb{N}} X_n$ is complete under the metric $D: Z\times Z\rightarrow [0, \infty)$, which is defined by
+            \begin{align*}
+                D(x, y)=\sup_{n\in\bb{N}}\left\{\frac{1}{n}\ol{d_n}(x_n, y_n)\right\}
+                \quad
+                (x, y\in Z),
+            \end{align*}
+            where $\ol{d_n}$ is the standard bounded metric induced by $d_n$ for each $n\in\bb{N}$.
+            In fact, defining a metric $\kappa: Z\times Z\rightarrow [0, \infty)$ by $\kappa(x, y)=\sum_{n\in\bb{N}} {2^{-n} \ol{d_n}(x_n, y_n)}$ for all $x, y\in Z$, $Z$ is also complete under $\kappa$.
         }
     \end{enumerate}
-\end{rmk}
+\end{prop}
 
-Contrary to the part (c) in the preceeding remark, one cannot assert that $\bb{R}^I$ is complete for arbitrary $I$, when $\bb{R}^I$ equips the product topology.
-\begin{defi}[Uniform metric]
-    Given a metric space $(X, d)$ and an index set $I$, we define the uniform metric $\ol{\rho}$ corresponding to $d$ on $X^I$ as follows:
-    \begin{align*}
-        \ol{\rho}: X\times X\rightarrow [0, \infty),\quad (x, y)\mapsto \sup \{\ol{d}(x_\alpha, y_\alpha):\alpha\in I\}.
-    \end{align*}
-    One should remark that the topology induced by the uniform metric if finer than the product topology and coarser than the box topology.
-\end{defi}
-In particular, if $f, g: I\rightarrow X$, then $\ol{\rho}(f, g)=\sup\{d(f(a), g(a)): a\in I\}$.
+Let $(X, d)$ be a metric space (not necessarily being complete) and $I$ be a nonempty index set.
+In \cref{uniform topology}, we have defined the uniform metric $\ol\rho$ on $X^I$ correspoinding to $d$, which is defined by $\ol\rho(f, g)=\sup\left\{\ol{d}(f(a), g(a)): a\in I\right\}$.
+Remark that the metric topology induced by the uniform metric is finer than the product topology and coarser than the box topology.
 
+In (c) of \cref{completeness_basic}, the completeness of the product of complete metric spaces is ensured only for countable products.
+The following theorem ensures the completeness for uncountable products, when the the uniform topology is considered.
 \begin{thm}
-    If $(Y, d)$ is a complete metric space, then $(Y^X, \ol\rho)$ is complete, where $X$ is an index set.
+    Let $X$ be a nonempty set.
+    If $(Y, d)$ is a complete metric space, then $(Y^X, \ol\rho)$ is complete.
 \end{thm}
 \begin{proof}
     Let $(f_n)_{n\in\bb{N}}$ be a Cauchy sequence in $Y^X$.
-    We first assert that $(f_n)_n$ is pointwise convergent; because $\ol\rho(f_n, f_m)\rightarrow 0$ as $n, m\rightarrow\infty$, for each $x\in X$, $(f_n(x))_n$ is a Cauchy sequence in $Y$, justifying the assertion.
-    We now prove that $f_n\rightarrow f$ in $\ol\rho$, i.e., uniformly.\footnote{Indeed, the convergence in $\ol\rho$ and the uniform convergence coincide.}
-    Let $N$ be an integer such that $n, m\geq N$ implies $\ol\rho(f_n, f_m)<\epsilon/2$; given $x\in X$, let $p$ be an integer not less than $N$ such that $d(f_p(x), f(x))<\epsilon/2$.
+    Because $\ol\rho(f_n, f_m)\rightarrow 0$ as $n, m\rightarrow\infty$, for each $x\in X$, $(f_n(x))_n$ is a Cauchy sequence in $Y$.
+    Hence, $(f_n)_{n\in\bb{N}}$ is pointwise convergent.
+    We now prove that $(f_n)_{n\in\bb{N}}$ is uniformly convergent.
+    Let $N$ be an integer such that $n, m\geq N$ implies $\ol\rho(f_n, f_m)<\epsilon/2$; given $x\in X$, let $p$ be an integer such that $p\geq N$ and $d(f_p(x), f(x))<\epsilon/2$.
     Then,
-    \begin{align}
+    \begin{align*}
         d(f_n(x), f(x))\leq d(f_n(x), f_p(x))+d(f_p(x), f(x))<\epsilon/2+\epsilon/2=\epsilon,
-    \end{align}
+    \end{align*}
     so $\ol\rho(f_n, f)\leq\epsilon$.
     Therefore, $f_n\rightarrow f$ uniformly.
 \end{proof}
@@ -78,13 +91,15 @@ In particular, if $f, g: I\rightarrow X$, then $\ol{\rho}(f, g)=\sup\{d(f(a), g(
 
 For example, when $X$ is compact, we may impose the supremum(sup) metric
 \begin{align*}
-    \norm{\cdot}: C(X, Y)\times C(X, Y)\rightarrow[0, \infty),\quad (f, g)\mapsto\sup\{d(f(x), g(x)): x\in X\}
+    \norm{\cdot}: C(X, Y)\times C(X, Y)\rightarrow[0, \infty),
+    \quad
+    (f, g)\mapsto\sup\left\{d(f(x), g(x)): x\in X\right\}
 \end{align*}
 on $C(X, Y)$, and such imposition is general.
 
 \subsection{Isometric embedding of a metric space}
 
-Recall that we call a map $h$ from a metric space $(X, d_X)$ into $(Y, d_Y)$ such that $d_Y(h(a), h(b))=d_X(a, b)$ for all $a, b\in X$ an isometric embedding of $X$ into $Y$.
+Recall that a map $h$ from a metric space $(X, d_X)$ into $(Y, d_Y)$ satisfying $d_Y(h(a), h(b))=d_X(a, b)$ for all $a, b\in X$ is called an isometry (or an isometric embedding) of $X$ into $Y$.
 If $h: X\rightarrow Y$ is an isometric embedding and $Y$ is complete, the closure of $h(X)$ in $Y$ is also a complete metric space, and we call this space the completion of $X$.
 
 When trying to define objects, one should be interested in their existence, uniqueness, and exactness.
@@ -183,3 +198,28 @@ When trying to define objects, one should be interested in their existence, uniq
     Therefore, there is an isometry between two completions of $X$.
     In other words, there is a unique completion of a metric space up to an isometry.
 \end{proof}
+
+\subsection{Problems}
+
+\begin{prob}\label{completeness_basic_sol}
+    Prove \cref{completeness_basic}.
+\end{prob}
+\begin{sol}
+    \begin{enumerate}
+        \item[(a)]
+        {
+            Easy.
+        }
+        \item[(b)]
+        {
+            If $Y$ is a nonempty closed supset of $X$ and $(y_n)_{n\in\bb{N}}$ is a Cauchy sequence in $Y$, then it converges, due to the completeness of $X$; and the limit belongs to $Y$, due to the closedness of $Y$ in $X$, which implies the completeness of $Y$.
+            Conversely, if $(Y, e)$ is complete and $y$ is a limit point of $Y$ in $X$, then for each $n\in\bb{N}$, there is a point $y_n\in B_d(y, 1/n)$; since the sequence $(y_n)_{n\in\bb{N}}$ converges to $y$ and $Y$ is complete, $y\in Y$, so $Y$ is closed in $X$.
+        }
+        \item[(c)]
+        {
+            Remark that $D$ and $\rho$ induces the product topology on $Z$.
+            If $(z_n)_{n\in\bb{N}}$ is a Cauchy sequence in $Z$, it easily follows from the definition of $D$ or $\rho$ that $(\pi_k(z_n))_{n\in\bb{N}}$ is a Cauchy sequence in $X_k$ for each $k\in\bb{N}$.
+            Since each $X_k$ is a complete metric space, each sequence $(\pi_k(z_n))_{n\in\bb{N}}$ in $X_k$ is convergent, hence the sequence $(z_n)_{n\in\bb{N}}$ is convergent in $Z$.
+        }
+    \end{enumerate}
+\end{sol}
