@@ -50,22 +50,18 @@ Remark that the metric topology induced by the uniform metric is finer than the 
 
 In (c) of \cref{completeness_basic}, the completeness of the product of complete metric spaces is ensured only for countable products.
 The following theorem ensures the completeness for uncountable products, when the the uniform topology is considered.
-\begin{thm}
+\begin{thm}\label{uniform topology and completeness}
     Let $X$ be a nonempty set.
     If $(Y, d)$ is a complete metric space, then $(Y^X, \ol\rho)$ is complete.
 \end{thm}
 \begin{proof}
     Let $(f_n)_{n\in\bb{N}}$ be a Cauchy sequence in $Y^X$.
-    Because $\ol\rho(f_n, f_m)\rightarrow 0$ as $n, m\rightarrow\infty$, for each $x\in X$, $(f_n(x))_n$ is a Cauchy sequence in $Y$.
+    Because $\ol\rho(f_n, f_m)\rightarrow 0$ as $n, m\rightarrow\infty$, for each $x\in X$, $(f_n(x))_{n\in\bb{N}}$ is a Cauchy sequence in $Y$.
     Hence, $(f_n)_{n\in\bb{N}}$ is pointwise convergent.
-    We now prove that $(f_n)_{n\in\bb{N}}$ is uniformly convergent.
-    Let $N$ be an integer such that $n, m\geq N$ implies $\ol\rho(f_n, f_m)<\epsilon/2$; given $x\in X$, let $p$ be an integer such that $p\geq N$ and $d(f_p(x), f(x))<\epsilon/2$.
-    Then,
-    \begin{align*}
-        d(f_n(x), f(x))\leq d(f_n(x), f_p(x))+d(f_p(x), f(x))<\epsilon/2+\epsilon/2=\epsilon,
-    \end{align*}
-    so $\ol\rho(f_n, f)\leq\epsilon$.
-    Therefore, $f_n\rightarrow f$ uniformly.
+    To prove that $(f_n)_{n\in\bb{N}}$ is convergent in $Y^X$, first observe that $d(f_n(t), f(t))\leq d(f_n(t), f_p(t))+d(f_p(t), f(t))$ for any point $t$ of $X$ and any positive integer $p$.
+    Let $N$ be an integer such that $n, m\geq N$ implies $\ol\rho(f_n, f_m)<\epsilon/2$; given a point $x$ of $X$, let $M$ be an integer such that $d(f_p(x), f(x))<\epsilon/2$ whenever $p\geq M$.
+    Then, whenever $p\geq M, N$, we have $d(f_n(x), f(x))<\epsilon/2+\epsilon/2=\epsilon$.
+    Therefore, $(f_n)_{n\in\bb{N}}$ converges to $f$ in $Y^X$.
 \end{proof}
 
 \begin{thm}[Complete spaces of functions]\label{Complete spaces of functions}
@@ -82,25 +78,27 @@ The following theorem ensures the completeness for uncountable products, when th
     \end{enumerate}
 \end{thm}
 \begin{proof}
-    Because part (b) follows directly from part (a), it suffices to prove part (a).
-    Assume first that $f\in Y^X$ is a limit point of $C(X, Y)$.
-    Then, there is a sequence $(f_n)_{n\in\bb{N}}$ of continuous functions from $X$ into $Y$, which converges to $f$ uniformly.
-    Because the convergence is uniform, $f$ is necessarily continuous.
-    The proof for $B(X, Y)$ is also easy, which is left as an exercise.
+    Because (b) is immediate from \cref{uniform topology and completeness} and (a), it suffices to prove (a).
+    Assume first that $f\in Y^X$ is a limit point of $C(X, Y)$ in $Y^X$.
+    Then, there is a sequence $(f_n)_{n\in\bb{N}}$ in $C(X, Y)$ satisfying $\ol\rho(f_n, f)\rightarrow 0$ as $n\rightarrow\infty$.
+    Being a uniform limit of a sequence of continuous maps, $f$ is also continuous.
+    \color{brown}The proof for $B(X, Y)$ is also easy, which is left as an exercise. \color{black}
 \end{proof}
 
-For example, when $X$ is compact, we may impose the supremum(sup) metric
+For $B(X, Y)$, one may impose the metric $\rho: B(X, Y)\times B(X, Y)\rightarrow[0, \infty)$ defined by
 \begin{align*}
-    \norm{\cdot}: C(X, Y)\times C(X, Y)\rightarrow[0, \infty),
-    \quad
-    (f, g)\mapsto\sup\left\{d(f(x), g(x)): x\in X\right\}
+    \rho(f, g)=\sup\left\{d(f(x), g(x)): x\in X\right\}.
 \end{align*}
-on $C(X, Y)$, and such imposition is general.
+This metric is called the supremum (or 'sup') metric corresponding to $d$.
+In particular, when $X$ is compact, since $C(X, Y)\subset B(X, Y)$, one may make use of the supremum metric, rather than the uniform metric.
+In fact, when $X$ is compact, the supremum metric on $C(X, Y)$ is the standard bounded metric corresponding to the uniform metric on $C(X, Y)$.
+In other words, $\ol\rho(f, g)=\min\{1, \rho(f, g)\}$ for all $f, g\in C(X, Y)$.
+\color{brown}Its justification is left as an exercise.\color{black}
 
 \subsection{Isometric embedding of a metric space}
 
-Recall that a map $h$ from a metric space $(X, d_X)$ into $(Y, d_Y)$ satisfying $d_Y(h(a), h(b))=d_X(a, b)$ for all $a, b\in X$ is called an isometry (or an isometric embedding) of $X$ into $Y$.
-If $h: X\rightarrow Y$ is an isometric embedding and $Y$ is complete, the closure of $h(X)$ in $Y$ is also a complete metric space, and we call this space the completion of $X$.
+Recall that a map $h$ from a metric space $(X, d_X)$ into $(Y, d_Y)$ satisfying $d_Y(h(a), h(b))=d_X(a, b)$ for all $a, b\in X$ is called an isometric embedding of $X$ into $Y$.
+If $h: X\rightarrow Y$ is an isometric embedding and $Y$ is complete, the closure of $h(X)$ in $Y$ is also complete.
 
 When trying to define objects, one should be interested in their existence, uniqueness, and exactness.
 
@@ -109,29 +107,33 @@ When trying to define objects, one should be interested in their existence, uniq
     \begin{align*}
         \phi(x)=l_x\textsf{ for }x\in X,
     \end{align*}
-    where $l_x: X\rightarrow\bb{R}$ maps $t\in X$ to $d(t, x)-d(t, a)$ (here, $a$ is a given point of $X$, so $|l_x(t)|\leq d(x, a)$ for all $t\in X$).
-    Then $\phi$ denotes an isometric embedding of $X$ into $B(X, \bb{R})$.
-    Because $\bb{R}$ is complete, the closure of $\phi(X)$ in $B(X, \bb{R})$ is complete, i.e., every metric space has a completion.
+    where $l_x: X\rightarrow\bb{R}$ maps $t\in X$ to $d(t, x)-d(t, a)$.
+    (Here, $a$ is a given point of $X$, so $|l_x(t)|\leq d(x, a)$ for all $t\in X$)
+    Then $\phi$ is an isometric embedding of $X$ into $B(X, \bb{R})$, where $B(X, \bb{R})$ equips the sup metric.
+    Because $\bb{R}$ is complete, the closure of $\phi(X)$ in $B(X, \bb{R})$ is also complete.
+    Therefore, every metric space has a completion.
 \end{thm}
 \begin{thm}[Uniqueness of a completion of a metric space]\label{uniqueness of a completion}
     Let $h_1: X\hookrightarrow Y_1$ and $h_2: X\hookrightarrow Y_2$ be isometric embeddings of $X$ into complete metric spaces $(Y_1, d_1)$ and $(Y_2, d_2)$.
     Denote the closure of $h_i(X)$ in $Y_i$ by $\ol{h_i(X)}$ ($i=1, 2$).
-    Then, there is an isometry $H: \ol{h_1(X)}\rightarrow \ol{h_2(X)}$ which equals $h_2\circ h_1^{-1}$ on $h_1(X)$.\footnote{By an isometry we mean an isometric homeomorphism.}
-    Hence, the completion of $X$ is unique up to an isometry.
+    Then, there is an isometric homeomorphism $H: \ol{h_1(X)}\rightarrow \ol{h_2(X)}$ which equals $h_2\circ h_1^{-1}$ on $h_1(X)$.
+    Hence, the completion of $X$ is unique up to an isometric homeomorphism.
+    % A line is intentionally broken.
+
     \begin{equation*}
     \begin{tikzcd}[row sep=large, column sep=huge]
         h_1(X)\arrow[d, hook]
-        \arrow[rr, bend left, "h_2\circ h_1^{-1}", "\textsf{isometry}"']
+        \arrow[rr, bend left, "h_2\circ h_1^{-1}", "\textsf{isometric}"']
         &
         X
-        \arrow[l, "\textsf{isometry}", "h_1"']
-        \arrow[r, "h_2", "\textsf{isometry}"']
+        \arrow[l, "\textsf{isometric}", "h_1"']
+        \arrow[r, "h_2", "\textsf{isometric}"']
         &
         h_2(X)\arrow[d, hook]
         \\
         \ol{h_1(X)}
         \arrow[d, hook]
-        \arrow[rr, "H", "\textsf{isometry}"']
+        \arrow[rr, "H", "\textsf{isometric}"']
         &&
         \ol{h_2(X)}
         \arrow[d, hook]
@@ -143,11 +145,11 @@ When trying to define objects, one should be interested in their existence, uniq
 \begin{proof}[Proof of \cref{existence of a completion}]
     Since it is checked that $l_x\in B(X, \bb{R})$, the map $\phi$ is well defined.
     Thus, it remains to check that $\phi$ is an isometric embedding of $X$ into $B(X, \bb{R})$.
-    For this, it suffices to show that $\ol\rho(l_x, l_y)=d(x, y)$ for all $x, y\in X$, where $\ol\rho$ is the uniform metric on $B(X, \bb{R})$.
-    Observing that $l_x(t)-l_y(t)=d(t, x)-d(t, y)$, we can find that $\ol\rho(l_x, l_y)\leq d(x, y)$ and $l_x(x)-l_y(x)=-d(x, y)$, proving that $\ol\rho(l_x, l_y)=d(x, y)$.
+    For this, it suffices to show that $\ol\rho(l_x, l_y)=d(x, y)$ for all $x, y\in X$, where $\rho$ is the uniform metric on $B(X, \bb{R})$.
+    Observing that $l_x(t)-l_y(t)=d(t, x)-d(t, y)$, we can find that $\rho(l_x, l_y)\leq d(x, y)$ and $l_x(x)-l_y(x)=-d(x, y)$, proving that $\rho(l_x, l_y)=d(x, y)$.
 \end{proof}
 \begin{proof}[Proof of \cref{uniqueness of a completion}]
-    One should remark that $\ol{h_i(X)}$ is a complete metric space ($i=1, 2$).
+    Remark that $\ol{h_i(X)}$ is a complete metric space for $i=1, 2$.
     Define a map $H: \ol{h_1(X)}\rightarrow\ol{h_2(X)}$ as follows:
     \begin{enumerate}
         \item[(1)]
@@ -157,17 +159,18 @@ When trying to define objects, one should be interested in their existence, uniq
         }
         \item[(2)]
         {
-            When $x\in \ol{h_1(X)}\setminus h_1(X)$, set a sequence of points $(x_n)_{n\in\bb{N}}$ in $h_1(X)$, converging to $x$ (note that $x$ is in a closure) and let $H(x):=\lim H(x_n)$.
+            When $x\in \ol{h_1(X)}\setminus h_1(X)$, let $(x_n)_{n\in\bb{N}}$ be a sequence in $h_1(X)$ which converges to $x$, and let $H(x):=\lim H(x_n)$.
 
-            This setting seems to be ambiguous, because the resulting $H(x)$ might differ by the choice of $(x_n)_n$ (also, even the existence of the limit could be inquired).
+            This setting seems to be ambiguous, because the resulting $H(x)$ might differ by the choice of $(x_n)_{n\in\bb{N}}$ (also, even the existence of the limit could be inquired).
             \begin{itemize}
                 \item
                 {
-                    As for the existence of the limit, note that $d_2(Hx_n, Hx_m)=d_1(x_n, x_m)$ so that the sequence $(Hx_n)_n$ is a Cauchy sequence in $\ol{h_2(X)}$.
+                    Because $d_2(H(x_n), H(x_m))=d_1(x_n, x_m)$ for all $n, m\in\bb{N}$, $(H(x_n))_{n\in\bb{N}}$ is a Cauchy sequence in $\ol{h_2(X)}$.
+                    Since $\ol{h_2(X)}$ is complete, $(H(x_n))_{n\in\bb{N}}$ is convergent, with the limit in $\ol{h_2(X)}$.
                 }
                 \item
                 {
-                    As for the unambiguity, suppose $(a_j)_{j\in\bb{N}}$ is another sequence in $h_1(X)$ converging to $x$.
+                    Suppose $(a_j)_{j\in\bb{N}}$ is another sequence in $h_1(X)$ converging to $x$.
                     Letting $X=\lim H(x_n)$ and $A=\lim H(a_j)$, we find that
                     \begin{eqnarray*}
                         d_2(X, A)&\leq&d_2(X, H(x_n))+d_2(H(x_n), H(a_j))+d_2(H(a_j), A)\\
@@ -180,24 +183,31 @@ When trying to define objects, one should be interested in their existence, uniq
     \end{enumerate}
     We just established a map $H$ from $\ol{h_1(X)}$ into $\ol{h_2(X)}$.
     It remains to show that $H$ is an isometry.
-    For this, it suffices to show that $H$ is bijective and isometric, and $H$ coincides $h_2\circ h_1^{-1}$ on $h_1(X)$.
+    For this, it suffices to show that $H$ is an isometric homeomorphism, and $H$ coincides $h_2\circ h_1^{-1}$ on $h_1(X)$.\footnote{Since an isometric embedding is an open map, it suffices to show that $H$ is an isometric bijection.}
     \begin{enumerate}
         \item[(a)]
         {
-            Given $a, b\in\ol{h_1(X)}$, let $(a_n)_n$ and $(b_n)_n$ be seqences in $h_1(X)$ converging to $a$ and $b$, respectively.
-            Because $d_2(Ha, Hb)\leq d_2(Ha, Ha_n)+d_2(Ha_n, Hb_n)+d_2(Hb_n, Hb)$ and $d_2(Ha_n, Hb_n)\leq d_2(Ha_n, Ha)+d_2(Ha, Hb)+d_2(Hb, Hb_n)$, we have $\lim d_2(Ha_n, Hb_n)=d_2(Ha, Hb)$.
-            Therefore, $d_2(Ha, Hb)=\lim d_2(Ha_n, Hb_n)=\lim d_1(a_n, b_n)=d_1(a, b)$.
-            This implies that $H$ is isometric and injective.
-            The surjectivity is easily checked. (How?)
+            Given $a, b\in\ol{h_1(X)}$, let $(a_n)_{n\in\bb{N}}$ and $(b_n)_{n\in\bb{N}}$ be seqences in $h_1(X)$ converging to $a$ and $b$, respectively.
+            Then $d_2(H(a), H(b))=\lim d_2(H(a_n), H(b_n))=\lim d_1(a_n, b_n)=d_1(a, b)$, so $H$ is isometric and injective.
+            To check the surjectivity, let $y$ be a point of $\ol{h_2(X)}$ and let $(y_n)_{n\in\bb{N}}$ be a sequence in $h_2(X)$ converging to $y$.
+            Letting $x_n=h_1(h_2^{-1}(y_n))$ for each $n\in\bb{N}$, the limit of $(x_n)_{n\in\bb{N}}$ exists (say $x\in\ol{h_1(X)}$ is the limit), and we have $H(x)=\lim H(x_n)=\lim y_n=y$.
         }
         \item[(b)]
         {
             Clearly, $H$ extends $h_2\circ h_1^{-1}$.
         }
     \end{enumerate}
-    Therefore, there is an isometry between two completions of $X$.
-    In other words, there is a unique completion of a metric space up to an isometry.
+    Therefore, there is an isometric homeomorphism between two completions of $X$.
+    In other words, there is a unique completion of a metric space up to isometric homeomorphism.
 \end{proof}
+
+To emphasize the result of \cref{existence of a completion,uniqueness of a completion}, we leave the definition of the completion of a metric space.
+\begin{defi}[The completion of a metric space]
+    Let $(X, d)$ be a metric space, and let $h: (X, d)\rightarrow (Y, e)$ be an isometric embedding, where $(Y, e)$ is a complete metric space.
+    The closure of the image of $h$ in $Y$ is called the completion of $X$.
+    The completion of a metric space always exists, and it is unique up to isometric homeomorphism.
+\end{defi}
+
 
 \subsection{Problems}
 
